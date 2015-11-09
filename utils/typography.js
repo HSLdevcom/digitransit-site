@@ -9,9 +9,9 @@ export default new Typography({
   baseLineHeight: '24px',
   bodyFontFamily: 'Lato, sans-serif',
   headerFontFamily: 'Lato, sans-serif',
-  headerGray: 100,
-  bodyGray: 100,
-  bodyWeight: 100,
+  headerGray: 0,
+  bodyGray: 0,
+  bodyWeight: 300,
   headerWeight: 400,
   boldWeight: 700,
   modularScales: ['major third']

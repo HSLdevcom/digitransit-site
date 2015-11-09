@@ -7,7 +7,7 @@ import includes from 'underscore.string/include';
 import { link } from 'gatsby-helpers';
 
 import typography from 'utils/typography';
-import { FrontPagePanel } from './_components';
+import { FrontPage } from './_components';
 
 const { rhythm, fontSizeToPx } = typography;
 
@@ -35,81 +35,43 @@ module.exports = React.createClass({
     docsActive = (routes.indexOf(urlPrefix + "/docs/") >= 0);
     examplesActive = (routes.indexOf(urlPrefix + "/examples/") >= 0);
 
-    const panels = this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)
 
     return (
       <div>
-        <div
-          id="header-image"
+        <FrontPage {...this.props}/>
+        <Container
           style={{
-            position: "relative",
-            maxWidth: 2048,
-            margin: "0 auto"
+            maxWidth: 950,
+            padding: `${rhythm(1)} ${rhythm(1/2)}`
           }}
         >
-          <img id="header-logo" src="logo.png"/>
-          <h1 id="header-text">
-            Täällä tehdään uuden ajan matkaopasta. Jätä jälkesi.
-          </h1>
-          <nav
-            style={{
-              fontSize: 15,
-              textTransform: "uppercase",
-              // .Käyttäjille________Kehittäjille_______kunnille {
-              //   text-transform: uppercase;
-              //   line-height: 2.667;
-              //   text-align: right;
-              //   position: absolute;
-              //   left: 734.938px;
-              //   top: 32.498px;
-              //   z-index: 17;
-              // }
-              // .FI_____SV_____EN
-              //   line-height: 2.667;
-              //   position: absolute;
-              //   left: 1151.937px;
-              //   top: 33.998px;
-              //   z-index: 14;
-              // }
-            }}
-          >
-            Käyttäjille
-            Kehittäjille
-            Kunnille
-
-
-          </nav>
-        </div>
+          <RouteHandler typography={typography} {...this.props}/>
+        </Container>
         <div
           style={{
             position: "relative",
-            background: "#eef1f3",
+            background: "#333",
             display: "flex",
-            flexWrap: "wrap",
+            flexDirection: "column",
             justifyContent: "center",
             alignItems: "center"
           }}
         >
-          <img src="hsl-logo.png"  style={{margin: "2em 2em"}}/>
-          <img src="livi-logo.png" style={{margin: "2em 2em"}}/>
+          <div style={{
+            width: 950,
+            borderBottom: "solid 1px #5c5c5c",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+          <img src="hsl-logo.png"  style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
+          <img src="livi-logo.png" style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
+          </div>
+          <div style={{margin: "1em", color: "white", fontSize: 14}}>
+            © Digitransit 2015
+          </div>
         </div>
-        {panels}
-        <div
-          style={{
-            backgroundImage: 'url("Aikataulu.png")',
-            height: 552,
-            maxWidth: 1440,
-            margin: "0 auto"
-          }}
-        />
-        <div
-          style={{
-            backgroundImage: 'url("Footer.png")',
-            height: 230,
-            maxWidth: 1440,
-            margin: "0 auto"
-          }}
-        />
       </div>
     );
   }

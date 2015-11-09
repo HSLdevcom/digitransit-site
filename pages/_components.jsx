@@ -1,5 +1,7 @@
 import React from 'react';
 import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid';
+import { rhythm, fontSizeToPx } from 'utils/typography';
+
 
 const getImage = (image, swapped, small) => {
   return (<img
@@ -16,12 +18,86 @@ const getImage = (image, swapped, small) => {
   />);
 };
 
+export class FrontPage extends React.Component {
+  render() {
+    const panels = this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)
 
-export class FrontPagePanel extends React.Component {
+    return(
+      <div>
+        <div
+          id="header-image"
+          style={{
+            position: "relative",
+            maxWidth: 2048,
+            margin: "0 auto"
+          }}
+        >
+          <img id="header-logo" src="logo.png"/>
+          <h1 id="header-text">
+            Täällä tehdään uuden ajan matkaopasta. Jätä jälkesi.
+          </h1>
+          <nav
+            style={{
+              fontSize: 15,
+              textTransform: "uppercase",
+              // .Käyttäjille________Kehittäjille_______kunnille {
+              //   text-transform: uppercase;
+              //   line-height: 2.667;
+              //   text-align: right;
+              //   position: absolute;
+              //   left: 734.938px;
+              //   top: 32.498px;
+              //   z-index: 17;
+              // }
+              // .FI_____SV_____EN
+              //   line-height: 2.667;
+              //   position: absolute;
+              //   left: 1151.937px;
+              //   top: 33.998px;
+              //   z-index: 14;
+              // }
+            }}
+          >
+            Käyttäjille
+            Kehittäjille
+            Kunnille
+
+
+          </nav>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            background: "#eef1f3",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <img src="hsl-logo.png"  style={{margin: "2em 2em"}}/>
+          <img src="livi-logo.png" style={{margin: "2em 2em"}}/>
+        </div>
+        {panels}
+      </div>
+    )
+  }
+}
+
+class FrontPagePanel extends React.Component {
   render() {
     const links = this.props.links.map((link) =>
       <div>
-        <a href={link.url}>
+        <a
+          href={link.url}
+          style={{
+            textDecoration: "none",
+            marginTop: rhythm(0.5),
+            fontSize: 15,
+            fontWeight: 500,
+            color: "#fff",
+          }}
+        >
           {link.title} »
         </a>
       </div>
@@ -37,7 +113,9 @@ export class FrontPagePanel extends React.Component {
               flexWrap: "wrap",
               justifyContent: "center",
               alignItems: "center",
+              color: "#fff",
               background: this.props.background,
+              fontWeight: 100,
               minHeight: 500,
               paddingTop: "1.5em",
               paddingBottom: "1.5em",
@@ -52,10 +130,10 @@ export class FrontPagePanel extends React.Component {
                 marginBottom: "1em",
               }}
             >
-              <h2>
+              <h2 style={{color: "#fff"}}>
                 {this.props.title}
               </h2>
-              <div>
+              <div style={{paddingBottom: "1em"}}>
                 {this.props.body}
               </div>
               <div>
@@ -74,8 +152,10 @@ export class FrontPagePanel extends React.Component {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              color: "#fff",
               background: this.props.background,
               minHeight: 500,
+              fontWeight: 100,
               paddingTop: "1.5em",
               paddingBottom: "1.5em",
             }}
@@ -89,10 +169,10 @@ export class FrontPagePanel extends React.Component {
                 marginBottom: "1em",
               }}
             >
-              <h2 style={{textAlign: "center"}}>
+              <h2 style={{textAlign: "center", color: "#fff"}}>
                 {this.props.title}
               </h2>
-              <div>
+              <div style={{paddingBottom: "1em"}}>
                 {this.props.body}
               </div>
               <div>
