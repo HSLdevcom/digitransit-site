@@ -35,7 +35,7 @@ module.exports = React.createClass({
           <link rel="shortcut icon" href={this.props.favicon}/>
           <style dangerouslySetInnerHTML={{__html: `
           #header-image {
-            background-image: url("header.jpg");
+            background-image: url("${urlPrefix}/header.jpg");
             background-position: center;
             background-size: 2048px;
             height: 720px;
@@ -63,7 +63,7 @@ module.exports = React.createClass({
           (-webkit-min-device-pixel-ratio: 2),
           (min-resolution: 192dpi) {
             #header-image {
-              background-image: url("header.2x.jpg");
+              background-image: url("${urlPrefix}/header.2x.jpg");
               background-size: 2048px;
             }
           }
@@ -91,7 +91,7 @@ module.exports = React.createClass({
           @media
           (max-width: 600px) {
             #header-image {
-              background-image: url("header.mobile.jpg");
+              background-image: url("${urlPrefix}/header.mobile.jpg");
               background-size: 600px 750px;
               height: 750px;
             }
