@@ -16,14 +16,7 @@ const { rhythm, fontSizeToPx } = typography;
 module.exports = React.createClass({
   mixins: [State],
   render: function() {
-    var activeHeaderColors, darker, docsActive, examplesActive, headerColors, ref1, ref2, routes, urlPrefix;
-    headerColors = colorPairsPicker(this.props.config.headerColor, {
-      contrast: 5.5
-    });
-    darker = chroma(this.props.config.headerColor).darken(9).hex();
-    activeHeaderColors = colorPairsPicker(darker, {
-      contrast: 7
-    });
+    var routes, urlPrefix;
     if (__GH_PAGES__) {
       urlPrefix = this.props.config.ghPagesURLPrefix;
     } else {
@@ -32,8 +25,6 @@ module.exports = React.createClass({
     routes = this.getRoutes().map(function(route) {
       return route.path;
     });
-    docsActive = (routes.indexOf(urlPrefix + "/docs/") >= 0);
-    examplesActive = (routes.indexOf(urlPrefix + "/examples/") >= 0);
 
 
     return (
@@ -47,12 +38,12 @@ module.exports = React.createClass({
             fontSize: 15,
             textTransform: "uppercase",
             position: "fixed",
-            maxWidth: 1024,
+            maxWidth: 720,
             zIndex: 3,
             textAlign: "right",
             padding: `${rhythm(3/4)} ${rhythm(1/2)}`,
             margin: "0 auto",
-            left: 0,
+            left: 152,
             right: 0,
             color: "#fff",
             fontSize: 15,
@@ -61,7 +52,7 @@ module.exports = React.createClass({
         >
           {/* Convert to Link after upgrading to ract-router 1.0 */}
           <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
-          <a href={`${urlPrefix}/#developers`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</a>
+          <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link>
           <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
           <span style={{margin: rhythm(0.5)}}>|</span>
           <span style={{margin: rhythm(0.5)}}>FI</span>
@@ -76,7 +67,13 @@ module.exports = React.createClass({
           zIndex: 1,
           height: `calc(${rhythm(1.5)} + 23px)`,
           backgroundColor: this.props.config.headerColor,
-        }}/>
+        }}>
+          <div style={{maxWidth: 950, height: "100%", margin: "0 auto"}}>
+            <Link to={`${urlPrefix}/`}>
+              <img src={`${urlPrefix}/logo.png`} style={{height: "100%", padding: 5, margin: 0}}/>
+            </Link>
+          </div>
+        </div>
         {this.props.page.path == `${urlPrefix}/` ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
           style={{
