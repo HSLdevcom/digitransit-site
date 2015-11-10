@@ -1,16 +1,16 @@
 {
   "name": "digitransit-site",
   "version": "1.0.0",
-  "description": "Gatsby example site",
+  "description": "Digitransit marketing site",
   "main": "n/a",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "gatsby"
+    "digitransit"
   ],
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "license": "MIT",
+  "author": "Digitransit Team <digitransit@hsl.fi>",
+  "license": "(AGPL-3.0 OR EUPL-1.2)",
   "dependencies": {
     "chroma-js": "0.7.2",
     "color-pairs-picker": "^1.3.5",
