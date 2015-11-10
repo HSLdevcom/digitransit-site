@@ -37,7 +37,11 @@ module.exports = React.createClass({
 
 
     return (
-      <div>
+      <div style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}>
         <nav
           style={{
             fontSize: 15,
@@ -73,18 +77,20 @@ module.exports = React.createClass({
           height: `calc(${rhythm(1.5)} + 23px)`,
           backgroundColor: this.props.config.headerColor,
         }}/>
-        {this.props.page.path == `${urlPrefix}/` ? <FrontPage {...this.props}/> : null}
+        {this.props.page.path == `${urlPrefix}/` ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
           style={{
             maxWidth: 950,
-            padding: `${rhythm(1)} ${rhythm(1/2)}`
+            width: "100%",
+            padding: `${rhythm(1)} ${rhythm(1/2)}`,
+            flex: "1",
           }}
         >
           <RouteHandler typography={typography} {...this.props}/>
         </Container>
         <div
           style={{
-            position: "relative",
+            width: "100%",
             background: "#333",
             display: "flex",
             flexDirection: "column",

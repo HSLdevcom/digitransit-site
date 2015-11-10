@@ -31,6 +31,7 @@ module.exports = React.createClass({
           <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
+          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat"/>
           <link rel="shortcut icon" href={this.props.favicon}/>
           <style dangerouslySetInnerHTML={{__html: `
           #header-image {
