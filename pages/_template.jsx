@@ -55,7 +55,7 @@ module.exports = React.createClass({
             fontWeight: 500,
           }}
         >
-          {// Convert to Link after upgrading to ract-router 1.0}
+          {/* Convert to Link after upgrading to ract-router 1.0 */}
           <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
           <a href={`${urlPrefix}/#developers`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</a>
           <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
