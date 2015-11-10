@@ -80,6 +80,7 @@ class FrontPagePanel extends React.Component {
       <div>
         <Breakpoint minWidth={1020} widthMethod="componentWidth">
           <div
+            id={this.props.id}
             style={{
               position: "relative",
               display: "flex",

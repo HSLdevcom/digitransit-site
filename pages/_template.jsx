@@ -55,9 +55,10 @@ module.exports = React.createClass({
             fontWeight: 500,
           }}
         >
-          <span style={{margin: rhythm(0.5)}}>Käyttäjille</span>
-          <span style={{margin: rhythm(0.5)}}>Kehittäjille</span>
-          <span style={{margin: rhythm(0.5)}}>Kunnille</span>
+          {// Convert to Link after upgrading to ract-router 1.0}
+          <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
+          <a href={`${urlPrefix}/#developers`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</a>
+          <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
           <span style={{margin: rhythm(0.5)}}>|</span>
           <span style={{margin: rhythm(0.5)}}>FI</span>
           <span style={{margin: rhythm(0.5)}}>SV</span>
@@ -72,7 +73,7 @@ module.exports = React.createClass({
           height: `calc(${rhythm(1.5)} + 23px)`,
           backgroundColor: this.props.config.headerColor,
         }}/>
-        <FrontPage {...this.props}/>
+        {this.props.page.path == `${urlPrefix}/` ? <FrontPage {...this.props}/> : null}
         <Container
           style={{
             maxWidth: 950,
@@ -99,8 +100,8 @@ module.exports = React.createClass({
             justifyContent: "center",
             alignItems: "center",
           }}>
-          <img src="hsl-logo.png"  style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
-          <img src="livi-logo.png" style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
+          <img src={`${urlPrefix}/hsl-logo.png`}  style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
+          <img src={`${urlPrefix}/livi-logo.png`} style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
           </div>
           <div style={{margin: "1em", color: "white", fontSize: 14}}>
             © Digitransit 2015

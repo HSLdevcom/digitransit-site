@@ -9,6 +9,7 @@ panels:
       - title: Siirry uuteen valtakunnalliseen Matka.fi-palveluun
         url: http://test.digitransit.fi
     image: "users.svg"
+    id: users
     background: "#8c54a2"
     swapped: true
   - title: Kehittäjille
@@ -18,6 +19,7 @@ panels:
       - title: Tutustu rajapintoihin
       - title: Quick start guide
     image: "developers.svg"
+    id: developers
     background: "#ff8a3c"
   - title: Kunnille
     body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n ja Liikenneviraston tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Ja varmista, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
@@ -25,6 +27,7 @@ panels:
       - title: Digitransit palvelukuvaus
       - title: Liity palveluun
     image: "municipalities.svg"
+    id: municipalities
     background: "#64be47"
     swapped: true
 ---
