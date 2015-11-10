@@ -38,6 +38,40 @@ module.exports = React.createClass({
 
     return (
       <div>
+        <nav
+          style={{
+            fontSize: 15,
+            textTransform: "uppercase",
+            position: "fixed",
+            maxWidth: 1024,
+            zIndex: 3,
+            textAlign: "right",
+            padding: `${rhythm(3/4)} ${rhythm(1/2)}`,
+            margin: "0 auto",
+            left: 0,
+            right: 0,
+            color: "#fff",
+            fontSize: 15,
+            fontWeight: 500,
+          }}
+        >
+          <span style={{margin: rhythm(0.5)}}>Käyttäjille</span>
+          <span style={{margin: rhythm(0.5)}}>Kehittäjille</span>
+          <span style={{margin: rhythm(0.5)}}>Kunnille</span>
+          <span style={{margin: rhythm(0.5)}}>|</span>
+          <span style={{margin: rhythm(0.5)}}>FI</span>
+          <span style={{margin: rhythm(0.5)}}>SV</span>
+          <span style={{margin: rhythm(0.5)}}>EN</span>
+
+
+        </nav>
+        <div style={{
+          position: "fixed",
+          width: "100%",
+          zIndex: 1,
+          height: `calc(${rhythm(1.5)} + 23px)`,
+          backgroundColor: this.props.config.headerColor,
+        }}/>
         <FrontPage {...this.props}/>
         <Container
           style={{

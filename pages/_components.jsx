@@ -29,41 +29,14 @@ export class FrontPage extends React.Component {
           style={{
             position: "relative",
             maxWidth: 2048,
-            margin: "0 auto"
+            margin: "0 auto",
+            zIndex: 2
           }}
         >
           <img id="header-logo" src="logo.png"/>
           <h1 id="header-text">
             Täällä tehdään uuden ajan matkaopasta. Jätä jälkesi.
           </h1>
-          <nav
-            style={{
-              fontSize: 15,
-              textTransform: "uppercase",
-              // .Käyttäjille________Kehittäjille_______kunnille {
-              //   text-transform: uppercase;
-              //   line-height: 2.667;
-              //   text-align: right;
-              //   position: absolute;
-              //   left: 734.938px;
-              //   top: 32.498px;
-              //   z-index: 17;
-              // }
-              // .FI_____SV_____EN
-              //   line-height: 2.667;
-              //   position: absolute;
-              //   left: 1151.937px;
-              //   top: 33.998px;
-              //   z-index: 14;
-              // }
-            }}
-          >
-            Käyttäjille
-            Kehittäjille
-            Kunnille
-
-
-          </nav>
         </div>
         <div
           style={{
