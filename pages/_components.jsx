@@ -71,7 +71,7 @@ class FrontPagePanel extends React.Component {
             color: "#fff",
           }}
         >
-          {link.title} »
+          {link.title}&nbsp;»
         </a>
       </div>
     );
@@ -137,8 +137,8 @@ class FrontPagePanel extends React.Component {
             <div
               style={{
                 maxWidth: 465,
-                marginLeft: 60,
-                marginRight: 60,
+                marginLeft: rhythm(1),
+                marginRight: rhythm(1),
                 marginTop: "1em",
                 marginBottom: "1em",
               }}

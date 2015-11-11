@@ -15,6 +15,13 @@ const { rhythm, fontSizeToPx } = typography;
 
 module.exports = React.createClass({
   mixins: [State],
+  getInitialState: function() {
+    return({
+      mobileMenuOpen: false
+    })
+  },
+
+
   render: function() {
     var routes, urlPrefix;
     if (__GH_PAGES__) {
@@ -25,6 +32,26 @@ module.exports = React.createClass({
     routes = this.getRoutes().map(function(route) {
       return route.path;
     });
+
+    const mobileMenu =
+      <div style={{
+        position: "fixed",
+        backgroundColor: this.props.config.headerColor,
+        width: "100vw",
+        top: 59,
+        lineHeight: rhythm(2),
+        fontSize: rhythm(0.75),
+        left: 0,
+        textAlign: "center"
+      }}>
+        <span style={{margin: rhythm(0.5)}}>FI</span>
+        <span style={{margin: rhythm(0.5)}}>SV</span>
+        <span style={{margin: rhythm(0.5)}}>EN</span><br/>
+        <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a><br/>
+        <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link><br/>
+        <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a><br/>
+
+      </div>
 
 
     return (
@@ -50,16 +77,26 @@ module.exports = React.createClass({
             fontWeight: 500,
           }}
         >
-          {/* Convert to Link after upgrading to ract-router 1.0 */}
-          <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
-          <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link>
-          <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
-          <span style={{margin: rhythm(0.5)}}>|</span>
-          <span style={{margin: rhythm(0.5)}}>FI</span>
-          <span style={{margin: rhythm(0.5)}}>SV</span>
-          <span style={{margin: rhythm(0.5)}}>EN</span>
-
-
+          <Breakpoint minWidth={750}>
+            {/* Convert to Link after upgrading to ract-router 1.0 */}
+            <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
+            <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link>
+            <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
+            <span style={{margin: rhythm(0.5)}}>|</span>
+            <span style={{margin: rhythm(0.5)}}>FI</span>
+            <span style={{margin: rhythm(0.5)}}>SV</span>
+            <span style={{margin: rhythm(0.5)}}>EN</span>
+          </Breakpoint>
+          <Breakpoint maxWidth={750}>
+            {/* Convert to Link after upgrading to ract-router 1.0 */}
+            <svg id="icon-icon_menu" viewBox="0 0 1024 1024" style={{height: "2em", fill: "#fff", marginRight: rhythm(0.5), marginTop: "-0.25em"}} onClick={() => this.setState({mobileMenuOpen: !this.state.mobileMenuOpen})}>
+            	<title>icon_menu</title>
+            	<path class="path1" d="M51.193 204.793h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"></path>
+            	<path class="path2" d="M51.193 460.796h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"></path>
+            	<path class="path3" d="M51.193 716.804h921.614c28.279 0 51.2 22.925 51.2 51.2 0 28.279-22.921 51.204-51.2 51.204h-921.614c-28.279 0-51.2-22.925-51.2-51.204 0-28.275 22.921-51.2 51.2-51.2z"></path>
+            </svg>
+            { this.state.mobileMenuOpen ? mobileMenu : <span/> }
+          </Breakpoint>
         </nav>
         <div style={{
           position: "fixed",
@@ -70,7 +107,7 @@ module.exports = React.createClass({
         }}>
           <div style={{maxWidth: 950, height: "100%", margin: "0 auto"}}>
             <Link to={`${urlPrefix}/`}>
-              <img src={`${urlPrefix}/logo.png`} style={{height: "100%", padding: 5, margin: 0}}/>
+              <img src={`${urlPrefix}/logo.png`} style={{height: "100%", padding: 7, margin: 0, paddingLeft: rhythm(1)}}/>
             </Link>
           </div>
         </div>
