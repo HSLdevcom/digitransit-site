@@ -55,7 +55,7 @@ module.exports = React.createClass({
     return (
       <div
         ref="mainflex"
-        style={ (/Trident\/7\./).test(navigator.userAgent) ?
+        style={ (typeof(navigator) != 'undefined' && (/Trident\/7\./).test(navigator.userAgent)) ?
           {
             height: "100%",
             width: "100%"
