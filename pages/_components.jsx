@@ -119,6 +119,7 @@ class FrontPagePanel extends React.Component {
               paddingBottom: "1.5em",
             }}
           >
+            {getImage(this.props.image, this.props.swapped, false)}
             <div
               style={{
                 maxWidth: 465,
@@ -138,7 +139,6 @@ class FrontPagePanel extends React.Component {
                 {links}
               </div>
             </div>
-            {getImage(this.props.image, this.props.swapped, false)}
           </div>
         </Breakpoint>
         <Breakpoint maxWidth={1020} widthMethod="componentWidth">

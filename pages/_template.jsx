@@ -11,8 +11,6 @@ import { FrontPage } from './_components';
 
 const { rhythm, fontSizeToPx } = typography;
 
-
-
 module.exports = React.createClass({
   mixins: [State],
   getInitialState: function() {
@@ -55,11 +53,20 @@ module.exports = React.createClass({
 
 
     return (
-      <div style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}>
+      <div
+        ref="mainflex"
+        style={ (/Trident\/7\./).test(navigator.userAgent) ?
+          {
+            height: "100%",
+            width: "100%"
+          }
+          : {
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+          }
+        }
+      >
         <nav
           style={{
             fontSize: 15,
@@ -73,7 +80,6 @@ module.exports = React.createClass({
             left: 152,
             right: 0,
             color: "#fff",
-            fontSize: 15,
             fontWeight: 500,
           }}
         >
