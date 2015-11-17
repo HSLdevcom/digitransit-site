@@ -140,6 +140,7 @@ module.exports = React.createClass({
         >
           <div style={{
             width: 950,
+            maxWidth: "80vw",
             borderBottom: "solid 1px #5c5c5c",
             display: "flex",
             flexWrap: "wrap",
