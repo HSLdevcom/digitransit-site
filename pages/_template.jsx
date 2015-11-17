@@ -97,7 +97,18 @@ module.exports = React.createClass({
           </Breakpoint>
           <Breakpoint maxWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0 */}
-            <svg id="icon-icon_menu" viewBox="0 0 1024 1024" style={{height: "2em", fill: "#fff", marginRight: rhythm(0.5), marginTop: "-0.25em"}} onClick={() => this.setState({mobileMenuOpen: !this.state.mobileMenuOpen})}>
+            <svg
+              id="icon-icon_menu"
+              viewBox="0 0 1024 1024"
+              style={{
+                height: "2em",
+                fill: "#fff",
+                marginRight: rhythm(0.5),
+                marginTop: "-0.25em",
+                cursor: "pointer",
+              }}
+              onClick={() => this.setState({mobileMenuOpen: !this.state.mobileMenuOpen})}
+            >
             	<title>icon_menu</title>
             	<path class="path1" d="M51.193 204.793h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"></path>
             	<path class="path2" d="M51.193 460.796h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"></path>
