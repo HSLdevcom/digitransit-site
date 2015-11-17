@@ -16,16 +16,18 @@ panels:
     body: Tule kehittämään uuden ajan matkaopasta, jonka julkaisuversiota tulevat käyttämään sadat tuhannet ihmiset joka päivä. Todennäköisesti sinäkin. Voit kehittää koko palvelua tai parantaa vain yhtä sen osaa. Ota koodi käyttöösi, keksi uutta, näytä se muille! Käytössäsi on uusin selainteknologia ja kehitysympäristö tulee nopeasti tutuksi. Kääri hihat ja lataa Digitransit koneellesi. Lähdekoodi on avoin.
     links:
       - title: Lue alustan arkkitehtuurikuvaus
+        url: /developers/architecture/
       - title: Tutustu rajapintoihin
-      - title: Quick start guide
+        url: /developers/components/
+      # - title: Quick start guide
     image: "developers.svg"
     id: developers
     background: "#ff8a3c"
   - title: Kunnille
     body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n ja Liikenneviraston tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Ja varmista, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
-    links:
-      - title: Digitransit palvelukuvaus
-      - title: Liity palveluun
+    links: []
+      # - title: Digitransit palvelukuvaus
+      # - title: Liity palveluun
     image: "municipalities.svg"
     id: municipalities
     background: "#64be47"
