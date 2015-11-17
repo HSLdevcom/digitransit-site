@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid';
+import { RouteHandler, Link, State } from 'react-router';
 import { rhythm, fontSizeToPx } from 'utils/typography';
 
 
@@ -59,22 +60,45 @@ export class FrontPage extends React.Component {
 
 class FrontPagePanel extends React.Component {
   render() {
-    const links = this.props.links.map((link) =>
-      <div>
-        <a
-          href={link.url}
-          style={{
-            textDecoration: "none",
-            marginTop: rhythm(0.5),
-            fontSize: 15,
-            fontWeight: 500,
-            color: "#fff",
-          }}
-        >
-          {link.title}&nbsp;»
-        </a>
-      </div>
-    );
+    const links = this.props.links.map((link) => {
+      if (link.url.substring(0, 4) == "http") {
+        return(
+          <div>
+            <a
+              href={link.url}
+              style={{
+                textDecoration: "none",
+                marginTop: rhythm(0.5),
+                fontSize: 15,
+                fontWeight: 500,
+                color: "#fff",
+              }}
+            >
+              {link.title}&nbsp;»
+            </a>
+          </div>
+        )
+      }
+      else {
+        return(
+          <div>
+            <Link
+              to={link.url}
+              style={{
+                textDecoration: "none",
+                marginTop: rhythm(0.5),
+                fontSize: 15,
+                fontWeight: 500,
+                color: "#fff",
+              }}
+            >
+              {link.title}&nbsp;»
+            </Link>
+          </div>
+        )
+      }
+    }
+  );
 
     return(
       <div>
