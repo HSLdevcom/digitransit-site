@@ -44,9 +44,9 @@ module.exports = React.createClass({
         left: 0,
         textAlign: "center"
       }}>
-        <span style={{margin: rhythm(0.5)}}>FI</span>
+        {/*<span style={{margin: rhythm(0.5)}}>FI</span>
         <span style={{margin: rhythm(0.5)}}>SV</span>
-        <span style={{margin: rhythm(0.5)}}>EN</span><br/>
+        <span style={{margin: rhythm(0.5)}}>EN</span><br/>*/}
         <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a><br/>
         <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link><br/>
         <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a><br/>
@@ -82,10 +82,10 @@ module.exports = React.createClass({
             <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
             <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link>
             <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
-            <span style={{margin: rhythm(0.5)}}>|</span>
+            {/*<span style={{margin: rhythm(0.5)}}>|</span>
             <span style={{margin: rhythm(0.5)}}>FI</span>
             <span style={{margin: rhythm(0.5)}}>SV</span>
-            <span style={{margin: rhythm(0.5)}}>EN</span>
+            <span style={{margin: rhythm(0.5)}}>EN</span>*/}
           </Breakpoint>
           <Breakpoint maxWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0 */}
