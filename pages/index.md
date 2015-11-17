@@ -7,7 +7,7 @@ panels:
       - title: Siirry uuteen HSL:n alueen Reittiopas.fi-palveluun
         url: http://matka.hsl.fi
       - title: Siirry uuteen valtakunnalliseen Matka.fi-palveluun
-        url: http://test.digitransit.fi
+        url: http://beta.digitransit.fi/
     image: "users.svg"
     id: users
     background: "#8c54a2"
