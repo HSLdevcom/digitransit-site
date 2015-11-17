@@ -57,7 +57,12 @@ module.exports = React.createClass({
     return (
       <div
         ref="mainflex"
-        style={prefixer({
+        style={ (typeof(navigator) != 'undefined' && (/Trident\/7\./).test(navigator.userAgent)) ?
+          {
+            height: "100%",
+            width: "100%"
+          }
+          : prefixer({
             minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
