@@ -8,8 +8,9 @@ const getImage = (image, swapped, small) => {
   return (<img
     src={image}
     style={{
-      maxWidth: 360,
-      height: 360,
+      maxWidth: "80vw",
+      width: 360,
+      maxHeight: 360,
       marginLeft: 45,
       marginRight: 45,
       marginTop: "1em",
