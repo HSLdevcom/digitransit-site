@@ -6,13 +6,13 @@ title: Components
 User interface
 * https://github.com/HSLdevcom/digitransit-ui
 
-## Digitransit-otp
+## OpenTripPlanner
 Open Trip Planner routing API
 * https://github.com/HSLdevcom/OpenTripPlanner
 
-## Digitransit-geocoder
+## Pelias
 Geocoding service
-* https://github.com/HSLdevcom/digitransit-geocoder
+* https://github.com/pelias
 
 ## Digitransit-realtime-server
 Realtime information server
