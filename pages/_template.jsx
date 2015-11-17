@@ -11,6 +11,8 @@ import { FrontPage } from './_components';
 
 const { rhythm, fontSizeToPx } = typography;
 
+const prefixer = require('react-style-normalizer');
+
 module.exports = React.createClass({
   mixins: [State],
   getInitialState: function() {
@@ -32,7 +34,7 @@ module.exports = React.createClass({
     });
 
     const mobileMenu =
-      <div style={{
+      <div style={prefixer({
         position: "fixed",
         backgroundColor: this.props.config.headerColor,
         width: "100vw",
@@ -41,13 +43,13 @@ module.exports = React.createClass({
         fontSize: rhythm(0.75),
         left: 0,
         textAlign: "center"
-      }}>
+      })}>
         {/*<span style={{margin: rhythm(0.5)}}>FI</span>
         <span style={{margin: rhythm(0.5)}}>SV</span>
         <span style={{margin: rhythm(0.5)}}>EN</span><br/>*/}
-        <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a><br/>
-        <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link><br/>
-        <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a><br/>
+        <a href={`${urlPrefix}/#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Käyttäjille</a><br/>
+        <Link to={`${urlPrefix}/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kehittäjille</Link><br/>
+        <a href={`${urlPrefix}/#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kunnille</a><br/>
 
       </div>
 
@@ -55,20 +57,15 @@ module.exports = React.createClass({
     return (
       <div
         ref="mainflex"
-        style={ (typeof(navigator) != 'undefined' && (/Trident\/7\./).test(navigator.userAgent)) ?
-          {
-            height: "100%",
-            width: "100%"
-          }
-          : {
+        style={prefixer({
             minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
-          }
+          })
         }
       >
         <nav
-          style={{
+          style={prefixer({
             fontSize: 15,
             textTransform: "uppercase",
             position: "fixed",
@@ -81,13 +78,13 @@ module.exports = React.createClass({
             right: 0,
             color: "#fff",
             fontWeight: 500,
-          }}
+          })}
         >
           <Breakpoint minWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0 */}
-            <a href={`${urlPrefix}/#users`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Käyttäjille</a>
-            <Link to={`${urlPrefix}/developers/`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kehittäjille</Link>
-            <a href={`${urlPrefix}/#municipalities`} style={{margin: rhythm(0.5), color: "#fff", textDecoration: "none"}}>Kunnille</a>
+            <a href={`${urlPrefix}/#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Käyttäjille</a>
+            <Link to={`${urlPrefix}/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kehittäjille</Link>
+            <a href={`${urlPrefix}/#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kunnille</a>
             {/*<span style={{margin: rhythm(0.5)}}>|</span>
             <span style={{margin: rhythm(0.5)}}>FI</span>
             <span style={{margin: rhythm(0.5)}}>SV</span>
@@ -119,38 +116,39 @@ module.exports = React.createClass({
         </div>
         {this.props.page.path == `${urlPrefix}/` ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
-          style={{
+          style={prefixer({
             maxWidth: 950,
             width: "100%",
             padding: `${rhythm(1)} ${rhythm(1/2)}`,
             flex: "1",
-          }}
+          })}
         >
           <RouteHandler typography={typography} {...this.props}/>
         </Container>
         <div
-          style={{
+          style={prefixer({
             width: "100%",
             background: "#333",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center"
-          }}
+          })}
         >
-          <div style={{
+          <div style={prefixer({
             width: 950,
-            maxWidth: "100vw",
+            maxWidth: "80vw",
+            magin: "0 auto",
             borderBottom: "solid 1px #5c5c5c",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
-          }}>
-          <img src={`${urlPrefix}/hsl-logo.png`}  style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
-          <img src={`${urlPrefix}/livi-logo.png`} style={{margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"}}/>
+          })}>
+          <img src={`${urlPrefix}/hsl-logo.png`}  style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
+          <img src={`${urlPrefix}/livi-logo.png`} style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
           </div>
-          <div style={{margin: "1em", color: "white", fontSize: 14}}>
+          <div style={{padding: "1em", color: "white", fontSize: 14}}>
             © Digitransit 2015
           </div>
         </div>

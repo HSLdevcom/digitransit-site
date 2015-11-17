@@ -2,12 +2,13 @@ import React from 'react';
 import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid';
 import { RouteHandler, Link, State } from 'react-router';
 import { rhythm, fontSizeToPx } from 'utils/typography';
+const prefixer = require('react-style-normalizer');
 
 
 const getImage = (image, swapped, small) => {
   return (<img
     src={image}
-    style={{
+    style={prefixer({
       maxWidth: "80vw",
       width: 360,
       maxHeight: 360,
@@ -16,7 +17,7 @@ const getImage = (image, swapped, small) => {
       marginTop: "1em",
       marginBottom: "1em",
       order: small || swapped ? -1 : 2,
-    }}
+    })}
   />);
 };
 
@@ -41,14 +42,14 @@ export class FrontPage extends React.Component {
           </h1>
         </div>
         <div
-          style={{
+          style={prefixer({
             position: "relative",
             background: "#eef1f3",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center"
-          }}
+          })}
         >
           <img src="hsl-logo.png"  style={{margin: "2em 2em"}}/>
           <img src="livi-logo.png" style={{margin: "2em 2em"}}/>
@@ -67,13 +68,13 @@ class FrontPagePanel extends React.Component {
           <div>
             <a
               href={link.url}
-              style={{
+              style={prefixer({
                 textDecoration: "none",
                 marginTop: rhythm(0.5),
                 fontSize: 15,
                 fontWeight: 500,
                 color: "#fff",
-              }}
+              })}
             >
               {link.title}&nbsp;»
             </a>
@@ -85,13 +86,13 @@ class FrontPagePanel extends React.Component {
           <div>
             <Link
               to={link.url}
-              style={{
+              style={prefixer({
                 textDecoration: "none",
                 marginTop: rhythm(0.5),
                 fontSize: 15,
                 fontWeight: 500,
                 color: "#fff",
-              }}
+              })}
             >
               {link.title}&nbsp;»
             </Link>
@@ -106,7 +107,7 @@ class FrontPagePanel extends React.Component {
         <Breakpoint minWidth={1020} widthMethod="componentWidth">
           <div
             id={this.props.id}
-            style={{
+            style={prefixer({
               position: "relative",
               display: "flex",
               flexWrap: "wrap",
@@ -118,7 +119,7 @@ class FrontPagePanel extends React.Component {
               minHeight: 500,
               paddingTop: "1.5em",
               paddingBottom: "1.5em",
-            }}
+            })}
           >
             {getImage(this.props.image, this.props.swapped, false)}
             <div
@@ -144,7 +145,7 @@ class FrontPagePanel extends React.Component {
         </Breakpoint>
         <Breakpoint maxWidth={1020} widthMethod="componentWidth">
           <div
-            style={{
+            style={prefixer({
               position: "relative",
               display: "flex",
               flexWrap: "wrap",
@@ -157,7 +158,7 @@ class FrontPagePanel extends React.Component {
               fontWeight: 100,
               paddingTop: "1.5em",
               paddingBottom: "1.5em",
-            }}
+            })}
           >
             <div
               style={{

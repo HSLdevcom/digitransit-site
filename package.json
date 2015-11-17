@@ -20,6 +20,7 @@
     "react-motion": "^0.1.0",
     "react-responsive-grid": "^0.2.0",
     "react-router": "^0.13.3",
+    "react-style-normalizer": "1.2.8",
     "typography": "^0.3.6",
     "underscore.string": "^3.1.1"
   }
