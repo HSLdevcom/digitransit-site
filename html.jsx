@@ -52,7 +52,8 @@ module.exports = React.createClass({
           #header-text {
             position: absolute;
             color: #fff;
-            font-weight: 100;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
             text-align: left;
             left: 13%;
             top: 415px;
