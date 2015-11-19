@@ -117,6 +117,23 @@ module.exports = React.createClass({
         <body className="landing-page">
           <div id="react-mount" dangerouslySetInnerHTML={{__html: this.props.body}} />
           <script src={`${urlPrefix}/bundle.js`}/>
+          <script type="text/javascript" dangerouslySetInnerHTML={{__html: `
+            var _paq = _paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="//piwik.digitransit.fi/";
+              _paq.push(['setTrackerUrl', u+'piwik.php']);
+              _paq.push(['setSiteId', 1]);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+            })();
+          `}}/>
+          <noscript>
+            <p>
+              <img src="//piwik.digitransit.fi/piwik.php?idsite=1" style={{border: 0}} alt="" />
+            </p>
+          </noscript>
         </body>
       </html>
     );
