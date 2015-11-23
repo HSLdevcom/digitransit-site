@@ -29,6 +29,13 @@ module.exports = React.createClass({
         <head>
           <meta charSet="utf-8"/>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+          <meta property="og:url" content="http://digitransit.fi/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta property="og:site_name" content="Digitransit" />
+          <meta property="og:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
+          <meta property="og:image" content="http://digitransit.fi/header.mobile.jpg" />
+          <meta property="og:locale" content="fi_FI" />
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat"/>
