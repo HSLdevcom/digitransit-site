@@ -3,7 +3,6 @@ import { RouteHandler, Link, State } from 'react-router';
 import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid';
 import colorPairsPicker from 'color-pairs-picker';
 import chroma from 'chroma-js';
-import includes from 'underscore.string/include';
 import { link } from 'gatsby-helpers';
 
 import typography from 'utils/typography';
@@ -23,13 +22,8 @@ module.exports = React.createClass({
 
 
   render: function() {
-    var routes, urlPrefix;
-    if (__GH_PAGES__) {
-      urlPrefix = this.props.config.ghPagesURLPrefix;
-    } else {
-      urlPrefix = "";
-    }
-    routes = this.getRoutes().map(function(route) {
+    var urlPrefix = "";
+    var routes = this.getRoutes().map(function(route) {
       return route.path;
     });
 
