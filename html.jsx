@@ -41,6 +41,7 @@ module.exports = React.createClass({
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
           <meta name="twitter:image" content="http://digitransit.fi/share-image.png" />
+          <meta property="fb:admins" content="100006467997249" />
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
           <meta name="description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
