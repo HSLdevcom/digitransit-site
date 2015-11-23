@@ -34,7 +34,7 @@ module.exports = React.createClass({
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="Digitransit" />
           <meta property="og:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
-          <meta property="og:image" content="http://digitransit.fi/header.mobile.jpg" />
+          <meta property="og:image" content="http://digitransit.fi/share-image.png" />
           <meta property="og:locale" content="fi_FI" />
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
