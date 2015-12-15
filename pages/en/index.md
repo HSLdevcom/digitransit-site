@@ -8,7 +8,7 @@ panels:
         url: http://matka.hsl.fi
       - title: Go to the new national Matka.fi service (early test version)
         url: http://beta.digitransit.fi/
-    image: "users.svg"
+    image: "../users.svg"
     id: users
     background: "#8c54a2"
     swapped: true
@@ -20,7 +20,7 @@ panels:
       - title: Read more about the interfaces
         url: /developers/components/
       # - title: Quick start guide
-    image: "developers.svg"
+    image: "../developers.svg"
     id: developers
     background: "#ff8a3c"
   - title: For municipalities
@@ -28,13 +28,13 @@ panels:
     links: []
       # - title: Digitransit palvelukuvaus
       # - title: Liity palveluun
-    image: "municipalities.svg"
+    image: "../municipalities.svg"
     id: municipalities
     background: "#64be47"
     swapped: true
 ---
 
-<div style="text-align: left;">
+<div style="text-align: center;">
 
 The upcoming **Reittiopas.fi** and **Matka.fi** by HSL and the Finnish Transport Agency are in development. We need your help! Become a test user or contribute patches. The code is open-source.
 
