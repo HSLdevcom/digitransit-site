@@ -32,7 +32,7 @@ panels:
     background: "#64be47"
     swapped: true
 ---
-
+<h2 style="text-align: center;">Aikataulu</h2>
 <div style="text-align: center;">
 
 HSL:n **Reittiopas.fi** ja Liikenneviraston **Matka.fi** uudistuvat. Apuasi kaivataan kehitystyössä.  
