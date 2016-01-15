@@ -1,5 +1,4 @@
 ---
-title: Aikataulut
 panels:
   - title: Käyttäjille
     body: Sinä olet keskipisteessä aina. Uuden ajan matkaopas paikantaa sijaintisi ja kertoo lähimmät linjat, pysäkit ja reitit täysin reaaliaikaisesti. Reaaliaikaisesti tarkoittaa, että näet bussin tai junan sijainnin ja pysäkkiaikataulut totuudenmukaisina. Turha odottelu on historiaa. Palvelu suodattaa tarpeettoman tiedon ja kertoo, mitä ympärilläsi tapahtuu ja miten pääset sujuvimmin perille.Tulevaisuudessa reaaliaikainen palvelu kattaa koko maan.
@@ -33,7 +32,7 @@ panels:
     background: "#64be47"
     swapped: true
 ---
-
+<h2 style="text-align: center;">Aikataulu</h2>
 <div style="text-align: center;">
 
 HSL:n **Reittiopas.fi** ja Liikenneviraston **Matka.fi** uudistuvat. Apuasi kaivataan kehitystyössä.  
