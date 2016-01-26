@@ -47,6 +47,7 @@ module.exports = React.createClass({
           <meta name="description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat"/>
           <link rel="shortcut icon" href={this.props.favicon}/>
+          <TypographyStyle/>
           <style dangerouslySetInnerHTML={{__html: `
           #header-image {
             background-image: url("${urlPrefix}/header.jpg");
@@ -72,6 +73,28 @@ module.exports = React.createClass({
             left: 13%;
             top: 415px;
             max-width: 430px;
+          }
+
+          th, td {
+            border: 1px solid gray;
+            padding: 3px;
+          }
+
+          blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 1em;
+            padding: 0.5em 10px;
+          }
+          blockquote:before {
+            color: #ccc;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+          }
+          blockquote p {
+            margin: 0px;
           }
 
           @media
@@ -126,7 +149,6 @@ module.exports = React.createClass({
           }
           `}}/>
           <GoogleFont/>
-          <TypographyStyle/>
         </head>
         <body className="landing-page">
           <div id="react-mount" dangerouslySetInnerHTML={{__html: this.props.body}} />
