@@ -96,6 +96,9 @@ module.exports = React.createClass({
           blockquote p {
             margin: 0px;
           }
+          pre {
+            background: #f9f9f9;
+          }
 
           @media
           (-webkit-min-device-pixel-ratio: 2),
