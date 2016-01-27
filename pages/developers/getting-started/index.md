@@ -8,7 +8,6 @@ First you should decide "what do you want to get started with?". You have multip
 1. Test drive Digitransit-ui
 2. Use Digitransit APIs in your application
 3. Make modifications to Digitransit-ui web app
-4. Running other APIs on your local machine
 
 ## Test drive Digitransit-ui
 This is easiest way to get started. Read [web ui documentation](../web-ui/) and how to start start Digitransit-ui in Docker.
@@ -31,6 +30,3 @@ This will help you get started. Articles page might contain something useful:
 ## Make modifications to Digitransit-ui web app
 Start by reading installation instructions from:
 - https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Installation.md
-
-## Running other APIs on your local machine
-Check api documentation for more details.
