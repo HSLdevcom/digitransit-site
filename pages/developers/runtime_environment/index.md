@@ -14,7 +14,7 @@ https://github.com/HSLdevcom/digitransit-deploy/blob/master/roles/run/templates/
 
 Gray circle in the image above marks what lives inside compose. HAProxy works as a load balancer for the compose.
 
-Why do we need HAProxy in front of the compose? We actually run multiple composes in production. One called "Active" on "Passive".
+Why do we need HAProxy in front of the compose? We actually run multiple composes in production. One called "Active" other one "Passive".
 
 ![Compose load balancing](./compose_load_balancing.png)
 

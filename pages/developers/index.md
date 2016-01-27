@@ -20,10 +20,3 @@ Our issue tracking and roadmap is handled in [https://digitransit.atlassian.net]
 ## Demos
 * [Finland - Helsinki city region demo](http://matka.hsl.fi/)
 * [Finland - National demo](http://digitransit.fi/digitransit-ui/)
-
-## Services
-| Service       | Description                       | Technology      | Dockerized | Documented |
-|---------------|-----------------------------------|-----------------|------------|------------|
-| API - Routing | Routing and timetable information | OpenTripPlanner | no         | no         |
-|               |                                   |                 |            |            |
-|               |                                   |                 |            |            |

@@ -12,6 +12,7 @@ Routing API enables developers to query routes and timetable related information
 OpenTripPlanner APIs provide access to static and realtime information. Routing and timetable data is based on static GTFS and it is enriched by realtime information for those departures that have realtime information available. This means that results returned by OpenTripPlanner always contain realtime information should it be available.
 
 ## Service architecture
+TODO
 ![Architecture](./architecture.jpg)
 
 ## API Documentation
