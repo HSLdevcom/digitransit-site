@@ -5,16 +5,16 @@ order: 5
 
 ## Digitransit hosted services
 
-| Service                                    | Description                     | API base url                                |
-|--------------------------------------------|---------------------------------|---------------------------------------------|
-| [Alerts HSL - API ](../alerts-hsl-api/)    | HSL disruption info             | http://{environment}/hsl-alert/
-| [Geocoding - Data ](../geocoding-data/)    | Geocoding data                  |
-| [Geocoding - API ](../geocoding-api/)      | Geocoding API                   | http://{environment}/pelias/
-| [Routing - Data](../routing-data/)         | Routing and timetable Data      |
-| [Routing - API](../routing-api/)           | Routing and timetable API       | http://{environment}/otp/
-| [Map - Data](../map-data/)                 | Map data                        |
-| [Map - API](../map-api/)                   | Map raster and vector tiles API | TODO
-| [Realtime HSL - API](../realtime-hsl-api/) | Realtime HSL API                | http://{environment}/navigator-server/, ws://213.138.147.225:1883/
+| Service                                    | Description                     |
+|--------------------------------------------|---------------------------------|
+| [Alerts HSL - API ](../alerts-hsl-api/)    | HSL disruption info            
+| [Geocoding - Data ](../geocoding-data/)    | Geocoding data               
+| [Geocoding - API ](../geocoding-api/)      | Geocoding API
+| [Routing - Data](../routing-data/)         | Routing and timetable Data
+| [Routing - API](../routing-api/)           | Routing and timetable API
+| [Map - Data](../map-data/)                 | Map data
+| [Map - API](../map-api/)                   | Map raster and vector tiles API
+| [Realtime HSL - API](../realtime-hsl-api/) | Realtime HSL API
 
 ## 3rd party hosted services
 
