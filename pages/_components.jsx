@@ -37,9 +37,7 @@ export class FrontPage extends React.Component {
           }}
         >
           <img id="header-logo" src="logo.png"/>
-          <h1 id="header-text">
-            Täällä tehdään uuden ajan matkaopasta. Jätä jälkesi.
-          </h1>
+          <h1 id="header-text"> {this.props.page.data.headerText} </h1>
         </div>
         <div
           style={prefixer({
