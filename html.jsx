@@ -12,6 +12,7 @@ module.exports = React.createClass({
   },
 
   render: function() {
+
     var title, urlPrefix;
     title = DocumentTitle.rewind();
     if (this.props.title) {
@@ -22,7 +23,6 @@ module.exports = React.createClass({
     } else {
       urlPrefix = "";
     }
-
 
     return (
       <html lang="en">
