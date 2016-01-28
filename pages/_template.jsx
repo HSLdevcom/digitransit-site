@@ -37,8 +37,8 @@ module.exports = React.createClass({
         left: 0,
         textAlign: "center"
       })}>
-        <span style={{margin: rhythm(0.5)}}><a href="/" hreflang="fi">FI</a></span>
-        <span style={{margin: rhythm(0.5)}}><a href="/en/" hreflang="en">EN</a></span><br/>
+        <span style={{margin: rhythm(0.5)}}><a href="/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hreflang="fi">FI</a></span>
+        <span style={{margin: rhythm(0.5)}}><a href="/en/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hreflang="en">EN</a></span><br/>
         <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].users}</a><br/>
         <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].developers}</Link><br/>
         <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].muncipalities}</a><br/>
@@ -85,8 +85,8 @@ module.exports = React.createClass({
             <Link to={`${urlPrefix}/en/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].developers}</Link>
             <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].muncipalities}</a>
             <span style={{margin: rhythm(0.5)}}>|</span>
-            <span style={{margin: rhythm(0.5)}}><a href="/" hreflang="fi">FI</a></span>
-            <span style={{margin: rhythm(0.5)}}><a href="/en/" hreflang="en">EN</a></span>
+            <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/" hreflang="fi">FI</a></span>
+            <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/en/" hreflang="en">EN</a></span>
           </Breakpoint>
           <Breakpoint maxWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0 */}
