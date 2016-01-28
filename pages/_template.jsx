@@ -25,7 +25,6 @@ module.exports = React.createClass({
     var locale = this.props.page.path.substring(1,3) || 'fi' //top level directory specifies language
     var localePrefix =(locale==='fi' ? '/' : '/en/')
 
-    console.log("this.props.config", this.props.config)
     const mobileMenu =
       <div style={prefixer({
         position: "fixed",
