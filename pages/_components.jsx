@@ -23,6 +23,7 @@ const getImage = (image, swapped, small) => {
 
 export class FrontPage extends React.Component {
   render() {
+
     const panels = this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)
 
     return(
@@ -36,7 +37,7 @@ export class FrontPage extends React.Component {
             zIndex: 2
           }}
         >
-          <img id="header-logo" src="logo.png"/>
+          <img id="header-logo" src="/logo.png"/>
           <h1 id="header-text"> {this.props.page.data.headerText} </h1>
         </div>
         <div
@@ -49,8 +50,8 @@ export class FrontPage extends React.Component {
             alignItems: "center"
           })}
         >
-          <img src="hsl-logo.png"  style={{margin: "2em 2em"}}/>
-          <img src="livi-logo.png" style={{margin: "2em 2em"}}/>
+          <img src="/hsl-logo.png"  style={{margin: "2em 2em"}}/>
+          <img src="/livi-logo.png" style={{margin: "2em 2em"}}/>
         </div>
         {panels}
       </div>

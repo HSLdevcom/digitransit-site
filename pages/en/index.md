@@ -1,5 +1,6 @@
 ---
-title: Timetables
+headerText: "The next generation journey planner in the making. Contribute and leave your mark!"
+isFront: true
 panels:
   - title: For users
     body: You are the focus, always. The next generation journey planner pinpoints your location and shows nearby routes, stops and timetables, in real time! Real time means that you will see the location of buses and trains, as well as the accurate times of arrival at the stops. No more time wasted waiting. The service filters unnecessary information and tells what is going on around you and how to get to your destination more conveniently. In the future, the real time service will cover the whole country.
@@ -8,7 +9,7 @@ panels:
         url: http://matka.hsl.fi
       - title: Go to the new national Matka.fi service (early test version)
         url: http://beta.digitransit.fi/
-    image: "../users.svg"
+    image: "/users.svg"
     id: users
     background: "#8c54a2"
     swapped: true
@@ -16,11 +17,11 @@ panels:
     body: Join us in developing the next generation journey planner that will be used by hundreds of thousands of people every day. Probably by you, too. You can develop the service as a whole or improve just one part of it. Make use of the code, create something new, and show it to others! You’ll be using state-of-the-art browser technology and will soon become familiar with the development environment. Roll up your sleeves and download Digitransit. The code is open-source.
     links:
       - title: Read the platform architecture description
-        url: /developers/architecture/
+        url: /en/developers/architecture/
       - title: Read more about the interfaces
-        url: /developers/components/
+        url: /en/developers/components/
       # - title: Quick start guide
-    image: "../developers.svg"
+    image: "/developers.svg"
     id: developers
     background: "#ff8a3c"
   - title: For municipalities
@@ -28,7 +29,7 @@ panels:
     links: []
       # - title: Digitransit palvelukuvaus
       # - title: Liity palveluun
-    image: "../municipalities.svg"
+    image: "/municipalities.svg"
     id: municipalities
     background: "#64be47"
     swapped: true

@@ -20,13 +20,12 @@ module.exports = React.createClass({
     })
   },
 
-
   render: function() {
     var urlPrefix = "";
-    var routes = this.getRoutes().map(function(route) {
-      return route.path;
-    });
+    var locale = this.props.page.path.substring(1,3) || 'fi' //top level directory specifies language
+    var localePrefix =(locale==='fi' ? '/' : '/en/')
 
+    console.log("this.props.config", this.props.config)
     const mobileMenu =
       <div style={prefixer({
         position: "fixed",
@@ -38,12 +37,11 @@ module.exports = React.createClass({
         left: 0,
         textAlign: "center"
       })}>
-        {/*<span style={{margin: rhythm(0.5)}}>FI</span>
-        <span style={{margin: rhythm(0.5)}}>SV</span>
-        <span style={{margin: rhythm(0.5)}}>EN</span><br/>*/}
-        <a href={`${urlPrefix}/#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Käyttäjille</a><br/>
-        <Link to={`${urlPrefix}/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kehittäjille</Link><br/>
-        <a href={`${urlPrefix}/#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kunnille</a><br/>
+        <span style={{margin: rhythm(0.5)}}><a href="/" hreflang="fi">FI</a></span>
+        <span style={{margin: rhythm(0.5)}}><a href="/en/" hreflang="en">EN</a></span><br/>
+        <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].users}</a><br/>
+        <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].developers}</Link><br/>
+        <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].muncipalities}</a><br/>
 
       </div>
 
@@ -80,14 +78,15 @@ module.exports = React.createClass({
           })}
         >
           <Breakpoint minWidth={750}>
-            {/* Convert to Link after upgrading to ract-router 1.0 */}
-            <a href={`${urlPrefix}/#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Käyttäjille</a>
-            <Link to={`${urlPrefix}/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kehittäjille</Link>
-            <a href={`${urlPrefix}/#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>Kunnille</a>
-            {/*<span style={{margin: rhythm(0.5)}}>|</span>
-            <span style={{margin: rhythm(0.5)}}>FI</span>
-            <span style={{margin: rhythm(0.5)}}>SV</span>
-            <span style={{margin: rhythm(0.5)}}>EN</span>*/}
+            {/* Convert to Link after upgrading to ract-router 1.0
+              users and muncipalities are inter page links, they are only shown when on front page
+            */}
+            <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].users}</a>
+            <Link to={`${urlPrefix}/en/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].developers}</Link>
+            <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].muncipalities}</a>
+            <span style={{margin: rhythm(0.5)}}>|</span>
+            <span style={{margin: rhythm(0.5)}}><a href="/" hreflang="fi">FI</a></span>
+            <span style={{margin: rhythm(0.5)}}><a href="/en/" hreflang="en">EN</a></span>
           </Breakpoint>
           <Breakpoint maxWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0 */}
@@ -124,7 +123,7 @@ module.exports = React.createClass({
             </Link>
           </div>
         </div>
-        {this.props.page.path == `${urlPrefix}/` ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
+        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
           style={prefixer({
             maxWidth: 950,
@@ -155,8 +154,8 @@ module.exports = React.createClass({
             justifyContent: "center",
             alignItems: "center",
           })}>
-          <img src={`${urlPrefix}/hsl-logo.png`}  style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
-          <img src={`${urlPrefix}/livi-logo.png`} style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
+          <img src="/hsl-logo.png"  style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
+          <img src="/livi-logo.png" style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
           </div>
           <div style={{padding: "1em", color: "white", fontSize: 14}}>
             © Digitransit 2015

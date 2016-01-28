@@ -1,5 +1,6 @@
 ---
 headerText: Täällä tehdään uuden ajan matkaopasta. Jätä jälkesi.
+isFront: true
 panels:
   - title: Käyttäjille
     body: Sinä olet keskipisteessä aina. Uuden ajan matkaopas paikantaa sijaintisi ja kertoo lähimmät linjat, pysäkit ja reitit täysin reaaliaikaisesti. Reaaliaikaisesti tarkoittaa, että näet bussin tai junan sijainnin ja pysäkkiaikataulut totuudenmukaisina. Turha odottelu on historiaa. Palvelu suodattaa tarpeettoman tiedon ja kertoo, mitä ympärilläsi tapahtuu ja miten pääset sujuvimmin perille.Tulevaisuudessa reaaliaikainen palvelu kattaa koko maan.
@@ -8,7 +9,7 @@ panels:
         url: http://matka.hsl.fi
       - title: Tutustu Liikenneviraston Matka.fi-palvelun koeversioon
         url: http://beta.digitransit.fi/
-    image: "users.svg"
+    image: "/users.svg"
     id: users
     background: "#8c54a2"
     swapped: true
@@ -16,11 +17,11 @@ panels:
     body: Tule kehittämään uuden ajan matkaopasta, jonka julkaisuversiota tulevat käyttämään sadat tuhannet ihmiset joka päivä. Todennäköisesti sinäkin. Voit kehittää koko palvelua tai parantaa vain yhtä sen osaa. Ota koodi käyttöösi, keksi uutta, näytä se muille! Käytössäsi on uusin selainteknologia ja kehitysympäristö tulee nopeasti tutuksi. Kääri hihat ja lataa Digitransit koneellesi. Lähdekoodi on avoin.
     links:
       - title: Lue alustan arkkitehtuurikuvaus
-        url: /developers/architecture/
+        url: /en/developers/architecture/
       - title: Tutustu rajapintoihin
-        url: /developers/components/
+        url: /en/developers/components/
       # - title: Quick start guide
-    image: "developers.svg"
+    image: "/developers.svg"
     id: developers
     background: "#ff8a3c"
   - title: Kunnille
@@ -28,7 +29,7 @@ panels:
     links: []
       # - title: Digitransit palvelukuvaus
       # - title: Liity palveluun
-    image: "municipalities.svg"
+    image: "/municipalities.svg"
     id: municipalities
     background: "#64be47"
     swapped: true
