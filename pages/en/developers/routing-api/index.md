@@ -44,7 +44,7 @@ You can get access to GraphQL schema by running
 
 ### Example queries
 
-1. Fetch stop by id:
+1. Query stop by id:
 <pre>
 {
   stop(id: "HSL:1173210") {
@@ -56,6 +56,38 @@ You can get access to GraphQL schema by running
 }
 </pre>
 
+2. Query stop by id and information about routes that go through it
+<pre>
+{
+  stop(id: "HSL:1173112") {
+    name
+    lat
+    lon
+    patterns {
+      id
+      name
+      route {
+        gtfsId
+        shortName
+        longName
+      }
+      directionId
+    }
+  }
+}
+</pre>
+
+3. Query stop names for bus number 50 for one direction
+<pre>
+{
+  pattern(id:"HSL:1050:1:01") {
+    name
+    stops{
+      name  
+    }
+  }
+}
+</pre>
 ## Service dependencies
 | Asset               |  Url                                                        |
 |---------------------|-------------------------------------------------------------|
