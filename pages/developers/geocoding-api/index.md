@@ -1,5 +1,0 @@
----
-title: Geocoding - API
----
-
-TODO
