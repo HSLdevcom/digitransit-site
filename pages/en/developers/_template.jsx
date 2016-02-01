@@ -22,11 +22,20 @@ module.exports = React.createClass({
       return {
         title: child.data.title,
         level: child.path.split('/').length-3,
-        path: child.path
+        path: child.path,
+        order: child.data.order
       };
     });
     childPages = sortBy(childPages, function(child) {
-      return child.path;
+      // Find out how "deep" this link is
+      var pathLevel = child.path.match(/\//g).length
+      if (child.order) {
+        // order is set in child, use it. Idea is to put these childs "on top"
+        return pathLevel * child.order
+      } else {
+        // order not set in child, make these children to go beneath "ordered childs" and sorts iteration order (most likely alphabetically)
+        return pathLevel * 10
+      }
     });
     docOptions = childPages.map(function(child) {
       return React.createElement("option", {

@@ -19,13 +19,13 @@ panels:
       - title: Read the platform architecture description
         url: /en/developers/architecture/
       - title: Read more about the interfaces
-        url: /en/developers/components/
+        url: /en/developers/service-catalogue/
       # - title: Quick start guide
     image: "/developers.svg"
     id: developers
     background: "#ff8a3c"
   - title: For municipalities
-    body: Be on the map and make your home municipality easier to move around. Join us in developing the next generation journey planner and get national visibility for your home municipality. Digitransit is an easy-to-access service platform provided by HSL and the Finnish Transport Agency. Thanks to open-source, all interested parties can participate in the development of the service. This is likely to decrease error rate, improve security and provide data that is always up-to-date. Make sure that the route and timetable information for your municipality are available for the service platform. 
+    body: Be on the map and make your home municipality easier to move around. Join us in developing the next generation journey planner and get national visibility for your home municipality. Digitransit is an easy-to-access service platform provided by HSL and the Finnish Transport Agency. Thanks to open-source, all interested parties can participate in the development of the service. This is likely to decrease error rate, improve security and provide data that is always up-to-date. Make sure that the route and timetable information for your municipality are available for the service platform.
     links: []
       # - title: Digitransit palvelukuvaus
       # - title: Liity palveluun
