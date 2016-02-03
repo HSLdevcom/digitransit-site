@@ -20,10 +20,23 @@ module.exports = React.createClass({
     })
   },
 
+  componentDidMount: function () {
+    if (this.props.page.data.redirect) {
+      window.location = this.props.page.data.redirect;
+    }
+  },
+
   render: function() {
     var urlPrefix = "";
-    var locale = this.props.page.path.substring(1,3) || 'fi' //top level directory specifies language
+    var potentialLocale = this.props.page.path.substring(0, 4) //top level directory specifies language
+    var locale = 'fi'
+    if (potentialLocale === '/en/') {
+       locale = 'en'
+    } else if (potentialLocale === '/dev') {
+      locale = 'en'
+    }
     var localePrefix =(locale==='fi' ? '/' : '/en/')
+    var i18n = this.props.config.i18n[locale]
 
     const mobileMenu =
       <div style={prefixer({
@@ -38,9 +51,9 @@ module.exports = React.createClass({
       })}>
         <span style={{margin: rhythm(0.5)}}><a href="/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hreflang="fi">FI</a></span>
         <span style={{margin: rhythm(0.5)}}><a href="/en/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hreflang="en">EN</a></span><br/>
-        <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].users}</a><br/>
-        <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].developers}</Link><br/>
-        <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].muncipalities}</a><br/>
+        <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.users}</a><br/>
+        <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link><br/>
+        <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.muncipalities}</a><br/>
 
       </div>
 
@@ -80,9 +93,9 @@ module.exports = React.createClass({
             {/* Convert to Link after upgrading to ract-router 1.0
               users and muncipalities are inter page links, they are only shown when on front page
             */}
-            <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].users}</a>
-            <Link to={`${urlPrefix}/en/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].developers}</Link>
-            <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{this.props.config.l18n[locale].muncipalities}</a>
+            <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.users}</a>
+            <Link to={`${urlPrefix}/en/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link>
+            <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.muncipalities}</a>
             <span style={{margin: rhythm(0.5)}}>|</span>
             <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/" hreflang="fi">FI</a></span>
             <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/en/" hreflang="en">EN</a></span>
