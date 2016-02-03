@@ -22,7 +22,13 @@ module.exports = React.createClass({
 
   render: function() {
     var urlPrefix = "";
-    var locale = this.props.page.path.substring(1,3) || 'fi' //top level directory specifies language
+    var potentialLocale = this.props.page.path.substring(0, 4) //top level directory specifies language
+    var locale = 'fi'
+    if (potentialLocale === '/en/') {
+       locale = 'en'
+    } else if (potentialLocale === '/dev') {
+      locale = 'en'
+    }
     var localePrefix =(locale==='fi' ? '/' : '/en/')
     var l18n = this.props.config.l18n[locale]
 
