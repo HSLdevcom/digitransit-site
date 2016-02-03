@@ -20,6 +20,12 @@ module.exports = React.createClass({
     })
   },
 
+  componentDidMount: function () {
+    if (this.props.page.data.redirect) {
+      window.location = this.props.page.data.redirect;
+    }
+  },
+
   render: function() {
     var urlPrefix = "";
     var potentialLocale = this.props.page.path.substring(0, 4) //top level directory specifies language
