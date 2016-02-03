@@ -19,7 +19,7 @@ panels:
       - title: Lue alustan arkkitehtuurikuvaus
         url: /en/developers/architecture/
       - title: Tutustu rajapintoihin
-        url: /en/developers/components/
+        url: /en/developers/service-catalogue/
       # - title: Quick start guide
     image: "/developers.svg"
     id: developers
