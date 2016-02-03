@@ -1,12 +1,12 @@
 siteTitle='Digitransit'
 headerColor='#39b6db'
 ghPagesURLPrefix='/'
-[[l8n]]
-  [l18n.fi]
+[[translations]]
+  [i18n.fi]
     users='Käyttäjille'
     developers='Kehittäjille'
     muncipalities='Kunnille'
-  [l18n.en]
+  [i18n.en]
     users='for Users'
     developers='for Developers'
     muncipalities='for Muncipalities'
