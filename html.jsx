@@ -34,13 +34,15 @@ module.exports = React.createClass({
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="Digitransit" />
           <meta property="og:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
-          <meta property="og:image" content="http://digitransit.fi/share-image.png" />
+          <meta property="og:image" content={
+            this.props.page.data.image ? `http://digitransit.fi/${this.props.page.file.dirname}/${this.props.page.data.image}` : "http://digitransit.fi/share-image.png"}/>
           <meta property="og:locale" content="fi_FI" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@digitransit" />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
-          <meta name="twitter:image" content="http://digitransit.fi/share-image.png" />
+          <meta name="twitter:image" content={
+            this.props.page.data.image ? `http://digitransit.fi/${this.props.page.file.dirname}/${this.props.page.data.image}` : "http://digitransit.fi/share-image.png"}/>
           <meta property="fb:admins" content="100006467997249" />
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
