@@ -49,13 +49,13 @@ August 2015
 <div style="max-width: 200px; min-width: 150px">
 
 #### Beta-version
-February 2016
+Spring 2016
 
 </div>
 <div style="max-width: 200px; min-width: 150px">
 
 #### Production
-August 2016
+Autumn 2016
 
 </div>
 </div>
