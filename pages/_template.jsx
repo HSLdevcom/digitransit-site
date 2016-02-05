@@ -6,7 +6,7 @@ import chroma from 'chroma-js';
 import { link } from 'gatsby-helpers';
 
 import typography from 'utils/typography';
-import { FrontPage } from './_components';
+import { FrontPageHeader, FrontPagePanels } from './_components';
 
 const { rhythm, fontSizeToPx } = typography;
 
@@ -135,7 +135,7 @@ module.exports = React.createClass({
             </Link>
           </div>
         </div>
-        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
+        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPageHeader {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
           style={prefixer({
             maxWidth: 950,
@@ -146,6 +146,7 @@ module.exports = React.createClass({
         >
           <RouteHandler typography={typography} {...this.props}/>
         </Container>
+        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPagePanels {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <div
           style={prefixer({
             width: "100%",

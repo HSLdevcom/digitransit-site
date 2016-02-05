@@ -21,11 +21,8 @@ const getImage = (image, swapped, small) => {
   />);
 };
 
-export class FrontPage extends React.Component {
+export class FrontPageHeader extends React.Component {
   render() {
-
-    const panels = this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)
-
     return(
       <div>
         <div
@@ -53,7 +50,16 @@ export class FrontPage extends React.Component {
           <img src="/hsl-logo.png"  style={{margin: "2em 2em"}}/>
           <img src="/livi-logo.png" style={{margin: "2em 2em"}}/>
         </div>
-        {panels}
+      </div>  
+    )
+  }
+}
+
+export class FrontPagePanels extends React.Component {
+  render() {
+    return(
+      <div>
+        {this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)}
       </div>
     )
   }
