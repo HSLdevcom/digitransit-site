@@ -29,7 +29,8 @@ module.exports = React.createClass({
         <head>
           <meta charSet="utf-8"/>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-          <meta property="og:url" content="http://digitransit.fi/" />
+          <meta property="og:url" content={
+            this.props.page && this.props.page.path ? `http://digitransit.fi${this.props.page.path}` : "http://digitransit.fi/" }/>
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="Digitransit" />
