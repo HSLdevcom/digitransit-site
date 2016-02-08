@@ -1,6 +1,6 @@
 ---
-title: Uutta Digitransitissa
-date: "4.2.2016"
+title: Uusi Digitransit-julkaisu – "Runeberg"
+date: "8.2.2016"
 image: "release-runeberg-itinerary-page.png"
 ---
 
@@ -12,9 +12,9 @@ Lisäksi peruutukset näkyvät nyt pysäkkien tiedoissa, ja raideliikenteellä o
 
 ![Peruttuja junia](release-runeberg-canceled.png "Peruttuja junavuoroja")
 
-![Palautteen antaminen](release-runeberg-feedback.png "Palautteen antaminen")
+![Ratikoiden häntiä](release-runeberg-tails.png "Ratikoiden häntiä")
 
-![Uusi reitin sivu](release-runeberg-tails.png "Ratikoiden häntiä")
+![Palautteen antaminen](release-runeberg-feedback.png "Palautteen antaminen")
 
 iOS-käyttäjät voivat huomata listojen selauksen toimivan nyt myös sujuvammin; selaus ei enää pysähdy kuin seinään sormen noustessa näytöltä.
 
