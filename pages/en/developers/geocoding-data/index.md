@@ -7,7 +7,7 @@ Docker geocoding data container for Pelias
 ## Service architecture
 Service is basically a script that fetches data from multiple data sources, converts part of this data into other format, and loads it into ElasticSearch using Pelias tools. Therefore, produced service is a ElasticSearch docker image containing Geocoding data that can be used with Pelias Geocoder.
 
-### Dataflow
+### Dataflow (what happens when docker image is built)
 1. Download and extract shapefiles from Quattroshapes
 
 2. Download Finnish municipalities NLS and convert them to Quattroshapes format
@@ -45,15 +45,14 @@ Start by reading (Note that it might not be up-to-date):
 - docker run -d -p 9200:9200 --name pelias-data-container hsldevcom/pelias-data-container
 
 ### Exploring data
+For Exploring ElasticSearch data you can open browser (when container is running):
+> http://{DOCKER HOST}:9200/_plugin/head/
+
+This url contains navigator that can be user to make queries to ElasticSearch. Select
+"Browser"-tab and write queries to "name.default" field.
+
 For Gis data exploration you can use e.g. QGis
 > http://www.qgis.org/en/site/
-
-For Exploring ElasticSearch data you can do this:
-- run pelias-data-container (look above)
-- Check what is your docker ip address by executing "docker-machine config default". Check IP, it might be something like 192.168.99.100.
-- Access with internet browser:
-> http://{IP}:9200/_plugin/head/
-- In browser select "Browser"-tab and write queries to "name.default" field
 
 ## Datasources
 
@@ -114,10 +113,15 @@ Postal address information From Statistics Finland is used to improve Quattrosha
 
 ## Key service delivery activities
 1. Keep up with Pelias development on GitHub
+
 > https://github.com/pelias/pelias
+
 2. Keep up with Mapzen Search (which is essentially same as Pelias)
+
 > https://mapzen.com/projects/search/
+
 3. Keep up with Pelias importer projects
+
 > https://github.com/pelias/quattroshapes
 
 > https://github.com/pelias/openaddresses
@@ -127,14 +131,19 @@ Postal address information From Statistics Finland is used to improve Quattrosha
 > https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
 
 4. Keep up with Pelias-cli development
+
 > https://github.com/pelias/cli
 
 5. Keep up with Who's on First development
+
 > https://whosonfirst.mapzen.com/
 
 > https://github.com/whosonfirst/whosonfirst-data/
 
 6. Keep up with Geospatial Data Abstraction Library development
+
 > http://www.gdal.org/
+
 7. Keep up with ElasticSearch docker image and it's changes
+
 > https://hub.docker.com/_/elasticsearch/
