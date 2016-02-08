@@ -9,7 +9,7 @@ Tänään julkaistussa versiossa uutta:
 1. Parannettu reittisivu
 2. Peruttujen lähtojen esittäminen
 3. Ajoneuvojen liikkumissuunta selviää ajoneuvon "hännästä"
-4. Net Promoter Score kysely
+4. Palautekysely
 5. Muita parannuksia
 
 ## Parannettu reittisivu
@@ -32,8 +32,8 @@ Raideliikenteellä on pienet "hännät" merkkinä ajoneuvon suunnasta. Busseille
 
 ![Ratikoiden häntiä](release-runeberg-tails.png "Ratikoiden häntiä")
 
-## NPS kysely
-Seurataksemme kehitystämme, käyttöliittymä kysyy ajoittain palautetta NPS-muodossa.
+## Palautekysely
+Seurataksemme kehitystämme, käyttöliittymä kysyy ajoittain palautetta.
 
 ![Palautteen antaminen](release-runeberg-feedback.png "Palautteen antaminen")
 
@@ -42,7 +42,7 @@ iOS-käyttäjät voivat huomata listojen selauksen toimivan nyt myös sujuvammin
 
 Pinnan alla käyttöliittymää on saatu hieman nopeammaksi poistamalla turhia verkkopyyntöjä, kansallisen version (beta.digitransit.fi) reitin hakuaikaa on pidennetty parempien tuloksien saamiseksi, ja pääsivusto (digitransit.fi) on saanut uutta sisältöä ja käännöksen englanniksi. Myös paikkojen hakua paranneltiin, ja bugeja korjailtiin.
 
-Toissaviikolla HSL:llä oli myös vähän päälle kymmenen talon ulkopuolista testaajaa kokeilemassa uutta reittiopasta ja antamassa meille toiveita ja kritiikkiä. Testeissä katseltiin netissä olevan version lisäksi vasta paperille tulostettuja ideoita uudesta hausta ja reittitulossivusta.
+Toissaviikolla HSL:llä oli reilu  kymmenen talon ulkopuolista testaajaa kokeilemassa uutta reittiopasta ja antamassa palautetta. Kiitos heille!
 
 ## Kokeile uusia ominaisuuksia
 - HSL alue: http://matka.hsl.fi/
