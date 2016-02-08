@@ -6,7 +6,7 @@ import chroma from 'chroma-js';
 import { link } from 'gatsby-helpers';
 
 import typography from 'utils/typography';
-import { FrontPage } from './_components';
+import { FrontPageHeader, FrontPagePanels, FrontPageNews } from './_components';
 
 const { rhythm, fontSizeToPx } = typography;
 
@@ -49,8 +49,8 @@ module.exports = React.createClass({
         left: 0,
         textAlign: "center"
       })}>
-        <span style={{margin: rhythm(0.5)}}><a href="/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hreflang="fi">FI</a></span>
-        <span style={{margin: rhythm(0.5)}}><a href="/en/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hreflang="en">EN</a></span><br/>
+        <span style={{margin: rhythm(0.5)}}><a href="/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hrefLang="fi">FI</a></span>
+        <span style={{margin: rhythm(0.5)}}><a href="/en/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hrefLang="en">EN</a></span><br/>
         <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.users}</a><br/>
         <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link><br/>
         <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.muncipalities}</a><br/>
@@ -97,8 +97,8 @@ module.exports = React.createClass({
             <Link to={`${urlPrefix}/en/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link>
             <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.muncipalities}</a>
             <span style={{margin: rhythm(0.5)}}>|</span>
-            <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/" hreflang="fi">FI</a></span>
-            <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/en/" hreflang="en">EN</a></span>
+            <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/" hrefLang="fi">FI</a></span>
+            <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/en/" hrefLang="en">EN</a></span>
           </Breakpoint>
           <Breakpoint maxWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0 */}
@@ -135,7 +135,7 @@ module.exports = React.createClass({
             </Link>
           </div>
         </div>
-        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPage {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
+        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPageHeader {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
           style={prefixer({
             maxWidth: 950,
@@ -146,6 +146,8 @@ module.exports = React.createClass({
         >
           <RouteHandler typography={typography} {...this.props}/>
         </Container>
+        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPageNews title={i18n.news} locale={locale} {...this.props}/> : null}
+        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPagePanels {...this.props}/> : null}
         <div
           style={prefixer({
             width: "100%",

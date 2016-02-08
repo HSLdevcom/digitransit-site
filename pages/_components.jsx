@@ -21,11 +21,51 @@ const getImage = (image, swapped, small) => {
   />);
 };
 
-export class FrontPage extends React.Component {
+class NewsItem extends React.Component {
   render() {
+    return(
+      <Link to={this.props.item.path} style={{textDecoration: "none"}}>
+        <span style={{
+          paddingRight: "0.33333rem",
+          fontSize: "10pt",
+          fontWeight: "bold",
+          color: "#999"}}>{this.props.item.data.date}</span>
+        <span style={{color: "#4c4c4c"}}>{this.props.item.data.title} »</span>
+      </Link>
+    )
+  }
+}
 
-    const panels = this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)
+export class FrontPageNews extends React.Component {
+  render() {
+    const items = this.props.pages.filter((item) => item.path && item.path.startsWith(`/${this.props.locale}/${this.props.title}/`)).map((item) => <NewsItem item={item}/>)
 
+    return(
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        maxWidth: 950,
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: "1em",
+        marginBottom: "3em",
+        width: "90%",
+        padding: "1.33333rem 1.66667rem 0 1.66667rem",
+        backgroundColor: "#EEF1F3",
+        border: "1px solid #E3E3E3",
+        borderRadius: 3,
+      }}>
+        <h2 style={{textTransform: "capitalize", paddingRight: "3.66667rem"}}>{this.props.title}</h2>
+        <div style={{padding: "0.33333rem 0"}}>
+          {items}
+        </div>
+      </div>
+    )
+  }
+}
+
+export class FrontPageHeader extends React.Component {
+  render() {
     return(
       <div>
         <div
@@ -53,7 +93,16 @@ export class FrontPage extends React.Component {
           <img src="/hsl-logo.png"  style={{margin: "2em 2em"}}/>
           <img src="/livi-logo.png" style={{margin: "2em 2em"}}/>
         </div>
-        {panels}
+      </div>
+    )
+  }
+}
+
+export class FrontPagePanels extends React.Component {
+  render() {
+    return(
+      <div>
+        {this.props.page.data.panels.map((panel) => <FrontPagePanel {... panel}/>)}
       </div>
     )
   }

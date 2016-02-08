@@ -50,13 +50,13 @@ elokuu 2015
 <div style="max-width: 200px; min-width: 150px">
 
 #### Beta-versio
-helmikuu 2016
+kevät 2016
 
 </div>
 <div style="max-width: 200px; min-width: 150px">
 
 #### Tuotantoversio
-elokuu 2016
+syksy 2016
 
 </div>
 </div>
