@@ -47,3 +47,12 @@ Toissaviikolla HSL:llä oli myös vähän päälle kymmenen talon ulkopuolista t
 ## Kokeile uusia ominaisuuksia
 - HSL alue: http://matka.hsl.fi/
 - Suomi: http://beta.digitransit.fi/
+
+## Seuraava julkaisu
+Seuraavan 2 viikon ajan keskitymme pääosin parantamaan etusivua:
+- Pysäkit alatabi poistuu; Jatkossa tabeja on kaksi: "lähelläsi" ja "suosikit"
+- "Lähelläsi" täbi on jalostettu versio nykyisestä "linjat" tabista
+- "Suosikit" toteutetaan uutena ominaisuutena
+- Haku kehittyy paremmaksi
+
+Tarkempi suunnitelma: https://digitransit.atlassian.net/issues/?filter=10300
