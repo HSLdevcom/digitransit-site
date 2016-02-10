@@ -7,6 +7,10 @@ Docker geocoding data container for Pelias
 ## Service architecture
 Service is basically a script that fetches data from multiple data sources, converts part of this data into other format, and loads it into ElasticSearch using Pelias tools. Therefore, produced service is a ElasticSearch docker image containing Geocoding data that can be used with Pelias Geocoder.
 
+### General Pelias information
+Start by reading (Note that it might not be up-to-date):
+> https://mapzen.com/blog/pelias-setup-tutorial
+
 ### Dataflow (what happens when docker image is built)
 1. Download and extract shapefiles from Quattroshapes
 
@@ -30,11 +34,7 @@ Service is basically a script that fetches data from multiple data sources, conv
 
 11. Run Open Street Map address import. Data that is already found from openaddresses will be skipped.
 
-## Getting started
-
-### General Pelias information
-Start by reading (Note that it might not be up-to-date):
-> https://mapzen.com/blog/pelias-setup-tutorial
+## Getting started with Docker containers
 
 ### Building docker image
 - git clone git@github.com:HSLdevcom/pelias-data-container.git
