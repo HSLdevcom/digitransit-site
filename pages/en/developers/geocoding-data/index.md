@@ -48,6 +48,9 @@ Start by reading (Note that it might not be up-to-date):
 For Exploring ElasticSearch data you can open browser (when container is running):
 > http://{DOCKER HOST}:9200/_plugin/head/
 
+Above, {DOCKER HOST} is `localhost` in Linux systems. When using using docker machine on Windows or OSX,
+{DOCKER HOST} is the ip of the docker machine.
+
 This url contains navigator that can be user to make queries to ElasticSearch. Select
 "Browser"-tab and write queries to "name.default" field.
 
@@ -105,7 +108,7 @@ Postal address information From Statistics Finland is used to improve Quattrosha
 ## Project assets
 | Asset                         | url                                                                       |
 |-------------------------------|---------------------------------------------------------------------------|
-| Code                          | https://github.com/HSLdevcom/pelias-data-container                       
+| Code                          | https://github.com/HSLdevcom/pelias-data-container
 | Dockerfile                    | https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
 | Pelias config                 | https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
 | Docker image                  |                                                           |

@@ -1,4 +1,3 @@
----
 title: Geocoding - API
 ---
 ## Description
@@ -7,22 +6,28 @@ Geocoder with geocoding and reverse geocoding support.
 ## Service architecture
 Service is implemented using Pelias-api.
 
-## API documentation
-Pelias provides multiple API endpoints that are available from url
+## Service endpoints
+Digitransit geocoding services are available via multiple API endpoints: geocoding, reverse geocoding and autocomplete.
+These are documented below. The base url for all endpoints is:
+
 > http://{enviroment}/pelias/v1/
 
+where {environment} is for example dev.digitransit.fi or dev.reittiopas.fi.
+
 ### Autocomplete API
-Autocomplete API can be used to make fuzzy searches e.g. when user starts typing location into a search field. Endpoint root is available at:
+Autocomplete API can be used to make fuzzy searches e.g. when the user starts typing location into a search field.
+Endpoint root is available at:
 > http://{enviroment}/pelias/v1/autocomplete
 
 Search for kamppi:
 <pre>
-curl http://{enviroment}/pelias/v1/autocomplete?text=kampp
+curl "http://{enviroment}/pelias/v1/autocomplete?text=kampp"
 </pre>
 
-To focus searches around given point to boost local addresses and get distance from focuspoint to result, you can use focus.point-params like so:
+To focus searches around given point to boost local addresses and get distance from
+focuspoint to result, you can use focus.point-params like so:
 <pre>
-curl http://{enviroment}/pelias/v1/autocomplete?text=kamppi&focus.point.lat=199284299999995&focus.point.lon=24.940540799999997
+curl "http://{enviroment}/pelias/v1/autocomplete?text=kamppi&focus.point.lat=60.1995&focus.point.lon=24.9363"
 </pre>
 
 To Read more about Pelias autocomplete API, check:
@@ -35,17 +40,17 @@ Search API provides a way to do more fine refined geocoding searches. Endpoint r
 
 To set amount of results use size param like so:
 <pre>
-curl http://{enviroment}/pelias/v1/search?text=kamppi&size=1
+curl "http://{enviroment}/pelias/v1/search?text=kamppi&size=1"
 </pre>
 
-To restrict searches to geographic area, use boundary.rect params, like so
+To restrict searches to geographic area, use boundary.rect params:
 <pre>
-curl http://{enviroment}/pelias/v1/search?text=kamppi&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
+curl "http://{enviroment}/pelias/v1/search?text=kamppi&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5"
 </pre>
 
-You can also search within circular region:
+You can also search within a circular region:
 <pre>
-curl http://{enviroment}/pelias/v1/search?text=kamppi&boundary.circle.lat=59.9&boundary.circle.lon=60.45&boundary.circle.radius=30
+curl "http://{enviroment}/pelias/v1/search?text=kamppi&boundary.circle.lat=60.2&boundary.circle.lon=24.936&boundary.circle.radius=30"
 </pre>
 
 To Read more about Pelias search API, check:
@@ -57,11 +62,11 @@ Reverse geocoding means finding location near given coordinates. Endpoint root i
 
 Get address for location like so:
 <pre>
-curl http://{enviroment}/pelias/v1/reverse?point.lat=60.199284299999995&point.lon=24.940540799999997&size=1
+curl "http://{enviroment}/pelias/v1/reverse?point.lat=60.199284&point.lon=24.940540&size=1"
 </pre>
 
 To Read more about pelias Reverse API, check:
-> https://github.com/pelias/pelias-doc/blob/master/search.md
+> https://github.com/pelias/pelias-doc/blob/master/reverse.md
 
 ## Getting started with Docker containers
 
@@ -71,10 +76,16 @@ To Read more about pelias Reverse API, check:
 - docker build -t hsldevcom/pelias-api .
 
 ### Running docker container
-Note that you need [geocoding-data](../geocoding-data/) in order to run geocoding-api. To start full geocoding environment:
-- docker run -d --name pelias-data-container hsldevcom/pelias-data-container
-- docker run -d --name pelias-api -p 3100:3100 --link pelias-data-container:pelias-data-container hsldevcom/pelias-api
-- curl http://{DOCKER HOST}:3100/v1/search?text=helsinki
+First you have to clone the [pelias-data-container](https://github.com/HSLdevcom/pelias-data-container) git project and build its docker image
+as instructed in [geocoding-data](../geocoding-data/). To start full geocoding environment:
+- If pelias-data-container is already running on docker, stop it and remove the container:
+  `docker stop pelias-data-container && docker rm pelias-data-container`
+- Restart pelias-data-container as follows: `docker run -d --name pelias-data-container hsldevcom/pelias-data-container`
+- Start pelias API: `docker run -d --name pelias-api -p 3100:3100 --link pelias-data-container hsldevcom/pelias-api`
+- Test: `curl "http://{DOCKER HOST}:3100/v1/search?text=helsinki"`
+
+Above, {DOCKER HOST} is `localhost` in Linux systems. When using using docker machine on Windows or OSX,
+{DOCKER HOST} is the ip of the docker machine.
 
 ### Running API tests
 
@@ -84,11 +95,11 @@ Read instructions from
 ## Project assets
 | Asset                         | url                                                                       |
 |-------------------------------|---------------------------------------------------------------------------|
-| Code                          | https://github.com/HSLdevcom/pelias-api                      
+| Code                          | https://github.com/HSLdevcom/pelias-api
 | Dockerfile                    | https://github.com/HSLdevcom/pelias-api/blob/master/Dockerfile
-| Docker image                  |               
+| Docker image                  |
 | Pelias fuzzy tests            | https://github.com/HSLdevcom/pelias-fuzzy-tests
-| Pelias fuzzy tester           | https://github.com/HSLdevcom/fuzzy-tester                                     
+| Pelias fuzzy tester           | https://github.com/HSLdevcom/fuzzy-tester
 
 ## Key service delivery activities
 1. Keep up with Pelias development on GitHub
