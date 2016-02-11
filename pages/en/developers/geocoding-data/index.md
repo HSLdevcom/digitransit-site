@@ -51,8 +51,11 @@ For Exploring ElasticSearch data you can open browser (when container is running
 Above, {DOCKER HOST} is `localhost` in Linux systems. When using using docker machine on Windows or OSX,
 {DOCKER HOST} is the ip of the docker machine.
 
-This url contains navigator that can be user to make queries to ElasticSearch. Select
-"Browser"-tab and write queries to "name.default" field.
+This url contains navigator that can be user to make queries to ElasticSearch. In order to make queries:
+1. Click on "connect", this should change cluster health to "green". If this does not work, wait a bit and retry.
+2. Click on "Browser"-tab
+3. Write queries to "name.default" field.
+4. Browse results
 
 For Gis data exploration you can use e.g. QGis
 > http://www.qgis.org/en/site/
