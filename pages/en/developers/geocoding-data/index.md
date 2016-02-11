@@ -53,8 +53,11 @@ Above, {DOCKER HOST} is `localhost` in Linux systems. When using using docker ma
 
 This url contains navigator that can be user to make queries to ElasticSearch. In order to make queries:
 1. Click on "connect", this should change cluster health to "green". If this does not work, wait a bit and retry.
+
 2. Click on "Browser"-tab
+
 3. Write queries to "name.default" field.
+
 4. Browse results
 
 For Gis data exploration you can use e.g. QGis
