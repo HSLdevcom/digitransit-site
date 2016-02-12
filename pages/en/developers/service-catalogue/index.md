@@ -12,7 +12,6 @@ order: 5
 | [Geocoding - API ](../geocoding-api/)      | Geocoding API
 | [Routing - Data](../routing-data/)         | Routing and timetable Data
 | [Routing - API](../routing-api/)           | Routing and timetable API
-| [Map - Data](../map-data/)                 | Map data
 | [Map - API](../map-api/)                   | Map raster and vector tiles API
 | [Realtime HSL - API](../realtime-hsl-api/) | Realtime HSL API
 
