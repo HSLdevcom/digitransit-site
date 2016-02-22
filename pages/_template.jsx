@@ -172,7 +172,7 @@ module.exports = React.createClass({
           <img src="/livi-logo.png" style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
           </div>
           <div style={{padding: "1em", color: "white", fontSize: 14}}>
-            © Digitransit 2015
+            © Digitransit 2016
           </div>
         </div>
       </div>

@@ -37,7 +37,10 @@ panels:
 
 <div style="text-align: center;">
 
-The upcoming **Reittiopas.fi** and **Matka.fi** by HSL and the Finnish Transport Agency are in development. We need your help! Become a test user or contribute patches. The code is open-source.
+The upcoming Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are in development. We need your help! Become a test user or contribute patches. The code is open-source.
+
+<span class="large-link">[New Reittiopas »](http://matka.hsl.fi)</span>
+<span class="large-link">[New Matka.fi »](http://beta.digitransit.fi)</span>
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
 <div style="max-width: 200px; min-width: 150px">
