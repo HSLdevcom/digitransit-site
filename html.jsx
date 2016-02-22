@@ -102,6 +102,13 @@ module.exports = React.createClass({
           pre {
             background: #f9f9f9;
           }
+          .large-link > a {
+            display: block;
+            font-size: 1.1em;
+            text-decoration: none;
+            padding: 0.5em;
+          }
+
 
           @media
           (-webkit-min-device-pixel-ratio: 2),
