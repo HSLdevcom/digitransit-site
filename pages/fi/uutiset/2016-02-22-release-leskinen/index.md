@@ -9,6 +9,7 @@ Tänään julkaistussa versiossa uutta:
 1. Etusivun "Lähelläsi"
 2. Etusivun "Suosikkisi"
 3. Parannettu haku
+4. Parannettu taustakartta
 
 ## Etusivun "Lähelläsi"
 Etusivua on yksinkertaistettu. "Lähelläsi"-näkymä listaa kaksi seuraavaa lähtöä kullekin läheltä lähtevälle linjalle. Listalle haetaan lähtöjä 20 lähimmästä pysäkistä muutaman tunnin ajalta.
@@ -47,6 +48,9 @@ Uusi haku mahdollistaa selkeämmät hakutulokset. Haku tehdään "omalla sivulla
 Tiedossa olevia puutteita:
 - Hakutulosta ei pysty tyhjentämään nopeasti
 - Haku ei kohdistu suosikkipaikkoihin
+
+## Parannettu taustakartta
+Taustakartan tyyliä on selkeytetty ja sinne on tuotu näkymiin mm. metroasemien sisäänkäynnit.
 
 ## Kokeile uusia ominaisuuksia
 - HSL-alue: http://matka.hsl.fi/
