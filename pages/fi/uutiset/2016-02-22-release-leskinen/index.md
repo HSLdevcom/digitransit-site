@@ -1,7 +1,7 @@
 ---
 title: Uusi Digitransit-julkaisu – "Leskinen"
 date: "22.2.2016"
-image: "release-leskinen-front-page.png"
+image: "release-leskinen-nearby.png"
 ---
 
 Tänään julkaistussa versiossa uutta:
