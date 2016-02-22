@@ -8,8 +8,8 @@ Tänään julkaistussa versiossa uutta:
 
 1. Etusivun "Lähelläsi"
 2. Etusivun "Suosikkisi"
-3. Parannettu haku
-4. Parannettu taustakartta
+3. Uusi hakuikkuna
+4. Selkeytetty taustakartta
 
 ## Etusivun "Lähelläsi"
 Yksinkertaistimme etusivua. "Lähelläsi"-näkymä listaa kaksi seuraavaa lähtöä kullekin läheltä lähtevälle linjalle. Listalle haetaan lähtöjä tällä hetkellä 20 lähimmästä pysäkistä parin tunnin ajalta.
