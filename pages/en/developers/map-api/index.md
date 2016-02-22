@@ -33,7 +33,7 @@ Vector tiles are available from:
 
 where:
 - environment is e.g. "matka.hsl.fi"
-- source is one of 'hsl-stop-map', 'hsl-parkandride-map', 'finland-stop-map'
+- source is one of 'hsl-stop-map', 'hsl-parkandride-map', 'hsl-vector-map' or 'finland-stop-map'
 - z is zoom level
 - x is coordinate
 - y is coordinate
