@@ -35,6 +35,7 @@ Suosikkipaikkojen lisääminen on helppoa:
 Tiedossa olevia puutteita:
 - Suosikkikohteita ei voi poistaa
 - Suosikkikohteita on vain kolme
+- Suosikkikohteen painikkeessa ei vielä näytetä reitin tietoja
 - Suosikkilinjat lista hidastuu mikäli suosikkeja on liikaa
 
 
