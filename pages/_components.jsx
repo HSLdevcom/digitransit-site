@@ -25,12 +25,16 @@ class NewsItem extends React.Component {
   render() {
     return(
       <Link to={this.props.item.path} style={{textDecoration: "none"}}>
-        <span style={{
-          paddingRight: "0.33333rem",
-          fontSize: "10pt",
-          fontWeight: "bold",
-          color: "#999"}}>{this.props.item.data.date}</span>
-        <span style={{color: "#4c4c4c"}}>{this.props.item.data.title} »</span>
+        <div style={{"padding-bottom": "0.5em"}}>
+          <span style={{
+            display: "inline-block",
+            width: "70px",
+            paddingRight: "0.33333rem",
+            fontSize: "10pt",
+            fontWeight: "bold",
+            color: "#999"}}>{this.props.item.data.date}</span>
+          <span style={{color: "#4c4c4c"}}>{this.props.item.data.title} »</span>
+        </div>
       </Link>
     )
   }
