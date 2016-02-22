@@ -54,6 +54,10 @@ Tiedossa olevia puutteita:
 ## Selkeytetty taustakartta
 Taustakartan tyyliä on selkeytetty ja sinne on tuotu näkymiin mm. metroasemien sisäänkäynnit.
 
+Kartalta voi myös valita avattavan pysäkin, mikäli klikkauksen lähellä on usea pysäkki.
+
+![Pysäkin valinta](release-leskinen-select-stop.png "Pysäkin valinta")
+
 ## Kokeile uusia ominaisuuksia
 - HSL-alue: http://matka.hsl.fi/
 - Suomi: http://beta.digitransit.fi/
