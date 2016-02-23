@@ -43,7 +43,7 @@ var GtfsRealtimeBindings = require('gtfs-realtime-bindings');
 var request = require('request');
  
 var req = {
-  url: 'http://dev.digitransit.fi/hsl-alert/',
+  url: 'http://beta.digitransit.fi/hsl-alert/',
   encoding: null
 };
 
