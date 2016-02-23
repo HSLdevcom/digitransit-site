@@ -31,7 +31,7 @@ This will help you get started. Articles page might contain something useful:
 Start by reading installation instructions from:
 - https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Installation.md
 
-## How to use Docker?
+## <a name="docker"></a>How to use Docker?
 We use Docker, you should know how it works.
 > https://docs.docker.com/
 

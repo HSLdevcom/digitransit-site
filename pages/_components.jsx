@@ -25,7 +25,7 @@ class NewsItem extends React.Component {
   render() {
     return(
       <Link to={this.props.item.path} style={{textDecoration: "none"}}>
-        <div style={{"padding-bottom": "0.5em"}}>
+        <div style={{"paddingBottom": "0.5em"}}>
           <span style={{
             display: "inline-block",
             width: "70px",
