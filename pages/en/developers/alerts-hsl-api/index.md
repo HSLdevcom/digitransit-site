@@ -1,42 +1,67 @@
 ---
 title: Alerts HSL - API
+dockerImageName: hsldevcom/hslalert
+assets:
+  source: https://github.com/HSLdevcom/hslalert
+  dockerHub: https://hub.docker.com/r/hsldevcom/hslalert/
+  Dockerfile: https://github.com/HSLdevcom/hslalert/blob/master/Dockerfile
+technologies:  
+  "Python": null
+  "GTFS-RT": null
 ---
 
 ## Description
-HSL Alerts API can be used to query realtime updates about HSL fleet in GTFS-RT format
+HSL Alerts API can be used to query realtime updates about HSL fleet in GTFS-RT format.
 
 ## Service architecture
-Service connects to Poikkeusinfo v3 xml interface, reads this data, and converts it to GTFS-RT
-> http://www.poikkeusinfo.fi/xml/v3
+Service connects to Poikkeusinfo v3 xml interface (http://www.poikkeusinfo.fi/xml/v3), 
+reads this data, and converts it to GTFS-RT
 
-> https://developers.google.com/transit/gtfs-realtime/?hl=en
-
-![Architecture](./architecture.jpg)
+![Architecture](./hslalert.svg)
 
 ## API Documentation
-At the moment, service provides only GTFS-RT service alerts. Read more:
-> https://developers.google.com/transit/gtfs-realtime/service-alerts
+Hslalert service provides GTFS-RT [service alerts](
+https://developers.google.com/transit/gtfs-realtime/service-alerts) and also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates). 
 
-In near future, also trip updates are included:
-> https://developers.google.com/transit/gtfs-realtime/trip-updates
+## Endpoint
+> http://beta.digitransit.fi/hsl-alert/
 
-Service endpoint is available:
-> http://{environment}/hsl-alert/
+Supported query parameters:
+| Parameter | Type           | Description                                              |
+|-----------|----------------|----------------------------------------------------------|
+| debug     | queryParameter | Print data in human readable format (for debug purposes) |                                                                                  |
 
-You can check some code examples from Google:
-> https://developers.google.com/transit/gtfs-realtime/code-samples
+## Examples
+
+### Show currently active alerts with curl
+> curl http://beta.digitransit.fi/hsl-alert/?debug
+
+
+### Retrieve and print currently active alerts with node.js app
+``` javascript
+var GtfsRealtimeBindings = require('gtfs-realtime-bindings');
+var request = require('request');
+ 
+var req = {
+  url: 'http://beta.digitransit.fi/hsl-alert/',
+  encoding: null
+};
+
+request(req, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    var feed = GtfsRealtimeBindings.FeedMessage.decode(body);
+    feed.entity.forEach(function(entity) {
+      if (entity.alert) {
+        console.log(JSON.stringify(entity.alert,null,2));
+      }
+    });
+  }
+```
+
+More examples from [Google](https://developers.google.com/transit/gtfs-realtime/code-samples).
 
 ## Service dependencies
 No Digitransit related service dependencies. Reads data from http://www.poikkeusinfo.fi/xml/v3
-
-## Project assets
-
-| Asset         | url                                                                       |
-|---------------|---------------------------------------------------------------------------|
-| Code          | https://github.com/HSLdevcom/hslalert/  
-| Dockerfile    | https://github.com/HSLdevcom/hslalert/blob/master/Dockerfile
-| Docker image  |
-
 
 ## Key service delivery activities
 1. Keep up with HSLAlerts upstream development (there probably won't happen much)
@@ -46,6 +71,3 @@ No Digitransit related service dependencies. Reads data from http://www.poikkeus
 
 > https://groups.google.com/forum/#!forum/gtfs-realtime
 
-## Key technologies and specifications
-- Python
-- GTFS-RT
