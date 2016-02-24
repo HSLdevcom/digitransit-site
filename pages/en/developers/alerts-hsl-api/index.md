@@ -20,8 +20,8 @@ reads this data, and converts it to GTFS-RT
 ![Architecture](./hslalert.svg)
 
 ## API Documentation
-At the moment, hslalert service provides only GTFS-RT [service alerts](
-https://developers.google.com/transit/gtfs-realtime/service-alerts). In near future, also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates) are to be included. 
+Hslalert service provides GTFS-RT [service alerts](
+https://developers.google.com/transit/gtfs-realtime/service-alerts) and  also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates) are to be included. 
 
 ## Endpoint
 > http://beta.digitransit.fi/hsl-alert/
