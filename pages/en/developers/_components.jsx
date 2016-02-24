@@ -16,8 +16,15 @@ const getDockerInfo = (props) => {
 const getTechnologiesInfo = (props) => {
   if(typeof props.technologies != "undefined") {
 
+    const getUrl = (tech) => {
+      if (props.technologies[tech] != null) {
+        return (<span>(<a href={ props.technologies[tech] }>{ props.technologies[tech] }</a>)</span>)
+      }
+      return null;
+    }
+
     const list = Object.keys(props.technologies).map( (tech) => {
-      return (<li>{ tech }</li>);
+      return (<li>{ tech } { getUrl(tech) }</li>);
     });
     return (<div>
       <h2>Key technologies and specifications</h2>
