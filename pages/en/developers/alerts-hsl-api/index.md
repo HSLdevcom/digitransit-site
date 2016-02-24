@@ -21,7 +21,7 @@ reads this data, and converts it to GTFS-RT
 
 ## API Documentation
 Hslalert service provides GTFS-RT [service alerts](
-https://developers.google.com/transit/gtfs-realtime/service-alerts) and  also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates) are to be included. 
+https://developers.google.com/transit/gtfs-realtime/service-alerts) and also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates). 
 
 ## Endpoint
 > http://beta.digitransit.fi/hsl-alert/
