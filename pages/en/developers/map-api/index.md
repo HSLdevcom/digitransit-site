@@ -1,45 +1,53 @@
 ---
 title: Map - API
+dockerImageName: hsldevcom/hsl-map-server
+assets:
+  source: https://github.com/HSLdevcom/hsl-map-server
+  dockerHub: https://hub.docker.com/r/hsldevcom/hsl-map-server/
+  Dockerfile: https://github.com/HSLdevcom/hsl-map-server/blob/master/Dockerfile
+technologies:  
+  "Node.js": null
 ---
 
 ## Description
-Map API provides raster and vector tiles in various formats
+Map API provides raster and vector tiles in various formats.
 
 ## Raster map API
-Raster maps are available in Tile Map Service format:
-> https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification
+Raster maps are available in [Tile Map Service format](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
 
 TMS tiles are available from:
-> http://{environment}/hsl-map/{z}/{x}/{y}{size}.png
+> http://beta.digitransit.fi/hsl-map/{z}/{x}/{y}{size}.png
 
-where:
-- environment is e.g. "matka.hsl.fi"
-- z is zoom level
-- x is coordinate
-- y is coordinate
-- size is empty or '@2x' for retina tiles
+Supported url parameters:
+| Parameter     | Type           | Description                                              |
+|---------------|----------------|----------------------------------------------------------|
+| z             | int            | Zoom level
+| x             | int            | x-coordinate
+| y             | int            | y-coordinate
+| size          | string         | '@2x' for retina tiles or empty value for normal
 
 examples:
-> http://matka.hsl.fi/hsl-map/16/37313/18958.png
+> http://beta.digitransit.fi/hsl-map/16/37313/18958.png
 
-> http://matka.hsl.fi/hsl-map/16/37313/18958@2x.png
+> http://beta.digitransit.fi/hsl-map/16/37313/18958@2x.png
 
 ## Vector map API
-Vector maps are available in Mapbox Vector Tile format:
-> https://github.com/mapbox/vector-tile-spec
+Vector maps are available in [Mapbox Vector Tile format](https://github.com/mapbox/vector-tile-spec)
 
 Vector tiles are available from:
-> http://{environment}/{source}/{z}/{x}/{y}.pbf
+> http://beta.digitransit.fi/{source}/{z}/{x}/{y}.pbf
 
-where:
-- environment is e.g. "matka.hsl.fi"
-- source is one of 'hsl-stop-map', 'hsl-parkandride-map', 'hsl-vector-map' or 'finland-stop-map'
-- z is zoom level
-- x is coordinate
-- y is coordinate
+Supported url parameters:
+| Parameter     | Type           | Description                                              |
+|---------------|----------------|----------------------------------------------------------|
+| source        | string         | one of: 'hsl-stop-map', 'hsl-parkandride-map', 'hsl-vector-map', 'finland-stop-map'
+| z             | int            | Zoom level
+| x             | int            | x-coordinate
+| y             | int            | y-coordinate
+| size          | string         | '@2x' for retina tiles or empty value for normal
 
 examples:
-> http://dev.reittiopas.fi/hsl-stop-map/16/37308/18959.pbf
+> http://beta.digitransit.fi/hsl-stop-map/16/37308/18959.pbf
 
 ## Getting started with Docker containers
 
@@ -52,7 +60,7 @@ examples:
 - browse to http://{DOCKER HOST}:8088/hsl-map/16/37313/18958.png
 
 ## Exploring HSL map style
-![hsl-map-style](http://matka.hsl.fi/hsl-map/16/37311/18963@2x.png)
+![hsl-map-style](http://beta.digitransit.fi/hsl-map/16/37311/18963@2x.png)
 
 HSL map style is available in https://github.com/HSLdevcom/hsl-map-style.git
 Repository contains information how to run map style on local machine.
