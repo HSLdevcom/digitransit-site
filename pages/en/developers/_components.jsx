@@ -3,11 +3,29 @@ import { RouteHandler, Link, State } from 'react-router';
 
 const getDockerInfo = (props) => {
 
-  if(typeof props.dockerImageName != "undefined") {
+  if(typeof props.docker != "undefined") {
     return (<div>
-        <h2>Docker</h2>
-        <p>The resulting Docker image is called <strong>{ props.dockerImageName }</strong> and it is available at  <a href={ "https://hub.docker.com/r/" + props.dockerImageName }>DockerHub</a>.</p>
-        <p>For More information about docker see <a href="../getting-started/#docker">docker info</a></p>
+        <h2>Docker image</h2>
+        <p>
+          The resulting Docker image is called <strong>{ props.docker.imageName }</strong> and
+          it is available at <a href={ "https://hub.docker.com/r/" + props.docker.imageName }> DockerHub</a>.
+          Image can be built using a <a href={props.docker.buildScript}>build script</a>.
+        </p>
+        <p>
+          To run Docker container, run:
+        </p>
+        <pre>
+          { props.docker.runContainer }
+        </pre>
+        <p>
+          To access Docker container:
+        </p>
+        <pre>
+          { props.docker.accessContainer }
+        </pre>
+        <p>
+          For More information about how to use Docker see <a href="../getting-started/#docker">docker info</a>.
+        </p>
     </div>);
   }
   return (<span></span>);
@@ -37,14 +55,17 @@ const getTechnologiesInfo = (props) => {
 const getAssets = (props) => {
   if(typeof props.assets != "undefined") {
     const assets = Object.keys(props.assets).map( (asset) => {
-        console.log(asset)
         return (<tr><td>{ asset }</td><td><a href={ props.assets[asset] }>{ props.assets[asset] }</a></td></tr>);
   });
   return (<div>
     <h2>Project assets</h2>
     <table>
-      <tr><th>Asset</th><th>Url</th></tr>
-      { assets }
+      <thead>
+        <tr><th>Asset</th><th>Url</th></tr>
+      </thead>
+      <tbody>
+        { assets }
+      </tbody>
     </table>
   </div>);
   }

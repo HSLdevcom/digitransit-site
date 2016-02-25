@@ -1,6 +1,5 @@
 ---
 title: Siri2gtfsrt
-dockerImageName: hsldevcom/siri2gtfsrt
 assets:
   source: https://github.com/HSLdevcom/siri2gtfsrt
   dockerHub: https://hub.docker.com/r/hsldevcom/siri2gtfsrt/
@@ -9,6 +8,12 @@ technologies:
   "SIRI": "http://user47094.vs.easily.co.uk/siri/"
   "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
   "Python": null
+docker:
+  dockerfile: https://github.com/HSLdevcom/hsl-map-server/blob/master/Dockerfile
+  imageName: hsldevcom/siri2gtfsrt
+  buildScript: https://github.com/HSLdevcom/siri2gtfsrt/blob/master/build-docker-image.sh
+  runContainer: TODO
+  accessContainer: TODO
 ---
 
 ## Description
@@ -46,16 +51,15 @@ Supported query parameters:
 More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/code-samples).
 
 ## Service dependencies
-Siri2gtfsrt uses the following Digitransit data sources: 
+Siri2gtfsrt uses the following Digitransit data sources:
  * hslalert
  * raildigitraffic2gtfsrt
  * navigatorserver
 
 ## Key service delivery activities
-1. Keep up with HSLAlert development:<br/> 
+1. Keep up with HSLAlert development:<br/>
    https://github.com/HSLdevcom/hslalert
 
 2. Follow Google transit community and its mailing lists (especially GTFS-RT):<br/>
    https://developers.google.com/transit/community?hl=en
    https://groups.google.com/forum/#!forum/gtfs-realtime
-
