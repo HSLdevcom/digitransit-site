@@ -22,8 +22,8 @@ docker:
 ## Raster map API
 Raster maps are available in [Tile Map Service format](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
 
-TMS tiles are available from:
-> http://beta.digitransit.fi/hsl-map/{z}/{x}/{y}{size}.png
+TMS tiles are available from endpoint:
+<pre>http://beta.digitransit.fi/hsl-map/:z/:x/:y:size.png</pre>
 
 Supported url parameters:
 | Parameter     | Type           | Description                                              |
@@ -41,8 +41,8 @@ examples:
 ## Vector map API
 Vector maps are available in [Mapbox Vector Tile format](https://github.com/mapbox/vector-tile-spec)
 
-Vector tiles are available from:
-> http://beta.digitransit.fi/{source}/{z}/{x}/{y}.pbf
+Vector tiles are available from endpoint:
+<pre>http://beta.digitransit.fi/:source}/:z/:x/:y.pbf</pre>
 
 Supported url parameters:
 | Parameter     | Type           | Description                                              |

@@ -6,7 +6,6 @@ module.exports = React.createClass({
     var post, rhythm;
     rhythm = this.props.typography.rhythm;
     post = this.props.page.data;
-
     return (
       <DocumentTitle title={post.title ? `${post.title} | ${this.props.config.siteTitle}` : `${this.props.config.siteTitle}`}>
         <div className="markdown">

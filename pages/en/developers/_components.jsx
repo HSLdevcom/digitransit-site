@@ -76,13 +76,16 @@ const getArchitectureHeader = (props) => {
   if (typeof props.description == "undefined") {
     return (<span></span>);
   }
-
+  // We'll have to use full path as image location. By just using "./architecture.svg", browser won't update image
+  // when moving from page to page if image name is the same
+  var image = window.location.pathname + "/architecture.svg"
+  
   return (
     <div>
       <p>{props.description.info}</p>
       <span style={{"float": "right", "font-size": "0.8em;"}}><a href={"https://www.draw.io/?url=" + props.description.architecture}>edit architecture image</a></span>
       <h2>Service Architecture</h2>
-      <img src="./architecture.svg"/>
+      <img src={image}/>
     </div>
   );
 }
