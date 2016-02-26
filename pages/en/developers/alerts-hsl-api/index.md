@@ -1,5 +1,8 @@
 ---
 title: Alerts HSL - API
+description:
+  info: HSL Alerts API can be used to query realtime updates about HSL fleet in GTFS-RT format.
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/hslalert/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/hslalert
   dockerHub: https://hub.docker.com/r/hsldevcom/hslalert/
@@ -15,14 +18,8 @@ docker:
   accessContainer: TODO
 ---
 
-## Description
-HSL Alerts API can be used to query realtime updates about HSL fleet in GTFS-RT format.
-
-## Service architecture
 Service connects to Poikkeusinfo v3 xml interface (http://www.poikkeusinfo.fi/xml/v3),
 reads this data, and converts it to GTFS-RT
-
-![Architecture](./hslalert.svg)
 
 ## API Documentation
 Hslalert service provides GTFS-RT [service alerts](
