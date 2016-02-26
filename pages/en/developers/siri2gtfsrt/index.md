@@ -15,8 +15,8 @@ docker:
   dockerfile: https://github.com/HSLdevcom/hsl-map-server/blob/master/Dockerfile
   imageName: hsldevcom/siri2gtfsrt
   buildScript: https://github.com/HSLdevcom/siri2gtfsrt/blob/master/build-docker-image.sh
-  runContainer: TODO
-  accessContainer: TODO
+  runContainer: docker run -p 8080:8080 hsldevcom/siri2gtfsrt
+  accessContainer: http://localhost:8080/HSL?debug
 ---
 
 Service periodically polls the following services [hslalert](../alerts-hsl-api/), [raildigitraffic2gtfsrt](../raildigitraffic2gtfsrt/), [navigatorserver](../navigatorserver/) and [JOLI](http://wiki.itsfactory.fi/index.php/Tampere_Public_Transport_SIRI_Interface_(Realtime_JSON_at_data.itsfactory.fi))
