@@ -1,5 +1,8 @@
 ---
 title: Siri2gtfsrt
+description:
+  info: The main function of Siri2gtfsrt is to convert data from SIRI (Service Interface for Real Time Information) format to GTFS-realtime format. In addition to this the service also blends in selected data from existing GTFS-realtime feeds.
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/siri2gtfsrt/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/siri2gtfsrt
   dockerHub: https://hub.docker.com/r/hsldevcom/siri2gtfsrt/
@@ -16,19 +19,12 @@ docker:
   accessContainer: TODO
 ---
 
-## Description
-The main function of Siri2gtfsrt is to convert data from SIRI (Service Interface for Real Time Information) format to
-GTFS-realtime format. In addition to this the service also blends in selected data from existing GTFS-realtime feeds.
-
-## Service architecture
 Service periodically polls the following services [hslalert](../alerts-hsl-api/), [raildigitraffic2gtfsrt](../raildigitraffic2gtfsrt/), [navigatorserver](../navigatorserver/) and [JOLI](http://wiki.itsfactory.fi/index.php/Tampere_Public_Transport_SIRI_Interface_(Realtime_JSON_at_data.itsfactory.fi))
 and converts the combined data to GTFS-RT.
 
 The reason we're blending HSL data from multiple sources in this service is that there are several systems providing
 (dynamic) GTFS-realtime updates to same (static) GTFS-feed and OpenTripPlanner currently supports only one dynamic
 updater per feed.
-
-![Architecture](./siri2gtfsrt.svg)
 
 ## API Documentation
 Currently the service offers two GTFS-realtime data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates),

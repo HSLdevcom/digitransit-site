@@ -10,7 +10,6 @@ module.exports = React.createClass({
     return (
       <DocumentTitle title={post.title ? `${post.title} | ${this.props.config.siteTitle}` : `${this.props.config.siteTitle}`}>
         <div className="markdown">
-          <h2 style={{textAlign: "center"}}>{post.title}</h2>
           <div dangerouslySetInnerHTML={{__html: post.body}}/>
         </div>
       </DocumentTitle>

@@ -108,8 +108,6 @@ module.exports = React.createClass({
             text-decoration: none;
             padding: 0.5em;
           }
-
-
           @media
           (-webkit-min-device-pixel-ratio: 2),
           (min-resolution: 192dpi) {

@@ -4,7 +4,7 @@ import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid';
 import Typography from 'typography';
 import sortBy from 'lodash/collection/sortBy';
 import { templateChildrenPages } from 'gatsby-helpers';
-import { DockerInfo, TechnologiesInfo, Assets } from './_components';
+import { DockerInfo, TechnologiesInfo, Assets, ArchitectureHeader } from './_components';
 
 var typography = new Typography();
 var rhythm = typography.rhythm, fontSizeToMS = typography.fontSizeToMS;
@@ -98,6 +98,8 @@ module.exports = React.createClass({
                 paddingLeft: `calc(${rhythm(8)} + ${rhythm(1)})`
               }}
             >
+              <h1>{this.props.page.data.title}</h1>
+              <ArchitectureHeader {...this.props.page.data}/>
               <RouteHandler typography={typography} {...this.props}/>
               <Assets {...this.props.page.data}/>
               <TechnologiesInfo {...this.props.page.data}/>

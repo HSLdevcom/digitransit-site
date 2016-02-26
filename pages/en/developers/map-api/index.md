@@ -1,5 +1,8 @@
 ---
 title: Map - API
+description:
+  info: Map API provides raster and vector tiles in various formats.
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/map-api/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/hsl-map-server
   DockerHub: https://hub.docker.com/r/hsldevcom/hsl-map-server/
@@ -15,13 +18,6 @@ docker:
   runContainer: docker run -d -p 8080:8080 -e FONTSTACK_PASSWORD={add password here} --name hsl-map-server hsldevcom/hsl-map-server
   accessContainer: http://localhost:8080/hsl-map/16/37313/18958.png
 ---
-
-## Description
-Map API provides raster and vector tiles in various formats.
-
-## Service Architecture
-
-![Architecture](./hsl-map-server.svg)
 
 ## Raster map API
 Raster maps are available in [Tile Map Service format](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
