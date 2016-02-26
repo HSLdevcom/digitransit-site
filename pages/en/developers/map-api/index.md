@@ -38,6 +38,33 @@ examples:
 
 > http://beta.digitransit.fi/hsl-map/16/37313/18958@2x.png
 
+### Display map using Leaflet: 
+
+``` javascript
+<!doctype html>
+<html>
+  <head>
+    <title>Map Leaflet - example</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  </head>
+  <body>
+    <div id="map" style="height:600px; width:800px;"/>
+    <script>
+      var map = L.map('map').setView([60.192059,24.945831], 15);
+      L.tileLayer('http://beta.digitransit.fi/{id}/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ',
+        id: 'hsl-map'}).addTo(map);
+    </script>
+  </body>
+</html>
+```
+
+[Show example on browser](http://htmlpreview.github.io/?https://gist.github.com/siren/3c08fdd1c49232edb4d0/raw)
+
+
 ## Vector map API
 Vector maps are available in [Mapbox Vector Tile format](https://github.com/mapbox/vector-tile-spec)
 
