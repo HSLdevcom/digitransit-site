@@ -1,17 +1,37 @@
 ---
 title: Geocoding - Data
+description:
+  info: Data container for Pelias
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/geocoding-data/architecture.xml
+assets:
+  source: https://github.com/HSLdevcom/pelias-data-container
+  dockerHub: https://hub.docker.com/r/hsldevcom/pelias-data-container/
+  Dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
+  "Pelias config": https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
+  pelias-nlsfi-places-importer: https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
+technologies:  
+  "SIRI": "http://user47094.vs.easily.co.uk/siri/"
+  "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
+  "Python": null
+docker:
+  dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
+  imageName: hsldevcom/pelias-data-container
+  buildScript: https://github.com/HSLdevcom/pelias-data-container/blob/master/build-docker-image.sh
+  runContainer: docker run -p 8080:8080 hsldevcom/pelias-data-container
+  accessContainer: http://localhost:8080/HSL?debug
 ---
-## Description
-Docker geocoding data container for Pelias
 
-## Service architecture
-Service is basically a script that fetches data from multiple data sources, converts part of this data into other format, and loads it into ElasticSearch using Pelias tools. Therefore, produced service is a ElasticSearch docker image containing Geocoding data that can be used with Pelias Geocoder.
+This service is essentially an ElasticSearch instance containing Geocoding data that can be used with Pelias Geocoder.
 
 ### General Pelias information
 Start by reading (Note that it might not be up-to-date):
 > https://mapzen.com/blog/pelias-setup-tutorial
 
-### Dataflow (what happens when docker image is built)
+
+### How data is built?
+On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
+Pelias tools. At high level this is what happens:
+
 1. Download and extract shapefiles from Quattroshapes
 
 2. Download Finnish municipalities NLS and convert them to Quattroshapes format
@@ -34,22 +54,10 @@ Start by reading (Note that it might not be up-to-date):
 
 11. Run Open Street Map address import. Data that is already found from openaddresses will be skipped.
 
-## Getting started with Docker containers
-
-### Building docker image
-- git clone git@github.com:HSLdevcom/pelias-data-container.git
-- cd pelias-data-container
-- docker build -t hsldevcom/pelias-data-container .
-
-### Running docker container
-- docker run -d -p 9200:9200 --name pelias-data-container hsldevcom/pelias-data-container
 
 ### Exploring data
 For Exploring ElasticSearch data you can open browser (when container is running):
-> http://{DOCKER HOST}:9200/_plugin/head/
-
-Above, {DOCKER HOST} is `localhost` in Linux systems. When using using docker machine on Windows or OSX,
-{DOCKER HOST} is the ip of the docker machine.
+> http://localhost:9200/_plugin/head/
 
 This url contains navigator that can be user to make queries to ElasticSearch. In order to make queries:
 
@@ -112,48 +120,29 @@ NLS kuntajako ("municipalities") From National Land Survey contains official Fin
 
 Postal address information From Statistics Finland is used to improve Quattroshapes data. This information attaches postal number to address results. e.g. Helsinki, Käpylä is 00610.
 
-## Project assets
-| Asset                         | url                                                                       |
-|-------------------------------|---------------------------------------------------------------------------|
-| Code                          | https://github.com/HSLdevcom/pelias-data-container
-| Dockerfile                    | https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
-| Pelias config                 | https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
-| Docker image                  |                                                           |
-| pelias-nlsfi-places-importer  | https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
 
 ## Key service delivery activities
-1. Keep up with Pelias development on GitHub
+1. Keep up with Pelias development on GitHub<br/>
+   https://github.com/pelias/pelias
 
-> https://github.com/pelias/pelias
+2. Keep up with Mapzen Search (which is essentially same as Pelias)<br/>
+   https://mapzen.com/projects/search/
 
-2. Keep up with Mapzen Search (which is essentially same as Pelias)
+3. Keep up with Pelias importer projects<br/>
+   https://github.com/pelias/quattroshapes<br/>
+   https://github.com/pelias/openaddresses<br/>
+   https://github.com/pelias/openstreetmap<br/>
+   https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
 
-> https://mapzen.com/projects/search/
+4. Keep up with Pelias-cli development<br/>
+   https://github.com/pelias/cli
 
-3. Keep up with Pelias importer projects
+5. Keep up with Who's on First development<br/>
+   https://whosonfirst.mapzen.com/<br/>
+   https://github.com/whosonfirst/whosonfirst-data/
 
-> https://github.com/pelias/quattroshapes
+6. Keep up with Geospatial Data Abstraction Library development<br/>
+   http://www.gdal.org/
 
-> https://github.com/pelias/openaddresses
-
-> https://github.com/pelias/openstreetmap
-
-> https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
-
-4. Keep up with Pelias-cli development
-
-> https://github.com/pelias/cli
-
-5. Keep up with Who's on First development
-
-> https://whosonfirst.mapzen.com/
-
-> https://github.com/whosonfirst/whosonfirst-data/
-
-6. Keep up with Geospatial Data Abstraction Library development
-
-> http://www.gdal.org/
-
-7. Keep up with ElasticSearch docker image and it's changes
-
-> https://hub.docker.com/_/elasticsearch/
+7. Keep up with ElasticSearch docker image and it's changes<br/>
+   https://hub.docker.com/_/elasticsearch/
