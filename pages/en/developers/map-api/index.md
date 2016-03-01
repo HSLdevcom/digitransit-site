@@ -11,6 +11,7 @@ assets:
   "tilelive-otp-stops": https://github.com/hannesj/tilelive-otp-stops
   "tilelive-hsl-parkandride": https://github.com/HSLdevcom/tilelive-hsl-parkandride
   "tilelive-gl": https://github.com/hannesj/tilelive-gl.git
+  "HSL-map-generator-ui": https://github.com/HSLdevcom/hsl-map-generator-ui
 docker:
   dockerfile: https://github.com/HSLdevcom/hsl-map-server/blob/master/Dockerfile
   imageName: hsldevcom/hsl-map-server
@@ -38,7 +39,7 @@ examples:
 
 > http://beta.digitransit.fi/hsl-map/16/37313/18958@2x.png
 
-### Display map using Leaflet: 
+### Display map using Leaflet:
 
 ``` javascript
 <!doctype html>
@@ -90,6 +91,10 @@ HSL map style is available in https://github.com/HSLdevcom/hsl-map-style.git
 
 [Readme file](https://github.com/HSLdevcom/hsl-map-style/blob/master/README.md) contains information how to run map style on local machine.
 
+## HSL map generator UI
+Prototype UI that can be used to generate printable maps is available at
+> https://github.com/HSLdevcom/hsl-map-generator-ui
+
 ## Service dependencies
 | Asset                  |  Url                                                        |
 |------------------------|-------------------------------------------------------------|
@@ -97,30 +102,25 @@ HSL map style is available in https://github.com/HSLdevcom/hsl-map-style.git
 | HSL park and ride API  | https://www.hsl.fi/en/information/park-and-ride
 
 ## Key service delivery activities
-1. Keep up with various specifications
-> https://github.com/mapbox/tilejson-spec
+1. Keep up with various specifications<br/>
+   https://github.com/mapbox/tilejson-spec<br/>
+   https://github.com/mapbox/vector-tile-spec<br/>
+   https://github.com/mapbox/mbtiles-spec<br/>
+   https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification<br/>
+   http://geojson.org/
 
-> https://github.com/mapbox/vector-tile-spec
+2. Keep up with Tessera development on GitHub<br/>
+   https://github.com/mojodna/tessera
 
-> https://github.com/mapbox/mbtiles-spec
+3. Keep up with TileLive development on GitHub<br/>
+   https://github.com/mapbox/tilelive
 
-> https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification
+4. Keep up with TileLive http developement on GitHub<br/>
+   https://github.com/mojodna/tilelive-http
 
-> http://geojson.org/
+5. Keep up with TileLive xray development on GitHub<br/>
+   https://github.com/mojodna/tilelive-xray
 
-2. Keep up with Tessera development on GitHub
-> https://github.com/mojodna/tessera
-
-3. Keep up with TileLive development on GitHub
-> https://github.com/mapbox/tilelive
-
-4. Keep up with TileLive http developement on GitHub
-> https://github.com/mojodna/tilelive-http
-
-5. Keep up with TileLive xray development on GitHub
-> https://github.com/mojodna/tilelive-xray
-
-6. Follow OSM2VectorTiles Project
-> http://osm2vectortiles.org/
-
-> https://github.com/osm2vectortiles/osm2vectortiles
+6. Follow OSM2VectorTiles Project<br/>
+   http://osm2vectortiles.org/<br/>
+   https://github.com/osm2vectortiles/osm2vectortiles
