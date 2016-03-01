@@ -16,6 +16,7 @@ docker:
   buildScript: https://github.com/HSLdevcom/hslalert/blob/master/build-docker-image.sh
   runContainer: docker run -p 8080:5000 hsldevcom/hslalert
   accessContainer: http://localhost:8080/?debug
+---
 
 Service connects to Poikkeusinfo v3 xml interface (http://www.poikkeusinfo.fi/xml/v3),
 reads this data, and converts it to GTFS-RT
