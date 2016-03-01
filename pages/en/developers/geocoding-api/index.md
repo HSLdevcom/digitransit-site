@@ -32,7 +32,7 @@ Endpoint root is available at:
 
 Search for kamppi:
 <pre>
-curl "http://beta.digitransit.fi{enviroment}/pelias/v1/autocomplete?text=kampp"
+curl "http://beta.digitransit.fi/pelias/v1/autocomplete?text=kampp"
 </pre>
 
 To focus searches around given point to boost local addresses and get distance from
