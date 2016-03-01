@@ -1,7 +1,7 @@
 ---
 title: Navigator-server
 description:
-  info: "Navigator server provides snapshot of current realtime vehicle location data. Data is provided in two separate formats: json/SIRI and in custom json format." 
+  info: "Navigator server provides snapshot of current realtime vehicle location data. Data is provided in two separate formats: json/SIRI and in custom json format."
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/navigator-server/architecture.xml
 docker:
   dockerfile: https://github.com/HSLdevcom/navigator-server/blob/master/Dockerfile
@@ -20,7 +20,7 @@ technologies:
 
 
 Navigator server connects to HSL Live server (Realtime API of vehicle locations) and consumes messages about vehicle
-locations in realtime. This information is stored in memory and provided to clients requesting for it. 
+locations in realtime. This information is stored in memory and provided to clients requesting for it.
 
 The provided information can be used to draw vehicles on map. To draw realtime updates to the vehicle locations on map
 one should subscribe to mgtt (see the HSL-MQTT-API-draft link in the technologies section).
@@ -61,8 +61,7 @@ id to construct the url based on the information on the HSL-MQTT-API-draft:
 
 ### Display all tram 9s on map
 
-```
-html
+```html
 <!doctype html>
 <html ng-app="tram-9">
   <head>
@@ -100,9 +99,8 @@ html
 > curl http://beta.digitransit.fi/navigator-server/siriaccess/vm/json
 
 ## Service dependencies
-Navigator-server does not use any digitransit data sources, it retrieves the data from HSL Live server 
+Navigator-server does not use any digitransit data sources, it retrieves the data from HSL Live server
 
 ## Key service delivery activities
-1. Keep up with HSL-MQTT-API<br/> 
+1. Keep up with HSL-MQTT-API<br/>
    https://digipalvelutehdas.hackpad.com/HSL-MQTT-API-draft
-
