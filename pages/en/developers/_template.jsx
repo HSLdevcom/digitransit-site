@@ -99,6 +99,7 @@ module.exports = React.createClass({
               }}
             >
               <h1>{this.props.page.data.title}</h1>
+              <h4 style={{'color': 'red'}}>Please notice that API urls are about to change during March 2016.</h4>
               <ArchitectureHeader {...this.props.page.data}/>
               <RouteHandler typography={typography} {...this.props}/>
               <Assets {...this.props.page.data}/>
