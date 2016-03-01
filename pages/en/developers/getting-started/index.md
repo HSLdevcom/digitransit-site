@@ -17,12 +17,11 @@ Read documentation about architecture and environment urls:
 - [Architecture](../architecture/)
 - [Environments](../environments/)
 
-Then read about APIs:
+Then read about public APIs:
 - [Routing - API](../routing-api/)
 - [Geocoding - API ](../geocoding-api/)
 - [Map - API](../map-api/)
-- [Alerts HSL - API](../alerts-hsl-api/)
-- [Realtime HSL - API](../realtime-hsl-api/)
+- Realtime - API
 
 This will help you get started. Articles page might contain something useful:
 - [Articles](../articles/)

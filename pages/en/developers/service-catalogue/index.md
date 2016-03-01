@@ -3,20 +3,29 @@ title: Service catalog
 order: 5
 ---
 
-## Digitransit hosted services
-
+## Digitransit Public APIs
 | Service                                    | Description                     |
 |--------------------------------------------|---------------------------------|
-| [Alerts HSL - API ](../alerts-hsl-api/)    | HSL disruption info            
-| [Geocoding - Data ](../geocoding-data/)    | Geocoding data               
 | [Geocoding - API ](../geocoding-api/)      | Geocoding API
-| [Routing - Data](../routing-data/)         | Routing and timetable Data
 | [Routing - API](../routing-api/)           | Routing and timetable API
 | [Map - API](../map-api/)                   | Map raster and vector tiles API
 | [Realtime HSL - API](../realtime-hsl-api/) | Realtime HSL API
 
-## 3rd party hosted services
+## Digitransit Data Containers
+| Service                                    | Description                     |
+|--------------------------------------------|---------------------------------|
+| [Geocoding - Data ](../geocoding-data/)    | Geocoding data               
+| [Routing - Data](../routing-data/)         | Routing and timetable Data
 
+## Digitransit Internal Conversion Components
+| Service                                                 | Description                     |
+|---------------------------------------------------------|---------------------------------|
+| [Alerts HSL - API ](../alerts-hsl-api/)                 | HSL disruption info            
+| [Siri2GTFS-RT ](../siri2gtfsrt/)                        | Conversion component
+| [RailDigitraffic2GTFS-RT ](../raildigittaffic2gtfsrt/)  | Conversion component
+
+
+## 3rd party hosted services
 | Service                                      | Description                | API base url                               |
 |----------------------------------------------|----------------------------|--------------------------------------------|
 | [Alerts Oulu - API](../3rd-party-apis/)      | Oulu disruption info       | http://92.62.36.215:8080/gtfs-rt/service-alerts/
