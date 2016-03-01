@@ -27,7 +27,9 @@ This service is essentially an ElasticSearch instance containing Geocoding data 
 Start by reading (Note that it might not be up-to-date):
 > https://mapzen.com/blog/pelias-setup-tutorial
 
-On build time the data is fetched from multiple sources and processed and loaded  into ElasticSearch using
+
+### How data is built?
+On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
 Pelias tools. At high level this is what happens:
 
 1. Download and extract shapefiles from Quattroshapes
@@ -120,38 +122,27 @@ Postal address information From Statistics Finland is used to improve Quattrosha
 
 
 ## Key service delivery activities
-1. Keep up with Pelias development on GitHub
+1. Keep up with Pelias development on GitHub<br/>
+   https://github.com/pelias/pelias
 
-> https://github.com/pelias/pelias
+2. Keep up with Mapzen Search (which is essentially same as Pelias)<br/>
+   https://mapzen.com/projects/search/
 
-2. Keep up with Mapzen Search (which is essentially same as Pelias)
+3. Keep up with Pelias importer projects<br/>
+   https://github.com/pelias/quattroshapes<br/>
+   https://github.com/pelias/openaddresses<br/>
+   https://github.com/pelias/openstreetmap<br/>
+   https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
 
-> https://mapzen.com/projects/search/
+4. Keep up with Pelias-cli development<br/>
+   https://github.com/pelias/cli
 
-3. Keep up with Pelias importer projects
+5. Keep up with Who's on First development<br/>
+   https://whosonfirst.mapzen.com/<br/>
+   https://github.com/whosonfirst/whosonfirst-data/
 
-> https://github.com/pelias/quattroshapes
+6. Keep up with Geospatial Data Abstraction Library development<br/>
+   http://www.gdal.org/
 
-> https://github.com/pelias/openaddresses
-
-> https://github.com/pelias/openstreetmap
-
-> https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
-
-4. Keep up with Pelias-cli development
-
-> https://github.com/pelias/cli
-
-5. Keep up with Who's on First development
-
-> https://whosonfirst.mapzen.com/
-
-> https://github.com/whosonfirst/whosonfirst-data/
-
-6. Keep up with Geospatial Data Abstraction Library development
-
-> http://www.gdal.org/
-
-7. Keep up with ElasticSearch docker image and it's changes
-
-> https://hub.docker.com/_/elasticsearch/
+7. Keep up with ElasticSearch docker image and it's changes<br/>
+   https://hub.docker.com/_/elasticsearch/
