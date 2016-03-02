@@ -12,7 +12,7 @@ technologies:
   "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
   "Python": null
 docker:
-  dockerfile: https://github.com/HSLdevcom/hsl-map-server/blob/master/Dockerfile
+  dockerfile: https://github.com/HSLdevcom/siri2gtfsrt/blob/master/Dockerfile
   imageName: hsldevcom/siri2gtfsrt
   buildScript: https://github.com/HSLdevcom/siri2gtfsrt/blob/master/build-docker-image.sh
   runContainer: docker run -p 8080:8080 hsldevcom/siri2gtfsrt
