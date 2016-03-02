@@ -1,19 +1,33 @@
 ---
 title: Routing - API
+description:
+  info: Routing API enables developers to query routes and timetable related information using either REST or GraphQL interfaces.
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/routing-api/architecture.xml
+assets:
+  source: https://github.com/HSLdevcom/OpenTripPlanner
+  dockerHub: https://hub.docker.com/r/hsldevcom/OpenTripPlanner/
+  Dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
+  "Routing - Data": ../routing-data
+  "Alerts HSL - API": ../alerts-hsl-api/
+  Siri2gtfsrt: ../siri2gtfsrt/
+technologies:  
+  "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
+  "GTFS": "https://developers.google.com/transit/gtfs/"
+  "Java": null
+docker:
+  dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
+  imageName: hsldevcom/opentripplanner
+  buildScript: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/build-docker-image.sh
+  runContainer: docker run -p 8080:8080 hsldevcom/opentripplanner TODO
+  accessContainer: http://localhost:8080/HSL?debug TODO
+
 ---
-## Description
 Routing API is implemented using OpenTripPlanner.
 > http://www.opentripplanner.org/
-
-Routing API enables developers to query routes and timetable related information using either REST or GraphQL interfaces.
 
 ### Static and realtime information
 
 OpenTripPlanner APIs provide access to static and realtime information. Routing and timetable data is based on static GTFS and it is enriched by realtime information for those departures that have realtime information available. This means that results returned by OpenTripPlanner always contain realtime information should it be available.
-
-## Service architecture
-TODO
-![Architecture](./architecture.jpg)
 
 ## API Documentation
 
@@ -22,18 +36,19 @@ REST interface is provided as it is available in OpenTripPlanner. First thing to
 > http://docs.opentripplanner.org/en/latest/
 
 OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki city region and entire Finland:
-> http://{enviroment}/otp/routers/hsl/
+> http://beta.digitransit.fi/otp/routers/hsl/
 
-> http://{enviroment}/otp/routers/finland/
+> http://beta.digitransit.fi/otp/routers/finland/
 
 
 ### GraphQL
-GraphQL interface is not currently merged to OpenTripPlanner upstream. This means that it is only available in [HSLDevCom OpenTripPlanner fork](https://github.com/HSLdevcom/OpenTripPlanner).
+GraphQL interface is currently not covering all functionality of OpenTripPlanner. We're working on adding some of the
+missing bits and pieces.
 
 We provide GraphQL interface for both Helsinki city region and entire Finland:
-> http://{enviroment}/otp/routers/hsl/index/graphql
+> http://beta.digitransit.fi/otp/routers/hsl/index/graphql
 
-> http://{enviroment}/otp/routers/finland/index/graphql
+> http://beta.digitransit.fi/otp/routers/finland/index/graphql
 
 
 Interface can be tested using GraphQL console:
@@ -88,24 +103,6 @@ You can get access to GraphQL schema by running
   }
 }
 </pre>
-## Service dependencies
-| Asset               |  Url                                                        |
-|---------------------|-------------------------------------------------------------|
-| Routing - Data      | http://digitransit.fi/developers/routing-data/
-| Alerts HSL - API    | http://digitransit.fi/developers/alerts-hsl-api/
-| Alerts Oulu - API   | http://digitransit.fi/developers/alerts-oulu-api/
-| Realtime VR - API   | http://digitransit.fi/developers/realtime-vr-api/
-| Realtime Oulu - API | http://digitransit.fi/developers/realtime-oulu-api/
-| Realtime Tre  - API | http://digitransit.fi/developers/realtime-tre-api/
-
-## Project assets
-
-| Asset         | url                                                                       |
-|---------------|---------------------------------------------------------------------------|
-| Code          | https://github.com/HSLdevcom/OpenTripPlanner                              |
-| Dockerfile    | https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile       |
-| Docker image  | https://hub.docker.com/r/hsldevcom/opentripplanner-hsl/                   |
-
 
 ## Key service delivery activities
 1. Keep up with OpenTripPlanner upstream development on GitHub
@@ -125,7 +122,3 @@ You can get access to GraphQL schema by running
 7. Follow Google transit community and its mailing lists:
 > https://developers.google.com/transit/community?hl=en
 
-## Key technologies and specifications
-- Java
-- GTFS
-- GTFS-RT
