@@ -27,15 +27,20 @@ Routing API is implemented using OpenTripPlanner.
 
 ### Static and realtime information
 
-OpenTripPlanner APIs provide access to static and realtime information. Routing and timetable data is based on static GTFS and it is enriched by realtime information for those departures that have realtime information available. This means that results returned by OpenTripPlanner always contain realtime information should it be available.
+OpenTripPlanner APIs provide access to static and realtime routing and transit information. Routing and timetable data
+is based on static GTFS and it is enriched by realtime information for those departures that have realtime information
+available. This means that results returned by OpenTripPlanner always contain realtime information should it be
+available.
 
 ## API Documentation
 
 ### REST
-REST interface is provided as it is available in OpenTripPlanner. First thing to do is to familiarize yourself with OpenTripPlanner documentation:
+REST interface is provided as it is available in OpenTripPlanner. First thing to do is to familiarize yourself with
+OpenTripPlanner documentation:
 > http://docs.opentripplanner.org/en/latest/
 
-OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki city region and entire Finland:
+OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki
+city region and entire Finland:
 > http://beta.digitransit.fi/otp/routers/hsl/
 
 > http://beta.digitransit.fi/otp/routers/finland/
