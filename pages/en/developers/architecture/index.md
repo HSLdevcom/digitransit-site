@@ -1,6 +1,5 @@
 ---
 title: Architecture
-order: 1
 ---
 
 Digitransit architecture is based on microservices architecture. Microservices are small, autonomous services that work together that allow us to build larger applications on top of APIs that the services provide.
@@ -9,31 +8,25 @@ Digitransit architecture is based on microservices architecture. Microservices a
 
 [Open full size image](http://www.digitransit.fi/en/developers/architecture/architecture.svg)
 
-In picture above, we have three kinds of services
+In picture above, we have five kinds of services
 
 1. Public APIs (green)
-2. Internal components (yellow)
-3. External components (gray)
+2. Data containers (yellow)
+3. User interface (blue)
+4. Internal components (red)
+5. External components (gray)
 
 ## Public APIs
-These services are provided by the platform and are part of supported public API.
-- [Routing API](../routing-api/)
-- [Geocoding API](../geocoding-api/)
-- [Map API](../map-api/)
-- Realtime API
+These services are provided by the platform and are part of supported public API. [See all public apis](../service-catalogue/apis/)
+
+## Data containers
+Data containers are images that are used to gather and compile data needed for APIs by the platform and are part [See available data containers](../service-catalogue/data-containers/)
+
+## User interface
+We have built a mobile friendly user interface on top of public APIs [See it here](../service-catalogue/digitransit-ui/)
 
 ## Internal components
-They are either small conversion modules or data containers that convert and build data from various sources to be used by the APIs. Datastore can conceptually be anything: Database, graphfile, etc.
-
-- [Routing Data](../routing-data/)
-- [Geocoding Data](../geocoding-data/)
-- [Alerts HSL API](../alerts-hsl-api/)
-- [Siri2GTFS-RT](../siri2gtfsrt/)
-- [RailDigitraffic2GTFS-RT](../raildigittaffic2gtfsrt/)
+They are either small conversion modules that convert from various sources. You should not probably use these as public APIs, because they are likely to change. However, if you are interested [you can browser internal components here.](../service-catalogue/internal-components/)
 
 ## External components
-External services are something that Digitransit depends on. Someone else than us takes care that they work.
-
-## What about the Digitransit user interface?
-In addition to public APIs and components described above, Digitransit-platform contains a mobile friendly user interface that is built on top of platform public APIs.
-- [Digitransit-ui](../web-ui/)
+External compoments are something that Digitransit depends on. Someone else than us takes care that they work.

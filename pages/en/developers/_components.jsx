@@ -24,7 +24,7 @@ const getDockerInfo = (props) => {
           { props.docker.accessContainer }
         </pre>
         <p>
-          For More information about how to use Docker see <a href="../getting-started/#docker">docker info</a>.
+          For More information about how to use Docker see <a href="/en/developers/getting-started/docker-guide/#docker">docker info</a>.
         </p>
     </div>);
   }
@@ -79,7 +79,7 @@ const getArchitectureHeader = (props) => {
   // We'll have to use full path as image location. By just using "./architecture.svg", browser won't update image
   // when moving from page to page if image name is the same
   var image = window.location.pathname + "/architecture.svg"
-  
+
   return (
     <div>
       <p>{props.description.info}</p>
