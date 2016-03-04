@@ -138,7 +138,7 @@ module.exports = React.createClass({
         {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPageHeader {...this.props}/> : <div style={{height: `calc(${rhythm(1.5)} + 23px)`}}/>}
         <Container
           style={prefixer({
-            maxWidth: 950,
+            maxWidth: 1250,
             width: "100%",
             padding: `${rhythm(1)} ${rhythm(1/2)}`,
             flex: "1",

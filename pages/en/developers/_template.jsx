@@ -28,15 +28,7 @@ module.exports = React.createClass({
       };
     });
     childPages = sortBy(childPages, function(child) {
-      // Find out how "deep" this link is
-      var pathLevel = child.path.match(/\//g).length
-      if (child.order) {
-        // order is set in child, use it. Idea is to put these childs "on top"
-        return pathLevel * child.order
-      } else {
-        // order not set in child, make these children to go beneath "ordered childs" and sorts iteration order (most likely alphabetically)
-        return pathLevel * 10
-      }
+      return child.path
     });
     docOptions = childPages.map(function(child) {
       return React.createElement("option", {
@@ -78,7 +70,7 @@ module.exports = React.createClass({
                 overflowY: 'auto',
                 paddingRight: `calc(${rhythm(1/2)} - 1px)`,
                 position: 'absolute',
-                width: `calc(${rhythm(8)} - 1px)`,
+                width: `calc(${rhythm(10)} - 1px)`,
                 borderRight: '1px solid lightgrey'
               }}
             >
@@ -95,7 +87,8 @@ module.exports = React.createClass({
             <div
               style={{
                 padding: `0 ${rhythm(1)}`,
-                paddingLeft: `calc(${rhythm(8)} + ${rhythm(1)})`
+                paddingLeft: `calc(${rhythm(10)} + ${rhythm(1)})`,
+                minHeight: '1000px'
               }}
             >
               <h1>{this.props.page.data.title}</h1>
