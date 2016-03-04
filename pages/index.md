@@ -37,7 +37,9 @@ panels:
 <h2 style="text-align: center;">Aikataulu</h2>
 <div style="text-align: center;">
 
-HSL:n Reittiopas.&zwnj;fi ja Liikenneviraston Matka.&zwnj;fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi.  Lähdekoodi on avoin.
+HSL:n Reittiopas.&zwnj;fi ja Liikenneviraston Matka.&zwnj;fi uudistuvat.<br/>
+Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi.<br/>
+Lähdekoodi on avoin.
 
 <span class="large-link">[Uusi Reittiopas »](http://matka.hsl.fi)</span>
 <span class="large-link">[Uusi Matka.fi »](http://beta.digitransit.fi)</span>
