@@ -18,8 +18,8 @@ docker:
   dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
   imageName: hsldevcom/opentripplanner
   buildScript: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/build-docker-image.sh
-  runContainer: docker run -p 8080:8080 hsldevcom/opentripplanner TODO
-  accessContainer: http://localhost:8080/HSL?debug TODO
+  runContainer: docker run -p 8080:8080 hsldevcom/opentripplanner 
+  accessContainer: http://localhost:8080/routers/
 ---
 Routing API is implemented using OpenTripPlanner.
 > http://www.opentripplanner.org/
