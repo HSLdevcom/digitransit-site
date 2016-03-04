@@ -7,9 +7,6 @@ assets:
   source: https://github.com/HSLdevcom/OpenTripPlanner
   dockerHub: https://hub.docker.com/r/hsldevcom/OpenTripPlanner/
   Dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
-  "Routing - Data": ../routing-data
-  "Alerts HSL - API": ../alerts-hsl-api/
-  Siri2gtfsrt: ../siri2gtfsrt/
 technologies:  
   "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
   "GTFS": "https://developers.google.com/transit/gtfs/"
@@ -18,7 +15,7 @@ docker:
   dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
   imageName: hsldevcom/opentripplanner
   buildScript: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/build-docker-image.sh
-  runContainer: docker run -p 8080:8080 hsldevcom/opentripplanner 
+  runContainer: docker run -e OTP_DATA_CONTAINER_URL=http://otp-data-container:8080 -p 8080:8080 hsldevcom/opentripplanner
   accessContainer: http://localhost:8080/routers/
 ---
 Routing API is implemented using OpenTripPlanner.
@@ -109,20 +106,19 @@ You can get access to GraphQL schema by running
 </pre>
 
 ## Key service delivery activities
-1. Keep up with OpenTripPlanner upstream development on GitHub
-> https://github.com/opentripplanner/OpenTripPlanner
-2. Follow OpenTripPlanner developers mailing list:
-> https://groups.google.com/forum/#!forum/opentripplanner-dev
-3. Follow OpenTripPlanner users mailing list:
-> https://groups.google.com/forum/#!forum/opentripplanner-users
-4. Keep up with Conveyal R5 development on GitHub
-> https://github.com/conveyal/r5
-5. Keep up with Conveyal and their blog:
-> http://conveyal.com/blog/
-6. Keep up with OneBusAway and especially GTFS related projects
-> http://onebusaway.org/
+1. Keep up with OpenTripPlanner upstream development on GitHub<br/>
+   https://github.com/opentripplanner/OpenTripPlanner
 
-> https://github.com/OneBusAway?utf8=%E2%9C%93&query=gtfs
-7. Follow Google transit community and its mailing lists:
-> https://developers.google.com/transit/community?hl=en
-
+2. Follow OpenTripPlanner developers mailing list:<br/>
+   https://groups.google.com/forum/#!forum/opentripplanner-dev
+3. Follow OpenTripPlanner users mailing list:<br/>
+   https://groups.google.com/forum/#!forum/opentripplanner-users
+4. Keep up with Conveyal R5 development on GitHub<br/>
+   https://github.com/conveyal/r5
+5. Keep up with Conveyal and their blog:<br/>
+   http://conveyal.com/blog/
+6. Keep up with OneBusAway and especially GTFS related projects<br/>
+   http://onebusaway.org/<br/>
+   https://github.com/OneBusAway?utf8=%E2%9C%93&query=gtfs
+7. Follow Google transit community and its mailing lists:<br/>
+   https://developers.google.com/transit/community?hl=en
