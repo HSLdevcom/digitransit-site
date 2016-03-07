@@ -7,8 +7,9 @@ image: "release-leskinen-nearby.png"
 Tänään julkaistussa versiossa uutta:
 
 1. Reittisivu
-2. Dokumentaatiota kehittäjille
-3. Uusi fontti
+2. Uusi fontti
+3. Kehittäjille: dokumentaatiota lisätty
+4. Kehittäjille: palvelut ovat saatavilla Docker Hubista
 
 ## Reittisivu
 Reittisivua on paranneltu monella tavalla:
@@ -29,11 +30,6 @@ Tiedossa olevia puutteita:
 - Käännökset eivät ole vielä valmiita; suomeksi ei näytetä reitin osien pituuksia minuutteina, ja englanniksi ne näytetään suomeksi.
 - Graafisia yksityiskohtia hiotaan vielä
 
-## Dokumentaatiota kehittäjille
-
-[Kehittäjien dokumentaatiota](http://digitransit.fi/en/developers/) on uudistettu
-ja laajennettu.
-
 ## Uudet fontit HSL-versioon
 HSL-versio on päivitetty HSL:n virallisiin fontteihin (kirjasintyyppeihin),
 jotka ovat hieman edellistä paksumpia.
@@ -43,6 +39,14 @@ Myös kontrastia on paikoitellen lisätty.
 
 ![Uudet fontit](release-aleksi-tapio-font-new.png "Uudet fontit")
 ![Vanhat fontit](release-aleksi-tapio-font-old.png "Vanhat fontit")
+
+## Kehittäjille: dokumentaatiota lisätty
+
+[Kehittäjien dokumentaatiota](http://digitransit.fi/en/developers/) on uudistettu
+ja laajennettu.
+
+## Kehittäjille: palvelut ovat saatavilla Docker Hubista
+Palvelut ovat ladattavissa [Docker imageina Docker Hubista](https://hub.docker.com/r/hsldevcom/)
 
 ## Kokeile uusia ominaisuuksia
 - HSL-alue: http://matka.hsl.fi/
