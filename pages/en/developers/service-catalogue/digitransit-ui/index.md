@@ -68,22 +68,18 @@ Tests run automatically in Browserstack:
 | Webpack            | https://github.com/webpack/webpack
 | Nightwatch         | https://github.com/nightwatchjs/nightwatch
 
-2. From time to time check all package.json dependencies
-> https://gemnasium.com/HSLdevcom/digitransit-ui
+2. From time to time check all package.json dependencies<br/>
+   https://gemnasium.com/HSLdevcom/digitransit-ui
 
-3. Follow GraphQL specification
-> https://facebook.github.io/graphql
+3. Follow GraphQL specification<br/>
+   https://facebook.github.io/graphql
 
-4. From time to time check HSL style guide
-> https://www.hsl.fi/tyyliopas
+4. From time to time check HSL style guide<br/>
+   https://www.hsl.fi/tyyliopas
 
-5. Low priority: Follow EcmaScript, Coffeescript, and browser development
-> http://coffeescript.org/
-
-> https://esdiscuss.org/
-
-> https://discuss.babeljs.io/
-
-> http://www.ecma-international.org/news/index.html
-
-> http://caniuse.com/#info_news
+5. Follow EcmaScript, Coffeescript, and browser development<br/>
+   http://coffeescript.org/<br/>
+   https://esdiscuss.org/<br/>
+   https://discuss.babeljs.io/<br/>
+   http://www.ecma-international.org/news/index.html<br/>
+   http://caniuse.com/#info_news
