@@ -72,7 +72,15 @@ const getAssets = (props) => {
   return (<span></span>);
 }
 
+const getImage = (url) => {
+  if (typeof url == "undefined") {
+    return ( < span > < / span > );
+  }
+  return (<img src={url}/>)
+}
+
 const getArchitectureHeader = (props) => {
+
   if (typeof props.description == "undefined") {
     return (<span></span>);
   }
@@ -83,6 +91,7 @@ const getArchitectureHeader = (props) => {
   return (
     <div>
       <p>{props.description.info}</p>
+      {getImage(props.description.img)}
       <span style={{"float": "right", "font-size": "0.8em;"}}><a href={"https://www.draw.io/?url=" + props.description.architecture}>edit architecture image</a></span>
       <h2>Service Architecture</h2>
       <img src={image}/>

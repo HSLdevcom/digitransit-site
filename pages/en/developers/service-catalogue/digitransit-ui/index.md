@@ -1,12 +1,26 @@
 ---
 title: Digitransit-ui
+description:
+  img: demo.gif
+  info: Digitransit-ui is a mobile friendly User interface built to work with Digitransit APIs.
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/digitransit-ui/architecture.xml
+assets:
+  source: https://github.com/HSLdevcom/digitransit-ui
+  dockerHub: https://hub.docker.com/r/hsldevcom/digitransit-ui/
+  Dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
+technologies:  
+  "React": "https://facebook.github.io/react/"
+  "Leaflet": "http://leafletjs.com/"
+  "Relay": "https://facebook.github.io/relay/"
+  "CoffeeScript": "http://coffeescript.org/"
+docker:
+  dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
+  imageName: hsldevcom/digitransit-ui
+  buildScript: https://github.com/HSLdevcom/digitransit-ui/blob/master/build-docker-image.sh
+  runContainer: docker run -p 8080:8080 -e CONFIG=hsl -e API_URL=http://beta.digitransit.fi --name ui hsldevcom/digitransit-ui
+  accessContainer: http://localhost:8080/
 ---
-## Description
-Digitransit-ui is a mobile friendly User interface built to work with Digitransit APIs.
 
-![Demo](./demo.gif)
-
-## Architecture
 Application is built with React. React components can access data in two different ways:
 * Routing-API queries with Relay
 * Other API with Flux model
@@ -16,18 +30,9 @@ Basically, division between alternatives is:
 - If server endpoint does not support GraphQL, flux can be used to retrieve that data
 - Flux stores are mainly used to store application state
 
-![Architecture](./architecture.png)
-
 ## Tests
 Tests run automatically in Browserstack:
 > https://www.browserstack.com/automate
-
-## Run as Docker container
-Run national version
-> docker run -p 8080:8080 hsldevcom/digitransit-ui
-
-Run HSL version
-> docker run -p 8080:8080 -e CONFIG=hsl hsldevcom/digitransit-ui
 
 ## Service dependencies
 | Asset               |  Url                                                        |
@@ -38,14 +43,6 @@ Run HSL version
 | Geocoding - API     | http://digitransit.fi/developers/geocoding-api
 | Sentry              |
 | Piwik               |
-
-## Project assets
-
-| Asset         | url                                                                       |
-|---------------|---------------------------------------------------------------------------|
-| Code          | https://github.com/HSLdevcom/digitransit-ui
-| Dockerfile    | https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile       
-| Docker image  | https://hub.docker.com/r/hsldevcom/digitransit-ui/
 
 ## Key service delivery activities
 1. Keep up with key project dependencies on GitHub
@@ -71,22 +68,18 @@ Run HSL version
 | Webpack            | https://github.com/webpack/webpack
 | Nightwatch         | https://github.com/nightwatchjs/nightwatch
 
-2. From time to time check all package.json dependencies
-> https://gemnasium.com/HSLdevcom/digitransit-ui
+2. From time to time check all package.json dependencies<br/>
+   https://gemnasium.com/HSLdevcom/digitransit-ui
 
-3. Follow GraphQL specification
-> https://facebook.github.io/graphql
+3. Follow GraphQL specification<br/>
+   https://facebook.github.io/graphql
 
-4. From time to time check HSL style guide
-> https://www.hsl.fi/tyyliopas
+4. From time to time check HSL style guide<br/>
+   https://www.hsl.fi/tyyliopas
 
-5. Low priority: Follow EcmaScript, Coffeescript, and browser development
-> http://coffeescript.org/
-
-> https://esdiscuss.org/
-
-> https://discuss.babeljs.io/
-
-> http://www.ecma-international.org/news/index.html
-
-> http://caniuse.com/#info_news
+5. Follow EcmaScript, Coffeescript, and browser development<br/>
+   http://coffeescript.org/<br/>
+   https://esdiscuss.org/<br/>
+   https://discuss.babeljs.io/<br/>
+   http://www.ecma-international.org/news/index.html<br/>
+   http://caniuse.com/#info_news
