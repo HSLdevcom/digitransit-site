@@ -17,8 +17,8 @@ docker:
   dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
   imageName: hsldevcom/pelias-data-container
   buildScript: https://github.com/HSLdevcom/pelias-data-container/blob/master/build-docker-image.sh
-  runContainer: docker run -p 8080:8080 hsldevcom/pelias-data-container
-  accessContainer: http://localhost:8080/HSL?debug
+  runContainer: docker run -p 9200:9200 hsldevcom/pelias-data-container
+  accessContainer: http://localhost:9200/_plugin/head/
 ---
 
 This service is essentially an ElasticSearch instance containing Geocoding data that can be used with Pelias Geocoder.
