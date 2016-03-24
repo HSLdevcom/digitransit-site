@@ -11,9 +11,7 @@ Tänään julkaistussa versiossa uutta:
 3. Suosikkipaikka
 4. Helpoitettu käyttöä Suomen ulkopuolella
 5. Kansainvälinen yhteistyö
-6. Kehittäjille: Geokoodausta on parannettu
-7. Kehittäjille: Uusi tuotantoympäristö
-8. Muita parannuksia
+6. Muita parannuksia
 
 ## Reittisivu
 Reittisivua on parannettu entisestään:
@@ -70,15 +68,6 @@ yhteistyökumppanin Norjasta, ja viimeiseksi myös Ranskasta. Etenkin Norjalaist
 syventynyt, ja olemme hyötyneet selvästi toistemme sovelluskehityksestä.
 Ulkomaiset yhteistyökumppanit ovat tuoneet myös lisää käyttökieliä palveluun:
 Digitransit toimii nyt edellisten kielien lisäksi norjaksi ja ranskaksi.
-
-## Kehittäjille: Geokoodausparannukset
-Geokoodausta on parannettu. Muun muassa eri kielten väliset geokoodaushaut toimivat nyt paremmin.
-
-## Kehittäjille: Uusi tuotantoympäristö
-Digitransit on siirtymässä vaiheittain kohti uutta tuotantoympäristöä. Taustavalmisteluja ja uuden
-tuotantoympäristön testausta on tehty jo aiemmin, ja nyt digitransitin palveluja on siirretty yksi
-kerrallaan uuteen tuotantoympäristöön. Uusi tuotantoympäristö on Paas-palveluna toimiva OpenShift.
-OpenShift mahdollistaa muun muassa automaattisen kuormanjaon palvelun käyttöasteen perusteella.
 
 ## Muita parannuksia
 Kielistyksiä on lisätty ja korjattu. Muun muassa poikkeusinfon näyttäminen väärällä kielellä on nyt korjattu.
