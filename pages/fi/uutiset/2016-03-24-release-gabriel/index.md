@@ -11,7 +11,8 @@ Tänään julkaistussa versiossa uutta:
 3. Suosikkipaikka
 4. Helpoitettu käyttöä Suomen ulkopuolella
 5. Kansainvälinen yhteistyö
-6. Muita parannuksia
+6. Kehittäjille: GraphQL rajapinta reitin suunnitteluun
+7. Muita parannuksia
 
 ## Reittisivu
 Reittisivua on parannettu entisestään:
@@ -68,6 +69,9 @@ yhteistyökumppanin Norjasta, ja viimeiseksi myös Ranskasta. Etenkin Norjalaist
 syventynyt, ja olemme hyötyneet selvästi toistemme sovelluskehityksestä.
 Ulkomaiset yhteistyökumppanit ovat tuoneet myös lisää käyttökieliä palveluun:
 Digitransit toimii nyt edellisten kielien lisäksi norjaksi ja ranskaksi.
+
+## Kehittäjille: GraphQL rajapinta reitin suunnitteluun
+Digitransit Routing API tukee nyt [reittisuunnittelua GraphQL rajapinnan yli](/en/developers/service-catalogue/apis/routing-api/).
 
 ## Muita parannuksia
 Kielistyksiä on lisätty ja korjattu. Muun muassa poikkeusinfon näyttäminen väärällä kielellä on nyt korjattu.

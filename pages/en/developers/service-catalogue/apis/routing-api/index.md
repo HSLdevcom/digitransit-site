@@ -105,6 +105,53 @@ You can get access to GraphQL schema by running
 }
 </pre>
 
+4. Query a route plan
+<pre>
+{
+  plan(
+    from: {lat: 60.4, lon: 24.5}
+    to: {lat: 60.41, lon: 24.51}
+    numItineraries: 3
+  ) {
+    itineraries {
+      legs {
+        startTime
+        endTime
+        mode
+        duration
+        realTime
+        distance
+        transitLeg
+      }
+    }
+  }
+}
+</pre>
+
+5. Query a route plan using only WALK and RAIL
+<pre>
+{
+  plan(
+    from: {lat: 60.199196699999995, lon: 24.9397302}
+    to: {lat: 60.168438, lon: 24.929283}
+    numItineraries: 3
+    modes: "WALK,RAIL"
+  ) {
+    itineraries {
+      legs {
+        startTime
+        endTime
+        mode
+        duration
+        realTime
+        distance
+        transitLeg
+      }
+    }
+  }
+}
+</pre>
+
 ## Key service delivery activities
 1. Keep up with OpenTripPlanner upstream development on GitHub<br/>
    https://github.com/opentripplanner/OpenTripPlanner
