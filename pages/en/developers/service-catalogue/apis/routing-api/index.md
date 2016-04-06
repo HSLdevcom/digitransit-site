@@ -55,6 +55,9 @@ We provide GraphQL interface for both Helsinki city region and entire Finland:
 Interface can be tested using GraphQL console:
 > http://dev.hsl.fi/graphql/console/
 
+You can also download a standalone graphiql GraphQL client here:
+> https://github.com/skevy/graphiql-app
+
 You can get access to GraphQL schema by running
  [this example in GraphQL console](http://dev.hsl.fi/graphql/console/?query=query%20IntrospectionQuery%20%7B%0A%20%20%20%20__schema%20%7B%0A%20%20%20%20%20%20queryType%20%7B%20name%20%7D%0A%20%20%20%20%20%20mutationType%20%7B%20name%20%7D%0A%20%20%20%20%20%20types%20%7B%0A%20%20%20%20%20%20%20%20...FullType%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20directives%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20args%20%7B%0A%20%20%20%20%20%20%20%20%20%20...InputValue%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20onOperation%0A%20%20%20%20%20%20%20%20onFragment%0A%20%20%20%20%20%20%20%20onField%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20fragment%20FullType%20on%20__Type%20%7B%0A%20%20%20%20kind%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20fields(includeDeprecated%3A%20true)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20args%20%7B%0A%20%20%20%20%20%20%20%20...InputValue%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20type%20%7B%0A%20%20%20%20%20%20%20%20...TypeRef%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20isDeprecated%0A%20%20%20%20%20%20deprecationReason%0A%20%20%20%20%7D%0A%20%20%20%20inputFields%20%7B%0A%20%20%20%20%20%20...InputValue%0A%20%20%20%20%7D%0A%20%20%20%20interfaces%20%7B%0A%20%20%20%20%20%20...TypeRef%0A%20%20%20%20%7D%0A%20%20%20%20enumValues(includeDeprecated%3A%20true)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20isDeprecated%0A%20%20%20%20%20%20deprecationReason%0A%20%20%20%20%7D%0A%20%20%20%20possibleTypes%20%7B%0A%20%20%20%20%20%20...TypeRef%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20fragment%20InputValue%20on%20__InputValue%20%7B%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20type%20%7B%20...TypeRef%20%7D%0A%20%20%20%20defaultValue%0A%20%20%7D%0A%20%20fragment%20TypeRef%20on%20__Type%20%7B%0A%20%20%20%20kind%0A%20%20%20%20name%0A%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20kind%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20%20%20kind%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20%20%20%20%20kind%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D)
 
@@ -105,7 +108,7 @@ You can get access to GraphQL schema by running
 }
 </pre>
 
-4. Query a route plan
+4. Query a route plan from (60.4,24.5) to (60.41,24.51)
 <pre>
 {
   plan(
@@ -151,6 +154,59 @@ You can get access to GraphQL schema by running
   }
 }
 </pre>
+
+6. Query all tram routes where number is like "1*"
+<pre>
+{
+  routes(name: "1", modes: "TRAM") {
+    id
+    agency {
+      id
+    }
+    shortName
+    longName
+    desc
+  }
+}
+</pre>
+
+7. Query all bus routes where number is like "58*"
+<pre>
+{
+  routes(name: "58", modes: "BUS") {
+    id
+    agency {
+      id
+    }
+    shortName
+    longName
+    desc
+  }
+}
+</pre>
+
+8. Query all stops where name is like "hertton"
+<pre>
+{
+  stops(name: "hertton") {
+    id
+    name
+    wheelchairBoarding
+  }
+}
+</pre>
+
+9. Query a stop by number
+<pre>
+{
+  stops(name: "4040") {
+    id
+    name
+    wheelchairBoarding
+  }
+}
+</pre>
+
 
 ## Key service delivery activities
 1. Keep up with OpenTripPlanner upstream development on GitHub<br/>
