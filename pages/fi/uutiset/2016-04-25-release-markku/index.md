@@ -34,8 +34,8 @@ linjojen lähdöt ja arvioidut ohitusajat. Alla vasemmalla linjahaku ja oikealla
 ![Pysäkkihaku](release-markku-stop-search.png "Pysäkkihaku")
 
 ## Reittihaku ruotsinkielisillä osoitteilla
-Sovellus päivittyi palvelemaan entistä paremmin ruotsinkielistä väestöä mahdollistamalla
-ruotsinkielisten paikannimet reittihaussa:
+Sovellus tukee nyt paikoitellen ruotsinkielisiä hakuja. Esim. "Nordsjö" ja "Borgbacken" haut palauttavat haluttuja tuloksia ruotsiksi.
+Toiminnallisuus paranttuu lähitulevaisuudessa.
 
 ![Katujen ruotsinkielinen haku](release-markku-swedish-search.png "Haku ruotsiksi")
 
