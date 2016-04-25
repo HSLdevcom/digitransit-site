@@ -13,10 +13,9 @@ Tänään julkaistussa versiossa uutta:
 5. Muita parannuksia
 
 ## Yksi hakukenttä
-Digitransitissa kokeillaan yhden hakukentän mallia. Yhden hakukentän
-mallissa aloitussivulla on näkyvissä vain yksi hakukenttä, jota kautta käyttäjä
-pääsee tekemään reittihakuja. Hakukentän valitessaan käyttäjä ohjataan
-erilliselle hakusivulle, josta voi asettaa määränpään ja lähtöpaikan halutessaan.
+Käyttöliittymässä kokeillaan yhden hakukentän mallia. Yhden hakukentän
+mallissa aloitussivulla on näkyvissä vain yksi hakukenttä, jolla käyttäjä
+suorittaa reittihakuja. Hakukentän valinta vie käyttäjän omalle sivulleen, jossa haut suoritetaan.
 Alla olevista kuvista vasemmalla on uusi, oikealla vanha näkymä.
 
 ![Uusi hakukenttä](release-markku-search-fields-new.png "Uusi hakukenttä")
@@ -27,7 +26,7 @@ Alla olevista kuvista vasemmalla on uusi, oikealla vanha näkymä.
 ![Uusi hakusivu](release-markku-new-search-page.png "Uusi hakukenttä")
 
 ## Pysäkkien ja linjojen haku
-Nyt digitransitilla voi hakea myös pysäkkejä ja linjoja! Haun kautta voit nopeasti
+Nyt sovelluksella voi hakea myös pysäkkejä ja linjoja! Haun kautta voit nopeasti
 löytää eri linjojen aikataulut. Pysäkkiä haettaessa haku palauttaa valitun pysäkin
 linjojen lähdöt ja arvioidut ohitusajat. Alla vasemmalla linjahaku ja oikealla pysäkkihaku.
 
@@ -35,8 +34,8 @@ linjojen lähdöt ja arvioidut ohitusajat. Alla vasemmalla linjahaku ja oikealla
 ![Pysäkkihaku](release-markku-stop-search.png "Pysäkkihaku")
 
 ## Reittihaku ruotsinkielisillä osoitteilla
-Digitransit päivittyi palvelemaan entistä paremmin ruotsinkielistä väestöä mahdollistamalla
-ruotsinkielisten katuosoitteiden käytön reittihaussa:
+Sovellus päivittyi palvelemaan entistä paremmin ruotsinkielistä väestöä mahdollistamalla
+ruotsinkielisten paikannimet reittihaussa:
 
 ![Katujen ruotsinkielinen haku](release-markku-swedish-search.png "Haku ruotsiksi")
 
