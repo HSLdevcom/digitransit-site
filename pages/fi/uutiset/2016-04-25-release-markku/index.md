@@ -21,7 +21,7 @@ Alla olevista kuvista vasemmalla on uusi, oikealla vanha näkymä.
 ![Uusi hakukenttä](release-markku-search-fields-new.png "Uusi hakukenttä")
 ![Vanhat hakukentät](release-markku-search-fields-old.png "Vanhat hakukentät")
 
-### Haku sivun näkymä uudessa versiossa:
+### Hakusivun näkymä uudessa versiossa:
 
 ![Uusi hakusivu](release-markku-new-search-page.png "Uusi hakukenttä")
 
