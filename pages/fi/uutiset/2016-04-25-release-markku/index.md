@@ -35,7 +35,7 @@ linjojen lähdöt ja arvioidut ohitusajat. Alla vasemmalla linjahaku ja oikealla
 
 ## Reittihaku ruotsinkielisillä osoitteilla
 Sovellus tukee nyt paikoitellen ruotsinkielisiä hakuja. Esim. "Nordsjö" ja "Borgbacken" haut palauttavat haluttuja tuloksia ruotsiksi.
-Toiminnallisuus paranttuu lähitulevaisuudessa.
+Toiminnallisuus parantuu lähitulevaisuudessa.
 
 ![Katujen ruotsinkielinen haku](release-markku-swedish-search.png "Haku ruotsiksi")
 
