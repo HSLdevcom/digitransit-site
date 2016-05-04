@@ -45,7 +45,7 @@ Käyttöliittymää on saatu hieman nopeammaksi poistamalla pinnan alta turhia v
 Toissaviikolla HSL:llä oli reilu kymmenen talon ulkopuolista testaajaa kokeilemassa uutta reittiopasta ja antamassa palautetta. Kiitos heille!
 
 ## Kokeile uusia ominaisuuksia
-- HSL-alue: http://matka.hsl.fi/
+- HSL-alue: http://beta.reittiopas.fi/
 - Suomi: http://beta.digitransit.fi/
 
 ## Seuraava julkaisu

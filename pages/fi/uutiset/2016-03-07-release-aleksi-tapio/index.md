@@ -45,5 +45,5 @@ Myös kontrastia on paikoitellen lisätty.
 ![Vanhat fontit](release-aleksi-tapio-font-old.png "Vanhat fontit")
 
 ## Kokeile uusia ominaisuuksia
-- HSL-alue: http://matka.hsl.fi/
+- HSL-alue: http://beta.reittiopas.fi/
 - Suomi: http://beta.digitransit.fi/
