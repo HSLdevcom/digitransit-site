@@ -17,5 +17,5 @@ Our issue tracking and roadmap is handled in [https://digitransit.atlassian.net]
 * Configurable for any region
 
 ## Demos
-* [Finland - Helsinki city region demo](http://matka.hsl.fi/)
-* [Finland - National demo](http://digitransit.fi/digitransit-ui/)
+* [Finland - Helsinki city region demo](http://beta.reittiopas.fi/)
+* [Finland - National demo](http://beta.digitransit.fi/)
