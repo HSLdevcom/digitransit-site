@@ -10,7 +10,8 @@ First you should decide "what do you want to get started with?". You have multip
 4. Try out Docker images
 
 ## Test drive Digitransit-ui
-This is easiest way to get started. Read [Digitransit-ui documentation](../service-catalogue/digitransit-ui/) and how to start start Digitransit-ui in Docker.
+This is easiest way to get started. Read [Digitransit-ui documentation](../service-catalogue/digitransit-ui/) and how
+to start start Digitransit-ui in Docker.
 
 ## Use available APIs in your application
 Read documentation about architecture and environment urls:

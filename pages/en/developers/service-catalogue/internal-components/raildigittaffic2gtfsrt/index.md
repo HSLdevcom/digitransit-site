@@ -28,7 +28,7 @@ The service offers two GTFS-realtime data feeds filled with [trip updates](https
 one for HSL data and one for national data.
 
 ## Endpoint
-<pre>http://beta.digitransit.fi/raildigitraffic2gtfsrt/:operator/:debug</pre>
+<pre>http://api.digitransit.fi/realtime/raildigitraffic2gtfsrt/v1/:operator/:debug</pre>
 
 Supported query parameters:
 | Parameter | Type           | Description                                                             |
@@ -39,7 +39,7 @@ Supported query parameters:
 ## Examples
 
 ### Show currently active HSL realtime trip updates (debug mode)
-> curl http://beta.digitransit.fi/raildigitraffic2gtfsrt/hsl/debug
+> curl http://api.digitransit.fi/realtime/raildigitraffic2gtfsrt/v1/hsl/debug
 
 More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/code-samples).
 

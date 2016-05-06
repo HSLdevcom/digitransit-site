@@ -31,7 +31,7 @@ Currently the service offers two GTFS-realtime data feeds filled with [trip upda
 one for HSL data and one for JOLI data.
 
 ## Endpoint
-<pre>http://beta.digitransit.fi/siri2gtfsrt/:operator</pre>
+<pre>http://api.digitransit.fi/realtime/trip-updates/v1/:operator</pre>
 
 Supported query parameters:
 | Parameter | Type           | Description                                                  |
@@ -42,7 +42,7 @@ Supported query parameters:
 ## Examples
 
 ### Show currently active JOLI realtime trip updates (debug mode)
-> curl http://beta.digitransit.fi/siri2gtfsrt/JOLI?debug
+> curl http://api.digitransit.fi/realtime/trip-updates/v1/JOLI?debug
 
 More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/code-samples).
 
