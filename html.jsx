@@ -51,6 +51,7 @@ module.exports = React.createClass({
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat"/>
           <link rel="shortcut icon" href={this.props.favicon}/>
           <TypographyStyle/>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"/>
           <style dangerouslySetInnerHTML={{__html: `
           #header-image {
             background-image: url("${urlPrefix}/header.jpg");
