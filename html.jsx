@@ -48,7 +48,7 @@ module.exports = React.createClass({
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
           <meta name="description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
-          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat"/>
+          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat,String.prototype.startsWith,Object.assign"/>
           <link rel="shortcut icon" href={this.props.favicon}/>
           <TypographyStyle/>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"/>

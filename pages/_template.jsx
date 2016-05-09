@@ -87,6 +87,7 @@ module.exports = React.createClass({
             right: 0,
             color: "#fff",
             fontWeight: 500,
+            width: `calc(100% - 152px)`,
           })}
         >
           <Breakpoint minWidth={750}>
