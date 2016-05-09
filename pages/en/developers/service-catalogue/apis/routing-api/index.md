@@ -37,9 +37,9 @@ OpenTripPlanner documentation:
 
 OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki
 city region and entire Finland:
-> http://beta.digitransit.fi/otp/routers/hsl/
+> http://api.digitransit.fi/routing/v1/routers/hsl/
 
-> http://beta.digitransit.fi/otp/routers/finland/
+> http://api.digitransit.fi/routing/v1/routers/finland/
 
 
 ### GraphQL
@@ -47,13 +47,16 @@ GraphQL interface is currently not covering all functionality of OpenTripPlanner
 missing bits and pieces.
 
 We provide GraphQL interface for both Helsinki city region and entire Finland:
-> http://beta.digitransit.fi/otp/routers/hsl/index/graphql
+> http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 
-> http://beta.digitransit.fi/otp/routers/finland/index/graphql
+> http://api.digitransit.fi/routing/v1/routers/finland/index/graphql
 
 
 Interface can be tested using GraphQL console:
 > http://dev.hsl.fi/graphql/console/
+
+You can also download a standalone graphiql GraphQL client here:
+> https://github.com/skevy/graphiql-app
 
 You can get access to GraphQL schema by running
  [this example in GraphQL console](http://dev.hsl.fi/graphql/console/?query=query%20IntrospectionQuery%20%7B%0A%20%20%20%20__schema%20%7B%0A%20%20%20%20%20%20queryType%20%7B%20name%20%7D%0A%20%20%20%20%20%20mutationType%20%7B%20name%20%7D%0A%20%20%20%20%20%20types%20%7B%0A%20%20%20%20%20%20%20%20...FullType%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20directives%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20args%20%7B%0A%20%20%20%20%20%20%20%20%20%20...InputValue%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20onOperation%0A%20%20%20%20%20%20%20%20onFragment%0A%20%20%20%20%20%20%20%20onField%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20fragment%20FullType%20on%20__Type%20%7B%0A%20%20%20%20kind%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20fields(includeDeprecated%3A%20true)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20args%20%7B%0A%20%20%20%20%20%20%20%20...InputValue%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20type%20%7B%0A%20%20%20%20%20%20%20%20...TypeRef%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20isDeprecated%0A%20%20%20%20%20%20deprecationReason%0A%20%20%20%20%7D%0A%20%20%20%20inputFields%20%7B%0A%20%20%20%20%20%20...InputValue%0A%20%20%20%20%7D%0A%20%20%20%20interfaces%20%7B%0A%20%20%20%20%20%20...TypeRef%0A%20%20%20%20%7D%0A%20%20%20%20enumValues(includeDeprecated%3A%20true)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20isDeprecated%0A%20%20%20%20%20%20deprecationReason%0A%20%20%20%20%7D%0A%20%20%20%20possibleTypes%20%7B%0A%20%20%20%20%20%20...TypeRef%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20fragment%20InputValue%20on%20__InputValue%20%7B%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20type%20%7B%20...TypeRef%20%7D%0A%20%20%20%20defaultValue%0A%20%20%7D%0A%20%20fragment%20TypeRef%20on%20__Type%20%7B%0A%20%20%20%20kind%0A%20%20%20%20name%0A%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20kind%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20%20%20kind%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20%20%20%20%20kind%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D)
@@ -61,7 +64,7 @@ You can get access to GraphQL schema by running
 ### Example queries
 
 1. Query stop by id:
-<pre>
+```
 {
   stop(id: "HSL:1173210") {
     name
@@ -70,10 +73,10 @@ You can get access to GraphQL schema by running
     wheelchairBoarding
   }
 }
-</pre>
+```
 
 2. Query stop by id and information about routes that go through it
-<pre>
+```
 {
   stop(id: "HSL:1173112") {
     name
@@ -91,10 +94,10 @@ You can get access to GraphQL schema by running
     }
   }
 }
-</pre>
+```
 
 3. Query stop names for bus number 50 for one direction
-<pre>
+```
 {
   pattern(id:"HSL:1050:1:01") {
     name
@@ -103,7 +106,106 @@ You can get access to GraphQL schema by running
     }
   }
 }
-</pre>
+```
+
+4. Query a route plan from (60.4,24.5) to (60.41,24.51)
+```
+{
+  plan(
+    from: {lat: 60.4, lon: 24.5}
+    to: {lat: 60.41, lon: 24.51}
+    numItineraries: 3
+  ) {
+    itineraries {
+      legs {
+        startTime
+        endTime
+        mode
+        duration
+        realTime
+        distance
+        transitLeg
+      }
+    }
+  }
+}
+```
+
+5. Query a route plan using only WALK and RAIL
+```
+{
+  plan(
+    from: {lat: 60.199196699999995, lon: 24.9397302}
+    to: {lat: 60.168438, lon: 24.929283}
+    numItineraries: 3
+    modes: "WALK,RAIL"
+  ) {
+    itineraries {
+      legs {
+        startTime
+        endTime
+        mode
+        duration
+        realTime
+        distance
+        transitLeg
+      }
+    }
+  }
+}
+```
+
+6. Query all tram routes where number is like "1*"
+```
+{
+  routes(name: "1", modes: "TRAM") {
+    id
+    agency {
+      id
+    }
+    shortName
+    longName
+    desc
+  }
+}
+```
+
+7. Query all bus routes where number is like "58*"
+```
+{
+  routes(name: "58", modes: "BUS") {
+    id
+    agency {
+      id
+    }
+    shortName
+    longName
+    desc
+  }
+}
+```
+
+8. Query all stops where name is like "hertton"
+```
+{
+  stops(name: "hertton") {
+    id
+    name
+    wheelchairBoarding
+  }
+}
+```
+
+9. Query a stop by number
+```
+{
+  stops(name: "4040") {
+    id
+    name
+    wheelchairBoarding
+  }
+}
+```
 
 ## Key service delivery activities
 1. Keep up with OpenTripPlanner upstream development on GitHub<br/>

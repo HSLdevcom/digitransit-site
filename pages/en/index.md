@@ -6,7 +6,7 @@ panels:
     body: You are the focus, always. The next generation journey planner pinpoints your location and shows nearby routes, stops and timetables, in real time! Real time means that you will see the location of buses and trains, as well as the accurate times of arrival at the stops. No more time wasted waiting. The service filters unnecessary information and tells what is going on around you and how to get to your destination more conveniently. In the future, the real time service will cover the whole country.
     links:
       - title: Go to the new HSL area Reittiopas.fi service (early test version)
-        url: http://beta.reittiopas.fi
+        url: http://beta.reittiopas.fi/
       - title: Go to the new national Matka.fi service (early test version)
         url: http://beta.digitransit.fi/
     image: "/users.svg"
