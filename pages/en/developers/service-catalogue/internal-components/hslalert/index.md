@@ -26,7 +26,7 @@ Hslalert service provides GTFS-RT [service alerts](
 https://developers.google.com/transit/gtfs-realtime/service-alerts) and also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates).
 
 ## Endpoint
-> http://beta.digitransit.fi/hsl-alert/
+> http://api.digitransit.fi/realtime/service-alerts/v1/
 
 Supported query parameters:
 | Parameter | Type           | Description                                              |
@@ -36,7 +36,7 @@ Supported query parameters:
 ## Examples
 
 ### Show currently active alerts with curl
-> curl http://beta.digitransit.fi/hsl-alert/?debug
+> curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
 
 
 ### Retrieve and print currently active alerts with node.js app
@@ -45,7 +45,7 @@ var GtfsRealtimeBindings = require('gtfs-realtime-bindings');
 var request = require('request');
 
 var req = {
-  url: 'http://beta.digitransit.fi/hsl-alert/',
+  url: 'http://api.digitransit.fi/realtime/service-alerts/v1/',
   encoding: null
 };
 

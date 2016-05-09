@@ -30,7 +30,7 @@ one should subscribe to mgtt (see the HSL-MQTT-API-draft link in the technologie
 The api url structure follows the topic names in the HSL-MQTT-API-draft. See [HSL-MQTT-API-draft](https://digipalvelutehdas.hackpad.com/HSL-MQTT-API-draft) for more info.
 
 ## Endpoint
-<pre>http://beta.digitransit.fi/navigator-server/</pre>
+<pre>http://api.digitransit.fi/realtime/vehicle-positions/v1/</pre>
 
 ## Response entity attributes
 
@@ -48,7 +48,7 @@ The api url structure follows the topic names in the HSL-MQTT-API-draft. See [HS
 ## Examples
 
 ### Show last known positions for all trams in json format
-> curl http://beta.digitransit.fi/navigator-server/hfp/journey/tram/#
+> curl http://api.digitransit.fi/realtime/vehicle-positions/v1/hfp/journey/tram/#
 
 ### Retrieve the last known position for tram 9
 
@@ -57,7 +57,7 @@ locate the identifier. The app reads current information from digitransit graphq
 
 Ok now that we found out that tram 9 had gtfsId of <strong>HSL:1009</strong> we can just skip the prefix (HSL:) and use this
 id to construct the url based on the information on the HSL-MQTT-API-draft:
-> curl http://beta.digitransit.fi/navigator-server/hfp/journey/+/+/1009/
+> curl http://api.digitransit.fi/realtime/vehicle-positions/v1/hfp/journey/+/+/1009/
 
 ### Display all tram 9s on map
 
@@ -73,12 +73,12 @@ id to construct the url based on the information on the HSL-MQTT-API-draft:
       angular.module('locator',[]).controller('Ctrl',
         function ($scope, $http) {
           var map = L.map('map').setView([60.192059,24.945831], 11);
-          L.tileLayer('http://beta.digitransit.fi/{id}/{z}/{x}/{y}.png', {
+          L.tileLayer('http://api.digitransit.fi/map/v1/{id}/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
               '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ',
             id: 'hsl-map'}).addTo(map);
-          $http.get('http://beta.digitransit.fi/navigator-server/hfp/journey/+/+/1009/').then(function(data){
+          $http.get('http://api.digitransit.fi/realtime/vehicle-positions/v1/hfp/journey/+/+/1009/').then(function(data){
             Object.keys(data.data).forEach(function(id){
               var vehicle = data.data[id].VP;
               L.marker([vehicle.lat, vehicle.long]).addTo(map).bindPopup("<pre>" + angular.toJson(vehicle, true) + "</pre>");
@@ -96,7 +96,7 @@ id to construct the url based on the information on the HSL-MQTT-API-draft:
 
 
 ### Retrieve realtime updates in json/SIRI format
-> curl http://beta.digitransit.fi/navigator-server/siriaccess/vm/json
+> curl http://api.digitransit.fi/realtime/vehicle-positions/v1/siriaccess/vm/json
 
 ## Service dependencies
 Navigator-server does not use any digitransit data sources, it retrieves the data from HSL Live server

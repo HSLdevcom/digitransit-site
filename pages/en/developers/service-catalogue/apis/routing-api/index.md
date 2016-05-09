@@ -37,9 +37,9 @@ OpenTripPlanner documentation:
 
 OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki
 city region and entire Finland:
-> http://beta.digitransit.fi/otp/routers/hsl/
+> http://api.digitransit.fi/routing/v1/routers/hsl/
 
-> http://beta.digitransit.fi/otp/routers/finland/
+> http://api.digitransit.fi/routing/v1/routers/finland/
 
 
 ### GraphQL
@@ -47,9 +47,9 @@ GraphQL interface is currently not covering all functionality of OpenTripPlanner
 missing bits and pieces.
 
 We provide GraphQL interface for both Helsinki city region and entire Finland:
-> http://beta.digitransit.fi/otp/routers/hsl/index/graphql
+> http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 
-> http://beta.digitransit.fi/otp/routers/finland/index/graphql
+> http://api.digitransit.fi/routing/v1/routers/finland/index/graphql
 
 
 Interface can be tested using GraphQL console:
@@ -64,7 +64,7 @@ You can get access to GraphQL schema by running
 ### Example queries
 
 1. Query stop by id:
-<pre>
+```
 {
   stop(id: "HSL:1173210") {
     name
@@ -73,10 +73,10 @@ You can get access to GraphQL schema by running
     wheelchairBoarding
   }
 }
-</pre>
+```
 
 2. Query stop by id and information about routes that go through it
-<pre>
+```
 {
   stop(id: "HSL:1173112") {
     name
@@ -94,10 +94,10 @@ You can get access to GraphQL schema by running
     }
   }
 }
-</pre>
+```
 
 3. Query stop names for bus number 50 for one direction
-<pre>
+```
 {
   pattern(id:"HSL:1050:1:01") {
     name
@@ -106,10 +106,10 @@ You can get access to GraphQL schema by running
     }
   }
 }
-</pre>
+```
 
 4. Query a route plan from (60.4,24.5) to (60.41,24.51)
-<pre>
+```
 {
   plan(
     from: {lat: 60.4, lon: 24.5}
@@ -129,10 +129,10 @@ You can get access to GraphQL schema by running
     }
   }
 }
-</pre>
+```
 
 5. Query a route plan using only WALK and RAIL
-<pre>
+```
 {
   plan(
     from: {lat: 60.199196699999995, lon: 24.9397302}
@@ -153,10 +153,10 @@ You can get access to GraphQL schema by running
     }
   }
 }
-</pre>
+```
 
 6. Query all tram routes where number is like "1*"
-<pre>
+```
 {
   routes(name: "1", modes: "TRAM") {
     id
@@ -168,10 +168,10 @@ You can get access to GraphQL schema by running
     desc
   }
 }
-</pre>
+```
 
 7. Query all bus routes where number is like "58*"
-<pre>
+```
 {
   routes(name: "58", modes: "BUS") {
     id
@@ -183,10 +183,10 @@ You can get access to GraphQL schema by running
     desc
   }
 }
-</pre>
+```
 
 8. Query all stops where name is like "hertton"
-<pre>
+```
 {
   stops(name: "hertton") {
     id
@@ -194,10 +194,10 @@ You can get access to GraphQL schema by running
     wheelchairBoarding
   }
 }
-</pre>
+```
 
 9. Query a stop by number
-<pre>
+```
 {
   stops(name: "4040") {
     id
@@ -205,8 +205,7 @@ You can get access to GraphQL schema by running
     wheelchairBoarding
   }
 }
-</pre>
-
+```
 
 ## Key service delivery activities
 1. Keep up with OpenTripPlanner upstream development on GitHub<br/>
