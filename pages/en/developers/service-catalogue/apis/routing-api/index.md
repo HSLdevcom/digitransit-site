@@ -207,6 +207,245 @@ You can get access to GraphQL schema by running
 }
 ```
 
+### Route planning
+
+10. Basic route from Kamppi to Pisa
+
+```
+{
+  plan(
+    fromPlace: "Kamppi, Helsinki",
+    from: {lat: 60.168992, lon: 24.932366},
+    toPlace: "Pisa, Espoo",
+    to: {lat: 60.175294, lon: 24.684855},
+    modes: "BUS,TRAM,RAIL,SUBWAY,FERRY,WALK",
+    walkReluctance: 2.1,
+    walkBoardCost: 600,
+    minTransferTime: 180,
+    walkSpeed: 1.2,
+  ) {
+    itineraries{
+      walkDistance,
+      duration,
+      legs {
+        mode
+        startTime
+        endTime
+        from {
+          lat
+          lon
+          name
+          stop {
+            code
+            name
+          }
+        },
+        to {
+          lat
+          lon
+          name
+        },
+        agency {
+          id
+        },
+        distance
+        legGeometry {
+          length
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+11. Route from Hakaniemi to Keilaniemi
+
+- return five results
+- using other than subway
+- fast walking speed
+- safety margin 10 minutes
+
+```
+{
+  plan(
+    fromPlace: "Hakaniemi, Helsinki",
+    from: {lat: 60.179267, lon: 24.951501},
+    toPlace: "Keilaniemi, Espoo",
+    to: {lat: 60.1762, lon: 24.836584},
+    date: "2016-05-20",
+    time: "23:28:00"
+    numItineraries: 5,
+    modes: "BUS,TRAM,RAIL,FERRY,WALK",
+    walkReluctance: 2.1,
+    walkBoardCost: 600,
+    minTransferTime: 600,
+    walkSpeed: 1.7,
+  ) {
+    itineraries{
+      walkDistance,
+      duration,
+      legs {
+        mode
+        startTime
+        endTime
+        from {
+          lat
+          lon
+          name
+          stop {
+            code
+            name
+          }
+        },
+        to {
+          lat
+          lon
+          name
+        },
+        agency {
+          id
+        },
+        distance
+        legGeometry {
+          length
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+12. Bicycle route from Kamppi to Pisa
+
+- note maxWalkDistance is used for cycling too
+
+```
+{
+  plan(
+    fromPlace: "Kamppi, Helsinki",
+    from: {lat: 60.168992, lon: 24.932366},
+    toPlace: "Pisa, Espoo",
+    to: {lat: 60.175294, lon: 24.684855},
+    modes: "BICYCLE",
+    walkReluctance: 2.1,
+    walkBoardCost: 600,
+    minTransferTime: 180,
+    walkSpeed: 1.2,
+    maxWalkDistance: 10000
+  ) {
+    itineraries{
+      walkDistance,
+      duration,
+      legs {
+        mode
+        startTime
+        endTime
+        from {
+          lat
+          lon
+          name
+          stop {
+            code
+            name
+
+          }
+        },
+        to {
+          lat
+          lon
+          name
+        },
+        agency {
+          id
+        },
+        distance
+        legGeometry {
+          length
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+### City bikes
+
+14. Route from Kamppi to Kasarmitori using bike rental
+
+- also show rental stations
+- note use of mode `BICYCLE_RENT`, which is not returned as mode
+
+```
+{
+  plan(
+    fromPlace: "Kamppi, Helsinki",
+    from: {lat: 60.168992, lon: 24.932366},
+    toPlace: "Kasarmitori, Helsinki",
+    to: {lat: 60.165246, lon: 24.949128},
+    numItineraries: 3,
+    modes: "BICYCLE_RENT,BUS,TRAM,SUBWAY,RAIL,FERRY,WALK",
+    walkReluctance: 2.1,
+    walkBoardCost: 600,
+    minTransferTime: 180,
+    walkSpeed: 1.2
+  ) {
+    itineraries{
+      walkDistance,
+      duration,
+      legs {
+        mode
+        startTime
+        endTime
+        from {
+          lat
+          lon
+          name
+          bikeRentalStation {
+            stationId
+            name
+          }
+          stop {
+            name
+          }
+        },
+        to {
+          lat
+          lon
+          name
+        },
+        agency {
+          id
+        },
+        distance
+        legGeometry {
+          length
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+14. Fetch bike station details
+
+```
+{
+  bikeRentalStation(id:"B07") {
+    stationId
+    name
+    bikesAvailable
+    spacesAvailable
+    lat
+    lon
+    allowDropoff
+  }
+}
+```
+
 ## Key service delivery activities
 1. Keep up with OpenTripPlanner upstream development on GitHub<br/>
    https://github.com/opentripplanner/OpenTripPlanner
