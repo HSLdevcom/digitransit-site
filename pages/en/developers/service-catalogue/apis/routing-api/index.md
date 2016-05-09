@@ -224,7 +224,7 @@ You can get access to GraphQL schema by running
     minTransferTime: 180,
     walkSpeed: 1.2,
   ) {
-    itineraries{ 
+    itineraries{
       walkDistance,
       duration,
       legs {
@@ -282,7 +282,7 @@ You can get access to GraphQL schema by running
     minTransferTime: 600,
     walkSpeed: 1.7,
   ) {
-    itineraries{ 
+    itineraries{
       walkDistance,
       duration,
       legs {
@@ -335,7 +335,7 @@ You can get access to GraphQL schema by running
     walkSpeed: 1.2,
     maxWalkDistance: 10000
   ) {
-    itineraries{ 
+    itineraries{
       walkDistance,
       duration,
       legs {
@@ -349,7 +349,7 @@ You can get access to GraphQL schema by running
           stop {
             code
             name
-            
+
           }
         },
         to {
@@ -392,7 +392,7 @@ You can get access to GraphQL schema by running
     minTransferTime: 180,
     walkSpeed: 1.2
   ) {
-    itineraries{ 
+    itineraries{
       walkDistance,
       duration,
       legs {
@@ -434,7 +434,7 @@ You can get access to GraphQL schema by running
 
 ```
 {
-  bikeRentalStation(id:"Narinkka[24.935-60.170]") {
+  bikeRentalStation(id:"B07") {
     stationId
     name
     bikesAvailable
