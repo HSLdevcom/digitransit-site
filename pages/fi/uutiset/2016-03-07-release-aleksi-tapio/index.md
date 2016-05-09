@@ -49,5 +49,5 @@ ja laajennettu.
 Palvelut ovat ladattavissa [Docker imageina Docker Hubista](https://hub.docker.com/r/hsldevcom/)
 
 ## Kokeile uusia ominaisuuksia
-- HSL-alue: http://matka.hsl.fi/
+- HSL-alue: http://beta.reittiopas.fi/
 - Suomi: http://beta.digitransit.fi/

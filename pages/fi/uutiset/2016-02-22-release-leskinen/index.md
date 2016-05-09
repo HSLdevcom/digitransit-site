@@ -59,5 +59,5 @@ Kartalta voi myös valita avattavan pysäkin, mikäli klikkauksen lähellä on u
 ![Pysäkin valinta](release-leskinen-select-stop.png "Pysäkin valinta")
 
 ## Kokeile uusia ominaisuuksia
-- HSL-alue: http://matka.hsl.fi/
+- HSL-alue: http://beta.reittiopas.fi/
 - Suomi: http://beta.digitransit.fi/
