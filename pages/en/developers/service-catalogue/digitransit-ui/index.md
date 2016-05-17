@@ -17,7 +17,7 @@ docker:
   dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
   imageName: hsldevcom/digitransit-ui
   buildScript: https://github.com/HSLdevcom/digitransit-ui/blob/master/build-docker-image.sh
-  runContainer: docker run -p 8080:8080 -e CONFIG=hsl -e API_URL=http://beta.digitransit.fi --name ui hsldevcom/digitransit-ui
+  runContainer: docker run -p 8080:8080 -e CONFIG=hsl -e API_URL=http://api.digitransit.fi --name ui hsldevcom/digitransit-ui
   accessContainer: http://localhost:8080/
 ---
 
