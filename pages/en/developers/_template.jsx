@@ -88,7 +88,7 @@ module.exports = React.createClass({
               style={{
                 padding: `0 ${rhythm(1)}`,
                 paddingLeft: `calc(${rhythm(10)} + ${rhythm(1)})`,
-                minHeight: '1000px'
+                minHeight: '1300px'
               }}
             >
               <h1>{this.props.page.data.title}</h1>
