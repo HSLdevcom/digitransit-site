@@ -1,6 +1,5 @@
 ---
 title: Runtime environment
-order: 1000
 ---
 
 Digitransit platform components need to be weaved together to form a runtime that can be used for multimodal routing.

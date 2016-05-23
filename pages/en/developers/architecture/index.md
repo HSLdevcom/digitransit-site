@@ -1,5 +1,5 @@
 ---
-title: Architecture
+title: System architecture
 ---
 
 Digitransit architecture is based on microservices architecture. Microservices are small, autonomous services that
@@ -18,7 +18,7 @@ In picture above, we have five kinds of services
 5. External components (gray)
 
 ## Public APIs
-These services are provided by the platform and are part of supported public API. 
+These services are provided by the platform and are part of supported public API.
 [See all public apis](../service-catalogue/apis/)
 
 ## Data containers
