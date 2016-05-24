@@ -1,10 +1,8 @@
 ---
 title: Map API
 ---
-MAP API provides raster map images (background map) and other points of interests like ticket sales positions, city bike stations and park and ride areas.
+Map API provides raster map images (background map) and other points of interests like ticket sales positions, city bike stations and park and ride areas as vector maps.
 
-You can use Map API to build applications that display different things on map.
+[Background map](./background-map/) API provides raster map tiles that are shared amongst many HSL's applications. Raster map style has been designed to work as "generic HSL map style".
 
-First, you should read [getting started](./getting-started/) guide and try out provided examples.
-
-After this, you are ready start working with background map and points of interests.
+[Points of interest](./pois/)) API provides vector map tiles that can be displayed on top of background raster map.
