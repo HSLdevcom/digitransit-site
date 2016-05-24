@@ -30,6 +30,10 @@ Basically, division between alternatives is:
 - If server endpoint does not support GraphQL, flux can be used to retrieve that data
 - Flux stores are mainly used to store application state
 
+## Installation
+
+Installation instructions are [available at GitHub](https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Installation.md)
+
 ## Tests
 Tests run automatically in Browserstack:
 > https://www.browserstack.com/automate
