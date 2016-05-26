@@ -28,6 +28,8 @@ Our goal is to provide GTFS-RT feeds for you.
 Heavy lifting of realtime data is done in other systems. Digitransit integrates itself to various datasources in order
 to read realtime data from the vehicles. How this is done depends on which city we are talking about.
 
+![Modules](./architecture.svg)
+
 ### Realtime predictions are available in Routing API
 Realtime data is read into the [Routing API](../../1-routing-api/). This means that Routing API returns results that contain
 predictions. Read more in Routing API docs.
