@@ -1,5 +1,5 @@
 ---
-title: Trains
+title: Trip updates - trains
 description:
   info: Retrieves data from the open api of The Finnish Transport Agency and converts this data to GTFS-realtime.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/internal-components/raildigitraffic2gtfsrt/architecture.xml
