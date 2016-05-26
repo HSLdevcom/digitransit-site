@@ -70,7 +70,7 @@ examples:
 Vector maps are available in [Mapbox Vector Tile format](https://github.com/mapbox/vector-tile-spec)
 
 Vector tiles are available from endpoint:
-<pre>http://beta.digitransit.fi/:source}/:z/:x/:y.pbf</pre>
+<pre>http://api.digitransit.fi/:source}/:z/:x/:y.pbf</pre>
 
 Supported url parameters:
 | Parameter     | Type           | Description                                              |
@@ -82,10 +82,10 @@ Supported url parameters:
 | size          | string         | '@2x' for retina tiles or empty value for normal
 
 examples:
-> http://beta.digitransit.fi/hsl-stop-map/16/37308/18959.pbf
+> http://api.digitransit.fi/hsl-stop-map/16/37308/18959.pbf
 
 ## Exploring HSL map style
-![hsl-map-style](http://beta.digitransit.fi/hsl-map/16/37311/18963@2x.png)
+![hsl-map-style](http://api.digitransit.fi/hsl-map/16/37311/18963@2x.png)
 
 HSL map style is available in https://github.com/HSLdevcom/hsl-map-style.git
 
