@@ -70,7 +70,7 @@ module.exports = React.createClass({
                 overflowY: 'auto',
                 paddingRight: `calc(${rhythm(1/2)} - 1px)`,
                 position: 'absolute',
-                width: `calc(${rhythm(10)} - 1px)`,
+                width: `calc(${rhythm(13)} - 1px)`,
                 borderRight: '1px solid lightgrey'
               }}
             >
@@ -87,8 +87,8 @@ module.exports = React.createClass({
             <div
               style={{
                 padding: `0 ${rhythm(1)}`,
-                paddingLeft: `calc(${rhythm(10)} + ${rhythm(1)})`,
-                minHeight: '1000px'
+                paddingLeft: `calc(${rhythm(13)} + ${rhythm(1)})`,
+                minHeight: '1800px'
               }}
             >
               <h1>{this.props.page.data.title}</h1>
