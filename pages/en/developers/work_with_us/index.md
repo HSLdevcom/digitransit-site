@@ -1,6 +1,6 @@
 ---
 title: Work with us
-order: 1000
+order: 2
 ---
 
 Interested in developing with us? Great! Best way to get started is to read this documentation, see what's happening
