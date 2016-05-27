@@ -22,26 +22,43 @@ Whole finland API is available at:
 
 ### API requirements
 
-API requires that
-- HTTP method must be POST
-- Content-Type: application/json header is present  
+When sending queries, there are some things you should be aware of:
+
+**HTTP method must be POST**
+- You will get HTTP 405 error when using other methods.
+
+**Content-Type must be either "application/graphql" or "application/json"**
+- You will get HTTP 415 Error if it is not present.
 
 ## cURL examples
 
-Examples below send a GraphQL query as HTTP post to api.digitransit.fi. Example query asks server to find stop using id "HSL:11773210" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
+Examples below send a GraphQL query as HTTP post to https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql. Example query asks server to find stop using id "HSL:11773210" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
 
 You can download cURL here:
 > https://curl.haxx.se/
 
-### Windows
-
-TODO
-
 ### Linux & OSX
 
+When using **application/graphql** Content-Type, do it like this:
 ```
 curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H 'Content-Type: application/json' \
+-H "Content-Type: application/graphql" \
+-d @- << DATA
+{
+  stop(id: "HSL:1173210") {
+    name
+    lat
+    lon
+    wheelchairBoarding
+  }  
+}
+DATA
+```
+
+When using **application/json** Content-Type, do it like this:
+```
+curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
+-H "Content-Type: application/json" \
 -d @- << DATA
 {
   "query": "{
@@ -60,6 +77,29 @@ Some description for cURL parameters:
 - -H 'Content-Type: application/json' defines correct Content-Type header
 - -d @- tells cURL to read post data from STDIN
 - << DATA defines [here documents code block](http://www.tldp.org/LDP/abs/html/here-docs.html)
+
+### Windows
+
+If you are a Windows user, you can use **application/graphql** approach like so:
+```
+curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql -H "Content-Type: application/graphql" --data "{stop(id: \"HSL:1173210\") {name, lat, lon, wheelchairBoarding}}"
+```
+
+#### Differences between application/json and application/graphql approaches
+
+You might notice that in both cases we are working with "jsonish" data.
+With *application/json* you are sending a valid json:
+```
+{
+  "query": "{...}"
+}
+```
+
+However, with *application/graphql* Content-Type data is sent as GraphQL which is "jsonish". This means that you only have to write query.
+
+```
+{...}
+```
 
 ### Making queries and exploring schema using GraphiQL
 
@@ -112,22 +152,6 @@ Browser version already uses endpoint:
     }
   }
 }
-```
-
-#### Differences betweet cURL and GraphiQL approaches
-
-You might notice that in both cases we are working with "jsonish" data.
-However, with cURL you are sending query as string like so:
-```
-{
-  "query": "{...}"
-}
-```
-
-Value for query is string that represents GraphQL query when sending data with cURL. When you work with GraphiQL, you are sending pure queries. This means that you only have to write query.
-
-```
-{...}
 ```
 
 #### Exploring schema with GraphiQL
