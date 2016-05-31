@@ -1,5 +1,5 @@
 ---
-title: Vechicle positions
+title: Vehicle positions
 description:
   info: "Navigator server provides snapshot of current realtime vehicle location data. Data is provided in two separate formats: json/SIRI and in custom json format."
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/internal-components/navigator-server/architecture.xml
