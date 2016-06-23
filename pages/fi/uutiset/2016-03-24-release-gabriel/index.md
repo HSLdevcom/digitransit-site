@@ -71,7 +71,7 @@ Ulkomaiset yhteistyökumppanit ovat tuoneet myös lisää käyttökieliä palvel
 Digitransit toimii nyt edellisten kielien lisäksi norjaksi ja ranskaksi.
 
 ## Kehittäjille: GraphQL rajapinta reitin suunnitteluun
-Digitransit Routing API tukee nyt [reittisuunnittelua GraphQL rajapinnan yli](/en/developers/service-catalogue/apis/routing-api/).
+Digitransit Routing API tukee nyt [reittisuunnittelua GraphQL rajapinnan yli](/en/developers/services-and-apis/1-routing-api/).
 
 ## Muita parannuksia
 Kielistyksiä on lisätty ja korjattu. Muun muassa poikkeusinfon näyttäminen väärällä kielellä on nyt korjattu.

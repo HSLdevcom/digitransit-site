@@ -19,7 +19,7 @@ panels:
       - title: Read the platform architecture description
         url: /en/developers/architecture/
       - title: Read more about the interfaces
-        url: /en/developers/service-catalogue/
+        url: /en/developers/services-and-apis/
       # - title: Quick start guide
     image: "/developers.svg"
     id: developers
