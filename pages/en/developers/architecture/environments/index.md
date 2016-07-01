@@ -11,7 +11,7 @@ Development:
 Test:
 > http://beta.digitransit.fi/
 
-## Helsinki city region environments
+## Helsinki region environments
 
 Development:
 

@@ -34,15 +34,19 @@ available.
 REST interface is provided as it is available in OpenTripPlanner. First thing to do is to familiarize yourself with OpenTripPlanner documentation:
 > http://docs.opentripplanner.org/en/latest/
 
-OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki city region and entire Finland:
+OpenTripPlanner requires developers to make API requests through routers. Digitransit providers routers for Helsinki region, the Waltti regions and entire Finland:
 > http://api.digitransit.fi/routing/v1/routers/hsl/
+
+> http://api.digitransit.fi/routing/v1/routers/waltti/
 
 > http://api.digitransit.fi/routing/v1/routers/finland/
 
 ### GraphQL
 
-GraphQL API is built by us. Similarly to REST, GraphQL has different router endpoints for Helsinki city region and entire Finland:
+GraphQL API is built by us. Similarly to REST, GraphQL has different router endpoints for Helsinki region, the Waltti regions and entire Finland:
 > http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+
+> http://api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 
 > http://api.digitransit.fi/routing/v1/routers/finland/index/graphql
 

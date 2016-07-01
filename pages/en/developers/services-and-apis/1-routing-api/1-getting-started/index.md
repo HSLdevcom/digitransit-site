@@ -14,10 +14,13 @@ There are many. You can read [how Facebook sees it](https://facebook.github.io/r
 
 # GraphQL API
 
-Helsinki area API is available at:
+Helsinki region API is available at:
 > https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 
-Whole finland API is available at:
+API for the Waltti regions is available at:
+> https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+
+Whole Finland API is available at:
 > https://api.digitransit.fi/routing/v1/routers/finland/index/graphql
 
 ### API requirements
@@ -118,11 +121,12 @@ Both options work similarly and UI looks more or less like this:
 1. Either [Download GraphiQL app for OSX](https://github.com/skevy/graphiql-app) or open [browser version](http://dev.hsl.fi/graphql/console/)
 
 2. If you are using GraphiQL app, set "GraphQL Endpoint" to one of:
-- Helsinki area: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+- Helsinki region: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+- Waltti regions: http://api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 - Finland: http://api.digitransit.fi/routing/v1/routers/finland/index/graphql
 
 Browser version already uses endpoint:
-- Helsinki area: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+- Helsinki region: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 
 3. Copy this as query:
 

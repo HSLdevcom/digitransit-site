@@ -5,9 +5,9 @@ panels:
   - title: Käyttäjille
     body: Sinä olet keskipisteessä aina. Uuden ajan matkaopas paikantaa sijaintisi ja kertoo lähimmät linjat, pysäkit ja reitit täysin reaaliaikaisesti. Reaaliaikaisesti tarkoittaa, että näet bussin tai junan sijainnin ja pysäkkiaikataulut totuudenmukaisina. Turha odottelu on historiaa. Palvelu suodattaa tarpeettoman tiedon ja kertoo, mitä ympärilläsi tapahtuu ja miten pääset sujuvimmin perille.Tulevaisuudessa reaaliaikainen palvelu kattaa koko maan.
     links:
-      - title: Tutustu HSL:n Reittiopas.fi-palvelun koeversioon
+      - title: Tutustu HSL:n Reittiopas.fi-palvelun beta-versioon
         url: http://beta.reittiopas.fi/
-      - title: Tutustu Liikenneviraston Matka.fi-palvelun koeversioon
+      - title: Tutustu Liikenneviraston Matka.fi-palvelun beta-versioon
         url: http://beta.digitransit.fi/
     image: "/users.svg"
     id: users
