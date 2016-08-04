@@ -8,7 +8,7 @@ If you haven't read getting started, [check that out first](../1-getting-started
 
 Digitransit platform has APIs to query
 - bicycling routes for your personal bike
-- city bikes that are available in Helsinki area.
+- city bikes that are available in Helsinki.
 
 ## City bikes
 

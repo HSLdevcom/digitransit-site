@@ -26,7 +26,7 @@ Our goal is to provide GTFS-RT feeds for you.
 
 ## About the API
 Heavy lifting of realtime data is done in other systems. Digitransit integrates itself to various datasources in order
-to read realtime data from the vehicles. How this is done depends on which city we are talking about.
+to read realtime data from the vehicles. How this is done depends on which region we are talking about.
 
 ![Modules](./architecture.svg)
 

@@ -1,7 +1,7 @@
 ---
 title: Routing Data
 description:
-  info: "Routing Data provides two OpenTripPlanner router zip files: Helsinki city area and whole Finland."
+  info: "Routing Data provides three OpenTripPlanner router zip files: Helsinki region, the Waltti regions, and whole Finland."
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/data-containers/routing-data/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/OpenTripPlanner-data-container
@@ -17,7 +17,7 @@ docker:
 
 ## Dataflow
 
-First, we download raw data in various formats from Helsinki, Tampere, Oulu, etc. and this data is stored on disk. Also, we load Finnish national data from Finnish Transport Agency that contains national routes for e.g. trains. Some data is cleaned, some isn’t.
+First, we download raw data in various formats from Helsinki, Tampere, Oulu, etc. and this data is stored on disk. Also, we load Finnish national data from Finnish Transport Agency that contains long distance routes for e.g. trains. Some data is cleaned, some isn’t.
 
 For Helsinki and Tampere data we apply GTFS shape to OSM map transformation. The purpose of this step is to better allign routes on OSM map. In different map datasources road locations can slightly vary and this step allows us to better draw routes on OSM map.
 
@@ -25,16 +25,15 @@ After conversion some GTFS transformations are done using OneBusAway transformer
 
 Route data flow can be studied more closely here: https://github.com/HSLdevcom/opentripplanner-data-container/blob/master/build-routers.sh
 
-Finally we build two separate zip files; router-hsl.zip and router-finland.zip. These files contain:
+Finally we build three separate zip files; router-hsl.zip, router-waltti.zip and router-finland.zip. These files contain:
 - Modified and combined GTFS
-- OpenStreetMap graph
+- OpenStreetMap data
 - OpenTripPlanner router-config.json file
 - OpenTripPlanner build-config.json file
-- HSL citybike file
 
 ## OpenTripPlanner router zip files
-Produced zip files can be used to build OpenTripPlanner graph. In addition it provides a "routers.txt" file that lists all available router zip files:
-> http://localhost:8080/routers.txt
+Produced zip files contain the data and settings that are used to build the OpenTripPlanner graphs. In addition there's a "routers.txt" file that lists all available router zip files.
+> https://api.digitransit.fi/routing-data/v1/
 
 [See how Routing API utilizes these zip files](../routing-api/)
 
