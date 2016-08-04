@@ -18,7 +18,7 @@ Helsinki region API is available at:
 > https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 
 API for the Waltti regions is available at:
-> https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+> https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 
 Whole Finland API is available at:
 > https://api.digitransit.fi/routing/v1/routers/finland/index/graphql
