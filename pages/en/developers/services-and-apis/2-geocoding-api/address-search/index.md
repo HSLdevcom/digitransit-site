@@ -2,7 +2,7 @@
 title: Address search
 ---
 
-Address search can be used to search addresses. Duh.
+Address search can be used to search addresses and place names. Duh.
 
 <!--
 ## Address search APIs
@@ -51,6 +51,7 @@ Supported url parameters:
 | size            | int            | How many results to return
 | boundary.rect   | object         | Search only inside given rectangle
 | boundary.cirlce | object         | Search only inside given circle
+| lang            | string         | Language preference 'fi' or 'sv'.
 
 
 ### Search 'kamppi', return only one result
@@ -70,6 +71,30 @@ curl "http://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.rect.mi
 ```
 curl "http://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.circle.lat=60.2&boundary.circle.lon=24.936&boundary.circle.radius=30"
 ```
+
+### Language preference
+
+The language preference can be defined using 'lang=xx' parameter, default being 'lang=fi'. Unlike in reverse
+geocoding, the preference has significance for geocoding searches only when multiple languages provide
+an equally good match. An example:
+
+http://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=sv&size=1
+
+http://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=fi&size=1
+
+The first search returns Finladia-huset, Helsingfors, and the second one Finlandia-talo, Helsinki.
+Both match the search string 'finlandia' equally well.
+
+In most cases, an identified best match defines the language for the response, overruling the preference. An example:
+
+http://api.digitransit.fi/geocoding/v1/search?text=ulrikasborg&lang=fi
+
+In this case, the search string matches perfectly a swedish place name, and consiquently the result is
+"Ulrikasborg, Helsingfors". In other words, the geocoding API does not act like a translation service.
+
+Note, that part of the provided geocoding data does not include Swedish names, and part of the data
+leaves the language context unknown. This may occasionally cause unexpected errors in language selection.
+
 
 ### Extra documentation
 

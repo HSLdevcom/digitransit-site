@@ -8,8 +8,10 @@ assets:
   dockerHub: https://hub.docker.com/r/hsldevcom/pelias-data-container/
   Dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
   "Pelias config": https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
+  "ES client": https://github.com/HSLdevcom/dbclient.git
   pelias-nlsfi-places-importer: https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
-technologies:  
+  pelias-openaddresses-import: https://github.com/HSLdevcom/openaddresses.git
+technologies:
   "SIRI": "http://user47094.vs.easily.co.uk/siri/"
   "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
   "Python": null
@@ -32,27 +34,26 @@ Start by reading (Note that it might not be up-to-date):
 On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
 Pelias tools. At high level this is what happens:
 
-1. Download and extract shapefiles from Quattroshapes
+1. Download and extract Finland related shapefiles of administrational areas and regions from WhosOnFirst
 
-2. Download Finnish municipalities NLS and convert them to Quattroshapes format
+2. Download Open Street Map Finland data
 
-3. Download Finland zip codes from Finland Statistics and convert them to Quattroshapes format
+3. Download Openaddresses Finland data (street addresses originating from VRK)
 
-4. Download Open Street Map Finland data
+4. Download NLS places (an extensive list of venues and place names from the National Lands Survey)
 
-5. Download Helsinki, Oulu, and Turku openaddresses data
+5. Start ElasticSearch
 
-6. Download NLS places
+6. Create pelias schema
 
-7. Start ElasticSearch, and Address deduper service
+7. Run NLS places import
 
-8. Create pelias schema and import Quattroshapes data
+8. Run OpenStreetMap import
 
-9. Run NLS places import
+9. Run OpenAddresses import for addresses defined in Swedish
 
-10. Run openaddresses import
+10. Run OpenAddresses import for Finnish addresses and merge fi and sv records for matching addresses
 
-11. Run Open Street Map address import. Data that is already found from openaddresses will be skipped.
 
 
 ### Exploring data
@@ -76,49 +77,24 @@ For Gis data exploration you can use e.g. QGis
 
 ### Open addresses
 - Url: https://openaddresses.io/
-- Datafile: http://data.openaddresses.io.s3.amazonaws.com/runs/37881/fi/18/helsinki.zip
-- Datafile: http://data.openaddresses.io.s3.amazonaws.com/runs/37878/fi/14/oulu.zip
-- Datafile: http://data.openaddresses.io.s3.amazonaws.com/runs/32517/fi/19/turku.zip
-- Types: Address (Helsinki, Oulu, Turku)
+- All datafiles are listed in http://results.openaddresses.io/state.txt. The relevant ones contain a path section /fi/.
+- Types: Address
 
 Open addresses is a open data collaborative to produce global address data around the world. We use addresses from Open addresses as primary data.
 
 ### Open Street Map
 - Url: https://www.openstreetmap.org
 - Datafile: http://download.geofabrik.de/europe/finland-latest.osm.pbf
-- Types: neighbourhood, locality, address, venue, stop
+- Types: address, venue
 
 Our goal is to use as much data from OSM as possible. Unfortunately, at the moment it doesn't contain everything that we need so we have to use other sources also.
 
-### NLS Nimistö
+### NLS Paikat
 - Url: http://www.maanmittauslaitos.fi/digituotteet/nimisto
-- Datafile: http://kartat.kapsi.fi/files/nimisto/paikat/etrs89/gml/paikat_2015_05.zip
-- Types: Place
+- Datafile: http://kartat.kapsi.fi/files/nimisto/paikat/etrs89/gml/paikat_2016_01.zip
+- Types: venue
 
 National Land survey Nimistö ("places") contains place names in Finland. It provides places like "Takalammi".
-
-### Quattroshapes
-- Url: http://quattroshapes.com/
-- Datafile: http://quattroshapes.mapzen.com/quattroshapes/alpha3/FIN.tgz
-- Types: municipality and locality borders
-
-Quattroshapes is a place data source provided by Foursquare. It provides polygon data for places based on Foursquare checkins.
-
-### NLS Kuntajako (Quattroshapes enhancer)
-- Url: http://www.maanmittauslaitos.fi/digituotteet/kuntajako
-- Datafile: http://kartat.kapsi.fi/files/kuntajako/kuntajako_10k/etrs89/gml/TietoaKuntajaosta_2015_10k.zip
-- Types: municipality and locality borders
-
-NOTE! Currently not used any way, we could even remove this.
-
-NLS kuntajako ("municipalities") From National Land Survey contains official Finnish municipality borders and other places that are interesting localities e.g. "Sahalahti". It is used to improve Quattroshapes municipality and locality data.
-
-### Statistics Finland postinumeroalue (Quattroshapes enhancer)
-- Url: http://www.stat.fi/tup/paavo/index.html
-- Data WFS url: http://geo.stat.fi/geoserver/postialue/postialue%3Apno_meri_2015/wfs
-- Types: postal number
-
-Postal address information From Statistics Finland is used to improve Quattroshapes data. This information attaches postal number to address results. e.g. Helsinki, Käpylä is 00610.
 
 
 ## Key service delivery activities
