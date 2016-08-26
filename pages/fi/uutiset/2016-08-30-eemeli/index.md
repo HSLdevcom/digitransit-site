@@ -21,6 +21,7 @@ ja yhdistää kartalle saman terminaalin eri pysäkit, laiturit, yhdeksi symboli
 Popupista, ja terminaalin sivuilta voi nähdä kaikkien laitureiden
 seuraavat lähdöt yhtäaikaa.
 
+![Terminaali kartalla](release-eemeli-terminals.png "Terminaali kartalla")
 ![Terminaalisivu](release-eemeli-terminal-page.png "Terminaalisivu")
 
 ## Park and ride
