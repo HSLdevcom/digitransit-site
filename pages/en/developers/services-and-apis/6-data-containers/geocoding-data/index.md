@@ -114,7 +114,20 @@ OpenStreetMap import reads all items which are tagged with a name and one or mor
 - craft
 - military
 
-You can improve digitransit geocoding by contributing new or corrected data to OpenStreetMap.
+You can improve digitransit geocoding by contributing new or corrected data to OpenStreetMap. Please always include a Swedish name version, if available, to your data contributions.
+Below is a simple example node with proper names:
+```
+{
+    "id":26430225,
+    "type":"node",
+    "lat":60.2070123, "lon":24.7022998,
+    "tags":{
+        "name":"Koivuhovi",
+        "name:sv":"Björkgård",
+        "railway:station"
+    }
+}
+```
 For more information, check out:
 >http://wiki.openstreetmap.org/wiki/Beginners%27_guide
 
