@@ -42,17 +42,21 @@ Pelias tools. At high level this is what happens:
 
 4. Download NLS places (an extensive list of venues and place names from the National Lands Survey)
 
-5. Start ElasticSearch
+5. Download national GTFS data, including GTFS stops
 
-6. Create pelias schema
+6. Start ElasticSearch
 
-7. Run NLS places import
+7. Create pelias schema
 
-8. Run OpenStreetMap import
+8. Run GTFS stop import
 
-9. Run OpenAddresses import for addresses defined in Swedish
+9. Run NLS places import
 
-10. Run OpenAddresses import for Finnish addresses and merge fi and sv records for matching addresses
+10. Run OpenStreetMap import
+
+11. Run OpenAddresses import for addresses defined in Swedish
+
+12. Run OpenAddresses import for Finnish addresses and merge fi and sv records for matching addresses
 
 
 
@@ -75,19 +79,47 @@ For Gis data exploration you can use e.g. QGis
 
 ## Datasources
 
-### Open addresses
+### OpenAddresses
 - Url: https://openaddresses.io/
 - All datafiles are listed in http://results.openaddresses.io/state.txt. The relevant ones contain a path section /fi/.
 - Types: Address
 
 Open addresses is a open data collaborative to produce global address data around the world. We use addresses from Open addresses as primary data.
 
-### Open Street Map
+### OpenStreetMap
 - Url: https://www.openstreetmap.org
 - Datafile: http://download.geofabrik.de/europe/finland-latest.osm.pbf
 - Types: address, venue
 
+OpenStreetMap import reads all items which are tagged with a name and one or more tags/tag pairs from the following list:
+
+- addr:housenumber AND addr:street
+- amenity
+- building
+- shop
+- office
+- public_transport
+- cuisine
+- railway
+- sport
+- natural
+- tourism
+- leisure
+- historic
+- man_made
+- landuse
+- waterway
+- aerialway
+- aeroway
+- craft
+- military
+
+You can improve digitransit geocoding by contributing new or corrected data to OpenStreetMap.
+For more information, check out:
+>http://wiki.openstreetmap.org/wiki/Beginners%27_guide
+
 Our goal is to use as much data from OSM as possible. Unfortunately, at the moment it doesn't contain everything that we need so we have to use other sources also.
+
 
 ### NLS Paikat
 - Url: http://www.maanmittauslaitos.fi/digituotteet/nimisto
