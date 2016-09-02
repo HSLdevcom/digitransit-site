@@ -144,26 +144,25 @@ National Land survey Nimistö ("places") contains place names in Finland. It pro
 
 ## Key service delivery activities
 1. Keep up with Pelias development on GitHub<br/>
-   https://github.com/pelias/pelias
+   https://github.com/pelias/pelias<br/>
+   https://pelias.io
 
 2. Keep up with Mapzen Search (which is essentially same as Pelias)<br/>
    https://mapzen.com/projects/search/
 
 3. Keep up with Pelias importer projects<br/>
-   https://github.com/pelias/quattroshapes<br/>
-   https://github.com/pelias/openaddresses<br/>
+   https://github.com/HSLdevcom/openaddresses<br/>
+   https://github.com/HSLdevcom/pelias-gtfs<br/>
+   https://github.com/HSLdevcom/pelias-nlsfi-places-importer<br/>
    https://github.com/pelias/openstreetmap<br/>
-   https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
+   https://github.com/pelias/polylines
 
-4. Keep up with Pelias-cli development<br/>
-   https://github.com/pelias/cli
-
-5. Keep up with Who's on First development<br/>
+4. Keep up with Who's on First development<br/>
    https://whosonfirst.mapzen.com/<br/>
    https://github.com/whosonfirst/whosonfirst-data/
 
-6. Keep up with Geospatial Data Abstraction Library development<br/>
+5. Keep up with Geospatial Data Abstraction Library development<br/>
    http://www.gdal.org/
 
-7. Keep up with ElasticSearch docker image and it's changes<br/>
+6. Keep up with ElasticSearch docker image and it's changes<br/>
    https://hub.docker.com/_/elasticsearch/
