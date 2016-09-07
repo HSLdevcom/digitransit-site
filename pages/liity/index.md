@@ -29,19 +29,18 @@ Ilmoita palveluvastaavan:
 - Sähköposti
 - Puhelinnumero
 
-### 3. Domain nimi
+### 4. Domain nimi
 
 Liikenne Digitransit-palveluun on aina https-salattu. Voit valita vapaasti palvelusi domain-nimen (esim. https://reittiopas.kaupunki.fi), jolloin tarvitsemme TLS-sertifikaatin, joka sinun tulee hankkia. Voit myös käyttää https://kaupunki.digitransit.fi -osoitetta, jolloin erillista sertifikaattia ei tarvita. Kuvaa/toimita:
 - Domain Nimi
 - TLS sertifikaatti, mikäli haluat oman domain nimen
 
-### 4. Reittidata
+### 5. Reittidata
 
 Digitransit-palvelu integroi reittidatasi GTFS-muodossa. Tiedot on mahdollista myös noutaa Waltti-järjestelmästä. Kuvaa:
 - Web palvelun osoite, josta GTFS paketti on saatavilla
-- Toivomasi päivitystiheys reittidatalle (esim. 1krt viikossa)
 
-### 5. Kulkumuodot
+### 6. Kulkumuodot
 
 ![](./images/kulkumuodot.png)
 
@@ -54,22 +53,20 @@ Määritä reittidatastasi löytyvät kulkumuodot. Valittujen kulkumuotojen peru
 - Lautta
 - Kaupunkipyörä
 
-### 6. Hakualue
+### 7. Hakualue
 
 ![](./images/hakualue.png)
 
 Määritä kartalta rajat osoitehaulle. Digitransit-palveluun konfiguroidaan suorakaiteen muotoinen alue, jonka sisältä käyttäjän syöttämiä osoitteita etsitään. Kuvaa:
-- Piste vasemmaksi yläreunaksi
-- Piste oikeaksi alareunaksi
+- Piste vasemmaksi yläreunaksi WGS84 koordinaatteina
+- Piste oikeaksi alareunaksi WGS84 koordinaatteina
 
-Voit ilmoittaa pisteet koordinaatteina tai esim. paikan niminä.
-
-### 7. Sosiaalinen media
+### 8. Sosiaalinen media
 
 Sosiaalisen median jakoja varten ilmoita:
 - Twitter tili
 
-### 8. Tietoja palvelusta
+### 9. Tietoja palvelusta
 
 ![](./images/tietoja-palvelusta.png)
 
@@ -82,14 +79,14 @@ Esimerkin vuoksi, HSL:n tietoja palvelusta:
 
 *Tämän palvelun tarjoaa HSL joukkoliikenteen reittisuunnittelua varten Helsingin, Espoon, Vantaan, Kauniaisten, Keravan, Kirkkonummen ja Sipoon alueella. Palvelu kattaa joukkoliikenteen, kävelyn, pyöräilyn ja yksityisautoilun rajatuilta osin. Palvelu perustuu Digitransit palvelualustaan.*
 
-### 9. Lähtöpaikan oletussijainti
+### 10. Lähtöpaikan oletussijainti
 
 ![](./images/lahtopaikka.png)
 
 Digitransit-käyttöliittymä yrittää aina paikantaa käyttäjän. Mikäli paikannus ei onnistu, valitaan lähtöpaikaksi määrittelemäsi piste. Kuvaa:
 - Oletuslähtöpisteen koordinaatit
 
-### 10. Teemoitus
+### 11. Teemoitus
 
 ![](./images/teema.png)
 
@@ -100,7 +97,7 @@ Digitransit käyttöliittymä on muokattavissa logon ja värimaailman osalta. Ku
 
 *Huom! Värimaailma, logo ja tekstit toteutetaan niiltä osin kuin se on mahdollista. Tämä voi tarkoittaa, ettei toiveitasi pystytä kaikilta osin täyttämään.*
 
-### 11. Reaaliaikarajapinta
+### 12. Reaaliaikarajapinta
 
 **Huom! Ominaisuus on saatavilla vain erikseen sopimalla**.
 
