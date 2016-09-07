@@ -125,7 +125,7 @@ class FrontPagePanel extends React.Component {
                 marginTop: rhythm(0.5),
                 fontSize: 15,
                 fontWeight: 500,
-                color: "#fff",
+                color: this.props.textColor ? this.props.textColor : "#fff",
               })}
             >
               {link.title}&nbsp;»
@@ -143,7 +143,7 @@ class FrontPagePanel extends React.Component {
                 marginTop: rhythm(0.5),
                 fontSize: 15,
                 fontWeight: 500,
-                color: "#fff",
+                color: this.props.textColor ? this.props.textColor : "#fff",
               })}
             >
               {link.title}&nbsp;»
@@ -165,7 +165,7 @@ class FrontPagePanel extends React.Component {
               flexWrap: "wrap",
               justifyContent: "center",
               alignItems: "center",
-              color: "#fff",
+              color: this.props.textColor ? this.props.textColor : "#fff",
               background: this.props.background,
               fontWeight: 300,
               WebkitFontSmoothing: "antialiased",
@@ -184,7 +184,7 @@ class FrontPagePanel extends React.Component {
                 marginBottom: "1em",
               }}
             >
-              <h2 style={{color: "#fff"}}>
+              <h2 style={{color: this.props.textColor ? this.props.textColor : "#fff"}}>
                 {this.props.title}
               </h2>
               <div style={{paddingBottom: "1em"}}>
@@ -205,7 +205,7 @@ class FrontPagePanel extends React.Component {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              color: "#fff",
+              color: this.props.textColor ? this.props.textColor : "#fff",
               background: this.props.background,
               minHeight: 500,
               fontWeight: 300,
@@ -223,7 +223,7 @@ class FrontPagePanel extends React.Component {
                 marginBottom: "1em",
               }}
             >
-              <h2 style={{textAlign: "center", color: "#fff"}}>
+              <h2 style={{textAlign: "center", color: this.props.textColor ? this.props.textColor : "#fff"}}>
                 {this.props.title}
               </h2>
               <div style={{paddingBottom: "1em"}}>

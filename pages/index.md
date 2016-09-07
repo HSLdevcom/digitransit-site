@@ -26,9 +26,9 @@ panels:
     background: "#ff8a3c"
   - title: Kunnille
     body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n ja Liikenneviraston tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Ja varmista, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
-    links: []
-      # - title: Digitransit palvelukuvaus
-      # - title: Liity palveluun
+    links:
+      - title: Liity palveluun
+        url: /liity/
     image: "/municipalities.svg"
     id: municipalities
     background: "#64be47"

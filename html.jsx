@@ -109,6 +109,16 @@ module.exports = React.createClass({
             text-decoration: none;
             padding: 0.5em;
           }
+
+          .join-to-digitransit-content img {
+            height: 400px;
+            float: right;
+          }
+
+          .join-to-digitransit-content h3 {
+            clear: right;
+          }
+
           @media
           (-webkit-min-device-pixel-ratio: 2),
           (min-resolution: 192dpi) {
@@ -157,6 +167,11 @@ module.exports = React.createClass({
               max-width: 250px;
               font-size: 1.6rem;
               line-height: 1.25;
+            }
+
+            .join-to-digitransit-content img {
+              height: 200px;
+              float: right;
             }
           }
           `}}/>
