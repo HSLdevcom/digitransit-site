@@ -38,7 +38,13 @@ Liikenne Digitransit-palveluun on aina https-salattu. Voit valita vapaasti palve
 ### 5. Reittidata
 
 Digitransit-palvelu integroi reittidatasi GTFS-muodossa. Tiedot on mahdollista myös noutaa Waltti-järjestelmästä. Kuvaa:
-- Web palvelun osoite, josta GTFS paketti on saatavilla
+- Web palvelun osoite, josta GTFS-paketti on saatavilla
+
+Varmista, että GTFS-paketin data on kunnossa käyttämällä esimerikiksi Googlen GTFS-validaattoria:
+
+- Lataa GTFS
+- Lataa https://github.com/google/transitfeed/releases/latest ja pura
+- Mene validaattorin kansioon ja aja `./feedvalidator.py -m <gtfs.zipin polku>`
 
 ### 6. Kulkumuodot
 
