@@ -46,6 +46,8 @@ Varmista, että GTFS-paketin data on kunnossa käyttämällä esimerikiksi Googl
 - Lataa https://github.com/google/transitfeed/releases/latest ja pura
 - Mene validaattorin kansioon ja aja `./feedvalidator.py -m <gtfs.zipin polku>`
 
+**Huom: Waltti ei toistaiseksi käsittele reittien geometriaa ja siksi Waltista haetut reitit esitetään Digitransitissa tikkuverkkona.**
+
 ### 6. Kulkumuodot
 
 ![](./images/kulkumuodot.png)
@@ -101,11 +103,64 @@ Digitransit käyttöliittymä on muokattavissa logon ja värimaailman osalta. Ku
 - Organisaatiosi logo
 - Etusivun yläreunan teksti, esim ."Reittiopas"
 
-*Huom! Värimaailma, logo ja tekstit toteutetaan niiltä osin kuin se on mahdollista. Tämä voi tarkoittaa, ettei toiveitasi pystytä kaikilta osin täyttämään.*
+**Huom! Värimaailma, logo ja tekstit toteutetaan niiltä osin kuin se on mahdollista. Tämä voi tarkoittaa, ettei toiveitasi pystytä kaikilta osin täyttämään.**
 
-### 12. Reaaliaikarajapinta
+### 12. Kartta- ja osoiteaineistot
 
-**Huom! Ominaisuus on saatavilla vain erikseen sopimalla**.
+Digitransit kartta-aineistona on OpenStreetMap. Reititysverkko, taustakartta ja osoitehaun POI-kohteet (Point of Interest) ladataan OpenStreetMapista automaattisesti. Palvelun toiminta kuntasi alueella on riippuvainen OpenStreetMap datan laadusta.
+
+Suosittelemme kartta-aineiston suhteen seuraavaa:
+1. Avaa ensin Digitransit-palvelu
+2. Kokeile miten se toimii alueellasi
+3. Täydennä OpenStreetMap tietoja tarvittavilta osin
+
+OpenStreetMap ohjeet: http://wiki.openstreetmap.org/wiki/Beginners%27_guide
+
+Digitransit osoitehaku löytää kohteita seuraavista luokista:
+
+- addr:housenumber AND addr:street
+- amenity
+- building
+- shop
+- office
+- public_transport
+- cuisine
+- railway
+- sport
+- natural
+- tourism
+- leisure
+- historic
+- man_made
+- landuse
+- waterway
+- aerialway
+- aeroway
+- craft
+- military
+
+Mikäli lisäät kohteita OpenStreetMap:iin, muista lisätä myös ruotsinkielinen selite:
+
+```
+  {
+      "id":26430225,
+      "type":"node",
+      "lat":60.2070123, "lon":24.7022998,
+      "tags":{
+          "name":"Koivuhovi",
+          "name:sv":"Björkgård",
+          "railway:station"
+      }
+  }
+```
+
+Osoitehaku tehdään Väestörekisterikeskuksen rakennustietokantaa vasten, joka sisältää osoitteet koko suomesta.
+
+**Huom! Digitransit-palvelu ei ylläpidä tietoja OpenStreetMapiin, vastuu tästä on yhteisöllä.**
+
+### 13. Reaaliaikarajapinta
 
 Digitransit alusta tukee reaaliaikaisia ajoneuvojen sijainteja, pysäkkiennusteita sekä poikkeustiedotteita. Kuvaa:
 - Reaaliaikarajapinnan osoite
+
+**Huom! Ominaisuus on saatavilla vain erikseen sopimalla**.
