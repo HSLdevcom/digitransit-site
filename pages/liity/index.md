@@ -107,39 +107,39 @@ Digitransit käyttöliittymä on muokattavissa logon ja värimaailman osalta. Ku
 
 ### 12. Kartta- ja osoiteaineistot
 
-Digitransit kartta-aineistona on OpenStreetMap. Reititysverkko, taustakartta ja osoitehaun POI-kohteet (Point of Interest) ladataan OpenStreetMapista automaattisesti. Palvelun toiminta kuntasi alueella on riippuvainen OpenStreetMap datan laadusta.
+Digitransit kartta-aineistona on OpenStreetMap. Reitityksen katuverkko, taustakartta ja osoitehaun POI-kohteet (Point of Interest) ladataan OpenStreetMapista automaattisesti. Palvelun toiminta kuntasi alueella on riippuvainen OpenStreetMap-datan laadusta.
 
 Suosittelemme kartta-aineiston suhteen seuraavaa:
 1. Avaa ensin Digitransit-palvelu
 2. Kokeile miten se toimii alueellasi
-3. Täydennä OpenStreetMap tietoja tarvittavilta osin
+3. Täydennä OpenStreetMap-tietoja tarvittavilta osin
 
-OpenStreetMap ohjeet: http://wiki.openstreetmap.org/wiki/Beginners%27_guide
+OpenStreetMap-ohjeet: http://wiki.openstreetmap.org/wiki/Beginners%27_guide
 
-Digitransit osoitehaku löytää kohteita seuraavista luokista:
+Digitransit löytää kohteita seuraavista luokista:
 
 - addr:housenumber AND addr:street
-- amenity
-- building
-- shop
-- office
-- public_transport
-- cuisine
-- railway
-- sport
-- natural
-- tourism
-- leisure
-- historic
-- man_made
-- landuse
-- waterway
 - aerialway
 - aeroway
+- amenity
+- building
 - craft
+- cuisine
+- historic
+- landuse
+- leisure
+- man_made
 - military
+- natural
+- office
+- public_transport
+- railway
+- shop
+- sport
+- tourism
+- waterway
 
-Mikäli lisäät kohteita OpenStreetMap:iin, muista lisätä myös ruotsinkielinen selite:
+Mikäli lisäät kohteita OpenStreetMapiin, muista lisätä myös ruotsinkielinen selite:
 
 ```
   {
@@ -156,7 +156,7 @@ Mikäli lisäät kohteita OpenStreetMap:iin, muista lisätä myös ruotsinkielin
 
 Osoitehaku tehdään Väestörekisterikeskuksen rakennustietokantaa vasten, joka sisältää osoitteet koko suomesta.
 
-**Huom! Digitransit-palvelu ei ylläpidä tietoja OpenStreetMapiin, vastuu tästä on yhteisöllä.**
+**Huom! Digitransit-palvelu ei ylläpidä OpenStreetMapin tietoja, vastuu tästä on yhteisöllä.**
 
 ### 13. Reaaliaikarajapinta
 
