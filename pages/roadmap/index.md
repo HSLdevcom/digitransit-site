@@ -8,25 +8,26 @@ Tämä suunnitelma tarkentuu toteutuksen edetessä. Kehityskohteet ja toteutukse
 **Räätälöity Föli -versio** <br>
 Digitransit -palvelulla toteutte räätälöity Turun alueen reittiopas, Föli
 
-**Desktop UI**  Käyttöliittymä pöytätietokoneiden ja tablettien selaimille
+**Desktop UI**  <br>
+Käyttöliittymä pöytätietokoneiden ja tablettien selaimille
 
-**Alueviestit**
+**Alueviestit** <br>
 Määriteltyyn alueeseen liittyvä viesti käyttöliittymässä, esim tieto lisäpalveluista kuten kutsuliikenteestä.
 
-**Maksaminen**
-Maksamiseen liittyy useita ominaisuuksia joista ensimmäisessä vaiheessa pyritään toteuttamaan:
+**Maksaminen** <br>
+Maksamiseen liittyy useita ominaisuuksia joista ensimmäisessä vaiheessa pyritään toteuttamaan: <br>
 - Liikennööitsijätieto
 - Matkan hinta
 - Linkitys ostamiseen
 - Mobiililipun integrointi
 
-**Kertakirjautuminen (SSO)**
+**Kertakirjautuminen (SSO)** <br>
 Mahdollistaa henkilökohtaisten reititysasetusten tallentamisen palvelun tarjoajan asiakastiliin, esim HSL-tunnukseen.
 
-**Hakutoiminnallisuus**
+**Hakutoiminnallisuus** <br>
 Hakukenttien käytettävyyden parantaminen
 
-**Pieniä parannuksia mm. seuraaviin kohteisiin:**
+**Pieniä parannuksia mm. seuraaviin kohteisiin:** <br>
 - Reitityksen logiikka
 - Tietoturvaominaisuudet
 - Paikannuksen hyväksikäyttö ja osoitteiden haku (Geokoodaus)  
@@ -34,13 +35,13 @@ Hakukenttien käytettävyyden parantaminen
 
 **Bugikorjaukset**
 
-**Palvelinympäristö**
+**Palvelinympäristö** <br>
 Teknisen käyttöympäristön määrittely ja käyttöönotto
 
-**Ohjelmointirajapinnat**
+**Ohjelmointirajapinnat** <br>
 Avoimet API:t, joilla kolmannen osapuolen palveluiden kehittäjät voivat käyttää reititystä ja muita toiminnallisuuksia
 
-**Tuotteenhallintamallin dokumentaatio, jossa kuvataan mm:**
+**Tuotteenhallintamallin dokumentaatio, jossa kuvataan mm:** <br>
 - tehtävät, roolit ja päätöksenteon tasot
 - asiakasvaatimusten ja bugien käsittelyprosessi
 - kustannustenjaon yleiset periaatteet
@@ -48,41 +49,41 @@ Avoimet API:t, joilla kolmannen osapuolen palveluiden kehittäjät voivat käytt
 
 ###2017 ensimmäisen vuosipuoliskon tavoitteita:###
 
-**Terminaalivälireititys**
+**Terminaalivälireititys** <br>
 Havainnollistaa palvelutasoa. Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa. Demo osoitteessa http://beta.liikennevirasto.fi/joukkoliikenne/aikataulut/otp/cached.html
 
-**Virtuaalimonitori**
+**Virtuaalimonitori** <br>
 Mahdollisuus tuottaa käyttöliittymällä pysäkki- ja terminaalimonitorin tyyppisiä näkymiä. Auttaa matkustajaa saamaan tiedon silloin kun ei vielä olla tarpeeksi lähellä terminaalinäyttöä tai näyttöjen vikatilanteissa. 
 
-**Tulostaminen**
+**Tulostaminen** <br>
 Reittiehdotuksen tulostusmahdollisuus. Tarvitaan erityisesti avustettuun käyttöön, esim palvelupisteissä.
 
-**--Maksaminen--**
-Maksamiseen liittyy useita ominaisuuksia. Osa tästä työstä on aiemmin tehtyjen ominaisuuksia laajennuksia.
+**--Maksaminen--** <br>
+Maksamiseen liittyy useita ominaisuuksia. Osa tästä työstä on aiemmin tehtyjen ominaisuuksia laajennuksia. <br>
 - HSL mobiililipun integrointi
 
-**Automaattinen datan päivitys**
+**Automaattinen datan päivitys** <br>
 Kerran vuorokaudessa automaattisesti tapahtuvan datapäivittämisen suunnittelu ja toteutus. Sisältää datan validoinnin ja mahdollisuuden palata nopeasti edelliseen dataan virheiden ilmetessä.
 
-**API ominaisuudet**
+**API ominaisuudet** <br>
 Rajapintojen ominaisuuksien kehittäminen kolmansien tahojen tarpeita ja liikennekaaren vaatimuksia vastaavaksi.
 
-**--SSO ja käyttäjätili--**
+**--SSO ja käyttäjätili--** <br>
 Kirjautumisominaisuuden luominen: Suosikkien tallentaminen. Vaatii yhteistyötä HSL:n asiakasrekisterityön kanssa.
 
-**Käytettävyys**
+**Käytettävyys** <br>
 Tuotantoon vieminen tulee tuottamaan suuren määrän parannusehdotuksia käyttöliittymään ja toiminnalisuuksiin. 
 
-**Matka-aikakartta**
+**Matka-aikakartta** <br>
 Valtakunnallinen matka-aikakartta, jolla voi tarkastella matka-aikoja eri sijainneissa ja eri matkustusmuotojen välillä. Korvaa myös HSL:n nykyisen matka-aikakartan http://mak.hsl.fi
 
-**Ylläpitäjän reititysasetukset**
+**Ylläpitäjän reititysasetukset** <br>
 Luodaan erillinen näkymä, jossa ylläpitäjät/asiakasvastaavat voivat säätää kokonaisuuden kannalta parhaat oletusasetukset.
 
-**HSL.fi käyttöliittymä**
+**HSL.fi käyttöliittymä** <br>
 Palveluversio, jossa Digitransit toiminnalisuus on yhdistetty HSL:n verkkopalveluihin.
 
-**HSL sovellus**
+**HSL sovellus** <br>
 Digitransit toiminnallisuuksien sovittaminen HSL:n mobiilisovellukseen
 
 **Pyöräilyominaisuuksien parantaminen**
