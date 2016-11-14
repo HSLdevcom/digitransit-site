@@ -12,7 +12,7 @@ panels:
 
 ## Liittymisprosessi
 
-Toimita alla kuvatut tiedot digitransit@hsl.fi osoitteeseen. Mahdolliset kysymykset voi esittää Petro Tammiselle (HSL puh. (09) 4766 4444)
+Toimita alla kuvatut tiedot digitransit@hsl.fi osoitteeseen.
 
 ### 1. Sovi yhteistyöstä LMJ Oy:n kanssa
 
