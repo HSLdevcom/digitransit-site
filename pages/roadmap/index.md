@@ -44,7 +44,7 @@ Avoimet API:t, joilla kolmannen osapuolen palveluiden kehittäjät voivat käytt
 ###2017 ensimmäisen vuosipuoliskon tavoitteita:###
 
 **Terminaalivälireititys** <br>
-Havainnollistaa palvelutasoa. Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa. Demo osoitteessa http://beta.liikennevirasto.fi/joukkoliikenne/aikataulut/otp/cached.html
+Havainnollistaa palvelutasoa. Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa.
 
 **Virtuaalimonitori** <br>
 Mahdollisuus tuottaa käyttöliittymällä pysäkki- ja terminaalimonitorin tyyppisiä näkymiä. Auttaa matkustajaa saamaan tiedon silloin kun ei vielä olla tarpeeksi lähellä terminaalinäyttöä tai näyttöjen vikatilanteissa. 
