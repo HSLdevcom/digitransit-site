@@ -15,19 +15,13 @@ Käyttöliittymä pöytätietokoneiden ja tablettien selaimille
 Määriteltyyn alueeseen liittyvä viesti käyttöliittymässä, esim tieto lisäpalveluista kuten kutsuliikenteestä.
 
 **Maksaminen** <br>
-Maksamiseen liittyy useita ominaisuuksia joista ensimmäisessä vaiheessa pyritään toteuttamaan: <br>
-- Liikennööitsijätieto
-- Matkan hinta
-- Linkitys ostamiseen
-- Mobiililipun integrointi
+Maksamiseen liittyy useita ominaisuuksia joista ensimmäisessä vaiheessa pyritään toteuttamaan liikennöitsijätieto
 
-**Kertakirjautuminen (SSO)** <br>
-Mahdollistaa henkilökohtaisten reititysasetusten tallentamisen palvelun tarjoajan asiakastiliin, esim HSL-tunnukseen.
 
 **Hakutoiminnallisuus** <br>
 Hakukenttien käytettävyyden parantaminen
 
-**Pieniä parannuksia mm. seuraaviin kohteisiin:** <br>
+**Pieniä parannuksia mm. seuraaviin kohteisiin:**
 - Reitityksen logiikka
 - Tietoturvaominaisuudet
 - Paikannuksen hyväksikäyttö ja osoitteiden haku (Geokoodaus)  
@@ -58,9 +52,11 @@ Mahdollisuus tuottaa käyttöliittymällä pysäkki- ja terminaalimonitorin tyyp
 **Tulostaminen** <br>
 Reittiehdotuksen tulostusmahdollisuus. Tarvitaan erityisesti avustettuun käyttöön, esim palvelupisteissä.
 
-**--Maksaminen--** <br>
-Maksamiseen liittyy useita ominaisuuksia. Osa tästä työstä on aiemmin tehtyjen ominaisuuksia laajennuksia. <br>
-- HSL mobiililipun integrointi
+**Maksaminen** <br>
+Maksamiseen liittyy useita ominaisuuksia. Osa tästä työstä on aiemmin tehtyjen ominaisuuksien laajennuksia.
+- Matkan hinta
+- Linkitys ostamiseen
+- Mobiililipun integrointi
 
 **Automaattinen datan päivitys** <br>
 Kerran vuorokaudessa automaattisesti tapahtuvan datapäivittämisen suunnittelu ja toteutus. Sisältää datan validoinnin ja mahdollisuuden palata nopeasti edelliseen dataan virheiden ilmetessä.
@@ -68,8 +64,8 @@ Kerran vuorokaudessa automaattisesti tapahtuvan datapäivittämisen suunnittelu 
 **API ominaisuudet** <br>
 Rajapintojen ominaisuuksien kehittäminen kolmansien tahojen tarpeita ja liikennekaaren vaatimuksia vastaavaksi.
 
-**--SSO ja käyttäjätili--** <br>
-Kirjautumisominaisuuden luominen: Suosikkien tallentaminen. Vaatii yhteistyötä HSL:n asiakasrekisterityön kanssa.
+**Kertakirjautuminen (SSO)** <br>
+Mahdollistaa henkilökohtaisten reititysasetusten, suosikkien, yms tietojen tallentamisen palvelun tarjoajan asiakastiliin, esim HSL-tunnukseen.
 
 **Käytettävyys** <br>
 Tuotantoon vieminen tulee tuottamaan suuren määrän parannusehdotuksia käyttöliittymään ja toiminnalisuuksiin. 
