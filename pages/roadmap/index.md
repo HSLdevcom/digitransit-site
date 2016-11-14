@@ -5,7 +5,7 @@ Tämä suunnitelma tarkentuu toteutuksen edetessä. Kehityskohteet ja toteutukse
 
 ###2017 tammikuun loppuun mennessä, tavoitteena on toteuttaa seuraavia toiminnallisuuksia:###
 
-**Räätälöity Föli -versio** 
+**Räätälöity Föli -versio** <br>
 Digitransit -palvelulla toteutte räätälöity Turun alueen reittiopas, Föli
 
 **Desktop UI**  Käyttöliittymä pöytätietokoneiden ja tablettien selaimille
