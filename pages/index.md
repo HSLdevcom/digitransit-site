@@ -42,7 +42,7 @@ Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman
 Lähdekoodi on avoin.
 
 <span class="large-link">[Uusi Reittiopas »](http://beta.reittiopas.fi)</span>
-<span class="large-link">[Uusi Matka.fi »](http://beta.digitransit.fi)</span>
+<span class="large-link">[Uusi Matka.fi »](http://beta.matka.fi)</span>
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
 <div style="max-width: 200px; min-width: 150px">
