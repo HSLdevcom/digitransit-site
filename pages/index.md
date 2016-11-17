@@ -39,29 +39,12 @@ panels:
 
 HSL:n Reittiopas.&zwnj;fi ja Liikenneviraston Matka.&zwnj;fi uudistuvat.<br/>
 Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi.<br/>
-Lähdekoodi on avoin.
+Lähdekoodi on avoin. Uudet palvelut julkaistaan vuoden 2017 alussa.
 
 <span class="large-link">[Uusi Reittiopas »](http://beta.reittiopas.fi)</span>
-<span class="large-link">[Uusi Matka.fi »](http://beta.digitransit.fi)</span>
+<span class="large-link">[Uusi Matka.fi »](http://beta.matka.fi)</span>
 
-<div style="display: flex; justify-content: center; flex-wrap: wrap;">
-<div style="max-width: 200px; min-width: 150px">
+<h3>Kehityssuunnitelma</h3>
+<span class="large-link">[Katso Roadmap tulevista ominaisuuksista »](/roadmap/)</span>
 
-#### Alfa-versio
-elokuu 2015
-
-</div>
-<div style="max-width: 200px; min-width: 150px">
-
-#### Beta-versio
-kevät 2016
-
-</div>
-<div style="max-width: 200px; min-width: 150px">
-
-#### Tuotantoversio
-syksy 2016
-
-</div>
-</div>
 </div>
