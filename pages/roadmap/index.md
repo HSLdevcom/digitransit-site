@@ -3,7 +3,7 @@
 Tämä suunnitelma tarkentuu toteutuksen edetessä. Kehityskohteet ja toteutuksen ajankohta saattavat muuttua. Kehityskohteita ei ole tässä listassa esitetty tärkeysjärjestyksessä. 
 
 
-###2017 tammikuun loppuun mennessä, tavoitteena on toteuttaa seuraavia toiminnallisuuksia:###
+### 2017 tammikuun loppuun mennessä, tavoitteena on toteuttaa seuraavia toiminnallisuuksia:
 
 **Räätälöity Föli -versio** <br>
 Digitransit -palvelulla toteutte räätälöity Turun alueen reittiopas, Föli
@@ -41,7 +41,7 @@ Avoimet API:t, joilla kolmannen osapuolen palveluiden kehittäjät voivat käytt
 - kustannustenjaon yleiset periaatteet
 - vastuunjako
 
-###2017 ensimmäisen vuosipuoliskon tavoitteita:###
+### 2017 ensimmäisen vuosipuoliskon tavoitteita:
 
 **Terminaalivälireititys** <br>
 Havainnollistaa palvelutasoa. Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa.
