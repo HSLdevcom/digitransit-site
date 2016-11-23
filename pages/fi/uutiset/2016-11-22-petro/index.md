@@ -72,11 +72,11 @@ Useita pieniä parannuksia
 - Räätälöity Föli -versio Turun seudulle
 - Useita visuaalisia parannuksia HSL-, Joensuu-, Turku-versioihin sekä matka.fi -versioon
 - Lisäksi lähes joka näkymää on kehitetty ja käytettävyystestin perusteella käytettävyyttä on parannettu mm. 
--- pysäkkisivulla
--- terminaalisivulla
--- linjasivulla
--- reittiyhteenvedossa
--- reittisivulla
+  * pysäkkisivulla
+  * terminaalisivulla
+  * linjasivulla
+  * reittiyhteenvedossa
+  * reittisivulla
 
 ## Kokeile uusia ominaisuuksia
 - HSL-alue: http://beta.reittiopas.fi/
