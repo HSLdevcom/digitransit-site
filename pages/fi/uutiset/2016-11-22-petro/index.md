@@ -1,7 +1,7 @@
 ---
 title: Uusi Digitransit-julkaisu – "Petro"
 date: "30.8.2016"
-image: "6.png"
+image: "6.PNG"
 ---
 
 Edellisessä kahden viikon sprintissä on toteutettu:
@@ -9,13 +9,13 @@ Edellisessä kahden viikon sprintissä on toteutettu:
 ### Hakutoiminnallisuuden käytettävyyttä on parannettu
 Käyttöliittymää on yksinkertaistettu, niin että ennen hakutermin syöttämistä ei tarvitse tehdä valintoja. Lisäksi hakutulos jaetaan kahteen kategoriaan, sen mukaan onko kyseessä osoite, paikka, pysäkki tms pistemäinen kohde vai linja. Lähtöpaikka ilmaistaan aiempaa selkeämmin.
 
-![Haku osoitteella](1b.png "Haku osoitteella")
-![Linjahaku](1c.png "Linjahaku")
+![Haku osoitteella](1b.PNG "Haku osoitteella")
+![Linjahaku](1c.PNG "Linjahaku")
 
 ### Kansallinen reititys 
 Reititys löytää pidempiä kävelymatkoja, jolloin tulee vähemmän "reittiä ei löydy" -vastauksia
 
-![Pitkäkävely](2.png "Pitkä kävely")
+![Pitkäkävely](2.PNG "Pitkä kävely")
 
 ### Nyt-nappula
 Reittiehdotusta voi päivittää "Nyt" nappulasta, niin että reititys osaa ottaa huomioon matkustajan muuttuneen sijainnin (silloin kun lähtöpaikkana käytetään omaa sijaintia).
@@ -23,19 +23,19 @@ Reittiehdotusta voi päivittää "Nyt" nappulasta, niin että reititys osaa otta
 ### Uusi yläpalkki
 Desktop version yläpalkki on uusittu
 
-![Yläpalkki_matka](3a.png "Yläpalkki matka.fi")
+![Yläpalkki_matka](3a.PNG "Yläpalkki matka.fi")
 
-![YläpalkkiHSL](3b.png "Yläpalkki HSL")
+![YläpalkkiHSL](3b.PNG "Yläpalkki HSL")
 
 ### Aloituskuva
 Palveluun ensimmäistä kertaa tuleville tai jos paikannusta ei ole saatavilla tilanteessa näytettävä näkymä on uusittu.
 
-![Aloituskuva](4.png "Aloituskuva")
+![Aloituskuva](4.PNG "Aloituskuva")
 
 ### Via-tieto
 Reittien via-pisteet lisätty lähtöjen listaan.
 
-![Viatieto](5.png "Via-tieto")
+![Viatieto](5.PNG "Via-tieto")
 
 ### Osoitehaku
 Osoitehakua on nopeutettu välimuistin avulla.
@@ -50,7 +50,7 @@ Useita pieniä parannuksia
 
 - Desktop –versio
 
-![Desktop](6.png "Desktop")
+![Desktop](6.PNG "Desktop")
 
 - Liityntäpysäköinnin tuki
 - Lähdön ja määränpään valintatoiminnallisuus lisätty karttanäkymään
