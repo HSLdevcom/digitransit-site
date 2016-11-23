@@ -79,5 +79,7 @@ Useita pieniä parannuksia
   * reittisivulla
 
 ## Kokeile uusia ominaisuuksia
-- HSL-alue: http://beta.reittiopas.fi/
-- Suomi: http://beta.matka.fi/
+- HSL-alue: https://beta.reittiopas.fi/
+- Suomi: https://beta.matka.fi/
+- Turku: https://turku.digitransit.fi/
+- Joensuu: https://joensuu.digitransit.fi
