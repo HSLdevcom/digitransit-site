@@ -1,6 +1,6 @@
 ---
 title: Uusi Digitransit-julkaisu – "Petro"
-date: "30.8.2016"
+date: "22.11.2016"
 image: "6.PNG"
 ---
 
