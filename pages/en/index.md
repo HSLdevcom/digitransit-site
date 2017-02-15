@@ -34,32 +34,17 @@ panels:
     background: "#64be47"
     swapped: true
 ---
-
+<h2 style="text-align: center;">Schedule</h2>
 <div style="text-align: center;">
 
-The upcoming Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are in development. We need your help! Become a test user or contribute patches. The code is open-source.
+The Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are in development.<br />
+Your help is welcome! Become a test user or contribute patches.<br />
+The code is open-source. New services are released in the beginning of 2017.
 
 <span class="large-link">[New Reittiopas »](http://beta.reittiopas.fi)</span>
-<span class="large-link">[New Matka.fi »](http://beta.digitransit.fi)</span>
-
-<div style="display: flex; justify-content: center; flex-wrap: wrap;">
-<div style="max-width: 200px; min-width: 150px">
-
-#### Alpha-version
-August 2015
+<span class="large-link">[New Matka.fi »](http://beta.matka.fi)</span>
 
 </div>
-<div style="max-width: 200px; min-width: 150px">
 
-#### Beta-version
-Spring 2016
-
-</div>
-<div style="max-width: 200px; min-width: 150px">
-
-#### Production
-Autumn 2016
-
-</div>
-</div>
-</div>
+<h3>Development plan</h3>
+<span class="large-link">[Roadmap of upcoming features (in Finnish) »](//fi/roadmap/)</span>
