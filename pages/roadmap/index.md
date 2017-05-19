@@ -1,4 +1,4 @@
-# Kehityskohteiden roadmap
+﻿# Kehityskohteiden roadmap
 
 Tämä suunnitelma tarkentuu toteutuksen edetessä. Kehityskohteet ja toteutuksen ajankohta saattavat muuttua. Kehityskohteita ei ole tässä listassa esitetty tärkeysjärjestyksessä. 
 
@@ -81,4 +81,3 @@ Digitransit toiminnallisuuksien sovittaminen HSL:n mobiilisovellukseen
 
 **Pyöräilyominaisuuksien parantaminen**
 
-**Bugikorjaukset**
