@@ -64,9 +64,6 @@ Kerran vuorokaudessa automaattisesti tapahtuvan datapäivittämisen suunnittelu 
 **API ominaisuudet** <br>
 Rajapintojen ominaisuuksien kehittäminen kolmansien tahojen tarpeita ja liikennekaaren vaatimuksia vastaavaksi.
 
-**Kertakirjautuminen (SSO)** <br>
-Mahdollistaa henkilökohtaisten reititysasetusten, suosikkien, yms tietojen tallentamisen palvelun tarjoajan asiakastiliin, esim HSL-tunnukseen.
-
 **Käytettävyys** <br>
 Tuotantoon vieminen tulee tuottamaan suuren määrän parannusehdotuksia käyttöliittymään ja toiminnalisuuksiin. 
 
