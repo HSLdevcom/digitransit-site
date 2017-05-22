@@ -22,7 +22,7 @@ We have built a mobile friendly user interface on top the APIs [See it here](../
 
 ## Routing API, Geocoding API, and Map API
 [Routing API](../services-and-apis/1-routing-api/), [Geocoding API](../services-and-apis/2-geocoding-api/), and [Map API](../services-and-apis/3-map-api/)
-can be seen "more stable" and we are pretty confident that they will be available when production version is launched.
+are stable and currently available since the launch of production.
 
 ## Real time API
 [Real time API](../services-and-apis/4-realtime-api/) is more or less "work in progress". HSL is working on new Ticketing system and at the moment realtime
