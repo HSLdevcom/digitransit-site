@@ -25,7 +25,7 @@ panels:
     id: developers
     background: "#ff8a3c"
   - title: For municipalities
-    body: Be on the map and make your home municipality easier to move around. Join us in developing the next generation journey planner and get national visibility for your home municipality. Digitransit is an easy-to-access service platform provided by HSL,  the Finnish Transport Agency and TVV LMJ Oy. Thanks to open-source, all interested parties can participate in the development of the service. This is likely to decrease error rate, improve security and provide data that is always up-to-date. Make sure that the route and timetable information for your municipality are available for the service platform.
+    body: Be on the map and make your home municipality easier to move around. Join us in developing the next generation journey planner and get national visibility for your home municipality. Digitransit is an easy-to-access service platform provided by HSL, the Finnish Transport Agency and TVV LMJ Oy. Thanks to its open-source nature, all interested parties can participate in the development of the service. This is likely to result in better quality, improve security and provide data that is always up-to-date. Make sure that the route and timetable information for your municipality are available for the service platform.
     links: []
       # - title: Digitransit palvelukuvaus
       # - title: Liity palveluun
@@ -37,7 +37,7 @@ panels:
 <h2 style="text-align: center;">Reittiopas.fi and Matka.fi are now on-line</h2>
 <div style="text-align: center;">
 
-The Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are on-line since February 2017.<br />
+The Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are online since February 2017.<br />
 We still need your help! Become a test user or contribute patches.<br />
 The code is open-source.
 
