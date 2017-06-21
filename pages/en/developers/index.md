@@ -20,6 +20,6 @@ Our issue tracking and roadmap is handled in [https://digitransit.atlassian.net]
 * Mobile friendly user interface that supports themes
 * Configurable for any region
 
-## Demos
-* [Finland - Helsinki region demo](http://beta.reittiopas.fi/)
-* [Finland - National demo](http://beta.digitransit.fi/)
+## In production
+* [Finland - Helsinki region](http://www.reittiopas.fi/)
+* [Finland - National Route Planner](http://opas.matka.fi/)
