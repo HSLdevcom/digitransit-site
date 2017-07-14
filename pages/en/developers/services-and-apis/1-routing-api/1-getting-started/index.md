@@ -108,27 +108,35 @@ However, with *application/graphql* Content-Type data is sent as GraphQL which i
 
 [GraphiQL](https://github.com/graphql/graphiql) is a simple UI for making queries. Not only can you use it run queries but also for exploring GraphQL schema. **It is highly recommended to use it.**
 
-You have two options for using GraphiQL:
-1) Use browser version: http://dev.hsl.fi/graphql/console/
-2) For Mac OSX use desktop version: [GraphiQL app](https://github.com/skevy/graphiql-app)
+You have few options for using GraphiQL:
+1) A browser extension like ChromeiQL (https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij)
+2) Use browser version:
 
-Both options work similarly and UI looks more or less like this:
+Helsinki region:
+> https://api.digitransit.fi/graphiql/hsl
+
+Waltti regions:
+> https://api.digitransit.fi/graphiql/waltti
+
+Finland version:
+> https://api.digitransit.fi/graphiql/finland
+
+3) For Mac OSX use desktop version: [GraphiQL app](https://github.com/skevy/graphiql-app)
+
+All options work similarly and UI looks more or less like this:
 
 ![GraphiQL](./GraphiQL.png)
 
 #### Execute your first query
 
-1. Either [Download GraphiQL app for OSX](https://github.com/skevy/graphiql-app) or open [browser version](http://dev.hsl.fi/graphql/console/)
-
-2. If you are using GraphiQL app, set "GraphQL Endpoint" to one of:
+1. If you are using GraphiQL app or browser extension, set "GraphQL Endpoint" to one of:
 - Helsinki region: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 - Waltti regions: http://api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 - Finland: http://api.digitransit.fi/routing/v1/routers/finland/index/graphql
 
-Browser version already uses endpoint:
-- Helsinki region: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+The browser version already has correct endpoint configured
 
-3. Copy this as query:
+2. Copy this as query:
 
 ```
 {
