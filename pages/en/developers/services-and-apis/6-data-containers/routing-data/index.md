@@ -21,11 +21,14 @@ The data flow is described in detail here: https://github.com/HSLdevcom/OpenTrip
 ## OpenTripPlanner router zip files
 Currently we provide a data container for each router (finland, waltti, hsl). The currently active routing data can be viewed from the corresponding production http endpoints:
 
-https://api.digitransit.fi/routing-data/v2/finland/
-https://api.digitransit.fi/routing-data/v2/waltti/
-https://api.digitransit.fi/routing-data/v2/hsl/
+1. https://api.digitransit.fi/routing-data/v2/finland/
+
+2. https://api.digitransit.fi/routing-data/v2/waltti/
+
+3. https://api.digitransit.fi/routing-data/v2/hsl/
 
 For example the HSL routing data currently consists of the following files:
+
 1. build-config.json
    This is the OTP configuration file that is used to build the otp Graph file
 
