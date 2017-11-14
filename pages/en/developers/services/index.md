@@ -1,14 +1,6 @@
 ---
-title: Services and APIs
+title: Services
 ---
-
-## APIs
-| Service                               | Description                     |
-|---------------------------------------|---------------------------------|
-| [Routing API](./1-routing-api/)       | Routing and timetable API
-| [Geocoding API](./2-geocoding-api/)   | Geocoding API
-| [Map API](./3-map-api/)               | Map raster and vector tiles API
-| [Realtime API](./4-realtime-api/)     | Realtime API
 
 ## User interface
 | Service                               | Description                     |
