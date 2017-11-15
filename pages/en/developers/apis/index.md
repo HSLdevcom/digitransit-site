@@ -4,7 +4,7 @@ title: APIs
 
 ## API access rights
 
-Our digitransit APIs are publicly available for all developers to access and there is no need to create your own interface to be able to use them.
+The APIs hosted at api.digitransit.fi are publicly available for all and require no credentials. If you want to improve or modify the API's in some way, you can either contribute to the projects through https://github.com/HSLdevcom or host your own API's based on those sources.
 
 ## APIs
 | API                               | Description                     |
