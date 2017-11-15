@@ -1,146 +1,49 @@
 ---
-title: Getting started
+title: GraphiQL
 ---
 
-Routing queries can be made to GraphQL API.
+## Making queries and exploring schema using GraphiQL
 
-# What is GraphQL?
+**It is highly recommended to use GraphiQL.**
 
-[GraphQL](http://graphql.org/) is a standard created by Facebook. Basically, you can think it like "client side SQL". When implementing a GraphQL API, server developers defines a GraphQL schema that defines what can be queried. Instead of client calling REST-like urls, it generates different GraphQL queries and send these queries to API. Server parses the query, executes it, and returns results back to client.
+[GraphiQL](https://github.com/graphql/graphiql) is a simple UI for making queries. You can use it both to run queries and to explore the GraphQL schema.
 
-## GraphQL benefits
+**Note:** All top level queries should have at least some description available and you can use documentation explorer to familiarize yourself with the schema. You can find more details about that under [Reading schema docs](#reading-schema-docs).
 
-There are many. You can read [how Facebook sees it](https://facebook.github.io/relay/docs/thinking-in-graphql.html). Also, [GraphQL site](http://graphql.org/) has some info for you.
+### There are a few options for using GraphiQL:
 
-# GraphQL API
-
-Helsinki region API is available at:
-> https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
-
-API for the Waltti regions is available at:
-> https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql
-
-Whole Finland API is available at:
-> https://api.digitransit.fi/routing/v1/routers/finland/index/graphql
-
-### API requirements
-
-When sending queries, there are some things you should be aware of:
-
-**HTTP method must be POST**
-- You will get HTTP 405 error when using other methods.
-
-**Content-Type must be either "application/graphql" or "application/json"**
-- You will get HTTP 415 Error if it is not present.
-
-## cURL examples
-
-Examples below send a GraphQL query as HTTP post to https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql. Example query asks server to find stop using id "HSL:11773210" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
-
-You can download cURL here:
-> https://curl.haxx.se/
-
-### Linux & OSX
-
-When using **application/graphql** Content-Type, do it like this:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H "Content-Type: application/graphql" \
--d @- << DATA
-{
-  stop(id: "HSL:1173210") {
-    name
-    lat
-    lon
-    wheelchairBoarding
-  }  
-}
-DATA
-```
-
-When using **application/json** Content-Type, do it like this:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H "Content-Type: application/json" \
--d @- << DATA
-{
-  "query": "{
-    stop(id: \"HSL:1173210\") {
-      name
-      lat
-      lon
-      wheelchairBoarding
-    }
-  }"
-}
-DATA
-```
-
-Some description for cURL parameters:
-- -H 'Content-Type: application/json' defines correct Content-Type header
-- -d @- tells cURL to read post data from STDIN
-- << DATA defines [here documents code block](http://www.tldp.org/LDP/abs/html/here-docs.html)
-
-### Windows
-
-If you are a Windows user, you can use **application/graphql** approach like so:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql -H "Content-Type: application/graphql" --data "{stop(id: \"HSL:1173210\") {name, lat, lon, wheelchairBoarding}}"
-```
-
-#### Differences between application/json and application/graphql approaches
-
-You might notice that in both cases we are working with "jsonish" data.
-With *application/json* you are sending a valid json:
-```
-{
-  "query": "{...}"
-}
-```
-
-However, with *application/graphql* Content-Type data is sent as GraphQL which is "jsonish". This means that you only have to write query.
-
-```
-{...}
-```
-
-### Making queries and exploring schema using GraphiQL
-
-[GraphiQL](https://github.com/graphql/graphiql) is a simple UI for making queries. Not only can you use it run queries but also for exploring GraphQL schema. **It is highly recommended to use it.**
-
-You have few options for using GraphiQL:
 1) A browser extension like ChromeiQL (https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij)
-2) Use browser version:
+2) Using browser versions for the three regions available:
 
-Helsinki region:
+**Helsinki region:**
 > https://api.digitransit.fi/graphiql/hsl
 
-Waltti regions:
+**Waltti regions:**
 > https://api.digitransit.fi/graphiql/waltti
 
-Finland version:
+**Finland version:**
 > https://api.digitransit.fi/graphiql/finland
 
-3) For Mac OSX use desktop version: [GraphiQL app](https://github.com/skevy/graphiql-app)
+The browser versions have the correct endpoint configured already.
 
-All options work similarly and UI looks more or less like this:
+3) For Mac OSX you can use desktop version: [GraphiQL app](https://github.com/skevy/graphiql-app)
+
+All options work similarly and UI looks more or less like this (ChromeiQL extension has been used in the example below):
 
 ![GraphiQL](./GraphiQL.png)
 
-#### Execute your first query
+## Execute your first query
 
-1. If you are using GraphiQL app or browser extension, set "GraphQL Endpoint" to one of:
-- Helsinki region: http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql
-- Waltti regions: http://api.digitransit.fi/routing/v1/routers/waltti/index/graphql
-- Finland: http://api.digitransit.fi/routing/v1/routers/finland/index/graphql
+1. If you are using GraphiQL app or browser extension, set "GraphQL Endpoint" to one of the following:
+- Helsinki region: http://<i></i>api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+- Waltti regions: http://<i></i>api.digitransit.fi/routing/v1/routers/waltti/index/graphql
+- Finland: http://<i></i>api.digitransit.fi/routing/v1/routers/finland/index/graphql
 
-The browser version already has correct endpoint configured
-
-2. Copy this as query:
+2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
-  stop(id: "HSL:1173210") {
+  stop(id: "HSL:1040129") {
     name
     lat
     lon
@@ -149,44 +52,46 @@ The browser version already has correct endpoint configured
 }
 ```
 
-4. Press play to execute query
+3. Press play in GraphiQL to execute the query.
 
-5. You should get result:
+4. You should get results like below:
 
 ```
 {
   "data": {
     "stop": {
-      "name": "Ratamestarinkatu",
-      "lat": 60.198549599999915,
-      "lon": 24.93936489999998,
-      "wheelchairBoarding": "NO_INFORMATION"
+      "name": "Arkadian puisto",
+      "lat": 60.17112,
+      "lon": 24.93338,
+      "wheelchairBoarding": "NOT_POSSIBLE"
     }
   }
 }
 ```
+**Note:** If the example provided does not return what is expected then the id used in step 2 may not be in use any more and you should just try to use some other id.
 
-#### Exploring schema with GraphiQL
+## Exploring schema with GraphiQL
 
 GraphiQL is schema aware. This means that you can invoke autocomplete by Ctrl-space. Tool then shows available options for query.
 
 ![GraphiQL](./GraphiQL-autocomplete.png)
 
-### Reading schema docs
+## Reading schema docs
 
-By clicking "< docs" from upper right corner, you open documentation explorer. From there click on "query: QueryType" opens all top level queries available.
+By clicking **"< docs"** on the upper right corner in GraphiQL, you can open **Documentation Explorer**. Click on **"query: QueryType"** there will open all top level queries available.
 
 ![GraphiQL](./GraphiQL-docs.png)
 
-From here we can check e.g. "alerts", which describes what can be queried using that top level. It says "Get all alerts active in the graph".
+From here you can check e.g. "alerts", which describes what can be queried using that top level. It says "Get all alerts active in the graph".
 
 ![GraphiQL](./GraphiQL-alerts.png)
 
-Let's try to query that:
+Let's try to query alerts:
 
 1. Close docs
 
-2. Enter query
+2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+ 
 ```
 {
   alerts {
@@ -195,11 +100,8 @@ Let's try to query that:
 }
 ```
 
-3. Press "play" to execute your query
-
+3. Press play in GraphiQL to execute the query
 
 Depending on current situation you might get some disruption info
 
 ![GraphiQL](./GraphiQL-alerts-results.png)
-
-All top level queris should have at least some description available, use documentation browser to familiarize yourself with the schema.
