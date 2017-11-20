@@ -2,21 +2,21 @@
 title: Bicycling
 ---
 
-**If you are not familiar with [GrpahQL](../0-graphql) and [GraphiQL](../1-graphiql) yet it is highly recommended to review those pages at first.**
+**If you are not familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) yet it is highly recommended to review those pages at first.**
 
 ## Bicycling related query types
 
 Routing API provides few bicycling related query types:
 
+- Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
 - Query types **bikeRentalStation** and **bikeRentalStations** can be used to query one or all city bike rental stations and bikes that are available in Helsinki 
 - Query types **bikePark** and **bikeParks** can be used to query one or all city bike parks that are available in Helsinki 
-- Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
 
 **Note:** For more details about these query types you can use **Documentation Explorer** provided in GraphiQL.
 
 ## City bikes
 
-**Note:** City bikes are available in Helsinki only.
+**Note:** City bikes are currently available only in Helsinki, but Espoo is planning to start to use them in 2018.
 
 **Note:** City bike API data is realtime and it is always up to date.
 
