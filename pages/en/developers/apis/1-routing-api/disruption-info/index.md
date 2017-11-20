@@ -2,7 +2,7 @@
 title: Disruption info
 ---
 
-**If you are not familiar with [GrpahQL](../0-graphql) and [GraphiQL](../1-graphiql) yet it is highly recommended to review those pages at first.**
+**If you are not familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) yet it is highly recommended to review those pages at first.**
 
 ## What is disruption info?
 
