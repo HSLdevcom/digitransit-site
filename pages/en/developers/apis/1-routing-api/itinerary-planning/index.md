@@ -2,27 +2,22 @@
 title: Itinerary planning
 ---
 
-If you haven't read getting started, [check that out first](../1-getting-started/).
+**If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
 
-## Terms
+## Glossary
 
-First, let's define some terms:
-
-**Transportation Mode** or just **Mode** is a means of transport, for example: walking, cycling, driving a car, bus, train, subway, tram, ferry, taxi, airplane.
-
-**Itinerary** is a combination of different transportation modes at certain times to reach from origin to destination. For example to go from Pasila (Helsinki) to Koskikeskus (Tampere) you could walk to the train station, take the 14:00 P train to Aviapolis, walk to the airport, take the 15:00 flight to Tampere-Pirkkala, take a taxi to destination. Commonly used synonyms: journey
-
-**Leg** is one part of an itinerary.
-
-**Origin** When the context is a person; the geographical point where an itinerary begins. When the context is a route; the first stop on the route or the first location on the headsign.
-
-**destination** When the context is a person; the geographical point where an itinerary ends. When the context is a route; the last stop on the route or the last location on the headsign.
-
-**headsign** is a description of a route usually written on the front of the vehicle. For example: "Helsinki" (for just the destination) or "Helsinki - Tampere" (for both the origin and destination).
+| Term                                  | Explanation                     |
+|---------------------------------------|---------------------------------|
+| Transportation Mode (or just Mode)    | A means of transport, for example: walking, cycling, driving a car, bus, train, subway, tram, ferry, taxi, airplane.
+| Itinerary                             | A combination of different transportation modes at certain times to reach from origin to destination. For example to go from Pasila (Helsinki) to Koskikeskus (Tampere) you could walk to the train station, take the 14:00 P train to Aviapolis, walk to the airport, take the 15:00 flight to Tampere-Pirkkala and take a taxi to the final destination. Commonly used synonym: journey
+| Leg                                   | One part of an itinerary
+| Origin                                | When the context is a person; the geographical point where an itinerary begins. When the context is a route; the first stop on the route or the first location on the headsign.
+| Destination                           | When the context is a person; the geographical point where an itinerary ends. When the context is a route; the last stop on the route or the last location on the headsign.
+| Headsign                              | A description of a route usually written on the front of the vehicle. For example: “Helsinki” (for just the destination) or “Helsinki - Tampere” (for both the origin and destination).
 
 ### Note about Itinerary leg geometries
 
-You can ask server to return geometries for itineraries. API will return them in [Google poline-encoded format](https://developers.google.com/maps/documentation/utilities/polylinealgorithm). It looks like this:
+You can ask the server to return geometries for itineraries. The API will return them in [Google polyline-encoded format](https://developers.google.com/maps/documentation/utilities/polylinealgorithm). It looks like this:
 ```
 "legGeometry": {
   "length": 349,
@@ -30,7 +25,7 @@ You can ask server to return geometries for itineraries. API will return them in
 }
 ```
 
-We can use [polyline npm module](https://www.npmjs.com/package/polyline) to get some idea how this data looks:
+You can use the [polyline npm module](https://www.npmjs.com/package/polyline) to get some idea what this data looks like:
 
 ```
 var polyline = require('polyline')
@@ -40,7 +35,7 @@ for (var i=0; i < line.length; i++) {
   console.log(s)
 }
 ```
-by running this on Node.js, it prints a table like so:
+By running this on Node.js, it prints a table like so:
 ```
 ...
 60.17545, 24.68756
@@ -53,12 +48,21 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 
 ![polyline](./polyline.png)
 
-### Plan an itinerary from location (60.4,24.5) to (60.41,24.51)
+## Query examples
+
+**Note:** For more details about the query type **plan** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
+
+**Note:** If the examples provided with some id or other value do not return what is expected then the value in question may not be in use any more and you should try again with an existing value.
+
+### Plan an itinerary from location (60.168992,24.932366) to (60.175294,24.684855)
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.168992%2C%20lon%3A%2024.932366%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.175294%2C%20lon%3A%2024.684855%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
 ```
 {
   plan(
-    from: {lat: 60.4, lon: 24.5}
-    to: {lat: 60.41, lon: 24.51}
+    from: {lat: 60.168992, lon: 24.932366}
+    to: {lat: 60.175294, lon: 24.684855}
     numItineraries: 3
   ) {
     itineraries {
@@ -76,7 +80,11 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 }
 ```
 
-### Basic route from Kamppi to Pisa
+2. Press play in GraphiQL to execute the query.
+
+### Basic route from Kamppi (Helsinki) to Pisa (Espoo)
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%22%2C%0A%20%20%20%20from%3A%20%7Blat%3A%2060.168992%2C%20lon%3A%2024.932366%7D%2C%0A%20%20%20%20toPlace%3A%20%22Pisa%2C%20Espoo%22%2C%0A%20%20%20%20to%3A%20%7Blat%3A%2060.175294%2C%20lon%3A%2024.684855%7D%2C%0A%20%20%20%20modes%3A%20%22BUS%2CTRAM%2CRAIL%2CSUBWAY%2CFERRY%2CWALK%22%2C%0A%20%20%20%20walkReluctance%3A%202.1%2C%0A%20%20%20%20walkBoardCost%3A%20600%2C%0A%20%20%20%20minTransferTime%3A%20180%2C%0A%20%20%20%20walkSpeed%3A%201.2%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%2C%0A%20%20%20%20%20%20duration%2C%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
@@ -126,7 +134,12 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 }
 ```
 
+2. Press play in GraphiQL to execute the query.
+
 ### Plan an itinerary using only WALK and RAIL modes
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.199196699999995%2C%20lon%3A%2024.9397302%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.168438%2C%20lon%3A%2024.929283%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20%20%20modes%3A%20%22WALK%2CRAIL%22%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
 ```
 {
   plan(
@@ -150,12 +163,16 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 }
 ```
 
-### Plan an itinerary from Hakaniemi to Keilaniemi and modify some params
+2. Press play in GraphiQL to execute the query.
 
-- return five results
-- using other than subway
-- fast walking speed
-- safety margin 10 minutes
+### Plan an itinerary from Hakaniemi to Keilaniemi and modify the following parameters:
+
+- Return five results: (`numItineraries: 5`)
+- Use other modes than subway (`modes: "BUS,TRAM,RAIL,FERRY,WALK"`)
+- Faster walking speed (`walkSpeed: 1.7`)
+- Use a 10 minute safety margin for transfers (`minTransferTime: 600`)
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Hakaniemi%2C%20Helsinki%22%2C%0A%20%20%20%20from%3A%20%7Blat%3A%2060.179267%2C%20lon%3A%2024.951501%7D%2C%0A%20%20%20%20toPlace%3A%20%22Keilaniemi%2C%20Espoo%22%2C%0A%20%20%20%20to%3A%20%7Blat%3A%2060.1762%2C%20lon%3A%2024.836584%7D%2C%0A%20%20%20%20date%3A%20%222017-11-21%22%2C%0A%20%20%20%20time%3A%20%2223%3A28%3A00%22%2C%0A%20%20%20%20numItineraries%3A%205%2C%0A%20%20%20%20modes%3A%20%22BUS%2CTRAM%2CRAIL%2CFERRY%2CWALK%22%2C%0A%20%20%20%20walkReluctance%3A%202.1%2C%0A%20%20%20%20walkBoardCost%3A%20600%2C%0A%20%20%20%20minTransferTime%3A%20600%2C%0A%20%20%20%20walkSpeed%3A%201.7%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%2C%0A%20%20%20%20%20%20duration%2C%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
@@ -164,8 +181,8 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
     from: {lat: 60.179267, lon: 24.951501},
     toPlace: "Keilaniemi, Espoo",
     to: {lat: 60.1762, lon: 24.836584},
-    date: "2016-05-20",
-    time: "23:28:00"
+    date: "2017-11-21",
+    time: "23:28:00",
     numItineraries: 5,
     modes: "BUS,TRAM,RAIL,FERRY,WALK",
     walkReluctance: 2.1,
@@ -207,3 +224,5 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
   }
 }
 ```
+
+2. Press play in GraphiQL to execute the query.
