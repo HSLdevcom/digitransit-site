@@ -2,7 +2,7 @@
 title: Itinerary planning
 ---
 
-**If you are not familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) yet it is highly recommended to review those pages at first.**
+**If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
 
 ## Glossary
 
@@ -17,7 +17,7 @@ title: Itinerary planning
 
 ### Note about Itinerary leg geometries
 
-You can ask server to return geometries for itineraries. API will return them in [Google poline-encoded format](https://developers.google.com/maps/documentation/utilities/polylinealgorithm). It looks like this:
+You can ask the server to return geometries for itineraries. The API will return them in [Google polyline-encoded format](https://developers.google.com/maps/documentation/utilities/polylinealgorithm). It looks like this:
 ```
 "legGeometry": {
   "length": 349,
@@ -25,7 +25,7 @@ You can ask server to return geometries for itineraries. API will return them in
 }
 ```
 
-You can use [polyline npm module](https://www.npmjs.com/package/polyline) to get some idea how this data looks:
+You can use the [polyline npm module](https://www.npmjs.com/package/polyline) to get some idea what this data looks like:
 
 ```
 var polyline = require('polyline')
@@ -35,7 +35,7 @@ for (var i=0; i < line.length; i++) {
   console.log(s)
 }
 ```
-by running this on Node.js, it prints a table like so:
+By running this on Node.js, it prints a table like so:
 ```
 ...
 60.17545, 24.68756
@@ -50,14 +50,13 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 
 ## Query examples
 
-**Note:** For more details about the query type **plan** and its parameters you can use **Documentation Explorer** provided in GraphiQL.
+**Note:** For more details about the query type **plan** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
 
 **Note:** If the examples provided with some id or other value do not return what is expected then the value in question may not be in use any more and you should try again with an existing value.
 
 ### Plan an itinerary from location (60.168992,24.932366) to (60.175294,24.684855)
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.168992%2C%20lon%3A%2024.932366%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.175294%2C%20lon%3A%2024.684855%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) 
-to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.168992%2C%20lon%3A%2024.932366%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.175294%2C%20lon%3A%2024.684855%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
@@ -166,12 +165,12 @@ to run the query below in GraphiQL.
 
 2. Press play in GraphiQL to execute the query.
 
-### Plan an itinerary from Hakaniemi to Keilaniemi and modify parameters below:
+### Plan an itinerary from Hakaniemi to Keilaniemi and modify the following parameters:
 
-- Return five results (numItineraries: 5)
-- Using other modes than subway (modes: "BUS,TRAM,RAIL,FERRY,WALK")
-- Fast walking speed (walkSpeed: 1.7)
-- Safety margin 10 minutes (minTransferTime: 600)
+- Return five results: (`numItineraries: 5`)
+- Use other modes than subway (`modes: "BUS,TRAM,RAIL,FERRY,WALK"`)
+- Faster walking speed (`walkSpeed: 1.7`)
+- Use a 10 minute safety margin for transfers (`minTransferTime: 600`)
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Hakaniemi%2C%20Helsinki%22%2C%0A%20%20%20%20from%3A%20%7Blat%3A%2060.179267%2C%20lon%3A%2024.951501%7D%2C%0A%20%20%20%20toPlace%3A%20%22Keilaniemi%2C%20Espoo%22%2C%0A%20%20%20%20to%3A%20%7Blat%3A%2060.1762%2C%20lon%3A%2024.836584%7D%2C%0A%20%20%20%20date%3A%20%222017-11-21%22%2C%0A%20%20%20%20time%3A%20%2223%3A28%3A00%22%2C%0A%20%20%20%20numItineraries%3A%205%2C%0A%20%20%20%20modes%3A%20%22BUS%2CTRAM%2CRAIL%2CFERRY%2CWALK%22%2C%0A%20%20%20%20walkReluctance%3A%202.1%2C%0A%20%20%20%20walkBoardCost%3A%20600%2C%0A%20%20%20%20minTransferTime%3A%20600%2C%0A%20%20%20%20walkSpeed%3A%201.7%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%2C%0A%20%20%20%20%20%20duration%2C%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
