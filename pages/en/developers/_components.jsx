@@ -9,7 +9,8 @@ const getDockerInfo = (props) => {
         <p>
           The resulting Docker image is called <strong>{ props.docker.imageName }</strong> and
           it is available at <a href={ "https://hub.docker.com/r/" + props.docker.imageName }> DockerHub</a>.
-          Image can be built using a <a href={props.docker.buildScript}>build script</a>.
+          If you use Travis like we do the image can be built using this <a href={props.docker.buildScript}>build script</a>.
+		  You might also want to take a look at the Travis builds and configuration <a href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}>Travis build and configuration</a>.
         </p>
         <p>
           To run Docker container, run:
@@ -24,7 +25,7 @@ const getDockerInfo = (props) => {
           { props.docker.accessContainer }
         </pre>
         <p>
-          For More information about how to use Docker see <a href="/en/developers/getting-started/docker-guide/#docker">docker info</a>.
+          For More information about how to use Docker see <a href="/en/developers/docker-guide/#docker">docker info</a>.
         </p>
     </div>);
   }
