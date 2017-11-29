@@ -2,14 +2,15 @@
 title: Address lookup
 ---
 
-Address lookup that is also called as reverse geocoding means finding address for given coordinates. The **features** property of the results returned is where you will find the list of results that matched the best with your input parameters. 
+Address lookup, otherwise known as reverse geocoding, is used for finding places/addresses for given coordinates. The **features** property of the results returned is where you will find the list of results that matched the best with your input parameters.
 
 ## Reverse geocoding endpoint
 
 Endpoint root is available at:
-> http://<i></i>api.digitransit.fi/geocoding/v1/reverse
 
-## Supported url parameters:
+`http://api.digitransit.fi/geocoding/v1/reverse`
+
+## Supported request parameters
 
 | Parameter       | Type           | Description                                              |
 |-----------------|----------------|----------------------------------------------------------|
@@ -24,26 +25,26 @@ Endpoint root is available at:
 
 **Note:** Parameter api_key is not in use in digitransit
 
-## Response fields:
+## Response fields
 
 | Name              | Type    | Description                                              |
 |-------------------|---------|----------------------------------------------------------|
-| id                | string  | 
-| gid               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible. 
+| id                | string  |
+| gid               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
 | layer             | string  | Address, venue or street
 | source            | string  | Data source, for example osm (openstreetmap), oa (openaddresses) or nlsfi
-| source_id         | string  | 
+| source_id         | string  |
 | name              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
-| postalcode        | number  | 
+| postalcode        | number  |
 | postalcode_gid    | string  |
 | confidence        | number  | An estimation of how accurately this result matches the query
-| distance          | number  | A distance from the query point (in meters) 
+| distance          | number  | A distance from the query point (in meters)
 | accuracy          | string  |
 | country           | string  | Places that issue passports, nations, nation-states
 | country_gid       | string  |
 | country_a         | string  | Alpha-3 code, for example FIN
 | region            | string  | For example "Uusimaa"
-| region_gid        | string  | 
+| region_gid        | string  |
 | localadmin        | string  | Local administrative boundaries, for example "Helsinki"
 | localadmin_gid    | string  |
 | locality          | string  | Towns, hamlets, cities, for example "Helsinki"
@@ -51,7 +52,7 @@ Endpoint root is available at:
 | neighbourhood     | string  | Social communities, neighbourhoods, for example "Itä-Pasila"
 | neighbourhood_gid | string  |
 | label             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example "East-West Pub, Itä-Pasila, Helsinki"
-| bbox              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry. 
+| bbox              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry.
 
 ## Request examples
 
@@ -79,7 +80,7 @@ https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24
 
 **Note:** Using parameter **layers=address** returns results for places with a street address.
 
-### Request to get results for the given coordinates using language preference 
+### Request to get results for the given coordinates using language preference
 
 http://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.195&point.lon=24.93&lang=sv
 
