@@ -16,7 +16,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 |------------------------|------------------------|----------------------------------------------------------|
 | text                   | string                 | Text to be searched
 | size                   | integer                | Limits the number of results returned
-| boundary.rect.min_lon boundary.rect.max_lon boundary.rect.min_lat boundary.rect.max_lat	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude)
+| boundary.rect.min_lon boundary.rect.max_lon boundary.rect.min_lat boundary.rect.max_lat	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
 | boundary.circle.lat boundary.circle.lon boundary.circle.radius | floating point number  | Searches using location coordinates and a maximum distance radius within which acceptable results can be located.
 | focus.point.lat focus.point.lon  | floating point number  | Scores the nearby places higher depending on how close they are to the **focus.point** so that places with higher scores will appear higher in the results list.
 | sources                | comma-delimited string array | Filters results by source (value can be oa, osm or nlsfi)
@@ -40,7 +40,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | postalcode_gid    | string  |
 | confidence        | number  | An estimation of how accurately this result matches the query
 | distance          | number  | A distance from the query point (in meters) 
-| accuracy          | string  |
+| accuracy          | string  | Returns always coordinates of just one point. If the object is originally an area or a line like a road, then the centroid is calculated (value can be point or centroid).
 | country           | string  | Places that issue passports, nations, nation-states
 | country_gid       | string  |
 | country_a         | string  | Alpha-3 code, for example FIN
@@ -52,7 +52,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | locality_gid      | string  |
 | neighbourhood     | string  | Social communities, neighbourhoods, for example "Itä-Pasila"
 | neighbourhood_gid | string  |
-| label             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example "East-West Pub, Itä-Pasila, Helsinki"
+| label             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example "East-West Pub, Itä-Pasila, Helsinki".
 | bbox              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry. 
 
 **Note:** Not exactly the same fields are returned for all searches because all object locations do not have the same data available, for example neighborhood is not in use with all objects.
