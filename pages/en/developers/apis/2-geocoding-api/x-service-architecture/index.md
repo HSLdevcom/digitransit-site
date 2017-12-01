@@ -15,26 +15,19 @@ docker:
   buildScript: https://github.com/HSLdevcom/pelias-api/blob/master/build-docker-image.sh
   runContainer: docker run -d --name pelias-api -p 3100:8080 --link pelias-data-container hsldevcom/pelias-api
   accessContainer: curl "http://localhost:3100/v1/search?text=helsinki
+  travisBuild: pelias-api
 ---
 
-### Running API tests
+## Running API tests
 
 Read instructions from
 > https://github.com/HSLdevcom/pelias-fuzzy-tests
 
-## Key service delivery activities
-1. Keep up with Pelias development on GitHub
+## Related open source projects
 
-> https://github.com/pelias/pelias
-
-2. Keep up with Mapzen Search (which is essentially same as Pelias)
-
-> https://mapzen.com/projects/search/
-
-3. Keep up with Pelias-api upstream development on GitHub
-
-> https://github.com/pelias/api
-
-4. Keep up with Pelias fuzzy-tester upstream development on GitHub
-
-> https://github.com/pelias/fuzzy-tester
+| URL                                    | Project description                     |
+|----------------------------------------|-----------------------------------------|
+| https://github.com/pelias/pelias       | Pelias development on GitHub
+| https://mapzen.com/projects/search/    | Mapzen Search (which is essentially same as Pelias)
+| https://github.com/pelias/api          | Pelias-api upstream development on GitHub
+| https://github.com/pelias/fuzzy-tester | Pelias fuzzy-tester upstream development on GitHub
