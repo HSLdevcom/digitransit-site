@@ -21,7 +21,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | focus.point.lat focus.point.lon  | floating point number  | Scores the nearby places higher depending on how close they are to the **focus.point** so that places with higher scores will appear higher in the results list.
 | sources                | comma-delimited string array | Filters results by source (value can be oa, osm or nlsfi)
 | layers                 | string                 | Filters results by layer (value can be address, venue or street)
-| boundary.country       | <a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="\_blank">ISO-3166 alpha-2 or alpha-3</a>                  | Filters results by country 
+| boundary.country       | <a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="\_blank">ISO-3166 alpha-2 or alpha-3</a>                  | Filters results by country
 | lang                   | string                 | Returns results in the preferred language if such a language-bound name version is available (value can be 'fi' or 'sv').
 
 **Note:** Parameter api_key is not in use in digitransit
@@ -30,22 +30,22 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 
 | Name              | Type    | Description                                              |
 |-------------------|---------|----------------------------------------------------------|
-| id                | string  | 
-| gid               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible. 
+| id                | string  |
+| gid               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
 | layer             | string  | Address, venue or street
 | source            | string  | Data source, for example osm (openstreetmap), oa (openaddresses) or nlsfi
-| source_id         | string  | 
+| source_id         | string  |
 | name              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
-| postalcode        | number  | 
+| postalcode        | number  |
 | postalcode_gid    | string  |
 | confidence        | number  | An estimation of how accurately this result matches the query
-| distance          | number  | A distance from the query point (in meters) 
+| distance          | number  | A distance from the query point (in meters)
 | accuracy          | string  | Returns always coordinates of just one point. If the object is originally an area or a line like a road, then the centroid is calculated (value can be point or centroid).
 | country           | string  | Places that issue passports, nations, nation-states
 | country_gid       | string  |
 | country_a         | string  | Alpha-3 code, for example FIN
 | region            | string  | For example "Uusimaa"
-| region_gid        | string  | 
+| region_gid        | string  |
 | localadmin        | string  | Local administrative boundaries, for example "Helsinki"
 | localadmin_gid    | string  |
 | locality          | string  | Towns, hamlets, cities, for example "Helsinki"
@@ -53,35 +53,35 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | neighbourhood     | string  | Social communities, neighbourhoods, for example "Itä-Pasila"
 | neighbourhood_gid | string  |
 | label             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example "East-West Pub, Itä-Pasila, Helsinki".
-| bbox              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry. 
+| bbox              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry.
 
 **Note:** Not exactly the same fields are returned for all searches because all object locations do not have the same data available, for example neighborhood is not in use with all objects.
 
 ## Search examples
 
-### Search 'kamppi' and return only one result
+### Search for 'kamppi' and return only one result
 
 https://api.digitransit.fi/geocoding/v1/search?text=kamppi&size=1
 
 **Note:** Using parameter **size=1** limits the number of results returned to one.
 
-### Search 'kamppi' and filter results by street address
+### Search for 'kamppi' and filter results by street address
 
 https://api.digitransit.fi/geocoding/v1/search?text=kamppi&layers=address
 
 **Note:** Using parameter **layers=address** returns results for places having text kamppi with a street address.
 
-### Search 'kamppi' using a rectangle
+### Search for 'kamppi' using a rectangle
 
 https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
 
-### Search 'kamppi' inside a circle
+### Search for 'kamppi' inside a circle
 
 https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.circle.lat=60.2&boundary.circle.lon=24.936&boundary.circle.radius=30
 
 **Note:** Parameter **boundary.circle.radius**  is always specified in kilometers.
 
-### Search 'kamppi' using a focus point
+### Search for 'kamppi' using a focus point
 
 https://api.digitransit.fi/geocoding/v1/search?text=kamppi&focus.point.lat=60.2&focus.point.lon=24.936
 
@@ -112,6 +112,6 @@ leaves the language context unknown. This may occasionally cause unexpected erro
 
 ## Extra documentation
 
-Geocoding API is implemented using Pelias. If you are interested, you can learn more about Pelias search API from:
+Geocoding API is implemented using Pelias. If you are interested, you can learn more about the Pelias search API from:
 
 > https://github.com/pelias/pelias-doc/blob/master/search.md
