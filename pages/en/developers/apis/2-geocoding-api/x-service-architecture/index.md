@@ -15,6 +15,7 @@ docker:
   buildScript: https://github.com/HSLdevcom/pelias-api/blob/master/build-docker-image.sh
   runContainer: docker run -d --name pelias-api -p 3100:8080 --link pelias-data-container hsldevcom/pelias-api
   accessContainer: curl "http://localhost:3100/v1/search?text=helsinki
+  travisBuild: pelias-api
 ---
 
 ## Running API tests
