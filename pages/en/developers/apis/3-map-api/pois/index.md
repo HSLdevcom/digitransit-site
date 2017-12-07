@@ -22,7 +22,7 @@ This API provides vector map tiles for points of interests like ticket sales pos
 | y             | int            | y-coordinate
 | size          | string         | '@2x' for retina tiles or empty value for normal
 
-## examples
+## Examples
 
 > https://digitransit-prod-cdn-origin.azureedge.net/map/v1/hsl-stop-map/16/37308/18959.pbf
 
