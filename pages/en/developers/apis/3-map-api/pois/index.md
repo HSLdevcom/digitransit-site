@@ -24,6 +24,10 @@ This API provides vector map tiles for points of interests like ticket sales pos
 
 ## Examples
 
+### Map tiles address
+
 > https://digitransit-prod-cdn-origin.azureedge.net/map/v1/hsl-stop-map/16/37308/18959.pbf
+
+### Source address for Mapbox GL JS library
 
 > https://digitransit-prod-cdn-origin.azureedge.net/map/v1/hsl-stop-map/index.json
