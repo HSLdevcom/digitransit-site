@@ -16,7 +16,7 @@ This API provides vector map tiles for points of interests like ticket sales pos
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
-| source        | string         | one of: 'hsl-stop-map', 'hsl-parkandride-map', 'waltti-stop-map', 'finland-stop-map'
+| source        | string         | one of: 'hsl-stop-map', 'hsl-parkandride-map', 'waltti-stop-map', 'finland-stop-map', 'hsl-citybike-map', 'hsl-ticket-sales-map'
 | z             | int            | Zoom level
 | x             | int            | x-coordinate
 | y             | int            | y-coordinate
