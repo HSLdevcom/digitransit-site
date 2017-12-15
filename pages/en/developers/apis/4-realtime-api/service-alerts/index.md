@@ -1,9 +1,9 @@
 ---
 title: Service alerts
 description:
-  info: HSL Alerts API can be used to query realtime updates about HSL fleet in GTFS-RT format.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/internal-components/hslalert/architecture.xml
-assets:
+  info: HSL Alerts API can be used to query real-time updates about HSL fleet in GTFS-RT format.
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/service-alerts/architecture.xml
+  assets:
   source: https://github.com/HSLdevcom/hslalert
   dockerHub: https://hub.docker.com/r/hsldevcom/hslalert/
   Dockerfile: https://github.com/HSLdevcom/hslalert/blob/master/Dockerfile
@@ -22,16 +22,16 @@ Service connects to Poikkeusinfo v3 xml interface (http://www.poikkeusinfo.fi/xm
 reads this data, and converts it to GTFS-RT
 
 ## API Documentation
-Hslalert service provides GTFS-RT [service alerts](
-https://developers.google.com/transit/gtfs-realtime/service-alerts) and also [trip updates](https://developers.google.com/transit/gtfs-realtime/trip-updates).
+Hslalert service provides GTFS-RT [service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts) and also [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates).
 
 ## Endpoint
 > http://api.digitransit.fi/realtime/service-alerts/v1/
 
-Supported query parameters:
+## Supported query parameters
+
 | Parameter | Type           | Description                                              |
 |-----------|----------------|----------------------------------------------------------|
-| debug     | queryParameter | Print data in human readable format (for debug purposes) |                                                                                  |
+| debug     | queryParameter | Print data in human readable format (for debug purposes) |  
 
 ## Examples
 
@@ -60,15 +60,15 @@ request(req, function (error, response, body) {
   }
 ```
 
-More examples from [Google](https://developers.google.com/transit/gtfs-realtime/code-samples).
+More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
 
 ## Service dependencies
 No Digitransit related service dependencies. Reads data from http://www.poikkeusinfo.fi/xml/v3
 
-## Key service delivery activities
-1. Keep up with HSLAlerts upstream development (there probably won't happen much)
-> https://github.com/samuelmr/hslalert
-2. Follow Google transit community and its mailing lists (especially GTFS-RT):
-> https://developers.google.com/transit/community?hl=en
+## Related open source projects
 
-> https://groups.google.com/forum/#!forum/gtfs-realtime
+| URL                | Project description                                          |
+|--------------------|--------------------------------------------------------------|
+| https://github.com/samuelmr/hslalert                 | HSLAlerts upstream development (there probably won't happen much) 
+| https://developers.google.com/transit/                | Google transit community (especially GTFS-RT)
+| https://groups.google.com/forum/#!forum/gtfs-realtime | Google transit forum
