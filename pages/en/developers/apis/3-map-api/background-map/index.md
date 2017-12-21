@@ -12,7 +12,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 **Note:** Background map is available as vector tiles too from source hsl-vector-map.
 
-## Supported URL parameters:
+## Supported URL parameters
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
@@ -23,7 +23,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 ## Examples 
 
-### An example of what the map tiles look like:
+### An example of what the HSL map tiles look like
 
 ![hsl-map-style](http://cdn.digitransit.fi/hsl-map/16/37311/18963@2x.png)
 
