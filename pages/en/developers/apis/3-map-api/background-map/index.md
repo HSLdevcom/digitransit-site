@@ -12,7 +12,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 **Note:** Background map is available as vector tiles too from source hsl-vector-map.
 
-## Supported url parameters:
+## Supported URL parameters:
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
