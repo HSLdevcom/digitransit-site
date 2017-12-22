@@ -1,7 +1,7 @@
 ---
 title: Service alerts
 description:
-  info: HSL Alerts API can be used to query real-time updates about HSL fleet in GTFS-RT format.
+  info: The HSL Alerts API can be used to query real-time updates from the HSL fleet in GTFS-RT format.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/service-alerts/architecture.xml
   assets:
   source: https://github.com/HSLdevcom/hslalert
@@ -18,11 +18,11 @@ docker:
   accessContainer: http://localhost:8080/?debug
 ---
 
-Service connects to Poikkeusinfo v3 xml interface (http://www.poikkeusinfo.fi/xml/v3),
+The service connects to the Poikkeusinfo v3 XML interface (http://www.poikkeusinfo.fi/xml/v3),
 reads this data, and converts it to GTFS-RT
 
 ## API Documentation
-Hslalert service provides GTFS-RT [service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts) and also [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates).
+The hslalert service provides both GTFS-RT [service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts) and [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates).
 
 ## Endpoint
 > http://api.digitransit.fi/realtime/service-alerts/v1/
