@@ -10,7 +10,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 **TMS tiles** are available from endpoint:
 <pre>https://cdn.digitransit.fi/map/v1/hsl-map/:z/:x/:y:size.png</pre>
 
-**Note:** Background map is available as vector tiles too from source hsl-vector-map.
+**Note:** Background map is available as vector tiles too from source `hsl-vector-map`.
 
 ## Supported URL parameters
 
