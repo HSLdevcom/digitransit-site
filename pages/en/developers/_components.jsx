@@ -6,7 +6,7 @@ const getDockerInfo = (props) => {
   if(typeof props.docker != "undefined") {
     let travisInfo = "";
     if (props.docker.travisBuild) {
-      travisInfo = <span> You might also want to take a look at the Travis build and configuration <a href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}>Travis build and configuration</a></span>;
+      travisInfo = <span> You might also want to take a look at the <a href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}>Travis build and configuration</a>.</span>;
     }
     return (<div>
         <h2>Docker image</h2>
