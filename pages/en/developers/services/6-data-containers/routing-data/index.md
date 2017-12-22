@@ -2,16 +2,17 @@
 title: Routing Data
 description:
   info: "Routing Data provides three OpenTripPlanner router zip files: Helsinki region, the Waltti regions, and whole Finland."
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/data-containers/routing-data/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/services/6-data-containers/routing-data/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/OpenTripPlanner-data-container
   DockerHub: https://hub.docker.com/r/hsldevcom/opentripplanner-data-container-hsl/
 docker:
   dockerfile: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/master/otp-data-container/Dockerfile.data-container
   imageName: hsldevcom/opentripplanner-data-container-hsl
-  buildScript: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/master/build-docker-image.sh
+  buildScript: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/master/travis-build.sh
   runContainer: docker run -d -p 8080:8080 --name hsl-data-container hsldevcom/opentripplanner-data-container-hsl
   accessContainer: http://localhost:8080/
+  travisBuild: OpenTripPlanner-data-container
 ---
 
 ## Data flow
@@ -51,14 +52,12 @@ For example, the HSL routing data consists of the following files:
 7. `version.txt`
   A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
 
-[See how Routing API utilizes these zip files](../routing-api/)
+[See how Routing API utilizes these zip files](../../../apis/1-routing-api/)
 
-## Key service delivery activities
-1. Keep up with OpenStreetMap blog<br/>
-   https://blog.openstreetmap.org/
+## Related open source projects
 
-2. Keep up with gtfs_shape_mapfit upstream<br/>
-   https://github.com/tru-hy/gtfs_shape_mapfit
-
-3. Keep up with OneBusAway project<br/>
-   http://onebusaway.org/
+| URL                                         | Project description                     |
+|---------------------------------------------|-----------------------------------------|
+| https://blog.openstreetmap.org/             | OpenStreetMap blog
+| https://github.com/tru-hy/gtfs_shape_mapfit | gtfs_shape_mapfit upstream, fits GTFS shape files to a given OSM map file
+| https://onebusaway.org/                     | OneBusAway project, the open source platform for real-time transit info
