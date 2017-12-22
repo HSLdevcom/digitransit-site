@@ -1,8 +1,8 @@
 ---
-title: Realtime arrival prediction
+title: Real-time arrival prediction
 ---
 
-Routing API backend is connected to vehicle real-time information for some routes. This means that API queries can return real-time data for some vehicles.
+The routing API backend is connected to vehicle real-time information for some routes. This means that API queries can return real-time data for some vehicles.
 
 ## What does real-time mean?
 Basically real-time means prediction of arrival times. We know vehicle's planned route and it's current location. This information is used to predict when it actually arrives.
