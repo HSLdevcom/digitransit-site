@@ -18,8 +18,8 @@ Sometimes public transport does not work according to timetables. Vehicles may a
 
 [GTFS-Realtime](https://developers.google.com/transit/gtfs-realtime/) (or GTFS-RT) provides three kinds of feeds:
 
-- [Trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates)
 - [Service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts)
+- [Trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates)
 - [Vehicle positions](https://developers.google.com/transit/gtfs-realtime/guides/vehicle-positions)
 
 Our goal is to provide GTFS-RT feeds for you.
