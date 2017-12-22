@@ -10,7 +10,7 @@ This API provides vector map tiles for points of interests like ticket sales pos
 
 **Vector tiles** are available from endpoint:
 
-<pre>https://digitransit-prod-cdn-origin.azureedge.net/map/v1/source/:z/:x/:y.pbf</pre>
+<pre>https://cdn.digitransit.fi/map/v1/source/:z/:x/:y.pbf</pre>
 
 ## Supported url parameters
 
@@ -22,12 +22,23 @@ This API provides vector map tiles for points of interests like ticket sales pos
 | y             | int            | y-coordinate
 | size          | string         | '@2x' for retina tiles or empty value for normal
 
+### Source values
+
+| Value                | Description                                              |
+|----------------------|----------------------------------------------------------|
+| hsl-stop-map         | A bus stop map of Helsinki
+| hsl-parkandride-map  | A map showing the Park and Ride sites in the Helsinki region
+| waltti-stop-map      | A bus stop map of Waltti regions. You can check the currently active regions at: http://waltti.fi/?lang=en
+| finland-stop-map     | A bus stop map of Finland
+| hsl-citybike-map     | A map showing the city bikes available in the Helsinki region
+| hsl-ticket-sales-map | A map showing the ticket sales points in the Helsinki region. Includes for example many kiosks and stores.
+
 ## Examples
 
 ### Map tiles address
 
-> https://digitransit-prod-cdn-origin.azureedge.net/map/v1/hsl-stop-map/16/37308/18959.pbf
+> https://cdn.digitransit.fi/map/v1/hsl-stop-map/16/37308/18959.pbf
 
 ### Source address for Mapbox GL JS library
 
-> https://digitransit-prod-cdn-origin.azureedge.net/map/v1/hsl-stop-map/index.json
+> https://cdn.digitransit.fi/map/v1/hsl-stop-map/index.json
