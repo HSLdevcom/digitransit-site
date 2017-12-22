@@ -17,11 +17,11 @@ After this, you are ready to run queries for [routes](./routes/), [stops](./stop
 | Term                                  | Explanation                     |
 |---------------------------------------|---------------------------------|
 | GraphQL                               | A query language for APIs and a runtime for fulfilling those queries with your existing data.
-| GraphiQL                              | A simple UI for making queries. You can use it both to run queries and to explore the GraphQL schema.
-| Realtime arrival prediction           | API queries can return real-time data for some vehicles. We know vehicle's planned route and it's current location. This information is used to predict when it actually arrives.
+| GraphiQL                              | A simple UI for making GraphQL queries. You can use it both to run queries and to explore the GraphQL schema.
+| Realtime arrival prediction           | API queries can return real-time data for some vehicles. We know the vehicle's planned route and its current location. This information is used to predict when it actually arrives.
 | Route                                 | A public transport service shown to customers under a single name, usually from point A to B and back.
 | Stop                                  | A public transport stop.
 | City bike                             | A shared-use bicycle that can be borrowed for a fee by anyone in central Helsinki. 
 | Bicycling route                       | Route from place A to place B using city bike rental. 
-| Disruption info                       | Information about the current and upcoming disruptions in public transport.
-| Itinerary planning                    | Planning an itinerary from place A to place B using different modes (BUS, TRAM, RAIL, FERRY, WALK)
+| Disruption info                       | Information about current and upcoming disruptions in public transport.
+| Itinerary planning                    | Planning an itinerary from place A to place B using different modes (eg. BUS, TRAM, RAIL, FERRY, WALK)
