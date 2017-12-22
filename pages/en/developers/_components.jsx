@@ -4,13 +4,17 @@ import { RouteHandler, Link, State } from 'react-router';
 const getDockerInfo = (props) => {
 
   if(typeof props.docker != "undefined") {
+    let travisInfo = "";
+    if (props.docker.travisBuild) {
+      travisInfo = <span> You might also want to take a look at the Travis build and configuration <a href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}>Travis build and configuration</a></span>;
+    }
     return (<div>
         <h2>Docker image</h2>
         <p>
           The resulting Docker image is called <strong>{ props.docker.imageName }</strong> and
           it is available at <a href={ "https://hub.docker.com/r/" + props.docker.imageName }> DockerHub</a>.
-          If you use Travis like we do the image can be built using this <a href={props.docker.buildScript}>build script</a>.
-		  You might also want to take a look at the Travis builds and configuration <a href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}>Travis build and configuration</a>.
+          The image can be built using this <a href={props.docker.buildScript}>build script</a>. 
+          {travisInfo}
         </p>
         <p>
           To run Docker container, run:
