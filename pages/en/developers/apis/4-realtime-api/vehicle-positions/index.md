@@ -18,14 +18,14 @@ technologies:
 ---
 
 
-Navigator server connects to HSL Live server (Real-time API of high frequency positioning) and consumes messages about vehicle
-locations in real-time. This information is stored in memory and provided to clients requesting for it.
+The Navigator server connects to the HSL Live server (Real-time API of high frequency positioning) and consumes messages about vehicle
+locations in real time. This information is stored in memory and provided to clients requesting it.
 
-The provided information can be used to draw vehicles on map.
+The provided information can be used to draw vehicles on a map.
 
 ## API Documentation
 
-HSL provides an open API for a publish-subscribe access to vehicle movements in real-time. All vehicles should publish a message once per second, and mobile apps can subscribe to receive the messages that are relevant to them based on mode of transport, route/line number, map region etc. The syntax that specifies a subscription and that filters the messages is the MQTT topic structure of the API.
+HSL provides an open API for publish-subscribe access to vehicle movements in real time. All vehicles should publish a message once per second, and apps can subscribe to receive the messages that are relevant to them based on mode of transport, route/line number, map region etc. The syntax that specifies a subscription and that filters the messages is the MQTT topic structure of the API.
 
 The API definition is mostly stable, but the data still comes from old systems. The new passenger information system should be in production soon. This is why some data is currently missing and shown as "XXX". Also, messages are published once every 1 to 30 seconds, depending on the source systems.
 
@@ -60,7 +60,7 @@ The API definition is mostly stable, but the data still comes from old systems. 
 | lat, long  | coordinates                                            |
 | hdg        | heading in degrees (⁰)                                 |
 | odo        | odometer in meters                                     |
-| spd        | speed in meters per seconds (m/s)                      |
+| spd        | speed in meters per second (m/s)                       |
 
 ## Examples
 
@@ -69,7 +69,7 @@ The API definition is mostly stable, but the data still comes from old systems. 
 
 ### Retrieve the last known position for tram 9
 
-At first you will need to locate the vehicle identifier for the tram number 9. You can use [This app](http://htmlpreview.github.io/?https://gist.githubusercontent.com/siren/459db18bf4b128df0555/raw) to locate the identifier. The app reads the current information from digitransit graphql api and lets you filter through it.
+First you will need to locate the vehicle identifier for the tram number 9. You can use [This app](http://htmlpreview.github.io/?https://gist.githubusercontent.com/siren/459db18bf4b128df0555/raw) to locate the identifier. The app reads the current information from the Digitransit GraphQL API and lets you filter through it.
 
 After you have found out that the tram 9 has gtfsId of <strong>HSL:1009</strong> you can just skip the prefix (HSL:) and use the
 id 1009 to construct the url:
@@ -108,33 +108,33 @@ id 1009 to construct the url:
   </body>
 </html>
 ```
-[Show example on browser](http://htmlpreview.github.io/?https://gist.githubusercontent.com/siren/e77696cb5b7c9cd7095c/raw)
+[Show example in browser](http://htmlpreview.github.io/?https://gist.githubusercontent.com/siren/e77696cb5b7c9cd7095c/raw)
 
 ### Retrieve real-time updates in json/SIRI format
 > curl http://api.digitransit.fi/realtime/vehicle-positions/v1/siriaccess/vm/json
 
-### Subscribe everything,  '+' sign is MQTT wildcard for one level of topic hierarchy
-mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/+/+/+/+/+/+/+/+/+/#'
+### Subscribe to everything, the '+' sign is MQTT wildcard for one level of topic hierarchy
+`mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/+/+/+/+/+/+/+/+/+/#'`
 
-### Subscribe everything,  '#' sign is MQTT wildcard for any remaining levels of topic hierarchy
-mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/#'
+### Subscribe to everything, the '#' sign is MQTT wildcard for any remaining levels of topic hierarchy
+`mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/#'`
 
 ### Subscribe to all trams
-mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/tram/#'
+`mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/tram/#'`
 
-### Get bus line 611 (4611 == the "JORE" id of the bus line: disambiguation prefix (City of Vantaa is 4) + line number)
-mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/bus/+/4611/#'
+### Subscribe to bus line 611 (4611 == the "JORE" id of the bus line: disambiguation prefix (City of Vantaa is 4) + line number)
+`mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/bus/+/4611/#'`
 
 **Response** (topic followed by payload):
-/hfp/journey/bus/a96ced26/4611/2/XXX/1343/4500206/60;24/29/68/94 {"VP":{"desi":"611","dir":"2","oper":"XXX","veh":"a96ced26","tst":"2016-02-09T12:06:03.962Z","tsi":1455019563,"spd":9.44,"lat":60.26992,"long":24.98478,"dl":16,"oday":"2016-02-09","jrn":"XXX","line":"XXX","start":"1343","source":"hsl helmi"}}
+`/hfp/journey/bus/a96ced26/4611/2/XXX/1343/4500206/60;24/29/68/94 {"VP":{"desi":"611","dir":"2","oper":"XXX","veh":"a96ced26","tst":"2016-02-09T12:06:03.962Z","tsi":1455019563,"spd":9.44,"lat":60.26992,"long":24.98478,"dl":16,"oday":"2016-02-09","jrn":"XXX","line":"XXX","start":"1343","source":"hsl helmi"}}`
 
 ### Subscribe to all movement within a geohash map tile (60.1xxx, 24.9xxx) "60;24/19"
 The format of the geohash portion is lat0;long0/lat1long1/lat2long2/... [integer latitude];[integer longitude]/[first decimal of latitude][first decimal of longitude]/[second decimal of latitude][second decimal of longitude]/ etc. You can specify 0 to 3 decimal places.
 
-mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/+/+/+/+/+/+/+/60;24/19/#'
+`mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/+/+/+/+/+/+/+/60;24/19/#'`
 
 ## Service dependencies
-Navigator server does not use any digitransit data sources, it retrieves the data from HSL Live server.
+The Navigator server does not use any Digitransit data sources, it retrieves the data from the HSL Live server.
 
 ## Related open source projects and other useful urls
 
