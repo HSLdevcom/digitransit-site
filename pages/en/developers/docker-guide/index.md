@@ -11,14 +11,14 @@ All our services are available as Docker images in Dockerhub:
 
 ![build pipeline](build-pipeline.svg)
 
-Build process is performed by Snap-ci:
-> https://snap-ci.com
+Build process is performed by travis:
+> https://travis-ci.org/
 
 E.g. to check digitransit-ui pipeline and its status, check:
-> https://snap-ci.com/HSLdevcom/digitransit-ui/branch/master
+> https://travis-ci.org/HSLdevcom/digitransit-ui
 
 Should you have enough permissions, you can see all builds:
-> https://snap-ci.com/dashboard?view=tile
+> https://travis-ci.org/HSLdevcom
 
 ## <a name="docker"></a>How to use Docker?
 We use Docker, you should know how it works.
