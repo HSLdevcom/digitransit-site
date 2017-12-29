@@ -9,7 +9,7 @@ All our services are available as Docker images in Dockerhub:
 
 ## Digitransit build pipeline
 
-![build pipeline](build-pipeline.svg)
+![build pipeline](build-pipeline.png)
 
 Build process is performed by travis:
 > https://travis-ci.org/
