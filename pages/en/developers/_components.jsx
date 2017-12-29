@@ -79,7 +79,7 @@ const getAssets = (props) => {
 
 const getImage = (url) => {
   if (typeof url == "undefined") {
-    return ( < span > < / span > );
+    return (<span></span>);
   }
   return (<img src={url}/>)
 }
@@ -89,9 +89,18 @@ const getArchitectureHeader = (props) => {
   if (typeof props.description == "undefined") {
     return (<span></span>);
   }
+  
+  let imageFile = "/architecture.svg";
+
+  // IE doesn't fully support SVG:s made with draw.io
+  if(window.navigator.userAgent.indexOf('MSIE')!==-1
+  || window.navigator.appVersion.indexOf('Trident/') > 0){
+    imageFile = "/architecture.png";
+  }
+
   // We'll have to use full path as image location. By just using "./architecture.svg", browser won't update image
   // when moving from page to page if image name is the same
-  var image = window.location.pathname + "/architecture.svg"
+  const image = window.location.pathname + imageFile;
 
   return (
     <div>

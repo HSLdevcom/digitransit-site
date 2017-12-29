@@ -2,7 +2,7 @@
 title: Service architecture
 description:
   info: Geocoder with geocoding and reverse geocoding support.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/apis/geocoding-api/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/2-geocoding-api/x-service-architecture/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/pelias-api
   DockerHub: https://hub.docker.com/r/hsldevcom/pelias-api/
@@ -14,7 +14,7 @@ docker:
   imageName: hsldevcom/pelias-api
   buildScript: https://github.com/HSLdevcom/pelias-api/blob/master/build-docker-image.sh
   runContainer: docker run -d --name pelias-api -p 3100:8080 --link pelias-data-container hsldevcom/pelias-api
-  accessContainer: curl "http://localhost:3100/v1/search?text=helsinki
+  accessContainer: curl "http://localhost:3100/v1/search?text=helsinki"
   travisBuild: pelias-api
 ---
 
