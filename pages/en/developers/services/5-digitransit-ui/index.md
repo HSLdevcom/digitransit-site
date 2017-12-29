@@ -3,7 +3,7 @@ title: Digitransit-ui
 description:
   img: demo.gif
   info: Digitransit-ui is a mobile friendly User interface built to work with Digitransit APIs.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/service-catalogue/digitransit-ui/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/services/5-digitransit-ui/architecture.xml
 assets:
   source: https://github.com/HSLdevcom/digitransit-ui
   dockerHub: https://hub.docker.com/r/hsldevcom/digitransit-ui/
