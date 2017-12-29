@@ -5,9 +5,9 @@ title: System architecture
 Digitransit architecture is based on microservices architecture. Microservices are small, autonomous services that
 work together that allow us to build larger applications on top of APIs that the services provide.
 
-![Architecture](./architecture.svg)
+![Architecture](./architecture.png)
 
-[Open full size image](http://www.digitransit.fi/en/developers/architecture/architecture.svg)
+[Full size image (SVG)](http://www.digitransit.fi/en/developers/architecture/architecture.svg) | [Full size image (PNG)](http://www.digitransit.fi/en/developers/architecture/architecture.png)
 
 At the moment, we provide five kinds of services
 
