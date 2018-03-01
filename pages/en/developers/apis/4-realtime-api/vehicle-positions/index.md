@@ -18,103 +18,65 @@ technologies:
 ---
 
 
-The Navigator server connects to the HSL Live server (Real-time API of high frequency positioning) and consumes messages about vehicle
-locations in real time. This information is stored in memory and provided to clients requesting it.
-
-The provided information can be used to draw vehicles on a map.
 
 ## API Documentation
 
 HSL provides an open API for publish-subscribe access to vehicle movements in real time. All vehicles should publish a message once per second, and apps can subscribe to receive the messages that are relevant to them based on mode of transport, route/line number, map region etc. The syntax that specifies a subscription and that filters the messages is the MQTT topic structure of the API.
 
-The API definition is mostly stable, but the data still comes from old systems. The new passenger information system should be in production soon. This is why some data is currently missing and shown as "XXX". Also, messages are published once every 1 to 30 seconds, depending on the source systems.
+The API is currently available in MQTT format via a broker maintained by HSL. Everyone can subscribe directly to the broker, and there is no need for the older http service named `navigator-server`.
 
 ### MQTT topic format
 
-/hfp/journey/type/id/line/direction/headsign/start_time/next_stop/(geohash_level)/geohash/#
+/hfp/v1/journey/journey_type/trip_mode/operator_id/vehicle_id/line/direction/headsign/start_time/next_stop/(geohash_level)/geohash/#
 
 | Attribute       | Decription                                             |
 |-----------------|--------------------------------------------------------|
-| type            | One of bus, rail, subway, tram, ferry
-| id              | Unique id of the vehicle
+| prefix          | /hfp/v1/journey/ is the lowest level in the topic tree that is available for users
+| journey_type    | Type of journey, `ongoing` or `upcoming`
+| trip_mode       | One of bus, rail, subway, tram, ferry
+| operator_id     | Unique id of the operator
+| vehicle_id      | Unique id of the vehicle. This is the number that can be seen painted on the side of the vehicle
 | line            | Unique id of the route/line
 | direction       | One of 1 or 2
 | headsign        | Destination name, e.g. Aviapolis
-| start_time      | HHmm
-| next_stop       | Unique id of the stop/station
+| start_time      | Scheduled start time of the trip, HH:mm
+| next_stop       | Unique id of the next stop/station
 | (geohash_level) | Significance of the change compared to previous message - which decimal place changed
 | geohash         | Map tile coordinates, more decimals specifies a smaller tile
-
-## Endpoint
-<pre>http://api.digitransit.fi/realtime/vehicle-positions/v1/</pre>
 
 ## Response entity attributes
 
 | Attribute  | Decription                                             |
 |------------|--------------------------------------------------------|
-| desi       | designation (route/line number as shown to passengers) |
-| oday       | operating day (day of departure)                       |
-| tsi        | timestamp in seconds                                   |
-| tst        | timestamp in ISO8861 format                            |
-| dl         | delay in seconds (s); difference to timetable          |
-| lat, long  | coordinates                                            |
-| hdg        | heading in degrees (⁰)                                 |
-| odo        | odometer in meters                                     |
-| spd        | speed in meters per second (m/s)                       |
+| start      | Scheduled start time of the trip, same as in the topic 
+| line       | An internal line descriptor, not for external use 
+| hdg        | Heading in degrees (⁰)                                 |
+| spd        | Speed in meters per second (m/s)                       |
+| tsi        | Timestamp in UNIX epoch                                   |
+| tst        | Timestamp in ISO8861 format                            |
+| veh        | Unique id of the vehicle, same as in the topic 
+| oper       | Unique id the operator, same as in the topic 
+| dir        | Direction of the trip the vehicle is on, same as in the topic 
+| desi       | The line number visible to passengers, derived from the `line` attribute of the topic 
+| lat        | Coordinates                                            |
+| long       | Coordinates                                            |
+| acc        | Acceleration (m/s^2), calculated from two previous messages 
+| dl         | Delay in seconds (s) compared to timetable. Negative values are behind schedule, positive values ahead of schedule 
+| odo        | Odometer reading in meters since the start of the trip
+| drst       | Door status flag. 0 if doors are closed, 1 if any on the doors is open 
+| oday       | Operating day of the trip. Usually cuts off at 4:29 in the morning, so that for late night trips the operating day is the previous calendar day
+| jrn        | An internal trip descriptor, not for external use
 
 ## Examples
 
-### Show last known positions for all trams in json format
-> curl http://api.digitransit.fi/realtime/vehicle-positions/v1/hfp/journey/tram/#
 
 ### Retrieve the last known position for tram 9
-
-First you will need to locate the vehicle identifier for the tram number 9. You can use [This app](http://htmlpreview.github.io/?https://gist.githubusercontent.com/siren/459db18bf4b128df0555/raw) to locate the identifier. The app reads the current information from the Digitransit GraphQL API and lets you filter through it.
-
-After you have found out that the tram 9 has gtfsId of <strong>HSL:1009</strong> you can just skip the prefix (HSL:) and use the
-id 1009 to construct the url:
-> curl http://api.digitransit.fi/realtime/vehicle-positions/v1/hfp/journey/+/+/1009/
-
-### Display all tram 9s on map
-
-```html
-<!doctype html>
-<html ng-app="tram-9">
-  <head>
-    <title>Map My Tram 9</title>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script>
-      angular.module('locator',[]).controller('Ctrl',
-        function ($scope, $http) {
-          var map = L.map('map').setView([60.192059,24.945831], 11);
-          L.tileLayer('http://api.digitransit.fi/map/v1/{id}/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-              '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ',
-            id: 'hsl-map'}).addTo(map);
-          $http.get('http://api.digitransit.fi/realtime/vehicle-positions/v1/hfp/journey/+/+/1009/').then(function(data){
-            Object.keys(data.data).forEach(function(id){
-              var vehicle = data.data[id].VP;
-              L.marker([vehicle.lat, vehicle.long]).addTo(map).bindPopup("<pre>" + angular.toJson(vehicle, true) + "</pre>");
-            });
-          }, console.err);
-        });
-    </script>
-  </head>
-  <body ng-controller="Ctrl">
-    <div id="map" style="width: 800px; height: 600px"></div>
-  </body>
-</html>
-```
-[Show example in browser](http://htmlpreview.github.io/?https://gist.githubusercontent.com/siren/e77696cb5b7c9cd7095c/raw)
 
 ### Retrieve real-time updates in json/SIRI format
 > curl http://api.digitransit.fi/realtime/vehicle-positions/v1/siriaccess/vm/json
 
 ### Subscribe to everything, the '+' sign is MQTT wildcard for one level of topic hierarchy
-`mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/+/+/+/+/+/+/+/+/+/#'`
+> `mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/+/+/+/+/+/+/+/+/+/#'`
 
 ### Subscribe to everything, the '#' sign is MQTT wildcard for any remaining levels of topic hierarchy
 `mqtt sub -v -h mqtt.hsl.fi -p 1883 -t '/hfp/journey/#'`
