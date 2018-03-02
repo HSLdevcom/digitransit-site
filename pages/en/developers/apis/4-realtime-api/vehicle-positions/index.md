@@ -69,8 +69,13 @@ The API is currently available in MQTT format via a broker maintained by HSL. Ev
 
 ## Examples
 
+Below are sample subscriptions to the broker. The examples are for node-mqtt package. When installed globally (npm install mqtt -g) it can be used as a standalone CLI tool. Mosquitto (https://mosquitto.org/) is another free tool for trying out MQTT.
 
-### Retrieve the last known position for tram 9
+In general, the MQTT topic can be viewed as a tree, and the subscription is done to a certain level of the tree. MQTT supports two wildcards, "+" and "#". The "+" is used for single levels of the topic tree, allowing for any values for that specific parameter. The "#" is used at the end of the topic, allowing for any values for topic parameters lower in the topic tree. It needs to be used at the end of the subscrition if the subscribed topic is not a leaf of the topic tree. 
+
+A more detailed introduction to MQTT can be found at https://www.hivemq.com/blog/mqtt-essentials-part-1-introducing-mqtt
+
+##### Retrieve the last known position for tram 9
 
 ### Retrieve real-time updates in json/SIRI format
 > curl http://api.digitransit.fi/realtime/vehicle-positions/v1/siriaccess/vm/json
