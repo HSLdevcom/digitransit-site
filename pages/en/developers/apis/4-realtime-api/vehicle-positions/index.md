@@ -1,5 +1,5 @@
 ---
-title: High frequency positioning
+title: High-frequency positioning
 ---
 
 ## API Documentation
