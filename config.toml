@@ -4,10 +4,10 @@ ghPagesURLPrefix='/'
 [i18n.fi]
   users='Käyttäjille'
   developers='Kehittäjille'
-  muncipalities='Kunnille'
+  municipalities='Kunnille'
   news='uutiset'
 [i18n.en]
   users='for Users'
   developers='for Developers'
-  muncipalities='for Muncipalities'
+  municipalities='for Municipalities'
   news='news'
