@@ -19,7 +19,7 @@ panels:
       - title: Read the platform architecture description
         url: /en/developers/architecture/
       - title: Read more about the interfaces
-        url: /en/developers/services-and-apis/
+        url: /en/developers/apis/
       # - title: Quick start guide
     image: "/developers.svg"
     id: developers
@@ -47,4 +47,4 @@ The code is open-source.
 </div>
 
 <h3>Development plan</h3>
-<span class="large-link">[Roadmap of upcoming features (in Finnish) »](//fi/roadmap/)</span>
+<span class="large-link">[Roadmap of upcoming features (in Finnish) »](../roadmap/)</span>
