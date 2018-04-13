@@ -53,7 +53,7 @@ module.exports = React.createClass({
         <span style={{margin: rhythm(0.5)}}><a href="/en/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hrefLang="en">EN</a></span><br/>
         <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.users}</a><br/>
         <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link><br/>
-        <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.muncipalities}</a><br/>
+        <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.municipalities}</a><br/>
 
       </div>
 
@@ -92,11 +92,11 @@ module.exports = React.createClass({
         >
           <Breakpoint minWidth={750}>
             {/* Convert to Link after upgrading to ract-router 1.0
-              users and muncipalities are inter page links, they are only shown when on front page
+              users and municipalities are inter page links, they are only shown when on front page
             */}
             <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.users}</a>
             <Link to={`${urlPrefix}/en/developers/`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link>
-            <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.muncipalities}</a>
+            <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.municipalities}</a>
             <span style={{margin: rhythm(0.5)}}>|</span>
             <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/" hrefLang="fi">FI</a></span>
             <span style={{margin: rhythm(0.5)}}><a style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} href="/en/" hrefLang="en">EN</a></span>

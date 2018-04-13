@@ -41,10 +41,10 @@ Tests run automatically in Browserstack:
 ## Service dependencies
 | Asset               |  Url                                                        |
 |---------------------|-------------------------------------------------------------|
-| Routing - API       | http://digitransit.fi/developers/routing-api/
-| Realtime HSL - API  | http://digitransit.fi/developers/realtime-hsl/
-| Map - API           | http://digitransit.fi/developers/map-api/
-| Geocoding - API     | http://digitransit.fi/developers/geocoding-api
+| Routing - API       | https://digitransit.fi/en/developers/apis/1-routing-api/
+| Realtime HSL - API  | https://digitransit.fi/en/developers/apis/4-realtime-api/
+| Map - API           | https://digitransit.fi/en/developers/apis/3-map-api/
+| Geocoding - API     | https://digitransit.fi/en/developers/apis/2-geocoding-api/
 | Sentry              |
 | Piwik               |
 

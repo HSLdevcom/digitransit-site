@@ -31,7 +31,7 @@ Digitransit.fi sivusto päivitettiin tukemaan Internet Explorerin versiota numer
 jolla voi nyt käyttää sivua täysillä ominaisuuksilla.
 
 ## Paranneltu reititysdokumentaatio
-[Reititysdokumentaatiota](https://digitransit.fi/en/developers/services-and-apis/1-routing-api/) on parannettu lisäämällä esimerkkejä.
+[Reititysdokumentaatiota](https://digitransit.fi/en/developers/apis/1-routing-api/) on parannettu lisäämällä esimerkkejä.
 
 ## Parannus suosikkipaikka -ominaisuuteen
 Suosikkipaikka -ominaisuutta on parannettu näyttämään helpommin suosikkireitistä informaatiota.
