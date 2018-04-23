@@ -129,19 +129,19 @@ The numerical values for the different transit operators are listed below:
 
 | `oper` | Operator name                |
 |--------|------------------------------|
-| 12     | Helsingin Bussiliikenne Oy
-| 17     | Tammelundin Liikenne Oy
-| 18     | Pohjolan Kaupunkiliikenne Oy
-| 20     | Bus Travel Åbergin Linja Oy
-| 21     | Bus Travel Oy Reissu Ruoti
-| 22     | Nobina Finland Oy
-| 36     | Nurmijärven Linja Oy
-| 40     | HKL-Raitioliikenne
-| 45     | Transdev Vantaa Oy
-| 47     | Taksikuljetus Oy
-| 54     | V-S Bussipalvelut Oy
-| 59     | Tilausliikenne Nikkanen Oy
-| 90     | VR Oy
+| `12`   | Helsingin Bussiliikenne Oy
+| `17`   | Tammelundin Liikenne Oy
+| `18`   | Pohjolan Kaupunkiliikenne Oy
+| `20`   | Bus Travel Åbergin Linja Oy
+| `21`   | Bus Travel Oy Reissu Ruoti
+| `22`   | Nobina Finland Oy
+| `36`   | Nurmijärven Linja Oy
+| `40`   | HKL-Raitioliikenne
+| `45`   | Transdev Vantaa Oy
+| `47`   | Taksikuljetus Oy
+| `54`   | V-S Bussipalvelut Oy
+| `59`   | Tilausliikenne Nikkanen Oy
+| `90`   | VR Oy
 
 ## <a name="examples"></a>Examples
 
