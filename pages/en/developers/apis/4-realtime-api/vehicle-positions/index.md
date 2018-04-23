@@ -65,8 +65,8 @@ It can be split into these parts:
 | `headsign`       | The destination name, e.g. `Aviapolis`. Note: This does NOT match `trip_headsign` in GTFS exactly.
 | `start_time`     | The scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `HH:mm` in 24-hour local time, not the 30-hour overlapping operating days present in the GTFS dump.
 | `next_stop`      | The next stop or station. Updated on each departure from or passing of a stop. `EOL` (end of line) after final stop. Matches `stop_id` in GTFS.
-| `geohash_level`  | The geohash level represents the magnitude of change in the GPS coordinates since the previous message from the same vehicle. More exactly, geohash_level is equal to the minimum of the decimal positions of the most significant changed decimal in [latitude and longitude](#payload) since the previous message. For example, if the previous message has value (60.12345, 25.12345) for (`lat`, `long`) and the current message has value (60.12499, 25.12388), then the third decimal is the most significant changed decimal and `geohash_level` has value `3`.<br/>However, `geohash_level` value `0` is overloaded. `geohash_level` is `0` if:<ul><li>the integer part of latitude or longitude has changed,</li><li>the previous message or the current message has `null` for coordinates or</li><li>the non-location parts of the topic have changed, e.g. when a bus departs from a stop.</li></ul>By subscribing to specific geohash levels, you can reduce the amount of traffic into the client. By only subscribing to level `0` the client gets the most important status changes. The rough percentages of messages with a specific `geohash_level` value out of all `ongoing` messages:<ul><li>`0`: 3 %</li><li>`1`: 0.09 %</li><li>`2`: 0.9 %</li><li>`3`: 8 %</li><li>`4`: 43 %</li><li>`5`: 44 %</li></ul>
-| `geohash`        | The latitude and the longitude of the vehicle. The integer parts of the latitude and the longitude are separated into their own level in the format `<lat>;<long>`, e.g. `60;24`. The decimals are split and interleaved into a custom format so that e.g. (60.123, 24.789) becomes `60;24/17/28/39`. This format enables subscribing to specific geographic boundaries easily. This geohash scheme is greatly simplified from [the original geohash scheme](https://en.wikipedia.org/wiki/Geohash).
+| `geohash_level`  | The geohash level represents the magnitude of change in the GPS coordinates since the previous message from the same vehicle. More exactly, geohash_level is equal to the minimum of the digit positions of the most significant changed digit in [the latitude and the longitude](#payload) since the previous message. For example, if the previous message has value (60.12345, 25.12345) for (`lat`, `long`) and the current message has value (60.12499, 25.12388), then the third digit of the fractional part is the most significant changed digit and `geohash_level` has value `3`.<br/>However, `geohash_level` value `0` is overloaded. `geohash_level` is `0` if:<ul><li>the integer part of the latitude or the longitude has changed,</li><li>the previous or the current message has `null` for coordinates or</li><li>the non-location parts of the topic have changed, e.g. when a bus departs from a stop.</li></ul>By subscribing to specific geohash levels, you can reduce the amount of traffic into the client. By only subscribing to level `0` the client gets the most important status changes. The rough percentages of messages with a specific `geohash_level` value out of all `ongoing` messages are:<ul><li>`0`: 3 %</li><li>`1`: 0.09 %</li><li>`2`: 0.9 %</li><li>`3`: 8 %</li><li>`4`: 43 %</li><li>`5`: 44 %</li></ul>
+| `geohash`        | The latitude and the longitude of the vehicle. The digits of the integer parts are separated into their own level in the format `<lat>;<long>`, e.g. `60;24`. The digits of the fractional parts are split and interleaved into a custom format so that e.g. (60.123, 24.789) becomes `60;24/17/28/39`. This format enables subscribing to specific geographic boundaries easily.<br/>If the coordinates are missing, `geohash_level` and `geohash` have the concatenated value `0////`.<br/>Currently only 3 digits of the fractional part are published in the topic for both the latitude and the longitude even though `geohash_level` currently has precision up to 5 digits of the fractional part. As a form of future proofing your subscriptions, do not rely on the amount of fractional digits present in the topic. Instead, use the wildcard `#` at the end of topic filters.<br/>This geohash scheme is greatly simplified from [the original geohash scheme](https://en.wikipedia.org/wiki/Geohash).
 
 ### <a name="payload"></a>The payload
 
@@ -232,7 +232,7 @@ mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
   -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/#' \
   -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/#'
 ```
-For the precision of one more decimal of latitude and longitude, one would need 56 topic filters for the bounding box:
+For the precision of one more digit of latitude and longitude, one would need 56 topic filters for the bounding box:
 ```
 mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
   -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/37/#' \
@@ -299,9 +299,9 @@ mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
   -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/94/#'
 ```
 
-There is no need to restrict yourself to rectangular shapes for subscriptions, though.
+There is no need to restrict yourself to just one rectangle like above, though.
 
-Homework assignment: Generate an HFP subscription for the Kontula borough with four-decimal precision.
+For example, you could try to generate an HFP subscription for all `ongoing` vehicles in the minimal geographic area encompassing the Kontula borough with the precision of two digits in the fractional part. ;)
 
 ## Further reading
 
