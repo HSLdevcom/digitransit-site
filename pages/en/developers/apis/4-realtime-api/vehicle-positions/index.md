@@ -29,8 +29,8 @@ Enjoy the firehose!
 
 | URL                      | Description                                                                                                           |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| mqtts://mqtt.hsl.fi:443/ | The bare MQTT protocol + TLS, lightweight.
-| wss://mqtt.hsl.fi:443/   | MQTT over WebSockets + TLS, for browsers.
+| mqtts://mqtt.hsl.fi:443/ | The bare MQTT protocol with TLS, lightweight.
+| wss://mqtt.hsl.fi:443/   | MQTT over WebSockets with TLS, for browsers.
 | mqtt://mqtt.hsl.fi:1883/ | The bare MQTT protocol without TLS, lightweight. Prefer the port 443 to respect the locational privacy of your users.
 | ws://mqtt.hsl.fi:1883/   | MQTT over WebSockets without TLS. Prefer the port 443 to respect the locational privacy of your users.
 
