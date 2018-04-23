@@ -40,7 +40,7 @@ From a client's point of view, every MQTT message has two parts, the topic and t
 
 The topic looks similar to a file path with levels separated by `/`.
 When subscribing, all values for a level or several levels may be specified with a wildcard.
-`+` refers to all values for one level, `#` refers to all values for the rest of the levels.
+`+` refers to all values for one level, `#` refers to all values of the parent level and its child levels.
 See the advanced examples [further below](#examples) on how to tailor the subscription to your needs.
 
 Here is an example of an HFP message topic:
