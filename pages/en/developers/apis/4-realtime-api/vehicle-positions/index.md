@@ -159,33 +159,37 @@ Below are sample subscriptions using MQTT.js.
 To get just the most significant status updates, use:
 ```
 mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/0/#'
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/0/#'
 ```
 
 ### A line in one direction
 
 To subscribe to all vehicles currently on the line 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
 ```
-mqtt subscribe -h mqtt.hsl.fi -p 443 -v -t '/hfp/v1/journey/ongoing/+/+/+/2551/1/#'
+mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
+  -t '/hfp/v1/journey/ongoing/+/+/+/2551/1/#'
 ```
 
 ### All trams
 
 Subscribe to all trams with:
 ```
-mqtt subscribe -h mqtt.hsl.fi -p 443 -v -t '/hfp/v1/journey/ongoing/tram/#'
+mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
+  -t '/hfp/v1/journey/ongoing/tram/#'
 ```
 
 ### A certain trip
 
 Subscribe to messages of a certain trip, even slightly before the driver has signed onto the trip:
 ```
-mqtt subscribe -h mqtt.hsl.fi -p 443 -v -t '/hfp/v1/journey/+/+/+/+/9975/1/+/12:15/#'
+mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
+  -t '/hfp/v1/journey/+/+/+/+/9975/1/+/12:15/#'
 ```
 
 Or if your users would find it confusing to see a vehicle going in the wrong direction, subscribe to the `ongoing` messages only:
 ```
-mqtt subscribe -h mqtt.hsl.fi -p 443 -v -t '/hfp/v1/journey/ongoing/+/+/+/9975/1/+/12:15/#'
+mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
+  -t '/hfp/v1/journey/ongoing/+/+/+/9975/1/+/12:15/#'
 ```
 
 ### A bounding box
@@ -227,74 +231,74 @@ Let's assume that you wish to subscribe to all action inside the following [GeoJ
 The box bounded by the latitude interval `[60.18, 60.19[` and the longitude interval `[24.95, 24.97[` corresponds with the following HFP subscription:
 ```
 mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/#'
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/#'
 ```
 For the precision of one more decimal of latitude and longitude, one would need 56 topic filters for the bounding box:
 ```
 mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/37/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/38/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/39/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/30/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/31/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/32/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/33/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/34/#' \
-\
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/47/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/48/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/49/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/40/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/41/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/42/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/43/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/44/#' \
-\
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/57/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/58/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/59/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/50/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/51/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/52/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/53/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/54/#' \
-\
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/67/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/68/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/69/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/60/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/61/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/62/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/63/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/64/#' \
-\
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/77/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/78/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/79/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/70/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/71/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/72/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/73/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/74/#' \
-\
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/87/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/88/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/89/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/80/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/81/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/82/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/83/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/84/#' \
-\
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/97/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/98/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/99/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/90/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/91/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/92/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/93/#' \
--t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/94/#'
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/37/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/38/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/39/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/30/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/31/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/32/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/33/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/34/#' \
+  \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/47/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/48/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/49/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/40/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/41/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/42/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/43/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/44/#' \
+  \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/57/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/58/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/59/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/50/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/51/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/52/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/53/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/54/#' \
+  \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/67/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/68/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/69/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/60/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/61/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/62/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/63/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/64/#' \
+  \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/77/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/78/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/79/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/70/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/71/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/72/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/73/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/74/#' \
+  \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/87/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/88/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/89/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/80/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/81/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/82/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/83/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/84/#' \
+  \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/97/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/98/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/99/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/90/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/91/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/92/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/93/#' \
+  -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/94/#'
 ```
 
 There is no need to restrict yourself to rectangular shapes for subscriptions, though.
