@@ -301,7 +301,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 
 There is no need to restrict yourself to just one rectangle like above, though.
 
-For example, you could try to generate an HFP subscription for all `ongoing` vehicles in the minimal geographic area encompassing the Kontula borough with the precision of two digits in the fractional part. ;)
+For example, you could try to generate an HFP subscription for all `ongoing` vehicles in the minimal geographic area encompassing the Kontula borough with the precision of two digits in the fractional part.
 
 ## Further reading
 
