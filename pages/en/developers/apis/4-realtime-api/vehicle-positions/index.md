@@ -226,7 +226,7 @@ Let's assume that you wish to subscribe to all action inside the following [GeoJ
 }
 ```
 
-The box bounded by the latitude interval `[60.18, 60.19[` and the longitude interval `[24.95, 24.97[` corresponds with the following HFP subscription:
+The box bounded by the latitude interval [60.18, 60.19[ and the longitude interval [24.95, 24.97[ corresponds with the following HFP subscription:
 ```
 mqtt subscribe -h mqtt.hsl.fi -p 443 -v \
   -t '/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/#' \
