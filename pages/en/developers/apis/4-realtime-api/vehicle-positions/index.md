@@ -59,7 +59,7 @@ It can be split into these parts:
 | `prefix`         | `/hfp/` is the root of the topic tree.
 | `version`        | `v1` is the current version of the HFP topic and the payload format.
 | `temporal_type`  | The type of the journey, `ongoing` or `upcoming`. `ongoing` describes the current situation. `upcoming` refers to the next expected journey of the same vehicle. `upcoming` messages are broadcasted shortly before the start of the next journey. One use of `upcoming` is to show the relevant vehicle to your users even before the driver has signed on to the journey that your users are interested in. `upcoming` is not working properly yet, though.
-| `transport_mode` | The type of the vehicle. One of `bus`, `tram` or `train`. Subway and ferry are not supported. Due to a bug some replacement busses for tram lines have `tram` as their type. We are working on it.
+| `transport_mode` | The type of the vehicle. One of `bus`, `tram` or `train`. Metro and ferry are not supported. Due to a bug some replacement busses for tram lines have `tram` as their type. We are working on it.
 | `operator_id`    | The unique ID of the operator that _owns_ the vehicle.
 | `vehicle_number` | The vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. `operator_id/vehicle_number` uniquely identifies the vehicle.
 | `route_id`       | Matches `route_id` in GTFS. Due to a bug some rare "number variants" do not match GTFS properly. We are working on it.
