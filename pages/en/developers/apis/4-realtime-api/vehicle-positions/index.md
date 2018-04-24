@@ -154,7 +154,8 @@ By combining wildcards with several topic filters in one MQTT `SUBSCRIBE` packet
 As the MQTT broker handles the resolving of the topic filters, handling messages for complicated subscriptions does not have inherent overhead in the client compared to simple subscriptions.
 Go hog wild.
 
-Below are sample subscriptions using MQTT.js.
+Below are sample subscriptions utilizing the MQTT.js command-line tools.
+Using the corresponding library is not much harder.
 
 ### A situational overview
 
