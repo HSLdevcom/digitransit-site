@@ -127,11 +127,13 @@ which prettyprints to:
 
 The numerical values for the different transit operators are listed below:
 
-| `oper` | Operator name                |
-|--------|------------------------------|
+| `oper` | Operator name                 |
+|--------|-------------------------------|
+| `6`    | Oy Pohjolan Liikenne Ab
 | `12`   | Helsingin Bussiliikenne Oy
 | `17`   | Tammelundin Liikenne Oy
 | `18`   | Pohjolan Kaupunkiliikenne Oy
+| `19`   | Etelä-Suomen Linjaliikenne Oy
 | `20`   | Bus Travel Åbergin Linja Oy
 | `21`   | Bus Travel Oy Reissu Ruoti
 | `22`   | Nobina Finland Oy
@@ -140,6 +142,8 @@ The numerical values for the different transit operators are listed below:
 | `45`   | Transdev Vantaa Oy
 | `47`   | Taksikuljetus Oy
 | `54`   | V-S Bussipalvelut Oy
+| `55`   | Transdev Helsinki Oy
+| `58`   | Koillisen Liikennepalvelut Oy
 | `59`   | Tilausliikenne Nikkanen Oy
 | `90`   | VR Oy
 
