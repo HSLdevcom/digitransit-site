@@ -2,7 +2,7 @@
 title: Service alerts
 description:
   info: The HSL Alerts API can be used to query real-time updates from the HSL fleet in GTFS-RT format.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/service-alerts/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/service-architecture/service-alerts/architecture.xml
   assets:
   source: https://github.com/HSLdevcom/hslalert
   dockerHub: https://hub.docker.com/r/hsldevcom/hslalert/
