@@ -1,5 +1,5 @@
 ---
-title: Service architecture
+title: Geocoding API
 description:
   info: Geocoder with geocoding and reverse geocoding support.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/2-geocoding-api/x-service-architecture/architecture.xml
