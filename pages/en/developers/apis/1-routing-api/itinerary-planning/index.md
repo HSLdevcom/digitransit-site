@@ -93,11 +93,6 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
     from: {lat: 60.168992, lon: 24.932366},
     toPlace: "Pisa, Espoo",
     to: {lat: 60.175294, lon: 24.684855},
-    modes: "BUS,TRAM,RAIL,SUBWAY,FERRY,WALK",
-    walkReluctance: 2.1,
-    walkBoardCost: 600,
-    minTransferTime: 180,
-    walkSpeed: 1.2,
   ) {
     itineraries{
       walkDistance,
