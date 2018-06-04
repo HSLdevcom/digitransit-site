@@ -142,6 +142,10 @@ title: Stops
 
 ### Query scheduled departure and arrival times of a stop by id 
 
+* Value ```serviceDay``` in the response is Unix timestamp (in seconds) of the departure date
+* Values ```scheduledArrival```, ```realtimeArrival```, ```scheduledDeparture``` and ```realtimeDeparture``` in the response are seconds since midnight of the departure date
+  * To get Unix timestamp of arrivals and departures, add these values to ```serviceDay```
+
 #### Next departures and arrivals
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20%20%20stoptimesWithoutPatterns%20%7B%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20realtimeArrival%0A%20%20%20%20%20%20arrivalDelay%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20departureDelay%0A%20%20%20%20%20%20realtime%0A%20%20%20%20%20%20realtimeState%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%20%20%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
