@@ -107,19 +107,24 @@ Example response:
 }
 ```
 
-### Query stop names for bus number 50 for one direction
+### Query stop names by pattern id
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%22HSL%3A1050%3A1%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%7B%0A%20%20%20%20%20%20name%20%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+* See previous example on how to find pattern ids for a route
+  * Pattern id is value of ```code``` in the pattern object
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
+
 
 ```
 {
-  pattern(id:"HSL:1050:1:01") {
+  pattern(id: "HSL:1059:0:01") {
     name
-    stops{
-      name  
+    stops {
+      name
     }
   }
 }
+
 ```
 
 2. Press play in GraphiQL to execute the query.
