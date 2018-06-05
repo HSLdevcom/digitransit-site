@@ -144,7 +144,7 @@ title: Stops
 
 * Value ```serviceDay``` in the response is Unix timestamp (local timezone) of the departure date
 * Values ```scheduledArrival```, ```realtimeArrival```, ```scheduledDeparture``` and ```realtimeDeparture``` in the response are seconds since midnight of the departure date
-  * To get Unix timestamp of arrivals and departures, add these values to ```serviceDay```
+  * To get Unix timestamp (UTC time) of arrivals and departures, add these values to ```serviceDay```
 
 #### Next departures and arrivals
 
