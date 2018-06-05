@@ -116,7 +116,7 @@ title: Stops
 
 ### Query all stations and stops within the station
 
-* Station is a location type, which contains stops
+* Station is a location, which contains stops
   * For example, a train station is a station and its platforms are stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%20%0A%20%20stations%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20platformCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
@@ -142,7 +142,7 @@ title: Stops
 
 ### Query scheduled departure and arrival times of a stop by id 
 
-* Value ```serviceDay``` in the response is Unix timestamp (in seconds) of the departure date
+* Value ```serviceDay``` in the response is Unix timestamp (local timezone) of the departure date
 * Values ```scheduledArrival```, ```realtimeArrival```, ```scheduledDeparture``` and ```realtimeDeparture``` in the response are seconds since midnight of the departure date
   * To get Unix timestamp of arrivals and departures, add these values to ```serviceDay```
 
@@ -175,7 +175,7 @@ title: Stops
 #### Departures and arrivals at specific time
 
 * Use argument ```startTime``` in stoptimes query
-  * ```startTime``` is Unix timestamp in seconds
+  * ```startTime``` is Unix timestamp (local timezone) in seconds
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stoptimesWithoutPatterns(startTime%3A%201528633800)%20%7B%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20realtimeArrival%0A%20%20%20%20%20%20arrivalDelay%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20departureDelay%0A%20%20%20%20%20%20realtime%0A%20%20%20%20%20%20realtimeState%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%20%20%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
 
