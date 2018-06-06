@@ -31,63 +31,20 @@ When sending queries, there are some things you should be aware of:
 **2. Content-Type must be either "application/graphql" or "application/json"**
 - You will get a HTTP 415 Error if this header is not present.
 
-## cURL examples
+## Node.js examples
 
 The examples below send a GraphQL query using HTTP POST to `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`. This example query asks the server to find a stop with the ID "HSL:1040129" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
 
-You can download cURL here:
-> https://curl.haxx.se/
-
-**1. Linux & OSX**
-
 Using Content-Type **application/graphql**:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H "Content-Type: application/graphql" \
--d @- << DATA
-{
-  stop(id: "HSL:1040129") {
-    name
-    lat
-    lon
-    wheelchairBoarding
-  }  
-}
-DATA
-```
+<iframe height="750px" width="100%" src="https://repl.it/@mjaakko/StopRequestGraphQL1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 
 Using Content-Type **application/json**:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H "Content-Type: application/json" \
--d @- << DATA
-{
-  "query": "{
-    stop(id: \"HSL:1040129\") {
-      name
-      lat
-      lon
-      wheelchairBoarding
-    }
-  }"
-}
-DATA
-```
+<iframe height="750px" width="100%" src="https://repl.it/@mjaakko/StopRequestGraphQL2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Descriptions for cURL parameters:
-- -H 'Content-Type: application/json' defines correct Content-Type header
-- -d @- tells cURL to read post data from STDIN
-- << DATA defines a [*here document* code block](http://www.tldp.org/LDP/abs/html/here-docs.html)
-
-**2. Windows**
-
-If you are a Windows user, you can use the **application/graphql** approach like so:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql -H "Content-Type: application/graphql" --data "{stop(id: \"HSL:1173210\") {name, lat, lon, wheelchairBoarding}}"
-```
 **Note:**  If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id.
 
-**Differences between application/json and application/graphql approaches**
+### Differences between application/json and application/graphql approaches
 
 You might notice that in both cases we are working with "json-ish" data.
 With **application/json** you are sending a valid json:
