@@ -230,3 +230,39 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 
 2. Change arguments `date` and `time`.
 3. Press play in GraphiQL to execute the query.
+
+### Plan an itinerary and query fare information
+
+* **Note:** Currently only regular adult fare information is available
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.1713572%2C%20lon%3A%2024.9416544%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.40431%2C%20lon%3A%2025.1066186%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20date%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20fares%20%7B%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20cents%0A%20%20%20%20%20%20%20%20currency%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```
+{
+  plan(
+    from: {lat: 60.1713572, lon: 24.9416544}
+    to: {lat: 60.40431, lon: 25.1066186}
+    numItineraries: 3
+  ) {
+    date
+    itineraries {
+      legs {
+        startTime
+        endTime
+        mode
+        duration
+        realTime
+        distance
+        transitLeg
+      }
+      fares {
+        type
+        cents
+        currency
+      }
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
