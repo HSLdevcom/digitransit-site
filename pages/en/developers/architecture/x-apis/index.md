@@ -1,5 +1,5 @@
 ---
-title: APIs
+title: API architecture
 ---
 
 * [Routing API](./1-routing-api/)
