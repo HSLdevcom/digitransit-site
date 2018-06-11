@@ -22,7 +22,12 @@ title: FAQ
 
 ### How do I know which stops are end/final stops?
 
-> This depends on if you want to know the final stop of a route, or if you want to know if a specific stop is the final stop for any of the routes that serve it. If you want to find out the final stop of a route/pattern, you can simply query for the stops of the pattern you are interested in and the final stop will be the last in the list. If you want to know if a specific stop serves as the final stop for any of the routes that pass through, you can use the `pickupType` field of the `stopTimes` associated with it. `pickupType: NONE` indicates that this is the last stop of a pattern (or more precisely that you cannot board the vehicle at that stop). With the query below, for example, you can list the trips that use the stop, and whether or not it is the final stop of that trip.
+> This depends on if you want to know the final stop of a route, or if you want to know if a specific stop is the final stop for any of the routes that serve it. If you want to find out the final stop of a route/pattern, you can simply query for the stops of the pattern you are interested in and the final stop will be the last in the list. If you want to know if a specific stop is the final stop for any of the trips passing through it, query for the list of stops of the trip and check if the stop is last in the list.
+
+### How do I know if a vehicle can be boarded from a specific stop?
+
+> Check field `pickupType` of the `stoptime`. `pickupType` will be `NONE` for trips that cannot be boarded from the specific stop. Usually `pickupType: NONE` indicates that the stop is the final stop of a pattern, but there are stops in the middle of a pattern that are only used for dropoffs. With the query below, you can list trips that use the stop and whether the vehicle can be boarded from that stop.
+ 
 ```
 {
     stop(id:"HSL:1040289") {
@@ -31,8 +36,8 @@ title: FAQ
                 route {
                     shortName
                 }
-		    }
-        pickupType
+            }
+            pickupType
         }
     }
 }
