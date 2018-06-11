@@ -40,7 +40,7 @@ title: FAQ
 
 ### How do I know if a vehicle can be boarded from a specific stop?
 
-> Check field `pickupType` of the `stoptime`. `pickupType` will be `NONE` for trips that cannot be boarded from the specific stop. Usually `pickupType: NONE` indicates that the stop is the final stop of a pattern, but there are stops in the middle of a pattern that are only used for dropoffs. With the query below, you can list trips that use the stop and whether the vehicle can be boarded from that stop.
+> Check field `pickupType` of the `stoptime`. `pickupType` will be `NONE` for trips that cannot be boarded from the specific stop. Usually `pickupType: NONE` indicates that the stop is the final stop of a pattern, but in some cases there are stops in the middle of a pattern that are only used for dropoffs. With the query below, you can list trips that use the stop and whether the vehicle can be boarded from that stop.
  
 ```
 {
