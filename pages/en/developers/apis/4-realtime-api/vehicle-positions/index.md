@@ -154,10 +154,16 @@ By combining wildcards with several topic filters in one MQTT `SUBSCRIBE` packet
 As the MQTT broker handles the resolving of the topic filters, handling messages for complicated subscriptions does not have inherent overhead in the client compared to simple subscriptions.
 Go hog wild.
 
-Below are sample subscriptions utilizing the MQTT.js command-line tools.
-Using the corresponding library is not much harder.
+### MQTT.js library
 
-### A situational overview
+* The example below uses MQTT.js library to listen to updates from all vehicles currently on route. See command line examples for other possible topics to try.
+<iframe height="800px" width="100%" src="https://repl.it/@mjaakko/VehiclePositionsMQTT?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+### Command line
+
+Below are sample subscriptions utilizing the MQTT.js command-line tools.
+
+#### A situational overview
 
 To get just the most significant status updates, use:
 ```
@@ -165,7 +171,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/0/#"
 ```
 
-### A line in one direction
+#### A line in one direction
 
 To subscribe to all vehicles currently on the line 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
 ```
@@ -173,7 +179,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/2551/1/#"
 ```
 
-### All trams
+#### All trams
 
 Subscribe to all trams with:
 ```
@@ -181,7 +187,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/tram/#"
 ```
 
-### A certain trip
+#### A certain trip
 
 Subscribe to messages of a certain trip, even slightly before the driver has signed onto the trip:
 ```
@@ -195,7 +201,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/9975/1/+/12:15/#"
 ```
 
-### A bounding box
+#### A bounding box
 
 Let's assume that you wish to subscribe to all action inside the following [GeoJSON](http://geojson.io) Polygon:
 ```
