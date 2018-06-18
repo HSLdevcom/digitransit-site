@@ -7,7 +7,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 **Raster maps** are available in [Tile Map Service format](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
 
-**Note:** Background map is available as vector tiles too from source `hsl-vector-map`.
+**Note:** Background map is also available as vector tiles from source `hsl-vector-map`.
 
 ## Endpoint
 ```https://cdn.digitransit.fi/map/v1/:source/:z/:x/:y:size.png```
@@ -16,7 +16,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
-| source	| string	 | `hsl-map` for raster tiles<br />`hsl-map-sv` for raster tiles with Swedish language<br />`hsl-vector-map` for vector tiles |
+| source	| string	 | <ul><li>`hsl-map` for raster tiles</li><li>`hsl-map-sv` for raster tiles with Swedish language</li><li>`hsl-vector-map` for vector tiles</li></ul>|
 | z             | int            | Zoom level
 | x             | int            | x-coordinate
 | y             | int            | y-coordinate
