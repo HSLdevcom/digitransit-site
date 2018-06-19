@@ -31,7 +31,7 @@ When sending queries, there are some things you should be aware of:
 **2. Content-Type must be either "application/graphql" or "application/json"**
 - You will get a HTTP 415 Error if this header is not present.
 
-## Node.js examples
+## JavaScript examples
 
 The examples below send a GraphQL query using HTTP POST to `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`. This example query asks the server to find a stop with the ID "HSL:1040129" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
 

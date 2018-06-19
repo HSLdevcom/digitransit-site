@@ -38,29 +38,8 @@ The hslalert service provides both GTFS-RT [service alerts](https://developers.g
 ### Show currently active alerts with curl
 > curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
 
-
-### Retrieve and print currently active alerts with node.js app
-<iframe height="700px" width="100%" src="https://repl.it/@mjaakko/RealtimeServiceAlerts?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-<pre>
-var GtfsRealtimeBindings = require('gtfs-realtime-bindings');
-var request = require('request');
-
-var req = {
-	url: 'http://api.digitransit.fi/realtime/service-alerts/v1/',
-	encoding: null
-};
-
-request(req, function (error, response, body) {
-	if (!error && response.statusCode == 200) {
-		var feed = GtfsRealtimeBindings.FeedMessage.decode(body);
-		feed.entity.forEach(function(entity) {
-			if (entity.alert) {
-				console.log(JSON.stringify(entity.alert,null,2));
-			}
-		});
-	}
-});
-</pre></iframe>
+### Retrieve and print currently active alerts (JavaScript)
+<iframe height="700px" width="100%" src="https://repl.it/@mjaakko/RealtimeServiceAlerts?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
 
