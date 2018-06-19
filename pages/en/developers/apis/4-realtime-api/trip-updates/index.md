@@ -45,6 +45,10 @@ Currently the service offers two GTFS-realtime data feeds filled with [trip upda
 
 ## Examples
 
+### Retrieve and print currently active HSL trip updates (JavaScript)
+
+<iframe height="700px" width="100%" src="https://repl.it/@mjaakko/RealtimeTripUpdates?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 ### Show currently active HSL real-time trip updates (debug mode)
 > curl http://api.digitransit.fi/realtime/trip-updates/v1/HSL?debug
 
