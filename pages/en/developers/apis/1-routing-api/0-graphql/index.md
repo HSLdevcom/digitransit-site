@@ -42,6 +42,11 @@ Example result for the query:
 }
 ```
 
+### IDs
+
+All objects in the GraphQL API have a global ID (field `id`), which can be used as a cache key or to refetch the object using query type `node`.
+
+Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/relay/graphql/objectidentification.htm) and should not be confused with other IDs (such as `gtfsId`) that objects may have.
 
 ## cURL examples
 
