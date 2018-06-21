@@ -8,7 +8,7 @@ title: GraphQL
 
 ## GraphQL benefits
 
-There are many. You can read [how Facebook sees it](https://facebook.github.io/relay/docs/thinking-in-graphql.html). Also, the [GraphQL site](http://graphql.org/) provides more information.
+There are many. You can read [how Facebook sees it](https://facebook.github.io/relay/docs/thinking-in-graphql.html). Also, the [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL.
 
 ## API requirements
 
