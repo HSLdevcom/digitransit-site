@@ -197,6 +197,8 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 
 ### A bounding box
 
+* See [this link](https://gist.github.com/mjaakko/f148be987734fdb9f7f8e71458516571) for example code on how to generate topic filters for a bounding box
+
 Let's assume that you wish to subscribe to all action inside the following [GeoJSON](http://geojson.io) Polygon:
 ```
 {
