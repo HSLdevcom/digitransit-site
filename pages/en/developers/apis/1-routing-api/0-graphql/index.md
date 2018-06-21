@@ -10,17 +10,6 @@ title: GraphQL
 
 There are many. You can read [how Facebook sees it](https://facebook.github.io/relay/docs/thinking-in-graphql.html). Also, the [GraphQL site](http://graphql.org/) provides more information.
 
-## GraphQL API regions
-
-**1. The Helsinki region routing API is available at:**
-`https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`
-
-**2. The routing API for the Waltti regions is available at:**
-`https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql`
-
-**3. The routing API for Finland as a whole is available at:**
-`https://api.digitransit.fi/routing/v1/routers/finland/index/graphql`
-
 ## API requirements
 
 When sending queries, there are some things you should be aware of:
