@@ -10,6 +10,39 @@ title: GraphQL
 
 There are many. You can read [how Facebook sees it](https://facebook.github.io/relay/docs/thinking-in-graphql.html). Also, the [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL.
 
+## Using GraphQL
+
+### Creating and sending queries
+
+Queries are written in GraphQL language and sent to the API using **HTTP POST method** with **"application/graphql"** as Content-Type.
+<br/>Queries are used to define what type of data and what fields of the data are requested.
+<br/>The API returns a result corresponding to the query in **JSON** format.
+
+For example, the following query would request a stop with id `HSL:1173434` and return its name and coordinates:
+```
+{
+  stop(id: "HSL:1173434") {
+    name
+    lat
+    lon
+  }
+}
+```
+
+Example result for the query:
+```
+{
+  "data": {
+    "stop": {
+      "name": "Asemapäällikönkatu",
+      "lat": 60.199135,
+      "lon": 24.94007
+    }
+  }
+}
+```
+
+
 ## cURL examples
 
 The examples below send a GraphQL query using HTTP POST to `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`. This example query asks the server to find a stop with the ID "HSL:1040129" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
