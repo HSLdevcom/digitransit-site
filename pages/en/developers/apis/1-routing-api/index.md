@@ -20,6 +20,16 @@ After this, you are ready to run queries for [routes](./routes/), [stops](./stop
 
 3. The routing API for **Finland** as a whole is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/finland/index/graphql`
 
+### API requirements
+
+When sending queries, there are some things you should be aware of:
+
+1. **The HTTP method must be POST**
+- You will get a HTTP 405 error when using other methods.
+
+2. **Content-Type must be either "application/graphql" or "application/json"**
+- You will get a HTTP 415 Error if this header is not present.
+
 ## Glossary
 
 | Term                                  | Explanation                     |
