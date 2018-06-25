@@ -8,7 +8,7 @@ information about stops and timetables using GraphQL.
 
 If you are not familiar with GraphQL, start by reading the [GraphQL](./0-graphql/) page. 
 
-It is also recommended to try the [GraphiQL](./1-graphiql/) for building queries and reading the schema documentation. 
+It is also recommended to try building queries and exploring the schema in [GraphiQL](./1-graphiql/). 
 
 [Real-time arrival prediction](./2-realtime-arrival-prediction/) page has information about the real-time data available in the API.
 
