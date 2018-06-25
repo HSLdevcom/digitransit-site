@@ -9,20 +9,6 @@ Most of the vehicles in the HSL area should publish their status, including thei
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
 The subscription scope is specified by the MQTT topic structure of the API.
 
-## Quickstart
-
-1. Install an MQTT command line client, e.g. [MQTT.js](https://github.com/mqttjs/MQTT.js) or [mosquitto](https://mosquitto.org/) (and its client tools)
-1. Try with MQTT.js:
-   ```
-   mqtt subcribe --hostname mqtt.hsl.fi --protocol mqtts --port 443 --verbose --topic "/hfp/v1/journey/#"
-   ```
-   or with mosquitto e.g.:
-   ```
-   mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"
-   ```
-
-Enjoy the firehose!
-
 ## API endpoints
 
 | URL                        | Description                                                                                                           |
@@ -162,6 +148,18 @@ Go hog wild.
 ### Command line
 
 Below are sample subscriptions utilizing the MQTT.js command-line tools.
+
+#### Quickstart
+
+1. Install an MQTT command line client, e.g. [MQTT.js](https://github.com/mqttjs/MQTT.js) or [mosquitto](https://mosquitto.org/) (and its client tools)
+1. Try with MQTT.js:
+   ```
+   mqtt subcribe --hostname mqtt.hsl.fi --protocol mqtts --port 443 --verbose --topic "/hfp/v1/journey/#"
+   ```
+   or with mosquitto e.g.:
+   ```
+   mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"
+   ```
 
 #### A situational overview
 
