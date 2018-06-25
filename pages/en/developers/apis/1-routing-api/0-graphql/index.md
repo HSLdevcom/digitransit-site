@@ -6,10 +6,6 @@ title: GraphQL
 
 [GraphQL](http://graphql.org/) is a query language for APIs and a runtime for fulfilling those queries with your existing data. The standard was created by Facebook. Basically, you can think of it as “client side SQL”. When implementing a GraphQL API, server developers specify a GraphQL schema that defines what can be queried. Instead of the client calling REST-like urls, it generates different GraphQL queries and sends these queries to the single endpoint of the API. The server then parses the query, executes it, and returns the results back to client.
 
-## GraphQL benefits
-
-There are many. You can read [how Facebook sees it](https://facebook.github.io/relay/docs/thinking-in-graphql.html). Also, the [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL.
-
 ## Using GraphQL
 
 ### Creating and sending queries
@@ -172,6 +168,10 @@ An example response:
   }
 }
 ```
+## Further reading
+
+* The [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL
+* [How Facebook sees GraphQL](https://facebook.github.io/relay/docs/thinking-in-graphql.html)
 
 ## cURL examples
 
