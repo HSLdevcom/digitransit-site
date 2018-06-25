@@ -48,6 +48,131 @@ All objects in the GraphQL API have a global ID (field `id`), which can be used 
 
 Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/relay/graphql/objectidentification.htm) and should not be confused with other IDs (such as `gtfsId`) that objects may have.
 
+### Pagination
+* Query types which support pagination can be used without pagination by omitting arguments `first` and `after`, in which case all data is returned on one page
+
+Some query types support pagination, which can be used to limit the amount of data returned per query.
+<br/>Query types which support pagination return a [Relay cursor connection](https://facebook.github.io/relay/graphql/connections.htm) to the data.
+
+For example, `stopsByRadius` supports pagination. The following query requests stops within 300m of 60.19924, 24.94112 and returns 2 stops per page (argument `first`).
+```
+{
+  stopsByRadius(lat: 60.19924, lon: 24.94112, radius: 300, first: 2) {
+    edges {
+      node {
+        stop {
+          name
+          lat
+          lon
+        }
+        distance
+      }
+      cursor
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+```
+
+An example response:
+```
+{
+  "data": {
+    "stopsByRadius": {
+      "edges": [
+        {
+          "node": {
+            "stop": {
+              "name": "Asemapäällikönkatu",
+              "lat": 60.199135,
+              "lon": 24.94007
+            },
+            "distance": 136
+          }
+        },
+        {
+          "node": {
+            "stop": {
+              "name": "Ratamestarinkatu",
+              "lat": 60.198534,
+              "lon": 24.939466
+            },
+            "distance": 285
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "endCursor": "c2ltcGxlLWN1cnNvcjE="
+      }
+    }
+  }
+}
+```
+
+The field `hasNextPage` indicates whether all data has been returned or not.
+<br />If `hasNextPage` is `true`, the next page can be queried by using the value of `endCursor` for argument `after` in the query.
+
+For example, the following query returns the next page of data:
+```
+{
+  stopsByRadius(lat: 60.19924, lon: 24.94112, radius: 300, first: 2, after: "c2ltcGxlLWN1cnNvcjE=") {
+    edges {
+      node {
+        stop {
+          name
+          lat
+          lon
+        }
+        distance
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+```
+An example response:
+```
+{
+  "data": {
+    "stopsByRadius": {
+      "edges": [
+        {
+          "node": {
+            "stop": {
+              "name": "Kellosilta",
+              "lat": 60.20068,
+              "lon": 24.93897
+            },
+            "distance": 293
+          }
+        },
+        {
+          "node": {
+            "stop": {
+              "name": "Pasilan asema",
+              "lat": 60.198626,
+              "lon": 24.937843
+            },
+            "distance": 294
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false,
+        "endCursor": "c2ltcGxlLWN1cnNvcjM="
+      }
+    }
+  }
+}
+```
+
 ## cURL examples
 
 The examples below send a GraphQL query using HTTP POST to `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`. This example query asks the server to find a stop with the ID "HSL:1040129" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
