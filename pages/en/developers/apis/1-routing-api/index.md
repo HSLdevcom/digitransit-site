@@ -32,6 +32,10 @@ When sending queries, there are some things you should be aware of:
 2. **Content-Type must be either "application/graphql" or "application/json"**
 - You will get a HTTP 415 Error if this header is not present.
 
+## Further reading
+
+* [GTFS reference](https://developers.google.com/transit/gtfs/reference/#field_definitions) could be useful as the data format used by the API is based on GTFS
+
 ## Glossary
 
 | Term                                  | Explanation                     |
