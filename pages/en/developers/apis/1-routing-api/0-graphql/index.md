@@ -44,6 +44,29 @@ All objects in the GraphQL API have a global ID (field `id`), which can be used 
 
 Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/relay/graphql/objectidentification.htm) and should not be confused with other IDs (such as `gtfsId`) that objects may have.
 
+### Batching
+
+Multiple queries can be combined and sent in one POST request. Batched queries require less server roundtrips and can be processed more efficiently on the server.
+
+For example, the following query would request a stop with id `HSL:1173434` and a route with id `HSL:1009`:
+```
+{
+  stop(id: "HSL:1173434") {
+    name
+    lat
+    lon
+    routes {
+      shortName
+      longName
+    }
+  }
+  route(id: "HSL:1009") {
+    shortName
+    longName
+  }
+}
+```
+
 ### Pagination
 * Query types which support pagination can be used without pagination by omitting arguments `first` and `after`, in which case all data is returned on one page
 
