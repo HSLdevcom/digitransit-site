@@ -20,4 +20,4 @@ title: Glossary
 | Leg                    | One part of an itinerary, e.g. walking to a bus stop or a bus ride between two stops. |
 | Origin                 | When the context is a person; the geographical point where an itinerary begins.<br/>When the context is a route; the first stop on the route or the first location on the headsign. |
 | Destination            | When the context is a person; the geographical point where an itinerary ends.<br/>When the context is a route; the last stop on the route or the last location on the headsign. |
-
+| City bike              | A shared-use bicycle that can be borrowed for a fee by anyone in central Helsinki. |
