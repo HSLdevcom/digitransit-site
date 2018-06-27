@@ -40,7 +40,7 @@ Example result for the query:
 
 ### IDs
 
-All objects in the GraphQL API have a global ID (field `id`), which can be used as a cache key or to refetch the object using query type `node`.
+All objects in the GraphQL API have a global ID (field `id`), which can be used as a cache key or to refetch the object using query type **node**.
 
 Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/relay/graphql/objectidentification.htm) and should not be confused with other IDs (such as `gtfsId`) that objects may have.
 
@@ -107,7 +107,7 @@ For example, the following query would request a stop with id `HSL:1173434` and 
 Some query types support pagination, which can be used to limit the amount of data returned per query.
 <br/>Query types which support pagination return a [Relay cursor connection](https://facebook.github.io/relay/graphql/connections.htm) to the data.
 
-For example, `stopsByRadius` supports pagination. The following query requests stops within 300m of 60.19924, 24.94112 and returns 2 stops per page (argument `first`).
+For example, **stopsByRadius** supports pagination. The following query requests stops within 300m of 60.19924, 24.94112 and returns 2 stops per page (argument `first`).
 ```
 {
   stopsByRadius(lat: 60.19924, lon: 24.94112, radius: 300, first: 2) {
