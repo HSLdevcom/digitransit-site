@@ -133,7 +133,8 @@ title: Stops
       name
       code
       platformCode
-   }
+    }
+  }
 }
 ```
 
