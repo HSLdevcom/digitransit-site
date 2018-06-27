@@ -114,7 +114,7 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query all stations and stops within the station
+### Query all stations and return list of stops within the stations
 
 * Station is a location, which contains stops
   * For example, a train station is a station and its platforms are stops
