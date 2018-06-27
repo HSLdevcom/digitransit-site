@@ -44,6 +44,40 @@ All objects in the GraphQL API have a global ID (field `id`), which can be used 
 
 Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/relay/graphql/objectidentification.htm) and should not be confused with other IDs (such as `gtfsId`) that objects may have.
 
+### Interfaces
+
+GraphQL supports interfaces, which objects can implement by including fields required by the interface. Two interfaces used in the Routing API are **Node** and **PlaceInterface**.
+
+If a query type returns an interface, [inline fragments](https://graphql.org/learn/queries/#inline-fragments) have to be used to access field defined by the object implementing the interface.
+
+For example, query type **nearest** returns a list of **PlaceInterfaces** and types **BikePark** and **Stop** implement **PlaceInterface**.<br/>
+The following query returns field `spacesAvailable` for bike parks and field `code` for stops.
+```
+{
+  nearest(lat: 60.19414, lon: 25.02965, maxResults: 3, maxDistance: 1500, filterByPlaceTypes: [STOP, BIKE_PARK]) {
+    edges {
+      node {
+          place {
+            lat
+            lon
+            ...on Stop {
+              name
+              gtfsId
+              code
+            }
+            ...on BikePark {
+              name
+              bikeParkId
+              spacesAvailable
+            }
+          }
+          distance
+      }
+    }
+  }
+}
+``` 
+
 ### Batching
 
 Multiple queries can be combined and sent in one POST request. Batched queries require less server roundtrips and can be processed more efficiently on the server.
