@@ -46,7 +46,7 @@ Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/
 
 ### Interfaces
 
-GraphQL supports interfaces, which objects can implement by including fields required by the interface. Two interfaces used in the Routing API are **Node** and **PlaceInterface**.
+GraphQL supports interfaces, which objects can implement by including fields required by the interface. Two interfaces used in the Routing API are **Node** (which has the field `id` used for global IDs) and **PlaceInterface**.
 
 If a query type returns an interface, [inline fragments](https://graphql.org/learn/queries/#inline-fragments) have to be used to access field defined by the object implementing the interface.
 
