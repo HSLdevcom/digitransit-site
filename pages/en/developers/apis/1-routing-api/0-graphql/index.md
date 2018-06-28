@@ -10,11 +10,13 @@ title: GraphQL
 
 ### Creating and sending queries
 
-Queries are written in GraphQL language and sent to the API using **HTTP POST method** with **"application/graphql"** as Content-Type.
+Queries are written in GraphQL language and sent to the API using **HTTP POST method** with either **"application/graphql"** or **"application/json"** as Content-Type.
 <br/>Queries are used to define what type of data and what fields of the data are requested.
 <br/>The API returns a result corresponding to the query in **JSON** format.
 
-For example, the following query would request a stop with id `HSL:1173434` and return its name and coordinates:
+The following queries would request a stop with id `HSL:1173434` and return its name and coordinates:
+
+**Content-Type: "application/graphql"**
 ```
 {
   stop(id: "HSL:1173434") {
@@ -24,8 +26,18 @@ For example, the following query would request a stop with id `HSL:1173434` and 
   }
 }
 ```
-
-Example result for the query:
+**Content-Type: "application/json"**
+```
+{
+  "query": "{
+    stop(id: \"HSL:1173434\") {
+      name
+      lat
+      lon
+    }"
+}
+```
+**Example response:**
 ```
 {
   "data": {
