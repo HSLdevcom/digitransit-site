@@ -90,6 +90,27 @@ The following query returns field `spacesAvailable` for bike parks and field `co
 }
 ``` 
 
+### Variables
+
+For more complex queries, variables can be useful.<br/>
+To use variables, queries must be sent with Content-Type **application/json** and the query must have an operation name.
+
+Variables are sent in a JSON object with key `variables`.
+
+For example, the following query would request a route with name `550` (using *Routes* as an operation name):
+```
+{
+  "query":"query Routes($name: String) { 
+             routes(name: $name) { 
+               gtfsId shortName longName 
+             } 
+           }",
+  "variables": {
+    "name":"550"
+  }
+}
+```
+
 ### Batching
 
 Multiple queries can be combined and sent in one POST request. Batched queries require less server roundtrips and can be processed more efficiently on the server.
