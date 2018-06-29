@@ -4,6 +4,7 @@ title: Glossary
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
+| Feed                   | A source of data in the API, e.g. *HSL* or *OULU*. |
 | Agency                 | Some public transport provider, e.g. HSL. |
 | Route                  | A public transport service shown to customers under a single name, usually from point A to B and back. For example: trams 1 and 1A, buses 18 and 102T, or train A.<br/>Commonly used synonym: line |
 | Pattern		 | A sequence of stops as used by a specific direction and variant of a route. For example a tram entering/departing service from/to the depot usually joins at the middle of the route, or a route might have a short term diversion (poikkeusreitti) without changing the route name (longer diversions are usually marked as different routes). |
