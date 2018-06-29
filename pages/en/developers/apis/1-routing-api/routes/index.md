@@ -58,19 +58,73 @@ title: Routes
 
 2. Press play in GraphiQL to execute the query.
 
-### Query stop names for bus number 50 for one direction
+### Query patterns of a route
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%22HSL%3A1050%3A1%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%7B%0A%20%20%20%20%20%20name%20%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2259%22%2C%20modes%3A%20%22BUS%22)%20%7B%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
 ```
 {
-  pattern(id:"HSL:1050:1:01") {
-    name
-    stops{
-      name  
+  routes(name: "59", modes: "BUS") {
+    shortName
+    longName
+    patterns {
+      directionId
+      name
+      code
+      headsign
     }
   }
 }
+```
+
+2. Press play in GraphiQL to execute the query.
+
+Example response:
+
+``` javascript
+{
+  "data": {
+    "routes": [
+      {
+        "shortName": "59",
+        "longName": "Herttoniemi(M)-Pasila-Pajamäki",
+        "patterns": [
+          {
+            "directionId": 0,
+            "name": "59 to Pajamäki (HSL:1461110)",
+            "code": "HSL:1059:0:01",
+            "headsign": "Pajamäki"
+          },
+          {
+            "directionId": 1,
+            "name": "59 to Herttoniemi (M) (HSL:1431104)",
+            "code": "HSL:1059:1:01",
+            "headsign": "Herttoniemi(M)"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Query stop names by pattern id
+
+* See previous example on how to find pattern ids for a route
+  * Pattern id is value of ```code``` in the pattern object
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
+
+
+```
+{
+  pattern(id: "HSL:1059:0:01") {
+    name
+    stops {
+      name
+    }
+  }
+}
+
 ```
 
 2. Press play in GraphiQL to execute the query.
