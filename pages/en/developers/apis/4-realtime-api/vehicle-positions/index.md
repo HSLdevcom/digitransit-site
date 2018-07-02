@@ -61,7 +61,7 @@ It can be split into these parts:
 | `operator_id`    | The unique ID of the operator that _owns_ the vehicle. See the list of operators below.<br/>**Note:** Operator ids must be exactly 4 digits long in the topic filter, so leftpad them with zeroes (e.g. `80` → `0080`) 
 | `vehicle_number` | The vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. `operator_id/vehicle_number` uniquely identifies the vehicle.<br/>**Note:** Vehicle numbers must be exactly 5 digits long in the topic filter, so leftpad them with zeroes if needed.
 | `route_id`       | This matches `route_id` in GTFS. Due to a bug some rare "number variants" do not match GTFS properly. We are working on it.
-| `direction_id`   | The line direction of the trip. Matches `direction_id` in GTFS. Either `1` or `2`.
+| `direction_id`   | The line direction of the trip. Possible values: 1, 2.<br/>**Note:** This does not exactly match `direction_id` in GTFS or [the Routing API](../../1-routing-api/).<br/>Value `1` here is same as `0` in GTFS and the Routing API.<br/>Value `2` here is same as `1` in GTFS and the Routing API.
 | `headsign`       | The destination name, e.g. `Aviapolis`. Note: This does NOT match `trip_headsign` in GTFS exactly.
 | `start_time`     | The scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS.
 | `next_stop`      | The next stop or station. Updated on each departure from or passing of a stop. `EOL` (end of line) after final stop. Matches `stop_id` in GTFS.
