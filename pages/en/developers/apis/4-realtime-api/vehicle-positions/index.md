@@ -147,6 +147,11 @@ The numerical values for the different transit operators are listed below:
 | `59`   | Tilausliikenne Nikkanen Oy
 | `90`   | VR Oy
 
+## Querying a trip corresponding to a vehicle position
+
+The Routing API can be used to query a trip correspoding to a vehicle position message.
+<br/>See [this example](../../1-routing-api/routes/#fuzzytrip) on how to check if a vehicle is wheelchair accessible.
+
 ## <a name="examples"></a>Examples
 
 The HFP topic format forms a tree.
