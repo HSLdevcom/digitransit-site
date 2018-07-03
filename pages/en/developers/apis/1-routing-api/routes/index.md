@@ -129,7 +129,7 @@ Example response:
 
 2. Press play in GraphiQL to execute the query.
 
-### Query a trip without its id
+### <a name="fuzzytrip"></a>Query a trip without its id
 
 * This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
 
