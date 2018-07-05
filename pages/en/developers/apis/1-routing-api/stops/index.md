@@ -14,8 +14,8 @@ title: Stops
 
 ## Notes about stop ids
 
-- Stop ids are in "acencyid:stopid" format
-- HSL agencyid is **HSL** 
+- Stop ids are in "feedid:stopid" format
+- HSL area feed id is **HSL** 
 - Stop id is available as **gtfsId**
 
 ## Query examples
