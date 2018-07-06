@@ -168,7 +168,8 @@ Query type **fuzzyTrip** can be used to query the trip corresponding to the vehi
 1. Vehicle position messages use different direction id than the Routing API
    * Direction id *1* in a vehicle position is same as direction id *0* in the Routing API
    * Direction id *2* in a vehicle position is same as direction id *1* in the Routing API
-2. Departure time must be in seconds
+2. For vehicles which have departed before 4:30 AM, departure date is the previous date and 86400 seconds must be added to the departure time
+3. Departure time must be in seconds
    * e.g. *09:03* = `9 * 60 * 60 + 3 * 60` = *32580*
 
 For example, the following query checks if the vehicle which sent the vehicle position message above is wheelchair accessible:
