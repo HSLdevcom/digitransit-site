@@ -131,7 +131,8 @@ Example response:
 
 ### <a name="fuzzytrip"></a>Query a trip without its id
 
-* This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
+* Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available 
+  * This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
 
 For example, if the following vehicle position message is received 
 ```
@@ -161,8 +162,6 @@ on topic `/hfp/v1/journey/ongoing/bus/0012/01511/`**2550**`/`**1**`/Westendinase
 * Direction id from the topic: *1*
 * Departure time from the message: *09:03*
 * Departure date from the message: *2018-07-03*
-
-Query type **fuzzyTrip** can be used to query the trip corresponding to the vehicle position.
 
 **Note:**
 1. Vehicle position messages use different direction id than the Routing API
