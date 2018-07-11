@@ -12,6 +12,20 @@ title: FAQ
   
 > To display actual route geometries, [GTFS shapes](https://developers.google.com/transit/gtfs/reference/#shapestxt) are needed. These are not necessarily available for all cities and routes, but are generally added to the source material of Digitransit as they become available. Availability of route geometries depends on the local public transport authorities. In Finland, route geometries for towns part of the Waltti-system are managed by LMJ Oy. For more information and contacts regarding Waltti-areas, see http://www.lmj.fi/ and http://waltti.fi/.
 
+### How do I query multiple items with a single request?
+
+> If the query type takes a list as a argument, create a list of ids to request data for and use it as the argument. For example, the query below can be used to query data for two stops.
+```
+{
+  stops(ids: ["HSL:1173429","HSL:1291501"]) {
+    name
+    code
+    lat
+    lon
+  }
+}
+```
+
 ### How do I query the timetables for a specific stop in my city?
 
 > In order to build your query you first need to know which endpoint to query. If your city is part of Waltti, for example, you should use the Waltti endpoint. You'll find the endpoint URL's [here](../1-routing-api/0-graphql/). Then, you need to find out the ID of the stop you are interested in. If you don't know it yet, you can start by querying all stops according to the first example on the [Routing API stop page](../1-routing-api/stops/). After this, you can use the last example provided on that page to query for stoptimes for the particular stop.
@@ -22,7 +36,12 @@ title: FAQ
 
 ### How do I know which stops are end/final stops?
 
-> This depends on if you want to know the final stop of a route, or if you want to know if a specific stop is the final stop for any of the routes that serve it. If you want to find out the final stop of a route/pattern, you can simply query for the stops of the pattern you are interested in and the final stop will be the last in the list. If you want to know if a specific stop serves as the final stop for any of the routes that pass through, you can use the `pickupType` field of the `stopTimes` associated with it. `pickupType: NONE` indicates that this is the last stop of a pattern (or more precisely that you cannot board the vehicle at that stop). With the query below, for example, you can list the trips that use the stop, and whether or not it is the final stop of that trip.
+> This depends on if you want to know the final stop of a route, or if you want to know if a specific stop is the final stop for any of the routes that serve it. If you want to find out the final stop of a route/pattern, you can simply query for the stops of the pattern you are interested in and the final stop will be the last in the list. If you want to know if a specific stop is the final stop for any of the trips passing through it, query for the list of stops of the trip and check if the stop is last in the list.
+
+### How do I know if a vehicle can be boarded from a specific stop?
+
+> Check field `pickupType` of the `stoptime`. `pickupType` will be `NONE` for trips that cannot be boarded from the specific stop. Usually `pickupType: NONE` indicates that the stop is the final stop of a pattern, but in some cases there are stops in the middle of a pattern that are only used for dropoffs. With the query below, you can list trips that use the stop and whether the vehicle can be boarded from that stop.
+ 
 ```
 {
     stop(id:"HSL:1040289") {
@@ -31,8 +50,8 @@ title: FAQ
                 route {
                     shortName
                 }
-		    }
-        pickupType
+            }
+            pickupType
         }
     }
 }
