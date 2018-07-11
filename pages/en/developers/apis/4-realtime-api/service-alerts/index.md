@@ -34,14 +34,13 @@ The hslalert service provides both GTFS-RT [service alerts](https://developers.g
 | debug     | queryParameter | Print data in human readable format (for debug purposes) |  
 
 ## Examples
-
-### Show currently active alerts with curl
-> curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
-
+* More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
+ 
 ### Retrieve and print currently active alerts (JavaScript)
 <iframe height="700px" width="100%" src="https://repl.it/@mjaakko/RealtimeServiceAlerts?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
+### Show currently active alerts with curl
+> curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
 
 ## Service dependencies
 No Digitransit related service dependencies. Reads data from http://www.poikkeusinfo.fi/xml/v3
