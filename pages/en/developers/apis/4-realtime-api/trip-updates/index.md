@@ -44,6 +44,7 @@ Currently the service offers two GTFS-realtime data feeds filled with [trip upda
 | debug     | queryParameter | Print data in human readable format (for debugging purposes) |
 
 ## Examples
+* More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
 
 ### Retrieve and print currently active HSL trip updates (JavaScript)
 
@@ -54,8 +55,6 @@ Currently the service offers two GTFS-realtime data feeds filled with [trip upda
 
 ### Show currently active JOLI real-time trip updates (debug mode)
 > curl http://api.digitransit.fi/realtime/trip-updates/v1/JOLI?debug
-
-More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
 
 ## Service dependencies
 
