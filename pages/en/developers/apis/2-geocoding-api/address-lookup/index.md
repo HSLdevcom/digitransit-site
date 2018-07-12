@@ -21,7 +21,7 @@ Endpoint root is available at:
 | `size`                   | integer                       | Limits the number of results returned
 | `layers`                 | comma-delimited string array  | Filters results by layer (value can be address, venue or street)
 | `sources`                | comma-delimited string array  | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
-| `boundary.country`       | <a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="\_blank">ISO-3166 alpha-2 or alpha-3</a> | Filters results by country
+| `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1) | Filters results by country
 
 **Note:** Parameter api_key is not in use in digitransit
 
