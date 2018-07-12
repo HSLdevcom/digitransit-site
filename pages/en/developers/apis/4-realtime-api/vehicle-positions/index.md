@@ -147,12 +147,14 @@ The numerical values for the different transit operators are listed below:
 | `59`   | Tilausliikenne Nikkanen Oy
 | `90`   | VR Oy
 
-## Querying a trip corresponding to a vehicle position
+## <a name="examples"></a>Examples
+
+### Querying a trip corresponding to a vehicle position
 
 The Routing API can be used to query a trip correspoding to a vehicle position message.
 <br/>See [this example](../../1-routing-api/routes/#fuzzytrip) on how to check if a vehicle is wheelchair accessible.
 
-## <a name="examples"></a>Examples
+### Topics
 
 The HFP topic format forms a tree.
 By combining wildcards with several topic filters in one MQTT `SUBSCRIBE` packet you can carve quite interesting subsets of the tree to serve different use cases.
@@ -162,7 +164,7 @@ Go hog wild.
 Below are sample subscriptions utilizing the MQTT.js command-line tools.
 Using the corresponding library is not much harder.
 
-### A situational overview
+#### A situational overview
 
 To get just the most significant status updates, use:
 ```
@@ -170,7 +172,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/0/#"
 ```
 
-### A line in one direction
+#### A line in one direction
 
 To subscribe to all vehicles currently on the line 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
 ```
@@ -178,7 +180,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/2551/1/#"
 ```
 
-### All trams
+#### All trams
 
 Subscribe to all trams with:
 ```
@@ -186,7 +188,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/tram/#"
 ```
 
-### A certain trip
+#### A certain trip
 
 Subscribe to messages of a certain trip, even slightly before the driver has signed onto the trip:
 ```
@@ -200,7 +202,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/9975/1/+/12:15/#"
 ```
 
-### A bounding box
+#### A bounding box
 
 Let's assume that you wish to subscribe to all action inside the following [GeoJSON](http://geojson.io) Polygon:
 ```
