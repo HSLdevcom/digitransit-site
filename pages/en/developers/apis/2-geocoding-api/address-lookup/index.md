@@ -14,14 +14,14 @@ Endpoint root is available at:
 
 | Parameter       | Type           | Description                                              |
 |-----------------|----------------|----------------------------------------------------------|
-| point.lat              | floating point number         | Latitude value
-| point.lon              | floating point number         | Longitude value
-| lang                   | string                        | Returns results in the preferred language if such a language-bound name version is available
-| boundary.circle.radius | floating point number         | Searches only inside the given circle
-| size                   | integer                       | Limits the number of results returned
-| layers                 | comma-delimited string array  | Filters results by layer (value can be address, venue or street)
-| sources                | comma-delimited string array  | Filters results by source (value can be oa, osm or nlsfi)
-| boundary.country       | <a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="\_blank">ISO-3166 alpha-2 or alpha-3</a> | Filters results by country
+| `point.lat`              | floating point number         | Latitude value
+| `point.lon`              | floating point number         | Longitude value
+| `lang`                   | string                        | Returns results in the preferred language if such a language-bound name version is available
+| `boundary.circle.radius` | floating point number         | Searches only inside the given circle
+| `size`                   | integer                       | Limits the number of results returned
+| `layers`                 | comma-delimited string array  | Filters results by layer (value can be address, venue or street)
+| `sources`                | comma-delimited string array  | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
+| `boundary.country`       | <a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="\_blank">ISO-3166 alpha-2 or alpha-3</a> | Filters results by country
 
 **Note:** Parameter api_key is not in use in digitransit
 
@@ -29,30 +29,30 @@ Endpoint root is available at:
 
 | Name              | Type    | Description                                              |
 |-------------------|---------|----------------------------------------------------------|
-| id                | string  |
-| gid               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
-| layer             | string  | Address, venue or street
-| source            | string  | Data source, for example osm (openstreetmap), oa (openaddresses) or nlsfi
-| source_id         | string  |
-| name              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
-| postalcode        | number  |
-| postalcode_gid    | string  |
-| confidence        | number  | An estimation of how accurately this result matches the query
-| distance          | number  | A distance from the query point (in meters)
-| accuracy          | string  |
-| country           | string  | Places that issue passports, nations, nation-states
-| country_gid       | string  |
-| country_a         | string  | Alpha-3 code, for example FIN
-| region            | string  | For example "Uusimaa"
-| region_gid        | string  |
-| localadmin        | string  | Local administrative boundaries, for example "Helsinki"
-| localadmin_gid    | string  |
-| locality          | string  | Towns, hamlets, cities, for example "Helsinki"
-| locality_gid      | string  |
-| neighbourhood     | string  | Social communities, neighbourhoods, for example "Itä-Pasila"
-| neighbourhood_gid | string  |
-| label             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example "East-West Pub, Itä-Pasila, Helsinki"
-| bbox              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry.
+| `id`                | string  |
+| `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
+| `layer`             | string  | Address, venue or street
+| `source`            | string  | Data source, for example `osm` (openstreetmap), `oa` (openaddresses) or `nlsfi`
+| `source_id`         | string  |
+| `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
+| `postalcode`        | number  |
+| `postalcode_gid`    | string  |
+| `confidence`        | number  | An estimation of how accurately this result matches the query
+| `distance`          | number  | A distance from the query point (in meters)
+| `accuracy`          | string  |
+| `country`           | string  | Places that issue passports, nations, nation-states
+| `country_gid`       | string  |
+| `country_a`         | string  | Alpha-3 code, for example *FIN*
+| `region`            | string  | For example *Uusimaa*
+| `region_gid`        | string  |
+| `localadmin`        | string  | Local administrative boundaries, for example *Helsinki*
+| `localadmin_gid`    | string  |
+| `locality`          | string  | Towns, hamlets, cities, for example *Helsinki*
+| `locality_gid`      | string  |
+| `neighbourhood`     | string  | Social communities, neighbourhoods, for example *Itä-Pasila*
+| `neighbourhood_gid` | string  |
+| `label`             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example *East-West Pub, Itä-Pasila, Helsinki*
+| `bbox`              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry.
 
 ## Request examples
 
