@@ -109,9 +109,3 @@ In this case, the search string matches perfectly a swedish place name, and cons
 
 **Note:** Part of the provided geocoding data does not include Swedish names, and part of the data
 leaves the language context unknown. This may occasionally cause unexpected errors in language selection.
-
-## Extra documentation
-
-Geocoding API is implemented using Pelias. If you are interested, you can learn more about the Pelias search API from:
-
-> https://github.com/pelias/pelias-doc/blob/master/search.md
