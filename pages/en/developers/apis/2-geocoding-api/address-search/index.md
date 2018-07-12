@@ -24,8 +24,6 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1)                  | Filters results by country
 | `lang`                   | string                 | Returns results in the preferred language if such a language-bound name version is available (value can be `fi` or `sv`).
 
-**Note:** Parameter api_key is not in use in digitransit
-
 ## Response fields
 
 | Name              | Type    | Description                                              |

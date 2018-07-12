@@ -23,8 +23,6 @@ Endpoint root is available at:
 | `sources`                | comma-delimited string array  | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
 | `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1) | Filters results by country
 
-**Note:** Parameter api_key is not in use in digitransit
-
 ## Response fields
 
 | Name              | Type    | Description                                              |
