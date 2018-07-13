@@ -87,7 +87,7 @@ https://api.digitransit.fi/geocoding/v1/search?text=kamppi&focus.point.lat=60.2&
 
 ## Language preference
 
-The language preference can be defined using 'lang=xx' parameter, default being 'lang=fi'. Unlike in reverse
+The language preference can be defined using `lang=xx` parameter, default being `lang=fi`. Unlike in reverse
 geocoding, the preference has significance for geocoding searches only when multiple languages provide
 an equally good match. An example:
 
@@ -96,7 +96,7 @@ https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=sv&size=1
 https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=fi&size=1
 
 The first search returns Finladia-huset, Helsingfors, and the second one Finlandia-talo, Helsinki.
-Both match the search string 'finlandia' equally well.
+Both match the search string `finlandia` equally well.
 
 In most cases, an identified best match defines the language for the response, overruling the preference. An example:
 
