@@ -35,7 +35,7 @@ API is available at:
 | `postalcode`        | number  |
 | `postalcode_gid`    | string  |
 | `confidence`        | number  | An estimation of how accurately this result matches the query
-| `distance`          | number  | A distance from the query point (in meters)
+| `distance`          | number  | A distance from the query point (in kilometers)
 | `accuracy`          | string  | Returns always coordinates of just one point. If the object is originally an area or a line like a road, then the centroid is calculated (value can be point or centroid).
 | `country`           | string  | Places that issue passports, nations, nation-states
 | `country_gid`       | string  |

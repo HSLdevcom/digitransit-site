@@ -36,7 +36,7 @@ Endpoint root is available at:
 | `postalcode`        | number  |
 | `postalcode_gid`    | string  |
 | `confidence`        | number  | An estimation of how accurately this result matches the query
-| `distance`          | number  | A distance from the query point (in meters)
+| `distance`          | number  | A distance from the query point (in kilometers)
 | `accuracy`          | string  |
 | `country`           | string  | Places that issue passports, nations, nation-states
 | `country_gid`       | string  |
