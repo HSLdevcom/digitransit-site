@@ -113,9 +113,23 @@ const getArchitectureHeader = (props) => {
   );
 }
 
+const getReplitEmbed = (props) => {
+  if (typeof props.replit == "undefined" || !props.replit.url || !props.replit.height) {
+    return (<span></span>);
+  }
+  
+  return (
+	<div>
+	<h2>Test the API</h2>
+	<p>{props.replit.description}</p>
+	<iframe height={props.replit.height} width="100%" src={props.replit.url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+	</div>);
+}
+
 module.exports = {
   "DockerInfo": getDockerInfo,
   "TechnologiesInfo": getTechnologiesInfo,
   "Assets": getAssets,
-  "ArchitectureHeader": getArchitectureHeader
+  "ArchitectureHeader": getArchitectureHeader,
+  "ReplitEmbed": getReplitEmbed
 }
