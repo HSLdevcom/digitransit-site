@@ -7,7 +7,7 @@ The geocoding API provides a way to perform address searches and address lookups
 
 This API is very simple, supporting only GET requests to perform searches. Geocoding results are returned in [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) format.
 
-Check examples for [Address lookup](./address-lookup/) or [Address search](./address-search/)
+Check examples for [Address lookup](./address-lookup/), [Address search](./address-search/) and [Autocompletion](./autocomplete/).
 
 ## Extra documentation
 
