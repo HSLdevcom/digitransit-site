@@ -16,7 +16,7 @@ API is available at:
 |------------------------|------------------------|----------------------------------------------------------|
 | `text`                 | string                 | Text to be searched
 | `boundary.rect.min_lon`<br/>`boundary.rect.max_lon`<br/>`boundary.rect.min_lat`<br/>`boundary.rect.max_lat`	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
-| `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the **focus.point** so that places with higher scores will appear higher in the results list.
+| `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
 | `sources`                | comma-delimited string array | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
 | `layers`                 | string                 | Filters results by layer (value can be address, venue or street)
 | `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1)                  | Filters results by country

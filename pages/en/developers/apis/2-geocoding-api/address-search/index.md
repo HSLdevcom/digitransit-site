@@ -18,7 +18,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | `size`                   | integer                | Limits the number of results returned
 | `boundary.rect.min_lon`<br/>`boundary.rect.max_lon`<br/>`boundary.rect.min_lat`<br/>`boundary.rect.max_lat`	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
 | `boundary.circle.lat`<br/>`boundary.circle.lon`<br/>`boundary.circle.radius` | floating point number  | Searches using location coordinates and a maximum distance radius within which acceptable results can be located.
-| `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the **focus.point** so that places with higher scores will appear higher in the results list.
+| `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
 | `sources`                | comma-delimited string array | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
 | `layers`                 | string                 | Filters results by layer (value can be address, venue or street)
 | `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1)                  | Filters results by country
@@ -83,7 +83,7 @@ https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.circle.lat=6
 
 https://api.digitransit.fi/geocoding/v1/search?text=kamppi&focus.point.lat=60.2&focus.point.lon=24.936
 
-**Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus.point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
+**Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
 
 ## Language preference
 
