@@ -18,7 +18,7 @@ API is available at:
 | `boundary.rect.min_lon`<br/>`boundary.rect.max_lon`<br/>`boundary.rect.min_lat`<br/>`boundary.rect.max_lat`	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
 | `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
 | `sources`                | comma-delimited string array | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
-| `layers`                 | string                 | Filters results by layer (value can be address, venue or street)
+| `layers`                 | string                 | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers), commonly used values are `address`, `venue` and `street`)
 | `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1)                  | Filters results by country
 | `lang`                   | string                 | Returns results in the preferred language if such a language-bound name version is available (value can be `fi` or `sv`).
 
@@ -28,7 +28,7 @@ API is available at:
 |---------------------|---------|----------------------------------------------------------|
 | `id`                | string  |
 | `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
-| `layer`             | string  | Address, venue or street
+| `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers)
 | `source`            | string  | Data source, for example osm (openstreetmap), oa (openaddresses) or nlsfi
 | `source_id`         | string  |
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.

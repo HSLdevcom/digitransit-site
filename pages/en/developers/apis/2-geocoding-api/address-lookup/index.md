@@ -19,7 +19,7 @@ Endpoint root is available at:
 | `lang`                   | string                        | Returns results in the preferred language if such a language-bound name version is available
 | `boundary.circle.radius` | floating point number         | Searches only inside the given circle
 | `size`                   | integer                       | Limits the number of results returned
-| `layers`                 | comma-delimited string array  | Filters results by layer (value can be address, venue or street)
+| `layers`                 | comma-delimited string array  | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/reverse.md#filter-by-layers-data-type), commonly used values are `address`, `venue` and `street`)
 | `sources`                | comma-delimited string array  | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
 | `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1) | Filters results by country
 
@@ -29,7 +29,7 @@ Endpoint root is available at:
 |-------------------|---------|----------------------------------------------------------|
 | `id`                | string  |
 | `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
-| `layer`             | string  | Address, venue or street
+| `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/reverse.md#filter-by-layers-data-type)
 | `source`            | string  | Data source, for example `osm` (openstreetmap), `oa` (openaddresses) or `nlsfi`
 | `source_id`         | string  |
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
