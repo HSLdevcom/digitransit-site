@@ -1,5 +1,10 @@
 ---
 title: Address search
+replit:
+  "Address search":
+    url: https://repl.it/@mjaakko/GeocodingAddressSearch
+    height: 800px
+    description: Write an address and press Enter to see the list of locations returned by the API on the map
 ---
 
 Address search can be used to search addresses and place names.  An address is matched to its corresponding geographic coordinates and in the simplest search, you can provide only one parameter, the text you want to match in any part of the location details.
