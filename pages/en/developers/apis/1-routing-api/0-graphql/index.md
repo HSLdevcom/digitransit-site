@@ -277,19 +277,3 @@ Using Content-Type **application/json**:
 <iframe height="750px" width="100%" src="https://repl.it/@mjaakko/StopRequestGraphQL2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 **Note:**  If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id.
-
-### Differences between application/json and application/graphql approaches
-
-You might notice that in both cases we are working with "json-ish" data.
-With **application/json** you are sending a valid json:
-```
-{
-  "query": "{...}"
-}
-```
-
-However, with the **application/graphql** Content-Type, data is sent as GraphQL which is "json-ish". This means that you only have to write the query.
-
-```
-{...}
-```
