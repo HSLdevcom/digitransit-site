@@ -1,5 +1,10 @@
 ---
 title: Background map
+replit: 
+  "Display map using Leaflet":
+    description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map." 
+    url: https://repl.it/@mjaakko/LeafletMap
+    height: 800px
 ---
 Background map provides **HSL style** map tiles for example for browser based applications.
 
@@ -39,9 +44,3 @@ Background map provides **HSL style** map tiles for example for browser based ap
 ### Swedish language tiles 
 
 > https://cdn.digitransit.fi/map/v1/hsl-map-sv/16/37313/18958.png
-
-### Display map using Leaflet
-
-Here is a quick example that uses [Leaflet](http://leafletjs.com/) to display scrollable map.
-
-<iframe height="800px" width="100%" src="https://repl.it/@mjaakko/LeafletMap?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
