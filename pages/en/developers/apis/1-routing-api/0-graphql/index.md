@@ -1,5 +1,13 @@
 ---
 title: GraphQL
+replit:
+  note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
+  "Content-Type: application/graphql":
+    url: https://repl.it/@mjaakko/StopRequestGraphQL1
+    height: 750px
+  "Content-Type: application/json":
+    url: https://repl.it/@mjaakko/StopRequestGraphQL2
+    height: 750px
 ---
 
 ## What is GraphQL?
@@ -265,15 +273,3 @@ An example response:
 * The [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL
 * [How Facebook sees GraphQL](https://facebook.github.io/relay/docs/thinking-in-graphql.html)
 
-## JavaScript examples
-
-The examples below send a GraphQL query using HTTP POST to `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`. This example query asks the server to find a stop with the ID "HSL:1040129" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
-
-Using Content-Type **application/graphql**:
-<iframe height="750px" width="100%" src="https://repl.it/@mjaakko/StopRequestGraphQL1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-
-Using Content-Type **application/json**:
-<iframe height="750px" width="100%" src="https://repl.it/@mjaakko/StopRequestGraphQL2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-**Note:**  If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id.
