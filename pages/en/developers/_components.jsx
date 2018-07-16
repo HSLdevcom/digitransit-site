@@ -126,7 +126,7 @@ const getReplitEmbed = (props) => {
      return (
               <div>
                 <h3>{ example }</h3>
-                <p>{ props.replit[example].description }</p>
+                <p dangerouslySetInnerHTML={{__html: props.replit[example].description }} />
                 <iframe height={props.replit[example].height} width="100%" src={props.replit[example].url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
               </div>
             );
@@ -134,7 +134,7 @@ const getReplitEmbed = (props) => {
 
   let note = null;
   if (props.replit.note) {
-    note = <p>{ props.replit.note }</p>;
+    note = <div dangerouslySetInnerHTML={{__html: props.replit.note }} />;
     delete props.replit.note; 
   }
 
