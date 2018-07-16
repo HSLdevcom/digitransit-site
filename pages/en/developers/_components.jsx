@@ -132,11 +132,18 @@ const getReplitEmbed = (props) => {
             );
   };
 
+  let note = null;
+  if (props.replit.note) {
+    note = <p>{ props.replit.note }</p>;
+    delete props.replit.note; 
+  }
+
   const list = Object.keys(props.replit).map(getEmbed);  
 
   return (
 	<div>
 	  <h2>Test the API</h2>
+          { note }
           { list }
 	</div>);
 }
