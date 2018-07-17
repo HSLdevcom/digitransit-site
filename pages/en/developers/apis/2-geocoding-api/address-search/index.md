@@ -41,7 +41,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | `accuracy`          | string  | Returns always coordinates of just one point. If the object is originally an area or a line like a road, then the centroid is calculated (value can be point or centroid).
 | `country`           | string  | Places that issue passports, nations, nation-states
 | `country_gid`       | string  |
-| `country_a`         | string  | Alpha-3 code, for example *FIN*
+| `country_a`         | string  | ISO 3166-1 alpha-3 code, for example *FIN*
 | `region`            | string  | For example *Uusimaa*
 | `region_gid`        | string  |
 | `localadmin`        | string  | Local administrative boundaries, for example *Helsinki*
