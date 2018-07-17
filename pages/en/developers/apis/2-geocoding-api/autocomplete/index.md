@@ -57,21 +57,21 @@ API is available at:
 
 ### Search for 'kamp'
 
-https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp
 
 ### Search for 'kamp' and filter results by street address
 
-https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&layers=address
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&layers=address
 
 **Note:** Using parameter **layers=address** returns results for places having text `kamp` with a street address.
 
 ### Search for 'kamp' inside a bounding box
 
-https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
 
 ### Search for 'kamp' using a focus point
 
-https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&focus.point.lat=60.17&focus.point.lon=24.93
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&focus.point.lat=60.17&focus.point.lon=24.93
 
 **Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus.point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
 

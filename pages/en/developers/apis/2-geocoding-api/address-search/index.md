@@ -59,29 +59,29 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 
 ### Search for 'kamppi' and return only one result
 
-https://api.digitransit.fi/geocoding/v1/search?text=kamppi&size=1
+> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&size=1
 
 **Note:** Using parameter **size=1** limits the number of results returned to one.
 
 ### Search for 'kamppi' and filter results by street address
 
-https://api.digitransit.fi/geocoding/v1/search?text=kamppi&layers=address
+> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&layers=address
 
 **Note:** Using parameter **layers=address** returns results for places having text kamppi with a street address.
 
 ### Search for 'kamppi' using a rectangle
 
-https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
+> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
 
 ### Search for 'kamppi' inside a circle
 
-https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.circle.lat=60.2&boundary.circle.lon=24.936&boundary.circle.radius=30
+> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.circle.lat=60.2&boundary.circle.lon=24.936&boundary.circle.radius=30
 
 **Note:** Parameter **boundary.circle.radius**  is always specified in kilometers.
 
 ### Search for 'kamppi' using a focus point
 
-https://api.digitransit.fi/geocoding/v1/search?text=kamppi&focus.point.lat=60.2&focus.point.lon=24.936
+> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&focus.point.lat=60.2&focus.point.lon=24.936
 
 **Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
 
@@ -91,16 +91,16 @@ The language preference can be defined using `lang=xx` parameter, default being 
 geocoding, the preference has significance for geocoding searches only when multiple languages provide
 an equally good match. An example:
 
-https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=sv&size=1
+> https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=sv&size=1
 
-https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=fi&size=1
+> https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=fi&size=1
 
 The first search returns Finladia-huset, Helsingfors, and the second one Finlandia-talo, Helsinki.
 Both match the search string `finlandia` equally well.
 
 In most cases, an identified best match defines the language for the response, overruling the preference. An example:
 
-https://api.digitransit.fi/geocoding/v1/search?text=ulrikasborg&lang=fi
+> https://api.digitransit.fi/geocoding/v1/search?text=ulrikasborg&lang=fi
 
 In this case, the search string matches perfectly a swedish place name, and consiquently the result is
 "Ulrikasborg, Helsingfors". In other words, the geocoding API does not act like a translation service.

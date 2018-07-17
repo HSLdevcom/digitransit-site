@@ -56,31 +56,31 @@ Endpoint root is available at:
 
 ### Request to get only one result for the given coordinates
 
-http://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.199284&point.lon=24.940540&size=1
+> http://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.199284&point.lon=24.940540&size=1
 
 **Note:** Using parameter **size=1** limits the number of results returned to one.
 
 ### Request to get results for the given coordinates
 
-https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448
+> https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448
 
 **Note:** This will return 10 places by default as the default value of the size parameter is 10 (the maximum value is 40). Specifying a value greater than 40 will override to 40 and return a warning in the response metadata.
 
 ### Request to get venue results for the same given coordinates
 
-https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448&layers=venue
+> https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448&layers=venue
 
 **Note:** Using parameter **layers=venue** returns results for points of interest, businesses, things with walls.
 
 ### Request to get places with a street address for the same given coordinates
 
-https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448&layers=address
+> https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448&layers=address
 
 **Note:** Using parameter **layers=address** returns results for places with a street address.
 
 ### Request to get results for the given coordinates using language preference
 
-http://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.195&point.lon=24.93&lang=sv
+> http://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.195&point.lon=24.93&lang=sv
 
 **Note:** Using parameter **lang=sv** returns results in Swedish if such a language-bound name version is available.
 
