@@ -1,5 +1,5 @@
 ---
-title: Service architecture
+title: Map API
 description:
   info: Map API provides raster and vector tiles in various formats.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/3-map-api/x-service-architecture/architecture.xml
