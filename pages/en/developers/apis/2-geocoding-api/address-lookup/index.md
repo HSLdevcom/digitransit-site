@@ -35,7 +35,7 @@ Endpoint root is available at:
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
 | `postalcode`        | number  |
 | `postalcode_gid`    | string  |
-| `confidence`        | number  | An estimation of how accurately this result matches the query
+| `confidence`        | number  | An estimation (as a percentage) of how accurately this result matches the query
 | `distance`          | number  | A distance from the query point (in kilometers)
 | `accuracy`          | string  |
 | `country`           | string  | Places that issue passports, nations, nation-states
