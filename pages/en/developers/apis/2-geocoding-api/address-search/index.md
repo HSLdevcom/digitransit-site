@@ -31,7 +31,7 @@ Search API provides a way to query addresses and POIs (points of interest). API 
 | `id`                | string  |
 | `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
 | `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/search.md#filter-by-data-type)
-| `source`            | string  | Data source, for example osm (openstreetmap), oa (openaddresses) or nlsfi
+| `source`            | string  | Data source, for example `openstreetmap`, `openaddresses` or `nlsfi`
 | `source_id`         | string  |
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
 | `postalcode`        | number  |
