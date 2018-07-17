@@ -16,8 +16,8 @@ Endpoint root is available at:
 |-----------------|----------------|----------------------------------------------------------|
 | `point.lat`              | floating point number         | Latitude value
 | `point.lon`              | floating point number         | Longitude value
+| `boundary.circle.radius` | floating point number         | Searches only within the given radius from the location
 | `lang`                   | string                        | Returns results in the preferred language if such a language-bound name version is available
-| `boundary.circle.radius` | floating point number         | Searches only inside the given circle
 | `size`                   | integer                       | Limits the number of results returned
 | `layers`                 | comma-delimited string array  | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/reverse.md#filter-by-layers-data-type), commonly used values are `address`, `venue` and `street`)
 | `sources`                | comma-delimited string array  | Filters results by source (value can be `oa`, `osm` or `nlsfi`)
