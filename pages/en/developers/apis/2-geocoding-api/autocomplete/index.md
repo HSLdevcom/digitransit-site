@@ -19,8 +19,9 @@ API is available at:
 | `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
 | `sources`                | comma-delimited string array | Filters results by source (value can be `oa` ([OpenAddresses](https://openaddresses.io/)), `osm` ([OpenStreetMap](http://openstreetmap.org/)) or `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)))
 | `layers`                 | string                 | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers), commonly used values are `address`, `venue` and `street`)
-| `boundary.country`       | [ISO 3166-1 alpha-2 or alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1)                  | Filters results by country
 | `lang`                   | string                 | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`).
+
+**Note**: parameter `boundary.country` is not used by Digitransit, as only data from Finland is available.
 
 ### Response fields
 
