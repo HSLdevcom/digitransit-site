@@ -40,7 +40,7 @@ Endpoint root is available at:
 | `accuracy`          | string  |
 | `country`           | string  | Places that issue passports, nations, nation-states
 | `country_gid`       | string  |
-| `country_a`         | string  | ISO 3166-1 alpha-3 code, for example *FIN*
+| `country_a`         | string  | [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1), for example *FIN*
 | `region`            | string  | For example *Uusimaa*
 | `region_gid`        | string  |
 | `localadmin`        | string  | Local administrative boundaries, for example *Helsinki*
