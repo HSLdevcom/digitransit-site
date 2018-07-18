@@ -2,7 +2,7 @@
 title: Glossary
 ---
 
-## General
+## <a name="general"/>General
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
@@ -12,7 +12,7 @@ title: Glossary
 | Transportation Mode    | A means of transport, for example: walking, cycling, driving a car, bus, train, subway, tram, ferry, taxi, airplane. |
 | City bike              | A shared-use bicycle that can be borrowed for a fee by anyone in central Helsinki. |
 
-## Routes
+## <a name="routes"/>Routes
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
@@ -21,7 +21,7 @@ title: Glossary
 | Trip                   | A specific occurance of a route, usually identified by the route and exact departure time from the first stop. For example bus 102 leaving from Otaniemi on 2017-11-21 10:00, or more generally leaving from Otaniemi at 10:00 on specified days. |
 | Headsign               | A description of a route usually written on the front of the vehicle. For example: Helsinki (for just the destination) or Helsinki - Tampere (for both the origin and destination). |
 
-## Stops
+## <a name="stops"/>Stops
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
@@ -31,7 +31,7 @@ title: Glossary
 | Stoptime               | Arrival or departure time at a stop. |
 | Departure row          | A special location type, which lists departures of a certain pattern from a stop. Departures rows are identified with pattern id, so querying departure rows will return departures only from one stop per pattern. |
 
-## Itinerary planning
+## <a name="itinerary-planning"/>Itinerary planning
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
