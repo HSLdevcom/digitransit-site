@@ -10,7 +10,7 @@ If you are not familiar with GraphQL, start by reading the [GraphQL](./0-graphql
 
 It is also recommended to try building queries and exploring the schema in [GraphiQL](./1-graphiql/). 
 
-[Real-time arrival prediction](./2-realtime-arrival-prediction/) page has information about the real-time data available in the API.
+[Real-time arrival prediction](./3-realtime-arrival-prediction/) page has information about the real-time data available in the API.
 
 After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [city bikes and bicycling routes](./bicycling/), [disruption info](./disruption-info/) and do [itinerary planning](./itinerary-planning/).
 
