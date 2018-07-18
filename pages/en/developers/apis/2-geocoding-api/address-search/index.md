@@ -2,15 +2,13 @@
 title: Address search
 ---
 
-Address search can be used to search addresses and place names.  An address is matched to its corresponding geographic coordinates and in the simplest search, you can provide only one parameter, the text you want to match in any part of the location details.
+Address search can be used to search addresses and points of interest (POIs).  An address is matched to its corresponding geographic coordinates and in the simplest search, you can provide only one parameter, the text you want to match in any part of the location details.
 
-## Search API
-
-Search API provides a way to query addresses and POIs (points of interest). API is available at:
+## Endpoint
 
 `http://api.digitransit.fi/geocoding/v1/search`
 
-## Supported url parameters
+### Supported URL parameters
 
 | Parameter              | Type                   | Description                                              |
 |------------------------|------------------------|----------------------------------------------------------|

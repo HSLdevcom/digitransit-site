@@ -4,13 +4,11 @@ title: Autocomplete
 
 Autocomplete can be used to search addresses and place names with incomplete search terms to provide real-time suggestions as the user types.
 
-## Autocomplete API
-
-API is available at:
+## Endpoint
 
 `http://api.digitransit.fi/geocoding/v1/autocomplete`
 
-### Supported url parameters
+### Supported URL parameters
 
 | Parameter              | Type                   | Description                                              |
 |------------------------|------------------------|----------------------------------------------------------|

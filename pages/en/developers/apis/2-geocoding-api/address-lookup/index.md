@@ -4,13 +4,11 @@ title: Address lookup
 
 Address lookup, otherwise known as reverse geocoding, is used for finding places/addresses for given coordinates. The **features** property of the results returned is where you will find the list of results that matched the best with your input parameters.
 
-## Reverse geocoding endpoint
-
-Endpoint root is available at:
+## Endpoint
 
 `http://api.digitransit.fi/geocoding/v1/reverse`
 
-## Supported request parameters
+### Supported URL parameters
 
 | Parameter       | Type           | Description                                              |
 |-----------------|----------------|----------------------------------------------------------|
