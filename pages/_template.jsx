@@ -52,7 +52,7 @@ module.exports = React.createClass({
         <span style={{margin: rhythm(0.5)}}><a href="/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hrefLang="fi">FI</a></span>
         <span style={{margin: rhythm(0.5)}}><a href="/en/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})} hrefLang="en">EN</a></span><br/>
         <a href={`${localePrefix}#users`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.users}</a><br/>
-        <Link to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link><br/>
+        <Link onClick={() => this.setState({mobileMenuOpen: false})} to="/en/developers/" style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.developers}</Link><br/>
         <a href={`${localePrefix}#municipalities`} style={prefixer({margin: rhythm(0.5), color: "#fff", textDecoration: "none"})}>{i18n.municipalities}</a><br/>
 
       </div>
