@@ -1,5 +1,5 @@
 ---
-title: Service architecture
+title: Routing API
 description:
   info: Routing API enables developers to query routes and timetable related information using either REST or GraphQL interfaces.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/1-routing-api/x-service-architecture/architecture.xml
@@ -47,7 +47,7 @@ OpenTripPlanner requires developers to make API requests through routers. Digitr
 
 GraphQL API is built by us. Similarly to REST, GraphQL has different router endpoints for Helsinki region, the Waltti regions and entire Finland. 
 
-**For more details about the GraphQL you can go to our [GraphQL](../0-graphql) page**
+**For more details about the GraphQL you can go to our [GraphQL](../../../apis/1-routing-api/0-graphql/) page**
 
 #### Introspection query
 
