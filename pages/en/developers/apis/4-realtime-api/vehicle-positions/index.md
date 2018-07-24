@@ -102,26 +102,26 @@ which prettyprints to:
 
 `VP` is a fixed key and refers to Vehicle Position but not to GTFS Realtime. The changing fields are described below:
 
-| Attribute | Type                  | Decription                                             |
-|-----------|-----------------------|--------------------------------------------------------|
-| `desi`    | String                | Line number visible to passengers.
-| `dir`     | String                | Line direction of the trip. After type conversion matches `direction_id` in GTFS and the topic. Either `"1"` or `"2"`.
+| Attribute | Type                  | Description                                             |
+|-----------|-----------------------|---------------------------------------------------------|
+| `desi`    | String                | Route number visible to passengers.
+| `dir`     | String                | Route direction of the trip. After type conversion matches `direction_id` in GTFS and the topic. Either `"1"` or `"2"`.
 | `oper`    | Integer               | Unique ID of the operator _running_ the trip. The unique ID does not have prefix zeroes here.
 | `veh`     | Integer               | Vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. Matches `vehicle_number` in the topic except without the prefix zeroes.
 | `tst`     | String                | UTC timestamp from the vehicle in ISO 8601 format as output by `date --utc "+%Y-%m-%dT%H:%M:%SZ"`.
 | `tsi`     | Integer               | Unix time in seconds, matching `tst`.
-| `spd`     | Floating-point number | A number representing the speed (m/s).
-| `hdg`     | Integer               | The heading in degrees (⁰) starting clockwise from north. Valid values are on the closed interval [0, 360]. Currently the values are integers.
+| `spd`     | Floating-point number | Speed of the vehicle, in meters per second (m/s).
+| `hdg`     | Integer               | Heading of the vehicle, in degrees (⁰) starting clockwise from geographic north. Valid values are on the closed interval [0, 360].
 | `lat`     | Floating-point number | WGS 84 latitude in degrees. `null` if there is no GPS fix.
 | `long`    | Floating-point number | WGS 84 longitude in degrees. `null` if there is no GPS fix.
-| `acc`     | Floating-point number | Acceleration (m/s^2), calculated from the speed on this and the previous message.
-| `dl`      | Integer               | The negation of delay in seconds (s) compared to the timetable. Negative values indicate lagging behind the schedule, positive values running ahead of schedule. Currently the values are integers.
-| `odo`     | Integer               | The odometer reading in meters (m) since the start of the trip. Currently the values are integers and not very reliable.
+| `acc`     | Floating-point number | Acceleration (m/s^2), calculated from the speed on this and the previous message. Negative values indicate that the speed of the vehicle is decreasing.
+| `dl`      | Integer               | Offset from the scheduled timetable in seconds (s). Negative values indicate lagging behind the schedule, positive values running ahead of schedule.
+| `odo`     | Integer               | The odometer reading in meters (m) since the start of the trip. Currently the values not very reliable.
 | `drst`    | Integer               | Door status. `0` if all the doors are closed, `1` if any of the doors are open.
-| `oday`    | String                | The operating day of the trip. An operating day ends at 04:30 the next morning, e.g. the final moment of the operating day `"2018-04-05"` is at 2018-04-06T04:30 local time. Thus for some but not all late-night trips the operating day is the previous calendar day.
-| `jrn`     | Integer               | An internal journey descriptor, not meant to be useful for external use.
-| `line`    | Integer               | An internal line descriptor, not meant to be useful for external use.
-| `start`   | String                | The scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
+| `oday`    | String                | Operating day of the trip. An operating day ends at 04:30 the next morning, e.g. the final moment of the operating day `"2018-04-05"` is at 2018-04-06T04:30 local time. Thus for some but not all late-night trips the operating day is the previous calendar day.
+| `jrn`     | Integer               | Internal journey descriptor, not meant to be useful for external use.
+| `line`    | Integer               | Internal line descriptor, not meant to be useful for external use.
+| `start`   | String                | Scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
 
 ### Operators
 
