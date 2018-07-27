@@ -1,40 +1,33 @@
 ---
-title: Address search
-replit:
-  "Address search":
-    url: https://repl.it/@mjaakko/GeocodingAddressSearch
-    height: 800px
-    description: Write an address and press Enter to see the list of locations returned by the API on the map
+title: Autocomplete
 ---
 
-Address search can be used to search addresses and points of interest (POIs).  An address is matched to its corresponding geographic coordinates and in the simplest search, you can provide only one parameter, the text you want to match in any part of the location details.
+Autocomplete can be used to search addresses and place names with incomplete search terms to provide real-time suggestions as the user types.
 
 ## Endpoint
 
-`http://api.digitransit.fi/geocoding/v1/search`
+`http://api.digitransit.fi/geocoding/v1/autocomplete`
 
 ### Supported URL parameters
 
 | Parameter              | Type                   | Description                                              |
 |------------------------|------------------------|----------------------------------------------------------|
-| `text`                   | string                 | Text to be searched
-| `size`                   | integer                | Limits the number of results returned
+| `text`                 | string                 | Text to be searched
 | `boundary.rect.min_lon`<br/>`boundary.rect.max_lon`<br/>`boundary.rect.min_lat`<br/>`boundary.rect.max_lat`	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
-| `boundary.circle.lat`<br/>`boundary.circle.lon`<br/>`boundary.circle.radius` | floating point number  | Searches using location coordinates and a maximum distance radius within which acceptable results can be located.
 | `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
 | `sources`                | comma-delimited string array | Filters results by source (value can be `oa` ([OpenAddresses](https://openaddresses.io/)), `osm` ([OpenStreetMap](http://openstreetmap.org/)) or `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)))
-| `layers`                 | string                 | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/search.md#filter-by-data-type), commonly used values are `address`, `venue` and `street`)
+| `layers`                 | string                 | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers), commonly used values are `address`, `venue` and `street`)
 | `lang`                   | string                 | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`).
 
 **Note**: parameter `boundary.country` is not used by Digitransit, as only data from Finland is available.
 
-## Response fields
+### Response fields
 
-| Name              | Type    | Description                                              |
-|-------------------|---------|----------------------------------------------------------|
+| Name                | Type    | Description                                              |
+|---------------------|---------|----------------------------------------------------------|
 | `id`                | string  |
 | `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
-| `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/search.md#filter-by-data-type)
+| `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers)
 | `source`            | string  | Data source, for example `openstreetmap`, `openaddresses` or `nlsfi`
 | `source_id`         | string  |
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
@@ -59,55 +52,33 @@ Address search can be used to search addresses and points of interest (POIs).  A
 
 **Note:** Not exactly the same fields are returned for all searches because all object locations do not have the same data available, for example neighborhood is not in use with all objects.
 
-## Search examples
+## Examples
 
-### Search for 'kamppi' and return only one result
+### Search for 'kamp'
 
-> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&size=1
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp
 
-**Note:** Using parameter **size=1** limits the number of results returned to one.
+### Search for 'kamp' and filter results by street address
 
-### Search for 'kamppi' and filter results by street address
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&layers=address
 
-> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&layers=address
+**Note:** Using parameter **layers=address** returns results for places having text `kamp` with a street address.
 
-**Note:** Using parameter **layers=address** returns results for places having text kamppi with a street address.
+### Search for 'kamp' inside a bounding box
 
-### Search for 'kamppi' using a rectangle
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
 
-> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.rect.min_lat=59.9&boundary.rect.max_lat=60.45&boundary.rect.min_lon=24.3&boundary.rect.max_lon=25.5
+### Search for 'kamp' using a focus point
 
-### Search for 'kamppi' inside a circle
+> https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&focus.point.lat=60.17&focus.point.lon=24.93
 
-> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&boundary.circle.lat=60.2&boundary.circle.lon=24.936&boundary.circle.radius=30
-
-**Note:** Parameter **boundary.circle.radius**  is always specified in kilometers.
-
-### Search for 'kamppi' using a focus point
-
-> https://api.digitransit.fi/geocoding/v1/search?text=kamppi&focus.point.lat=60.2&focus.point.lon=24.936
-
-**Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
+**Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus.point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
 
 ## Language preference
 
 The language preference can be defined using `lang=xx` parameter, default being `lang=fi`. Unlike in reverse
 geocoding, the preference has significance for geocoding searches only when multiple languages provide
-an equally good match. An example:
-
-> https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=sv&size=1
-
-> https://api.digitransit.fi/geocoding/v1/search?text=finlandia&lang=fi&size=1
-
-The first search returns Finladia-huset, Helsingfors, and the second one Finlandia-talo, Helsinki.
-Both match the search string `finlandia` equally well.
-
-In most cases, an identified best match defines the language for the response, overruling the preference. An example:
-
-> https://api.digitransit.fi/geocoding/v1/search?text=ulrikasborg&lang=fi
-
-In this case, the search string matches perfectly a swedish place name, and consiquently the result is
-"Ulrikasborg, Helsingfors". In other words, the geocoding API does not act like a translation service.
+an equally good match. 
 
 **Note:** Part of the provided geocoding data does not include Swedish names, and part of the data
 leaves the language context unknown. This may occasionally cause unexpected errors in language selection.
