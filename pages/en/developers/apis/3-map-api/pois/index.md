@@ -10,7 +10,7 @@ This API provides vector map tiles for points of interests like ticket sales pos
 
 ## Endpoint
 
-`https://cdn.digitransit.fi/map/v1/source/:z/:x/:y.pbf`
+`https://cdn.digitransit.fi/map/v1/:source/:z/:x/:y.pbf`
 
 ### Supported URL parameters
 
