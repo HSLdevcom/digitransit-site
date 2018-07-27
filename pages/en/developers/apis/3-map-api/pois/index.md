@@ -20,7 +20,6 @@ This API provides vector map tiles for points of interests like ticket sales pos
 | z             | int            | Zoom level
 | x             | int            | x-coordinate
 | y             | int            | y-coordinate
-| size          | string         | '@2x' for retina tiles or empty value for normal
 
 ### Source values
 
