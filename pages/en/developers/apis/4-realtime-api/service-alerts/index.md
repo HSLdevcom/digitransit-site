@@ -1,5 +1,9 @@
 ---
 title: Service alerts
+replit:
+  "Show currently active alerts":
+    url: https://repl.it/@mjaakko/RealtimeServiceAlerts
+    height: 700px
 ---
 
 The HSL Alerts API can be used to query real-time updates from the HSL fleet in GTFS-RT format.
@@ -19,8 +23,5 @@ The hslalert service provides both GTFS-RT [service alerts](https://developers.g
 ## Examples
 * More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
  
-### Retrieve and print currently active alerts (JavaScript)
-<iframe height="700px" width="100%" src="https://repl.it/@mjaakko/RealtimeServiceAlerts?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 ### Show currently active alerts with curl
 > curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
