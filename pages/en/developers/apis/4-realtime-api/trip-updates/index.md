@@ -1,5 +1,9 @@
 ---
 title: Trip updates
+replit:
+  "Show currently active HSL trip updates":
+     url: https://repl.it/@mjaakko/RealtimeTripUpdates
+     height: 700px
 ---
 
 ## API Documentation
@@ -19,10 +23,6 @@ Currently the service offers two GTFS-realtime data feeds filled with [trip upda
 
 ## Examples
 * More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
-
-### Retrieve and print currently active HSL trip updates (JavaScript)
-
-<iframe height="700px" width="100%" src="https://repl.it/@mjaakko/RealtimeTripUpdates?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Show currently active HSL real-time trip updates (debug mode)
 > curl http://api.digitransit.fi/realtime/trip-updates/v1/HSL?debug
