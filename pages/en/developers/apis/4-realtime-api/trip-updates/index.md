@@ -6,16 +6,16 @@ title: Trip updates
 Currently the service offers two GTFS-realtime data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.
 
 ## Endpoint
-<pre>http://api.digitransit.fi/realtime/trip-updates/v1/:operator</pre>
+`http://api.digitransit.fi/realtime/trip-updates/v1/:operator`
 <!--<pre>http://api.digitransit.fi/realtime/raildigitraffic2gtfsrt/v1/:operator/:debug</pre>
 
 **Note:** raildigitraffic2gtfsrt is for internal use only-->
 
 ## Supported query parameters
-| Parameter | Type           | Description                                                  |
-|-----------|----------------|--------------------------------------------------------------|
-| operator  | pathParameter  | Id of operator 'HSL' or 'JOLI'                               |
-| debug     | queryParameter | Print data in human readable format (for debugging purposes) |
+| Parameter   | Type           | Description                                                  |
+|-------------|----------------|--------------------------------------------------------------|
+| `operator`  | pathParameter  | id of a operator, either `HSL` or `JOLI`                               |
+| `debug`     | queryParameter | Print data in human readable format (for debugging purposes) |
 
 ## Examples
 
