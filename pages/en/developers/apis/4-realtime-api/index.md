@@ -13,3 +13,5 @@ At first you should read the real-time API [getting started guide](./1-getting-s
 | [Service alerts](./service-alerts/)                | Provides disruption information from HSL area in GTFS-RT format
 | [Trip updates](./trip-updates/)                    | Provides predictions in GTFS-RT format to arrival and departures times for stops along the route of a trip.
 | [High frequency positioning](./vehicle-positions/) | Provides vehicle positions from HSL area in JSON format over MQTT
+
+**Note:** service alerts and trip updates are incorporated to the [routing API](../1-routing-api/)
