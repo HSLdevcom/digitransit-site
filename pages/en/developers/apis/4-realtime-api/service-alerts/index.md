@@ -2,7 +2,7 @@
 title: Service alerts
 ---
 
-The HSL Alerts API can be used to query real-time updates from the HSL fleet in GTFS-RT format.
+The HSL Alerts API can be used to query real-time updates from the HSL fleet in [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) format.
 The API provides [service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts) for disruptions (e.g. detours and significant delays) and [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates) for cancelled trips.
 
 ## Endpoint

@@ -2,7 +2,7 @@
 title: Trip updates
 ---
 
-Currently the service offers two GTFS-RT data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.
+Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.
 
 ## Endpoint
 `http://api.digitransit.fi/realtime/trip-updates/v1/:operator`
