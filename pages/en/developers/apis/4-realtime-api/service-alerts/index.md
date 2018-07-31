@@ -8,13 +8,13 @@ The HSL Alerts API can be used to query real-time updates from the HSL fleet in 
 The hslalert service provides both GTFS-RT [service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts) and [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates).
 
 ## Endpoint
-> http://api.digitransit.fi/realtime/service-alerts/v1/
+`http://api.digitransit.fi/realtime/service-alerts/v1/`
 
-## Supported query parameters
+### Supported URL parameters
 
-| Parameter | Type           | Description                                              |
-|-----------|----------------|----------------------------------------------------------|
-| debug     | queryParameter | Print data in human readable format (for debug purposes) |  
+| Parameter | Type            | Description                                              |
+|-----------|-----------------|----------------------------------------------------------|
+| debug     | query parameter | Print data in human readable format (for debug purposes) |  
 
 ## Examples
 

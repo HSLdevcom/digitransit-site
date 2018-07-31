@@ -11,11 +11,11 @@ Currently the service offers two GTFS-realtime data feeds filled with [trip upda
 
 **Note:** raildigitraffic2gtfsrt is for internal use only-->
 
-## Supported query parameters
-| Parameter   | Type           | Description                                                  |
-|-------------|----------------|--------------------------------------------------------------|
-| `operator`  | pathParameter  | id of a operator, either `HSL` or `JOLI`                               |
-| `debug`     | queryParameter | Print data in human readable format (for debugging purposes) |
+### Supported URL parameters
+| Parameter   | Type            | Description                                                  |
+|-------------|-----------------|--------------------------------------------------------------|
+| `operator`  | path parameter  | id of an operator, either `HSL` or `JOLI`                               
+| `debug`     | query parameter | Print data in human readable format (for debugging purposes) 
 
 ## Examples
 
