@@ -6,7 +6,7 @@ title: Glossary
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
-| Feed                   | A source of data in the API, e.g. *HSL* or *OULU*. |
+| Feed                   | A source of data in the API, e.g. `HSL` or `OULU`. A feed can contain data from multiple agencies. |
 | Agency                 | Some public transport provider, e.g. HSL. |
 | Disruption (Alert)     | A temporary change in public transport. For example, a stop out-of-use or diversion on a route. |
 | Transportation Mode    | A means of transport, for example: walking, cycling, driving a car, bus, train, subway, tram, ferry, taxi, airplane. |
