@@ -225,3 +225,33 @@ title: Stops
 
 2. Change argument `startTime`.
 3. Press play in GraphiQL to execute the query.
+
+### Query arrivals and departures from a station
+
+* Field `platformCode` contains the platform code used by the vehicle
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20station(id%3A%20%22HSL%3A1000202%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stoptimesWithoutPatterns(numberOfDepartures%3A%2010)%20%7B%0A%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20platformCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL.
+
+```
+{
+  station(id: "HSL:1000202") {
+    name
+    stoptimesWithoutPatterns(numberOfDepartures: 10) {
+      stop {
+        platformCode
+      }
+      serviceDay
+      scheduledArrival
+      scheduledDeparture
+      trip {
+        route {
+          shortName
+        }
+      }
+      headsign
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
