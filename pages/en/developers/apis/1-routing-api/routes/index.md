@@ -169,8 +169,8 @@ on topic `/hfp/v1/journey/ongoing/bus/0012/01511/`**2550**`/`**1**`/Westendinase
    * Direction id *2* in a vehicle position is same as direction id *1* in the Routing API
 2. Departure time must be in seconds
    * e.g. *09:03* = `9 * 60 * 60 + 3 * 60` = *32580*
-3. As the time and date formats used in vehicle position messages is different than in the Routing API, 86400 seconds must be added to the departure time of vehicles which have departed before 4:30 AM
-   * e.g. *01:51* = `1 * 60 * 60 + 51 * 60 + 86400` = *93060*
+   * If the date in fields `oday` and `tst` is not the same, add 86400 seconds to departure time
+     * This is due to differences in time formats, when vehicles which have departed after midnight have the previous date as operating day   
 
 For example, the following query checks if the vehicle, which sent the vehicle position message above, is wheelchair accessible:
 ```
