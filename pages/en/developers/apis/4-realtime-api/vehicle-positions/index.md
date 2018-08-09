@@ -104,7 +104,7 @@ which prettyprints to:
 | `dl`      | Integer               | Offset from the scheduled timetable in seconds (s). Negative values indicate lagging behind the schedule, positive values running ahead of schedule.
 | `odo`     | Integer               | The odometer reading in meters (m) since the start of the trip. Currently the values not very reliable.
 | `drst`    | Integer               | Door status. `0` if all the doors are closed, `1` if any of the doors are open.
-| `oday`    | String                | Operating day of the trip. An operating day ends at 04:30 the next morning, e.g. the final moment of the operating day `"2018-04-05"` is at 2018-04-06T04:30 local time. Thus for some but not all late-night trips the operating day is the previous calendar day.
+| `oday`    | String                | Operating day of the trip. The exact time when an operating day ends depends on the route. For most routes, the operating day ends at 4:30 AM on the next day. In that case, for example the final moment of the operating day `"2018-04-05"` would be at 2018-04-06T04:30 local time.
 | `jrn`     | Integer               | Internal journey descriptor, not meant to be useful for external use.
 | `line`    | Integer               | Internal line descriptor, not meant to be useful for external use.
 | `start`   | String                | Scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
