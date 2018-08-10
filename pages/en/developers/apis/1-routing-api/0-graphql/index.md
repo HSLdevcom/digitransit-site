@@ -113,7 +113,7 @@ For example, the following query would request a route with name `550` (using *R
 }
 ```
 
-### Batching
+### <a name="batching"></a>Batching
 
 Multiple queries can be combined and sent in one POST request. Batched queries require less server roundtrips and can be processed more efficiently on the server.
 
