@@ -136,6 +136,21 @@ For example, the following query would request a stop with id `HSL:1173434` and 
 }
 ```
 
+If the request includes multiple queries with same type, they must be renamed using aliases. For example, the following query would request two routes and return them as `route1` and `route2`:
+
+```
+{
+  route1: route(id: "HSL:2550") {
+    shortName
+    longName
+  }
+  route2: route(id: "HSL:2551") {
+    shortName
+    longName
+  }
+}
+```
+
 ### Pagination
 * Query types which support pagination can be used without pagination by omitting arguments `first` and `after`, in which case all data is returned on one page
 
