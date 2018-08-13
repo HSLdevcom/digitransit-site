@@ -255,3 +255,47 @@ title: Stops
 ```
 
 2. Press play in GraphiQL to execute the query.
+
+### Query departures near a specific location
+
+* Query type **nearest** can be used to query departure rows near a specific location
+* Departure row is a special location type, which lists departures of a certain route pattern from a certain stop
+* Querying nearest departure rows returns only one stop per pattern
+  * i.e. if there are multiple stops that a certain pattern uses, only the closest stop is returned
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09nearest(lat%3A%2060.19915%2C%20lon%3A%2024.94089%2C%20maxDistance%3A%20500%2C%20filterByPlaceTypes%3A%20DEPARTURE_ROW)%20%7B%0A%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20place%20%7B%0A%20%20%20%20%20%20%20%20%20%20...on%20DepartureRow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20stoptimes%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20headsign%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%09distance%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%09) to run the query below in GraphiQL.
+
+```
+{
+  nearest(lat: 60.19915, lon: 24.94089, maxDistance: 500, filterByPlaceTypes: DEPARTURE_ROW) {
+    edges {
+      node {
+        place {
+          ...on DepartureRow {
+            stop {
+              lat
+              lon
+              name
+            }
+            stoptimes {
+              serviceDay
+              scheduledDeparture
+              realtimeDeparture
+              trip {
+                route {
+                  shortName
+                  longName
+                }
+              }
+              headsign
+            }
+          }
+        }
+        distance
+      }
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
