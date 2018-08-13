@@ -15,7 +15,7 @@ title: Stops
 
 - Stop ids are in "feedid:stopid" format
 - HSL area feed id is **HSL** 
-- Stop id is available as **gtfsId**
+- Stop id is available from field `gtfsId` (note that field `gtfsId` also contains the feed id)
 
 ## Query examples
 
