@@ -2,7 +2,7 @@
 title: Address search
 replit:
   "Address search":
-    url: https://repl.it/@mjaakko/GeocodingAddressSearch
+    url: https://repl.it/@digitransit/GeocodingAddressSearch
     height: 800px
     description: Write an address and press Enter to see the list of locations returned by the API on the map
 ---

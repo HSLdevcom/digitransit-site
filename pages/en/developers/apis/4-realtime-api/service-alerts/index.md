@@ -2,7 +2,7 @@
 title: Service alerts
 replit:
   "Show currently active alerts":
-    url: https://repl.it/@mjaakko/RealtimeServiceAlerts
+    url: https://repl.it/@digitransit/RealtimeServiceAlerts
     height: 700px
 ---
 

@@ -4,10 +4,10 @@ replit:
   title: "Examples"
   note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
   "Content-Type: application/graphql":
-    url: https://repl.it/@mjaakko/StopRequestGraphQL1
+    url: https://repl.it/@digitransit/StopRequestGraphQL1
     height: 750px
   "Content-Type: application/json":
-    url: https://repl.it/@mjaakko/StopRequestGraphQL2
+    url: https://repl.it/@digitransit/StopRequestGraphQL2
     height: 750px
 ---
 

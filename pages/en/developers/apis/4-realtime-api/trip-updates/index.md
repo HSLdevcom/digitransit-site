@@ -2,7 +2,7 @@
 title: Trip updates
 replit:
   "Show currently active HSL trip updates":
-     url: https://repl.it/@mjaakko/RealtimeTripUpdates
+     url: https://repl.it/@digitransit/RealtimeTripUpdates
      height: 700px
 ---
 

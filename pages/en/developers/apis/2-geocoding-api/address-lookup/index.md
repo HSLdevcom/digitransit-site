@@ -2,7 +2,7 @@
 title: Address lookup
 replit:
   "Address lookup":
-    url: https://repl.it/@mjaakko/GeocodingAddressLookup
+    url: https://repl.it/@digitransit/GeocodingAddressLookup
     height: 800px
     description: Click the marker to see the address in its location
 ---

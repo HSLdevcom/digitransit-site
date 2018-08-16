@@ -6,7 +6,7 @@ description:
 replit:
   "MQTT.js":
     description: The example below uses MQTT.js library to listen to updates from all vehicles currently on route. See command line examples for other possible topics to try.
-    url: https://repl.it/@mjaakko/VehiclePositionsMQTT 
+    url: https://repl.it/@digitransit/VehiclePositionsMQTT 
     height: 800px
 ---
 
