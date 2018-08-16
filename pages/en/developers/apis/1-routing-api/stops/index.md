@@ -19,7 +19,7 @@ title: Stops
 
 ## Query examples
 
-**Note:** For more details about the query type **stops** you can use the **Documentation Explorer** provided in GraphiQL.
+**Note:** For more details about the query types related to stops you can use the **Documentation Explorer** provided in GraphiQL.
 
 **Note:** If the examples provided with an ID do not return what is expected then the ID in question may not be in use any more and you should try again with an existing ID.
 
@@ -164,7 +164,7 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query scheduled departure and arrival times of a stop by ID 
+### Query scheduled departure and arrival times of a stop
 
 * Value `serviceDay` in the response is Unix timestamp (local timezone) of the departure date
 * Values `scheduledArrival`, `realtimeArrival`, `scheduledDeparture` and `realtimeDeparture` in the response are seconds since midnight of the departure date
