@@ -4,7 +4,7 @@ title: Advanced examples
 
 This page contains more advanced examples on how to utilize the GraphQL API.
 
-## Plan an itinerary with alternative routes for each leg
+### Plan an itinerary with alternative routes for each leg
 
 The following query plans an itinerary from Pasila to Kulosaari.
 
@@ -64,7 +64,7 @@ The following query plans an itinerary from Pasila to Kulosaari.
 
 For each stop that is used for boarding (field `from`), a list of departures grouped by pattern are returned (field `stoptimesForPatterns`). Client-side code could be used to filter the list of departures to only contain patterns which also passthrough the destination stop (field `patterns` in `to`).
 
-## Plan an itinerary on board a vehicle
+### Plan an itinerary on board a vehicle
 
 It is possible to plan an itinerary which starts on board a vehicle by using argument `startTransitTripId`. 
 
