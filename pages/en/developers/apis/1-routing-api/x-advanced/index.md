@@ -62,7 +62,7 @@ The following query plans an itinerary from Pasila to Kulosaari.
 }
 ```
 
-For each stop that is used for boarding (field `from`), a list of departures grouped by pattern are returned (field `stoptimesForPatterns`). Client-side code could be used to filter the list of departures to only contain patterns which also passthrough the destination stop (field `patterns` in `to`).
+For each stop that is used for boarding (field `from`), a list of departures grouped by pattern are returned (field `stoptimesForPatterns`). Client-side code could be used to filter the list of departures to only contain patterns which also pass through the destination stop (field `patterns` in `to`).
 
 ### Plan an itinerary on board a vehicle
 
