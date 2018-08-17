@@ -210,3 +210,34 @@ The Routing API provides a few bicycle related query types:
 ```
 
 2. Press play in GraphiQL to execute the query.
+
+### Plan an itinerary from Jätkäsaari to Ooppera using personal bike and optimizing for safety
+
+* Argument `optimize: SAFE` can be used to set preference for safer routes, i.e. avoid crossing streets and use bike paths when possible
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%2260.15978%2C24.91842%22%0A%20%20%20%20toPlace%3A%20%2260.18204%2C24.92756%22%0A%20%20%09transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%7D%5D%0A%20%20%20%20optimize%3A%20SAFE%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. The returned itinerary should use [Baana bike path](https://en.wikipedia.org/wiki/Helsinki_harbour_rail#Baana).
+
+```
+{
+  plan(
+    fromPlace: "60.15978,24.91842"
+    toPlace: "60.18204,24.92756"
+    transportModes: [{mode: BICYCLE}]
+    optimize: SAFE
+  ) {
+    itineraries {
+      legs {
+        mode
+        duration
+        distance
+        legGeometry {
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
