@@ -9,8 +9,8 @@ title: Bicycling
 The Routing API provides a few bicycle related query types:
 
 - Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
-- Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available in Helsinki
-- Query types **bikePark** and **bikeParks** can be used to query bike parks that are available in Helsinki
+- Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available
+- Query types **bikePark** and **bikeParks** can be used to query bike parks that are available
 
 **Note:** For more details about these query types you can use the **Documentation Explorer** provided in GraphiQL.
 
