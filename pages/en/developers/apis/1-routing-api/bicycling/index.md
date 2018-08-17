@@ -10,7 +10,7 @@ The Routing API provides a few bicycle related query types:
 
 - Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
 - Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available in Helsinki
-- Query types **bikePark** and **bikeParks** can be used to query  city bike parks that are available in Helsinki
+- Query types **bikePark** and **bikeParks** can be used to query bike parks that are available in Helsinki
 
 **Note:** For more details about these query types you can use the **Documentation Explorer** provided in GraphiQL.
 
@@ -61,9 +61,9 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### All available city bike parks
+### All available bike parks
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeParks%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available city bike parks.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeParks%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available bike parks.
 
 ```
 {
@@ -77,9 +77,9 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### Available city bike park
+### Available bike park
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikePark(id%3A%22906%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the city bike park and its current space availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikePark(id%3A%22906%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
 
 ```
 {
