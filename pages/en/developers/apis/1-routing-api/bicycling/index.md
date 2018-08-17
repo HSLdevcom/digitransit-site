@@ -16,8 +16,6 @@ The Routing API provides a few bicycle related query types:
 
 ## City bikes
 
-**Note:** City bikes are currently only available in Helsinki, but Espoo is planning to take them into use during 2018.
-
 **Note:** City bike API data is realtime and it is always up to date.
 
 > https://www.hsl.fi/en/citybikes
