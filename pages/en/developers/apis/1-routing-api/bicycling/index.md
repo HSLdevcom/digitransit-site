@@ -24,7 +24,7 @@ The Routing API provides a few bicycle related query types:
 
 ## Query examples
 
-**Note:** If the examples provided with an id do not return what is expected then the id in question may not be in use any more and you should try again with an existing id.
+**Note:** If the examples provided with an ID do not return what is expected then the ID in question may not be in use any more and you should try again with an existing ID.
 
 ### All available city bike stations
 
