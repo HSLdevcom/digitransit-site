@@ -233,6 +233,66 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 2. Change arguments `date` and `time`.
 3. Press play in GraphiQL to execute the query.
 
+### Plan an itinerary using Park & Ride
+
+* Using qualifier **PARK** for **CAR** mode plans an itinerary using Park & Ride, i.e. the first leg of the journey is done by driving to a car park and continuing by public transportation from there
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Seutula%3A%3A60.34770%2C24.86569%22%2C%0A%20%20%20%20toPlace%3A%20%22Kamppi%3A%3A60.16870%2C24.93129%22%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20CAR%2C%20qualifier%3A%20PARK%7D%2C%20%7Bmode%3A%20TRANSIT%7D%2C%20%7Bmode%3AWALK%7D%5D%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20carPark%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20carParkId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%09tripHeadsign%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```
+{
+  plan(
+    fromPlace: "Seutula::60.34770,24.86569",
+    toPlace: "Kamppi::60.16870,24.93129",
+    transportModes: [{mode: CAR, qualifier: PARK}, {mode: TRANSIT}, {mode:WALK}]
+  ) {
+    itineraries{
+      walkDistance
+      duration
+      legs {
+        mode
+        startTime
+        endTime
+        duration
+        from {
+          lat
+          lon
+          name
+          stop {
+            code
+            name
+          }
+        }
+        to {
+          lat
+          lon
+          name
+          stop {
+            code
+            name
+          }
+          carPark {
+            carParkId
+            name
+          }
+        }
+        trip {
+          tripHeadsign
+          routeShortName
+        }
+        distance
+        legGeometry {
+          length
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
 ### Plan an itinerary and query fare information
 
 * **Note:** Currently only regular adult fare information is available
