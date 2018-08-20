@@ -8,14 +8,13 @@ title: Stops
 
 | Term                                  | Explanation                     |
 |---------------------------------------|---------------------------------|
-| Agency                                | Some public transport provider, e.g. HSL.
 | Route                                 | A public transport service shown to customers under a single name, usually from point A to B and back. For example: trams 1 and 1A, buses 18 and 102T, or train A. Commonly used synonym: line
 | Pattern                               | A sequence of stops as used by a specific direction and variant of a route. For example a tram entering/departing service from/to the depot usually joins at the middle of the route, or a route might have a short term diversion (poikkeusreitti) without changing the route name (longer diversions are usually marked as different routes).
 
 ## Notes about stop ids
 
-- Stop ids are in "acencyid:stopid" format
-- HSL agencyid is **HSL** 
+- Stop ids are in "feedid:stopid" format
+- HSL area feed id is **HSL** 
 - Stop id is available as **gtfsId**
 
 ## Query examples
@@ -226,3 +225,33 @@ title: Stops
 
 2. Change argument `startTime`.
 3. Press play in GraphiQL to execute the query.
+
+### Query arrivals and departures from a station
+
+* Field `platformCode` contains the platform code used by the vehicle
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20station(id%3A%20%22HSL%3A1000202%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stoptimesWithoutPatterns(numberOfDepartures%3A%2010)%20%7B%0A%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20platformCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL.
+
+```
+{
+  station(id: "HSL:1000202") {
+    name
+    stoptimesWithoutPatterns(numberOfDepartures: 10) {
+      stop {
+        platformCode
+      }
+      serviceDay
+      scheduledArrival
+      scheduledDeparture
+      trip {
+        route {
+          shortName
+        }
+      }
+      headsign
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.

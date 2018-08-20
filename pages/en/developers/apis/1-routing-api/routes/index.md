@@ -128,3 +128,60 @@ Example response:
 ```
 
 2. Press play in GraphiQL to execute the query.
+
+### <a name="fuzzytrip"></a>Query a trip without its id
+
+* Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available 
+  * This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
+
+For example, if the following vehicle position message is received 
+```
+{
+  "desi": "550",
+  "dir": "1",
+  "oper": 12,
+  "veh": 1511,
+  "tst": "2018-07-03T06:36:32Z",
+  "tsi": 1530599792,
+  "spd": 0.47,
+  "hdg": 246,
+  "lat": 60.214227,
+  "long": 24.885639,
+  "acc": 0.08,
+  "dl": -23,
+  "odo": 15899,
+  "drst": 0,
+  "oday": "2018-07-03",
+  "jrn": 195,
+  "line": 261,
+  "start": "09:03"
+}
+```
+on topic `/hfp/v1/journey/ongoing/bus/0012/01511/`**2550**`/`**1**`/Westendinasema/09:03/1465101/5/60;24/28/18/45`, it is possible to parse:
+* Route id from the topic: *2550*
+* Direction id from the topic: *1*
+* Departure time from the message: *09:03*
+* Departure date from the message: *2018-07-03*
+
+**Note:**
+1. Vehicle position messages use different direction id than the Routing API
+   * Direction id *1* in a vehicle position is same as direction id *0* in the Routing API
+   * Direction id *2* in a vehicle position is same as direction id *1* in the Routing API
+2. Departure time must be in seconds
+   * e.g. *09:03* = `9 * 60 * 60 + 3 * 60` = *32580*
+   * If the date in fields `oday` and `tst` is not the same, add 86400 seconds to departure time
+     * This is due to differences in time formats, when vehicles which have departed after midnight have the previous date as operating day   
+3. Due to a bug in the vehicle position API, some route ids don't match the route id in the routing API
+   * In this case, **fuzzyTrip** query returns `null`
+
+For example, the following query checks if the vehicle, which sent the vehicle position message above, is wheelchair accessible:
+```
+{
+  fuzzyTrip(route: "HSL:2550", direction: 0, date: "2018-07-03", time: 32580) {
+    route {
+      shortName
+    }
+    wheelchairAccessible
+  }
+}
+```
