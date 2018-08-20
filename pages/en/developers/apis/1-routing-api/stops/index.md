@@ -81,29 +81,15 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query all stops where name is like "hertton"
+### Query stops by name or number
+
+* Argument `name` can either be a part of the stop name (e.g. `"hertton"` or `"rautatientori"`) or a stop number (e.g. `"4040"`)
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops(name%3A%20%22hertton%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
   stops(name: "hertton") {
-    id
-    name
-    wheelchairBoarding
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-### Query a stop by number
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops(name%3A%20%224040%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-```
-{
-  stops(name: "4040") {
     id
     name
     wheelchairBoarding
