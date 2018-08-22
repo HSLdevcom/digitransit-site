@@ -6,7 +6,7 @@ title: Glossary
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
-| Feed                   | A source of data in the API, e.g. `HSL` or `OULU`. A feed can contain data from multiple agencies. |
+| Feed                   | Feeds provide routing data (e.g. stops and timetables) from one or more public transport agencies to the API. List of available feeds can be queried by using **[feeds](https://api.digitransit.fi/graphiql/finland?query=%7B%0A%20%20feeds%20%7B%0A%20%20%20%20feedId%0A%20%20%20%20agencies%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)** query. |
 | Agency                 | Some public transport provider, e.g. HSL. |
 | Disruption (Alert)     | A temporary change in public transport. For example, a stop out-of-use or diversion on a route. |
 | Transportation Mode    | A means of transport, for example: walking, cycling, driving a car, bus, train, subway, tram, ferry, taxi, airplane. |
