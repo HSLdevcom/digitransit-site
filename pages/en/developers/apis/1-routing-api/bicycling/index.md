@@ -9,14 +9,12 @@ title: Bicycling
 The Routing API provides a few bicycle related query types:
 
 - Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
-- Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available in Helsinki
-- Query types **bikePark** and **bikeParks** can be used to query  city bike parks that are available in Helsinki
+- Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available
+- Query types **bikePark** and **bikeParks** can be used to query bike parks that are available
 
 **Note:** For more details about these query types you can use the **Documentation Explorer** provided in GraphiQL.
 
 ## City bikes
-
-**Note:** City bikes are currently only available in Helsinki, but Espoo is planning to take them into use during 2018.
 
 **Note:** City bike API data is realtime and it is always up to date.
 
@@ -26,7 +24,7 @@ The Routing API provides a few bicycle related query types:
 
 ## Query examples
 
-**Note:** If the examples provided with an id do not return what is expected then the id in question may not be in use any more and you should try again with an existing id.
+**Note:** If the examples provided with an ID do not return what is expected then the ID in question may not be in use any more and you should try again with an existing ID.
 
 ### All available city bike stations
 
@@ -43,7 +41,7 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### City bike station and its current bike availability details
+### Single city bike station and its current bike availability details
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeRentalStation(id%3A%22070%22)%20%7B%0A%20%20%20%20stationId%0A%20%20%20%20name%0A%20%20%20%20bikesAvailable%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20allowDropoff%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the city bike station and its current bike availability details.
 
@@ -63,9 +61,9 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### All available city bike parks
+### All available bike parks
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeParks%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available city bike parks.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeParks%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available bike parks.
 
 ```
 {
@@ -79,9 +77,9 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### Available city bike park
+### Single bike park
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikePark(id%3A%22906%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the city bike park and its current space availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikePark(id%3A%22906%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
 
 ```
 {
@@ -256,3 +254,34 @@ The Routing API provides a few bicycle related query types:
 ```
 
 2. Press play in GraphiQL to execute the query.
+
+### Plan an itinerary from Jätkäsaari to Ooppera using personal bike and optimizing for safety
+
+* Argument `optimize: SAFE` can be used to set preference for safer routes, i.e. avoid crossing streets and use bike paths when possible
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%2260.15978%2C24.91842%22%0A%20%20%20%20toPlace%3A%20%2260.18204%2C24.92756%22%0A%20%20%09transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%7D%5D%0A%20%20%20%20optimize%3A%20SAFE%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. The returned itinerary should use [Baana bike path](https://en.wikipedia.org/wiki/Helsinki_harbour_rail#Baana).
+
+```
+{
+  plan(
+    fromPlace: "60.15978,24.91842"
+    toPlace: "60.18204,24.92756"
+    transportModes: [{mode: BICYCLE}]
+    optimize: SAFE
+  ) {
+    itineraries {
+      legs {
+        mode
+        duration
+        distance
+        legGeometry {
+          points
+        }
+      }
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
