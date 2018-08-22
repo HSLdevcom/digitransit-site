@@ -10,7 +10,7 @@ title: Glossary
 | Agency                 | Some public transport provider, e.g. HSL. |
 | Disruption (Alert)     | A temporary change in public transport. For example, a stop out-of-use or diversion on a route. |
 | Transportation Mode    | A means of transport, for example: walking, cycling, driving a car, bus, train, subway, tram, ferry, airplane. |
-| City bike              | A shared-use bicycle that can be borrowed for a fee by anyone in central Helsinki. |
+| City bike              | A shared-use bicycle that can be borrowed for a fee by anyone. |
 
 ## <a name="routes"/>Routes
 
