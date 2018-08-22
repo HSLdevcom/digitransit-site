@@ -12,6 +12,8 @@ It is also recommended to try building queries and exploring the schema in [Grap
 
 [Real-time arrival prediction](./3-realtime-arrival-prediction/) page has information about the real-time data available in the API.
 
+[Glossary](./2-glossary/) page has explanations for terms commonly used in the API.
+
 After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [city bikes and bicycling routes](./bicycling/), [disruption info](./disruption-info/) and do [itinerary planning](./itinerary-planning/).
 
 ### Endpoints
