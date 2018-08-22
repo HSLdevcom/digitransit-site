@@ -129,6 +129,29 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
+### Query stations by name
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09stations(name%3A%20%22pasila%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20platformCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```
+{
+  stations(name: "pasila") {
+    gtfsId
+    name
+    lat
+    lon
+    stops {
+      gtfsId
+      name
+      code
+      platformCode
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
 ### Query stops by location and radius
 
 * If the argument `first` is not used in the query, all results will be on one page.
