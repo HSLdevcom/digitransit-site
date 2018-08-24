@@ -11,19 +11,19 @@ title: Stops
 | Route                                 | A public transport service shown to customers under a single name, usually from point A to B and back. For example: trams 1 and 1A, buses 18 and 102T, or train A. Commonly used synonym: line
 | Pattern                               | A sequence of stops as used by a specific direction and variant of a route. For example a tram entering/departing service from/to the depot usually joins at the middle of the route, or a route might have a short term diversion (poikkeusreitti) without changing the route name (longer diversions are usually marked as different routes).
 
-## Notes about stop ids
+## Notes about stop IDs
 
-- Stop ids are in "feedid:stopid" format
-- HSL area feed id is **HSL** 
-- Stop id is available as **gtfsId**
+- Stop IDs are in `FeedId:StopId` format
+- HSL area feed ID is **HSL** 
+- Stop ID is available from field `gtfsId` (note that field `gtfsId` also contains the feed ID)
 
 ## Query examples
 
-**Note:** For more details about the query type **stops** you can use the **Documentation Explorer** provided in GraphiQL.
+**Note:** For more details about the query types related to stops you can use the **Documentation Explorer** provided in GraphiQL.
 
-**Note:** If the examples provided with an id do not return what is expected then the id in question may not be in use any more and you should try again with an existing id.
+**Note:** If the examples provided with an ID do not return what is expected then the ID in question may not be in use any more and you should try again with an existing ID.
 
-### Query all stops, returning their id, name and location
+### Query all stops, returning their ID, name and location
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
@@ -40,7 +40,7 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query stop by id
+### Query stop by ID
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
@@ -55,25 +55,27 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query stop by id and information about routes that go through it
+### Query stop by ID and information about routes that go through it
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
   stop(id: "HSL:1140447") {
+    gtfsId
     name
     lat
     lon
     patterns {
-      id
-      name
+      code
+      directionId
+      headsign
       route {
         gtfsId
         shortName
         longName
+        mode
       }
-      directionId
     }
   }
 }
@@ -81,32 +83,20 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query all stops where name is like "hertton"
+### Query stops by name or number
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops(name%3A%20%22hertton%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+* Argument `name` can either be a part of the stop name (e.g. `"hertton"` or `"rautatientori"`) or a stop number (e.g. `"4040"`)
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops(name%3A%20%22hertton%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20code%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
   stops(name: "hertton") {
-    id
+    gtfsId
     name
-    wheelchairBoarding
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-### Query a stop by number
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops(name%3A%20%224040%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-```
-{
-  stops(name: "4040") {
-    id
-    name
-    wheelchairBoarding
+    code
+    lat
+    lon
   }
 }
 ```
@@ -123,6 +113,29 @@ title: Stops
 ```
 { 
   stations {
+    gtfsId
+    name
+    lat
+    lon
+    stops {
+      gtfsId
+      name
+      code
+      platformCode
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
+### Query stations by name
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09stations(name%3A%20%22pasila%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20platformCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```
+{
+  stations(name: "pasila") {
     gtfsId
     name
     lat
@@ -164,7 +177,7 @@ title: Stops
 
 2. Press play in GraphiQL to execute the query.
 
-### Query scheduled departure and arrival times of a stop by id 
+### Query scheduled departure and arrival times of a stop
 
 * Value `serviceDay` in the response is Unix timestamp (local timezone) of the departure date
 * Values `scheduledArrival`, `realtimeArrival`, `scheduledDeparture` and `realtimeDeparture` in the response are seconds since midnight of the departure date
@@ -249,6 +262,50 @@ title: Stops
         }
       }
       headsign
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
+### Query departures near a specific location
+
+* Query type **nearest** can be used to query departure rows near a specific location
+* Departure row is a special location type, which lists departures of a certain route pattern from a certain stop
+* Querying nearest departure rows returns only one stop per pattern
+  * i.e. if there are multiple stops that a certain pattern uses, only the closest stop is returned
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09nearest(lat%3A%2060.19915%2C%20lon%3A%2024.94089%2C%20maxDistance%3A%20500%2C%20filterByPlaceTypes%3A%20DEPARTURE_ROW)%20%7B%0A%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20place%20%7B%0A%20%20%20%20%20%20%20%20%20%20...on%20DepartureRow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20stoptimes%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20headsign%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%09distance%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%09) to run the query below in GraphiQL.
+
+```
+{
+  nearest(lat: 60.19915, lon: 24.94089, maxDistance: 500, filterByPlaceTypes: DEPARTURE_ROW) {
+    edges {
+      node {
+        place {
+          ...on DepartureRow {
+            stop {
+              lat
+              lon
+              name
+            }
+            stoptimes {
+              serviceDay
+              scheduledDeparture
+              realtimeDeparture
+              trip {
+                route {
+                  shortName
+                  longName
+                }
+              }
+              headsign
+            }
+          }
+        }
+        distance
+      }
     }
   }
 }
