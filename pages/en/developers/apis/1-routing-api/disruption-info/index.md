@@ -110,7 +110,7 @@ Example response:
 
 ### Query disruptions from specific feeds
 
-* Arguments `feeds` can be used to query alerts only from specific feeds
+* Argument `feeds` can be used to query alerts only from specific feeds
   * List of available feeds can be queried using **feeds** query
   * For example, *HSL* feed contains data from HSL area
 
