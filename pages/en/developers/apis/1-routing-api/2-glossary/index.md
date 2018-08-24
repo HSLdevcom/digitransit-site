@@ -28,7 +28,7 @@ title: Glossary
 | Station                | A location, which contains stops.<br/>For example, a train station is a station and its platforms are stops. | 
 | Stop                   | A public transport stop, from which passengers can board vehicles. |
 | Cluster                | A list of stops, grouped by name and proximity. |
-| Stoptime               | Arrival or departure time at a stop. |
+| Stoptime               | Stoptime is the time when a specific trip arrives to or departs from a specific stop. |
 | Departure row          | A special location type, which lists departures of a certain pattern from a stop. Departures rows are identified with pattern id, so querying departure rows will return departures only from one stop per pattern. |
 
 ## <a name="itinerary-planning"/>Itinerary planning
