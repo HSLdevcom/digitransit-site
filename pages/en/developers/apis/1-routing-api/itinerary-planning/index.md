@@ -23,7 +23,7 @@ You can ask the server to return geometries for itineraries. The API will return
 }
 ```
 
-You can use [this tool](https://polyline-mapper--digitransit.repl.co/) to see what the polyline looks on a map.
+You can use [this tool](https://repl.it/@digitransit/Polyline-Mapper) to see what the polyline looks on a map.
 
 See the following examples on how to decode and use polylines:
 * [Node.js app](https://repl.it/@digitransit/PolylineDecode), which prints a list of coordinates in an itinerary
