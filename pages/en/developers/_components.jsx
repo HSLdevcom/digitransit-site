@@ -127,7 +127,7 @@ const getReplitEmbed = (props) => {
               <div>
                 <h3>{ example }</h3>
                 <p dangerouslySetInnerHTML={{__html: props.replit[example].description }} />
-                <iframe height={props.replit[example].height} width="100%" src={props.replit[example].url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                <iframe height={props.replit[example].height} width="100%" src={props.replit[example].url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">Failed to load {props.replit[example].url}</iframe>
               </div>
             );
   };
