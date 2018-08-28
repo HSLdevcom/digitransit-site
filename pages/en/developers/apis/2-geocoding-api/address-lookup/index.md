@@ -4,7 +4,7 @@ replit:
   "Address lookup":
     url: https://repl.it/@digitransit/GeocodingAddressLookup
     height: 880px
-    description: Click the marker to see the address in its location
+    description: Press run to to display a map with a marker.<br/>Click the marker to see the address in its location.
 ---
 
 Address lookup, otherwise known as reverse geocoding, is used for finding places/addresses for given coordinates. The **features** property of the results returned is where you will find the list of results that matched the best with your input parameters.
