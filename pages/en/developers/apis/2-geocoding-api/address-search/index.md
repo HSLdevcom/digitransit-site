@@ -4,7 +4,7 @@ replit:
   "Address search":
     url: https://repl.it/@digitransit/GeocodingAddressSearch
     height: 800px
-    description: Write an address and press Enter to see the list of locations returned by the API on the map
+    description: 1. Press run<br/>2. Write an address and press Enter to see the list of locations returned by the API on the map
 ---
 
 Address search can be used to search addresses and points of interest (POIs).  An address is matched to its corresponding geographic coordinates and in the simplest search, you can provide only one parameter, the text you want to match in any part of the location details.
