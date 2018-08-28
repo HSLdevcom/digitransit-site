@@ -70,7 +70,7 @@ It is possible to plan an itinerary which starts on board a vehicle by using arg
 
 [High-frequency positioning API](../../4-realtime-api/vehicle-positions/) can be used to listen for vehicle position messages near the user and after the vehicle the user is on board of has been determined, query type **[fuzzyTrip](../routes/#fuzzytrip)** in the GraphQL API can be used to get a trip ID for the vehicle.
 
-Here is an example query which plans an itinerary from Pasila to Itäkeskus, assuming that the user is already on board [bus 551](https://www.reittiopas.fi/linjat/HSL:2551/pysakit/HSL:2551:1:02), which departed from Tapiola at 15:37 PM on 16th August 2018.
+Here is an example query which plans an itinerary from Pasila to Itäkeskus, assuming that the user is already on board [bus 551](https://www.reittiopas.fi/linjat/HSL:2551/pysakit/HSL:2551:1:02), which departed from Tapionaukio at 15:37 PM on 16th August 2018.
 <br/>**Note:** values for arguments `from` and `time` should be set based on the vehicle position message received from the HFP API, as argument `startTransitTripId` only takes into account the route and the estimated travel time of the trip and *not* the real-time position of the vehicle.
 
 ```
