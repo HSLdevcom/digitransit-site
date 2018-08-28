@@ -2,7 +2,7 @@
 title: Advanced examples
 ---
 
-This page contains more advanced examples on how to utilize the GraphQL API.
+This page contains few examples on how to utilize the GraphQL API in more specific scenarios. Try exploring the schema in [GraphiQL](../1-graphiql/) for more ideas on what can be done with the API.
 
 ### Plan an itinerary with alternative routes for each leg
 
