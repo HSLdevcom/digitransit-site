@@ -5,13 +5,14 @@ ENV WORK=/opt/digitransit-site
 
 WORKDIR ${WORK}
 
+RUN npm install -g gatsby@0.7.7 && \
+  npm install -g serve@1.4.0
+
 # Add application
 RUN mkdir -p ${WORK}
 ADD . ${WORK}
 
-RUN npm install -g gatsby@0.7.7 && \
-  npm install -g serve@1.4.0 && \
-  npm install && \
+RUN npm install && \
   gatsby build
 
 EXPOSE 8080

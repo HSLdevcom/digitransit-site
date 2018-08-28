@@ -14,7 +14,7 @@ title: FAQ
 
 ### How do I query multiple items with a single request?
 
-> If the query type takes a list as a argument, create a list of ids to request data for and use it as the argument. For example, the query below can be used to query data for two stops.
+>If the query type takes only one argument, [GraphQL batching](../1-routing-api/0-graphql/#batching) can be used to fetch multiple items. <br/><br/> If the query type takes a list as a argument, create a list of ids to request data for and use it as the argument. For example, the query below can be used to query data for two stops.
 ```
 {
   stops(ids: ["HSL:1173429","HSL:1291501"]) {

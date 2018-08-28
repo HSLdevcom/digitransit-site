@@ -10,7 +10,9 @@ If you are not familiar with GraphQL, start by reading the [GraphQL](./0-graphql
 
 It is also recommended to try building queries and exploring the schema in [GraphiQL](./1-graphiql/). 
 
-[Real-time arrival prediction](./2-realtime-arrival-prediction/) page has information about the real-time data available in the API.
+[Real-time arrival prediction](./3-realtime-arrival-prediction/) page has information about the real-time data available in the API.
+
+[Glossary](./2-glossary/) page has explanations for terms commonly used in the API.
 
 After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [city bikes and bicycling routes](./bicycling/), [disruption info](./disruption-info/) and do [itinerary planning](./itinerary-planning/).
 
@@ -43,9 +45,3 @@ When sending queries, there are some things you should be aware of:
 | GraphQL                               | A query language for APIs and a runtime for fulfilling those queries with your existing data.
 | GraphiQL                              | A simple UI for making GraphQL queries. You can use it both to run queries and to explore the GraphQL schema.
 | Realtime arrival prediction           | API queries can return real-time data for some vehicles. We know the vehicle's planned route and its current location. This information is used to predict when it actually arrives.
-| Route                                 | A public transport service shown to customers under a single name, usually from point A to B and back.
-| Stop                                  | A public transport stop.
-| City bike                             | A shared-use bicycle that can be borrowed for a fee by anyone in central Helsinki. 
-| Bicycling route                       | Route from place A to place B using city bike rental. 
-| Disruption info                       | Information about current and upcoming disruptions in public transport.
-| Itinerary planning                    | Planning an itinerary from place A to place B using different modes (eg. BUS, TRAM, RAIL, FERRY, WALK)
