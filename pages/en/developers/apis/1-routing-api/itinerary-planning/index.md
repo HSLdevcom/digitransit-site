@@ -51,7 +51,7 @@ You can copy paste this into a tool that [plots points on map](http://www.darrin
 **Note:** For more details about the query type **plan** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
 
 Itinerary planning can be tuned by multiple arguments of the **plan** query.
-* Time arguments (e.g. `minTransferTime`) are taken into account literally when planning the itinerary
+* Time arguments (e.g. `minTransferTime`, `bikeSwitchTime`) are taken into account literally when planning the itinerary
   * For example, if `minTransferTime` is set to 2 minutes, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
 * Cost arguments (e.g. `walkBoardCost`) on the other hand are not hard limits, but preferences 
   * For example, if `walkBoardCost` is set to 2 minutes, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
