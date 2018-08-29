@@ -12,4 +12,6 @@ Real-time estimates are enabled by default when making itinerary planning reques
 
 Real-time estimates for itinerary planning can be turned off by using argument `ignoreRealtimeUpdates` of **plan** query. Setting this to true will only return times based on static timetables.
 
+For stop timetables and route timetables, real-time estimates are available from fields `realtimeArrival` and `realtimeDeparture`. Note that these fields will have the static arrival / departure time by default and field `realtime` indicates whether the values of those fields have been updated from a real-time source.
+
 **Note:** Real-time information is not completely bullet proof yet. The quality and availability of the real-time data that Digitransit uses varies heavily at the moment.
