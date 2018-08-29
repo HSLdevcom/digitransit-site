@@ -56,7 +56,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 * Cost arguments (e.g. `walkBoardCost`) on the other hand are not hard limits, but preferences 
   * For example, if `walkBoardCost` is set to 2 minutes, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
   * Cost is not included in the returned duration of an itinerary
-* Weight arguments (e.g. `walkReluctance`) are used to multiply costs of an leg
+* Multiplier arguments (e.g. `walkReluctance`, `modeWeight`) are used to multiply costs of an leg
   * For example, if `walkReluctance` is set to 3.0, the cost of each walking section will be multiplied by 3
 
 ### Plan an itinerary from location (60.168992,24.932366) to (60.175294,24.684855)
