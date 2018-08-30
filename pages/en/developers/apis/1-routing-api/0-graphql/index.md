@@ -290,8 +290,8 @@ An example response:
 In most cases, a GraphQL client should be used instead of plain HTTP requests, as GraphQL clients have many useful features (such as caching, batching and validating queries), which would otherwise have to be implemented manually.
 
 Two commonly used GraphQL clients are
-* [Relay](http://facebook.github.io/relay/en/) by Facebook
-* [Apollo](https://www.apollographql.com/client)
+* [Relay](http://facebook.github.io/relay/en/) by Facebook, supports React
+* [Apollo](https://www.apollographql.com/client), supports multiple development platforms, including Android and iOS
 
 ## Further reading
 
