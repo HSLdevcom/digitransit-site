@@ -6,7 +6,7 @@ import chroma from 'chroma-js';
 import { link } from 'gatsby-helpers';
 
 import typography from 'utils/typography';
-import { FrontPageHeader, FrontPagePanels, FrontPageNews } from './_components';
+import { FrontPageHeader, FrontPagePanels } from './_components';
 
 const { rhythm, fontSizeToPx } = typography;
 
@@ -147,7 +147,6 @@ module.exports = React.createClass({
         >
           <RouteHandler typography={typography} {...this.props}/>
         </Container>
-        {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPageNews title={i18n.news} locale={locale} {...this.props}/> : null}
         {this.props.page.data.isFront || this.props.page.path == `${urlPrefix}/`  ? <FrontPagePanels {...this.props}/> : null}
         <div
           style={prefixer({
