@@ -4,7 +4,7 @@ import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid';
 import Typography from 'typography';
 import sortBy from 'lodash/collection/sortBy';
 import { templateChildrenPages } from 'gatsby-helpers';
-import { DockerInfo, TechnologiesInfo, Assets, ArchitectureHeader } from './_components';
+import { DockerInfo, TechnologiesInfo, Assets, ArchitectureHeader, ReplitEmbed } from './_components';
 
 var typography = new Typography();
 var rhythm = typography.rhythm, fontSizeToMS = typography.fontSizeToMS;
@@ -97,6 +97,7 @@ module.exports = React.createClass({
               <Assets {...this.props.page.data}/>
               <TechnologiesInfo {...this.props.page.data}/>
               <DockerInfo {...this.props.page.data}/>
+              <ReplitEmbed {...this.props.page.data}/>
             </div>
           </div>
         </Breakpoint>

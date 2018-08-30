@@ -1,5 +1,14 @@
 ---
 title: GraphQL
+replit:
+  title: "Examples"
+  note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
+  "Content-Type: application/graphql":
+    url: https://repl.it/@digitransit/StopRequestGraphQL1
+    height: 750px
+  "Content-Type: application/json":
+    url: https://repl.it/@digitransit/StopRequestGraphQL2
+    height: 750px
 ---
 
 ## What is GraphQL?
@@ -280,74 +289,3 @@ An example response:
 * The [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL
 * [How Facebook sees GraphQL](https://facebook.github.io/relay/docs/thinking-in-graphql.html)
 
-## cURL examples
-
-The examples below send a GraphQL query using HTTP POST to `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`. This example query asks the server to find a stop with the ID "HSL:1040129" and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.
-
-You can download cURL here:
-> https://curl.haxx.se/
-
-**1. Linux & OSX**
-
-Using Content-Type **application/graphql**:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H "Content-Type: application/graphql" \
--d @- << DATA
-{
-  stop(id: "HSL:1040129") {
-    name
-    lat
-    lon
-    wheelchairBoarding
-  }  
-}
-DATA
-```
-
-Using Content-Type **application/json**:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql \
--H "Content-Type: application/json" \
--d @- << DATA
-{
-  "query": "{
-    stop(id: \"HSL:1040129\") {
-      name
-      lat
-      lon
-      wheelchairBoarding
-    }
-  }"
-}
-DATA
-```
-
-Descriptions for cURL parameters:
-- -H 'Content-Type: application/json' defines correct Content-Type header
-- -d @- tells cURL to read post data from STDIN
-- << DATA defines a [*here document* code block](http://www.tldp.org/LDP/abs/html/here-docs.html)
-
-**2. Windows**
-
-If you are a Windows user, you can use the **application/graphql** approach like so:
-```
-curl https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql -H "Content-Type: application/graphql" --data "{stop(id: \"HSL:1173210\") {name, lat, lon, wheelchairBoarding}}"
-```
-**Note:**  If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id.
-
-**Differences between application/json and application/graphql approaches**
-
-You might notice that in both cases we are working with "json-ish" data.
-With **application/json** you are sending a valid json:
-```
-{
-  "query": "{...}"
-}
-```
-
-However, with the **application/graphql** Content-Type, data is sent as GraphQL which is "json-ish". This means that you only have to write the query.
-
-```
-{...}
-```

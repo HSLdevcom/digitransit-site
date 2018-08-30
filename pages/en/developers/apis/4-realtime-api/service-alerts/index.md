@@ -1,5 +1,9 @@
 ---
 title: Service alerts
+replit:
+  "Show currently active alerts":
+    url: https://repl.it/@digitransit/RealtimeServiceAlerts
+    height: 700px
 ---
 
 The HSL Alerts API can be used to query real-time updates from the HSL fleet in [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) format.
@@ -15,30 +19,7 @@ The API provides [service alerts](https://developers.google.com/transit/gtfs-rea
 | debug     | query parameter | Print data in human readable format (for debug purposes) |  
 
 ## Examples
-
+* More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
+ 
 ### Show currently active alerts with curl
 > curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
-
-
-### Retrieve and print currently active alerts with node.js app
-``` javascript
-var GtfsRealtimeBindings = require('gtfs-realtime-bindings');
-var request = require('request');
-
-var req = {
-  url: 'http://api.digitransit.fi/realtime/service-alerts/v1/',
-  encoding: null
-};
-
-request(req, function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    var feed = GtfsRealtimeBindings.FeedMessage.decode(body);
-    feed.entity.forEach(function(entity) {
-      if (entity.alert) {
-        console.log(JSON.stringify(entity.alert,null,2));
-      }
-    });
-  }
-```
-
-More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).

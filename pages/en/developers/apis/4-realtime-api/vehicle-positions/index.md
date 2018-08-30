@@ -3,6 +3,11 @@ title: High-frequency positioning (HFP)
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/vehicle-positions/architecture.xml
+replit:
+  "MQTT.js":
+    description: The example below uses MQTT.js library to listen to updates from all vehicles currently on route. See command line examples for other possible topics to try.
+    url: https://repl.it/@digitransit/VehiclePositionsMQTT 
+    height: 800px
 ---
 
 Most of the vehicles in the HSL area should publish their status, including their position, once per second.
@@ -154,8 +159,9 @@ By combining wildcards with several topic filters in one MQTT `SUBSCRIBE` packet
 As the MQTT broker handles the resolving of the topic filters, handling messages for complicated subscriptions does not have inherent overhead in the client compared to simple subscriptions.
 Go hog wild.
 
+### Command line
+
 Below are sample subscriptions utilizing the MQTT.js command-line tools.
-Using the corresponding library is not much harder.
 
 #### A situational overview
 

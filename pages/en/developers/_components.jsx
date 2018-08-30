@@ -113,9 +113,51 @@ const getArchitectureHeader = (props) => {
   );
 }
 
+const getReplitEmbed = (props) => {
+  if (typeof props.replit == "undefined") {
+    return (<span></span>);
+  }
+
+  const getEmbed = (example) => {
+     if (props.replit[example].height == null || props.replit[example].url == null) {
+       return null;
+     }
+
+     return (
+              <div>
+                <h3>{ example }</h3>
+                <p dangerouslySetInnerHTML={{__html: props.replit[example].description }} />
+                <iframe height={props.replit[example].height} width="100%" src={props.replit[example].url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+              </div>
+            );
+  };
+
+  let note = null;
+  if (props.replit.note) {
+    note = <div dangerouslySetInnerHTML={{__html: props.replit.note }} />;
+    delete props.replit.note; 
+  }
+
+  let title = "Test the API";
+  if (props.replit.title) {
+    title = props.replit.title;
+    delete props.replit.title;
+  }
+
+  const list = Object.keys(props.replit).map(getEmbed);  
+
+  return (
+	<div>
+	  <h2>{ title }</h2>
+          { note }
+          { list }
+	</div>);
+}
+
 module.exports = {
   "DockerInfo": getDockerInfo,
   "TechnologiesInfo": getTechnologiesInfo,
   "Assets": getAssets,
-  "ArchitectureHeader": getArchitectureHeader
+  "ArchitectureHeader": getArchitectureHeader,
+  "ReplitEmbed": getReplitEmbed
 }
