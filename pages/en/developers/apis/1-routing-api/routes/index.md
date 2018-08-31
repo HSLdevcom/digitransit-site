@@ -20,38 +20,33 @@ title: Routes
 
 ### Query all bus routes where number is like "58*"
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2258%22%2C%20modes%3A%20%22BUS%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%7D%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20desc%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2258%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL.
 
 ```
 {
-  routes(name: "58", modes: "BUS") {
-    id
-    agency {
-      id
-    }
+  routes(name: "58", transportModes: BUS) {
+    gtfsId
     shortName
     longName
-    desc
+    mode
   }
 }
+
 ```
 
 2. Press play in GraphiQL to execute the query.
 
 ### Query all tram routes where number is like "1*"
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%221%22%2C%20modes%3A%20%22TRAM%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%7D%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20desc%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%221%22%2C%20transportModes%3A%20TRAM)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```
 {
-  routes(name: "1", modes: "TRAM") {
-    id
-    agency {
-      id
-    }
+  routes(name: "1", transportModes: TRAM) {
+    gtfsId
     shortName
     longName
-    desc
+    mode
   }
 }
 ```
@@ -60,16 +55,16 @@ title: Routes
 
 ### Query patterns of a route
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2259%22%2C%20modes%3A%20%22BUS%22)%20%7B%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2259%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 ```
 {
-  routes(name: "59", modes: "BUS") {
+  routes(name: "59", transportModes: BUS) {
     shortName
     longName
     patterns {
+      code
       directionId
       name
-      code
       headsign
     }
   }
