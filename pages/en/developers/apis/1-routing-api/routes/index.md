@@ -81,19 +81,19 @@ Example response:
     "routes": [
       {
         "shortName": "59",
-        "longName": "Herttoniemi(M)-Pasila-Pajamäki",
+        "longName": "Sompasaari-Kalasatama(M)-Pasila-Pajamäki",
         "patterns": [
           {
+            "code": "HSL:1059:0:01",
             "directionId": 0,
             "name": "59 to Pajamäki (HSL:1461110)",
-            "code": "HSL:1059:0:01",
             "headsign": "Pajamäki"
           },
           {
-            "directionId": 1,
-            "name": "59 to Herttoniemi (M) (HSL:1431104)",
             "code": "HSL:1059:1:01",
-            "headsign": "Herttoniemi(M)"
+            "directionId": 1,
+            "name": "59 to Polariksenkatu (HSL:1100128)",
+            "headsign": "Sompasaari"
           }
         ]
       }
