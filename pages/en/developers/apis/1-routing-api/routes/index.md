@@ -141,6 +141,29 @@ Example response:
 
 2. Press play in GraphiQL to execute the query.
 
+### Query trips of a specific pattern
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20code%0A%20%20%20%20directionId%0A%20%20%20%20name%0A%20%20%20%20headsign%0A%20%20%20%20trips%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```
+{
+  pattern(id: "HSL:1059:0:01") {
+    code
+    directionId
+    name
+    headsign
+    trips {
+      gtfsId
+      tripHeadsign
+      routeShortName
+      directionId
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
 ### <a name="fuzzytrip"></a>Query a trip without its id
 
 * Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available 
