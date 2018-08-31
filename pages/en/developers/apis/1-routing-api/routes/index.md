@@ -102,10 +102,10 @@ Example response:
 }
 ```
 
-### Query stop names by pattern id
+### Query stop names by pattern ID
 
-* See previous example on how to find pattern ids for a route
-  * Pattern id is value of ```code``` in the pattern object
+* See previous example on how to find pattern IDs for a route
+  * Pattern ID is value of `code` in a pattern object
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
 
