@@ -63,15 +63,14 @@ The Routing API provides a few bicycle related query types:
 
 ### All available bike parks
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeParks%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available bike parks.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20bikeParks%20%7B%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available bike parks.
 
 ```
 {
-  bikeParks{
-    id
+  bikeParks {
     bikeParkId
     name
-   }
+  }
 }
 ```
 
@@ -79,12 +78,11 @@ The Routing API provides a few bicycle related query types:
 
 ### Single bike park
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikePark(id%3A%22906%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20bikePark(id%3A%20%22906%22)%20%7B%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
 
 ```
 {
-  bikePark(id:"906") {
-    id
+  bikePark(id: "906") {
     bikeParkId
     name
     spacesAvailable
@@ -92,7 +90,6 @@ The Routing API provides a few bicycle related query types:
     lon
   }
 }
-
 ```
 
 2. Press play in GraphiQL to execute the query.
