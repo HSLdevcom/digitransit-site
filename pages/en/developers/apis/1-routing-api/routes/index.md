@@ -18,6 +18,23 @@ title: Routes
 
 **Note:** If the examples provided with an id or other parameter do not return what is expected then the value in question may not be in use any more and you should try again with an existing value.
 
+### Query all routes where name starts with "10"
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2210%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```
+{
+  routes(name: "10") {
+    gtfsId
+    shortName
+    longName
+    mode
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
 ### Query all bus routes where number is like "58*"
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2258%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL.
