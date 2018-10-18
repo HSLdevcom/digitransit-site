@@ -14,6 +14,21 @@ Most of the vehicles in the HSL area should publish their status, including thei
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
 The subscription scope is specified by the MQTT topic structure of the API.
 
+## Quickstart
+
+Try this example to get an quick idea of what kind of data is available from the API:
+1. Install [MQTT.js](https://github.com/mqttjs/MQTT.js) command line tools:  
+```
+npm install -g mqtt
+```
+2. Use MQTT.js to subscribe to HFP messages:  
+```
+mqtt subscribe -h mqtt.hsl.fi -p 443 -l mqtts -v -t "/hfp/v1/journey/#"
+```  
+
+
+(or try [this example](https://repl.it/@digitransit/VehiclePositionsMQTTrawJSON) if you don't want to install anything)
+
 ## API endpoints
 
 | URL                        | Description                                                                                                           |
@@ -140,18 +155,6 @@ The numerical values for the different transit operators are listed below:
 
 ## <a name="examples"></a>Examples
 
-### Quickstart
-
-1. Install an MQTT command line client, e.g. [MQTT.js](https://github.com/mqttjs/MQTT.js) or [mosquitto](https://mosquitto.org/) (and its client tools)
-1. Try with MQTT.js:
-```
-mqtt subcribe --hostname mqtt.hsl.fi --protocol mqtts --port 443 --verbose --topic "/hfp/v1/journey/#"
-```
-or with mosquitto e.g.:
-```
-mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"
-```
-
 ### Topics
 
 The HFP topic format forms a tree.
@@ -161,7 +164,16 @@ Go hog wild.
 
 ### Command line
 
-Below are sample subscriptions utilizing the MQTT.js command-line tools.
+Below are sample subscriptions utilizing [MQTT.js](https://github.com/mqttjs/MQTT.js) command line tools.  
+MQTT.js command line tools can be installed with:  
+```
+npm install -g mqtt
+```
+
+If you insist on using [mosquitto](https://mosquitto.org/), try this for TLS access:  
+```
+mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"
+```
 
 #### A situational overview
 
