@@ -170,6 +170,7 @@ MQTT.js command line tools can be installed with:
 npm install -g mqtt
 ```
 
+If you insist on using mosquitto, try this for TLS access: `mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"`
 #### A situational overview
 
 To get just the most significant status updates, use:
