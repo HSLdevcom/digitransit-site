@@ -16,8 +16,7 @@ The subscription scope is specified by the MQTT topic structure of the API.
 
 ## Quickstart
 
-Try this example to get an quick idea of what kind of data is available from the API.
-
+Try this example to get an quick idea of what kind of data is available from the API:
 1. Install [MQTT.js](https://github.com/mqttjs/MQTT.js) command line tools:  
 ```
 npm install -g mqtt
@@ -25,7 +24,10 @@ npm install -g mqtt
 2. Use MQTT.js to subscribe to HFP messages:  
 ```
 mqtt subscribe -h mqtt.hsl.fi -p 443 -l mqtts -v -t "/hfp/v1/journey/#"
-```
+```  
+
+
+(or try [this example](https://repl.it/@digitransit/VehiclePositionsMQTTrawJSON) if you don't want to install anything)
 
 ## API endpoints
 
