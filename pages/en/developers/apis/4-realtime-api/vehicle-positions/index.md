@@ -14,6 +14,19 @@ Most of the vehicles in the HSL area should publish their status, including thei
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
 The subscription scope is specified by the MQTT topic structure of the API.
 
+## Quickstart
+
+Try this example to get an quick idea of what kind of data is available from the API.
+
+1. Install [MQTT.js](https://github.com/mqttjs/MQTT.js) command line tools:  
+```
+npm install -g mqtt
+```
+2. Use MQTT.js to subscribe to HFP messages:  
+```
+mqtt subcribe -h mqtt.hsl.fi -v -t "/hfp/v1/journey/#"
+```
+
 ## API endpoints
 
 | URL                        | Description                                                                                                           |
