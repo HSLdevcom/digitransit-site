@@ -24,7 +24,7 @@ npm install -g mqtt
 ```
 2. Use MQTT.js to subscribe to HFP messages:  
 ```
-mqtt subscribe -h mqtt.hsl.fi -v -t "/hfp/v1/journey/#"
+mqtt subscribe -h mqtt.hsl.fi -p 443 -l mqtts -v -t "/hfp/v1/journey/#"
 ```
 
 ## API endpoints
