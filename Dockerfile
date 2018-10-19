@@ -1,4 +1,4 @@
-FROM node:5.1
+FROM node:8
 MAINTAINER Reittiopas version: 0.1
 
 ENV WORK=/opt/digitransit-site
