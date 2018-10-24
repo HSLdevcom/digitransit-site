@@ -1,7 +1,6 @@
 ---
 title: Digitransit-ui
 description:
-  img: demo.gif
   info: Digitransit-ui is a mobile friendly User interface built to work with Digitransit APIs.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/services/5-digitransit-ui/architecture.xml
 assets:
@@ -12,11 +11,10 @@ technologies:
   "React": "https://facebook.github.io/react/"
   "Leaflet": "http://leafletjs.com/"
   "Relay": "https://facebook.github.io/relay/"
-  "CoffeeScript": "http://coffeescript.org/"
 docker:
   dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
   imageName: hsldevcom/digitransit-ui
-  buildScript: https://github.com/HSLdevcom/digitransit-ui/blob/master/build-docker-image.sh
+  buildScript: https://github.com/HSLdevcom/digitransit-ui/blob/master/test/deploy.sh
   runContainer: docker run -p 8080:8080 -e CONFIG=hsl -e API_URL=http://api.digitransit.fi --name ui hsldevcom/digitransit-ui
   accessContainer: http://localhost:8080/
 ---
@@ -72,17 +70,13 @@ Tests run automatically in Browserstack:
 | Webpack            | https://github.com/webpack/webpack
 | Nightwatch         | https://github.com/nightwatchjs/nightwatch
 
-2. From time to time check all package.json dependencies<br/>
-   https://gemnasium.com/HSLdevcom/digitransit-ui
-
-3. Follow GraphQL specification<br/>
+2. Follow GraphQL specification<br/>
    https://facebook.github.io/graphql
 
-4. From time to time check HSL style guide<br/>
+3. From time to time check HSL style guide<br/>
    https://www.hsl.fi/tyyliopas
 
-5. Follow EcmaScript, Coffeescript, and browser development<br/>
-   http://coffeescript.org/<br/>
+4. Follow EcmaScript, and browser development<br/>
    https://esdiscuss.org/<br/>
    https://discuss.babeljs.io/<br/>
    http://www.ecma-international.org/news/index.html<br/>
