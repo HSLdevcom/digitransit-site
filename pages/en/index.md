@@ -5,9 +5,9 @@ panels:
   - title: For users
     body: You are the focus, always. The next generation journey planner pinpoints your location and shows nearby routes, stops and timetables, in real time! Real time means that you will see the location of buses and trains, as well as the accurate times of arrival at the stops. No more time wasted waiting. The service filters unnecessary information and tells what is going on around you and how to get to your destination more conveniently. In the future, the real time service will cover the whole country.
     links:
-      - title: Go to the HSL area Reittiopas.fi service
-        url: http://www.reittiopas.fi/
-      - title: Go to the national Matka.fi service
+      - title: Go to the HSL area reittiopas.hsl.fi service
+        url: http://reittiopas.hsl.fi/
+      - title: Go to the national opas.matka.fi service
         url: http://opas.matka.fi/
     image: "/users.svg"
     id: users
@@ -34,15 +34,15 @@ panels:
     background: "#64be47"
     swapped: true
 ---
-<h2 style="text-align: center;">Reittiopas.fi and Matka.fi are now on-line</h2>
+<h2 style="text-align: center;">Reittiopas.hsl.fi and opas.matka.fi are now online</h2>
 <div style="text-align: center;">
 
 The Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are online since February 2017.<br />
 We still need your help! Become a test user or contribute patches.<br />
 The code is open-source.
 
-<span class="large-link">[Reittiopas »](http://www.reittiopas.fi)</span>
-<span class="large-link">[Matka.fi »](http://opas.matka.fi)</span>
+<span class="large-link">[Reittiopas »](https://reittiopas.hsl.fi)</span>
+<span class="large-link">[Opas.matka.fi »](https://opas.matka.fi)</span>
 
 </div>
 

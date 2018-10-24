@@ -5,10 +5,10 @@ panels:
   - title: Käyttäjille
     body: Sinä olet keskipisteessä aina. Uuden ajan matkaopas paikantaa sijaintisi ja kertoo lähimmät linjat, pysäkit ja reitit täysin reaaliaikaisesti. Reaaliaikaisesti tarkoittaa, että näet bussin tai junan sijainnin ja pysäkkiaikataulut totuudenmukaisina. Turha odottelu on historiaa. Palvelu suodattaa tarpeettoman tiedon ja kertoo, mitä ympärilläsi tapahtuu ja miten pääset sujuvimmin perille. Tulevaisuudessa reaaliaikainen palvelu kattaa koko maan.
     links:
-      - title: Tutustu HSL:n Reittiopas.fi-palveluun
-        url: http://www.reittiopas.fi/
-      - title: Tutustu Liikenneviraston Matka.fi-palveluun
-        url: http://opas.matka.fi/
+      - title: Tutustu HSL:n reittiopas.hsl.fi-palveluun
+        url: https://reittiopas.hsl.fi/
+      - title: Tutustu Liikenneviraston opas.matka.fi-palveluun
+        url: https://opas.matka.fi/
     image: "/users.svg"
     id: users
     background: "#8c54a2"
@@ -41,8 +41,8 @@ HSL:n Reittiopas.&zwnj;fi ja Liikenneviraston Matka.&zwnj;fi ovat uudistuneet.<b
 Apuasi kaivataan yhä jatkuvassa kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi.<br/>
 Lähdekoodi on avoin.
 
-<span class="large-link">[Reittiopas »](http://www.reittiopas.fi)</span>
-<span class="large-link">[Matka.fi »](http://opas.matka.fi)</span>
+<span class="large-link">[Reittiopas »](https://reittiopas.hsl.fi)</span>
+<span class="large-link">[Opas.matka.fi »](https://opas.matka.fi)</span>
 
 <h3>Kehityssuunnitelma</h3>
 <span class="large-link">[Katso Roadmap tulevista ominaisuuksista »](/roadmap/)</span>
