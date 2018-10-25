@@ -56,10 +56,10 @@ For example, the HSL routing data consists of the following files:
   Elevation data file for the HSL regigon (used by OTP, not mandatory).
 
 9. `connected.csv`
-  List of stops included in the graph (for debugging purposes).
+  List of stops that could be linked based on OSM data (for debugging purposes).
 
 10. `unconnected.csv`
-  List of stops that are not included in the graph (for debugging purposes).
+  List of stops that could not be linked based on OSM data but they still do exist in the graph (for debugging purposes).
 
 [See how Routing API utilizes these zip files](../../../apis/1-routing-api/)
 
