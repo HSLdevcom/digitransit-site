@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/HSLdevcom/digitransit-site.svg?branch=master)](https://travis-ci.org/HSLdevcom/digitransit-site)
+
 # digitransit-site
 
 Digitransit marketing site built using [Gatsby][Gatsby] static site generator.
