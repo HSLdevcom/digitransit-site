@@ -21,5 +21,5 @@ Our issue tracking and roadmap is handled in [https://digitransit.atlassian.net]
 * Configurable for any region
 
 ## In production
-* [Finland - Helsinki region](http://www.reittiopas.fi/)
+* [Finland - Helsinki region](http://reittiopas.hsl.fi/)
 * [Finland - National Route Planner](http://opas.matka.fi/)

@@ -52,6 +52,15 @@ For example, the HSL routing data consists of the following files:
 7. `version.txt`
   A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
 
+8. `hsl.tif`
+  Elevation data file for the HSL regigon (used by OTP, not mandatory).
+
+9. `connected.csv`
+  List of stops that could be linked based on OSM data (for debugging purposes).
+
+10. `unconnected.csv`
+  List of stops that could not be linked based on OSM data but they still do exist in the graph (for debugging purposes).
+
 [See how Routing API utilizes these zip files](../../../apis/1-routing-api/)
 
 ## Note to users of Finland routing data
@@ -69,8 +78,9 @@ e-mail: joukkoliikenne@liikennevirasto.fi
 
 ## Related open source projects
 
-| URL                                         | Project description                     |
-|---------------------------------------------|-----------------------------------------|
-| https://blog.openstreetmap.org/             | OpenStreetMap blog
-| https://github.com/tru-hy/gtfs_shape_mapfit | gtfs_shape_mapfit upstream, fits GTFS shape files to a given OSM map file
-| https://onebusaway.org/                     | OneBusAway project, the open source platform for real-time transit info
+| URL                                                 | Project description                     |
+|-----------------------------------------------------|-----------------------------------------|
+| https://github.com/opentripplanner/OpenTripPlanner/ | OpenTripPlanner upstream
+| https://blog.openstreetmap.org/                     | OpenStreetMap blog
+| https://github.com/tru-hy/gtfs_shape_mapfit         | gtfs_shape_mapfit upstream, fits GTFS shape files to a given OSM map file
+| https://onebusaway.org/                             | OneBusAway project, the open source platform for real-time transit info

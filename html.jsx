@@ -34,20 +34,20 @@ module.exports = React.createClass({
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="Digitransit" />
-          <meta property="og:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
+          <meta property="og:description" content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä." />
           <meta property="og:image" content={
             this.props.page && this.props.page.data && this.props.page.data.image ? `http://digitransit.fi/${this.props.page.file.dirname}/${this.props.page.data.image}` : "http://digitransit.fi/share-image.png"}/>
           <meta property="og:locale" content="fi_FI" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@digitransit" />
           <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
+          <meta name="twitter:description" content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä." />
           <meta name="twitter:image" content={
             this.props.page && this.props.page.data && this.props.page.data.image ? `http://digitransit.fi/${this.props.page.file.dirname}/${this.props.page.data.image}` : "http://digitransit.fi/share-image.png"}/>
           <meta property="fb:admins" content="100006467997249" />
           <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
           <title>{title}</title>
-          <meta name="description" content="HSL:n Reittiopas.fi ja Liikenneviraston Matka.fi uudistuvat. Apuasi kaivataan kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi." />
+          <meta name="description" content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä." />
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat,String.prototype.startsWith,Object.assign"/>
           <link rel="shortcut icon" href={this.props.favicon}/>
           <TypographyStyle/>
