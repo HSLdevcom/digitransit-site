@@ -2,37 +2,49 @@
 
 
 
-### Vuoden 2017 tavoitteita:
+### Vuosien 2019-2020 tavoitteita:
 
-**Terminaalivälireititys** <br>
-Havainnollistaa palvelutasoa. Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa.
+**Häiriö- ja poikkeustilanteiden hallinta** <br>
+Kehitetään Digitransitia esittämään liikenteen häiriö- ja poikkeustilanteet, kuten perutut vuorot ja työmaiden aiheuttamat poikkeukset käyttäjälle selkeästi. Selvitetään erilaiset poikkeustilanteet, käyttötapaukset ja lähtötiedot. Alkuvaiheessa kattava toteutus GTFS-RT-muodon Service Alerteille ja Trip Updateille.
 
-**Virtuaalimonitori** <br>
-Mahdollisuus tuottaa käyttöliittymällä pysäkki- ja terminaalimonitorin tyyppisiä näkymiä. Auttaa matkustajaa saamaan tiedon silloin kun ei vielä olla tarpeeksi lähellä terminaalinäyttöä tai näyttöjen vikatilanteissa. 
+**API-managerointi** <br>
+Kaistankäytön seuranta, mahdollisia muutoksia API:n käyttöön, esim. autentikointi.
 
-**Tulostaminen** <br>
-Reittiehdotuksen tulostusmahdollisuus. Tarvitaan erityisesti avustettuun käyttöön, esimerkiksi palvelupisteissä.
+**Digitransitin modulaarisuuden parantaminen** <br>
+Parannetaan mahdollisuuksia upottaa palvelu eri julkaisualustoille.
 
-**Maksaminen** <br>
-Maksamiseen liittyy useita ominaisuuksia. Osa tästä työstä on aiemmin tehtyjen ominaisuuksien laajennuksia.
-- Matkan hinta
-- Linkitys ostamiseen
-- Mobiililipun integrointi
+**Karttatasojen jatkokehitys** <br>
+Parannetaan mahdollisuuksia tuoda erilaisia aineistolähteitä karttatasoille.
 
-**API ominaisuudet** <br>
-Rajapintojen ominaisuuksien kehittäminen kolmansien tahojen tarpeita ja liikennekaaren vaatimuksia vastaavaksi.
+**Hintatiedon esittäminen ja linkitys maksamiseen** <br>
+Hintatiedon esittäminen, maksuvyöhykkeet, linkitys maksamissovellukseen
+
+**Pyöräilyominaisuudet, v. 2.0** <br>
+Pyöräilyominaisuuksien lisäkehitys nykyisistä ominaisuuksista saadun palautteen ja ominaisuustarpeiden pohjalta.
+
+**MaaS-palveluiden integrointi Digitransit-alustaan ja kutsuohjatut palvelut** <br>
+Vaihtoehdot tilanteissa, joissa reititys aikataulunmukaisella joukkoliikenteellä perille kohteeseen ei ole mahdollista. GTFS Flex -muotoisen datan tuen rakentaminen.
+
+**Osallistuminen OpenTripPlannerin version 2.0 jatkokehitykseen** <br>
+Seurataan OTP:n perusversion kehitystä ja osallistutaan kehitystyöhön tarvittaessa.
+
+**API-ominaisuudet** <br>
+API:en ominaisuuksien kehittäminen kolmansien tahojen tarpeita ja liikennekaaren vaatimuksia vastaavaksi.
 
 **Matka-aikakartta** <br>
-Valtakunnallinen matka-aikakartta, jolla voi tarkastella matka-aikoja eri sijainneissa ja eri matkustusmuotojen välillä. Korvaa myös HSL:n nykyisen matka-aikakartan http://mak.hsl.fi
+HSL:n nykyisen matka-aikakartta-palvelun valtakunnallisen seuraajan suunnittelu ja toteutus.
 
-**Ylläpitäjän reititysasetukset** <br>
-Luodaan erillinen näkymä, jossa ylläpitäjät/asiakasvastaavat voivat säätää kokonaisuuden kannalta parhaat oletusasetukset.
+**Virtuaalimonitori, v. 2.0** <br>
+Virtuaalimonitorin ominaisuuksien kehittäminen ja sovittaminen uusiin käyttötapauksiin.
 
-**HSL.fi käyttöliittymä** <br>
-Palveluversio, jossa Digitransit toiminnalisuus on yhdistetty HSL:n verkkopalveluihin.
+**Terminaalivälireititys** <br>
+Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa.
 
-**HSL-sovellus** <br>
-Digitransit toiminnallisuuksien sovittaminen HSL:n mobiilisovellukseen
+**Kiinnitä itsesi matkaan -toiminnallisuus** <br>
+Digitransit yhdistää käyttäjän kulkuvälineeseen ja tarjoaa dynaamisesti muuttuvia ohjeita matkan aikana.
 
-**Pyöräilyominaisuuksien parantaminen**
+**Navigointiominaisuudet** <br>
+Matkan jokaisessa vaiheessa tarkat ohjeet, kuten kävelyreitti listana kaduista ja ääniohjeet.
 
+**UI:n perusteellinen uudistus, Digitransit v. 2.0** <br>
+Saavutettavuuden parantaminen, uudet käyttöliittymäratkaisut ja käyttökokemuksen kehitys kokonaisuutena.

@@ -12,7 +12,7 @@ needed. Digitransit platform provides these tools.
 The source code of the platform is dual-licensed under the EUPL v1.2 and AGPLv3 licenses.
 
 ## Issues
-Our issue tracking and roadmap is handled in [https://digitransit.atlassian.net](https://digitransit.atlassian.net).
+Our issue tracking is handled in [https://digitransit.atlassian.net](https://digitransit.atlassian.net).
 
 ## Key features
 * Multimodal routing
