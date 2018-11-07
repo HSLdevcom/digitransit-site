@@ -31,20 +31,20 @@ Seurataan OTP:n perusversion kehitystä ja osallistutaan kehitystyöhön tarvitt
 **API-ominaisuudet** <br>
 API:en ominaisuuksien kehittäminen kolmansien tahojen tarpeita ja liikennekaaren vaatimuksia vastaavaksi.
 
-**Matka-aikakartta**
+**Matka-aikakartta** <br>
 HSL:n nykyisen matka-aikakartta-palvelun valtakunnallisen seuraajan suunnittelu ja toteutus.
 
-**Virtuaalimonitori, v. 2.0**
+**Virtuaalimonitori, v. 2.0** <br>
 Virtuaalimonitorin ominaisuuksien kehittäminen ja sovittaminen uusiin käyttötapauksiin.
 
-**Terminaalivälireititys**
+**Terminaalivälireititys** <br>
 Esitetään liikenteen solmukohtien välisiä yhteyksiä (myös vaihdollisia) aikataulumuodossa.
 
-**Kiinnitä itsesi matkaan -toiminnallisuus**
+**Kiinnitä itsesi matkaan -toiminnallisuus** <br>
 Digitransit yhdistää käyttäjän kulkuvälineeseen ja tarjoaa dynaamisesti muuttuvia ohjeita matkan aikana.
 
-**Navigointiominaisuudet**
+**Navigointiominaisuudet** <br>
 Matkan jokaisessa vaiheessa tarkat ohjeet, kuten kävelyreitti listana kaduista ja ääniohjeet.
 
-**UI:n perusteellinen uudistus, Digitransit v. 2.0**
+**UI:n perusteellinen uudistus, Digitransit v. 2.0** <br>
 Saavutettavuuden parantaminen, uudet käyttöliittymäratkaisut ja käyttökokemuksen kehitys kokonaisuutena.
