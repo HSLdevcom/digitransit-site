@@ -12,7 +12,6 @@ order: 1
 | Trip updates HSL          | mqtts://mqtt.hsl.fi/gtfsrt/v1/fi/hsl/tu/
 | Trip updates Finland      | http://beta.liikennevirasto.fi/joukkoliikenne/manual_gtfsrt/api/gtfsrt/updates/
 | Service alerts Finland    | http://beta.liikennevirasto.fi/joukkoliikenne/manual_gtfsrt/api/gtfsrt/alerts/
-| Trip updates Oulu         | http://92.62.36.215/RTIX/trip-updates/
 | Trip updates VR           | http://rata.digitraffic.fi/api/v1/
 | Service alerts Tampere    | http://pilottilissu.tampere.fi/api/gtfsrealtime/v1.0/feed/servicealert/
 | Trip updates Tampere      | http://pilottilissu.tampere.fi/api/gtfsrealtime/v1.0/feed/tripupdate/
