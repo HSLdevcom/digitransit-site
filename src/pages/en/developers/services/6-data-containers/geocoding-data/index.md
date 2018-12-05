@@ -116,7 +116,7 @@ OpenStreetMap import reads all items which are tagged with a name and one or mor
 
 You can improve digitransit geocoding by contributing new or corrected data to OpenStreetMap. Please always include a Swedish name version, if available, to your data contributions.
 Below is a simple example node with proper names:
-```
+```json
 {
     "id":26430225,
     "type":"node",

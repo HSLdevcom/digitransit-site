@@ -18,11 +18,11 @@ The subscription scope is specified by the MQTT topic structure of the API.
 
 Try this example to get an quick idea of what kind of data is available from the API:
 1. Install [MQTT.js](https://github.com/mqttjs/MQTT.js) command line tools:  
-```
+```bash
 npm install -g mqtt
 ```
 2. Use MQTT.js to subscribe to HFP messages:  
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -p 443 -l mqtts -v -t "/hfp/v1/journey/#"
 ```  
 
@@ -77,11 +77,11 @@ It can be split into these parts:
 ### <a name="payload"></a>The payload
 
 The payload is an UTF-8-encoded, compact JSON string. Here is an example:
-```
+```json
 {"VP":{"desi":"81","dir":"2","oper":22,"veh":792,"tst":"2018-04-05T17:38:36Z","tsi":1522949916,"spd":0.16,"hdg":225,"lat":60.194481,"long":25.03095,"acc":0,"dl":-25,"odo":2819,"drst":0,"oday":"2018-04-05","jrn":636,"line":112,"start":"20:25"}}
 ```
 which prettyprints to:
-```
+```json
 {
   "VP": {
     "desi": "81",
@@ -166,19 +166,19 @@ Go hog wild.
 
 Below are sample subscriptions utilizing [MQTT.js](https://github.com/mqttjs/MQTT.js) command line tools.  
 MQTT.js command line tools can be installed with:  
-```
+```bash
 npm install -g mqtt
 ```
 
 If you insist on using [mosquitto](https://mosquitto.org/), try this for TLS access:  
-```
+```bash
 mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"
 ```
 
 #### A situational overview
 
 To get just the most significant status updates, use:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/0/#"
 ```
@@ -186,7 +186,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 #### A line in one direction
 
 To subscribe to all vehicles currently on the line 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/2551/1/#"
 ```
@@ -194,7 +194,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 #### All trams
 
 Subscribe to all trams with:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/tram/#"
 ```
@@ -202,13 +202,13 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 #### A certain trip
 
 Subscribe to messages of a certain trip, even slightly before the driver has signed onto the trip:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/+/+/+/+/9975/1/+/12:15/#"
 ```
 
 Or if your users would find it confusing to see a vehicle going in the wrong direction, subscribe to the `ongoing` messages only:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/9975/1/+/12:15/#"
 ```
@@ -218,7 +218,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 * See [this example](https://gist.github.com/mjaakko/f148be987734fdb9f7f8e71458516571) on how to generate topic filters for a bounding box
 
 Let's assume that you wish to subscribe to all action inside the following [GeoJSON](http://geojson.io) Polygon:
-```
+```json
 {
   "type": "Feature",
   "geometry": {
@@ -252,13 +252,13 @@ Let's assume that you wish to subscribe to all action inside the following [GeoJ
 ```
 
 The box bounded by the latitude interval [60.18, 60.19[ and the longitude interval [24.95, 24.97[ corresponds with the following HFP subscription:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/#" \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/#"
 ```
 For the precision of one more digit of latitude and longitude, one would need 56 topic filters for the bounding box:
-```
+```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/37/#" \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/38/#" \

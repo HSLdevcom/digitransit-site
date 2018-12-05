@@ -40,7 +40,7 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 
 2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stop(id: "HSL:1040129") {
     name
@@ -55,7 +55,7 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 
 4. You should get results like below:
 
-```
+```json
 {
   "data": {
     "stop": {
@@ -91,7 +91,7 @@ Let's try to query alerts:
 
 2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   alerts {
     alertDescriptionText

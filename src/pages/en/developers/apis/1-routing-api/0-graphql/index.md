@@ -26,7 +26,7 @@ Queries are written in GraphQL language and sent to the API using **HTTP POST me
 The following queries would request a stop with id `HSL:1173434` and return its name and coordinates:
 
 **Content-Type: "application/graphql"**
-```
+```graphql
 {
   stop(id: "HSL:1173434") {
     name
@@ -36,7 +36,7 @@ The following queries would request a stop with id `HSL:1173434` and return its 
 }
 ```
 **Content-Type: "application/json"**
-```
+```json
 {
   "query": "{
     stop(id: \"HSL:1173434\") {
@@ -47,7 +47,7 @@ The following queries would request a stop with id `HSL:1173434` and return its 
 }
 ```
 **Example response:**
-```
+```json
 {
   "data": {
     "stop": {
@@ -73,7 +73,7 @@ If a query type returns an interface, [inline fragments](https://graphql.org/lea
 
 For example, query type **nearest** returns a list of **PlaceInterfaces** and types **BikePark** and **Stop** implement **PlaceInterface**.<br/>
 The following query returns field `spacesAvailable` for bike parks and field `code` for stops.
-```
+```graphql
 {
   nearest(lat: 60.19414, lon: 25.02965, maxResults: 3, maxDistance: 1500, filterByPlaceTypes: [STOP, BIKE_PARK]) {
     edges {
@@ -107,7 +107,7 @@ To use variables, queries must be sent with Content-Type **application/json** an
 Variables are sent in a JSON object with key `variables`.
 
 For example, the following query would request a route with name `550` (using *Routes* as an operation name):
-```
+```json
 {
   "query": "query Routes($name: String) { 
              routes(name: $name) { 
@@ -127,7 +127,7 @@ For example, the following query would request a route with name `550` (using *R
 Multiple queries can be combined and sent in one POST request. Batched queries require less server roundtrips and can be processed more efficiently on the server.
 
 For example, the following query would request a stop with id `HSL:1173434` and a route with id `HSL:1009`:
-```
+```graphql
 {
   stop(id: "HSL:1173434") {
     name
@@ -147,7 +147,7 @@ For example, the following query would request a stop with id `HSL:1173434` and 
 
 If the request includes multiple queries with same type, they must be renamed using aliases. For example, the following query would request two routes and return them as `route1` and `route2`:
 
-```
+```graphql
 {
   route1: route(id: "HSL:2550") {
     shortName
@@ -167,7 +167,7 @@ Some query types support pagination, which can be used to limit the amount of da
 <br/>Query types which support pagination return a [Relay cursor connection](https://facebook.github.io/relay/graphql/connections.htm) to the data.
 
 For example, **stopsByRadius** supports pagination. The following query requests stops within 300m of 60.19924, 24.94112 and returns 2 stops per page (argument `first`).
-```
+```graphql
 {
   stopsByRadius(lat: 60.19924, lon: 24.94112, radius: 300, first: 2) {
     edges {
@@ -190,7 +190,7 @@ For example, **stopsByRadius** supports pagination. The following query requests
 ```
 
 An example response:
-```
+```json
 {
   "data": {
     "stopsByRadius": {
@@ -229,7 +229,7 @@ The field `hasNextPage` indicates whether all data has been returned or not.
 <br />If `hasNextPage` is `true`, the next page can be queried by using the value of `endCursor` for argument `after` in the query.
 
 For example, the following query returns the next page of data:
-```
+```graphql
 {
   stopsByRadius(lat: 60.19924, lon: 24.94112, radius: 300, first: 2, after: "c2ltcGxlLWN1cnNvcjE=") {
     edges {
@@ -250,7 +250,7 @@ For example, the following query returns the next page of data:
 }
 ```
 An example response:
-```
+```json
 {
   "data": {
     "stopsByRadius": {

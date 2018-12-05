@@ -22,7 +22,7 @@ title: Routes
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2210%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   routes(name: "10") {
     gtfsId
@@ -39,7 +39,7 @@ title: Routes
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2258%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   routes(name: "58", transportModes: BUS) {
     gtfsId
@@ -57,7 +57,7 @@ title: Routes
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%221%22%2C%20transportModes%3A%20TRAM)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   routes(name: "1", transportModes: TRAM) {
     gtfsId
@@ -73,7 +73,8 @@ title: Routes
 ### Query patterns of a route
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2259%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-```
+
+```graphql
 {
   routes(name: "59", transportModes: BUS) {
     shortName
@@ -92,7 +93,7 @@ title: Routes
 
 Example response:
 
-``` javascript
+```json
 {
   "data": {
     "routes": [
@@ -127,7 +128,7 @@ Example response:
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
 
 
-```
+```graphql
 {
   pattern(id: "HSL:1059:0:01") {
     name
@@ -145,7 +146,7 @@ Example response:
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20code%0A%20%20%20%20directionId%0A%20%20%20%20name%0A%20%20%20%20headsign%0A%20%20%20%20trips%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   pattern(id: "HSL:1059:0:01") {
     code
@@ -170,7 +171,7 @@ Example response:
   * This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
 
 For example, if the following vehicle position message is received 
-```
+```json
 {
   "desi": "550",
   "dir": "1",
@@ -215,7 +216,7 @@ on topic `/hfp/v1/journey/ongoing/bus/0012/01511/`**2550**`/`**1**`/Westendinase
    * In this case, **fuzzyTrip** query returns `null`
 
 For example, the following query checks if the vehicle, which sent the vehicle position message above, is wheelchair accessible:
-```
+```graphql
 {
   fuzzyTrip(route: "HSL:2550", direction: 0, date: "2018-07-03", time: 32580) {
     route {

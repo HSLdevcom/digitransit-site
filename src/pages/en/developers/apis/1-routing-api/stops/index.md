@@ -20,7 +20,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stops{
     gtfsId
@@ -37,7 +37,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stop(id: "HSL:1140447") {
     name
@@ -52,7 +52,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stop(id: "HSL:1140447") {
     gtfsId
@@ -82,7 +82,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stops(name%3A%20%22hertton%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20code%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stops(name: "hertton") {
     gtfsId
@@ -103,7 +103,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%20%0A%20%20stations%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20platformCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 { 
   stations {
     gtfsId
@@ -126,7 +126,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09stations(name%3A%20%22pasila%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20platformCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stations(name: "pasila") {
     gtfsId
@@ -152,7 +152,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%20%20%7B%0A%20%20%20%20stopsByRadius(lat%3A60.199%2Clon%3A24.938%2Cradius%3A500)%20%7B%0A%20%20%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20gtfsId%20%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stopsByRadius(lat:60.199, lon:24.938, radius:500) {
     edges {
@@ -180,7 +180,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20%20%20stoptimesWithoutPatterns%20%7B%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20realtimeArrival%0A%20%20%20%20%20%20arrivalDelay%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20departureDelay%0A%20%20%20%20%20%20realtime%0A%20%20%20%20%20%20realtimeState%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%20%20%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stop(id: "HSL:1140447") {
     name
@@ -209,7 +209,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1140447%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stoptimesWithoutPatterns(startTime%3A%201528633800)%20%7B%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20realtimeArrival%0A%20%20%20%20%20%20arrivalDelay%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20departureDelay%0A%20%20%20%20%20%20realtime%0A%20%20%20%20%20%20realtimeState%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%20%20%0A%7D%0A%0A%0A) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   stop(id: "HSL:1140447") {
     name
@@ -238,7 +238,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20station(id%3A%20%22HSL%3A1000202%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stoptimesWithoutPatterns(numberOfDepartures%3A%2010)%20%7B%0A%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20platformCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20scheduledArrival%0A%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   station(id: "HSL:1000202") {
     name
@@ -271,7 +271,7 @@ title: Stops
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09nearest(lat%3A%2060.19915%2C%20lon%3A%2024.94089%2C%20maxDistance%3A%20500%2C%20filterByPlaceTypes%3A%20DEPARTURE_ROW)%20%7B%0A%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20place%20%7B%0A%20%20%20%20%20%20%20%20%20%20...on%20DepartureRow%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20stoptimes%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20serviceDay%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20scheduledDeparture%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20realtimeDeparture%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20shortName%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20headsign%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%09distance%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%09) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   nearest(lat: 60.19915, lon: 24.94089, maxDistance: 500, filterByPlaceTypes: DEPARTURE_ROW) {
     edges {

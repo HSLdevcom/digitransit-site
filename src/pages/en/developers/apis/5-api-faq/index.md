@@ -15,7 +15,7 @@ title: FAQ
 ### How do I query multiple items with a single request?
 
 >If the query type takes only one argument, [GraphQL batching](../1-routing-api/0-graphql/#batching) can be used to fetch multiple items. <br/><br/> If the query type takes a list as a argument, create a list of ids to request data for and use it as the argument. For example, the query below can be used to query data for two stops.
-```
+```graphql
 {
   stops(ids: ["HSL:1173429","HSL:1291501"]) {
     name
@@ -42,7 +42,7 @@ title: FAQ
 
 > Check field `pickupType` of the `stoptime`. `pickupType` will be `NONE` for trips that cannot be boarded from the specific stop. Usually `pickupType: NONE` indicates that the stop is the final stop of a pattern, but in some cases there are stops in the middle of a pattern that are only used for dropoffs. With the query below, you can list trips that use the stop and whether the vehicle can be boarded from that stop.
  
-```
+```graphql
 {
     stop(id:"HSL:1040289") {
         stoptimesWithoutPatterns{

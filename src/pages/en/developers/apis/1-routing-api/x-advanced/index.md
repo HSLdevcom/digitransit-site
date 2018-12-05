@@ -8,7 +8,7 @@ This page contains few examples on how to utilize the GraphQL API in more specif
 
 The following query plans an itinerary from Pasila to Kulosaari.
 
-```
+```graphql
 {
   plan(
     from: {lat: 60.19775, lon: 24.94053},
@@ -73,7 +73,7 @@ It is possible to plan an itinerary which starts on board a vehicle by using arg
 Here is an example query which plans an itinerary from Pasila to Itäkeskus, assuming that the user is already on board [bus 551](https://reittiopas.hsl.fi/linjat/HSL:2551/pysakit/HSL:2551:1:02), which departed from Tapionaukio at 15:37 PM on 16th August 2018.
 <br/>**Note:** values for arguments `from` and `time` should be set based on the vehicle position message received from the HFP API, as argument `startTransitTripId` only takes into account the route and the estimated travel time of the trip and *not* the real-time position of the vehicle.
 
-```
+```graphql
 {
   plan(
     from: {lat: 60.19727, lon: 24.94116}

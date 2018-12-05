@@ -16,7 +16,7 @@ Disruption info is information about the current and upcoming disruptions in pub
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   alerts {
     alertDescriptionText
@@ -30,7 +30,7 @@ Disruption info is information about the current and upcoming disruptions in pub
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertHeaderText%0A%20%20%20%20alertHeaderTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertDescriptionTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20alertUrl%0A%20%20%20%20effectiveStartDate%0A%20%20%20%20effectiveEndDate%0A%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20route%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%7D%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   alerts {
     alertHeaderText
@@ -68,7 +68,7 @@ Disruption info is information about the current and upcoming disruptions in pub
 2. Press play in GraphiQL to execute the query. Depending on the current traffic situation, you might get information about one or more ongoing disruptions and routes it might affect.
 
 Example response:
-```
+```json
 {
   "data": {
     "alerts": [
@@ -116,7 +116,7 @@ Example response:
 
 1. Click [this link](https://api.digitransit.fi/graphiql/finland?query=%7B%0A%09alerts(feeds%3A%20%5B%22HSL%22%5D)%20%7B%0A%20%20%20%20feed%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertDescriptionTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20route%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20effectiveStartDate%0A%20%20%20%20effectiveEndDate%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
-```
+```graphql
 {
   alerts(feeds: ["HSL"]) {
     feed

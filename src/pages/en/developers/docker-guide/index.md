@@ -30,25 +30,24 @@ There are some OS specific hints you should be aware of:
 
 2. When starting container by mapping ports e.g. like this:
 
-<pre>
+```bash
 docker run -d -p 9200:9200 --name pelias-data-container hsldevcom/pelias-data-container
-</pre>
+```
 
 You should be aware that Linux and Virtual machine based environments (Windows, OS X) expose given services differently.
 On Linux: http://localhost:9200 , in other environments it doesn't work. You need to figure out docker-machine IP and use it by running:
 
-<pre>
+```bash
 docker-machine config default
-</pre>
-
+```
 
 This gives you something like:
-<pre>
+```
 --tlsverify
 --tlscacert="xxx"
 --tlscert="xxx"
 --tlskey="xxx"
 -H=tcp://192.168.99.100:2376
-</pre>
+```
 
 You should then access application by http://192.168.99.100:9200

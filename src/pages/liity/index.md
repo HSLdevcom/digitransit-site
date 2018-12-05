@@ -178,7 +178,7 @@ Digitransit löytää kohteita seuraavista luokista:
 
 Mikäli lisäät kohteita OpenStreetMapiin, muista lisätä myös ruotsinkielinen selite:
 
-```
+```json
   {
       "id":26430225,
       "type":"node",
