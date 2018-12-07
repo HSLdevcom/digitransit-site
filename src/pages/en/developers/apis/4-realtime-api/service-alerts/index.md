@@ -1,9 +1,11 @@
 ---
 title: Service alerts
 replit:
-  "Show currently active alerts":
-    url: https://repl.it/@digitransit/RealtimeServiceAlerts
-    height: 700px
+  embeds:
+    -
+      title: "Show currently active alerts"
+      url: https://repl.it/@digitransit/RealtimeServiceAlerts
+      height: 700px
 ---
 
 The HSL Alerts API can be used to query real-time updates from the HSL fleet in [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) format.

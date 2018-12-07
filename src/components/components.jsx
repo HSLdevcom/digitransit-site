@@ -318,15 +318,15 @@ export const ReplitEmbed = (props) => {
   }
 
   const getEmbed = (example) => {
-     if (props.replit[example] == null || props.replit[example].height == null || props.replit[example].url == null) {
+     if (example == null || example.title == null || example.height == null || example.url == null) {
        return null;
      }
 
      return (
               <div>
-                <h3>{ example }</h3>
-                <p dangerouslySetInnerHTML={{__html: props.replit[example].description }} />
-                <iframe height={props.replit[example].height} width="100%" src={props.replit[example].url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                <h3>{ example.title }</h3>
+                <p dangerouslySetInnerHTML={{__html: example.description }} />
+                <iframe height={example.height} width="100%" src={example.url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
               </div>
             );
   };
@@ -334,16 +334,14 @@ export const ReplitEmbed = (props) => {
   let note = null;
   if (props.replit.note) {
     note = <div dangerouslySetInnerHTML={{__html: props.replit.note }} />;
-    delete props.replit.note; 
   }
 
   let title = "Test the API";
   if (props.replit.title) {
     title = props.replit.title;
-    delete props.replit.title;
   }
 
-  const list = Object.keys(props.replit).map(getEmbed);  
+  const list = props.replit.embeds.map(getEmbed);  
 
   return (
 	<div>

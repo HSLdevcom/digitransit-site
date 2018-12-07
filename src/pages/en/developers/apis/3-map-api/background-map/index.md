@@ -1,10 +1,12 @@
 ---
 title: Background map
 replit: 
-  "Display map using Leaflet":
-    description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map." 
-    url: https://repl.it/@digitransit/LeafletMap
-    height: 800px
+  embeds: 
+    -
+      title: "Display map using Leaflet"
+      description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map." 
+      url: https://repl.it/@digitransit/LeafletMap
+      height: 800px
 ---
 Background map provides **HSL style** map tiles for example for browser based applications.
 

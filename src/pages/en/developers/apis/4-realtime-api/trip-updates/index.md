@@ -1,9 +1,11 @@
 ---
 title: Trip updates
 replit:
-  "Show currently active HSL trip updates":
-     url: https://repl.it/@digitransit/RealtimeTripUpdates
-     height: 700px
+  embeds: 
+    - 
+      title: "Show currently active HSL trip updates"
+      url: https://repl.it/@digitransit/RealtimeTripUpdates
+      height: 700px
 ---
 
 Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.

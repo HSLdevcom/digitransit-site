@@ -194,38 +194,8 @@ query($slug: String!) {
       replit {
         title
         note
-        Address_lookup {
-          url
-          height
-          description
-        }
-        Address_search {
-          url
-          height
-          description
-        }
-        Content_Type__application_graphql {
-          url
-          height
-        }
-        Content_Type__application_json {
-          url
-          height
-        }
-        Display_map_using_Leaflet {
-          url
-          height
-          description
-        }
-        Show_currently_active_alerts {
-          url
-          height
-        }
-        Show_currently_active_HSL_trip_updates {
-          url
-          height
-        }
-        MQTT_js {
+        embeds {
+          title
           url
           height
           description
