@@ -76,17 +76,11 @@ export default class HTML extends React.Component {
             max-width: 430px;
           }
 
-          th, td {
+          /*th, td {
             border: 1px solid gray;
             padding: 3px;
-          }
+          }*/
 
-          blockquote {
-            background: #f9f9f9;
-            border-left: 10px solid #ccc;
-            margin: 1em;
-            padding: 0.5em 10px;
-          }
           blockquote:before {
             color: #ccc;
             font-size: 4em;

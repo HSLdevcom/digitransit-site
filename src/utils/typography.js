@@ -14,7 +14,23 @@ const typography = new Typography({
   bodyWeight: 300,
   headerWeight: 400,
   boldWeight: 700,
-  modularScales: ['major third']
+  modularScales: ['major third'],
+  overrideStyles: ({ rhythm, scale }, options) => {
+    return {
+      blockquote: {
+        background: `#f9f9f9`,
+        borderLeft: `${rhythm(1 / 4)} solid #ccc`,
+        marginLeft: 0,
+        marginRight: rhythm(1),
+        marginTop: rhythm(1),
+        marginBottom: rhythm(1),
+        paddingLeft: rhythm(2 / 4),
+        paddingRight: rhythm(1 / 4),
+        paddingTop: rhythm(1 / 4),
+        paddingBottom: rhythm(1 / 4),
+      }
+    }
+  }
 })
 
 export default typography
