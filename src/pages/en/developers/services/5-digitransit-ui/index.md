@@ -11,9 +11,12 @@ assets:
   - title: "Dockerfile"
     url: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
 technologies:
-  "React": "https://facebook.github.io/react/"
-  "Leaflet": "http://leafletjs.com/"
-  "Relay": "https://facebook.github.io/relay/"
+  - title: "React"
+    url: "https://facebook.github.io/react/"
+  - title: "Leaflet"
+    url: "http://leafletjs.com/"
+  - title: "Relay"
+    url: "https://facebook.github.io/relay/"
 docker:
   dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
   imageName: hsldevcom/digitransit-ui

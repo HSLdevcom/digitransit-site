@@ -186,13 +186,8 @@ export const query = graphql`
           url
         }
         technologies {
-          React
-          Leaflet
-          Relay
-          GTFS_RT
-          GTFS
-          SIRI
-          Finnish_Transport_Agency_API
+          title
+          url
         }
         docker {
           dockerfile

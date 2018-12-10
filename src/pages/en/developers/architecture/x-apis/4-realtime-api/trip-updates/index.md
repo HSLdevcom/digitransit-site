@@ -15,10 +15,13 @@ assets:
   - title: "Dockerfile"
     url: https://github.com/HSLdevcom/raildigitraffic2gtfsrt/blob/master/Dockerfile
 technologies:
-  "SIRI": "http://user47094.vs.easily.co.uk/siri/"
-  "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
-  "Python": null
-  "Finnish Transport Agency API": http://rata.digitraffic.fi/api/v1/doc/index.html
+  - title: "SIRI"
+    url: "http://user47094.vs.easily.co.uk/siri/"
+  - title: "GTFS-RT"
+    url: "https://developers.google.com/transit/gtfs-realtime/"
+  - title: "Python"
+  - title: "Finnish Transport Agency API"
+    url: http://rata.digitraffic.fi/api/v1/doc/index.html
 docker:
   dockerfile: https://github.com/HSLdevcom/siri2gtfsrt/blob/master/Dockerfile
   imageName: hsldevcom/siri2gtfsrt

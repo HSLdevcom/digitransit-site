@@ -263,20 +263,20 @@ export const DockerInfo = props => {
 export const TechnologiesInfo = props => {
   if (props.technologies) {
     const getUrl = tech => {
-      if (props.technologies[tech] != null) {
+      if (tech.url != null) {
         return (
           <span>
-            (<a href={props.technologies[tech]}>{props.technologies[tech]}</a>)
+            (<a href={tech.url}>{tech.url}</a>)
           </span>
         );
       }
       return null;
     };
 
-    const list = Object.keys(props.technologies).map(tech => {
+    const list = props.technologies.map(tech => {
       return (
         <li>
-          {tech} {getUrl(tech)}
+          {tech.title} {getUrl(tech)}
         </li>
       );
     });

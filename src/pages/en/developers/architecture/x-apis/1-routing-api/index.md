@@ -11,9 +11,11 @@ assets:
   - title: "Dockerfile"
     url: "https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile"
 technologies:
-  "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
-  "GTFS": "https://developers.google.com/transit/gtfs/"
-  "Java": null
+  - title: "GTFS-RT"
+    url: "https://developers.google.com/transit/gtfs-realtime/"
+  - title: "GTFS"
+    url: "https://developers.google.com/transit/gtfs/"
+  - title: "Java"
 docker:
   dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
   imageName: hsldevcom/opentripplanner

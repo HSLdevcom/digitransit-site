@@ -11,8 +11,8 @@ assets:
   - title: "Dockerfile"
     url: https://github.com/HSLdevcom/hslalert/blob/master/Dockerfile
 technologies:
-  "Python": null
-  "GTFS-RT": null
+  - title: "Python"
+  - title: "GTFS-RT"
 docker:
   dockerfile: https://github.com/HSLdevcom/hslalert/blob/master/Dockerfile
   imageName: hsldevcom/hslalert

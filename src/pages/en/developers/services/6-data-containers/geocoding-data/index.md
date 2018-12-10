@@ -19,9 +19,11 @@ assets:
   - title: "pelias-openaddresses-import"
     url: https://github.com/HSLdevcom/openaddresses.git
 technologies:
-  "SIRI": "http://user47094.vs.easily.co.uk/siri/"
-  "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
-  "Python": null
+  - title: "SIRI"
+    url: "http://user47094.vs.easily.co.uk/siri/"
+  - title: "GTFS-RT"
+    url: "https://developers.google.com/transit/gtfs-realtime/"
+  - title: "Python"
 docker:
   dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
   imageName: hsldevcom/pelias-data-container
