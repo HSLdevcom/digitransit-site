@@ -17,4 +17,4 @@ RUN yarn && \
 
 EXPOSE 8080
 
-CMD serve -p 8080 ./public
+CMD serve -l 8080 ./public
