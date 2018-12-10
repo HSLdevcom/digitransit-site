@@ -180,26 +180,10 @@ export const query = graphql`
         description {
           info
           architecture
-          source
-          dockerHub
-          Dockerfile
         }
         assets {
-          source
-          dockerHub
-          Dockerfile
-          DockerHub
-          Pelias_fuzzy_tests
-          Pelias_fuzzy_tester
-          HSL_map_style
-          tilelive_otp_stops
-          tilelive_hsl_parkandride
-          tilelive_gl
-          HSL_map_generator_ui
-          Pelias_config
-          ES_client
-          pelias_nlsfi_places_importer
-          pelias_openaddresses_import
+          title
+          url
         }
         technologies {
           React

@@ -1,35 +1,42 @@
-import React from 'react';
-import {Container, Grid, Breakpoint, Span} from '@mjaakko/react-responsive-grid';
-import { Link } from 'gatsby';
+import React from "react";
+import {
+  Container,
+  Grid,
+  Breakpoint,
+  Span
+} from "@mjaakko/react-responsive-grid";
+import { Link } from "gatsby";
 
 import logo from "../pages/logo.png";
 import hslLogo from "../pages/hsl-logo.png";
 import liviLogo from "../pages/livi-logo.png";
 
-import typography from '../utils/typography';
-const prefixer = require('react-style-normalizer');
+import typography from "../utils/typography";
+const prefixer = require("react-style-normalizer");
 
-const { rhythm, fontSizeToPx } = typography
+const { rhythm, fontSizeToPx } = typography;
 
 const getPanelImage = (image, swapped, small) => {
-  return (<img
-    src={image}
-    style={prefixer({
-      maxWidth: "80vw",
-      width: 360,
-      maxHeight: 360,
-      marginLeft: 45,
-      marginRight: 45,
-      marginTop: "1em",
-      marginBottom: "1em",
-      order: small || swapped ? -1 : 2,
-    })}
-  />);
+  return (
+    <img
+      src={image}
+      style={prefixer({
+        maxWidth: "80vw",
+        width: 360,
+        maxHeight: 360,
+        marginLeft: 45,
+        marginRight: 45,
+        marginTop: "1em",
+        marginBottom: "1em",
+        order: small || swapped ? -1 : 2
+      })}
+    />
+  );
 };
 
 export class FrontPageHeader extends React.Component {
   render() {
-    return(
+    return (
       <div>
         <div
           id="header-image"
@@ -53,29 +60,31 @@ export class FrontPageHeader extends React.Component {
             alignItems: "center"
           })}
         >
-          <img src={hslLogo} style={{margin: "2em 2em"}}/>
-          <img src={liviLogo} style={{margin: "2em 2em"}}/>
+          <img src={hslLogo} style={{ margin: "2em 2em" }} />
+          <img src={liviLogo} style={{ margin: "2em 2em" }} />
         </div>
       </div>
-    )
+    );
   }
 }
 
 export class FrontPagePanels extends React.Component {
   render() {
-    return(
+    return (
       <div>
-        {this.props.panels.map((panel) => <FrontPagePanel {... panel}/>)}
+        {this.props.panels.map(panel => (
+          <FrontPagePanel {...panel} />
+        ))}
       </div>
-    )
+    );
   }
 }
 
 class FrontPagePanel extends React.Component {
   render() {
-    const links = this.props.links.map((link) => {
+    const links = this.props.links.map(link => {
       if (link.url.substring(0, 4) == "http") {
-        return(
+        return (
           <div>
             <a
               href={link.url}
@@ -84,16 +93,15 @@ class FrontPagePanel extends React.Component {
                 marginTop: rhythm(0.5),
                 fontSize: 15,
                 fontWeight: 500,
-                color: this.props.textColor ? this.props.textColor : "#fff",
+                color: this.props.textColor ? this.props.textColor : "#fff"
               })}
             >
               {link.title}&nbsp;»
             </a>
           </div>
-        )
-      }
-      else {
-        return(
+        );
+      } else {
+        return (
           <div>
             <Link
               to={link.url}
@@ -102,18 +110,17 @@ class FrontPagePanel extends React.Component {
                 marginTop: rhythm(0.5),
                 fontSize: 15,
                 fontWeight: 500,
-                color: this.props.textColor ? this.props.textColor : "#fff",
+                color: this.props.textColor ? this.props.textColor : "#fff"
               })}
             >
               {link.title}&nbsp;»
             </Link>
           </div>
-        )
+        );
       }
-    }
-  );
+    });
 
-    return(
+    return (
       <div>
         <Breakpoint minWidth={1020} widthMethod="componentWidth">
           <div
@@ -130,28 +137,32 @@ class FrontPagePanel extends React.Component {
               WebkitFontSmoothing: "antialiased",
               minHeight: 500,
               paddingTop: "1.5em",
-              paddingBottom: "1.5em",
+              paddingBottom: "1.5em"
             })}
           >
-            {getPanelImage(this.props.image.publicURL, this.props.swapped, false)}
+            {getPanelImage(
+              this.props.image.publicURL,
+              this.props.swapped,
+              false
+            )}
             <div
               style={{
                 maxWidth: 465,
                 marginLeft: this.props.swapped ? 60 : 30,
                 marginRight: this.props.swapped ? 30 : 60,
                 marginTop: "1em",
-                marginBottom: "1em",
+                marginBottom: "1em"
               }}
             >
-              <h2 style={{color: this.props.textColor ? this.props.textColor : "#fff"}}>
+              <h2
+                style={{
+                  color: this.props.textColor ? this.props.textColor : "#fff"
+                }}
+              >
                 {this.props.title}
               </h2>
-              <div style={{paddingBottom: "1em"}}>
-                {this.props.body}
-              </div>
-              <div>
-                {links}
-              </div>
+              <div style={{ paddingBottom: "1em" }}>{this.props.body}</div>
+              <div>{links}</div>
             </div>
           </div>
         </Breakpoint>
@@ -170,7 +181,7 @@ class FrontPagePanel extends React.Component {
               fontWeight: 300,
               WebkitFontSmoothing: "antialiased",
               paddingTop: "1.5em",
-              paddingBottom: "1.5em",
+              paddingBottom: "1.5em"
             })}
           >
             <div
@@ -179,20 +190,25 @@ class FrontPagePanel extends React.Component {
                 marginLeft: rhythm(1),
                 marginRight: rhythm(1),
                 marginTop: "1em",
-                marginBottom: "1em",
+                marginBottom: "1em"
               }}
             >
-              <h2 style={{textAlign: "center", color: this.props.textColor ? this.props.textColor : "#fff"}}>
+              <h2
+                style={{
+                  textAlign: "center",
+                  color: this.props.textColor ? this.props.textColor : "#fff"
+                }}
+              >
                 {this.props.title}
               </h2>
-              <div style={{paddingBottom: "1em"}}>
-                {this.props.body}
-              </div>
-              <div>
-                {links}
-              </div>
+              <div style={{ paddingBottom: "1em" }}>{this.props.body}</div>
+              <div>{links}</div>
             </div>
-            {getPanelImage(this.props.image.publicURL, this.props.swapped, true)}
+            {getPanelImage(
+              this.props.image.publicURL,
+              this.props.swapped,
+              true
+            )}
           </div>
         </Breakpoint>
       </div>
@@ -200,100 +216,129 @@ class FrontPagePanel extends React.Component {
   }
 }
 
-export const DockerInfo = (props) => {
-
-  if(props.docker) {
+export const DockerInfo = props => {
+  if (props.docker) {
     let travisInfo = "";
     if (props.docker.travisBuild) {
-      travisInfo = <span> You might also want to take a look at the <a href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}>Travis build and configuration</a>.</span>;
+      travisInfo = (
+        <span>
+          {" "}
+          You might also want to take a look at the{" "}
+          <a
+            href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}
+          >
+            Travis build and configuration
+          </a>
+          .
+        </span>
+      );
     }
-    return (<div>
+    return (
+      <div>
         <h2>Docker image</h2>
         <p>
-          The resulting Docker image is called <strong>{ props.docker.imageName }</strong> and
-          it is available at <a href={ "https://hub.docker.com/r/" + props.docker.imageName }> DockerHub</a>.
-          The image can be built using this <a href={props.docker.buildScript}>build script</a>. 
-          {travisInfo}
+          The resulting Docker image is called{" "}
+          <strong>{props.docker.imageName}</strong> and it is available at{" "}
+          <a href={"https://hub.docker.com/r/" + props.docker.imageName}>
+            {" "}
+            DockerHub
+          </a>
+          . The image can be built using this{" "}
+          <a href={props.docker.buildScript}>build script</a>.{travisInfo}
         </p>
+        <p>To run Docker container, run:</p>
+        <pre>{props.docker.runContainer}</pre>
+        <p>To access Docker container:</p>
+        <pre>{props.docker.accessContainer}</pre>
         <p>
-          To run Docker container, run:
+          For More information about how to use Docker see{" "}
+          <a href="/en/developers/docker-guide/#docker">docker info</a>.
         </p>
-        <pre>
-          { props.docker.runContainer }
-        </pre>
-        <p>
-          To access Docker container:
-        </p>
-        <pre>
-          { props.docker.accessContainer }
-        </pre>
-        <p>
-          For More information about how to use Docker see <a href="/en/developers/docker-guide/#docker">docker info</a>.
-        </p>
-    </div>);
+      </div>
+    );
   }
-  return (<span></span>);
-}
+  return <span />;
+};
 
-export const TechnologiesInfo = (props) => {
-  if(props.technologies) {
-
-    const getUrl = (tech) => {
+export const TechnologiesInfo = props => {
+  if (props.technologies) {
+    const getUrl = tech => {
       if (props.technologies[tech] != null) {
-        return (<span>(<a href={ props.technologies[tech] }>{ props.technologies[tech] }</a>)</span>)
+        return (
+          <span>
+            (<a href={props.technologies[tech]}>{props.technologies[tech]}</a>)
+          </span>
+        );
       }
       return null;
-    }
+    };
 
-    const list = Object.keys(props.technologies).map( (tech) => {
-      return (<li>{ tech } { getUrl(tech) }</li>);
+    const list = Object.keys(props.technologies).map(tech => {
+      return (
+        <li>
+          {tech} {getUrl(tech)}
+        </li>
+      );
     });
-    return (<div>
-      <h2>Key technologies and specifications</h2>
-      <ul>{ list }</ul>
-    </div>);
+    return (
+      <div>
+        <h2>Key technologies and specifications</h2>
+        <ul>{list}</ul>
+      </div>
+    );
   }
-  return (<span></span>);
-}
+  return <span />;
+};
 
-export const Assets = (props) => {
-  if(props.assets) {
-    const assets = Object.keys(props.assets).map( (asset) => {
-        return (<tr><td>{ asset }</td><td><a href={ props.assets[asset] }>{ props.assets[asset] }</a></td></tr>);
-  });
-  return (<div>
-    <h2>Project assets</h2>
-    <table>
-      <thead>
-        <tr><th>Asset</th><th>Url</th></tr>
-      </thead>
-      <tbody>
-        { assets }
-      </tbody>
-    </table>
-  </div>);
+export const Assets = props => {
+  if (props.assets) {
+    const assets = props.assets.map(asset => {
+      return (
+        <tr>
+          <td>{asset.title}</td>
+          <td>
+            <a href={asset.url}>{asset.url}</a>
+          </td>
+        </tr>
+      );
+    });
+    return (
+      <div>
+        <h2>Project assets</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Asset</th>
+              <th>Url</th>
+            </tr>
+          </thead>
+          <tbody>{assets}</tbody>
+        </table>
+      </div>
+    );
   }
-  return (<span></span>);
-}
+  return <span />;
+};
 
-const getImage = (url) => {
+const getImage = url => {
   if (typeof url == "undefined") {
-    return (<span></span>);
+    return <span />;
   }
-  return (<img src={url}/>)
-}
+  return <img src={url} />;
+};
 
-export const ArchitectureHeader = (props) => {
-
+export const ArchitectureHeader = props => {
   if (!props.description) {
-    return (<span></span>);
+    return <span />;
   }
-  
+
   let imageFile = "architecture.svg";
 
   // IE doesn't fully support SVG:s made with draw.io
-  if(window.navigator.userAgent.indexOf('MSIE')!==-1
-  || window.navigator.appVersion.indexOf('Trident/') > 0){
+  if (
+    window.navigator.userAgent.indexOf("MSIE") !== -1 ||
+    window.navigator.appVersion.indexOf("Trident/") > 0
+  ) {
     imageFile = "architecture.png";
   }
 
@@ -305,35 +350,52 @@ export const ArchitectureHeader = (props) => {
     <div>
       <p>{props.description.info}</p>
       {getImage(props.description.img)}
-      <span style={{"float": "right", "font-size": "0.8em;"}}><a href={"https://www.draw.io/?url=" + props.description.architecture}>edit architecture image</a></span>
+      <span style={{ float: "right", "font-size": "0.8em;" }}>
+        <a href={"https://www.draw.io/?url=" + props.description.architecture}>
+          edit architecture image
+        </a>
+      </span>
       <h2>Service Architecture</h2>
-      <img src={image}/>
+      <img src={image} />
     </div>
   );
-}
+};
 
-export const ReplitEmbed = (props) => {
+export const ReplitEmbed = props => {
   if (!props.replit) {
-    return (<span></span>);
+    return <span />;
   }
 
-  const getEmbed = (example) => {
-     if (example == null || example.title == null || example.height == null || example.url == null) {
-       return null;
-     }
+  const getEmbed = example => {
+    if (
+      example == null ||
+      example.title == null ||
+      example.height == null ||
+      example.url == null
+    ) {
+      return null;
+    }
 
-     return (
-              <div>
-                <h3>{ example.title }</h3>
-                <p dangerouslySetInnerHTML={{__html: example.description }} />
-                <iframe height={example.height} width="100%" src={example.url + "?lite=true"} frameBorder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-              </div>
-            );
+    return (
+      <div>
+        <h3>{example.title}</h3>
+        <p dangerouslySetInnerHTML={{ __html: example.description }} />
+        <iframe
+          height={example.height}
+          width="100%"
+          src={example.url + "?lite=true"}
+          frameBorder="no"
+          allowtransparency="true"
+          allowfullscreen="true"
+          sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"
+        />
+      </div>
+    );
   };
 
   let note = null;
   if (props.replit.note) {
-    note = <div dangerouslySetInnerHTML={{__html: props.replit.note }} />;
+    note = <div dangerouslySetInnerHTML={{ __html: props.replit.note }} />;
   }
 
   let title = "Test the API";
@@ -341,13 +403,13 @@ export const ReplitEmbed = (props) => {
     title = props.replit.title;
   }
 
-  const list = props.replit.embeds.map(getEmbed);  
+  const list = props.replit.embeds.map(getEmbed);
 
   return (
-	<div>
-	  <h2>{ title }</h2>
-          { note }
-          { list }
-	</div>);
-}
-
+    <div>
+      <h2>{title}</h2>
+      {note}
+      {list}
+    </div>
+  );
+};

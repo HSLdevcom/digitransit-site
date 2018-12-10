@@ -4,13 +4,20 @@ description:
   info: Data container for Pelias
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/services/6-data-containers/geocoding-data/architecture.xml
 assets:
-  source: https://github.com/HSLdevcom/pelias-data-container
-  dockerHub: https://hub.docker.com/r/hsldevcom/pelias-data-container/
-  Dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
-  "Pelias config": https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
-  "ES client": https://github.com/HSLdevcom/dbclient.git
-  pelias-nlsfi-places-importer: https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
-  pelias-openaddresses-import: https://github.com/HSLdevcom/openaddresses.git
+  - title: "source"
+    url: https://github.com/HSLdevcom/pelias-data-container
+  - title: "DockerHub"
+    url: https://hub.docker.com/r/hsldevcom/pelias-data-container/
+  - title: "Dockerfile"
+    url: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
+  - title: "Pelias config"
+    url: https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
+  - title: "ES client"
+    url: https://github.com/HSLdevcom/dbclient.git
+  - title: "pelias-nlsfi-places-importer"
+    url: https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
+  - title: "pelias-openaddresses-import"
+    url: https://github.com/HSLdevcom/openaddresses.git
 technologies:
   "SIRI": "http://user47094.vs.easily.co.uk/siri/"
   "GTFS-RT": "https://developers.google.com/transit/gtfs-realtime/"
@@ -26,11 +33,13 @@ docker:
 This service is essentially an ElasticSearch instance containing Geocoding data that can be used with Pelias Geocoder.
 
 ### General Pelias information
+
 Start by reading (Note that it might not be up-to-date):
+
 > https://mapzen.com/blog/pelias-setup-tutorial
 
-
 ### How data is built?
+
 On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
 Pelias tools. At high level this is what happens:
 
@@ -58,10 +67,10 @@ Pelias tools. At high level this is what happens:
 
 12. Run OpenAddresses import for Finnish addresses and merge fi and sv records for matching addresses
 
-
-
 ### Exploring data
+
 For Exploring ElasticSearch data you can open browser (when container is running):
+
 > http://localhost:9200/_plugin/head/
 
 This url contains navigator that can be user to make queries to ElasticSearch. In order to make queries:
@@ -75,11 +84,13 @@ This url contains navigator that can be user to make queries to ElasticSearch. I
 4. Browse results
 
 For Gis data exploration you can use e.g. QGis
+
 > http://www.qgis.org/en/site/
 
 ## Datasources
 
 ### OpenAddresses
+
 - Url: https://openaddresses.io/
 - All datafiles are listed in http://results.openaddresses.io/state.txt. The relevant ones contain a path section /fi/.
 - Types: Address
@@ -87,6 +98,7 @@ For Gis data exploration you can use e.g. QGis
 Open addresses is a open data collaborative to produce global address data around the world. We use addresses from Open addresses as primary data.
 
 ### OpenStreetMap
+
 - Url: https://www.openstreetmap.org
 - Datafile: http://download.geofabrik.de/europe/finland-latest.osm.pbf
 - Types: address, venue
@@ -116,6 +128,7 @@ OpenStreetMap import reads all items which are tagged with a name and one or mor
 
 You can improve digitransit geocoding by contributing new or corrected data to OpenStreetMap. Please always include a Swedish name version, if available, to your data contributions.
 Below is a simple example node with proper names:
+
 ```json
 {
     "id":26430225,
@@ -128,21 +141,23 @@ Below is a simple example node with proper names:
     }
 }
 ```
+
 For more information, check out:
->http://wiki.openstreetmap.org/wiki/Beginners%27_guide
+
+> http://wiki.openstreetmap.org/wiki/Beginners%27_guide
 
 Our goal is to use as much data from OSM as possible. Unfortunately, at the moment it doesn't contain everything that we need so we have to use other sources also.
 
-
 ### NLS Paikat
+
 - Url: http://www.maanmittauslaitos.fi/digituotteet/nimisto
 - Datafile: http://kartat.kapsi.fi/files/nimisto/paikat/etrs89/gml/paikat_2016_01.zip
 - Types: venue
 
 National Land survey Nimistö ("places") contains place names in Finland. It provides places like "Takalammi".
 
-
 ## Key service delivery activities
+
 1. Keep up with Pelias development on GitHub<br/>
    https://github.com/pelias/pelias<br/>
    https://pelias.io
