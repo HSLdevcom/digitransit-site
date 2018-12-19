@@ -169,7 +169,6 @@ module.exports = React.createClass({
             alignItems: "center",
           })}>
           <img src="/hsl-logo.png"  style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
-          <img src="/livi-logo.png" style={prefixer({margin: "2em 2em", filter: "brightness(2)", WebkitFilter: "brightness(2)"})}/>
           </div>
           <div style={{padding: "1em", color: "white", fontSize: 14}}>
             © Digitransit 2016

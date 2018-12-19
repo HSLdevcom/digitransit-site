@@ -48,7 +48,6 @@ export class FrontPageHeader extends React.Component {
           })}
         >
           <img src="/hsl-logo.png"  style={{margin: "2em 2em"}}/>
-          <img src="/livi-logo.png" style={{margin: "2em 2em"}}/>
         </div>
       </div>
     )
