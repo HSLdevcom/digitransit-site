@@ -6,7 +6,7 @@ Digitransit marketing site built using [Gatsby][Gatsby] static site generator.
 
 ## Development workflow
 
-Install gatsby as a dependency using `npm install -g gatsby@0.7.7`
+Install gatsby as a dependency using `npm install -g gatsby-cli@2.4.5`
 
 Start development server using: `gatsby develop`
 
