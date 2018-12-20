@@ -1,12 +1,12 @@
-import React from 'react';
-import DocumentTitle from 'react-document-title';
+import React from "react";
+import DocumentTitle from "react-document-title";
 
-import { TypographyStyle, GoogleFont } from 'react-typography'
-import typography from './utils/typography';
+import { TypographyStyle, GoogleFont } from "react-typography";
+import typography from "./utils/typography";
 
-import header from './pages/header.jpg';
-import header2x from './pages/header.2x.jpg';
-import headerMobile from './pages/header.mobile.jpg';
+import header from "./pages/header.jpg";
+import header2x from "./pages/header.2x.jpg";
+import headerMobile from "./pages/header.mobile.jpg";
 
 export default class HTML extends React.Component {
   render() {
@@ -15,7 +15,11 @@ export default class HTML extends React.Component {
     if (this.props.title) {
       title = this.props.title;
     }
-    if ((typeof __GH_PAGES__ !== "undefined" && __GH_PAGES__ !== null) && __GH_PAGES__) {
+    if (
+      typeof __GH_PAGES__ !== "undefined" &&
+      __GH_PAGES__ !== null &&
+      __GH_PAGES__
+    ) {
       urlPrefix = this.props.config.ghPagesURLPrefix;
     } else {
       urlPrefix = "";
@@ -24,32 +28,75 @@ export default class HTML extends React.Component {
     return (
       <html lang="en" {...this.props.htmlAttributes}>
         <head>
-          <meta charSet="utf-8"/>
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-          <meta property="og:url" content={
-            this.props.page && this.props.page.path ? `http://digitransit.fi${this.props.page.path}` : "http://digitransit.fi/" }/>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            property="og:url"
+            content={
+              this.props.page && this.props.page.path
+                ? `http://digitransit.fi${this.props.page.path}`
+                : "http://digitransit.fi/"
+            }
+          />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="Digitransit" />
-          <meta property="og:description" content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä." />
-          <meta property="og:image" content={
-            this.props.page && this.props.page.data && this.props.page.data.image ? `http://digitransit.fi/${this.props.page.file.dirname}/${this.props.page.data.image}` : "http://digitransit.fi/share-image.png"}/>
+          <meta
+            property="og:description"
+            content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
+          />
+          <meta
+            property="og:image"
+            content={
+              this.props.page &&
+              this.props.page.data &&
+              this.props.page.data.image
+                ? `http://digitransit.fi/${this.props.page.file.dirname}/${
+                    this.props.page.data.image
+                  }`
+                : "http://digitransit.fi/share-image.png"
+            }
+          />
           <meta property="og:locale" content="fi_FI" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@digitransit" />
           <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä." />
-          <meta name="twitter:image" content={
-            this.props.page && this.props.page.data && this.props.page.data.image ? `http://digitransit.fi/${this.props.page.file.dirname}/${this.props.page.data.image}` : "http://digitransit.fi/share-image.png"}/>
+          <meta
+            name="twitter:description"
+            content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
+          />
+          <meta
+            name="twitter:image"
+            content={
+              this.props.page &&
+              this.props.page.data &&
+              this.props.page.data.image
+                ? `http://digitransit.fi/${this.props.page.file.dirname}/${
+                    this.props.page.data.image
+                  }`
+                : "http://digitransit.fi/share-image.png"
+            }
+          />
           <meta property="fb:admins" content="100006467997249" />
-          <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0'/>
+          <meta
+            name="viewport"
+            content="user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0"
+          />
           <title>{title}</title>
-          <meta name="description" content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä." />
-          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat,String.prototype.startsWith,Object.assign"/>
-          <link rel="shortcut icon" href={this.props.favicon}/>
+          <meta
+            name="description"
+            content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
+          />
+          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat,String.prototype.startsWith,Object.assign" />
+          <link rel="shortcut icon" href={this.props.favicon} />
           <TypographyStyle typography={typography} />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"/>
-          <style dangerouslySetInnerHTML={{__html: `
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"
+          />
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
           #header-image {
             background-image: url(${header});
             background-position: center;
@@ -165,15 +212,23 @@ export default class HTML extends React.Component {
               float: right;
             }
           }
-          `}}/>
+          `
+            }}
+          />
           <GoogleFont typography={typography} />
           {this.props.headComponents}
         </head>
         <body className="landing-page" {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
-          <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{__html: this.props.body}} />
-          <script src={`${urlPrefix}/bundle.js`}/>
-          <script type="text/javascript" dangerouslySetInnerHTML={{__html: `
+          <div
+            key={`body`}
+            id="___gatsby"
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
+          />
+          <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
             var _paq = _paq || [];
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
@@ -184,10 +239,16 @@ export default class HTML extends React.Component {
               var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
               g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
             })();
-          `}}/>
+          `
+            }}
+          />
           <noscript>
             <p>
-              <img src="//piwik.digitransit.fi/piwik.php?idsite=1" style={{border: 0}} alt="" />
+              <img
+                src="//piwik.digitransit.fi/piwik.php?idsite=1"
+                style={{ border: 0 }}
+                alt=""
+              />
             </p>
           </noscript>
           {this.props.postBodyComponents}
