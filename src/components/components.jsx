@@ -7,6 +7,8 @@ import {
 } from "@mjaakko/react-responsive-grid";
 import { Link } from "gatsby";
 
+import { PrismCode } from "react-prism";
+
 import logo from "../pages/logo.png";
 import hslLogo from "../pages/hsl-logo.png";
 import liviLogo from "../pages/livi-logo.png";
@@ -15,6 +17,10 @@ import typography from "../utils/typography";
 const prefixer = require("react-style-normalizer");
 
 const { rhythm, fontSizeToPx } = typography;
+
+//Prism highlighting for docker commands
+require("prismjs");
+require("prismjs/components/prism-bash");
 
 const getPanelImage = (image, swapped, small) => {
   return (
@@ -246,10 +252,24 @@ export const DockerInfo = props => {
           . The image can be built using this{" "}
           <a href={props.docker.buildScript}>build script</a>.{travisInfo}
         </p>
-        <p>To run Docker container, run:</p>
-        <pre>{props.docker.runContainer}</pre>
-        <p>To access Docker container:</p>
-        <pre>{props.docker.accessContainer}</pre>
+        <p>
+          To run Docker container, run:
+          <br />{" "}
+          <pre>
+            <PrismCode className="language-bash">
+              {props.docker.runContainer}
+            </PrismCode>
+          </pre>
+        </p>
+        <p>
+          To access Docker container:
+          <br />{" "}
+          <pre>
+            <PrismCode className="language-bash">
+              {props.docker.accessContainer}
+            </PrismCode>
+          </pre>
+        </p>
         <p>
           For More information about how to use Docker see{" "}
           <a href="/en/developers/docker-guide/#docker">docker info</a>.
