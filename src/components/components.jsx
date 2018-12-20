@@ -11,7 +11,6 @@ import { PrismCode } from "react-prism";
 
 import logo from "../pages/logo.png";
 import hslLogo from "../pages/hsl-logo.png";
-import liviLogo from "../pages/livi-logo.png";
 
 import typography from "../utils/typography";
 const prefixer = require("react-style-normalizer");
@@ -67,7 +66,6 @@ export class FrontPageHeader extends React.Component {
           })}
         >
           <img src={hslLogo} style={{ margin: "2em 2em" }} />
-          <img src={liviLogo} style={{ margin: "2em 2em" }} />
         </div>
       </div>
     );
