@@ -30,6 +30,7 @@
     "react": "^16.5.1",
     "react-document-title": "^2.0.1",
     "react-dom": "^16.5.1",
+    "react-prism": "^4.3.2",
     "react-style-normalizer": "1.2.8",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17"
