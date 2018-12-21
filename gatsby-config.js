@@ -38,7 +38,10 @@ module.exports = {
               maxWidth: 1250,
             },
           },
-          { 
+          {
+            resolve: `gatsby-remark-autolink-headers`, //This plugin must be placed before 'gatsby-remark-prismjs' to avoid https://github.com/gatsbyjs/gatsby/issues/5764
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
           },
           {
