@@ -1,5 +1,6 @@
 ---
 title: High-frequency positioning (HFP)
+toc: true
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/vehicle-positions/architecture.xml
