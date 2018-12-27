@@ -431,3 +431,23 @@ export const ReplitEmbed = props => {
     </div>
   );
 };
+
+export const TableOfContents = props => {
+  if (
+    !props.data.markdownRemark.frontmatter.toc ||
+    !props.data.markdownRemark.tableOfContents
+  ) {
+    return null;
+  }
+
+  return (
+    <div>
+      <h2>Table of contents</h2>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: props.data.markdownRemark.tableOfContents
+        }}
+      />
+    </div>
+  );
+};
