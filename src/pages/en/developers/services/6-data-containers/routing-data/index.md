@@ -71,13 +71,13 @@ For example, the HSL routing data consists of the following files:
 Due to changes in Finnish legislation on July 1st, 2018 all trips with value REITTI-XXXXX in column lupasoptunnus in table
 https://beta.liikennevirasto.fi/joukkoliikenne/vuoro.xlsx will be excluded from the kalkati and gtfs national dump files at http://developer.matka.fi/ and https://www.digitransit.fi/en/developers/services/6-data-containers/routing-data/ as authorities will no longer maintain updates about commercial bus services.  
 The Finland dump files and data container https://api.digitransit.fi/routing-data/v2/finland/ will still contain information about contractual services by the cities and Ely-centers.  
-Please, visit https://www.liikennevirasto.fi/web/en/transport-system/nap for background information and https://finap.fi and https://github.com/finnishtransportagency/mmtis-national-access-point/blob/master/docs/api/README.md for alternative sources of route and timetable information.
+Please, visit https://www.traficom.fi/en/services/how-submit-your-transport-service-information-nap-service-catalog for background information and https://finap.fi and https://github.com/finnishtransportagency/mmtis-national-access-point/blob/master/docs/api/README.md for alternative sources of route and timetable information.
 
 For more information contact  
 Mr. Martin Johansson  
 Finnish Transport Agency, FTA  
 Phone +358 295 34 3526  
-e-mail: joukkoliikenne@liikennevirasto.fi
+e-mail: joukkoliikenne@traficom.fi
 
 ## Related open source projects
 
