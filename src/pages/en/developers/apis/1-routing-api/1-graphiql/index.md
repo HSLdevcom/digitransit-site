@@ -17,6 +17,7 @@ title: GraphiQL
 | Region                        | URL                           |
 |-------------------------------|-------------------------------|
 | Helsinki region | https://api.digitransit.fi/graphiql/hsl     |
+| Helsinki region ([zone model](https://www.hsl.fi/en/newzones)) | https://api.digitransit.fi/graphiql/next-hsl |
 | Waltti regions  | https://api.digitransit.fi/graphiql/waltti  |
 | Entire Finland  | https://api.digitransit.fi/graphiql/finland |
 
@@ -35,6 +36,7 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 | Region          | Endpoint                                                             |
 |-----------------|----------------------------------------------------------------------|
 | Helsinki region | `http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`     |
+| Helsinki region ([zone model](https://www.hsl.fi/en/newzones)) | `https://api.digitransit.fi/routing/v1/routers/next-hsl` |
 | Waltti regions  | `http://api.digitransit.fi/routing/v1/routers/waltti/index/graphql`  |
 | Entire Finland  | `http://api.digitransit.fi/routing/v1/routers/finland/index/graphql` |
 
