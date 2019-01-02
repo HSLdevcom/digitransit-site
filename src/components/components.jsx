@@ -432,22 +432,58 @@ export const ReplitEmbed = props => {
   );
 };
 
-export const TableOfContents = props => {
-  if (
-    !props.data.markdownRemark.frontmatter.toc ||
-    !props.data.markdownRemark.tableOfContents
-  ) {
-    return null;
+export class TableOfContents extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { collapsed: false };
+
+    this.update = this.update.bind(this);
   }
 
-  return (
-    <div>
-      <h2>Table of contents</h2>
+  update(e) {
+    e.preventDefault();
+    this.setState(state => {
+      console.log("Set state to " + !state.collapsed);
+      return { collapsed: !state.collapsed };
+    });
+  }
+
+  render() {
+    if (
+      !this.props.data.markdownRemark.frontmatter.toc ||
+      !this.props.data.markdownRemark.tableOfContents
+    ) {
+      return null;
+    }
+
+    return (
       <div
-        dangerouslySetInnerHTML={{
-          __html: props.data.markdownRemark.tableOfContents
+        style={{
+          display: "inline-block",
+          border: "1px",
+          borderStyle: "solid",
+          borderColor: "black",
+          background: "#f9f9f9",
+          padding: "8px",
+          marginBottom: "8px"
         }}
-      />
-    </div>
-  );
-};
+      >
+        <p style={{ textAlign: "center", marginBottom: "0px" }}>
+          <b>Table of contents</b>
+          {" ["}
+          <a href="javascript:;" onClick={this.update}>
+            {this.state.collapsed ? "hide" : "show"}
+          </a>
+          {"]"}
+        </p>
+        <div
+          class="toc"
+          style={{ display: this.state.collapsed ? "block" : "none" }}
+          dangerouslySetInnerHTML={{
+            __html: this.props.data.markdownRemark.tableOfContents
+          }}
+        />
+      </div>
+    );
+  }
+}

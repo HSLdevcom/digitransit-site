@@ -157,6 +157,24 @@ export default class HTML extends React.Component {
             clear: right;
           }
 
+          .toc ul {
+            padding-top: 0px !important; 
+            padding-bottom: 0px !important; 
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+          }
+
+          .toc p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+          }
+
+          .toc > ul li {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            font-size: 12px;
+          }
+
           @media
           (-webkit-min-device-pixel-ratio: 2),
           (min-resolution: 192dpi) {
