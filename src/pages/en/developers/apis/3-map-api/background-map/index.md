@@ -4,7 +4,7 @@ replit:
   embeds: 
     -
       title: "Display map using Leaflet"
-      description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map." 
+      description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map.<br/>Note that this example is using <code>hsl-map</code> tiles (<b>512px</b>), which are not the size that Leaflet expects. To display 512px tiles correctly with Leaflet, use options <code>tileSize: 512</code> and <code>zoomOffset: -1</code>" 
       url: https://repl.it/@digitransit/LeafletMap
       height: 800px
 ---
@@ -23,7 +23,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
-| source	| string	 | <ul><li>`hsl-map` for raster tiles</li><li>`hsl-map-sv` for raster tiles with Swedish language</li><li>`hsl-vector-map` for vector tiles</li></ul>|
+| source	| string	 | <ul><li>`hsl-map` for 512px raster tiles</li><li>`hsl-map-256` for 256px raster tiles</li><li>`hsl-map-sv` for 512px raster tiles with Swedish language</li><li>`hsl-map-sv-256` for 256px raster tiles with Swedish language</li><li>`hsl-vector-map` for vector tiles</li></ul>|
 | z             | int            | Zoom level
 | x             | int            | x-coordinate
 | y             | int            | y-coordinate
