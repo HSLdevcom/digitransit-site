@@ -6,10 +6,10 @@ ENV WORK=/opt/digitransit-site
 WORKDIR ${WORK}
 
 RUN yarn global add gatsby-cli@2.4.5 && \
-  yarn global add serve@10.1.1
+  yarn global add serve@10.1.1 && \
+  mkdir -p ${WORK}
 
 # Add application
-RUN mkdir -p ${WORK}
 ADD . ${WORK}
 
 RUN yarn && \
