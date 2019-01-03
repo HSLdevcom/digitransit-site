@@ -1,0 +1,11 @@
+.git*
+.travis.yml
+travis-build.sh
+Dockerfile
+node_modules
+public/
+.cache/
+.vscode/
+.idea
+.DS_store
+README.md
