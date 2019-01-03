@@ -158,15 +158,15 @@ export default class HTML extends React.Component {
           }
 
           .toc ul {
-            padding-top: 0px !important; 
-            padding-bottom: 0px !important; 
-            margin-top: 0px !important;
-            margin-bottom: 0px !important;
+            padding-top: 0px; 
+            padding-bottom: 0px; 
+            margin-top: 0px; 
+            margin-bottom: 0px;
           }
 
           .toc p {
-            margin-top: 0px !important;
-            margin-bottom: 0px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
           }
 
           .toc > ul li {

@@ -462,10 +462,10 @@ export class TableOfContents extends React.Component {
           display: "inline-block",
           border: "1px",
           borderStyle: "solid",
-          borderColor: "black",
+          borderColor: "lightgrey",
           background: "#f9f9f9",
-          padding: "8px",
-          marginBottom: "8px"
+          padding: rhythm(1 / 4),
+          marginBottom: rhythm(1)
         }}
       >
         <p style={{ textAlign: "center", marginBottom: "0px" }}>
