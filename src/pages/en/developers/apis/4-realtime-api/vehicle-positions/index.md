@@ -179,6 +179,7 @@ The numerical values for the different transit operators are listed below:
 | `40`   | HKL-Raitioliikenne            |
 | `45`   | Transdev Vantaa Oy            |
 | `47`   | Taksikuljetus Oy              |
+| `51`   | Korsisaari Oy                 |
 | `54`   | V-S Bussipalvelut Oy          |
 | `55`   | Transdev Helsinki Oy          |
 | `58`   | Koillisen Liikennepalvelut Oy |
