@@ -443,7 +443,6 @@ export class TableOfContents extends React.Component {
   update(e) {
     e.preventDefault();
     this.setState(state => {
-      console.log("Set state to " + !state.collapsed);
       return { collapsed: !state.collapsed };
     });
   }
