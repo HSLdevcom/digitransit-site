@@ -12,7 +12,8 @@ import {
   TechnologiesInfo,
   Assets,
   ArchitectureHeader,
-  ReplitEmbed
+  ReplitEmbed,
+  TableOfContents
 } from "../components/components";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";
@@ -118,6 +119,7 @@ export default props => {
                   slug={props.data.markdownRemark.fields.slug}
                   {...props.data.markdownRemark.frontmatter}
                 />
+                <TableOfContents {...props} />
                 <Markdown {...props} />
                 <Assets {...props.data.markdownRemark.frontmatter} />
                 <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
@@ -140,6 +142,7 @@ export default props => {
               slug={props.data.markdownRemark.fields.slug}
               {...props.data.markdownRemark.frontmatter}
             />
+            <TableOfContents {...props} />
             <Markdown {...props} />
             <Assets {...props.data.markdownRemark.frontmatter} />
             <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
@@ -177,6 +180,7 @@ export const query = graphql`
         title
         headerText
         redirect
+        toc
         description {
           info
           architecture
@@ -209,6 +213,7 @@ export const query = graphql`
         }
       }
       html
+      tableOfContents
     }
   }
 `;
