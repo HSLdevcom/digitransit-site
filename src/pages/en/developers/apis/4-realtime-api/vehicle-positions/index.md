@@ -29,19 +29,19 @@ npm install -g mqtt
 2. Use MQTT.js to subscribe to HFP messages:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -p 443 -l mqtts -v -t "/hfp/v1/journey/#"
+mqtt subscribe -h mqtt.hsl.fi -p 8883 -l mqtts -v -t "/hfp/v1/journey/#"
 ```
 
 (or try [this example](https://repl.it/@digitransit/VehiclePositionsMQTTrawJSON) if you don't want to install anything)
 
 ## API endpoints
 
-| URL                        | Description                                                                                                           |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `mqtts://mqtt.hsl.fi:443/` | The bare MQTT protocol with TLS, lightweight.                                                                         |
-| `wss://mqtt.hsl.fi:443/`   | MQTT over WebSockets with TLS, for browsers.                                                                          |
-| `mqtt://mqtt.hsl.fi:1883/` | The bare MQTT protocol without TLS, lightweight. Prefer the port 443 to respect the locational privacy of your users. |
-| `ws://mqtt.hsl.fi:1883/`   | MQTT over WebSockets without TLS. Prefer the port 443 to respect the locational privacy of your users.                |
+| URL                         | Description                                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `mqtts://mqtt.hsl.fi:8883/` | The bare MQTT protocol with TLS, lightweight.                                                                          |
+| `wss://mqtt.hsl.fi:443/`    | MQTT over WebSockets with TLS, for browsers.                                                                           |
+| `mqtt://mqtt.hsl.fi:1883/`  | The bare MQTT protocol without TLS, lightweight. Prefer the port 8883 to respect the locational privacy of your users. |
+| `ws://mqtt.hsl.fi:1883/`    | MQTT over WebSockets without TLS. Prefer the port 443 to respect the locational privacy of your users.                 |
 
 ## Message format
 
@@ -207,7 +207,7 @@ npm install -g mqtt
 If you insist on using [mosquitto](https://mosquitto.org/), try this for TLS access:
 
 ```bash
-mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/journey/#"
+mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 8883 -v -t "/hfp/v1/journey/#"
 ```
 
 #### A situational overview
@@ -215,7 +215,7 @@ mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 443 -v -t "/hfp/v1/jo
 To get just the most significant status updates, use:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/0/#"
 ```
 
@@ -224,7 +224,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 To subscribe to all vehicles currently on the line 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/2551/1/#"
 ```
 
@@ -233,7 +233,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 Subscribe to all trams with:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/ongoing/tram/#"
 ```
 
@@ -242,14 +242,14 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 Subscribe to messages of a certain trip, even slightly before the driver has signed onto the trip:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/+/+/+/+/9975/1/+/12:15/#"
 ```
 
 Or if your users would find it confusing to see a vehicle going in the wrong direction, subscribe to the `ongoing` messages only:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/9975/1/+/12:15/#"
 ```
 
@@ -280,7 +280,7 @@ Let's assume that you wish to subscribe to all action inside the following [GeoJ
 The box bounded by the latitude interval [60.18, 60.19[ and the longitude interval [24.95, 24.97[ corresponds with the following HFP subscription:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/#" \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/86/#"
 ```
@@ -288,7 +288,7 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
 For the precision of one more digit of latitude and longitude, one would need 56 topic filters for the bounding box:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 443 -v \
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/37/#" \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/38/#" \
   -t "/hfp/v1/journey/ongoing/+/+/+/+/+/+/+/+/+/60;24/19/85/39/#" \
