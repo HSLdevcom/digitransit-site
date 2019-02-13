@@ -69,8 +69,8 @@ Mikonkatu 7, Mikonkatu 2, Mikonkatu 8.
 ## Liikennepoliittiset painotukset ja käyttöliittymän vaikutukset
 
 Yllä esitetyt periaatteet kuvaavat haun toiminnan digitransit-palvelurajapintojen kautta.
-Digitransit-reittioppaan osoitehaussa on huomioitava seuraavat seikat, jotka vaikuttavat
-hakutuloksiin:
+Digitransit-reittioppaan verkkosivuilta tehdyssä osoitehaussa on kuitenkin huomioitava seuraavat
+seikat, jotka vaikuttavat hakutuloksiin:
 
 **Liikennepoliittiset painotukset** <br>
 Koska kyseessä on julkisen liikenteen reitityspalvelu, asema- ja terminaalityyppisiä kohteita suositaan
