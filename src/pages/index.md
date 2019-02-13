@@ -9,6 +9,8 @@ panels:
         url: https://reittiopas.hsl.fi/
       - title: Tutustu Liikenneviraston opas.matka.fi-palveluun
         url: https://opas.matka.fi/
+      - title: Osoitehaun perusteet
+        url: /osoitehaku/
     image: "./users.svg"
     id: users
     background: "#8c54a2"
