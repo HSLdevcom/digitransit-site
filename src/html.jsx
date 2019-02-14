@@ -43,7 +43,7 @@ export default class HTML extends React.Component {
           <meta property="og:site_name" content="Digitransit" />
           <meta
             property="og:description"
-            content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
+            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
           />
           <meta
             property="og:image"
@@ -63,7 +63,7 @@ export default class HTML extends React.Component {
           <meta name="twitter:title" content={title} />
           <meta
             name="twitter:description"
-            content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
+            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
           />
           <meta
             name="twitter:image"
@@ -85,7 +85,7 @@ export default class HTML extends React.Component {
           <title>{title}</title>
           <meta
             name="description"
-            content="HSL:n reittiopas.hsl.fi ja Liikenneviraston opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
+            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
           />
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat,String.prototype.startsWith,Object.assign" />
           <link rel="shortcut icon" href={this.props.favicon} />

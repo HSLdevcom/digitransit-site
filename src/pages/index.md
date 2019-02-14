@@ -7,7 +7,7 @@ panels:
     links:
       - title: Tutustu HSL:n reittiopas.hsl.fi-palveluun
         url: https://reittiopas.hsl.fi/
-      - title: Tutustu Liikenneviraston opas.matka.fi-palveluun
+      - title: Tutustu Traficomin opas.matka.fi-palveluun
         url: https://opas.matka.fi/
     image: "./users.svg"
     id: users
@@ -25,7 +25,7 @@ panels:
     id: developers
     background: "#ff8a3c"
   - title: Kunnille
-    body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n, Liikenneviraston ja TVV LMJ Oy:n tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Ja varmista, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
+    body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n, Traficomin ja TVV LMJ Oy:n tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Ja varmista, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
     links:
       - title: Liity palveluun
         url: /liity/
@@ -36,9 +36,9 @@ panels:
 ---
 <div style="text-align: center;">
 
-## HSL:n Reittiopas ja Liikenneviraston Matka.fi on julkaistu
+## HSL:n Reittiopas ja Traficomin Matka.fi on julkaistu
 
-HSL:n Reittiopas.&zwnj;fi ja Liikenneviraston Matka.&zwnj;fi ovat uudistuneet.<br/>
+HSL:n Reittiopas.&zwnj;fi ja Traficomin Matka.&zwnj;fi ovat uudistuneet.<br/>
 Apuasi kaivataan yhä jatkuvassa kehitystyössä. Tule palvelun testaajaksi tai tee siitä saman tien parempi.<br/>
 Lähdekoodi on avoin.
 
