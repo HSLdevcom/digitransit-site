@@ -334,7 +334,7 @@ class Layout extends React.Component {
             />
           </div>
           <div style={{ padding: "1em", color: "white", fontSize: 14 }}>
-            © Digitransit 2016
+            © Digitransit {1900 + new Date().getYear()}
           </div>
         </div>
       </div>
