@@ -4,7 +4,9 @@ title: APIs
 
 ## API access rights
 
-The APIs hosted at api.digitransit.fi are publicly available for all and require no credentials. If you want to improve or modify them in some way, you can either contribute to the projects through https://github.com/HSLdevcom or host your own APIs based on those sources.
+The APIs hosted at api.digitransit.fi are publicly available for all and require no credentials. The APIs have no rate limiting, but you should avoid doing more than 10 requests per second. If you need to make large amount of requests, you might want to [host the API locally](../architecture/x-apis/1-routing-api/#hosting-the-api-locally).
+
+If you want to improve or modify the APIs in some way, you can either contribute to the projects through https://github.com/HSLdevcom or host your own APIs based on those sources.
 
 ## APIs
 | API                                                                             | Description                     |
