@@ -22,13 +22,14 @@ replit:
 
 ### Creating and sending queries
 
-Queries are written in GraphQL language and sent to the API using **HTTP POST method** with either **"application/graphql"** or **"application/json"** as Content-Type.
+Queries are written in GraphQL language and sent to the API in request body of a **HTTP POST** request with either `"application/graphql"` or `"application/json"` as *Content-Type*.
 <br/>Queries define what type of data and what fields of the data are requested.
 <br/>The API returns a result corresponding to the query in **JSON** format.
 
 The following queries would request a stop with id `HSL:1173434` and return its name and coordinates:
 
-**Content-Type: "application/graphql"**
+* Using `Content-Type: "application/graphql"`:
+
 ```graphql
 {
   stop(id: "HSL:1173434") {
@@ -37,8 +38,11 @@ The following queries would request a stop with id `HSL:1173434` and return its 
     lon
   }
 }
+
 ```
-**Content-Type: "application/json"**
+
+* Using `Content-Type: "application/json"`
+
 ```json
 {
   "query": "{
@@ -49,6 +53,7 @@ The following queries would request a stop with id `HSL:1173434` and return its 
     }"
 }
 ```
+
 **Example response:**
 ```json
 {
