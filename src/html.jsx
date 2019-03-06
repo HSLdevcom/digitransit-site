@@ -1,28 +1,16 @@
 import React from "react";
 import DocumentTitle from "react-document-title";
 
-import { TypographyStyle, GoogleFont } from "react-typography";
-import typography from "./utils/typography";
-
 import header from "./pages/header.jpg";
 import header2x from "./pages/header.2x.jpg";
 import headerMobile from "./pages/header.mobile.jpg";
 
 export default class HTML extends React.Component {
   render() {
-    var title, urlPrefix;
+    var title;
     title = DocumentTitle.rewind();
     if (this.props.title) {
       title = this.props.title;
-    }
-    if (
-      typeof __GH_PAGES__ !== "undefined" &&
-      __GH_PAGES__ !== null &&
-      __GH_PAGES__
-    ) {
-      urlPrefix = this.props.config.ghPagesURLPrefix;
-    } else {
-      urlPrefix = "";
     }
 
     return (
@@ -87,9 +75,7 @@ export default class HTML extends React.Component {
             name="description"
             content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
           />
-          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=String.prototype.repeat,String.prototype.startsWith,Object.assign" />
           <link rel="shortcut icon" href={this.props.favicon} />
-          <TypographyStyle typography={typography} />
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"
@@ -233,7 +219,6 @@ export default class HTML extends React.Component {
           `
             }}
           />
-          <GoogleFont typography={typography} />
           {this.props.headComponents}
         </head>
         <body className="landing-page" {...this.props.bodyAttributes}>
