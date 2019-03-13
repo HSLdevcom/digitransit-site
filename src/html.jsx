@@ -1,5 +1,4 @@
 import React from "react";
-import DocumentTitle from "react-document-title";
 
 import header from "./pages/header.jpg";
 import header2x from "./pages/header.2x.jpg";
@@ -7,75 +6,15 @@ import headerMobile from "./pages/header.mobile.jpg";
 
 export default class HTML extends React.Component {
   render() {
-    var title;
-    title = DocumentTitle.rewind();
-    if (this.props.title) {
-      title = this.props.title;
-    }
-
     return (
-      <html lang="en" {...this.props.htmlAttributes}>
+      <html {...this.props.htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
-            property="og:url"
-            content={
-              this.props.page && this.props.page.path
-                ? `http://digitransit.fi${this.props.page.path}`
-                : "http://digitransit.fi/"
-            }
-          />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content={title} />
-          <meta property="og:site_name" content="Digitransit" />
-          <meta
-            property="og:description"
-            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
-          />
-          <meta
-            property="og:image"
-            content={
-              this.props.page &&
-              this.props.page.data &&
-              this.props.page.data.image
-                ? `http://digitransit.fi/${this.props.page.file.dirname}/${
-                    this.props.page.data.image
-                  }`
-                : "http://digitransit.fi/share-image.png"
-            }
-          />
-          <meta property="og:locale" content="fi_FI" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@digitransit" />
-          <meta name="twitter:title" content={title} />
-          <meta
-            name="twitter:description"
-            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
-          />
-          <meta
-            name="twitter:image"
-            content={
-              this.props.page &&
-              this.props.page.data &&
-              this.props.page.data.image
-                ? `http://digitransit.fi/${this.props.page.file.dirname}/${
-                    this.props.page.data.image
-                  }`
-                : "http://digitransit.fi/share-image.png"
-            }
-          />
-          <meta property="fb:admins" content="100006467997249" />
-          <meta
             name="viewport"
             content="user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0"
           />
-          <title>{title}</title>
-          <meta
-            name="description"
-            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
-          />
-          <link rel="shortcut icon" href={this.props.favicon} />
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"

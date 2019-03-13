@@ -17,6 +17,7 @@ import {
 } from "../components/components";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";
+import SEO from "../components/SEO";
 
 var typography = new Typography();
 var rhythm = typography.rhythm,
@@ -75,83 +76,92 @@ export default props => {
   });
 
   return (
-    <Layout slug={props.data.markdownRemark.fields.slug}>
-      <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-      <Container
-        style={prefixer({
-          maxWidth: 1250,
-          width: "100%",
-          padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-          flex: "1"
-        })}
-      >
-        <div>
-          <Breakpoint minWidth={700}>
-            <div>
-              <div
-                style={{
-                  overflowY: "auto",
-                  paddingRight: `calc(${rhythm(1 / 2)} - 1px)`,
-                  position: "absolute",
-                  width: `calc(${rhythm(13)} - 1px)`,
-                  borderRight: "1px solid lightgrey"
-                }}
-              >
-                <ul
+    <>
+      <SEO
+        pageTitle={props.data.markdownRemark.frontmatter.title}
+        pageDescription={props.data.markdownRemark.excerpt}
+        pagePath={props.data.markdownRemark.fields.slug}
+      />
+      <Layout slug={props.data.markdownRemark.fields.slug}>
+        <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
+        <Container
+          style={prefixer({
+            maxWidth: 1250,
+            width: "100%",
+            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
+            flex: "1"
+          })}
+        >
+          <div>
+            <Breakpoint minWidth={700}>
+              <div>
+                <div
                   style={{
-                    listStyle: "none",
-                    marginLeft: 0,
-                    marginTop: rhythm(1 / 2)
+                    overflowY: "auto",
+                    paddingRight: `calc(${rhythm(1 / 2)} - 1px)`,
+                    position: "absolute",
+                    width: `calc(${rhythm(13)} - 1px)`,
+                    borderRight: "1px solid lightgrey"
                   }}
                 >
-                  {docPages}
-                </ul>
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      marginLeft: 0,
+                      marginTop: rhythm(1 / 2)
+                    }}
+                  >
+                    {docPages}
+                  </ul>
+                </div>
+                <div
+                  style={{
+                    padding: `0 ${rhythm(1)}`,
+                    paddingLeft: `calc(${rhythm(13)} + ${rhythm(1)})`,
+                    minHeight: "1800px"
+                  }}
+                >
+                  <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+                  <ArchitectureHeader
+                    slug={props.data.markdownRemark.fields.slug}
+                    {...props.data.markdownRemark.frontmatter}
+                  />
+                  <TableOfContents {...props} />
+                  <Markdown {...props} />
+                  <Assets {...props.data.markdownRemark.frontmatter} />
+                  <TechnologiesInfo
+                    {...props.data.markdownRemark.frontmatter}
+                  />
+                  <DockerInfo {...props.data.markdownRemark.frontmatter} />
+                  <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
+                </div>
               </div>
-              <div
-                style={{
-                  padding: `0 ${rhythm(1)}`,
-                  paddingLeft: `calc(${rhythm(13)} + ${rhythm(1)})`,
-                  minHeight: "1800px"
-                }}
+            </Breakpoint>
+            <Breakpoint maxWidth={700}>
+              <strong>Topics:</strong>{" "}
+              <select
+                defaultValue={props.data.markdownRemark.fields.slug}
+                onChange={e => navigate(e.target.value)}
               >
-                <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-                <ArchitectureHeader
-                  slug={props.data.markdownRemark.fields.slug}
-                  {...props.data.markdownRemark.frontmatter}
-                />
-                <TableOfContents {...props} />
-                <Markdown {...props} />
-                <Assets {...props.data.markdownRemark.frontmatter} />
-                <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
-                <DockerInfo {...props.data.markdownRemark.frontmatter} />
-                <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
-              </div>
-            </div>
-          </Breakpoint>
-          <Breakpoint maxWidth={700}>
-            <strong>Topics:</strong>{" "}
-            <select
-              defaultValue={props.data.markdownRemark.fields.slug}
-              onChange={e => navigate(e.target.value)}
-            >
-              {docOptions}
-            </select>
-            <br />
-            <br />
-            <ArchitectureHeader
-              slug={props.data.markdownRemark.fields.slug}
-              {...props.data.markdownRemark.frontmatter}
-            />
-            <TableOfContents {...props} />
-            <Markdown {...props} />
-            <Assets {...props.data.markdownRemark.frontmatter} />
-            <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
-            <DockerInfo {...props.data.markdownRemark.frontmatter} />
-            <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
-          </Breakpoint>
-        </div>
-      </Container>
-    </Layout>
+                {docOptions}
+              </select>
+              <br />
+              <br />
+              <ArchitectureHeader
+                slug={props.data.markdownRemark.fields.slug}
+                {...props.data.markdownRemark.frontmatter}
+              />
+              <TableOfContents {...props} />
+              <Markdown {...props} />
+              <Assets {...props.data.markdownRemark.frontmatter} />
+              <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
+              <DockerInfo {...props.data.markdownRemark.frontmatter} />
+              <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
+            </Breakpoint>
+          </div>
+        </Container>
+      </Layout>
+    </>
   );
 };
 
@@ -214,6 +224,7 @@ export const query = graphql`
       }
       html
       tableOfContents
+      excerpt(pruneLength: 200)
     }
   }
 `;
