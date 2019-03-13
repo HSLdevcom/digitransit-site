@@ -7,4 +7,4 @@ Interested in developing with us? Great! Best way to get started is to read this
 on our demo sites and familiarize yourself with component code. Should you live in Finland, you can also Visit us at HSL
 premises (Opastinsilta 6A Helsinki)
 
-Fastest way to ask questions is probably through http://facebook.com/HSLdevcom
+Fastest way to ask questions is probably through [@HSLdevcom](https://twitter.com/HSLdevcom) in Twitter.
