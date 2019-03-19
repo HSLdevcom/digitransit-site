@@ -76,10 +76,6 @@ export default class HTML extends React.Component {
             content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
           />
           <link rel="shortcut icon" href={this.props.favicon} />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"
-          />
           <style
             dangerouslySetInnerHTML={{
               __html: `
