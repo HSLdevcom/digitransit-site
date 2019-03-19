@@ -15,10 +15,12 @@ export default class HTML extends React.Component {
             name="viewport"
             content="user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0"
           />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/arta.min.css"
+          <title>{title}</title>
+          <meta
+            name="description"
+            content="HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä."
           />
+          <link rel="shortcut icon" href={this.props.favicon} />
           <style
             dangerouslySetInnerHTML={{
               __html: `
