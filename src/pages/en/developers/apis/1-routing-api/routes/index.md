@@ -192,7 +192,7 @@ For example, if the following vehicle position message is received
 }
 ```
 
-on topic `/hfp/v1/journey/ongoing/bus/0012/01511/`**2550**`/`**1**`/Westendinasema/09:03/1465101/5/60;24/28/18/45`, it is possible to parse:
+on topic `/hfp/v1/journey/ongoing/bus/0012/01511/2550/1/Westendinasema/09:03/1465101/5/60;24/28/18/45`, it is possible to parse:
 
 - Route id from the topic: _2550_
 - Direction id from the topic: _1_
