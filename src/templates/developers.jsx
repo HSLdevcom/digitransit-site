@@ -34,16 +34,11 @@ export default props => {
       title: child.frontmatter.title,
       level: child.fields.slug.split("/").length - 3,
       path: child.fields.slug,
-      order: child.frontmatter.order
+      order: child.frontmatter.order ? child.frontmatter.order : 0
     };
   });
   childPages.sort((a, b) => {
-    if (
-      a.level === b.level &&
-      typeof a.order === "number" &&
-      typeof b.order === "number" &&
-      a.order - b.order !== 0
-    ) {
+    if (a.level === b.level && a.order - b.order !== 0) {
       return a.order - b.order;
     }
 
