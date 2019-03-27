@@ -25,9 +25,6 @@ var rhythm = typography.rhythm,
 
 const prefixer = require("react-style-normalizer");
 
-var _ = require("lodash");
-const sortBy = _.sortBy;
-
 export default props => {
   var childPages, docOptions, docPages;
   //rhythm = this.props.typography.rhythm;
@@ -40,8 +37,17 @@ export default props => {
       order: child.frontmatter.order
     };
   });
-  childPages = sortBy(childPages, function(child) {
-    return child.path;
+  childPages.sort((a, b) => {
+    if (
+      a.level === b.level &&
+      typeof a.order === "number" &&
+      typeof b.order === "number" &&
+      a.order - b.order !== 0
+    ) {
+      return a.order - b.order;
+    }
+
+    return a.path.localeCompare(b.path, "en-US");
   });
   docOptions = childPages.map(function(child) {
     return React.createElement(
