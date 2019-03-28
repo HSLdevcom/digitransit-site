@@ -29,7 +29,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 
 ```graphql
 {
-  cancelledTripTimes(feedId: "HSL") {
+  cancelledTripTimes(feed: "HSL") {
     scheduledDeparture
     serviceDay
     trip {
