@@ -25,56 +25,142 @@ var rhythm = typography.rhythm,
 
 const prefixer = require("react-style-normalizer");
 
-export default props => {
-  var childPages, docOptions, docPages;
-  //rhythm = this.props.typography.rhythm;
-  childPages = props.data.childPages.edges.map(function(edge) {
-    var child = edge.node;
-    return {
-      title: child.frontmatter.title,
-      level: child.fields.slug.split("/").length - 3,
-      path: child.fields.slug,
-      order: child.frontmatter.order ? child.frontmatter.order : 0
-    };
-  });
-  childPages.sort((a, b) => {
-    if (a.level === b.level && a.order - b.order !== 0) {
-      return a.order - b.order;
-    }
+const buildPageGraph = pages => {
+  const pagesAsMap = new Map();
 
-    return a.path.localeCompare(b.path, "en-US");
+  const forDevelopers = pages.find(
+    ({ node }) => node.fields.slug === "/en/developers/"
+  ).node;
+
+  pagesAsMap.set("/", {
+    title: forDevelopers.frontmatter.title,
+    path: forDevelopers.fields.slug,
+    childPages: new Map()
   });
-  docOptions = childPages.map(function(child) {
-    return React.createElement(
-      "option",
-      {
-        key: child.path,
-        value: child.path
-      },
-      "-".repeat(child.level) + " " + child.title
-    );
+
+  pages.forEach(({ node }) => {
+    const slugParts = node.fields.slug
+      .split("/")
+      .filter(slugPart => !!slugPart)
+      .slice(2); //First two slug parts are 'en' and 'developers'
+
+    let currentLevel = pagesAsMap.get("/").childPages;
+
+    for (let i = 0; i < slugParts.length; i++) {
+      const slugPart = slugParts[i];
+      if (!currentLevel.has(slugPart) || !currentLevel.get(slugPart).path) {
+        currentLevel.set(slugPart, {
+          path: i === slugParts.length - 1 ? node.fields.slug : null,
+          title: i === slugParts.length - 1 ? node.frontmatter.title : null,
+          order:
+            i === slugParts.length - 1
+              ? node.frontmatter.order
+                ? node.frontmatter.order
+                : 0
+              : null,
+          childPages: currentLevel.has(slugPart)
+            ? currentLevel.get(slugPart).childPages
+            : new Map()
+        });
+      }
+
+      currentLevel = currentLevel.get(slugPart).childPages;
+    }
   });
-  docPages = childPages.map(function(child) {
-    var isActive = child.path === props.data.markdownRemark.fields.slug;
-    return (
-      <li
-        key={child.path}
-        style={{
-          marginBottom: rhythm(1 / 2),
-          marginLeft: rhythm(child.level)
-        }}
-      >
-        <Link
-          to={child.path}
+
+  return pagesAsMap;
+};
+
+const ChildPageList = ({ pages, currentPage }) => {
+  if (pages.length === 0) {
+    return null;
+  }
+
+  const pageLinks = [];
+  pages.forEach(page => {
+    pageLinks.push({
+      order: page.order,
+      path: page.path,
+      link: (
+        <li
+          key={page.path}
           style={{
-            textDecoration: "none"
+            marginBottom: rhythm(1 / 2)
           }}
         >
-          {isActive ? <strong>{child.title}</strong> : child.title}
-        </Link>
-      </li>
-    );
+          <Link
+            to={page.path}
+            style={{
+              textDecoration: "none"
+            }}
+          >
+            {currentPage === page.path ? (
+              <strong>{page.title}</strong>
+            ) : (
+              page.title
+            )}
+          </Link>
+          <ChildPageList pages={page.childPages} currentPage={currentPage} />
+        </li>
+      )
+    });
   });
+  pageLinks.sort((a, b) => {
+    const byOrderValue = a.order - b.order;
+
+    return byOrderValue === 0
+      ? a.path.localeCompare(b.path, "en-US")
+      : byOrderValue;
+  });
+
+  return (
+    <ul style={{ listStyle: "none" }}>
+      {pageLinks.map(pageLink => pageLink.link)}
+    </ul>
+  );
+};
+
+const ChildPageOptions = ({ pages }) => {
+  const buildOptions = pages => {
+    const options = [];
+    pages.forEach(page => {
+      options.push({
+        path: page.path,
+        order: page.order,
+        title: `${"-".repeat(page.path.split("/").length - 3)} ${page.title}`,
+        childOptions: buildOptions(page.childPages)
+      });
+    });
+    options.sort((a, b) => {
+      const byOrderValue = a.order - b.order;
+
+      return byOrderValue === 0
+        ? a.path.localeCompare(b.path, "en-US")
+        : byOrderValue;
+    });
+    return options;
+  };
+
+  const mapOptions = options => {
+    let optionElements = [];
+    options.forEach(option => {
+      optionElements.push(
+        <option key={option.path} value={option.path}>
+          {option.title}
+        </option>
+      );
+      optionElements = optionElements.concat(mapOptions(option.childOptions));
+    });
+    return optionElements;
+  };
+
+  return mapOptions(buildOptions(pages));
+};
+
+export default props => {
+  const currentPage = props.data.markdownRemark.fields.slug;
+
+  const pageGraph = buildPageGraph(props.data.childPages.edges, currentPage);
 
   return (
     <>
@@ -100,20 +186,13 @@ export default props => {
                   style={{
                     overflowY: "auto",
                     paddingRight: `calc(${rhythm(1 / 2)} - 1px)`,
+                    paddingTop: rhythm(1 / 2),
                     position: "absolute",
                     width: `calc(${rhythm(13)} - 1px)`,
                     borderRight: "1px solid lightgrey"
                   }}
                 >
-                  <ul
-                    style={{
-                      listStyle: "none",
-                      marginLeft: 0,
-                      marginTop: rhythm(1 / 2)
-                    }}
-                  >
-                    {docPages}
-                  </ul>
+                  <ChildPageList pages={pageGraph} currentPage={currentPage} />
                 </div>
                 <div
                   style={{
@@ -144,7 +223,7 @@ export default props => {
                 defaultValue={props.data.markdownRemark.fields.slug}
                 onChange={e => navigate(e.target.value)}
               >
-                {docOptions}
+                <ChildPageOptions pages={pageGraph} />
               </select>
               <br />
               <br />
