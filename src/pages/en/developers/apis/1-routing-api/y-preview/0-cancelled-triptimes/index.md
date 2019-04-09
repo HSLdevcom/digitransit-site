@@ -8,13 +8,13 @@ title: Cancelled trip times
 
 | Term                           | Explanation                     |
 |--------------------------------|---------------------------------|
-| Resource type (`resourceType`) | Cancelled trip times can be filtered accoding to different resources which can be `FEED`, `ROUTE`, `PATTERN` or `TRIP`. ID of the resource is provided with the `resourceId` parameter. See [Glossary](../0-graphql) for details. |
+| Resource type (`resourceType`) | Cancelled trip times can be filtered by different resources which can be `FEED`, `ROUTE`, `PATTERN` or `TRIP`. ID of the resource is provided with the `resourceId` parameter. See [Glossary](../0-graphql) for details. |
 | Resource ID (`resourceId`)   | ID of the resource. For resource type `FEED` this is the `feedId` (e.g. `HSL`), for `ROUTE` the `gtfsId` (e.g. `HSL:1098`), for `PATTERN` the `code` (e.g. `HSL:1098:1:01`) and for `TRIP` the `gtfsId` (e.g. `HSL:1098_20190405_Ma_2_1455`). |
-| Min date	(`minDate`)          | Only cancelled trip times scheduled to run on `minDate` or after are returned. |
-| Max date	(`maxDate`)          | Only cancelled trip times scheduled to run on `maxDate` or before are returned. |
+| Min date	(`minDate`)          | Only cancelled trip times scheduled to run on `minDate` or after are returned. Format: 2019-12-23 or 20191223. |
+| Max date	(`maxDate`)          | Only cancelled trip times scheduled to run on `maxDate` or before are returned. Format: 2019-12-23 or 20191223. |
 | Time type	(`timeType`)         | Cancelled trip times can be further filtered by time of service day. The type of the time filter can be `DEPARTURE` or `ARRIVAL`. The time is provided with `minTime` and/or `maxTime` parameters. |
-| Min time	(`minTime`)          | Only cancelled trip times scheduled to run at `minTime` or after are returned. If `timeType` equals to `DEPARTURE` then `minTime` refers to the departure time of the first stop and if `timeType` equals to `ARRIVAL` then it refers to the arrival time of the last stop. |
-| Max time	(`maxTime`)          | Only cancelled trip times scheduled to run at `maxTime` or before are returned. If `timeType` equals to `DEPARTURE` then `maxTime` refers to the departure time of the first stop and if `timeType` equals to `ARRIVAL` then it refers to the arrival time of the last stop. |
+| Min time	(`minTime`)          | Only cancelled trip times scheduled to run at `minTime` or after are returned. If `timeType` equals to `DEPARTURE` then `minTime` refers to the departure time of the first stop and if `timeType` equals to `ARRIVAL` then it refers to the arrival time of the last stop. Format: seconds since midnight of minDate. |
+| Max time	(`maxTime`)          | Only cancelled trip times scheduled to run at `maxTime` or before are returned. If `timeType` equals to `DEPARTURE` then `maxTime` refers to the departure time of the first stop and if `timeType` equals to `ARRIVAL` then it refers to the arrival time of the last stop. Format: seconds since midnight of maxDate. |
 | Trip time              | A specific departure with specific direction for a specific route.<br/>For example: bus 102 leaving from Otaniemi on 2017-11-21 at 10:00. |
 
 ## What are cancelled trip times?
