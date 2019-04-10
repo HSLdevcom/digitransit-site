@@ -258,7 +258,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 
 ### Query cancelled trip times for feed HSL between 2019-04-08 14:55 and 2019-04-09 15:06 according to arrival time of the last stop
 
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20feeds%3A%20%5B%22HSL%22%5D%0A%20%20%20%20minDate%3A%20%222019-04-08%22%0A%20%20%20%20maxDate%3A%20%222019-04-09%22%0A%20%20%20%20minArrivalTime%3A%2053700%2C%0A%20%20%20%20maxArrivalTime%3A%2054360%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20feeds%3A%20%5B%22HSL%22%5D%0A%20%20%20%20minDate%3A%20%222019-04-08%22%0A%20%20%20%20maxDate%3A%20%222019-04-09%22%0A%20%20%20%20minArrivalTime%3A%2053700%0A%20%20%20%20maxArrivalTime%3A%2054360%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 **Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
 
@@ -270,7 +270,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
     feeds: ["HSL"]
     minDate: "2019-04-08"
     maxDate: "2019-04-09"
-    minArrivalTime: 53700,
+    minArrivalTime: 53700
     maxArrivalTime: 54360
   ) {
     scheduledDeparture
