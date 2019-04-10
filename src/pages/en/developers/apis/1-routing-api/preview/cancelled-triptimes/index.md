@@ -1,5 +1,6 @@
 ---
 title: Cancelled trip times
+order: 10
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
