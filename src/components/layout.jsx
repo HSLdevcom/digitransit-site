@@ -6,8 +6,6 @@ import {
   Breakpoint,
   Span
 } from "@mjaakko/react-responsive-grid";
-import colorPairsPicker from "color-pairs-picker";
-import chroma from "chroma-js";
 
 import logo from "../pages/logo.png";
 import hslLogo from "../pages/hsl-logo.png";
