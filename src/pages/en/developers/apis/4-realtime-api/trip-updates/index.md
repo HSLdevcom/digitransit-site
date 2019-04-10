@@ -1,12 +1,14 @@
 ---
 title: Trip updates
 replit:
-  embeds: 
-    - 
+  embeds:
+    -
       title: "Show currently active HSL trip updates"
       url: https://repl.it/@digitransit/RealtimeTripUpdates
       height: 700px
 ---
+
+> **Note:** Service alerts API endpoint will be deprecated in the future.
 
 Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.
 
@@ -19,8 +21,8 @@ Currently the service offers two [GTFS-RT](https://developers.google.com/transit
 ### Supported URL parameters
 | Parameter   | Type            | Description                                                  |
 |-------------|-----------------|--------------------------------------------------------------|
-| `operator`  | path parameter  | id of an operator, either `HSL` or `JOLI`                               
-| `debug`     | query parameter | Print data in human readable format (for debugging purposes) 
+| `operator`  | path parameter  | id of an operator, either `HSL` or `JOLI`
+| `debug`     | query parameter | Print data in human readable format (for debugging purposes)
 
 ## Examples
 * More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
