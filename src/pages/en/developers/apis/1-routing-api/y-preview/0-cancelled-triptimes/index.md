@@ -28,13 +28,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 
 ## Query examples
 
-**Note:** For more details about the query types related to **cancelled trip times** you can use the **Documentation Explorer** provided in GraphiQL.
-
 ### Query all cancelled trip times for feed HSL
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20feeds%3A%5B%22HSL%22%5D%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
 
 ```graphql
 {
@@ -63,15 +57,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 }
 ```
 
-2. Press play in GraphiQL to execute the query.
-
 ### Query all cancelled trip times for route HSL:1098
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20routes%3A%5B%22HSL%3A1098%22%5D%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
-
-**Note:** You may need to change `routes` in order to see proper results.
 
 ```graphql
 {
@@ -100,15 +86,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 }
 ```
 
-2. Press play in GraphiQL to execute the query.
-
 ### Query all cancelled trip times for pattern HSL:1098:1:01
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20patterns%3A%20%5B%22HSL%3A1098%3A1%3A01%22%5D%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
-
-**Note:** You may need to change `patterns` in order to see proper results.
 
 ```graphql
 {
@@ -137,15 +115,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 }
 ```
 
-2. Press play in GraphiQL to execute the query.
-
 ### Query all cancelled trip times for trip HSL:1098\_20190405\_Ma\_2\_1455
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20trips%3A%20%5B%22HSL%3A1098_20190405_Ma_2_1455%22%5D%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
-
-**Note:** You may need to change `trips` in order to see proper results.
 
 ```graphql
 {
@@ -174,15 +144,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 }
 ```
 
-2. Press play in GraphiQL to execute the query.
-
 ### Query cancelled trip times for feed HSL on 2019-04-08 and 2019-04-09
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20feeds%3A%20%5B%22HSL%22%5D%0A%20%20%20%20minDate%3A%20%222019-04-08%22%0A%20%20%20%20maxDate%3A%20%222019-04-09%22%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
-
-**Note:** You may need to change `minDate` and `maxDate` parameters to see proper results.
 
 ```graphql
 {
@@ -213,15 +175,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 }
 ```
 
-2. Press play in GraphiQL to execute the query.
-
 ### Query cancelled trip times for feed HSL between 2019-04-08 14:55 and 2019-04-09 15:06 according to departure time of the first stop
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20feeds%3A%20%5B%22HSL%22%5D%0A%20%20%20%20minDate%3A%20%222019-04-08%22%0A%20%20%20%20maxDate%3A%20%222019-04-09%22%0A%20%20%20%20minDepartureTime%3A%2053700%0A%20%20%20%20maxDepartureTime%3A%2054360%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
-
-**Note:** You may need to change `minDate`, `maxDate`, `minDepartureTime` and `maxDepartureTime` in order to see proper results.
 
 ```graphql
 {
@@ -254,15 +208,7 @@ Cancelled trip times are trip times for which the whole departure has been cance
 }
 ```
 
-2. Press play in GraphiQL to execute the query.
-
 ### Query cancelled trip times for feed HSL between 2019-04-08 14:55 and 2019-04-09 15:06 according to arrival time of the last stop
-
-1. Click [this link](https://dev-api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20cancelledTripTimes(%0A%20%20%20%20feeds%3A%20%5B%22HSL%22%5D%0A%20%20%20%20minDate%3A%20%222019-04-08%22%0A%20%20%20%20maxDate%3A%20%222019-04-09%22%0A%20%20%20%20minArrivalTime%3A%2053700%0A%20%20%20%20maxArrivalTime%3A%2054360%0A%20%20)%20%7B%0A%20%20%20%20scheduledDeparture%0A%20%20%20%20serviceDay%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20pattern%20%7B%0A%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20longName%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20realtimeState%0A%20%20%20%20headsign%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-**Note:** This example runs on Digitransit development server. Please don't use the development server for production applications.
-
-**Note:** You may need to change `minDate`, `maxDate`, `minArrivalTime` and `maxArrivalTime` in order to see proper results.
 
 ```graphql
 {
@@ -294,5 +240,3 @@ Cancelled trip times are trip times for which the whole departure has been cance
   }
 }
 ```
-
-2. Press play in GraphiQL to execute the query.
