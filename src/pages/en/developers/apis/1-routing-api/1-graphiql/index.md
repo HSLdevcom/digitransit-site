@@ -14,7 +14,6 @@ title: GraphiQL
 
 1. Using our hosted browser versions for the three available regions. The browser versions have the correct endpoints configured already.
    * [Helsinki region](https://api.digitransit.fi/graphiql/hsl)
-   * [Helsinki region](https://api.digitransit.fi/graphiql/next-hsl) (preview version using [zone model](https://www.hsl.fi/en/newzones))
    * [Waltti regions](https://api.digitransit.fi/graphiql/waltti)
    * [Entire Finland](https://api.digitransit.fi/graphiql/finland)
 2. A browser extension like [ChromeiQL](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij) (see regional endpoints below)
@@ -31,7 +30,6 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 | Region          | Endpoint                                                             |
 |-----------------|----------------------------------------------------------------------|
 | Helsinki region | `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`     |
-| Helsinki region ([zone model](https://www.hsl.fi/en/newzones)) | `https://api.digitransit.fi/routing/v1/routers/next-hsl/index/graphql` |
 | Waltti regions  | `https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql`  |
 | Entire Finland  | `https://api.digitransit.fi/routing/v1/routers/finland/index/graphql` |
 

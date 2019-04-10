@@ -19,7 +19,6 @@ After this, you are ready to run queries for [routes](./routes/), [stops](./stop
 ### Endpoints
 
 1. The routing API for **Helsinki region** is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`
-   * Preview version of the API for the new [zone model](https://www.hsl.fi/en/newzones) is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/next-hsl/index/graphql` 
 
 2. The routing API for the **Waltti regions** is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql`
 
