@@ -8,4 +8,4 @@ These APIs can be for example drafts without actual implementation or they can b
 
 **Note:** Preview APIs can change before release.
 
-**Note:** Preview APIs may have links to [GraphiQL](../graphiql-0) examples which run in Digitransit development server. Please don't use the development server for production applications as the development server is not meant to handle large amount of traffic and the APIs may change frequently.
+**Note:** Preview APIs may have links to [GraphiQL](../1-graphiql) examples which run in Digitransit development server. Please don't use the development server for production applications as the development server is not meant to handle large amount of traffic and the APIs may change frequently.
