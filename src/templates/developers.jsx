@@ -71,6 +71,14 @@ const buildPageGraph = pages => {
   return pagesAsMap;
 };
 
+const sortPages = (a, b) => {
+  const byOrderValue = a.order - b.order;
+
+  return byOrderValue === 0
+    ? a.path.localeCompare(b.path, "en-US")
+    : byOrderValue;
+};
+
 const ChildPageList = ({ pages, currentPage }) => {
   if (pages.length === 0) {
     return null;
@@ -105,13 +113,7 @@ const ChildPageList = ({ pages, currentPage }) => {
       )
     });
   });
-  pageLinks.sort((a, b) => {
-    const byOrderValue = a.order - b.order;
-
-    return byOrderValue === 0
-      ? a.path.localeCompare(b.path, "en-US")
-      : byOrderValue;
-  });
+  pageLinks.sort(sortPages);
 
   return (
     <ul style={{ listStyle: "none" }}>
@@ -120,40 +122,34 @@ const ChildPageList = ({ pages, currentPage }) => {
   );
 };
 
+const buildOptions = pages => {
+  const options = [];
+  pages.forEach(page => {
+    options.push({
+      path: page.path,
+      order: page.order,
+      title: `${"-".repeat(page.path.split("/").length - 3)} ${page.title}`,
+      childOptions: buildOptions(page.childPages)
+    });
+  });
+  options.sort(sortPages);
+  return options;
+};
+
+const mapOptions = options => {
+  let optionElements = [];
+  options.forEach(option => {
+    optionElements.push(
+      <option key={option.path} value={option.path}>
+        {option.title}
+      </option>
+    );
+    optionElements = optionElements.concat(mapOptions(option.childOptions));
+  });
+  return optionElements;
+};
+
 const ChildPageOptions = ({ pages }) => {
-  const buildOptions = pages => {
-    const options = [];
-    pages.forEach(page => {
-      options.push({
-        path: page.path,
-        order: page.order,
-        title: `${"-".repeat(page.path.split("/").length - 3)} ${page.title}`,
-        childOptions: buildOptions(page.childPages)
-      });
-    });
-    options.sort((a, b) => {
-      const byOrderValue = a.order - b.order;
-
-      return byOrderValue === 0
-        ? a.path.localeCompare(b.path, "en-US")
-        : byOrderValue;
-    });
-    return options;
-  };
-
-  const mapOptions = options => {
-    let optionElements = [];
-    options.forEach(option => {
-      optionElements.push(
-        <option key={option.path} value={option.path}>
-          {option.title}
-        </option>
-      );
-      optionElements = optionElements.concat(mapOptions(option.childOptions));
-    });
-    return optionElements;
-  };
-
   return mapOptions(buildOptions(pages));
 };
 
