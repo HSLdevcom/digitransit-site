@@ -8,6 +8,8 @@ replit:
       height: 700px
 ---
 
+> **Note:** Service alerts API will be deprecated in the future. Please use [disruption info](../../1-routing-api/disruption-info/) GraphQL API for disruption info instead.
+
 The HSL Alerts API can be used to query real-time updates from the HSL fleet in [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) format.
 The API provides [service alerts](https://developers.google.com/transit/gtfs-realtime/guides/service-alerts) for disruptions (e.g. detours and significant delays) and [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates) for cancelled trips.
 
@@ -18,10 +20,10 @@ The API provides [service alerts](https://developers.google.com/transit/gtfs-rea
 
 | Parameter | Type            | Description                                              |
 |-----------|-----------------|----------------------------------------------------------|
-| debug     | query parameter | Print data in human readable format (for debug purposes) |  
+| debug     | query parameter | Print data in human readable format (for debug purposes) |
 
 ## Examples
 * More examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
- 
+
 ### Show currently active alerts with curl
 > curl http://api.digitransit.fi/realtime/service-alerts/v1/?debug
