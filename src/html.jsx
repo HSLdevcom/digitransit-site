@@ -96,7 +96,7 @@ export default class HTML extends React.Component {
             font-size: 12px;
           }
 
-          .alert {
+          .alert+p {
             margin-left: 0;
             margin-right: 1.33333rem;
             margin-top: 1.33333rem;
@@ -108,19 +108,19 @@ export default class HTML extends React.Component {
             background: #f9f9f9;
           }
 
-          .alert.alert-success {
+          .alert.alert-success+p {
             background: #ddf9dd;
           }
 
-          .alert.alert-info {
+          .alert.alert-info+p {
             background: #ddddf9;
           }
 
-          .alert.alert-warning {
+          .alert.alert-warning+p {
             background: #f9f9dd;
           }
 
-          .alert.alert-danger {
+          .alert.alert-danger+p {
             background: #f9dddd;
           }
 
