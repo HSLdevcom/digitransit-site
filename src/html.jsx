@@ -96,6 +96,34 @@ export default class HTML extends React.Component {
             font-size: 12px;
           }
 
+          .alert {
+            margin-left: 0;
+            margin-right: 1.33333rem;
+            margin-top: 1.33333rem;
+            padding-bottom: 0.33333rem;
+            padding-left: 0.66667rem;
+            padding-right: 0.33333rem;
+            padding-top: 0.33333rem;
+            margin-bottom: 1.33333rem;
+            background: #f9f9f9;
+          }
+
+          .alert.alert-success {
+            background: #ddf9dd;
+          }
+
+          .alert.alert-info {
+            background: #ddddf9;
+          }
+
+          .alert.alert-warning {
+            background: #f9f9dd;
+          }
+
+          .alert.alert-danger {
+            background: #f9dddd;
+          }
+
           @media
           (-webkit-min-device-pixel-ratio: 2),
           (min-resolution: 192dpi) {
