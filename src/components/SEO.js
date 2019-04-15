@@ -48,6 +48,7 @@ export default ({ pageTitle, pageDescription, pagePath }) => (
           <title>{title}</title>
           <meta name="description" content={description} />
           <link rel="canonical" href={canonicalUrl} />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         </Helmet>
       );
     }}
