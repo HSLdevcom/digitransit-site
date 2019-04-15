@@ -46,21 +46,7 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-copy-linked-files`
-          }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`
-      }
-    },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+          },
           {
             resolve: "gatsby-remark-custom-blocks",
             options: {
@@ -80,8 +66,15 @@ module.exports = {
               },
             },
           },
-        ],
-      },
+        ]
+      }
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.js`
+      }
+    },
+    `gatsby-plugin-react-helmet`,
   ]
 };
