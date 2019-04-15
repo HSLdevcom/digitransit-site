@@ -7,8 +7,8 @@ Each component is first built into a Docker image and then started as a Docker c
 
 Since logical entities (e.g. Map and Routing) consist of multiple containers, we need a way to weave these containers together while enabling load balancing for each of the services.
 
-At the moment we use [OpenShift](https://www.openshift.com/) PaaS to run the enviroment. It works more or less like this:
+At the moment we use [ACS (DC/OS, marathon and mesos)](https://docs.microsoft.com/en-us/azure/container-service/dcos-swarm/) PaaS to run the enviroment but [it will retire on January 31, 2020](https://azure.microsoft.com/en-us/updates/azure-container-service-will-retire-on-january-31-2020/) and we will change our runtime environment before that. This is our current architecture with all the integrations included:
 
-![Compose](./compose.png)
+![Architecture](../architecture.png)
 
-OpenShift deployment scripts are available at https://github.com/HSLdevcom/digitransit-openshift-deploy
+Our deployment scripts are available at https://github.com/HSLdevcom/digitransit-mesos-deploy
