@@ -8,7 +8,8 @@ replit:
       height: 700px
 ---
 
-> **Note:** Service alerts API endpoint will be deprecated in the future.
+[[alert-warning]]
+| **Note:** Trip updates API will be deprecated in the future in favor of [Stop times](../../1-routing-api/stops/) GraphQL API. This is part of an effort to reduce overlapping API functionalities and to concentrate APIs under the GraphQL APIs.
 
 Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.
 
