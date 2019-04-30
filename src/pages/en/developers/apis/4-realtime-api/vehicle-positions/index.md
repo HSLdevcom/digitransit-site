@@ -171,10 +171,9 @@ The numerical values for the different transit operators are listed below:
 | `12`   | Helsingin Bussiliikenne Oy    |
 | `17`   | Tammelundin Liikenne Oy       |
 | `18`   | Pohjolan Kaupunkiliikenne Oy  |
-| `19`   | Etelä-Suomen Linjaliikenne Oy |
 | `20`   | Bus Travel Åbergin Linja Oy   |
-| `21`   | Bus Travel Oy Reissu Ruoti    |
 | `22`   | Nobina Finland Oy             |
+| `30`   | Savonlinja Oy                 |
 | `36`   | Nurmijärven Linja Oy          |
 | `40`   | HKL-Raitioliikenne            |
 | `45`   | Transdev Vantaa Oy            |
