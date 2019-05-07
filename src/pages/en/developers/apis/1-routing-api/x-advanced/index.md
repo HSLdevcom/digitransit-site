@@ -1,5 +1,6 @@
 ---
 title: Advanced examples
+order: 110
 ---
 
 This page contains few examples on how to utilize the GraphQL API in more specific scenarios. Try exploring the schema in [GraphiQL](../1-graphiql/) for more ideas on what can be done with the API.
@@ -66,7 +67,7 @@ For each stop that is used for boarding (field `from`), a list of departures gro
 
 ### Plan an itinerary on board a vehicle
 
-It is possible to plan an itinerary which starts on board a vehicle by using argument `startTransitTripId`. 
+It is possible to plan an itinerary which starts on board a vehicle by using argument `startTransitTripId`.
 
 [High-frequency positioning API](../../4-realtime-api/vehicle-positions/) can be used to listen for vehicle position messages near the user and after the vehicle the user is on board of has been determined, query type **[fuzzyTrip](../routes/#fuzzytrip)** in the GraphQL API can be used to get a trip ID for the vehicle.
 

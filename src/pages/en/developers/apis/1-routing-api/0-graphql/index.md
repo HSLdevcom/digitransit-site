@@ -12,6 +12,7 @@ replit:
       title: "Content-Type: application/json"
       url: https://repl.it/@digitransit/StopRequestGraphQL2
       height: 750px
+order: 10
 ---
 
 ## What is GraphQL?
@@ -105,7 +106,7 @@ The following query returns field `spacesAvailable` for bike parks and field `co
     }
   }
 }
-``` 
+```
 
 ### Variables
 
@@ -117,12 +118,12 @@ Variables are sent in a JSON object with key `variables`.
 For example, the following query would request a route with name `550` (using *Routes* as an operation name):
 ```json
 {
-  "query": "query Routes($name: String) { 
-             routes(name: $name) { 
-               gtfsId 
-               shortName 
-               longName 
-             } 
+  "query": "query Routes($name: String) {
+             routes(name: $name) {
+               gtfsId
+               shortName
+               longName
+             }
            }",
   "variables": {
     "name":"550"
