@@ -48,3 +48,6 @@ Matkan jokaisessa vaiheessa tarkat ohjeet, kuten kävelyreitti listana kaduista 
 
 **UI:n perusteellinen uudistus, Digitransit v. 2.0** <br>
 Saavutettavuuden parantaminen, uudet käyttöliittymäratkaisut ja käyttökokemuksen kehitys kokonaisuutena.
+
+**Kirjautuminen**  
+Käyttäjän tietojen hyödyntäminen personoidun palvelun tuottamiseksi
