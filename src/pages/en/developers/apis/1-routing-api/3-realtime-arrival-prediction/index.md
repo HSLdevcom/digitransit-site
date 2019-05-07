@@ -1,5 +1,6 @@
 ---
 title: Real-time arrival prediction
+order: 40
 ---
 
 The routing API backend is connected to vehicle real-time information for some routes. This means that API queries can return real-time data for some vehicles.

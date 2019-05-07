@@ -1,5 +1,6 @@
 ---
 title: Glossary
+order: 30
 ---
 
 ## <a name="general"></a>General
@@ -25,7 +26,7 @@ title: Glossary
 
 | Term                   | Explanation                     |
 |------------------------|---------------------------------|
-| Station                | A location, which contains stops.<br/>For example, a train station is a station and its platforms are stops. | 
+| Station                | A location, which contains stops.<br/>For example, a train station is a station and its platforms are stops. |
 | Stop                   | A public transport stop, from which passengers can board vehicles. |
 | Cluster                | A list of stops, grouped by name and proximity. |
 | Stoptime               | Stoptime is the time when a specific trip arrives to or departs from a specific stop. |

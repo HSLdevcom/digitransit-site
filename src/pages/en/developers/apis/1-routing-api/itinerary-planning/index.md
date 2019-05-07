@@ -1,5 +1,6 @@
 ---
 title: Itinerary planning
+order: 80
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
@@ -38,7 +39,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
   * For example, if `minTransferTime` is set to 2 minutes, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
   * Values of time arguments are included in the returned duration of an itinerary
     * For example, if there is a 15 minute bicycling leg and `bikeSwitchTime` is set to 1 minute, the returned duration of the bicycling leg will be 17 minutes
-* Cost arguments (e.g. `walkBoardCost`) on the other hand are not hard limits, but preferences 
+* Cost arguments (e.g. `walkBoardCost`) on the other hand are not hard limits, but preferences
   * For example, if `walkBoardCost` is set to 2 minutes, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
   * Cost is not included in the returned duration of an itinerary
     * For example, if there is a 15 minute bicycling leg and `bikeSwitchCost` is set to 1 minute, the returned duration of the bicycling leg will be 15 minutes
@@ -76,7 +77,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 ### Basic route from Kamppi (Helsinki) to Pisa (Espoo)
 
 * Origin and destination locations can be named by using arguments `fromPlace` and `toPlace` instead of `to` and `from`
-  * Values for arguments `fromPlace` and `toPlace` are in format `<name>::<lat>,<lng>`  
+  * Values for arguments `fromPlace` and `toPlace` are in format `<name>::<lat>,<lng>`
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.932366%22%2C%0A%20%20%20%20toPlace%3A%20%22Pisa%2C%20Espoo%3A%3A60.175294%2C24.684855%22%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%2C%0A%20%20%20%20%20%20duration%2C%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20%20%20%20%20gtfsId%0A%09%20%20%09%09%09name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 

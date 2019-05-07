@@ -1,5 +1,6 @@
 ---
 title: Stops
+order: 100
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
@@ -7,7 +8,7 @@ title: Stops
 ## Notes about stop IDs
 
 - Stop IDs are in `FeedId:StopId` format
-- HSL area feed ID is **HSL** 
+- HSL area feed ID is **HSL**
 - Stop ID is available from field `gtfsId` (note that field `gtfsId` also contains the feed ID)
 
 ## Query examples
@@ -104,7 +105,7 @@ title: Stops
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%20%0A%20%20stations%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20platformCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
-{ 
+{
   stations {
     gtfsId
     name
@@ -148,7 +149,7 @@ title: Stops
 ### Query stops by location and radius
 
 * If the argument `first` is not used in the query, all results will be on one page.
-* **Note:** argument `radius` is the maximum walking distance along streets and paths to the stop  
+* **Note:** argument `radius` is the maximum walking distance along streets and paths to the stop
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%20%20%7B%0A%20%20%20%20stopsByRadius(lat%3A60.199%2Clon%3A24.938%2Cradius%3A500)%20%7B%0A%20%20%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20gtfsId%20%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D) to run the query below in GraphiQL.
 
@@ -157,8 +158,8 @@ title: Stops
   stopsByRadius(lat:60.199, lon:24.938, radius:500) {
     edges {
       node {
-        stop { 
-          gtfsId 
+        stop {
+          gtfsId
           name
         }
         distance
@@ -196,7 +197,7 @@ title: Stops
       serviceDay
       headsign
     }
-  }  
+  }
 }
 ```
 
@@ -225,7 +226,7 @@ title: Stops
       serviceDay
       headsign
     }
-  }  
+  }
 }
 ```
 

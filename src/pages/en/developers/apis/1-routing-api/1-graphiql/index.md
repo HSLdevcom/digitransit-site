@@ -1,5 +1,6 @@
 ---
 title: GraphiQL
+order: 20
 ---
 
 ## Making queries and exploring the schema using GraphiQL
