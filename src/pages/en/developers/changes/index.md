@@ -5,7 +5,8 @@ order: -10
 
 ## 10.05.2019
 
- - GraphQL API for [cancelled trip times](../apis/1-routing-api/cancelled-triptimes) is now available in production
+- GraphQL API for [cancelled trip times](../apis/1-routing-api/cancelled-triptimes) is now available in production
+- [Disruption info API](../apis/1-routing-api/disruption-info/#query-disruptions-and-their-severity-levels) has details of the severity of disruptions
 
 ## 10.04.2019
 
