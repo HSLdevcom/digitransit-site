@@ -172,6 +172,7 @@ The numerical values for the different transit operators are listed below:
 | `17`   | Tammelundin Liikenne Oy       |
 | `18`   | Pohjolan Kaupunkiliikenne Oy  |
 | `20`   | Bus Travel Åbergin Linja Oy   |
+| `21`   | Bus Travel Oy Reissu Ruoti    | 
 | `22`   | Nobina Finland Oy             |
 | `30`   | Savonlinja Oy                 |
 | `36`   | Nurmijärven Linja Oy          |
@@ -184,6 +185,8 @@ The numerical values for the different transit operators are listed below:
 | `58`   | Koillisen Liikennepalvelut Oy |
 | `59`   | Tilausliikenne Nikkanen Oy    |
 | `90`   | VR Oy                         |
+
+Note that in some cases (for example if the public transport service has been subcontracted to another operator) the operator code might be different in MQTT topic than the one in vehicle position message.
 
 ## Examples
 
