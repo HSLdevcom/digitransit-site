@@ -122,7 +122,7 @@ Example response:
 
 ```graphql
 {
-	alerts {
+  alerts {
     alertDescriptionText
     alertUrl
     alertSeverityLevel
