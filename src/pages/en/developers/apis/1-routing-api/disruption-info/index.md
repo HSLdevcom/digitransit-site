@@ -104,7 +104,7 @@ Example response:
         },
         "stop": null
       }
-    }
+    ]
   }
 }
 ```
