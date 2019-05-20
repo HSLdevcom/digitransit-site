@@ -118,14 +118,18 @@ Example response:
   * **SEVERE** is used when the disruption affects a significant part of public transport services (e.g. all train services being cancelled due to a technical problem)  
   
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertUrl%0A%20%20%20%20alertSeverityLevel%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query={%0A%09alerts%20{%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertSeverityLevel%0A%20%20%20%20alertUrl%0A%20%20%20%20alertUrlTranslations%20{%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20}%0A%20%20}%0A}) to run the query below in GraphiQL.
 
 ```graphql
 {
   alerts {
     alertDescriptionText
-    alertUrl
     alertSeverityLevel
+    alertUrl
+    alertUrlTranslations {
+      text
+      language
+    }
   }
 }
 ```
