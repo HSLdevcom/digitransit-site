@@ -104,16 +104,44 @@ Example response:
         },
         "stop": null
       }
+    ]
+  }
+}
+```
+
+### Query disruptions and their severity levels
+
+* Field `alertUrl` can contain an URL to a website that provides more details of the disruption
+* Field `alertSeverityLevel` describes severity of the alert
+  * **INFO** is used for informational alerts that don't have significant effects for user's journey
+  * **WARNING** is used when the disruption can cause changes to user's journey
+  * **SEVERE** is used when the disruption affects a significant part of public transport services (e.g. all train services being cancelled due to a technical problem)  
+  
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query={%0A%09alerts%20{%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertSeverityLevel%0A%20%20%20%20alertUrl%0A%20%20%20%20alertUrlTranslations%20{%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20}%0A%20%20}%0A}) to run the query below in GraphiQL.
+
+```graphql
+{
+  alerts {
+    alertDescriptionText
+    alertSeverityLevel
+    alertUrl
+    alertUrlTranslations {
+      text
+      language
     }
   }
 }
 ```
 
+2. Press play in GraphiQL to execute the query.
+
 ### Query disruptions from specific feeds
 
 * Argument `feeds` can be used to query alerts only from specific feeds
   * List of available feeds can be queried using **feeds** query
-  * For example, *HSL* feed contains data from HSL area
+  * For example, *HSL* feed contains data from HSL area  
+
 
 1. Click [this link](https://api.digitransit.fi/graphiql/finland?query=%7B%0A%09alerts(feeds%3A%20%5B%22HSL%22%5D)%20%7B%0A%20%20%20%20feed%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertDescriptionTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20route%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20effectiveStartDate%0A%20%20%20%20effectiveEndDate%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
