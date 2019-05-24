@@ -79,6 +79,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 * Origin and destination locations can be named by using arguments `fromPlace` and `toPlace` instead of `to` and `from`
   * Values for arguments `fromPlace` and `toPlace` are in format `<name>::<lat>,<lng>`
 
+
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.932366%22%2C%0A%20%20%20%20toPlace%3A%20%22Pisa%2C%20Espoo%3A%3A60.175294%2C24.684855%22%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%2C%0A%20%20%20%20%20%20duration%2C%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20%20%20%20%20gtfsId%0A%09%20%20%09%09%09name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
@@ -169,6 +170,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
   * `date` in format YYYY-MM-DD
   * `time` in format hh:mm:ss
 
+
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Hakaniemi%2C%20Helsinki%3A%3A60.179267%2C24.951501%22%2C%0A%20%20%20%20toPlace%3A%20%22Keilaniemi%2C%20Espoo%3A%3A60.1762%2C24.836584%22%2C%0A%20%20%20%20date%3A%20%222018-08-21%22%2C%0A%20%20%20%20time%3A%20%2223%3A28%3A00%22%2C%0A%20%20%20%20numItineraries%3A%205%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20BUS%7D%2C%20%7Bmode%3A%20RAIL%7D%2C%20%7Bmode%3ATRAM%7D%2C%20%7Bmode%3A%20FERRY%7D%2C%20%7Bmode%3AWALK%7D%5D%0A%20%20%20%20walkReluctance%3A%202.1%2C%0A%20%20%20%20walkBoardCost%3A%20300%2C%0A%20%20%20%20minTransferTime%3A%20600%2C%0A%20%20%20%20walkSpeed%3A%201.7%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%09tripHeadsign%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
@@ -232,6 +234,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 
 * Using qualifier **PARK** for **CAR** mode plans an itinerary using Park & Ride, i.e. the first leg of the journey is done by driving to a car park and continuing by public transportation from there
 
+
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Seutula%3A%3A60.34770%2C24.86569%22%2C%0A%20%20%20%20toPlace%3A%20%22Kamppi%3A%3A60.16870%2C24.93129%22%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20CAR%2C%20qualifier%3A%20PARK%7D%2C%20%7Bmode%3A%20TRANSIT%7D%2C%20%7Bmode%3AWALK%7D%5D%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20carPark%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20carParkId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%09tripHeadsign%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
@@ -292,6 +295,7 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 
 * **Note:** Currently only regular adult fare information is available
 
+
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.1713572%2C%20lon%3A%2024.9416544%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.40431%2C%20lon%3A%2025.1066186%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20date%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20fares%20%7B%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20cents%0A%20%20%20%20%20%20%20%20currency%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
@@ -316,6 +320,76 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
         type
         cents
         currency
+      }
+    }
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
+### Plan an itinerary with ticket type restrictions
+
+#### Query list of available ticket types
+
+* Field `fareId` contains ticket type ID that can be used with **plan** query
+* Field `zones` contains a list of zones where the ticket is valid
+
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20ticketTypes%20%7B%0A%20%20%20%20fareId%0A%20%20%20%20price%0A%20%20%20%20currency%0A%20%20%20%20zones%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```graphql
+{
+  ticketTypes {
+    fareId
+    price
+    currency
+    zones
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
+#### Plan an itinerary with AB ticket
+
+* The following query plans an itinerary from Helsinki (zone A) to Tikkurila (zone C) using only AB ticket
+
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.1713572%2C%20lon%3A%2024.9416544%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.29280%2C%20lon%3A%2025.04396%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20%20%20allowedTicketTypes%3A%20%22HSL%3AAB%22%0A%20%20)%20%7B%0A%20%20%20%20date%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20zoneId%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20zoneId%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```graphql
+{
+  plan(
+    from: {lat: 60.1713572, lon: 24.9416544}
+    to: {lat: 60.29280, lon: 25.04396}
+    numItineraries: 3
+    allowedTicketTypes: "HSL:AB"
+  ) {
+    date
+    itineraries {
+      legs {
+        startTime
+        endTime
+        mode
+        route {
+          gtfsId
+        }
+        from {
+          name
+          stop {
+            zoneId
+          }
+        }
+        to {
+          name
+          stop {
+            zoneId
+          }
+        }
+        duration
+        distance
+        transitLeg
       }
     }
   }
