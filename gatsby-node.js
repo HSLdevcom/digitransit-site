@@ -23,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               frontmatter {
                 isFront
+                redirect
               }
               fields  {
                 slug
@@ -49,7 +50,9 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 function getComponentForNode(node) {
-  if (node.fields.slug.startsWith("/en/developers")) {
+  if (node.frontmatter.redirect) {
+    return path.resolve(`./src/templates/redirect.js`)
+  } else if (node.fields.slug.startsWith("/en/developers")) {
     return path.resolve(`./src/templates/developers.jsx`);
   } else if (node.fields.slug.startsWith("/liity")) {
     return path.resolve(`./src/templates/liity.jsx`);
