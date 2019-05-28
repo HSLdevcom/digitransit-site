@@ -41,7 +41,8 @@ export default class Redirect extends React.Component {
           {" "}
           <Link
             //Display link to redirect destination, incase user has JavaScript disabled
-            to={props.data.markdownRemark.frontmatter.redirect}>
+            to={props.data.markdownRemark.frontmatter.redirect}
+            replace>
               <code>{ props.data.markdownRemark.frontmatter.redirect }</code>
           </Link>
         </Container>
