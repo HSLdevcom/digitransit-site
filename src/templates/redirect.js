@@ -15,7 +15,7 @@ const prefixer = require("react-style-normalizer");
 
 export default class Redirect extends React.Component {
   componentDidMount() {
-    navigate(this.props.data.markdownRemark.frontmatter.redirect)
+    navigate(this.props.data.markdownRemark.frontmatter.redirect, { replace: true })
   }
 
   render() {
