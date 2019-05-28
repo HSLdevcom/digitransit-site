@@ -1,5 +1,6 @@
 ---
 title: High-frequency positioning (HFP)
+order: 40
 toc: true
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
