@@ -93,7 +93,7 @@ The payload is an UTF-8 encoded, compact JSON string. Here is an example:
 {
   "VP": {
     "desi": "551",
-    "dir": 1,
+    "dir": "1",
     "oper": 12,
     "veh": 10,
     "tst": "2019-05-23T14:15:16.000Z",
