@@ -87,7 +87,9 @@ It can be split into these parts:
 
 ### The payload
 
-The payload is an UTF-8 encoded, compact JSON string. Here is an example:
+The payload is an UTF-8 encoded, compact JSON string. The JSON contains a single key-value pair where the key is equivalent to the event type of the message and the value is an object describing the event. 
+
+Here is an example of a vehicle position message (with `VP` key):
 
 ```json
 {
@@ -117,7 +119,7 @@ The payload is an UTF-8 encoded, compact JSON string. Here is an example:
 }
 ```
 
-`VP` is a fixed key and refers to Vehicle Position but not to GTFS Realtime. The changing fields are described below:
+The changing fields are described below:
 
 | Attribute | Type                  | Description                                                                                                                                                                                                                                                                             |
 | --------- | --------------------- | ---------------------------------------------------------------------------------- |
