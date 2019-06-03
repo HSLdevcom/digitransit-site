@@ -73,7 +73,7 @@ It can be split into these parts:
 | `version`        | `v2` is the current version of the HFP topic and the payload format.
 | `journey_type`   | The type of the journey. Either `journey`, `deadrun` or `signoff`. `journey` refers to a vehicle that is running on a specific public transport journey. `deadrun` refers to a vehicle that is not on any specific route, but instead coming from a depot, for example. `signoff` is used when the vehicle PC is shut down.
 | `temporal_type`  | The type of the journey, `ongoing` or `upcoming`. `ongoing` describes the current situation. `upcoming` refers to the next expected journey of the same vehicle. `upcoming` messages are broadcasted shortly before the start of the next journey. One use of `upcoming` is to show the relevant vehicle to your users even before the driver has signed on to the journey that your users are interested in.
-| `event_type`     | One of `vp`, `due`, `arr`, `ars`, `pde`, `dep`, `pas`, `wait`, `doo`, `doc`, `tlr`, `tla`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout`.
+| `event_type`     | One of `vp`, `due`, `arr`, `dep`, `ars`, `pde`, `pas`, `wait`, `doo`, `doc`, `tlr`, `tla`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout`.
 | `transport_mode` | The type of the vehicle. One of `bus`, `tram`, `train`, `ferry` or `metro`.
 | `operator_id`    | The unique ID of the operator that _owns_ the vehicle. See the list of operators below.<br/>**Note:** Operator ids must be exactly 4 digits long in the topic filter, so prefix them with zeroes if needed (e.g. `80` → `0080`)
 | `vehicle_number` | The vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. `operator_id/vehicle_number` uniquely identifies the vehicle.<br/>**Note:** Vehicle numbers must be exactly 5 digits long in the topic filter, so prefix them with zeroes if needed.
@@ -83,7 +83,31 @@ It can be split into these parts:
 | `start_time`     | The scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS.
 | `next_stop`      | The ID of next stop or station. Updated on each departure from or passing of a stop. `EOL` (end of line) after final stop and empty if the vehicle is leaving HSL area. Matches `stop_id` in GTFS (value of `gtfsId` field, without `HSL:` prefix, in **Stop** type in the routing API).
 | `geohash_level`  | The geohash level represents the magnitude of change in the GPS coordinates since the previous message from the same vehicle. More exactly, `geohash_level` is equal to the minimum of the digit positions of the most significant changed digit in [the latitude and the longitude](#payload) since the previous message. For example, if the previous message has value (60.12345, 25.12345) for (`lat`, `long`) and the current message has value (60.12499, 25.12388), then the third digit of the fractional part is the most significant changed digit and `geohash_level` has value `3`.<br/>However, `geohash_level` value `0` is overloaded. `geohash_level` is `0` if:<ul><li>the integer part of the latitude or the longitude has changed,</li><li>the previous or the current message has `null` for coordinates or</li><li>the non-location parts of the topic have changed, e.g. when a bus departs from a stop.</li></ul>By subscribing to specific geohash levels, you can reduce the amount of traffic into the client. By only subscribing to level `0` the client gets the most important status changes. The rough percentages of messages with a specific `geohash_level` value out of all `ongoing` messages are:<ul><li>`0`: 3 %</li><li>`1`: 0.09 %</li><li>`2`: 0.9 %</li><li>`3`: 8 %</li><li>`4`: 43 %</li><li>`5`: 44 %</li></ul> |
-| `geohash`        | The latitude and the longitude of the vehicle. The digits of the integer parts are separated into their own level in the format `<lat>;<long>`, e.g. `60;24`. The digits of the fractional parts are split and interleaved into a custom format so that e.g. (60.123, 24.789) becomes `60;24/17/28/39`. This format enables subscribing to specific geographic boundaries easily.<br/>If the coordinates are missing, `geohash_level` and `geohash` have the concatenated value `0////`.<br/>Currently only 3 digits of the fractional part are published in the topic for both the latitude and the longitude even though `geohash_level` currently has precision up to 5 digits of the fractional part. As a form of future proofing your subscriptions, do not rely on the amount of fractional digits present in the topic. Instead, use the wildcard `#` at the end of topic filters.<br/>This geohash scheme is greatly simplified from [the original geohash scheme](https://en.wikipedia.org/wiki/Geohash).                                                                                                                                                                                                                                                                                                                                            |
+| `geohash`        | The latitude and the longitude of the vehicle. The digits of the integer parts are separated into their own level in the format `<lat>;<long>`, e.g. `60;24`. The digits of the fractional parts are split and interleaved into a custom format so that e.g. (60.123, 24.789) becomes `60;24/17/28/39`. This format enables subscribing to specific geographic boundaries easily.<br/>If the coordinates are missing, `geohash_level` and `geohash` have the concatenated value `0////`.<br/>Currently only 3 digits of the fractional part are published in the topic for both the latitude and the longitude even though `geohash_level` currently has precision up to 5 digits of the fractional part. As a form of future proofing your subscriptions, do not rely on the amount of fractional digits present in the topic. Instead, use the wildcard `#` at the end of topic filters.<br/>This geohash scheme is greatly simplified from [the original geohash scheme](https://en.wikipedia.org/wiki/Geohash).                                                                                                                                                                      
+
+### Event types
+
+The most notable change in HFP 2.0 is introduction of different types of messages. 
+
+| Event type | Description                                                                                   |
+|------------|-----------------------------------------------------------------------------------------------|
+| `vp`       | Vehicle position
+| `due`      | 
+| `arr`      | Vehicle arrives to a stop
+| `dep`      | Vehicle departs from a stop
+| `ars`      | 
+| `pde`      |
+| `wait`     | Vehicle is waiting at a stop
+| `doo`      | Doors of the vehicle are opened
+| `doc`      | Doors of the vehicle are closed 
+| `tlr`      | Vehicle is requesting traffic light priority
+| `tla`      | Vehicle receives a response to traffic light priority response
+| `da`       | Driver signs in to the vehicle
+| `dout`     | Driver signs out of the vehicle
+| `ba`       | Driver selects the block that the vehicle will run
+| `bout`     | Driver signs out from the selected block (usually from a depot)
+| `vja`      | Vehicle signs in to a service journey (i.e. a single public transport trip from stop A to stop B, also known as trip)
+| `vjout`    | Vehicle signs off from a service journey, after reaching the final stop
 
 ### The payload
 
