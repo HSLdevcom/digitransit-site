@@ -152,7 +152,7 @@ The changing fields are described below:
 | `oper`    | Integer               | Unique ID of the operator _running_ the trip. The unique ID does not have prefix zeroes here.                       
 | `veh`     | Integer               | Vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. Matches `vehicle_number` in the topic except without the prefix zeroes.
 | `tst`     | String                | UTC timestamp with millisecond precision from the vehicle in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSSZ`).   
-| `tsi`     | Integer               | Unix time in seconds, matching `tst`.                                                                 
+| `tsi`     | Integer               | Unix time in seconds from the vehicle.                                                                 
 | `spd`     | Floating-point number | Speed of the vehicle, in meters per second (m/s).                                                    
 | `hdg`     | Integer               | Heading of the vehicle, in degrees (⁰) starting clockwise from geographic north. Valid values are on the closed interval [0, 360].     
 | `lat`     | Floating-point number | WGS 84 latitude in degrees. `null` if location is unavailable.    
