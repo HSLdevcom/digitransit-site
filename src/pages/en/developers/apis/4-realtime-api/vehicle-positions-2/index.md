@@ -73,7 +73,7 @@ It can be split into these parts:
 | `version`        | `v2` is the current version of the HFP topic and the payload format.
 | `journey_type`   | The type of the journey. Either `journey`, `deadrun` or `signoff`. `journey` refers to a vehicle that is running on a specific public transport journey. `deadrun` refers to a vehicle that is not on any specific route, but instead coming from a depot, for example. `signoff` is used when the vehicle PC is shut down.
 | `temporal_type`  | The type of the journey, `ongoing` or `upcoming`. `ongoing` describes the current situation. `upcoming` refers to the next expected journey of the same vehicle. `upcoming` messages are broadcasted shortly before the start of the next journey. One use of `upcoming` is to show the relevant vehicle to your users even before the driver has signed on to the journey that your users are interested in.
-| `event_type`     | One of `vp`, `due`, `arr`, `dep`, `ars`, `pde`, `pas`, `wait`, `doo`, `doc`, `tlr`, `tla`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout`.
+| `event_type`     | One of `vp`, `due`, `arr`, `dep`, `ars`, `pde`, `pas`, `pas`, `wait`, `doo`, `doc`, `tlr`, `tla`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout`.
 | `transport_mode` | The type of the vehicle. One of `bus`, `tram`, `train`, `ferry` or `metro`.
 | `operator_id`    | The unique ID of the operator that _owns_ the vehicle. See the list of operators below.<br/>**Note:** Operator ids must be exactly 4 digits long in the topic filter, so prefix them with zeroes if needed (e.g. `80` → `0080`)
 | `vehicle_number` | The vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. `operator_id/vehicle_number` uniquely identifies the vehicle.<br/>**Note:** Vehicle numbers must be exactly 5 digits long in the topic filter, so prefix them with zeroes if needed.
@@ -92,11 +92,12 @@ The most notable change in HFP 2.0 is introduction of different types of message
 | Event type | Description                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------|
 | `vp`       | Vehicle position
-| `due`      | 
+| `due`      | Vehicle will soon arrive to a stop
 | `arr`      | Vehicle arrives to a stop
 | `dep`      | Vehicle departs from a stop
-| `ars`      | 
-| `pde`      |
+| `ars`      | Vehicle has arrived to a stop
+| `pde`      | Vehicle will soon depart from a stop
+| `pas`      | Vehicle passes through a stop without stopping
 | `wait`     | Vehicle is waiting at a stop
 | `doo`      | Doors of the vehicle are opened
 | `doc`      | Doors of the vehicle are closed 
