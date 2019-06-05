@@ -151,7 +151,7 @@ The changing fields are described below:
 | `dir`     | String                | Route direction of the trip. After type conversion matches `direction_id` in GTFS and the topic. Either `"1"` or `"2"`.
 | `oper`    | Integer               | Unique ID of the operator _running_ the trip. The unique ID does not have prefix zeroes here.                       
 | `veh`     | Integer               | Vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. Matches `vehicle_number` in the topic except without the prefix zeroes.
-| `tst`     | String                | UTC timestamp from the vehicle in ISO 8601 format as output by `date --utc "+%Y-%m-%dT%H:%M:%SZ"`.   
+| `tst`     | String                | UTC timestamp with millisecond precision from the vehicle in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSSZ`).   
 | `tsi`     | Integer               | Unix time in seconds, matching `tst`.                                                                 
 | `spd`     | Floating-point number | Speed of the vehicle, in meters per second (m/s).                                                    
 | `hdg`     | Integer               | Heading of the vehicle, in degrees (⁰) starting clockwise from geographic north. Valid values are on the closed interval [0, 360].     
