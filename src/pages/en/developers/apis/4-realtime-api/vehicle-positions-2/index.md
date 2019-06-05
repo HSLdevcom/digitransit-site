@@ -168,7 +168,7 @@ The changing fields are described below:
 | `start`   | String                | Scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
 | `loc`     | String                |Location source, either `GPS`, `ODO`, `MAN` or `N/A`. <ul><li>**GPS** - location is received from GPS</li><li>**ODO** - location is calculated based on odometer value</li><li>**MAN** - location is specified manually</li><li>**N/A** - location is unavailable</li></ul>
 | `stop`    | String                | ID of the stop related to the event (e.g. ID of the stop where the vehicle departed from in case of `dep` event or the stop where the vehicle currently is in case of `vp` event).  `null` if the event is not related to any stop.
-| `route`   | String                | ID of the route the vehicle is currently running on. Matches `route_type` in the topic.
+| `route`   | String                | ID of the route the vehicle is currently running on. Matches `route_id` in the topic.
 | `occu`    | Integer               |Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`. However, currently only values used are 0 *(= vehicle has space and is accepting passengers)* and 100 *(= vehicle is full and not accepting passengers)*
 
 ### Operators
