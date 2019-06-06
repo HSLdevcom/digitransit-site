@@ -89,26 +89,26 @@ It can be split into these parts:
 
 The most notable change in HFP 2.0 is introduction of different types of messages. 
 
-| Event type | Description                                                                                   |
-|------------|-----------------------------------------------------------------------------------------------|
-| `vp`       | Vehicle position
-| `due`      | Vehicle will soon arrive to a stop
-| `arr`      | Vehicle arrives to a stop
-| `dep`      | Vehicle departs from a stop
-| `ars`      | Vehicle has arrived to a stop
-| `pde`      | Vehicle will soon depart from a stop
-| `pas`      | Vehicle passes through a stop without stopping
-| `wait`     | Vehicle is waiting at a stop
-| `doo`      | Doors of the vehicle are opened
-| `doc`      | Doors of the vehicle are closed 
-| `tlr`      | Vehicle is requesting traffic light priority
-| `tla`      | Vehicle receives a response to traffic light priority response
-| `da`       | Driver signs in to the vehicle
-| `dout`     | Driver signs out of the vehicle
-| `ba`       | Driver selects the block that the vehicle will run
-| `bout`     | Driver signs out from the selected block (usually from a depot)
-| `vja`      | Vehicle signs in to a service journey (i.e. a single public transport trip from stop A to stop B, also known as trip)
-| `vjout`    | Vehicle signs off from a service journey, after reaching the final stop
+| Event type        | Description                                                                                   |
+|-------------------|-----------------------------------------------------------------------------------------------|
+|`vp`               |Vehicle position
+|`due`              |Vehicle will soon arrive to a stop
+|`arr`              |Vehicle arrives to a stop
+|`dep`              |Vehicle departs from a stop
+|`ars`              |Vehicle has arrived to a stop
+|`pde`              |Vehicle will soon depart from a stop
+|`pas`              |Vehicle passes through a stop without stopping
+|`wait`             |Vehicle is waiting at a stop
+|`doo`              |Doors of the vehicle are opened
+|`doc`              |Doors of the vehicle are closed
+|`tlr`              |Vehicle is requesting traffic light priority
+|`tla`              |Vehicle receives a response to traffic light priority request
+|`da`               |Driver signs in to the vehicle
+|`dout`             |Driver signs out of the vehicle
+|`ba`               |Driver selects the block that the vehicle will run
+|`bout`             |Driver signs out from the selected block (usually from a depot)
+|`vja`              |Vehicle signs in to a service journey (i.e. a single public transport journey from location A to location B, also known as trip)
+|`vjout`            |Vehicle signs off from a service journey, after reaching the final stop
 
 ### The payload
 
