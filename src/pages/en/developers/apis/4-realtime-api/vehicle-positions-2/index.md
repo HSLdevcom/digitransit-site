@@ -56,16 +56,16 @@ When subscribing, all values for a level or several levels may be specified with
 See the advanced examples [further below](#examples) on how to tailor the subscription to your needs.
 
 Here is an example of an HFP message topic:
-
 ```
 /hfp/v2/journey/ongoing/VP/bus/0055/01216/1069/1/Malmi/7:20/1130106/2/60;24/19/73/44
 ```
 
 It can be split into these parts:
-
 ```
 /<prefix>/<version>/<journey_type>/<temporal_type>/<event_type>/<transport_mode>/<operator_id>/<vehicle_number>/<route_id>/<direction_id>/<headsign>/<start_time>/<next_stop>/<geohash_level>/<geohash>/#
-```
+```  
+  
+Topic levels up to `vehicle_number` are present in all types of topics and levels after `vehicle_number` are only present with vehicle journey position messages (i.e. when `journey_type` is `journey`).
 
 | Attribute        | Decription                                                    |
 |------------------|---------------------------------------------------------------|
