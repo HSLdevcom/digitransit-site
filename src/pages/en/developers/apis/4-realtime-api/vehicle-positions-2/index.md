@@ -87,7 +87,9 @@ Topic levels up to `vehicle_number` are present in all types of topics and level
 
 ### Event types
 
-The most notable change in HFP 2.0 is introduction of different types of messages. 
+The most notable change in HFP 2.0 is introduction of different types of messages. Whereas HFP 1.0 had only vehicle position messages, in HFP 2.0 vehicles also send messages from different types of event happening during the journey (for example, arriving to a stop etc.).
+
+List of possible events:
 
 | Event type        | Description                                                                                   |
 |-------------------|-----------------------------------------------------------------------------------------------|
