@@ -112,7 +112,7 @@ The most notable change in HFP 2.0 is introduction of different types of message
 
 ### The payload
 
-The payload is an UTF-8 encoded, compact JSON string. The JSON contains a single key-value pair where the key is equivalent to the event type of the message and the value is an object describing the event. 
+The payload is an UTF-8 encoded, compact JSON string. The JSON contains a single key-value pair where the key is equivalent to the event type of the message and the value is an object describing the event. Fields of the event object depend on event type.
 
 Here is an example of a vehicle position message (with `VP` key):
 
@@ -145,32 +145,43 @@ Here is an example of a vehicle position message (with `VP` key):
 }
 ```
 
-The changing fields are described below:
+The fields are described below:
 
-| Attribute | Type                  | Description                                                                                                                                                                                                                                                                             |
-| --------- | --------------------- | ---------------------------------------------------------------------------------- |
-| `desi`    | String                | Route number visible to passengers.
-| `dir`     | String                | Route direction of the trip. After type conversion matches `direction_id` in GTFS and the topic. Either `"1"` or `"2"`.
-| `oper`    | Integer               | Unique ID of the operator _running_ the trip. The unique ID does not have prefix zeroes here.                       
-| `veh`     | Integer               | Vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. Matches `vehicle_number` in the topic except without the prefix zeroes.
-| `tst`     | String                | UTC timestamp with millisecond precision from the vehicle in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSSZ`).   
-| `tsi`     | Integer               | Unix time in seconds from the vehicle.                                                                 
-| `spd`     | Floating-point number | Speed of the vehicle, in meters per second (m/s).                                                    
-| `hdg`     | Integer               | Heading of the vehicle, in degrees (⁰) starting clockwise from geographic north. Valid values are on the closed interval [0, 360].     
-| `lat`     | Floating-point number | WGS 84 latitude in degrees. `null` if location is unavailable.    
-| `long`    | Floating-point number | WGS 84 longitude in degrees. `null` if location is unavailable.
-| `acc`     | Floating-point number | Acceleration (m/s^2), calculated from the speed on this and the previous message. Negative values indicate that the speed of the vehicle is decreasing.
-| `dl`      | Integer               | Offset from the scheduled timetable in seconds (s). Negative values indicate lagging behind the schedule, positive values running ahead of schedule. 
-| `odo`     | Integer               | The odometer reading in meters (m) since the start of the trip. Currently the values not very reliable.                                    
-| `drst`    | Integer               | Door status. `0` if all the doors are closed, `1` if any of the doors are open.       
-| `oday`    | String                | Operating day of the trip. The exact time when an operating day ends depends on the route. For most routes, the operating day ends at 4:30 AM on the next day. In that case, for example, the final moment of the operating day `"2018-04-05"` would be at 2018-04-06T04:30 local time.
-| `jrn`     | Integer               | Internal journey descriptor, not meant to be useful for external use. 
-| `line`    | Integer               | Internal line descriptor, not meant to be useful for external use. 
-| `start`   | String                | Scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
-| `loc`     | String                |Location source, either `GPS`, `ODO`, `MAN` or `N/A`. <ul><li>**GPS** - location is received from GPS</li><li>**ODO** - location is calculated based on odometer value</li><li>**MAN** - location is specified manually</li><li>**N/A** - location is unavailable</li></ul>
-| `stop`    | String                | ID of the stop related to the event (e.g. ID of the stop where the vehicle departed from in case of `dep` event or the stop where the vehicle currently is in case of `vp` event).  `null` if the event is not related to any stop.
-| `route`   | String                | ID of the route the vehicle is currently running on. Matches `route_id` in the topic.
-| `occu`    | Integer               |Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`. However, currently only values used are 0 *(= vehicle has space and is accepting passengers)* and 100 *(= vehicle is full and not accepting passengers)*
+| Field     | Type                  | *Not* available on events            | Description                                                                                                                                                                                                                                                                             |
+| --------- | --------------------- | ------------------------------------ | ---------------------------------------------------------------------------------- |
+| `desi`    | String                | `da`, `dout`, `ba`, `bout`           | Route number visible to passengers.
+| `dir`     | String                | `da`, `dout`, `ba`, `bout`           | Route direction of the trip. After type conversion matches `direction_id` in GTFS and the topic. Either `"1"` or `"2"`.
+| `oper`    | Integer               |                                      | Unique ID of the operator _running_ the trip (i.e. this value can be different than the operator ID in the topic, for example if the service has been subcontracted to another operator).<br/>The unique ID does not have prefix zeroes here.                       
+| `veh`     | Integer               |                                      | Vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. Matches `vehicle_number` in the topic except without the prefix zeroes.
+| `tst`     | String                |                                      | UTC timestamp with millisecond precision from the vehicle in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSSZ`).   
+| `tsi`     | Integer               |                                      | Unix time in seconds from the vehicle.                                                                 
+| `spd`     | Floating-point number |                                      | Speed of the vehicle, in meters per second (m/s).                                                    
+| `hdg`     | Integer               |                                      | Heading of the vehicle, in degrees (⁰) starting clockwise from geographic north. Valid values are on the closed interval [0, 360].     
+| `lat`     | Floating-point number |                                      | WGS 84 latitude in degrees.<br/>`null` if location is unavailable.    
+| `long`    | Floating-point number |                                      | WGS 84 longitude in degrees.<br/>`null` if location is unavailable.
+| `acc`     | Floating-point number |                                      | Acceleration (m/s^2), calculated from the speed on this and the previous message. Negative values indicate that the speed of the vehicle is decreasing.
+| `dl`      | Integer               | `da`, `dout`, `ba`, `bout`           | Offset from the scheduled timetable in seconds (s). Negative values indicate lagging behind the schedule, positive values running ahead of schedule. 
+| `odo`     | Integer               |                                      | The odometer reading in meters (m) since the start of the trip. Currently the values not very reliable.                                    
+| `drst`    | Integer               |                                      | Door status. `0` if all the doors are closed, `1` if any of the doors are open.       
+| `oday`    | String                |  `da`, `dout`                        | Operating day of the trip. The exact time when an operating day ends depends on the route. For most routes, the operating day ends at 4:30 AM on the next day. In that case, for example, the final moment of the operating day `"2018-04-05"` would be at 2018-04-06T04:30 local time.
+| `jrn`     | Integer               |  `da`, `dout`, `ba`, `bout`          | Internal journey descriptor, not meant to be useful for external use. 
+| `line`    | Integer               |  `da`, `dout`, `ba`, `bout`          | Internal line descriptor, not meant to be useful for external use. 
+| `start`   | String                |  `da`, `dout`, `ba`, `bout`          | Scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `%H:%M` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
+| `loc`     | String                |                                      | Location source, either `GPS`, `ODO`, `MAN` or `N/A`. <ul><li>`GPS` - location is received from GPS</li><li>`ODO` - location is calculated based on odometer value</li><li>`MAN` - location is specified manually</li><li>`N/A` - location is unavailable</li></ul>
+| `stop`    | String                | `da`, `dout`, `ba`, `bout`           | ID of the stop related to the event (e.g. ID of the stop where the vehicle departed from in case of `dep` event or the stop where the vehicle currently is in case of `vp` event).  `null` if the event is not related to any stop.
+| `route`   | String                | `da`, `dout`, `ba`, `bout`           | ID of the route the vehicle is currently running on. Matches `route_id` in the topic.
+| `occu`    | Integer               | `da`, `dout`, `ba`, `bout`           | Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`. However, currently only values used are `0` *(= vehicle has space and is accepting passengers)* and `100` *(= vehicle is full and might not accept passengers)*
+| `ttarr`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled arrival time to the stop
+| `ttdep`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled departure time from the stop
+| `dr-type` | Integer               | Other than `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | Type of the driver, either `0` or `1`. <ul><li>`0` = normal driver</li><li>`1` = service technician</li></ul>
+| `tlp-requestid` | Integer              | Other than `tlr`, `tla`                                  | Traffic light priority request ID. Valid values are on interval `[0, 100]`.
+| `tlp-requesttype` | String             | Other than `tlr`                                         | Traffic light priority request type, either `NORMAL`, `DOOR_CLOSE`, `DOOR_OPEN` or `ADVANCE`.
+| `tlp-prioritylevel`  | String          | Other than `tlr`                                         | Priority level of a traffic light priority request. Either `normal`, `high` or `norequest`.
+| `tlp-reason`    | String               | Other than `tlr`                                         | Reason for not sending a traffic light priority request. Either `GLOBAL`, `AHEAD`, `LINE` or `PRIOEXEP`.
+| `tlp-att-seq`   | Integer              | Other than `tlr`                                         | Traffic light priority request attempt sequence number-
+| `tlp-decision`  | String               | Other than `tla`                                         | Response for traffic light priority request. Either `ACK` or `NAK`.
+
+Traffic light priority requests (event type `tlr`) also contain fields such as `tlp-point-configid`, but these have no use for 3rd party developers. 
 
 ### Operators
 
@@ -196,8 +207,6 @@ The numerical values for the different transit operators are listed below:
 | `58`   | Koillisen Liikennepalvelut Oy |
 | `59`   | Tilausliikenne Nikkanen Oy    |
 | `90`   | VR Oy                         |
-
-Note that in some cases (for example if the public transport service has been subcontracted to another operator) the operator code might be different in MQTT topic than the one in vehicle position message.
 
 ## Examples
 
