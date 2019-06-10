@@ -5,19 +5,13 @@ toc: true
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/vehicle-positions/architecture.xml
-# replit:
-#  embeds:
-#    - title: "MQTT.js"
-#      description: The example below uses MQTT.js library to listen to updates from all vehicles currently on route. See command line examples for other possible topics to try.
-#      url: https://repl.it/@digitransit/VehiclePositionsMQTT
-#      height: 800px
 ---
 
 Most of the vehicles in the HSL area should publish their status, including their position, once per second.
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
 The subscription scope is specified by the MQTT topic structure of the API.
 
-<!-- ## Quickstart
+## Quickstart
 
 Try this example to get an quick idea of what kind of data is available from the API:
 
@@ -30,10 +24,10 @@ npm install -g mqtt
 2. Use MQTT.js to subscribe to HFP messages:
 
 ```bash
-mqtt subscribe -h mqtt.hsl.fi -p 8883 -l mqtts -v -t "/hfp/v1/journey/#"
+mqtt subscribe -h mqtt.hsl.fi -p 8883 -l mqtts -v -t "/hfp/v2/journey/#"
 ```
 
-(or try [this example](https://repl.it/@digitransit/VehiclePositionsMQTTrawJSON) if you don't want to install anything) -->
+<!-- (or try [this example](https://repl.it/@digitransit/VehiclePositionsMQTTrawJSON) if you don't want to install anything) -->
 
 ## API endpoints
 
