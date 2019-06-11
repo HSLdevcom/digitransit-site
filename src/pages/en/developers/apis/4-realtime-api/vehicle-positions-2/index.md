@@ -230,45 +230,64 @@ mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 8883 -v -t "/hfp/v1/j
 
 #### A situational overview
 
-To get just the most significant status updates, use:
+To get just the most significant vehicle position updates, use:
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/ongoing/+/+/+/+/+/+/+/+/+/0/#"
+  -t "/hfp/v2/journey/ongoing/vp/+/+/+/+/+/+/+/+/0/#"
 ```
 
-#### A line in one direction
+#### A route in one direction
 
-To subscribe to all vehicles currently on the line 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
+To subscribe to all vehicle position messages from vehicles currently on the route 551 (`route_short_name` in GTFS) going in direction 1, subscribe to the corresponding `route_id` 2551:
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/ongoing/+/+/+/+/2551/1/#"
+  -t "/hfp/v2/journey/ongoing/vp/+/+/+/2551/1/#"
 ```
 
 #### All trams
 
-Subscribe to all trams with:
+Subscribe to all vehicle position messages from trams with:
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/ongoing/+/tram/#"
+  -t "/hfp/v2/journey/ongoing/vp/tram/#"
 ```
 
 #### A certain trip
 
-Subscribe to messages of a certain trip, even slightly before the driver has signed onto the trip:
+Subscribe to vehicle position messages of a certain trip, even slightly before the driver has signed onto the trip:
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/+/+/+/+/+/1069/1/+/7:20/#"
+  -t "/hfp/v2/journey/+/vp/+/+/+/1069/1/+/7:20/#"
 ```
 
 Or if your users would find it confusing to see a vehicle going in the wrong direction, subscribe to the `ongoing` messages only:
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/ongoing/+/+/+/+/1069/1/+/7:20/#"
+  -t "/hfp/v2/journey/ongoing/vp/+/+/+/1069/1/+/7:20/#"
+```
+
+#### All vehicles arriving to a certain stop
+
+To subscribe to all vehicles arriving to a certain stop, use:
+
+```bash
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
+  -t "/hfp/v2/journey/ongoing/arr/+/+/+/+/+/+/+/1293140/#"
+```
+
+#### Door status of a certain vehicle
+
+To subscribe to door status of a certain vehicle, use:
+
+```bash
+mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
+  -t "/hfp/v2/journey/ongoing/doo/+/0012/01312/#" \
+  -t "/hfp/v2/journey/ongoing/doc/+/0012/01312/#"
 ```
 
 #### A bounding box
