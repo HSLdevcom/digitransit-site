@@ -51,7 +51,7 @@ See the advanced examples [further below](#examples) on how to tailor the subscr
 
 Here is an example of an HFP message topic:
 ```
-/hfp/v2/journey/ongoing/VP/bus/0055/01216/1069/1/Malmi/7:20/1130106/2/60;24/19/73/44
+/hfp/v2/journey/ongoing/vp/bus/0055/01216/1069/1/Malmi/7:20/1130106/2/60;24/19/73/44
 ```
 
 It can be split into these parts:
