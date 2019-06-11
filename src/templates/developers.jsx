@@ -44,6 +44,11 @@ const buildPageGraph = pages => {
       .filter(slugPart => !!slugPart)
       .slice(2); //First two slug parts are 'en' and 'developers'
 
+    if (node.frontmatter.redirect) {
+      //Skip redirect pages
+      return;
+    }
+
     let currentLevel = pagesAsMap.get("/").childPages;
 
     for (let i = 0; i < slugParts.length; i++) {
@@ -254,6 +259,7 @@ export const query = graphql`
           frontmatter {
             title
             order
+            redirect
           }
         }
       }

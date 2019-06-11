@@ -50,12 +50,6 @@ class Layout extends React.Component {
     this.state = { mobileMenuOpen: false };
   }
 
-  componentDidMount() {
-    /*if (this.props.page.data.redirect) {
-      window.location = this.props.page.data.redirect;
-    }*/
-  }
-
   render() {
     var urlPrefix = "";
     var potentialLocale = this.props.slug.substring(0, 4); //top level directory specifies language
