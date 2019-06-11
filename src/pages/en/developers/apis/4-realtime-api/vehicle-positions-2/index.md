@@ -399,9 +399,9 @@ For example, you could try to generate an HFP subscription for all `ongoing` veh
 The Routing API can be used to query a trip correspoding to a vehicle position message.
 <br/>See [this example](../../1-routing-api/routes/#fuzzytrip) on how to check if a vehicle is wheelchair accessible.
 
-## Demos
+<!-- ## Demos
 
-- [MQTT demo map](https://vehiclepositionsmapdemo--digitransit.repl.co/), displays vehicle positions from a specific topic on a map _[(source code)](https://repl.it/@digitransit/VehiclePositionsMapDemo)_
+- [MQTT demo map](https://vehiclepositionsmapdemo--digitransit.repl.co/), displays vehicle positions from a specific topic on a map _[(source code)](https://repl.it/@digitransit/VehiclePositionsMapDemo)_ -->
 
 ## Further reading
 
