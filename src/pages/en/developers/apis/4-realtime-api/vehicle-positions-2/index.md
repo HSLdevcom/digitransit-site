@@ -168,7 +168,7 @@ The fields are described below:
 | `ttarr`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled arrival time to the stop
 | `ttdep`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled departure time from the stop
 | `dr-type` | Integer               | Other than `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | Type of the driver, either `0` or `1`. <ul><li>`0` = service technician</li><li>`1` = normal driver</li></ul>
-| `tlp-requestid` | Integer              | Other than `tlr`, `tla`                                  | Traffic light priority request ID. Valid values are on interval `[0, 100]`.
+| `tlp-requestid` | Integer              | Other than `tlr`, `tla`                                  | Traffic light priority request ID. Valid values are on interval `[0, 255]`.
 | `tlp-requesttype` | String             | Other than `tlr`                                         | Traffic light priority request type, either `NORMAL`, `DOOR_CLOSE`, `DOOR_OPEN` or `ADVANCE`.
 | `tlp-prioritylevel`  | String          | Other than `tlr`                                         | Priority level of a traffic light priority request. Either `normal`, `high` or `norequest`.
 | `tlp-reason`    | String               | Other than `tlr`                                         | Reason for *not* sending a traffic light priority request. Either `GLOBAL`, `AHEAD`, `LINE` or `PRIOEXEP`.
