@@ -167,12 +167,12 @@ The fields are described below:
 | `occu`    | Integer               | `da`, `dout`, `ba`, `bout`           | Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`. However, currently only values used are `0` *(= vehicle has space and is accepting passengers)* and `100` *(= vehicle is full and might not accept passengers)*
 | `ttarr`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled arrival time to the stop
 | `ttdep`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled departure time from the stop
-| `dr-type` | Integer               | Other than `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | Type of the driver, either `0` or `1`. <ul><li>`0` = normal driver</li><li>`1` = service technician</li></ul>
+| `dr-type` | Integer               | Other than `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | Type of the driver, either `0` or `1`. <ul><li>`0` = service technician</li><li>`1` = normal driver</li></ul>
 | `tlp-requestid` | Integer              | Other than `tlr`, `tla`                                  | Traffic light priority request ID. Valid values are on interval `[0, 100]`.
 | `tlp-requesttype` | String             | Other than `tlr`                                         | Traffic light priority request type, either `NORMAL`, `DOOR_CLOSE`, `DOOR_OPEN` or `ADVANCE`.
 | `tlp-prioritylevel`  | String          | Other than `tlr`                                         | Priority level of a traffic light priority request. Either `normal`, `high` or `norequest`.
 | `tlp-reason`    | String               | Other than `tlr`                                         | Reason for *not* sending a traffic light priority request. Either `GLOBAL`, `AHEAD`, `LINE` or `PRIOEXEP`.
-| `tlp-att-seq`   | Integer              | Other than `tlr`                                         | Traffic light priority request attempt sequence number-
+| `tlp-att-seq`   | Integer              | Other than `tlr`                                         | Traffic light priority request attempt sequence number
 | `tlp-decision`  | String               | Other than `tla`                                         | Response for traffic light priority request. Either `ACK` or `NAK`.
 
 Traffic light priority requests (event type `tlr`) also contain fields such as `tlp-point-configid`, but these have no use for 3rd party developers. 
