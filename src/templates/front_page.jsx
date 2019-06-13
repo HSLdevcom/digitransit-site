@@ -2,7 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import typography from "../utils/typography";
-import { FrontPageHeader, FrontPagePanels } from "../components/components";
+import { FrontPageHeader } from "../components/components";
+import FrontPagePanels from "../components/FrontPagePanels";
 
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";

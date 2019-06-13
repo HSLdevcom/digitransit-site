@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { FrontPagePanels } from "../components/components";
+import FrontPagePanels from "../components/FrontPagePanels";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";
 import SEO from "../components/SEO";
