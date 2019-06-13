@@ -182,8 +182,7 @@ export const ArchitectureHeader = props => {
 
   // IE doesn't fully support SVG:s made with draw.io
   if (
-    window.navigator.userAgent.indexOf("MSIE") !== -1 ||
-    window.navigator.appVersion.indexOf("Trident/") > 0
+    typeof window !== 'undefined' && (window.navigator.userAgent.indexOf("MSIE") !== -1 || window.navigator.appVersion.indexOf("Trident/") > 0)
   ) {
     imageFile = "architecture.png";
   }
