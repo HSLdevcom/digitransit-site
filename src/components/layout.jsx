@@ -1,11 +1,6 @@
 import React from "react";
+import styled from "styled-components";
 import { StaticQuery, Link, graphql } from "gatsby";
-import {
-  Container,
-  Grid,
-  Breakpoint,
-  Span
-} from "@mjaakko/react-responsive-grid";
 
 import logo from "../pages/logo.png";
 import hslLogo from "../pages/hsl-logo.png";
@@ -15,6 +10,36 @@ import typography from "../utils/typography";
 const { rhythm } = typography;
 
 const prefixer = require("react-style-normalizer");
+
+const MobileMenuButton = styled.svg`
+  height: 2em;
+  fill: #fff;
+  margin-right: ${rhythm(0.5)};
+  margin-top: -0.25em;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
+const DesktopMenu = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`
+
+const LangLinkSpan = styled.span`
+  margin: ${rhythm(0.5)}
+`
+
+const NavLink = styled(Link)`
+  margin: ${rhythm(0.5)};
+  color: #fff;
+  text-decoration: none;
+`
 
 export default props => (
   <StaticQuery
@@ -74,66 +99,41 @@ class Layout extends React.Component {
           textAlign: "center"
         })}
       >
-        <span style={{ margin: rhythm(0.5) }}>
-          <a
-            href="/"
-            style={prefixer({
-              margin: rhythm(0.5),
-              color: "#fff",
-              textDecoration: "none"
-            })}
+        <LangLinkSpan>
+          <NavLink
+            to="/"
             hrefLang="fi"
           >
             FI
-          </a>
-        </span>
-        <span style={{ margin: rhythm(0.5) }}>
-          <a
-            href="/en/"
-            style={prefixer({
-              margin: rhythm(0.5),
-              color: "#fff",
-              textDecoration: "none"
-            })}
+          </NavLink>
+        </LangLinkSpan>
+        <LangLinkSpan>
+          <NavLink
+            to="/en/"
             hrefLang="en"
           >
             EN
-          </a>
-        </span>
+          </NavLink>
+        </LangLinkSpan>
         <br />
-        <a
-          href={`${localePrefix}#users`}
-          style={prefixer({
-            margin: rhythm(0.5),
-            color: "#fff",
-            textDecoration: "none"
-          })}
+        <NavLink
+          to={`${localePrefix}#users`}
         >
           {i18n.users}
-        </a>
+        </NavLink>
         <br />
-        <Link
+        <NavLink
           onClick={() => this.setState({ mobileMenuOpen: false })}
           to="/en/developers/"
-          style={prefixer({
-            margin: rhythm(0.5),
-            color: "#fff",
-            textDecoration: "none"
-          })}
         >
           {i18n.developers}
-        </Link>
+        </NavLink>
         <br />
-        <a
-          href={`${localePrefix}#municipalities`}
-          style={prefixer({
-            margin: rhythm(0.5),
-            color: "#fff",
-            textDecoration: "none"
-          })}
+        <NavLink
+          to={`${localePrefix}#municipalities`}
         >
           {i18n.municipalities}
-        </a>
+        </NavLink>
         <br />
       </div>
     );
@@ -172,71 +172,41 @@ class Layout extends React.Component {
             width: `calc(100% - 152px)`
           })}
         >
-          <Breakpoint minWidth={750}>
-            {/* Convert to Link after upgrading to ract-router 1.0
-                 users and municipalities are inter page links, they are only shown when on front page
-               */}
-            <a
-              href={`${localePrefix}#users`}
-              style={prefixer({
-                margin: rhythm(0.5),
-                color: "#fff",
-                textDecoration: "none"
-              })}
+          <DesktopMenu>
+            <NavLink
+              to={`${localePrefix}#users`}
             >
               {i18n.users}
-            </a>
-            <Link
+            </NavLink>
+            <NavLink
               to={`/en/developers/`}
-              style={prefixer({
-                margin: rhythm(0.5),
-                color: "#fff",
-                textDecoration: "none"
-              })}
             >
               {i18n.developers}
-            </Link>
-            <a
-              href={`${localePrefix}#municipalities`}
-              style={prefixer({
-                margin: rhythm(0.5),
-                color: "#fff",
-                textDecoration: "none"
-              })}
+            </NavLink>
+            <NavLink
+              to={`${localePrefix}#municipalities`}
             >
               {i18n.municipalities}
-            </a>
-            <span style={{ margin: rhythm(0.5) }}>|</span>
-            <span style={{ margin: rhythm(0.5) }}>
-              <a
-                style={prefixer({
-                  margin: rhythm(0.5),
-                  color: "#fff",
-                  textDecoration: "none"
-                })}
-                href="/"
+            </NavLink>
+            <LangLinkSpan>|</LangLinkSpan>
+            <LangLinkSpan>
+              <NavLink
+                to="/"
                 hrefLang="fi"
               >
                 FI
-              </a>
-            </span>
-            <span style={{ margin: rhythm(0.5) }}>
-              <a
-                style={prefixer({
-                  margin: rhythm(0.5),
-                  color: "#fff",
-                  textDecoration: "none"
-                })}
-                href="/en/"
+              </NavLink>
+            </LangLinkSpan>
+            <LangLinkSpan>
+              <NavLink
+                to="/en/"
                 hrefLang="en"
               >
                 EN
-              </a>
-            </span>
-          </Breakpoint>
-          <Breakpoint maxWidth={750}>
-            {/* Convert to Link after upgrading to ract-router 1.0 */}
-            <svg
+              </NavLink>
+            </LangLinkSpan>
+          </DesktopMenu>
+          <MobileMenuButton
               id="icon-icon_menu"
               viewBox="0 0 1024 1024"
               style={{
@@ -265,9 +235,8 @@ class Layout extends React.Component {
                 class="path3"
                 d="M51.193 716.804h921.614c28.279 0 51.2 22.925 51.2 51.2 0 28.279-22.921 51.204-51.2 51.204h-921.614c-28.279 0-51.2-22.925-51.2-51.204 0-28.275 22.921-51.2 51.2-51.2z"
               />
-            </svg>
-            {this.state.mobileMenuOpen ? mobileMenu : <span />}
-          </Breakpoint>
+          </MobileMenuButton>
+          {this.state.mobileMenuOpen && mobileMenu}
         </nav>
         <div
           style={{
