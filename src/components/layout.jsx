@@ -12,7 +12,7 @@ import hslLogo from "../pages/hsl-logo.png";
 
 import typography from "../utils/typography";
 
-const { rhythm, fontSizeToPx } = typography;
+const { rhythm } = typography;
 
 const prefixer = require("react-style-normalizer");
 
@@ -51,16 +51,15 @@ class Layout extends React.Component {
   }
 
   render() {
-    var urlPrefix = "";
-    var potentialLocale = this.props.slug.substring(0, 4); //top level directory specifies language
-    var locale = "fi";
+    const potentialLocale = this.props.slug.substring(0, 4); //top level directory specifies language
+    let locale = "fi";
     if (potentialLocale === "/en/") {
       locale = "en";
     } else if (potentialLocale === "/dev") {
       locale = "en";
     }
-    var localePrefix = locale === "fi" ? "/" : "/en/";
-    var i18n = this.props.data.site.siteMetadata.i18n[locale];
+    const localePrefix = locale === "fi" ? "/" : "/en/";
+    const i18n = this.props.data.site.siteMetadata.i18n[locale];
 
     const mobileMenu = (
       <div
@@ -188,7 +187,7 @@ class Layout extends React.Component {
               {i18n.users}
             </a>
             <Link
-              to={`${urlPrefix}/en/developers/`}
+              to={`/en/developers/`}
               style={prefixer({
                 margin: rhythm(0.5),
                 color: "#fff",
@@ -248,7 +247,9 @@ class Layout extends React.Component {
                 cursor: "pointer"
               }}
               onClick={() =>
-                this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen })
+                this.setState(state => {
+                  return { mobileMenuOpen: !state.mobileMenuOpen }
+                })
               }
             >
               <title>icon_menu</title>
@@ -278,7 +279,7 @@ class Layout extends React.Component {
           }}
         >
           <div style={{ maxWidth: 950, height: "100%", margin: "0 auto" }}>
-            <Link to={`${urlPrefix}/`}>
+            <Link to={`/`}>
               <img
                 src={logo}
                 style={{
