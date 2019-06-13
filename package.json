@@ -14,7 +14,6 @@
   "author": "Digitransit Team <digitransit@hsl.fi>",
   "license": "(AGPL-3.0 OR EUPL-1.2)",
   "dependencies": {
-    "@mjaakko/react-responsive-grid": "0.3.7",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.33",
     "gatsby-plugin-react-helmet": "^3.0.9",

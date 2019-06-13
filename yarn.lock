@@ -794,17 +794,6 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
   integrity sha512-4zAPlpDEh2VwXswwr/t8xGNDGg8RQiPxtxZ3qQEXyQsBV39ptTdESCjuBvGze1nLMVrxmTIKmnO/nAV8Tqjjzg==
 
-"@mjaakko/react-responsive-grid@0.3.7":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@mjaakko/react-responsive-grid/-/react-responsive-grid-0.3.7.tgz#1e3b1cc21b10544b40fc9c02c002ebc62db4d0af"
-  integrity sha512-8fa4ViNGXlJADcKmZ/sncBLeS2tvJ1V78v+H+r2BMw2awJhFdBBGRS612QjsvX2zCnQHQXMWDZmaoTGc14zu1Q==
-  dependencies:
-    create-react-class "^15.6.3"
-    object-assign "^4.0.1"
-    prop-types "^15.6.2"
-    react-component-width-mixin "^2.0.0"
-    react-page-width "^1.0.1"
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -3308,15 +3297,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.3:
-  version "15.6.3"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
-  integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
 create-react-context@^0.2.1:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
@@ -4264,11 +4244,6 @@ electron-to-chromium@^1.3.47, electron-to-chromium@^1.3.82:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.84.tgz#2e55df59e818f150a9f61b53471ebf4f0feecc65"
   integrity sha512-IYhbzJYOopiTaNWMBp7RjbecUBsbnbDneOP86f3qvS0G0xfzwNSvMJpTrvi5/Y1gU7tg2NAgeg8a8rCYvW9Whw==
 
-element-resize-event@^2.0.0:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/element-resize-event/-/element-resize-event-2.0.9.tgz#2f5e1581a296eb5275210c141bc56342e218f876"
-  integrity sha1-L14VgaKW61J1IQwUG8VjQuIY+HY=
-
 elliptic@^6.0.0:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.1.tgz#c2d0b7776911b86722c632c3c06c60f2f819939a"
@@ -5005,7 +4980,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.0, fbjs@^0.8.14, fbjs@^0.8.9:
+fbjs@^0.8.0, fbjs@^0.8.14:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -9433,11 +9408,6 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-performance-now@~0.1.3:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.1.4.tgz#360b642f073ff8c2a693b3c38d7ccbc17b53183b"
-  integrity sha1-NgtkLwc/+MKmk7PDjXzLwXtTGDs=
-
 phin@^2.9.1:
   version "2.9.3"
   resolved "https://registry.yarnpkg.com/phin/-/phin-2.9.3.tgz#f9b6ac10a035636fb65dfc576aaaa17b8743125c"
@@ -10151,13 +10121,6 @@ querystringify@^2.0.0:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
   integrity sha512-sluvZZ1YiTLD5jsqZcDmFyV2EwToyXZBfpoVOmktMmW+VEnhgakFHnasVph65fOjGPTWN0Nw3+XQaSeMayr0kg==
 
-raf@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/raf/-/raf-2.0.4.tgz#4993e453ea5275bf6ef07a163bdfe9a23233b623"
-  integrity sha1-SZPkU+pSdb9u8HoWO9/pojIztiM=
-  dependencies:
-    performance-now "~0.1.3"
-
 randomatic@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.1.1.tgz#b776efc59375984e36c537b2f51a1f0aff0da1ed"
@@ -10211,13 +10174,6 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
-
-react-component-width-mixin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-component-width-mixin/-/react-component-width-mixin-2.0.0.tgz#9612806299ccf3de2304f8d40fb02e7c14d2a131"
-  integrity sha1-lhKAYpnM894jBPjUD7AufBTSoTE=
-  dependencies:
-    element-resize-event "^2.0.0"
 
 react-dev-utils@^4.2.1:
   version "4.2.3"
@@ -10294,13 +10250,6 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
-
-react-page-width@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-page-width/-/react-page-width-1.0.1.tgz#264e5bffe3cd2a7d7a9ee9bb800df6333aaac990"
-  integrity sha1-Jk5b/+PNKn16num7gA32MzqqyZA=
-  dependencies:
-    raf "^2.0.4"
 
 react-prism@^4.3.2:
   version "4.3.2"
