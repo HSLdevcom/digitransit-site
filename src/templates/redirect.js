@@ -1,13 +1,11 @@
 import React from "react";
-import {
-  Container
-} from "@mjaakko/react-responsive-grid";
 import { Link, navigate, graphql } from "gatsby";
 
 import typography from "../utils/typography";
 
 import Layout from "../components/layout";
 import SEO from "../components/SEO";
+import Container from "../components/Container";
 
 const { rhythm } = typography;
 

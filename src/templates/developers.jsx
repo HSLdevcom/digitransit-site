@@ -1,10 +1,7 @@
 import React from "react";
 import { Link, navigate, graphql } from "gatsby";
 import {
-  Container,
-  Grid,
-  Breakpoint,
-  Span
+  Breakpoint
 } from "@mjaakko/react-responsive-grid";
 import Typography from "typography";
 import {
@@ -18,6 +15,7 @@ import {
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";
 import SEO from "../components/SEO";
+import Container from "../components/Container";
 
 var typography = new Typography();
 var rhythm = typography.rhythm,

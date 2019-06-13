@@ -1,10 +1,4 @@
 import React from "react";
-import {
-  Container,
-  Grid,
-  Breakpoint,
-  Span
-} from "@mjaakko/react-responsive-grid";
 import { graphql } from "gatsby";
 
 import typography from "../utils/typography";
@@ -12,6 +6,7 @@ import { FrontPageHeader, FrontPagePanels } from "../components/components";
 
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";
+import Container from "../components/Container";
 import SEO from "../components/SEO";
 
 const { rhythm, fontSizeToPx } = typography;
