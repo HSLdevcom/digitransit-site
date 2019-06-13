@@ -1,8 +1,6 @@
 import React from "react";
+import styled from "styled-components";
 import { Link, navigate, graphql } from "gatsby";
-import {
-  Breakpoint
-} from "@mjaakko/react-responsive-grid";
 import Typography from "typography";
 import {
   DockerInfo,
@@ -18,8 +16,7 @@ import SEO from "../components/SEO";
 import Container from "../components/Container";
 
 var typography = new Typography();
-var rhythm = typography.rhythm,
-  fontSizeToMS = typography.fontSizeToMS;
+var rhythm = typography.rhythm;
 
 const prefixer = require("react-style-normalizer");
 
@@ -156,10 +153,62 @@ const ChildPageOptions = ({ pages }) => {
   return mapOptions(buildOptions(pages));
 };
 
+const DesktopNavigation = styled.div`
+  overflow-y: auto;
+  padding-right: calc(${rhythm(1 / 2)} - 1px);
+  padding-top: ${rhythm(1 / 2)};
+  position: absolute;
+  width: calc(${rhythm(13)} - 1px);
+  border-right: 1px solid lightgrey;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
+const MobileNavigation = styled.div`
+  display: none;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
+`
+
+const PageContent = styled.div`
+  @media not (max-width: 700px) {
+    padding: 0 ${rhythm(1)};
+    padding-left: calc(${rhythm(13)} + ${rhythm(1)});
+    min-height: 1800px;
+  }
+
+  @media (max-width: 700px) {
+    padding-top: ${rhythm(1)};
+
+    & > h1 {
+      display: none;
+    }
+  }
+`
+
 export default props => {
   const currentPage = props.data.markdownRemark.fields.slug;
 
   const pageGraph = buildPageGraph(props.data.childPages.edges, currentPage);
+
+  const pageContent = (
+    <>
+      <ArchitectureHeader
+        slug={props.data.markdownRemark.fields.slug}
+        {...props.data.markdownRemark.frontmatter}
+      />
+      <TableOfContents {...props} />
+      <Markdown {...props} />
+      <Assets {...props.data.markdownRemark.frontmatter} />
+      <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
+      <DockerInfo {...props.data.markdownRemark.frontmatter} />
+      <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
+    </>
+  )
 
   return (
     <>
@@ -179,44 +228,10 @@ export default props => {
           })}
         >
           <div>
-            <Breakpoint minWidth={700}>
-              <div>
-                <div
-                  style={{
-                    overflowY: "auto",
-                    paddingRight: `calc(${rhythm(1 / 2)} - 1px)`,
-                    paddingTop: rhythm(1 / 2),
-                    position: "absolute",
-                    width: `calc(${rhythm(13)} - 1px)`,
-                    borderRight: "1px solid lightgrey"
-                  }}
-                >
-                  <ChildPageList pages={pageGraph} currentPage={currentPage} />
-                </div>
-                <div
-                  style={{
-                    padding: `0 ${rhythm(1)}`,
-                    paddingLeft: `calc(${rhythm(13)} + ${rhythm(1)})`,
-                    minHeight: "1800px"
-                  }}
-                >
-                  <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-                  <ArchitectureHeader
-                    slug={props.data.markdownRemark.fields.slug}
-                    {...props.data.markdownRemark.frontmatter}
-                  />
-                  <TableOfContents {...props} />
-                  <Markdown {...props} />
-                  <Assets {...props.data.markdownRemark.frontmatter} />
-                  <TechnologiesInfo
-                    {...props.data.markdownRemark.frontmatter}
-                  />
-                  <DockerInfo {...props.data.markdownRemark.frontmatter} />
-                  <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
-                </div>
-              </div>
-            </Breakpoint>
-            <Breakpoint maxWidth={700}>
+            <DesktopNavigation>
+              <ChildPageList pages={pageGraph} currentPage={currentPage} />
+            </DesktopNavigation>
+            <MobileNavigation>
               <strong>Topics:</strong>{" "}
               <select
                 defaultValue={props.data.markdownRemark.fields.slug}
@@ -224,19 +239,11 @@ export default props => {
               >
                 <ChildPageOptions pages={pageGraph} />
               </select>
-              <br />
-              <br />
-              <ArchitectureHeader
-                slug={props.data.markdownRemark.fields.slug}
-                {...props.data.markdownRemark.frontmatter}
-              />
-              <TableOfContents {...props} />
-              <Markdown {...props} />
-              <Assets {...props.data.markdownRemark.frontmatter} />
-              <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
-              <DockerInfo {...props.data.markdownRemark.frontmatter} />
-              <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
-            </Breakpoint>
+            </MobileNavigation>
+            <PageContent>
+              <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+              { pageContent }
+            </PageContent>
           </div>
         </Container>
       </Layout>
