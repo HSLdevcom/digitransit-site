@@ -163,6 +163,7 @@ The numerical values for the different transit operators are listed below:
 | `55`   | Transdev Helsinki Oy          |
 | `58`   | Koillisen Liikennepalvelut Oy |
 | `59`   | Tilausliikenne Nikkanen Oy    |
+| `89`   | Metropolia                    |
 | `90`   | VR Oy                         |
 
 Note that in some cases (for example if the public transport service has been subcontracted to another operator) the operator code might be different in MQTT topic than the one in vehicle position message.
