@@ -282,6 +282,8 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v2/journey/ongoing/arr/+/+/+/+/+/+/+/1293140/#"
 ```
 
+**Note:** depending on the current traffic situation, you might have to wait a while to receive data
+
 #### Door status of a certain vehicle
 
 To subscribe to door status of a certain vehicle, use:
@@ -291,6 +293,8 @@ mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
   -t "/hfp/v2/journey/ongoing/doo/+/0012/01312/#" \
   -t "/hfp/v2/journey/ongoing/doc/+/0012/01312/#"
 ```
+
+**Note:** you will have to change operator ID and vehicle number in the topic if vehicle `0012/01312` is not running currently.
 
 #### A bounding box
 
