@@ -175,7 +175,7 @@ const MobileNavigation = styled.div`
 `
 
 const PageContent = styled.div`
-  @media not (max-width: 700px) {
+  @media (min-width: 701px) {
     padding: 0 ${rhythm(1)};
     padding-left: calc(${rhythm(13)} + ${rhythm(1)});
     min-height: 1800px;
