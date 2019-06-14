@@ -177,8 +177,18 @@ The fields are described below:
 | `tlp-att-seq`   | Integer              | Other than `tlr`                                         | Traffic light priority request attempt sequence number
 | `tlp-decision`  | String               | Other than `tla`                                         | Response for traffic light priority request. Either `ACK` or `NAK`.
 
-Traffic light priority requests (event type `tlr`) also contain fields such as `tlp-point-configid`, but these have no use for 3rd party developers. 
+Also the following fields are available on traffic light priority request events (event type `tlr`), but they probably have no use for 3rd party users: 
 
+| Field                | Type    | Description                  |
+|----------------------|---------|------------------------------|
+| `sid`                | Integer | Junction ID
+| `signal-groupid`     | Integer | Signal group (a group of traffic lights at a junction) ID
+| `tlp-signalgroupnbr` | Integer | ID of the specific traffic light in a signal group
+| `tlp-line-configid`  | Integer | ID of the line configuration in DOI
+| `tlp-point-configid` | Integer | Point configuration ID
+| `tlp-frequency`      | Integer | Frequency used for traffic light prority request
+| `tlp-protocol`       | String  | Protocol used for traffic light priority request
+ 
 ### Operators
 
 The numerical values for the different transit operators are listed below:
