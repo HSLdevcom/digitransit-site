@@ -3,8 +3,8 @@ import { graphql } from "gatsby";
 
 import typography from "../utils/typography";
 
-import Layout from "../components/layout";
-import Markdown from "../components/markdown";
+import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
 import Container from "../components/Container";
 

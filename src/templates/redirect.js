@@ -3,7 +3,7 @@ import { Link, navigate, graphql } from "gatsby";
 
 import typography from "../utils/typography";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Container from "../components/Container";
 

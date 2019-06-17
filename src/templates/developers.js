@@ -9,8 +9,8 @@ import Assets from "../components/Assets"
 import ArchitectureHeader from "../components/ArchitectureHeader";
 import ReplitEmbed from "../components/ReplitEmbed";
 import TableOfContents from "../components/TableOfContents";
-import Layout from "../components/layout";
-import Markdown from "../components/markdown";
+import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
 import Container from "../components/Container";
 

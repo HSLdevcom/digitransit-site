@@ -1,48 +1,41 @@
 import React from "react";
 import { graphql } from "gatsby";
+import FrontPagePanels from "../components/FrontPagePanels";
+import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
+import SEO from "../components/SEO";
+import Container from "../components/Container";
 
 import typography from "../utils/typography";
-import FrontPageHeader from "../components/FrontPageHeader";
-import FrontPagePanels from "../components/FrontPagePanels";
-
-import Layout from "../components/layout";
-import Markdown from "../components/markdown";
-import Container from "../components/Container";
-import SEO from "../components/SEO";
-
 const { rhythm, fontSizeToPx } = typography;
 
 const prefixer = require("react-style-normalizer");
 
 export default props => {
-  var urlPrefix = "";
   return (
     <>
       <SEO
         pageTitle={props.data.markdownRemark.frontmatter.title}
+        pageDescription={props.data.markdownRemark.excerpt}
         pagePath={props.data.markdownRemark.fields.slug}
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
-        {props.data.markdownRemark.frontmatter.isFront ||
-        props.page.path == `${urlPrefix}/` ? (
-          <FrontPageHeader {...props.data.markdownRemark.frontmatter} />
-        ) : (
+        <div>
           <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-        )}
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-        >
-          <Markdown {...props} />
-        </Container>
-        {props.data.markdownRemark.frontmatter.isFront ||
-        props.page.path == `${urlPrefix}/` ? (
           <FrontPagePanels {...props.data.markdownRemark.frontmatter} />
-        ) : null}
+          <Container
+            style={prefixer({
+              maxWidth: 1250,
+              width: "100%",
+              padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
+              flex: "1"
+            })}
+          >
+            <div className="join-to-digitransit-content">
+              <Markdown {...props} />
+            </div>
+          </Container>
+        </div>
       </Layout>
     </>
   );
@@ -56,8 +49,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        headerText
-        isFront
         panels {
           title
           body
@@ -69,11 +60,12 @@ export const query = graphql`
             publicURL
           }
           id
-          background
+          textColor
           swapped
         }
       }
       html
+      excerpt(pruneLength: 200)
     }
   }
 `;
