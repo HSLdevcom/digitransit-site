@@ -8,7 +8,7 @@ import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
 import PageContainer from "../components/PageContainer";
 
-const { rhythm, fontSizeToPx } = typography;
+const { rhythm } = typography;
 
 export default props => {
   return (

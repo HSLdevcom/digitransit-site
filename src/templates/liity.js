@@ -9,7 +9,7 @@ import SEO from "../components/SEO";
 import PageContainer from "../components/PageContainer";
 
 import typography from "../utils/typography";
-const { rhythm, fontSizeToPx } = typography;
+const { rhythm } = typography;
 
 const JoinDigitransit = styled.div`
   & img {

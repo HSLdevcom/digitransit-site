@@ -10,7 +10,7 @@ import Markdown from "../components/Markdown";
 import PageContainer from "../components/PageContainer";
 import SEO from "../components/SEO";
 
-const { rhythm, fontSizeToPx } = typography;
+const { rhythm } = typography;
 
 export default props => {
   var urlPrefix = "";
