@@ -30,13 +30,13 @@ const FrontPagePanelImage = styled.img`
 const FrontPagePanelContainer = styled.div`
     position: relative;
     display: flex;
-    flexWrap: wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     color: ${props => props.textColor || '#fff'};
     background: ${props => props.background};
     font-weight: 300;
-    min-height: 500;
+    min-height: 500px;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
 
@@ -47,14 +47,14 @@ const FrontPagePanelContainer = styled.div`
 
 const FrontPagePanelBody = styled.div`
     max-width: 465px;
-    margin-left: ${props => props.swapped ? 60 : 30};
-    margin-right: ${props => props.swapped ? 30 : 60};
+    margin-left: ${props => props.swapped ? '60px' : '30px'};
+    margin-right: ${props => props.swapped ? '30px' : '60px'};
     margin-top: 1em;
     margin-bottom: 1em;
 
     @media (max-width: 1020px) {
         margin-left: ${rhythm(1)};
-        margin-right: ${rhythm(1)}
+        margin-right: ${rhythm(1)};
     }
 `
 
