@@ -1,15 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 import { Link, navigate, graphql } from "gatsby";
 
 import typography from "../utils/typography";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import Container from "../components/Container";
+import PageContainer from "../components/PageContainer";
 
 const { rhythm } = typography;
-
-const prefixer = require("react-style-normalizer");
 
 export default class Redirect extends React.Component {
   componentDidMount() {
@@ -27,14 +26,7 @@ export default class Redirect extends React.Component {
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-          >
+        <PageContainer>
           This page has been moved to 
           {" "}
           <Link
@@ -43,7 +35,7 @@ export default class Redirect extends React.Component {
             replace>
               <code>{ props.data.markdownRemark.frontmatter.redirect }</code>
           </Link>
-        </Container>
+        </PageContainer>
       </Layout>
     </>);
   }

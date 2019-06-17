@@ -7,12 +7,10 @@ import FrontPagePanels from "../components/FrontPagePanels";
 
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
-import Container from "../components/Container";
+import PageContainer from "../components/PageContainer";
 import SEO from "../components/SEO";
 
 const { rhythm, fontSizeToPx } = typography;
-
-const prefixer = require("react-style-normalizer");
 
 export default props => {
   var urlPrefix = "";
@@ -29,16 +27,9 @@ export default props => {
         ) : (
           <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
         )}
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-        >
+        <PageContainer>
           <Markdown {...props} />
-        </Container>
+        </PageContainer>
         {props.data.markdownRemark.frontmatter.isFront ||
         props.page.path == `${urlPrefix}/` ? (
           <FrontPagePanels {...props.data.markdownRemark.frontmatter} />

@@ -4,12 +4,10 @@ import FrontPagePanels from "../components/FrontPagePanels";
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
-import Container from "../components/Container";
+import PageContainer from "../components/PageContainer";
 
 import typography from "../utils/typography";
 const { rhythm, fontSizeToPx } = typography;
-
-const prefixer = require("react-style-normalizer");
 
 export default props => {
   return (
@@ -23,18 +21,11 @@ export default props => {
         <div>
           <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
           <FrontPagePanels {...props.data.markdownRemark.frontmatter} />
-          <Container
-            style={prefixer({
-              maxWidth: 1250,
-              width: "100%",
-              padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-              flex: "1"
-            })}
-          >
+          <PageContainer>
             <div className="join-to-digitransit-content">
               <Markdown {...props} />
             </div>
-          </Container>
+          </PageContainer>
         </div>
       </Layout>
     </>

@@ -12,12 +12,10 @@ import TableOfContents from "../components/TableOfContents";
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
-import Container from "../components/Container";
+import PageContainer from "../components/PageContainer";
 
 var typography = new Typography();
 var rhythm = typography.rhythm;
-
-const prefixer = require("react-style-normalizer");
 
 const buildPageGraph = pages => {
   const pagesAsMap = new Map();
@@ -218,14 +216,7 @@ export default props => {
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-        >
+        <PageContainer>
           <div>
             <DesktopNavigation>
               <ChildPageList pages={pageGraph} currentPage={currentPage} />
@@ -244,7 +235,7 @@ export default props => {
               { pageContent }
             </PageContent>
           </div>
-        </Container>
+        </PageContainer>
       </Layout>
     </>
   );

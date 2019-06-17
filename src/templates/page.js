@@ -6,11 +6,9 @@ import typography from "../utils/typography";
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
-import Container from "../components/Container";
+import PageContainer from "../components/PageContainer";
 
 const { rhythm, fontSizeToPx } = typography;
-
-const prefixer = require("react-style-normalizer");
 
 export default props => {
   return (
@@ -22,16 +20,9 @@ export default props => {
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-        >
+        <PageContainer>
           <Markdown {...props} />
-        </Container>
+        </PageContainer>
       </Layout>
     </>
   );

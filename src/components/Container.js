@@ -1,5 +1,5 @@
 import React from "react"
 
-export default ({ style, children }) => (
-    <div style={{ margin: '0 auto', ...style }}>{ children }</div>
+export default ({ className, style, children }) => (
+    <div className={className} style={{ margin: '0 auto', ...style }}>{ children }</div>
 )

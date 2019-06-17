@@ -9,7 +9,16 @@ import typography from "../utils/typography";
 
 const { rhythm } = typography;
 
-const prefixer = require("react-style-normalizer");
+const MobileMenu = styled.div`
+  position: fixed;
+  background-color: ${props => props.headerColor};
+  width: 100vw;
+  top: 59px;
+  line-height: ${rhythm(2)};
+  font-size: ${rhythm(0.75)};
+  left: 0px;
+  text-align: center;
+`
 
 const MobileMenuButton = styled.svg`
   height: 2em;
@@ -39,6 +48,54 @@ const NavLink = styled(Link)`
   margin: ${rhythm(0.5)};
   color: #fff;
   text-decoration: none;
+`
+
+const LayoutContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
+
+const Navigation = styled.nav`
+  font-size: 15px;
+  text-transform: uppercase;
+  position: fixed;
+  max-width: 720px;
+  z-index: 3;
+  text-align: right;
+  padding: ${rhythm(3 / 4)} ${rhythm(1 / 2)};
+  margin: 0 auto;
+  left: 152px;
+  right: 0px;
+  color: #fff;
+  font-weight: 500;
+  width: calc(100% - 152px);
+`
+
+const Footer = styled.footer`
+  width: 100%;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const FooterLogos = styled.div`
+  width: 950px;
+  max-width: 80vw;
+  margin: 0 auto;
+  border-bottom: solid 1px #5c5c5c;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`
+
+const FooterLogo = styled.img`
+  margin: 2em 2em;
+  filter: brightness(2);
+  WebkitFilter: brightness(2);
 `
 
 export default props => (
@@ -87,18 +144,7 @@ class Layout extends React.Component {
     const i18n = this.props.data.site.siteMetadata.i18n[locale];
 
     const mobileMenu = (
-      <div
-        style={prefixer({
-          position: "fixed",
-          backgroundColor: this.props.data.site.siteMetadata.headerColor,
-          width: "100vw",
-          top: 59,
-          lineHeight: rhythm(2),
-          fontSize: rhythm(0.75),
-          left: 0,
-          textAlign: "center"
-        })}
-      >
+      <MobileMenu headerColor={this.props.data.site.siteMetadata.headerColor}>
         <LangLinkSpan>
           <NavLink
             to="/"
@@ -135,43 +181,12 @@ class Layout extends React.Component {
           {i18n.municipalities}
         </NavLink>
         <br />
-      </div>
+      </MobileMenu>
     );
 
     return (
-      <div
-        ref="mainflex"
-        style={
-          typeof navigator != "undefined" &&
-          /Trident\/7\./.test(navigator.userAgent)
-            ? {
-                height: "100%",
-                width: "100%"
-              }
-            : prefixer({
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column"
-              })
-        }
-      >
-        <nav
-          style={prefixer({
-            fontSize: 15,
-            textTransform: "uppercase",
-            position: "fixed",
-            maxWidth: 720,
-            zIndex: 3,
-            textAlign: "right",
-            padding: `${rhythm(3 / 4)} ${rhythm(1 / 2)}`,
-            margin: "0 auto",
-            left: 152,
-            right: 0,
-            color: "#fff",
-            fontWeight: 500,
-            width: `calc(100% - 152px)`
-          })}
-        >
+      <LayoutContainer ref="mainflex">
+        <Navigation>
           <DesktopMenu>
             <NavLink
               to={`${localePrefix}#users`}
@@ -237,7 +252,7 @@ class Layout extends React.Component {
               />
           </MobileMenuButton>
           {this.state.mobileMenuOpen && mobileMenu}
-        </nav>
+        </Navigation>
         <div
           style={{
             position: "fixed",
@@ -264,42 +279,15 @@ class Layout extends React.Component {
 
         {this.props.children}
 
-        <div
-          style={prefixer({
-            width: "100%",
-            background: "#333",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center"
-          })}
-        >
-          <div
-            style={prefixer({
-              width: 950,
-              maxWidth: "80vw",
-              magin: "0 auto",
-              borderBottom: "solid 1px #5c5c5c",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              alignItems: "center"
-            })}
-          >
-            <img
-              src={hslLogo}
-              style={prefixer({
-                margin: "2em 2em",
-                filter: "brightness(2)",
-                WebkitFilter: "brightness(2)"
-              })}
-            />
-          </div>
+        <Footer>
+          <FooterLogos>
+            <FooterLogo src={hslLogo} />
+          </FooterLogos>
           <div style={{ padding: "1em", color: "white", fontSize: 14 }}>
             © Digitransit {1900 + new Date().getYear()}
           </div>
-        </div>
-      </div>
+        </Footer>
+      </LayoutContainer>
     );
   }
 }
