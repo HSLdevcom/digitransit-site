@@ -7,9 +7,9 @@ import {
   TechnologiesInfo,
   Assets,
   ArchitectureHeader,
-  ReplitEmbed,
-  TableOfContents
+  ReplitEmbed
 } from "../components/components";
+import TableOfContents from "../components/TableOfContents";
 import Layout from "../components/layout";
 import Markdown from "../components/markdown";
 import SEO from "../components/SEO";
