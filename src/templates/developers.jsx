@@ -6,8 +6,8 @@ import {
   DockerInfo,
   TechnologiesInfo,
   Assets,
-  ArchitectureHeader,
 } from "../components/components";
+import ArchitectureHeader from "../components/ArchitectureHeader";
 import ReplitEmbed from "../components/ReplitEmbed";
 import TableOfContents from "../components/TableOfContents";
 import Layout from "../components/layout";
