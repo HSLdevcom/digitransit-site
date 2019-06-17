@@ -4,8 +4,8 @@ import { Link, navigate, graphql } from "gatsby";
 import Typography from "typography";
 import {
   DockerInfo,
-  TechnologiesInfo,
 } from "../components/components";
+import TechnologiesInfo from "../components/TechnologiesInfo"
 import Assets from "../components/Assets"
 import ArchitectureHeader from "../components/ArchitectureHeader";
 import ReplitEmbed from "../components/ReplitEmbed";
