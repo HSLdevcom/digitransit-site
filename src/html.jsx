@@ -40,15 +40,6 @@ export default class HTML extends React.Component {
             padding: 0.5em;
           }
 
-          .join-to-digitransit-content img {
-            height: 400px;
-            float: right;
-          }
-
-          .join-to-digitransit-content h3 {
-            clear: right;
-          }
-
           .alert p {
             margin-left: 0;
             margin-right: 1.33333rem;
@@ -75,15 +66,6 @@ export default class HTML extends React.Component {
 
           .alert.alert-danger p {
             background: #f9dddd;
-          }
-
-
-          @media
-          (max-width: 600px) {
-            .join-to-digitransit-content img {
-              height: 200px;
-              float: right;
-            }
           }
           `
             }}
