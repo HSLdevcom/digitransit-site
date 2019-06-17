@@ -5,8 +5,8 @@ import Typography from "typography";
 import {
   DockerInfo,
   TechnologiesInfo,
-  Assets,
 } from "../components/components";
+import Assets from "../components/Assets"
 import ArchitectureHeader from "../components/ArchitectureHeader";
 import ReplitEmbed from "../components/ReplitEmbed";
 import TableOfContents from "../components/TableOfContents";
