@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link, navigate, graphql } from "gatsby";
 import Typography from "typography";
-import {
-  DockerInfo,
-} from "../components/components";
+
+import DockerInfo from "../components/DockerInfo"
 import TechnologiesInfo from "../components/TechnologiesInfo"
 import Assets from "../components/Assets"
 import ArchitectureHeader from "../components/ArchitectureHeader";
