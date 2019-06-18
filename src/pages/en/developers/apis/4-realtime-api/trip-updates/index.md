@@ -1,5 +1,6 @@
 ---
 title: Trip updates
+order: 30
 replit:
   embeds:
     -

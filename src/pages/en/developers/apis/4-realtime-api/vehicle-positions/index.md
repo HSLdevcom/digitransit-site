@@ -1,5 +1,6 @@
 ---
-title: High-frequency positioning (HFP)
+title: HFP 1.0
+order: 50
 toc: true
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
@@ -11,6 +12,9 @@ replit:
       url: https://repl.it/@digitransit/VehiclePositionsMQTT
       height: 800px
 ---
+
+[[alert-warning]]
+| **Note:** HFP 1.0 is deprecated and vehicles will stop sending HFP 1.0 messages in the future. Please migrate to [HFP 2.0](../vehicle-positions-2) if you're using HFP 1.0.
 
 Most of the vehicles in the HSL area should publish their status, including their position, once per second.
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
@@ -87,28 +91,7 @@ It can be split into these parts:
 The payload is an UTF-8-encoded, compact JSON string. Here is an example:
 
 ```json
-{
-  "VP": {
-    "desi": "81",
-    "dir": "2",
-    "oper": 22,
-    "veh": 792,
-    "tst": "2018-04-05T17:38:36Z",
-    "tsi": 1522949916,
-    "spd": 0.16,
-    "hdg": 225,
-    "lat": 60.194481,
-    "long": 25.03095,
-    "acc": 0,
-    "dl": -25,
-    "odo": 2819,
-    "drst": 0,
-    "oday": "2018-04-05",
-    "jrn": 636,
-    "line": 112,
-    "start": "20:25"
-  }
-}
+{"VP":{"desi":"81","dir":"2","oper":22,"veh":792,"tst":"2018-04-05T17:38:36Z","tsi":1522949916,"spd":0.16,"hdg":225,"lat":60.194481,"long":25.03095,"acc":0,"dl":-25,"odo":2819,"drst":0,"oday":"2018-04-05","jrn":636,"line":112,"start":"20:25"}}
 ```
 
 which prettyprints to:
@@ -184,6 +167,7 @@ The numerical values for the different transit operators are listed below:
 | `55`   | Transdev Helsinki Oy          |
 | `58`   | Koillisen Liikennepalvelut Oy |
 | `59`   | Tilausliikenne Nikkanen Oy    |
+| `89`   | Metropolia                    |
 | `90`   | VR Oy                         |
 
 Note that in some cases (for example if the public transport service has been subcontracted to another operator) the operator code might be different in MQTT topic than the one in vehicle position message.

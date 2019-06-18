@@ -1,5 +1,6 @@
 ---
 title: Getting started
+order: 10
 ---
 
 Sometimes public transport does not work according to timetables. Vehicles may arrive earlier or later than expected or not at all. In a situation like that the real-time information can be very useful.

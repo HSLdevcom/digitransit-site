@@ -1,5 +1,6 @@
 ---
 title: Service alerts
+order: 20
 replit:
   embeds:
     -
