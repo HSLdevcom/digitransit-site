@@ -1,5 +1,6 @@
 ---
-title: High-frequency positioning (HFP)
+title: HFP 1.0
+order: 50
 toc: true
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
@@ -11,6 +12,9 @@ replit:
       url: https://repl.it/@digitransit/VehiclePositionsMQTT
       height: 800px
 ---
+
+[[alert-warning]]
+| **Note:** HFP 1.0 is deprecated and vehicles will stop sending HFP 1.0 messages in the future. Please migrate to [HFP 2.0](../vehicle-positions-2) if you're using HFP 1.0.
 
 Most of the vehicles in the HSL area should publish their status, including their position, once per second.
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
