@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Digitransit marketing site",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "npm run develop",
+    "develop": "yarn start",
+    "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },
