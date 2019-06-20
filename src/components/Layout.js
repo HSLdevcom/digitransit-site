@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { StaticQuery, Link, graphql } from "gatsby";
+import { navigate } from "@reach/router";
 
 import logo from "../pages/logo.png";
 import hslLogo from "../pages/hsl-logo.png";
@@ -165,7 +166,10 @@ class Layout extends React.Component {
         </LangLinkSpan>
         <br />
         <NavLink
-          onClick={() => this.setState({ mobileMenuOpen: false })}
+          onClick={() => {
+            this.setState({ mobileMenuOpen: false })
+            navigate(`${localePrefix}#users`)
+          }}
           to={`${localePrefix}#users`}
         >
           {i18n.users}
@@ -179,7 +183,10 @@ class Layout extends React.Component {
         </NavLink>
         <br />
         <NavLink
-          onClick={() => this.setState({ mobileMenuOpen: false })}
+          onClick={() => {
+            this.setState({ mobileMenuOpen: false })
+            navigate(`${localePrefix}#municipalities`)
+          }}
           to={`${localePrefix}#municipalities`}
         >
           {i18n.municipalities}
@@ -194,6 +201,7 @@ class Layout extends React.Component {
           <DesktopMenu>
             <NavLink
               to={`${localePrefix}#users`}
+              onClick={() => navigate(`${localePrefix}#users`)}
             >
               {i18n.users}
             </NavLink>
@@ -204,6 +212,7 @@ class Layout extends React.Component {
             </NavLink>
             <NavLink
               to={`${localePrefix}#municipalities`}
+              onClick={() => navigate(`${localePrefix}#municipalities`)}
             >
               {i18n.municipalities}
             </NavLink>
