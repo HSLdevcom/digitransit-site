@@ -1,29 +1,21 @@
 import React from "react";
+import styled from "styled-components";
 import { Link, navigate, graphql } from "gatsby";
-import {
-  Container,
-  Grid,
-  Breakpoint,
-  Span
-} from "@mjaakko/react-responsive-grid";
 import Typography from "typography";
-import {
-  DockerInfo,
-  TechnologiesInfo,
-  Assets,
-  ArchitectureHeader,
-  ReplitEmbed,
-  TableOfContents
-} from "../components/components";
-import Layout from "../components/layout";
-import Markdown from "../components/markdown";
+
+import DockerInfo from "../components/DockerInfo"
+import TechnologiesInfo from "../components/TechnologiesInfo"
+import Assets from "../components/Assets"
+import ArchitectureHeader from "../components/ArchitectureHeader";
+import ReplitEmbed from "../components/ReplitEmbed";
+import TableOfContents from "../components/TableOfContents";
+import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
+import PageContainer from "../components/PageContainer";
 
 var typography = new Typography();
-var rhythm = typography.rhythm,
-  fontSizeToMS = typography.fontSizeToMS;
-
-const prefixer = require("react-style-normalizer");
+var rhythm = typography.rhythm;
 
 const buildPageGraph = pages => {
   const pagesAsMap = new Map();
@@ -158,10 +150,63 @@ const ChildPageOptions = ({ pages }) => {
   return mapOptions(buildOptions(pages));
 };
 
+const DesktopNavigation = styled.div`
+  overflow-y: auto;
+  padding-right: calc(${rhythm(1 / 2)} - 1px);
+  padding-top: ${rhythm(1 / 2)};
+  position: absolute;
+  width: calc(${rhythm(13)} - 1px);
+  border-right: 1px solid lightgrey;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
+const MobileNavigation = styled.div`
+  display: none;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
+`
+
+const PageContent = styled.div`
+  @media (min-width: 701px) {
+    padding: 0 ${rhythm(1)};
+    padding-left: calc(${rhythm(13)} + ${rhythm(1)});
+    min-height: 1800px;
+    margin-bottom: ${rhythm(2)};
+  }
+
+  @media (max-width: 700px) {
+    padding-top: ${rhythm(1)};
+
+    & > h1 {
+      display: none;
+    }
+  }
+`
+
 export default props => {
   const currentPage = props.data.markdownRemark.fields.slug;
 
   const pageGraph = buildPageGraph(props.data.childPages.edges, currentPage);
+
+  const pageContent = (
+    <>
+      <ArchitectureHeader
+        slug={props.data.markdownRemark.fields.slug}
+        {...props.data.markdownRemark.frontmatter}
+      />
+      <TableOfContents {...props} />
+      <Markdown {...props} />
+      <Assets {...props.data.markdownRemark.frontmatter} />
+      <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
+      <DockerInfo {...props.data.markdownRemark.frontmatter} />
+      <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
+    </>
+  )
 
   return (
     <>
@@ -172,53 +217,11 @@ export default props => {
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-        >
-          <div>
-            <Breakpoint minWidth={700}>
-              <div>
-                <div
-                  style={{
-                    overflowY: "auto",
-                    paddingRight: `calc(${rhythm(1 / 2)} - 1px)`,
-                    paddingTop: rhythm(1 / 2),
-                    position: "absolute",
-                    width: `calc(${rhythm(13)} - 1px)`,
-                    borderRight: "1px solid lightgrey"
-                  }}
-                >
-                  <ChildPageList pages={pageGraph} currentPage={currentPage} />
-                </div>
-                <div
-                  style={{
-                    padding: `0 ${rhythm(1)}`,
-                    paddingLeft: `calc(${rhythm(13)} + ${rhythm(1)})`,
-                    minHeight: "1800px"
-                  }}
-                >
-                  <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-                  <ArchitectureHeader
-                    slug={props.data.markdownRemark.fields.slug}
-                    {...props.data.markdownRemark.frontmatter}
-                  />
-                  <TableOfContents {...props} />
-                  <Markdown {...props} />
-                  <Assets {...props.data.markdownRemark.frontmatter} />
-                  <TechnologiesInfo
-                    {...props.data.markdownRemark.frontmatter}
-                  />
-                  <DockerInfo {...props.data.markdownRemark.frontmatter} />
-                  <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
-                </div>
-              </div>
-            </Breakpoint>
-            <Breakpoint maxWidth={700}>
+        <PageContainer>
+            <DesktopNavigation>
+              <ChildPageList pages={pageGraph} currentPage={currentPage} />
+            </DesktopNavigation>
+            <MobileNavigation>
               <strong>Topics:</strong>{" "}
               <select
                 defaultValue={props.data.markdownRemark.fields.slug}
@@ -226,21 +229,12 @@ export default props => {
               >
                 <ChildPageOptions pages={pageGraph} />
               </select>
-              <br />
-              <br />
-              <ArchitectureHeader
-                slug={props.data.markdownRemark.fields.slug}
-                {...props.data.markdownRemark.frontmatter}
-              />
-              <TableOfContents {...props} />
-              <Markdown {...props} />
-              <Assets {...props.data.markdownRemark.frontmatter} />
-              <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
-              <DockerInfo {...props.data.markdownRemark.frontmatter} />
-              <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
-            </Breakpoint>
-          </div>
-        </Container>
+            </MobileNavigation>
+            <PageContent>
+              <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+              { pageContent }
+            </PageContent>
+        </PageContainer>
       </Layout>
     </>
   );

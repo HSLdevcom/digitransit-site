@@ -53,12 +53,12 @@ function getComponentForNode(node) {
   if (node.frontmatter.redirect) {
     return path.resolve(`./src/templates/redirect.js`)
   } else if (node.fields.slug.startsWith("/en/developers")) {
-    return path.resolve(`./src/templates/developers.jsx`);
+    return path.resolve(`./src/templates/developers.js`);
   } else if (node.fields.slug.startsWith("/liity")) {
-    return path.resolve(`./src/templates/liity.jsx`);
+    return path.resolve(`./src/templates/liity.js`);
   } else if (node.frontmatter.isFront) {
-    return path.resolve(`./src/templates/front_page.jsx`);
+    return path.resolve(`./src/templates/front_page.js`);
   } else {
-    return path.resolve(`./src/templates/page.jsx`);
+    return path.resolve(`./src/templates/page.js`);
   }
 }

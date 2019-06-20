@@ -1,21 +1,33 @@
 import React from "react";
-import {
-  Container,
-  Grid,
-  Breakpoint,
-  Span
-} from "@mjaakko/react-responsive-grid";
+import styled from "styled-components";
 import { graphql } from "gatsby";
 
-import typography from "../utils/typography";
-
-import Layout from "../components/layout";
-import Markdown from "../components/markdown";
+import FrontPagePanels from "../components/FrontPagePanels";
+import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
 import SEO from "../components/SEO";
+import PageContainer from "../components/PageContainer";
 
-const { rhythm, fontSizeToPx } = typography;
+import typography from "../utils/typography";
+const { rhythm } = typography;
 
-const prefixer = require("react-style-normalizer");
+const JoinDigitransit = styled.div`
+  & img {
+    height: 400px;
+    float: right;
+  }
+
+  & h3 {
+    clear: right;
+  }
+
+  @media (max-width: 600px) {
+    & img {
+      height: 200px;
+      float: right;
+    }
+  }
+`
 
 export default props => {
   return (
@@ -26,17 +38,15 @@ export default props => {
         pagePath={props.data.markdownRemark.fields.slug}
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
-        <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
-        <Container
-          style={prefixer({
-            maxWidth: 1250,
-            width: "100%",
-            padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-            flex: "1"
-          })}
-        >
-          <Markdown {...props} />
-        </Container>
+        <div>
+          <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
+          <FrontPagePanels {...props.data.markdownRemark.frontmatter} />
+          <PageContainer>
+            <JoinDigitransit>
+              <Markdown {...props} />
+            </JoinDigitransit>
+          </PageContainer>
+        </div>
       </Layout>
     </>
   );
@@ -50,8 +60,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        headerText
-        isFront
         panels {
           title
           body
@@ -63,7 +71,7 @@ export const query = graphql`
             publicURL
           }
           id
-          background
+          textColor
           swapped
         }
       }

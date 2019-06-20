@@ -1,46 +1,39 @@
 import React from "react";
 import { graphql } from "gatsby";
-import {
-  Container,
-  Grid,
-  Breakpoint,
-  Span
-} from "@mjaakko/react-responsive-grid";
-import { FrontPagePanels } from "../components/components";
-import Layout from "../components/layout";
-import Markdown from "../components/markdown";
-import SEO from "../components/SEO";
 
 import typography from "../utils/typography";
-const { rhythm, fontSizeToPx } = typography;
+import FrontPageHeader from "../components/FrontPageHeader";
+import FrontPagePanels from "../components/FrontPagePanels";
 
-const prefixer = require("react-style-normalizer");
+import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
+import PageContainer from "../components/PageContainer";
+import SEO from "../components/SEO";
+
+const { rhythm } = typography;
 
 export default props => {
+  var urlPrefix = "";
   return (
     <>
       <SEO
         pageTitle={props.data.markdownRemark.frontmatter.title}
-        pageDescription={props.data.markdownRemark.excerpt}
         pagePath={props.data.markdownRemark.fields.slug}
       />
       <Layout slug={props.data.markdownRemark.fields.slug}>
-        <div>
+        {props.data.markdownRemark.frontmatter.isFront ||
+        props.page.path == `${urlPrefix}/` ? (
+          <FrontPageHeader {...props.data.markdownRemark.frontmatter} />
+        ) : (
           <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
+        )}
+        <PageContainer>
+          <Markdown {...props} />
+        </PageContainer>
+        {props.data.markdownRemark.frontmatter.isFront ||
+        props.page.path == `${urlPrefix}/` ? (
           <FrontPagePanels {...props.data.markdownRemark.frontmatter} />
-          <Container
-            style={prefixer({
-              maxWidth: 1250,
-              width: "100%",
-              padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
-              flex: "1"
-            })}
-          >
-            <div className="join-to-digitransit-content">
-              <Markdown {...props} />
-            </div>
-          </Container>
-        </div>
+        ) : null}
       </Layout>
     </>
   );
@@ -54,6 +47,8 @@ export const query = graphql`
       }
       frontmatter {
         title
+        headerText
+        isFront
         panels {
           title
           body
@@ -65,12 +60,11 @@ export const query = graphql`
             publicURL
           }
           id
-          textColor
+          background
           swapped
         }
       }
       html
-      excerpt(pruneLength: 200)
     }
   }
 `;
