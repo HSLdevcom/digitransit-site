@@ -176,6 +176,7 @@ const PageContent = styled.div`
     padding: 0 ${rhythm(1)};
     padding-left: calc(${rhythm(13)} + ${rhythm(1)});
     min-height: 1800px;
+    margin-bottom: ${rhythm(2)};
   }
 
   @media (max-width: 700px) {
@@ -217,7 +218,6 @@ export default props => {
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
         <PageContainer>
-          <div>
             <DesktopNavigation>
               <ChildPageList pages={pageGraph} currentPage={currentPage} />
             </DesktopNavigation>
@@ -234,7 +234,6 @@ export default props => {
               <h1>{props.data.markdownRemark.frontmatter.title}</h1>
               { pageContent }
             </PageContent>
-          </div>
         </PageContainer>
       </Layout>
     </>
