@@ -147,6 +147,7 @@ class Layout extends React.Component {
       <MobileMenu headerColor={this.props.data.site.siteMetadata.headerColor}>
         <LangLinkSpan>
           <NavLink
+            onClick={() => this.setState({ mobileMenuOpen: false })}
             to="/"
             hrefLang="fi"
           >
@@ -155,6 +156,7 @@ class Layout extends React.Component {
         </LangLinkSpan>
         <LangLinkSpan>
           <NavLink
+            onClick={() => this.setState({ mobileMenuOpen: false })}
             to="/en/"
             hrefLang="en"
           >
@@ -163,6 +165,7 @@ class Layout extends React.Component {
         </LangLinkSpan>
         <br />
         <NavLink
+          onClick={() => this.setState({ mobileMenuOpen: false })}
           to={`${localePrefix}#users`}
         >
           {i18n.users}
@@ -176,6 +179,7 @@ class Layout extends React.Component {
         </NavLink>
         <br />
         <NavLink
+          onClick={() => this.setState({ mobileMenuOpen: false })}
           to={`${localePrefix}#municipalities`}
         >
           {i18n.municipalities}
