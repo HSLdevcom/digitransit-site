@@ -18,6 +18,7 @@ FROM node:10-alpine
 
 WORKDIR /opt/digitransit-site
 COPY --from=build /opt/digitransit-site/public ./
+COPY --from=build /opt/digitransit-site/serve.json ./
 RUN yarn global add serve@10.1.1
 EXPOSE 8080
 CMD serve -l 8080
