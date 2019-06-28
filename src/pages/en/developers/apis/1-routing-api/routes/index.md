@@ -166,39 +166,45 @@ Example response:
 ### <a name="fuzzytrip"></a>Query a trip without its id
 
 - Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available
-  - This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
+  - This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions-2/)
 
-For example, if the following vehicle position message is received
+For example, from the following vehicle position message
 
-```json
+```json 
 {
-  "desi": "550",
-  "dir": "1",
-  "oper": 12,
-  "veh": 1511,
-  "tst": "2018-07-03T06:36:32Z",
-  "tsi": 1530599792,
-  "spd": 0.47,
-  "hdg": 246,
-  "lat": 60.214227,
-  "long": 24.885639,
-  "acc": 0.08,
-  "dl": -23,
-  "odo": 15899,
-  "drst": 0,
-  "oday": "2018-07-03",
-  "jrn": 195,
-  "line": 261,
-  "start": "09:03"
+  "VP": {
+    "desi":"550",
+    "dir":"1",
+    "oper":12,
+    "veh":1306,
+    "tst":"2019-06-28T09:49:01.457Z",
+    "tsi":1561715341,
+    "spd":12.29,
+    "hdg":47,
+    "lat":60.182376,
+    "long":24.825781,
+    "acc":0.44,
+    "dl":-2,
+    "odo":24627,
+    "drst":0,
+    "oday":"2019-06-28",
+    "jrn":99,
+    "line":261,
+    "start":"11:57",
+    "loc":"GPS",
+    "stop":null,
+    "route":"2550",
+    "occu":0
+  }
 }
 ```
 
-on topic `/hfp/v1/journey/ongoing/bus/0012/01511/2550/1/Westendinasema/09:03/1465101/5/60;24/28/18/45`, it is possible to parse:
+it is possible to parse:
 
-- Route id from the topic: _2550_
+- Route id from the message: _2550_
 - Direction id from the topic: _1_
-- Departure time from the message: _09:03_
-- Departure date from the message: _2018-07-03_
+- Departure time from the message: _11:57_
+- Departure date from the message: _2019-06-28_
 
 **Note:**
 
@@ -206,7 +212,7 @@ on topic `/hfp/v1/journey/ongoing/bus/0012/01511/2550/1/Westendinasema/09:03/146
    - Direction id _1_ in a vehicle position is same as direction id _0_ in the Routing API
    - Direction id _2_ in a vehicle position is same as direction id _1_ in the Routing API
 2. Departure time must be in seconds
-   - e.g. _09:03_ = `9 * 60 * 60 + 3 * 60` = _32580_
+   - e.g. _11:57_ = `11 * 60 * 60 + 57 * 60` = _43020_
    - If the date in fields `oday` and `tst` is not the same and the departure time (`start`) is earlier than the time in `tst`, add 86400 seconds to departure time
      - This is due to differences in time formats, when vehicles which have departed after midnight have the previous date as operating day
      - e.g.
@@ -221,7 +227,7 @@ For example, the following query checks if the vehicle, which sent the vehicle p
 
 ```graphql
 {
-  fuzzyTrip(route: "HSL:2550", direction: 0, date: "2018-07-03", time: 32580) {
+  fuzzyTrip(route: "HSL:2550", direction: 0, date: "2019-06-28", time: 43020) {
     route {
       shortName
     }
