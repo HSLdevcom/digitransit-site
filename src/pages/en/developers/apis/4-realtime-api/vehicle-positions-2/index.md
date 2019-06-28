@@ -89,10 +89,10 @@ List of possible events:
 |-------------------|-----------------------------------------------------------------------------------------------|
 |`vp`               |Vehicle position
 |`due`              |Vehicle will soon arrive to a stop
-|`arr`              |Vehicle arrives to a stop
-|`dep`              |Vehicle departs from a stop
+|`arr`              |Vehicle arrives inside of a stop radius
+|`dep`              |Vehicle departs from a stop and leaves the stop radius
 |`ars`              |Vehicle has arrived to a stop
-|`pde`              |Vehicle will soon depart from a stop
+|`pde`              |Vehicle is ready to depart from a stop
 |`pas`              |Vehicle passes through a stop without stopping
 |`wait`             |Vehicle is waiting at a stop
 |`doo`              |Doors of the vehicle are opened
@@ -237,7 +237,7 @@ npm install -g mqtt
 If you insist on using [mosquitto](https://mosquitto.org/), try this for TLS access:
 
 ```bash
-mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 8883 -v -t "/hfp/v1/journey/#"
+mosquitto_sub --capath "/etc/ssl/certs/" -h mqtt.hsl.fi -p 8883 -v -t "/hfp/v2/journey/#"
 ```
 
 #### A situational overview
