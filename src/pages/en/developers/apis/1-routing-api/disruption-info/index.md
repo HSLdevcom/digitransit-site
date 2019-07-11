@@ -136,6 +136,30 @@ Example response:
 
 2. Press play in GraphiQL to execute the query.
 
+### Query only disruptions with specific severity and effect
+
+* The following query should fetch all disruptions that have caused detours
+  * Note that the query might return an empty list depending on the current situation
+
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09alerts(effect%3A%20%5BMODIFIED_SERVICE%5D%2C%20severityLevel%3A%20%5BWARNING%5D)%20%7B%0A%20%20%20%20feed%0A%20%20%20%20alertSeverityLevel%0A%20%20%20%20alertEffect%0A%20%20%20%20alertCause%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertHeaderText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+```graphql
+{
+  alerts(effect: [MODIFIED_SERVICE], severityLevel: [WARNING]) {
+    feed
+    alertSeverityLevel
+    alertEffect
+    alertCause
+    alertDescriptionText
+    alertHeaderText
+  }
+}
+```
+
+2. Press play in GraphiQL to execute the query.
+
+
 ### Query disruptions from specific feeds
 
 * Argument `feeds` can be used to query alerts only from specific feeds
