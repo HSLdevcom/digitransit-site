@@ -37,7 +37,7 @@ HSL map style is available at https://github.com/HSLdevcom/hsl-map-style.git
 
 HSL map style example:
 
-![hsl-map-style](http://api.digitransit.fi/hsl-map/16/37311/18963@2x.png)
+![hsl-map-style](http://api.digitransit.fi/map/v1/hsl-map/16/37311/18963@2x.png)
 
 ## Service dependencies
 
