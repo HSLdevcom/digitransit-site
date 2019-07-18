@@ -33,7 +33,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 ### An example of what the HSL map tiles look like
 
-![hsl-map-style](http://cdn.digitransit.fi/hsl-map/16/37311/18963@2x.png)
+![hsl-map-style](http://cdn.digitransit.fi/map/v1/hsl-map/16/37311/18963@2x.png)
 
 ### HSL style map tiles
 
