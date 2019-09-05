@@ -2,6 +2,9 @@
 title: Changes
 order: -10
 ---
+## 5.9.2019
+
+- Updated the [architecture](../architecture) diagram
 
 ## 12.06.2019
 
