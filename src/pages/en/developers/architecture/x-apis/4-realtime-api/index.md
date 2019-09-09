@@ -12,6 +12,7 @@ Heavy lifting of real-time data is done in other systems. Digitransit integrates
 
 | URL                                                   | Project description                                          |
 | ----------------------------------------------------- | ------------------------------------------------------------ |
+| https://github.com/HSLdevcom/transitdata              | Processes HSL realtime data with Apache Pulsar. Produces GTFS-RT messages from internal data formats. 
 | https://github.com/HSLdevcom/siri2gtfsrt              | Convert SIRI JSON to GTFS-RT trip updates                    |
 | https://github.com/HSLdevcom/raildigitraffic2gtfsrt   | Converts digitraffic train updates into GTFS-RT Trip Updates |
 | https://github.com/HSLdevcom/gtfsrthttp2mqtt          | Reads GTFS-RT over HTTP and publishes it as MQTT data        |
