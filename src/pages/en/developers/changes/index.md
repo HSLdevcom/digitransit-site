@@ -8,7 +8,7 @@ order: -10
 
 ## 12.06.2019
 
-- [HFP 2.0](../apis/4-realtime-api/vehicle-positions-2) is now available
+- [HFP 2.0](../apis/4-realtime-api/vehicle-positions) is now available
   - HFP 1.0 is deprecated and vehicles will stop sending HFP 1.0 data in the future
 
 ## 10.05.2019
