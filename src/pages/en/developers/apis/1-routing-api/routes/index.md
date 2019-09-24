@@ -166,7 +166,7 @@ Example response:
 ### <a name="fuzzytrip"></a>Query a trip without its id
 
 - Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available
-  - This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions-2/)
+  - This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/)
 
 For example, from the following vehicle position message
 
