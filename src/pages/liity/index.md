@@ -77,6 +77,10 @@ Määritä kartalta rajat osoitehaulle. Digitransit-palveluun konfiguroidaan suo
 - Piste oikeaksi alareunaksi WGS84 koordinaatteina
 
 
+Voit myös määrittää hakualueen monikulmiona. Jotta haussa siirretty tietomäärä pysyisi kompaktina,
+suositeltu monikulmion pistemäärä on alle 50 pistettä, ja koordinaattien tarkkuus enintään 5 desimaalia.
+
+
 ### 8. Oletuspaikat
 
 ![](./images/lahtopaikka.png)
@@ -102,7 +106,6 @@ tulee harkita huolella, jotta teksti säilyy luettavana. Tarvittaessa lähetä k
 Huomaa, että favicon näkyy selaimen eikä reittioppaan kontekstissa, joten vaalea logo läpinäkyvällä taustavärillä ei käy. Tarvittaessa vaihda läpinäkyvä tausta
 riittävän kontrastin antavaan väriin. Mikäli näiden ohjeiden valossa otsikkologo sisältää sopivan favicon-osan, erillistä favicon-kuvaa ei tarvitse lähettää.
 - Sivustojen nimi, jota käytetään mm. selainten suosikkilinkeissä. Esimerkiksi "X-Kaupungin Reittiopas".
-- Voit halutessasi lähettää aloitusnäytön taustakarttakuvan. Tämä taustakuva näkyy sumennettuna esimerkiksi kysyttäessä lupaa käyttäjän paikannukseen.
 
 **Huom! Värimaailma, logo ja tekstit toteutetaan niiltä osin kuin se on mahdollista. Tämä voi tarkoittaa, ettei toiveitasi pystytä kaikilta osin täyttämään.**
 
@@ -191,13 +194,16 @@ Mikäli lisäät kohteita OpenStreetMapiin, muista lisätä myös ruotsinkieline
   }
 ```
 
-Osoitehaussa käytetään OpenStreetMapin lisäksi Väestörekisterikeskuksen rakennustietokantaa, joka sisältää rakennusten osoitteet koko suomessa.
+Osoitehaussa käytetään OpenStreetMapin lisäksi Väestörekisterikeskuksen rakennustietokantaa, joka sisältää rakennusten osoitteet koko suomessa,
+sekä maanmittauslaitoksen paikkatietoja.
 
 **Huom! Digitransit-palvelu ei ylläpidä OpenStreetMapin tietoja, vastuu tästä on yhteisöllä.**
 
 ### 14. Reaaliaikarajapinta
 
-Digitransit alusta tukee reaaliaikaisia ajoneuvojen sijainteja, pysäkkiennusteita sekä poikkeustiedotteita. Kuvaa:
+Digitransit alusta tukee GTFS-RT spesifikaation mukaisia reaaliaikaisia ajoneuvojen sijainteja, pysäkkiennusteita sekä poikkeustiedotteita.
+Mikäli rajapinta tarjoaa ajoneuvojen sijaintitiedot, ne voidaan esittää kartalla integroimalla GTFS-RT reaaliaikatiedot paikkatietoa tarjoavaan mqtt-palvelimeen.
+Kuvaa:
 - Reaaliaikarajapinnan osoite
 
-**Huom! Ominaisuus on saatavilla vain erikseen sopimalla**.
+**Huom! Reaaliaikaominaisuudet ovat saatavilla vain erikseen sopimalla**.
