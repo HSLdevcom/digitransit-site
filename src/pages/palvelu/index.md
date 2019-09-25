@@ -87,7 +87,7 @@ docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/routers/hs
 Nyt voit selata osoitteeseen localhost:8080 ja alkaa käyttämään omaa yksityistä reittopaspalvelua, jonka taustakartat tulevat Digitransitista.
 
 
-##Resurssitarpeet
+## Resurssitarpeet
 
 Esimerkkejä:
 
@@ -110,21 +110,21 @@ Erityisesti taustakarttapalvelu hyötyy näistä.
 Digitransitin käyttämä versio OpenTripPlanner-reititysmoottorista on varsin geneerinen, eikä sisällä merkittäviä pelkästään Suomea koskevia muutoksia.
 Joitakin erityispiirteitä, kuten paikallinen lippuhintalaskenta, voidaan aktivoida konfiguraation avulla.
 
-Pelias-osoitehakua on kehitetty tukeemaan monikielisisä hakuja ja skandinaavista merkistöä. Maakohtaisest erityispiirteet
+Pelias-osoitehakua on kehitetty tukemaan monikielisiä hakuja ja skandinaavista merkistöä. Maakohtaisest erityispiirteet
 on määritetty konfiguraatiotiedostossa.
 
 Taustakarttojen datalataus on vahvasti sidoksissa HSL:n tarjoamiin karttapalveluihin. Korvaava karttapalvelu on mahdollista luoda
 [kehittäjädokumenttien ohjeiden](../en/developers/apis/3-map-api) mukaisesti.
 
 
-##Linkkejä lähdekoodikirjastoihin
+## Linkkejä lähdekoodikirjastoihin
 
-- [Reititysmoottori] (https://github.com/HSLdevcom/OpenTripPlanner)
-- [Reititysdatalataus] (https://github.com/HSLdevcom/OpenTripPlanner-data-container)
-- [Osoitehakupalvelu] (https://github.com/HSLdevcom/pelias-api)
-- [Osoitedatalataus] (https://github.com/HSLdevcom/pelias-data-container)
-- [Taustakarttapalvelu] (https://github.com/HSLdevcom/hsl-map-server)
-- [Web-käyttöliittymä] (https://github.com/HSLdevcom/digitransit-ui)
+- [Reititysmoottori](https://github.com/HSLdevcom/OpenTripPlanner)
+- [Reititysdatalataus](https://github.com/HSLdevcom/OpenTripPlanner-data-container)
+- [Osoitehakupalvelu](https://github.com/HSLdevcom/pelias-api)
+- [Osoitedatalataus](https://github.com/HSLdevcom/pelias-data-container)
+- [Taustakarttapalvelu](https://github.com/HSLdevcom/hsl-map-server)
+- [Web-käyttöliittymä](https://github.com/HSLdevcom/digitransit-ui)
 
 
 
