@@ -87,6 +87,15 @@ docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/routers/hs
 Nyt voit selata osoitteeseen localhost:8080 ja alkaa käyttämään omaa yksityistä reittopaspalvelua, jonka taustakartat tulevat Digitransitista.
 
 
+## Käyttöliittymän teemoitus
+
+Reittioppaan oletusteema ei sisällä kaupunkikohtaisia piirteitä. Se on konfiguroitu koko Suomen datalle soveltuvilla asetuksilla.
+
+Käyttöliittymä voidaan teemoittaa ja konfiguroida sopivaksi halutulle kohdealueelle luomalla uusi konfiguraatiotiedosto lähdekoodikirjaston
+https://github.com/HSLdevcom/digitransit-ui `app/configurations` kansioon. Tarkemmat ohjeet löytyvät osoitteesta
+https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Themes.md .
+
+
 ## Resurssitarpeet
 
 Esimerkkejä:

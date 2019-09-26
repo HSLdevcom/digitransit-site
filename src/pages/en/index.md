@@ -33,6 +33,15 @@ panels:
     id: municipalities
     background: "#64be47"
     swapped: true
+  - title: For service maintainers
+    body: Set up your own routing services using Docker containers and open source projects from Digitransit.
+    links:
+      - title: Overview of hosting Digitransit services
+        url: /en/services/
+    image: "./cloud.png"
+    id: services
+    background: "#80a0e7"
+    swapped: true
 ---
 <div style="text-align: center;">
 
