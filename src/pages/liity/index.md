@@ -51,8 +51,6 @@ Varmista, että GTFS-paketin data on kunnossa käyttämällä esimerikiksi Googl
 - Lataa https://github.com/google/transitfeed/releases/latest ja pura
 - Mene validaattorin kansioon ja aja `./feedvalidator.py -m <gtfs.zipin polku>`
 
-**Huom: Waltti ei toistaiseksi käsittele reittien geometriaa ja siksi Waltista haetut reitit esitetään Digitransitissa tikkuverkkona.**
-
 
 ### 6. Kulkumuodot
 
