@@ -11,10 +11,10 @@ module.exports = {
         maintainers: "Ylläpitäjille"
       },
       en: {
-        users: "for Users",
-        developers: "for Developers",
-        municipalities: "for Municipalities",
-        maintainers: "for Maintainers"
+        users: "Users",
+        developers: "Developers",
+        municipalities: "Municipalities",
+        maintainers: "Maintainers"
       }
     }
   },
