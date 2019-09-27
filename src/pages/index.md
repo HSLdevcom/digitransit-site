@@ -39,10 +39,10 @@ panels:
   - title: Ylläpitäjille
     body: Tarjoa omia Digitransit-palveluita käyttämällä Digitransitin tuottamia Docker-kontteja ja avoimia lähdekoodikirjastoja.
     links:
-      - title: Yleiskatsaus palvelun käynnistämiseen
-        url: /palvelut/
+      - title: Yleiskatsaus palvelun käynnistämisestä
+        url: /palvelu/
     image: "./cloud.png"
-    id: services
+    id: maintainers
     background: "#80a0e7"
     swapped: true
 ---

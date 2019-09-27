@@ -1,5 +1,5 @@
 ---
-headerText: "The next generation journey planner in the making. Contribute and leave your mark!"
+headerText: "The next generation journey planner. Contribute and leave your mark!"
 isFront: true
 panels:
   - title: For users
@@ -34,12 +34,12 @@ panels:
     background: "#64be47"
     swapped: true
   - title: For service maintainers
-    body: Set up your own routing services using Docker containers and open source projects from Digitransit.
+    body: Set up your own routing services using Docker containers and open source repositories from Digitransit.
     links:
-      - title: Overview of hosting Digitransit services
+      - title: Hosting Digitransit services
         url: /en/services/
-    image: "./cloud.png"
-    id: services
+    image: "../cloud.png"
+    id: maintainers
     background: "#80a0e7"
     swapped: true
 ---

@@ -5,7 +5,7 @@ panels:
     body: Voit käynnistää oman palvelukokonaisuuden konfiguroimalla Digitransitin tuottamia Docker-kontteja ja lähdekoodikirjastoja.
     links: []
     image: "../cloud.png"
-    id: services
+    id: maintainers
     textColor: "#000"
     swapped: true
 ---
@@ -47,6 +47,18 @@ Reititys ei onnistu kaupungissa, jonka GTFS dataa ei tunneta Digitransit-alustal
 Mikäli oma data on tarpeen jossakin osapalvelussa, Digitransitin datalatausprosessi on tarpeen kopioida ja muokata halutuksi.
 Joiltakin osin tämä onnistu pelkillä ympäristömuuttujilla (esimerkiksi OpenTripPlanner datalataukseen voi lisätä uusia datalähteitä),
 mutta yleisessä tapauksessa on tarpeen tehdä oma versio github/hsldevcom lähdekoodikirjastoista ja muokata niitä, tai rakentaa oma datapalvelu.
+
+OpenTripPlanner-reitiyksen datalatauskonfiguraatio on varsin helppo muokata käyttämään omaa dataa. Konfiguraatiossa luetellaan verkko-osoitteet,
+joista GTFS datapaketit haetaan, sekä OSM karttadatatiedostojen hakuosoite. Osoitelistan voi vaihtaa halutuksi.
+
+Osoitehaun lähdeaineisto on määritelty joukolla skriptejä, jotka noutavat ja prosessoivat aineistopaketteja.
+Näitäkin on varsin helppo lisätä, poistaa ja muuttaa. Yksittäisen aineiston indeksointi osoitetietokantaan tehdään räätälöidyllä
+javascript-kirjastolla, esimerkiksi https://github.com/hsldevcom/pelias-gtfs. Datalatausjärjestelmään on sisäänrakennetty
+hallinnollisen hierarkian lisääminen kohteisiin käyttämällä WhosOnFirst-palvelusta haettua Suomen aluejakoa. Tämä menetelmä pitää
+korvata tai datasisältö vaihtaa Suomen rajojen ulkopuolella.
+
+Taustakarttojen datalataus on vahvasti sidoksissa HSL:n tarjoamiin karttapalveluihin. Korvaava karttapalvelu on mahdollista luoda
+[kehittäjädokumenttien ohjeiden](../en/developers/apis/3-map-api) mukaisesti.
 
 On myös mahdollista ylläpitää vain osaa palveluista ja käyttää muilta osin Digitransitin rajapintoja; uusi Suomessa toimiva paikallinen reittiopas
 voi helposti hyödyntää koko maan kattavaa osoitehakua.
@@ -119,11 +131,8 @@ Erityisesti taustakarttapalvelu hyötyy näistä.
 Digitransitin käyttämä versio OpenTripPlanner-reititysmoottorista on varsin geneerinen, eikä sisällä merkittäviä pelkästään Suomea koskevia muutoksia.
 Joitakin erityispiirteitä, kuten paikallinen lippuhintalaskenta, voidaan aktivoida konfiguraation avulla.
 
-Pelias-osoitehakua on kehitetty tukemaan monikielisiä hakuja ja skandinaavista merkistöä. Maakohtaisest erityispiirteet
+Pelias-osoitehakua on kehitetty tukemaan monikielisiä hakuja ja skandinaavista merkistöä. Maakohtaiset erityispiirteet
 on määritetty konfiguraatiotiedostossa.
-
-Taustakarttojen datalataus on vahvasti sidoksissa HSL:n tarjoamiin karttapalveluihin. Korvaava karttapalvelu on mahdollista luoda
-[kehittäjädokumenttien ohjeiden](../en/developers/apis/3-map-api) mukaisesti.
 
 
 ## Linkkejä lähdekoodikirjastoihin

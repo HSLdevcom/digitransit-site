@@ -2,11 +2,10 @@
 title: Services
 panels:
   - title: Produce your own Digitransit services
-    body: You can start you own Digitransit service platform by configuring an modifying existing Digitransit Docker containers and open source code
-    repositories.
+    body: You can start you own Digitransit service platform by configuring an modifying existing Digitransit Docker containers and open source code repositories.
     links: []
     image: "../cloud.png"
-    id: services
+    id: maintainers
     textColor: "#000"
     swapped: true
 ---
@@ -18,18 +17,18 @@ The main components of Digitransit service platform are:
 1. Multimodal routing engine
 2. Address search
 3. Background map service
-4. WWW browser based user interface
+4. Web browser-based user interface
 
-The first three of these need some source data. Digitransit includes the respective data loading processes foir them.
+The first three of these need some source data. Digitransit includes the respective data loading processes for them.
 
 The multimodal routing engine OpenTripPlanner uses GTFS-compliant public transit data together with map information from OpenStreetMap in pbf form.
 
 The address search engine is based on Pelias open source project. The service searches coordinates for place names and addresses, or
-returns the nearest place / address to the given coordinate point.
+returns the nearest place / address from the given coordinate point.
 
-The bacground map service provides map information as raster and vector tiles.
+The background map service provides map information as raster and vector tiles.
 
-Digitransit user interface provides a browser based application, which combines the above mentioned services for example in route itinerary searches.
+Digitransit user interface is a browser based application, which combines the above mentioned services for example in route itinerary searches.
 
 In addition to these main components, Digitransit includes a set of additional services for realtime and information purposes. They are not
 mandatory for running the multimodal trip planning service.
@@ -47,8 +46,22 @@ To use your own data in a microservice, you need to copy the respective data loa
 In some cases, it may be sufficient to define additional data sources using environment variables (OpenTripPlanner data loader allows this),
 but in general case, you have to fork the source code repository of github/hsldevcom and modify it, or develop a totally new data loader.
 
+The dataloading configuration for OpenTripPlanner routing is fairly easy to modify to include desired data sources.
+The configuration includes a list of web addresses, from where the loader fetches GTFS packages, and the address of OSM map data.
+It is a straightforward task to replace these addresses.
+
+Source data for Pelias address search is collected and processed with a set of scripts. A single data source is processed using
+a tailored javascript library, for example https://github.com/hsldevcom/pelias-gtfs for stop data. Unnecessary scripts can be removed and new
+ones added to obtain the desired address data collection. It should be noted that the administrational attributes (neighbourhood, locality, postal area etc)
+are mapped to address items using built-in area information fetched from WhosOnFirst data service. This mechanism shoudl be replaced
+or the data content changed.
+
+The dataloading process of background maps is heavily tied with services provided by HSL. A replacement can be developed by following
+the [map api specifications](../developers/apis/3-map-api).
+
+
 It should be noted that hosting only a subset of services and using APIs of Digitransit for the rest is also possible. For example, a new local
-routing service in FInland may well use the address search of Digitransit, because itcovers the whole country.
+routing service in Finland may well use the address search of Digitransit, because it covers the whole country.
 
 An example of hosting your private  trip planning service using Helsinki region data:
 
@@ -93,7 +106,7 @@ The UI can be themed and configured to suit a new target area by adding a new co
 https://github.com/HSLdevcom/digitransit-ui, to the folder `app/configurations`. For more information, check out
 https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Themes.md .
 
-The language used in the user interface can be replaced by adding required strings into `app/translations.js` file and by expanding
+The language collection available in the user interface can be extended by adding required strings into `app/translations.js` file and by updating
 the language selector component respectively.
 
 
@@ -102,18 +115,18 @@ the language selector component respectively.
 Examples:
 
 - Routing engine OpenTripPlanner with the data of whole Finland requires 12 GB of RAM and a powerful multi core CPU.
-- Address search which covers whole Finland reuires 3 GB of RAM for API server (pelias-api) and 4 GB of RAM for address database (pelias-data-container).
+- Address search which covers whole Finland requires 3 GB of RAM for API server (pelias-api) and 4 GB of RAM for address database (pelias-data-container).
 A powerful CPU will speed up the service.
 - background map server (hsl-map-server) needs 4 GB of RAM and a basic CPU.
 - UI-server reuires 1 GB of RAM and a basic CPU.
 
 These resurces can serve multiple simultaneous uses without delays. If the service load is high, it may be necessary to deploy a load balancing
-solution to distrubute service request to multiple servers. For example, Digitransit uses over 20 OpenTripPlanner´instances to serve
-the captal area of Finland.
+solution to distribute service request to multiple servers. For example, Digitransit uses over 20 OpenTripPlanner instances to serve
+the capital area of Finland.
 
 
 It is possible to optimize the resources and speed up the response times using various caching technologies (CDN, proxy caching).
-Especially bacground map service benefits from those.
+Especially the background map service benefits from those.
 
 
 ## Country specific features of Digitransit
@@ -123,10 +136,6 @@ Some features such as ticket price computation for Helsinki area can be activate
 
 Pelias address search has been modified to support searches in many languages and local character set. All country specific features are defined
 in the configuration file.
-
-The dataloading process of background maps is heavily tied with other services provided HSL. A replacement can be developed by following
-the [map api specifications](../en/developers/apis/3-map-api).
-
 
 ## Links to source code repositories
 

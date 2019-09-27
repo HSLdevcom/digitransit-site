@@ -7,12 +7,14 @@ module.exports = {
       fi: {
         users: "Käyttäjille",
         developers: "Kehittäjille",
-        municipalities: "Kunnille"
+        municipalities: "Kunnille",
+        maintainers: "Ylläpitäjille"
       },
       en: {
         users: "for Users",
         developers: "for Developers",
-        municipalities: "for Municipalities"
+        municipalities: "for Municipalities",
+        maintainers: "for Maintainers"
       }
     }
   },
