@@ -71,7 +71,7 @@ Esimerkki oman reittiopaspalvelun käynnistämisestä hsl-reittioppaan datalla:
 2. Käynnistä reititysmoottori:
 
 ```bash
-docker run -d --rm  -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx3g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner:prod
+docker run -d --rm  -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx4g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner:prod
 ```
 
 Nyt reititystä palvellaan osoitteessa localhost:9080.
@@ -113,7 +113,7 @@ https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Themes.md .
 Esimerkkejä:
 
 - Reittihakumoottori (OpenTripPlanner) koko suomen datalla vaatii 12 GB keskusmuistia ja tehokkaan moniytimisen keskusyksikön
-- Osoitehaku koko suomen datalla vaatii 3 GB kesukusmuistia api-palvelimelle (pelias-api) ja 4 GB keskusmuistia datahakupalvelulle (pelias-data-container).
+- Osoitehaku koko Suomen datalla vaatii 3 GB keskusmuistia api-palvelimelle (pelias-api) ja 4 GB keskusmuistia datahakupalvelulle (pelias-data-container).
 Tehokas keskusyksikkö nopeuttaa palvelua.
 - Taustakarttapalvelin (hsl-map-server) vaatii 4 GB keskusmuistia ja perustason keskusyksikön
 - UI-palvelin tarvitsee 1 GB muistia ja perustason keskusyksikön

@@ -25,3 +25,7 @@ order: -10
    - This is part of an effort to reduce overlapping API functionalities and to concentrate APIs under the GraphQL APIs.
  - [Trip updates](../apis/4-realtime-api/trip-updates/) API in [Real-time APIs](../apis/4-realtime-api/) will be deprecated in the future in favor of [Stop times](../apis/1-routing-api/stops/) GraphQL API.
    - This is part of an effort to reduce overlapping API functionalities and to concentrate APIs under the GraphQL APIs.
+
+## 30.09.2019
+
+ - Added general [instructions for service maintainers](../../services/).

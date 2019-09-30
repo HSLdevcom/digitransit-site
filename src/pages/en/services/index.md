@@ -53,7 +53,7 @@ It is a straightforward task to replace these addresses.
 Source data for Pelias address search is collected and processed with a set of scripts. A single data source is processed using
 a tailored javascript library, for example https://github.com/hsldevcom/pelias-gtfs for stop data. Unnecessary scripts can be removed and new
 ones added to obtain the desired address data collection. It should be noted that the administrational attributes (neighbourhood, locality, postal area etc)
-are mapped to address items using built-in area information fetched from WhosOnFirst data service. This mechanism shoudl be replaced
+are mapped to address items using built-in area information fetched from WhosOnFirst data service. This mechanism should be replaced
 or the data content changed.
 
 The dataloading process of background maps is heavily tied with services provided by HSL. A replacement can be developed by following
