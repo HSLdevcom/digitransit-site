@@ -35,6 +35,16 @@ panels:
     id: municipalities
     background: "#64be47"
     swapped: true
+
+  - title: Ylläpitäjille
+    body: Tarjoa omia Digitransit-palveluita käyttämällä Digitransitin tuottamia Docker-kontteja ja avoimia lähdekoodikirjastoja.
+    links:
+      - title: Yleiskatsaus palvelun käynnistämisestä
+        url: /palvelu/
+    image: "./cloud.png"
+    id: maintainers
+    background: "#80a0e7"
+    swapped: true
 ---
 <div style="text-align: center;">
 

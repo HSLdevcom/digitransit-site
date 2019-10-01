@@ -111,11 +111,13 @@ export default props => (
                 users
                 developers
                 municipalities
+                maintainers
               }
               en {
                 users
                 developers
                 municipalities
+                maintainers
               }
             }
           }
@@ -185,6 +187,13 @@ class Layout extends React.Component {
           {i18n.municipalities}
         </NavLink>
         <br />
+        <NavLink
+          onClick={() => this.setState({ mobileMenuOpen: false })}
+          to={`${localePrefix}#maintainers`}
+        >
+          {i18n.maintainers}
+        </NavLink>
+        <br />
       </MobileMenu>
     );
 
@@ -206,6 +215,11 @@ class Layout extends React.Component {
               to={`${localePrefix}#municipalities`}
             >
               {i18n.municipalities}
+            </NavLink>
+            <NavLink
+              to={`${localePrefix}#maintainers`}
+            >
+              {i18n.maintainers}
             </NavLink>
             <LangLinkSpan>|</LangLinkSpan>
             <LangLinkSpan>
