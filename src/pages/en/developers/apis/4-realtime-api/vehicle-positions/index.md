@@ -61,7 +61,7 @@ It can be split into these parts:
   
 Topic levels up to `vehicle_number` are present in all types of topics and levels after `vehicle_number` are only present with vehicle journey position messages (i.e. when `journey_type` is `journey`).
 
-| Attribute        | Decription                                                    |
+| Attribute        | Description                                                    |
 |------------------|---------------------------------------------------------------|
 | `prefix`         | `/hfp/` is the root of the topic tree.                               
 | `version`        | `v2` is the current version of the HFP topic and the payload format.
