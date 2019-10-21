@@ -12,7 +12,7 @@ replit:
 [[alert-warning]]
 | **Note:** Trip updates API will be deprecated in the future in favor of [Stop times](../../1-routing-api/stops/) GraphQL API. This is part of an effort to reduce overlapping API functionalities and to concentrate APIs under the GraphQL APIs.
 
-Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for JOLI data.
+Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for FOLI (Turku) data.
 
 ## Endpoint
 `http://api.digitransit.fi/realtime/trip-updates/v1/:operator`
@@ -23,7 +23,7 @@ Currently the service offers two [GTFS-RT](https://developers.google.com/transit
 ### Supported URL parameters
 | Parameter   | Type            | Description                                                  |
 |-------------|-----------------|--------------------------------------------------------------|
-| `operator`  | path parameter  | id of an operator, either `HSL` or `JOLI`
+| `operator`  | path parameter  | id of an operator, either `HSL` or `FOLI`
 | `debug`     | query parameter | Print data in human readable format (for debugging purposes)
 
 ## Examples
@@ -32,5 +32,5 @@ Currently the service offers two [GTFS-RT](https://developers.google.com/transit
 ### Show currently active HSL real-time trip updates (debug mode)
 > curl http://api.digitransit.fi/realtime/trip-updates/v1/HSL?debug
 
-### Show currently active JOLI real-time trip updates (debug mode)
-> curl http://api.digitransit.fi/realtime/trip-updates/v1/JOLI?debug
+### Show currently active FOLI (Turku) real-time trip updates (debug mode)
+> curl http://api.digitransit.fi/realtime/trip-updates/v1/FOLI?debug
