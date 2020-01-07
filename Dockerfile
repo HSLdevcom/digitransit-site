@@ -5,7 +5,7 @@ ENV WORK=/opt/digitransit-site
 
 WORKDIR ${WORK}
 
-RUN apk add --update --no-cache python && \
+RUN apk add --update --no-cache python build-base && \
   yarn global add gatsby-cli@2.4.5 && \
   mkdir -p ${WORK}
 
