@@ -38,7 +38,7 @@ The current Digitransit implementation is a "partially working solution" built o
 **Note:** This is not the final solution. In the near future new ticketing and information system will replace all legacy components related to HSL real-time. This transition will improve situation considerably. Read more at:
 > https://www.hsl.fi/lippu-ja-informaatiojarjestelma
 
-If you are really interested in implementing real-time features, you should look at [Digitransit-ui](../../5-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how real-time is used there.
+If you are really interested in implementing real-time features, you should look at [Digitransit-ui](../../../services/5-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how real-time is used there.
 
 ### Situation at the Finnish Transport Agency
 Currently, FTA provides real-time information for trains at https://rata.digitraffic.fi/api/v1/doc/index.html. We have a simple wrapper (raildigiraffic2gtfsrt) that transforms that data to GTFS-RT trip updates.
