@@ -2,6 +2,10 @@
 title: Changes
 order: -10
 ---
+## 9.1.2019
+
+- Updated the [architecture](../architecture) diagram and text regarding runtime environment to match our new runtime environment
+
 ## 5.9.2019
 
 - Updated the [architecture](../architecture) diagram
