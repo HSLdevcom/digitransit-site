@@ -31,14 +31,12 @@ Real-time data is read into the Routing API. This means that the Routing API ret
 ## Situation of the API
 
 ### Situation at HSL
-The current Digitransit implementation is a "partially working solution" built on top of legacy APIs. This means that:
-- Not all vehicles have real-time information available
-- There might be errors in the real-time data
+HSL realtime data is handled by [Transitdata system](https://github.com/HSLdevcom/transitdata) that combines data from multiple sources and produces GTFS RT feeds for service alerts, trip updates and vehicle positions. When using the realtime data, keep in mind that:
+* Not all vehicles produce realtime data (notably [U-line buses](https://www.hsl.fi/en/timetables-and-routes/u-line-services) currently don't produce realtime data)
+* Data quality depends on vehicle type
+* There might be errors in the data
 
-**Note:** This is not the final solution. In the near future new ticketing and information system will replace all legacy components related to HSL real-time. This transition will improve situation considerably. Read more at:
-> https://www.hsl.fi/lippu-ja-informaatiojarjestelma
-
-If you are really interested in implementing real-time features, you should look at [Digitransit-ui](../../../services/5-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how real-time is used there.
+If you are interested in implementing realtime features, you might want to look at [Digitransit-ui](../../../services/5-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how realtime is used there.
 
 ### Situation at the Finnish Transport Agency
 Currently, FTA provides real-time information for trains at https://rata.digitraffic.fi/api/v1/doc/index.html. We have a simple wrapper (raildigiraffic2gtfsrt) that transforms that data to GTFS-RT trip updates.
