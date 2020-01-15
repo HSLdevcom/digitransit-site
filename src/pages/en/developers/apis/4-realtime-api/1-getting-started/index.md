@@ -33,7 +33,7 @@ Real-time data is read into the Routing API. This means that the Routing API ret
 ### Situation at HSL
 HSL realtime data is handled by [Transitdata system](https://github.com/HSLdevcom/transitdata) that combines data from multiple sources and produces GTFS RT feeds for service alerts, trip updates and vehicle positions. When using the realtime data, keep in mind that:
 * Not all vehicles produce realtime data (notably [U-line buses](https://www.hsl.fi/en/timetables-and-routes/u-line-services) currently don't produce realtime data)
-* Data quality depends on vehicle type
+* Quality of the data depends on vehicle type
 * There might be errors in the data
 
 If you are interested in implementing realtime features, you might want to look at [Digitransit-ui](../../../services/5-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how realtime is used there.
