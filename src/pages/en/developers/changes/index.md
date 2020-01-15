@@ -7,6 +7,10 @@ order: -10
 
 - Updated [realtime API documentation](../apis/4-realtime-api/)
 
+## 09.01.2019
+
+- Updated the [architecture](../architecture) diagram and text regarding runtime environment to match our new runtime environment
+
 ## 30.09.2019
 
  - Added general [instructions for service maintainers](../../services/).
