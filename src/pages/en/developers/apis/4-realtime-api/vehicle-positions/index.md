@@ -173,6 +173,7 @@ The fields are described below:
 | `route`   | String                | `da`, `dout`, `ba`, `bout`           | ID of the route the vehicle is currently running on. Matches `route_id` in the topic.
 | `occu`    | Integer               | `da`, `dout`, `ba`, `bout`           | Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`. However, currently only values used are `0` *(= vehicle has space and is accepting passengers)* and `100` *(= vehicle is full and might not accept passengers)*
 | `seq`     | Integer               |                                      | Sequence number of the unit when the journey is operated with a vehicle that consists of multiple units (e.g. metros, trains). Sequence number starts from 1.<br />**Note:** `seq` is currently only available for metros.
+| `label`   | String                |                                      | User visible label that helps to identify the vehicle. Currently available only for Suomenlinna ferries with values being vessel names.
 | `ttarr`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled arrival time to the stop
 | `ttdep`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled departure time from the stop
 | `dr-type` | Integer               | Other than `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | Type of the driver, either `0` or `1`. <ul><li>`0` = service technician</li><li>`1` = normal driver</li></ul>
