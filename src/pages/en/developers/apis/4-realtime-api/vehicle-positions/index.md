@@ -71,7 +71,7 @@ Topic levels up to `vehicle_number` are present in all types of topics and level
 | `journey_type`   | The type of the journey. Either `journey`, `deadrun` or `signoff`.<br/>`journey` refers to a vehicle that is running on a specific public transport journey.<br/>`deadrun` refers to a vehicle that is not on any specific route, but instead coming from a depot, for example.<br/>`signoff` is used when the vehicle PC is shut down.<br/><br/>**Note:** `deadrun` and `signoff` messages are only available for authorized users.
 | `temporal_type`  | The status of the journey, `ongoing` or `upcoming`.<br/>`ongoing` describes a journey that is currently in operation.<br/>`upcoming` refers to the next expected journey of the same vehicle. `upcoming` messages are broadcasted shortly before the start of the next journey. One use of `upcoming` is to show the relevant vehicle to your users even before the driver has signed on to the journey that your users are interested in.
 | `event_type`     | One of `vp`, `due`, `arr`, `dep`, `ars`, `pde`, `pas`, `wait`, `doo`, `doc`, `tlr`, `tla`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout`.<br/>See descriptions for these values [below](#event-types).
-| `transport_mode` | The type of the vehicle. One of `bus`, `tram`, `train`, `ferry` or `metro`.
+| `transport_mode` | The type of the vehicle. One of `bus`, `tram`, `train`, `ferry`, `metro`, `ubus` (used by [U-line buses](https://www.hsl.fi/en/timetables-and-routes/u-line-services) and other vehicles with limited realtime information) or `robot` (used by robot buses).
 | `operator_id`    | The unique ID of the operator that _owns_ the vehicle. See the list of operators below.<br/>**Note:** Operator ids must be exactly 4 digits long in the topic filter, so prefix them with zeroes if needed (e.g. `80` → `0080`)
 | `vehicle_number` | The vehicle number that can be seen painted on the side of the vehicle, often next to the front door. Different operators may use overlapping vehicle numbers. `operator_id/vehicle_number` uniquely identifies the vehicle.<br/>**Note:** Vehicle numbers must be exactly 5 digits long in the topic filter, so prefix them with zeroes if needed.
 | `route_id`       | The ID of the route the vehicle is running on. This matches `route_id` in GTFS (field `gtfsId` of `Route` in [the routing API](../../1-routing-api/)).
@@ -84,7 +84,9 @@ Topic levels up to `vehicle_number` are present in all types of topics and level
 
 ### Event types
 
-The most notable change in HFP 2.0 is introduction of different types of messages. Whereas HFP 1.0 had only vehicle position messages, in HFP 2.0 vehicles also send messages from different types of event happening during the journey (for example, arriving to a stop etc.).
+The most notable change in HFP 2.0 is introduction of different types of messages. Whereas HFP 1.0 had only vehicle position messages, in HFP 2.0 vehicles also send messages from different types of event happening during the journey (for example, arriving to a stop etc.). 
+
+**Note:** events are not available for metros (`metro`), U-line buses (`ubus`), robot buses (`robot`) and ferries (`ferry`).
 
 List of possible events:
 
@@ -171,6 +173,7 @@ The fields are described below:
 | `route`   | String                | `da`, `dout`, `ba`, `bout`           | ID of the route the vehicle is currently running on. Matches `route_id` in the topic.
 | `occu`    | Integer               | `da`, `dout`, `ba`, `bout`           | Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`. However, currently only values used are `0` *(= vehicle has space and is accepting passengers)* and `100` *(= vehicle is full and might not accept passengers)*
 | `seq`     | Integer               |                                      | Sequence number of the unit when the journey is operated with a vehicle that consists of multiple units (e.g. metros, trains). Sequence number starts from 1.<br />**Note:** `seq` is currently only available for metros.
+| `label`   | String                |                                      | User visible label that helps to identify the vehicle. Currently available only for Suomenlinna ferries with values being vessel names.
 | `ttarr`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled arrival time to the stop
 | `ttdep`   | String                | `vp`, `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | UTC timestamp of scheduled departure time from the stop
 | `dr-type` | Integer               | Other than `da`, `dout`, `ba`, `bout`, `vja`, `vjout` | Type of the driver, either `0` or `1`. <ul><li>`0` = service technician</li><li>`1` = normal driver</li></ul>
@@ -216,6 +219,7 @@ The numerical values for the different transit operators are listed below:
 | `54`   | V-S Bussipalvelut Oy          |
 | `55`   | Transdev Helsinki Oy          |
 | `58`   | Koillisen Liikennepalvelut Oy |
+| `60`   | Suomenlinnan Liikenne Oy      |
 | `59`   | Tilausliikenne Nikkanen Oy    |
 | `89`   | Metropolia                    |
 | `90`   | VR Oy                         |
