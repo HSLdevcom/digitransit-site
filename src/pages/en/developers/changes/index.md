@@ -3,11 +3,16 @@ title: Changes
 order: -10
 ---
 
+## 14.05.2020
+
+- Updated [HFP](../apis/4-realtime-api/vehicle-positions) documentation
+  - Potentially breaking changes in the topic structure
+
 ## 15.01.2019
 
 - Updated [realtime API documentation](../apis/4-realtime-api/)
 
-## 09.01.2019
+## 09.01.2020
 
 - Updated the [architecture](../architecture) diagram and text regarding runtime environment to match our new runtime environment
 
