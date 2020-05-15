@@ -8,7 +8,7 @@ order: -10
 - Updated [HFP](../apis/4-realtime-api/vehicle-positions) documentation
   - Potentially breaking changes in the topic structure
 
-## 15.01.2019
+## 15.01.2020
 
 - Updated [realtime API documentation](../apis/4-realtime-api/)
 
