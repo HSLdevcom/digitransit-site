@@ -7,6 +7,8 @@ order: -10
 
 - Updated [HFP](../apis/4-realtime-api/vehicle-positions) documentation
   - Potentially breaking changes in the topic structure
+    - `sid` will be added to the end of the topic
+  - Changes to values of `tlp-signalgroupnbr` and `tlp-protocol` in the payload
 
 ## 15.01.2020
 
