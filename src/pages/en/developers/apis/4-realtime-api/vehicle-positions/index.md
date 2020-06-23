@@ -54,7 +54,7 @@ See the advanced examples [further below](#examples) on how to tailor the subscr
 
 Here is an example of an HFP message topic:
 ```
-/hfp/v2/journey/ongoing/vp/bus/0055/01216/1069/1/Malmi/7:20/1130106/2/60;24/19/73/44
+/hfp/v2/journey/ongoing/vp/bus/0055/01216/1069/1/Malmi/07:20/1130106/2/60;24/19/73/44
 ```
 
 It can be split into these parts:
@@ -285,14 +285,14 @@ Subscribe to vehicle position messages of a certain trip, even slightly before t
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/+/vp/+/+/+/1069/1/+/7:20/#"
+  -t "/hfp/v2/journey/+/vp/+/+/+/1069/1/+/07:20/#"
 ```
 
 Or if your users would find it confusing to see a vehicle going in the wrong direction, subscribe to the `ongoing` messages only:
 
 ```bash
 mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v \
-  -t "/hfp/v2/journey/ongoing/vp/+/+/+/1069/1/+/7:20/#"
+  -t "/hfp/v2/journey/ongoing/vp/+/+/+/1069/1/+/07:20/#"
 ```
 
 #### All vehicles arriving to a certain stop
