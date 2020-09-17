@@ -1,10 +1,10 @@
 ---
 title: Background map
-replit: 
-  embeds: 
+replit:
+  embeds:
     -
       title: "Display map using Leaflet"
-      description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map.<br/>Note that this example is using <code>hsl-map</code> tiles (<b>512px</b>), which are not the size that Leaflet expects. To display 512px tiles correctly with Leaflet, use options <code>tileSize: 512</code> and <code>zoomOffset: -1</code>" 
+      description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map.<br/>Note that this example is using <code>hsl-map</code> tiles (<b>512px</b>), which are not the size that Leaflet expects. To display 512px tiles correctly with Leaflet, use options <code>tileSize: 512</code> and <code>zoomOffset: -1</code>"
       url: https://repl.it/@digitransit/LeafletMap
       height: 800px
 ---
@@ -29,7 +29,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 | y             | int            | y-coordinate
 | size          | string         | '@2x' for retina tiles or empty value for normal
 
-## Examples 
+## Examples
 
 ### An example of what the HSL map tiles look like
 
@@ -43,6 +43,10 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 > https://cdn.digitransit.fi/map/v1/hsl-map/16/37313/18958@2x.png
 
-### Swedish language tiles 
+### Swedish language tiles
 
 > https://cdn.digitransit.fi/map/v1/hsl-map-sv/16/37313/18958.png
+
+### Bilingual Finnish / Swedish language tiles
+
+> https://cdn.digitransit.fi/map/v1/hsl-map-fi-sv/16/37313/18958.png
