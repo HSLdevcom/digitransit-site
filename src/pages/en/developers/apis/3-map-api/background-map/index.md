@@ -23,7 +23,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
-| source	| string	 | <ul><li>`hsl-map` for 512px raster tiles</li><li>`hsl-map-256` for 256px raster tiles</li><li>`hsl-map-sv` for 512px raster tiles with Swedish language</li><li>`hsl-map-sv-256` for 256px raster tiles with Swedish language</li><li>`hsl-vector-map` for vector tiles</li></ul>|
+| source	| string	 | <ul><li>`hsl-map` for 512px raster tiles</li><li>`hsl-map-256` for 256px raster tiles</li><li>`hsl-map-sv` for 512px raster tiles with Swedish language</li><li>`hsl-map-sv-256` for 256px raster tiles with Swedish language</li><li>`hsl-map-fi-sv` for 512px bilingual raster tiles with Finnish / Swedish language</li><li>`hsl-map-fi-sv-256` for 256px bilingual raster tiles with Finnish / Swedish language</li><li>`hsl-vector-map` for vector tiles</li></ul>|
 | z             | int            | Zoom level
 | x             | int            | x-coordinate
 | y             | int            | y-coordinate
