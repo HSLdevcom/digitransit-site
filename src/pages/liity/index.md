@@ -163,6 +163,7 @@ Digitransit löytää kohteita seuraavista luokista:
 - building
 - craft
 - cuisine
+- highway
 - historic
 - landuse
 - leisure
