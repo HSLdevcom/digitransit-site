@@ -1,36 +1,8 @@
 ---
 title: Trip updates
 order: 30
-replit:
-  embeds:
-    -
-      title: "Show currently active HSL trip updates"
-      url: https://repl.it/@digitransit/RealtimeTripUpdates
-      height: 700px
 ---
 
-[[alert-warning]]
-| **Note:** Trip updates API will be deprecated in the future in favor of [Stop times](../../1-routing-api/stops/) GraphQL API. This is part of an effort to reduce overlapping API functionalities and to concentrate APIs under the GraphQL APIs.<br/><br/>If you need trip updates from HSL area in GTFS-RT format, see [HSL GTFS-RT API documentation](https://hsldevcom.github.io/gtfs_rt/)
+Trip updates are no longer available in GTFS-RT format from `api.digitransit.fi`. The stop time predictions are available from the [stop times](../../1-routing-api/stops/) GraphQL API.
 
-Currently the service offers two [GTFS-RT](https://developers.google.com/transit/gtfs-realtime/) data feeds filled with [trip updates](https://developers.google.com/transit/gtfs-realtime/guides/trip-updates), one for HSL data and one for FOLI (Turku) data.
-
-## Endpoint
-`http://api.digitransit.fi/realtime/trip-updates/v1/:operator`
-<!--<pre>http://api.digitransit.fi/realtime/raildigitraffic2gtfsrt/v1/:operator/:debug</pre>
-
-**Note:** raildigitraffic2gtfsrt is for internal use only-->
-
-### Supported URL parameters
-| Parameter   | Type            | Description                                                  |
-|-------------|-----------------|--------------------------------------------------------------|
-| `operator`  | path parameter  | id of an operator, either `HSL` or `FOLI`
-| `debug`     | query parameter | Print data in human readable format (for debugging purposes)
-
-## Examples
-* More GTFS-rt programming examples from [Google](https://developers.google.com/transit/gtfs-realtime/examples/code-samples).
-
-### Show currently active HSL real-time trip updates (debug mode)
-> curl http://api.digitransit.fi/realtime/trip-updates/v1/HSL?debug
-
-### Show currently active FOLI (Turku) real-time trip updates (debug mode)
-> curl http://api.digitransit.fi/realtime/trip-updates/v1/FOLI?debug
+Trip updates in GTFS-RT format for HSL region are available from [HSL GTFS-RT API](https://hsldevcom.github.io/gtfs_rt/).
