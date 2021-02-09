@@ -3,6 +3,11 @@ title: Changes
 order: -10
 ---
 
+## 09.02.2021
+
+- GTFS-RT APIs are no longer available from `api.digitransit.fi`
+  - Real-time information is available from the GraphQL API and [HSL GTFS-RT APIs](https://hsldevcom.github.io/gtfs_rt/)
+
 ## 14.05.2020
 
 - Updated [HFP](../apis/4-realtime-api/vehicle-positions) documentation
