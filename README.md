@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/HSLdevcom/digitransit-site.svg?branch=master)](https://travis-ci.org/HSLdevcom/digitransit-site)
+[![Build](https://github.com/hsldevcom/digitransit-site/workflows/Process%20master%20push%20or%20pr/badge.svg?branch=next)](https://github.com/HSLdevcom/digitransit-site/actions)
 
 # digitransit-site
 
