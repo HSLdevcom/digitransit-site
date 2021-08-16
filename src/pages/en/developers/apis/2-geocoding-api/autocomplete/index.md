@@ -1,8 +1,8 @@
 ---
 title: Autocomplete
----
 
-Autocomplete can be used to search addresses and place names with incomplete search terms to provide real-time suggestions as the user types.
+Autocomplete can be used to search addresses and place names with incomplete search terms to provide real-time suggestions as the user types. Autocomplete is a bit faster and simpler as
+the full search endpoint, which also works well with incomplete search strings.
 
 ## Endpoint
 
@@ -15,26 +15,26 @@ Autocomplete can be used to search addresses and place names with incomplete sea
 | `text`                 | string                 | Text to be searched
 | `boundary.rect.min_lon`<br/>`boundary.rect.max_lon`<br/>`boundary.rect.min_lat`<br/>`boundary.rect.max_lat`	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
 | `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
-| `sources`                | comma-delimited string array | Filters results by source (value can be `oa` ([OpenAddresses](https://openaddresses.io/)), `osm` ([OpenStreetMap](http://openstreetmap.org/)) or `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)))
-| `layers`                 | string                 | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers), commonly used values are `address`, `venue` and `street`)
-| `lang`                   | string                 | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`).
-
-**Note**: parameter `boundary.country` is not used by Digitransit, as only data from Finland is available.
+| `sources`                | comma-delimited string array | Filters results by source. Value can be `oa` (VRK address data), `osm` ([OpenStreetMap](http://openstreetmap.org/)), `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)), `gtfs<feedid>`, `citybikes<network>`. Here feedid refers to GTFS identifier e.g. hsl and network is the citybike network identifier e.g. smoove.
+| `layers`                 | comma-delimited string array | Filters results by layer (`address`, `venue`, `street`, `stop`, `station`, `bikestation`, `neighbourhood`, `localadmin`, `region`)
+| `lang`                   | string | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`).
 
 ### Response fields
+
+The response contains an array called  `features`. Each feature has a point geometry and properties listed below:
 
 | Name                | Type    | Description                                              |
 |---------------------|---------|----------------------------------------------------------|
 | `id`                | string  |
 | `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
-| `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/autocomplete.md#layers)
-| `source`            | string  | Data source, for example `openstreetmap`, `openaddresses` or `nlsfi`
+| `layer`             | string  | Place type (e.g. `address`), see the list of possible values in the parameter specs above
+| `source`            | string  | Data source, see the list of possible values in the parameter specs above
 | `source_id`         | string  |
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
 | `postalcode`        | number  |
 | `postalcode_gid`    | string  |
-| `confidence`        | number  | An estimation (as a percentage) of how accurately this result matches the query
-| `distance`          | number  | A distance from the query point (in kilometers)
+| `confidence`        | number  | An estimation of how accurately this result matches the query. Value 1 means perfect match.
+| `distance`          | number  | A distance from the focus point if it is given (in kilometers)
 | `accuracy`          | string  | Returns always coordinates of just one point. If the object is originally an area or a line like a road, then the centroid is calculated (value can be point or centroid).
 | `country`           | string  | Places that issue passports, nations, nation-states
 | `country_gid`       | string  |
@@ -48,7 +48,6 @@ Autocomplete can be used to search addresses and place names with incomplete sea
 | `neighbourhood`     | string  | Social communities, neighbourhoods, for example *Itä-Pasila*
 | `neighbourhood_gid` | string  |
 | `label`             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example *East-West Pub, Itä-Pasila, Helsinki*.
-| `bbox`              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry.
 
 **Note:** Not exactly the same fields are returned for all searches because all object locations do not have the same data available, for example neighborhood is not in use with all objects.
 
@@ -72,13 +71,13 @@ Autocomplete can be used to search addresses and place names with incomplete sea
 
 > https://api.digitransit.fi/geocoding/v1/autocomplete?text=kamp&focus.point.lat=60.17&focus.point.lon=24.93
 
-**Note:** Using parameter **focus.point** scores nearby places higher depending on how close they are to the focus.point so that places with higher scores will appear higher in the results list. After all the nearby results have been found, additional results will come from the rest of the world, without any further location-based prioritization.
+**Note:** Using parameter **focus.point** sorts equally matching places depending on how close they are to the focus point.
 
 ## Language preference
 
 The language preference can be defined using `lang=xx` parameter, default being `lang=fi`. Unlike in reverse
 geocoding, the preference has significance for geocoding searches only when multiple languages provide
-an equally good match. 
+an equally good match.
 
 **Note:** Part of the provided geocoding data does not include Swedish names, and part of the data
 leaves the language context unknown. This may occasionally cause unexpected errors in language selection.
