@@ -9,16 +9,12 @@ All our services are available as Docker images in Dockerhub:
 
 ## Digitransit build pipeline
 
-![build pipeline](build-pipeline.png)
+![build pipeline](build-pipeline.svg)
 
-Build process is performed by travis:
-> https://travis-ci.org/
+Build process is usually performed by github actions.
 
 E.g. to check digitransit-ui pipeline and its status, check:
-> https://travis-ci.org/HSLdevcom/digitransit-ui
-
-Should you have enough permissions, you can see all builds:
-> https://travis-ci.org/HSLdevcom
+> https://github.com/HSLdevcom/digitransit-ui/actions
 
 ## <a name="docker"></a>How to use Docker?
 We use Docker, you should know how it works.

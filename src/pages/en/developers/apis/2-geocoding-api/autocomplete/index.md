@@ -1,5 +1,6 @@
 ---
 title: Autocomplete
+---
 
 Autocomplete can be used to search addresses and place names with incomplete search terms to provide real-time suggestions as the user types. Autocomplete is a bit faster and simpler as
 the full search endpoint, which also works well with incomplete search strings.

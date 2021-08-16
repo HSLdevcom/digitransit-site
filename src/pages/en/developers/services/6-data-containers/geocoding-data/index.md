@@ -9,27 +9,29 @@ assets:
   - title: "DockerHub"
     url: https://hub.docker.com/r/hsldevcom/pelias-data-container/
   - title: "Dockerfile"
-    url: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
+    url: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile.loader
+  - title: "Pelias data schema"
+    url: https://github.com/HSLdevcom/pelias-schema.git
   - title: "Pelias config"
     url: https://github.com/HSLdevcom/pelias-data-container/blob/master/pelias.json
   - title: "ES client"
     url: https://github.com/HSLdevcom/dbclient.git
   - title: "pelias-nlsfi-places-importer"
     url: https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
-  - title: "pelias-openaddresses-import"
-    url: https://github.com/HSLdevcom/openaddresses.git
+  - title: "OSM import"
+    url: https://github.com/HSLdevcom/openstreetmap.git
+  - title: "VRK import"
+    url: https://github.com/HSLdevcom/pelias-vrk.git
+  - title: "GTFS stop import"
+    url: https://github.com/HSLdevcom/pelias-gtfs.git
+  - title: "Citybike station import"
+    url: https://github.com/HSLdevcom/bikes-pelias.git
 technologies:
-  - title: "SIRI"
-    url: "http://user47094.vs.easily.co.uk/siri/"
-  - title: "GTFS-RT"
-    url: "https://developers.google.com/transit/gtfs-realtime/"
-  - title: "Python"
+  - title: "Elasticsearch"
+    url: "https://elastic.co"
 docker:
-  dockerfile: https://github.com/HSLdevcom/pelias-data-container/blob/master/Dockerfile
   imageName: hsldevcom/pelias-data-container
-  buildScript: https://github.com/HSLdevcom/pelias-data-container/blob/master/build-docker-image.sh
   runContainer: docker run -p 9200:9200 hsldevcom/pelias-data-container
-  accessContainer: http://localhost:9200/_plugin/head/
 ---
 
 This service is essentially an ElasticSearch instance containing Geocoding data that can be used with Pelias Geocoder.
@@ -45,11 +47,11 @@ Start by reading (Note that it might not be up-to-date):
 On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
 Pelias tools. At high level this is what happens:
 
-1. Download and extract Finland related shapefiles of administrational areas and regions from WhosOnFirst
+1. Download and extract Finland related shapefiles of administrational areas and regions from WhosOnFirst (or use embedded data of pelias-data-container source)
 
 2. Download Open Street Map Finland data
 
-3. Download Openaddresses Finland data (street addresses originating from VRK)
+3. Download VRK data (building locations with street addresses)
 
 4. Download NLS places (an extensive list of venues and place names from the National Lands Survey)
 
@@ -65,19 +67,15 @@ Pelias tools. At high level this is what happens:
 
 10. Run OpenStreetMap import
 
-11. Run OpenAddresses import for addresses defined in Swedish
+11. Run VRK data import
 
-12. Run OpenAddresses import for Finnish addresses and merge fi and sv records for matching addresses
+12. Run bike station import from an OpenTripPlanner service endpoint
 
 ### Exploring data
 
-For Exploring ElasticSearch data you can open browser (when container is running):
+For exploring ElasticSearch data, you can install the extension "elasticsearch-head" to Chrome browser and use it as follows:
 
-> http://localhost:9200/_plugin/head/
-
-This url contains navigator that can be user to make queries to ElasticSearch. In order to make queries:
-
-1. Click on "connect", this should change cluster health to "green". If this does not work, wait a bit and retry.
+1. Wait until cluster health changes to "green".
 
 2. Click on "Browser"-tab
 
@@ -91,10 +89,9 @@ For Gis data exploration you can use e.g. QGis
 
 ## Datasources
 
-### OpenAddresses
+### VRK
 
-- Url: https://openaddresses.io/
-- All datafiles are listed in http://results.openaddresses.io/state.txt. The relevant ones contain a path section /fi/.
+- Url: https://geocoding.blob.core.windows.net/vrk/fi_vrk_addresses.zip
 - Types: Address
 
 Open addresses is a open data collaborative to produce global address data around the world. We use addresses from Open addresses as primary data.
@@ -152,34 +149,29 @@ Our goal is to use as much data from OSM as possible. Unfortunately, at the mome
 
 ### NLS Paikat
 
-- Url: http://www.maanmittauslaitos.fi/digituotteet/nimisto
-- Datafile: http://kartat.kapsi.fi/files/nimisto/paikat/etrs89/gml/paikat_2016_01.zip
+- Url: http://www.maanmittauslaitos.fi
 - Types: venue
 
 National Land survey Nimistö ("places") contains place names in Finland. It provides places like "Takalammi".
 
 ## Key service delivery activities
 
-1. Keep up with Pelias development on GitHub<br/>
-   https://github.com/pelias/pelias<br/>
-   https://pelias.io
+1. Keep up with our development on GitHub<br/>
+   https://github.com/HSLdevcom/pelias-data-container
 
-2. Keep up with Mapzen Search (which is essentially same as Pelias)<br/>
-   https://mapzen.com/projects/search/
-
-3. Keep up with Pelias importer projects<br/>
-   https://github.com/HSLdevcom/openaddresses<br/>
+2. Keep up with Pelias importer projects<br/>
+   https://github.com/HSLdevcom/pelias-schema<br/>
    https://github.com/HSLdevcom/pelias-gtfs<br/>
+   https://github.com/HSLdevcom/pelias-vrk<br/>
    https://github.com/HSLdevcom/pelias-nlsfi-places-importer<br/>
-   https://github.com/pelias/openstreetmap<br/>
-   https://github.com/pelias/polylines
+   https://github.com/HSLdevcom/openstreetmap<br/>
+   https://github.com/HSLdevcom/bikes-pelias<br/>
 
-4. Keep up with Who's on First development<br/>
-   https://whosonfirst.mapzen.com/<br/>
+3. Keep up with Who's on First development<br/>
    https://github.com/whosonfirst/whosonfirst-data/
 
-5. Keep up with Geospatial Data Abstraction Library development<br/>
+4. Keep up with Geospatial Data Abstraction Library development<br/>
    http://www.gdal.org/
 
-6. Keep up with ElasticSearch docker image and it's changes<br/>
+5. Keep up with ElasticSearch docker image and it's changes<br/>
    https://hub.docker.com/_/elasticsearch/
