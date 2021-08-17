@@ -24,9 +24,20 @@ Address lookup, otherwise known as reverse geocoding, is used for finding places
 | `boundary.circle.radius` | floating point number         | Searches only within the given radius from the location
 | `lang`                   | string                        | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`)
 | `size`                   | integer                       | Limits the number of results returned
-| `layers`                 | comma-delimited string array  | Filters results by source. Value can be `oa` (VRK address data), `osm` ([OpenStreetMap](http://openstreetmap.org/)), `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)), `gtfs<feedid>`, `citybikes<network>`. Here feedid refers to GTFS data source identifier e.g. hsl and network is the citybike network identifier e.g. smoove.
+| `layers`                 | comma-delimited string array  | Filters results by source. Value can be `oa` (VRK address data), `osm` ([OpenStreetMap](http://openstreetmap.org/)), `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)), `gtfs<feedid>`, `citybikes<network>`. Here feedid refers to GTFS data source feed identifier e.g. hsl and network is the citybike network identifier e.g. smoove.
 | `sources`                | comma-delimited string array | Filters results by layer (`address`, `venue`, `street`, `stop`, `station`, `bikestation`, `neighbourhood`, `localadmin`, `region`)
 | `zones`                   | integer                       | Value 1 returns an array of potential ticket zones which contain the search point.
+
+
+**Note:** You can find out the list of GTFS feed identifiers by querying OpenTripPlanner routing api, for example:
+
+> https://api.digitransit.fi/graphiql/waltti?query=%257B%250A%2520%2520feeds%2520%257B%250A%2520%2520%2520%2520feedId%250A%2520%2520%257D%250A%257D
+
+Running this query returns the list of feed identifiers used in Waltti routing services.
+
+Citybike network identifiers can be examined by querying all bike stations:
+
+> https://api.digitransit.fi/graphiql/finland?query=%257B%2520bikeRentalStations%2520%257Bname%2520networks%2520lat%2520lon%257D%2520%257D%250A%250A
 
 
 ## Response fields

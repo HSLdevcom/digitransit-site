@@ -16,9 +16,20 @@ the full search endpoint, which also works well with incomplete search strings.
 | `text`                 | string                 | Text to be searched
 | `boundary.rect.min_lon`<br/>`boundary.rect.max_lon`<br/>`boundary.rect.min_lat`<br/>`boundary.rect.max_lat`	 | floating point number  | Searches using a  boundary that is specified by a rectangle with latitude and longitude coordinates for two diagonals of the bounding box (the minimum and the maximum latitude, longitude).
 | `focus.point.lat`<br/>`focus.point.lon` | floating point number  | Scores the nearby places higher depending on how close they are to the focus point so that places with higher scores will appear higher in the results list.
-| `sources`                | comma-delimited string array | Filters results by source. Value can be `oa` (VRK address data), `osm` ([OpenStreetMap](http://openstreetmap.org/)), `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)), `gtfs<feedid>`, `citybikes<network>`. Here feedid refers to GTFS identifier e.g. hsl and network is the citybike network identifier e.g. smoove.
+| `sources`                | comma-delimited string array | Filters results by source. Value can be `oa` (VRK address data), `osm` ([OpenStreetMap](http://openstreetmap.org/)), `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)), `gtfs<feedid>`, `citybikes<network>`. Here feedid refers to GTFS feed identifier e.g. hsl and network is the citybike network identifier e.g. smoove.
 | `layers`                 | comma-delimited string array | Filters results by layer (`address`, `venue`, `street`, `stop`, `station`, `bikestation`, `neighbourhood`, `localadmin`, `region`)
 | `lang`                   | string | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`).
+
+**Note:** You can find out the list of GTFS feed identifiers by querying OpenTripPlanner routing api, for example:
+
+> https://api.digitransit.fi/graphiql/waltti?query=%257B%250A%2520%2520feeds%2520%257B%250A%2520%2520%2520%2520feedId%250A%2520%2520%257D%250A%257D
+
+Running this query returns the list of feed identifiers used in Waltti routing services.
+
+Citybike network identifiers can be examined by querying all bike stations:
+
+> https://api.digitransit.fi/graphiql/finland?query=%257B%2520bikeRentalStations%2520%257Bname%2520networks%2520lat%2520lon%257D%2520%257D%250A%250A
+
 
 ### Response fields
 
