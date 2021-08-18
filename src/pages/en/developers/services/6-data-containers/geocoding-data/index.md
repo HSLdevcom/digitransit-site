@@ -32,6 +32,8 @@ technologies:
 docker:
   imageName: hsldevcom/pelias-data-container
   runContainer: docker run -p 9200:9200 hsldevcom/pelias-data-container
+  accessContainer: http://localhost:9200/
+
 ---
 
 This service is essentially an ElasticSearch instance containing Geocoding data that can be used with Pelias Geocoder.
