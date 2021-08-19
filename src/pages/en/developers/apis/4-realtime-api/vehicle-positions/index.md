@@ -206,22 +206,19 @@ The numerical values for the different transit operators are listed below:
 
 | `oper` | Operator name                 |
 | ------ | ----------------------------- |
-| `6`    | Oy Pohjolan Liikenne Ab       |
 | `12`   | Helsingin Bussiliikenne Oy    |
 | `17`   | Tammelundin Liikenne Oy       |
-| `18`   | Pohjolan Kaupunkiliikenne Oy  |
+| `18`   | Oy Pohjolan Liikenne Ab       |
 | `20`   | Bus Travel Åbergin Linja Oy   |
 | `21`   | Bus Travel Oy Reissu Ruoti    | 
 | `22`   | Nobina Finland Oy             |
 | `30`   | Savonlinja Oy                 |
 | `36`   | Nurmijärven Linja Oy          |
 | `40`   | HKL-Raitioliikenne            |
-| `45`   | Transdev Vantaa Oy            |
 | `47`   | Taksikuljetus Oy              |
 | `50`   | HKL-Metroliikenne             |
 | `51`   | Korsisaari Oy                 |
 | `54`   | V-S Bussipalvelut Oy          |
-| `55`   | Transdev Helsinki Oy          |
 | `58`   | Koillisen Liikennepalvelut Oy |
 | `60`   | Suomenlinnan Liikenne Oy      |
 | `59`   | Tilausliikenne Nikkanen Oy    |
