@@ -19,10 +19,9 @@ technologies:
 docker:
   dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
   imageName: hsldevcom/opentripplanner
-  buildScript: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/travis-build.sh
+  buildScript: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/.github/workflows/scripts/build_and_push_dev.sh
   runContainer: docker run -e OTP_DATA_CONTAINER_URL=http://otp-data-container:8080 -p 8080:8080 hsldevcom/opentripplanner
   accessContainer: http://localhost:8080/routers/
-  travisBuild: OpenTripPlanner
 ---
 
 Routing API is implemented using OpenTripPlanner.

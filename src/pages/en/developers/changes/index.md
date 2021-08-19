@@ -3,6 +3,13 @@ title: Changes
 order: -10
 ---
 
+## 19.08.2021
+
+- Updated the main [architecture](../architecture) diagram and other diagrams
+- References to travis CI replaced by github actions
+- Geocoding documentation updated
+- Broken links to build scripts and other repository files updated/removed
+
 ## 09.02.2021
 
 - GTFS-RT APIs are no longer available from `api.digitransit.fi`

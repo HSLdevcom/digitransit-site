@@ -24,24 +24,37 @@ Address lookup, otherwise known as reverse geocoding, is used for finding places
 | `boundary.circle.radius` | floating point number         | Searches only within the given radius from the location
 | `lang`                   | string                        | Returns results in the preferred language if such a language-bound name version is available (value can be `fi`, `sv` or `en`)
 | `size`                   | integer                       | Limits the number of results returned
-| `layers`                 | comma-delimited string array  | Filters results by layer (see list of possible values [here](https://github.com/pelias/documentation/blob/master/reverse.md#filter-by-layers-data-type), commonly used values are `address`, `venue` and `street`)
-| `sources`                | comma-delimited string array  | Filters results by source (value can be `oa` ([OpenAddresses](https://openaddresses.io/)), `osm` ([OpenStreetMap](http://openstreetmap.org/)) or `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)))
+| `layers`                 | comma-delimited string array  | Filters results by source. Value can be `oa` (VRK address data), `osm` ([OpenStreetMap](http://openstreetmap.org/)), `nlsfi` ([National Land Survey](https://www.maanmittauslaitos.fi/en)), `gtfs<feedid>`, `citybikes<network>`. Here feedid refers to GTFS data source feed identifier e.g. hsl and network is the citybike network identifier e.g. smoove.
+| `sources`                | comma-delimited string array | Filters results by layer (`address`, `venue`, `street`, `stop`, `station`, `bikestation`, `neighbourhood`, `localadmin`, `region`)
+| `zones`                   | integer                       | Value 1 returns an array of potential ticket zones which contain the search point.
 
-**Note**: parameter `boundary.country` is not used by Digitransit, as only data from Finland is available.
+
+**Note:** You can find out the list of GTFS feed identifiers by querying OpenTripPlanner routing api, for example:
+
+> https://api.digitransit.fi/graphiql/waltti?query=%257B%250A%2520%2520feeds%2520%257B%250A%2520%2520%2520%2520feedId%250A%2520%2520%257D%250A%257D
+
+Running this query returns the list of feed identifiers used in Waltti routing services.
+
+Citybike network identifiers can be examined by querying all bike stations:
+
+> https://api.digitransit.fi/graphiql/finland?query=%257B%2520bikeRentalStations%2520%257Bname%2520networks%2520lat%2520lon%257D%2520%257D%250A%250A
+
 
 ## Response fields
+
+The response contains an array called  `features`. Each feature has a point geometry and properties listed below:
 
 | Name              | Type    | Description                                              |
 |-------------------|---------|----------------------------------------------------------|
 | `id`                | string  |
 | `gid`               | string  | Global id that consists of a layer (such as address or country), an identifier for the original data source (such as openstreetmap or openaddresses), and an id for the individual record corresponding to the original source identifier, where possible.
-| `layer`             | string  | Place type (e.g. `address`), see list of possible values [here](https://github.com/pelias/documentation/blob/master/reverse.md#filter-by-layers-data-type)
-| `source`            | string  | Data source, for example `openstreetmap`, `openaddresses` or `nlsfi`
+| `layer`             | string  | Place type (e.g. `address`), see the list of possible values in the parameter specs above
+| `source`            | string  | Data source, see the list of possible values in the parameter specs above
 | `source_id`         | string  |
 | `name`              | string  | A short description of the location, for example a business name, a locality name, or part of an address, depending on what is being searched for and what is returned.
 | `postalcode`        | number  |
 | `postalcode_gid`    | string  |
-| `confidence`        | number  | An estimation (as a percentage) of how accurately this result matches the query
+| `confidence`        | number  | An estimation of how accurately this result matches the query. Value 1 means perfect match.
 | `distance`          | number  | A distance from the query point (in kilometers)
 | `accuracy`          | string  |
 | `country`           | string  | Places that issue passports, nations, nation-states
@@ -56,7 +69,7 @@ Address lookup, otherwise known as reverse geocoding, is used for finding places
 | `neighbourhood`     | string  | Social communities, neighbourhoods, for example *Itä-Pasila*
 | `neighbourhood_gid` | string  |
 | `label`             | string  | A human-friendly representation of the place with the most complete details, that is ready to be displayed to an end user, for example *East-West Pub, Itä-Pasila, Helsinki*
-| `bbox`              | string  | If present, it describes the geographic extent of the feature, such as the screen size necessary to show all of California without needing to send the precise polygon geometry.
+| `zones`             | array | String array of ticket zone identifiers, for example `["HSL:A"]`
 
 ## Request examples
 
@@ -83,6 +96,13 @@ Address lookup, otherwise known as reverse geocoding, is used for finding places
 > https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448&layers=address
 
 **Note:** Using parameter **layers=address** returns results for places with a street address.
+
+### Request the public transit ticket zone for a location
+
+> https://api.digitransit.fi/geocoding/v1/reverse?point.lat=60.170278&point.lon=24.9369448&zones=1
+
+**Note:** The response root contains the zone(s) of the exact requested point. Furthermore, each returned feature contains the zone(s) of its own location.
+Note also that adjacent cities may have overlapping ticket zones. Each zone string is prefixed by the respective GTFS feed identifier (e.g. `HSL:B`).
 
 ### Request to get results for the given coordinates using language preference
 
