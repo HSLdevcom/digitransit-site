@@ -10,13 +10,9 @@ import typography from "../utils/typography";
 const { rhythm } = typography;
 
 const MobileMenu = styled.div`
-  position: fixed;
   background-color: ${props => props.headerColor};
-  width: 100vw;
-  top: 59px;
   line-height: ${rhythm(2)};
   font-size: ${rhythm(0.75)};
-  left: 0px;
   text-align: center;
 `
 
@@ -37,6 +33,7 @@ const DesktopMenu = styled.div`
 
   @media (min-width: 768px) {
     display: block;
+    margin-right: 180px;
   }
 `
 
@@ -59,17 +56,14 @@ const LayoutContainer = styled.div`
 const Navigation = styled.nav`
   font-size: 15px;
   text-transform: uppercase;
-  position: fixed;
-  max-width: 720px;
+  width: 100%;
   z-index: 3;
   text-align: right;
   padding: ${rhythm(3 / 4)} ${rhythm(1 / 2)};
   margin: 0 auto;
-  left: 152px;
-  right: 0px;
   color: #fff;
   font-weight: 500;
-  width: calc(100% - 152px);
+  background-color: ${props => props.headerColor};
 `
 
 const Footer = styled.footer`
@@ -199,7 +193,7 @@ class Layout extends React.Component {
 
     return (
       <LayoutContainer ref="mainflex">
-        <Navigation>
+        <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
           <DesktopMenu>
             <NavLink
               to={`${localePrefix}#users`}
@@ -271,29 +265,6 @@ class Layout extends React.Component {
           </MobileMenuButton>
           {this.state.mobileMenuOpen && mobileMenu}
         </Navigation>
-        <div
-          style={{
-            position: "fixed",
-            width: "100%",
-            zIndex: 1,
-            height: `calc(${rhythm(1.5)} + 23px)`,
-            backgroundColor: this.props.data.site.siteMetadata.headerColor
-          }}
-        >
-          <div style={{ maxWidth: 950, height: "100%", margin: "0 auto" }}>
-            <Link to={`/`}>
-              <img
-                src={logo}
-                style={{
-                  height: "100%",
-                  padding: 7,
-                  margin: 0,
-                  paddingLeft: rhythm(1)
-                }}
-              />
-            </Link>
-          </div>
-        </div>
 
         {this.props.children}
 
