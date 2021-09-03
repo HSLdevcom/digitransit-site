@@ -51,6 +51,5 @@ panels:
 
 <span class="large-link">[Reittiopas »](https://reittiopas.hsl.fi)</span>
 <span class="large-link">[Opas.matka.fi »](https://opas.matka.fi)</span>
-<span class="large-link">[Roadmap tulevista ominaisuuksista »](/roadmap/)</span>
 
 </div>
