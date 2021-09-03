@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { StaticQuery, Link, graphql } from "gatsby";
 
 import logo from "../pages/logo.png";
-import hslLogo from "../pages/hsl-logo.png";
 
 import typography from "../utils/typography";
 
@@ -90,6 +89,7 @@ const FooterLogo = styled.img`
   margin: 2em 2em;
   filter: brightness(2);
   WebkitFilter: brightness(2);
+  width: 240px;
 `
 
 export default props => (
@@ -270,7 +270,7 @@ class Layout extends React.Component {
 
         <Footer>
           <FooterLogos>
-            <FooterLogo src={hslLogo} />
+            <FooterLogo src={logo} />
           </FooterLogos>
           <div style={{ padding: "1em", color: "white", fontSize: 14 }}>
             © Digitransit {1900 + new Date().getYear()}
