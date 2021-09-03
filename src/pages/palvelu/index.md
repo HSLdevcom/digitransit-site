@@ -4,7 +4,6 @@ panels:
   - title: Tuota omia Digitransit-palveluja
     body: Voit käynnistää oman palvelukokonaisuuden konfiguroimalla Digitransitin tuottamia Docker-kontteja ja lähdekoodikirjastoja.
     links: []
-    image: "../cloud.png"
     id: maintainers
     textColor: "#000"
     swapped: true

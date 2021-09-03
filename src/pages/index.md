@@ -11,9 +11,9 @@ panels:
         url: https://opas.matka.fi/
       - title: Osoitehaun perusteet
         url: /osoitehaku/
-    image: "./users.svg"
+    image: "./user.svg"
     id: users
-    background: "#8c54a2"
+    background: "#F4F4F5"
     swapped: true
   - title: Kehittäjille
     body: Tule mukaan kehittämään uuden ajan matkaopasta, jota käyttävät sadat tuhannet ihmiset joka päivä. Todennäköisesti sinäkin. Voit kehittää koko palvelua tai parantaa vain yhtä sen osaa. Ota koodi käyttöösi, keksi uutta, näytä se muille! Käytössäsi on uusin selainteknologia ja kehitysympäristö tulee nopeasti tutuksi. Kääri hihat ja lataa Digitransit koneellesi. Lähdekoodi on avoin.
@@ -23,17 +23,17 @@ panels:
       - title: Tutustu rajapintoihin
         url: /en/developers/apis/
       # - title: Quick start guide
-    image: "./developers.svg"
+    image: "./developer.svg"
     id: developers
-    background: "#ff8a3c"
+    background: "#FFFFFF"
   - title: Kunnille
     body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n, Traficomin ja TVV LMJ Oy:n tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Samalla voit varmistaa, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
     links:
       - title: Liity palveluun
         url: /liity/
-    image: "./municipalities.svg"
+    image: "./municipality.svg"
     id: municipalities
-    background: "#64be47"
+    background: "#F4F4F5"
     swapped: true
 
   - title: Ylläpitäjille
@@ -41,10 +41,9 @@ panels:
     links:
       - title: Yleiskatsaus palvelun käynnistämisestä
         url: /palvelu/
-    image: "./cloud.png"
+    image: "./administrator.svg"
     id: maintainers
-    background: "#80a0e7"
-    swapped: true
+    background: "#FFFFFF"
 ---
 <div style="text-align: center;">
 
