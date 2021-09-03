@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-import logo from "../pages/logo.png"
+import digitransitImage from "../pages/digitransit-image.png"
+import digitransitImage2x from "../pages/digitransit-image-2x.png"
 import hslLogo from "../pages/hsl-logo.png"
 
 import header from "../pages/header.jpg";
@@ -10,16 +11,15 @@ import headerMobile from "../pages/header.mobile.jpg";
 
 const HeaderImage = styled.div`
     position: relative;
-    max-width: 2048px;
     margin: 0 auto;
     z-index: 2;
-    background-image: url(${header});
+    background-image: url(${digitransitImage});
     background-position: center;
     background-size: 2048px;
     height: 720px;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(${header2x});
+        background-image: url(${digitransitImage2x});
         background-size: 2048px;
     }
 
@@ -28,7 +28,7 @@ const HeaderImage = styled.div`
     }
 
     @media (max-width: 600px) {
-        background-image: url(${headerMobile});
+        background-image: url(${digitransitImage});
         background-size: 600px 750px;
         height: 750px;
     }
@@ -92,12 +92,9 @@ const Logos = styled.div`
     }
 `
 
-export default ({ headerText }) => (
+export default () => (
     <div>
-    <HeaderImage>
-        <HeaderLogo src={logo} />
-        <HeaderText>{headerText}</HeaderText>
-    </HeaderImage>
+    <HeaderImage />
     <Logos>
         <img src={hslLogo} />
     </Logos>
