@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 import digitransitImage from "../pages/digitransit-image.png"
 import digitransitImage2x from "../pages/digitransit-image-2x.png"
-import hslLogo from "../pages/hsl-logo.png"
+import hslLogo from "../pages/hsl.svg"
+import traficomLogo from "../pages/traficom.svg"
+import lmjLogo from "../pages/lmj.svg"
 
 import header from "../pages/header.jpg";
 import header2x from "../pages/header.2x.jpg";
@@ -97,6 +99,8 @@ export default () => (
     <HeaderImage />
     <Logos>
         <img src={hslLogo} />
+        <img src={traficomLogo} />
+        <img src={lmjLogo} />
     </Logos>
     </div>
 );
