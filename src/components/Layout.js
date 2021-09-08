@@ -53,7 +53,8 @@ const LayoutContainer = styled.div`
 `
 
 const Navigation = styled.nav`
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 18.75px;
   text-transform: uppercase;
   width: 100%;
   z-index: 3;
@@ -61,7 +62,7 @@ const Navigation = styled.nav`
   padding: ${rhythm(3 / 4)} ${rhythm(1 / 2)};
   margin: 0 auto;
   color: #fff;
-  font-weight: 500;
+  font-weight: 400;
   background-color: ${props => props.headerColor};
 `
 

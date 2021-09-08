@@ -35,9 +35,11 @@ export default class HTML extends React.Component {
           }
           .large-link > a {
             display: block;
-            font-size: 1.1em;
+            font-size: 24px;
             text-decoration: none;
-            padding: 0.5em;
+            line-height: 38px;
+            font-weight: 700;
+            color: #000F94;
           }
 
           .alert p {

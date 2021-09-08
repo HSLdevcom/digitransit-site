@@ -2,17 +2,17 @@ import Typography from 'typography';
 
 const typography = new Typography({
   googleFonts: [{
-    name: "Lato",
-    styles: ["100", "300", "400", "700"]
+    name: "Roboto",
+    styles: ["400", "700"]
   }],
   baseFontSize: '18px',
   baseLineHeight: '24px',
-  bodyFontFamily: ['Lato','sans-serif'],
-  headerFontFamily: ['Lato','sans-serif'],
+  bodyFontFamily: ['Roboto','sans-serif'],
+  headerFontFamily: ['Roboto','sans-serif'],
   headerGray: 0,
   bodyGray: 0,
-  bodyWeight: 300,
-  headerWeight: 400,
+  bodyWeight: 400,
+  headerWeight: 700,
   boldWeight: 700,
   modularScales: ['major third'],
   overrideStyles: ({ rhythm, scale }, options) => {

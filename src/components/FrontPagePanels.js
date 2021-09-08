@@ -33,9 +33,7 @@ const FrontPagePanelContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color: ${props => props.textColor || '#000'};
     background: ${props => props.background};
-    font-weight: 300;
     min-height: 500px;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
@@ -59,8 +57,6 @@ const FrontPagePanelBody = styled.div`
 `
 
 const FrontPagePanelTitle = styled.h2`
-    color: ${props => props.textColor || '#000'};
-
     @media (max-width: 1020px) {
         text-align: center;
     }
@@ -76,8 +72,8 @@ const FrontPagePanel = ({ id, textColor, title, body, background, links, image, 
                 style={{
                   textDecoration: "none",
                   marginTop: rhythm(0.5),
-                  fontSize: 15,
-                  fontWeight: 500,
+                  fontSize: 18,
+                  fontWeight: 700,
                   color: "#000F94"
                 }}
               >
@@ -93,8 +89,8 @@ const FrontPagePanel = ({ id, textColor, title, body, background, links, image, 
                 style={{
                   textDecoration: "none",
                   marginTop: rhythm(0.5),
-                  fontSize: 15,
-                  fontWeight: 500,
+                  fontSize: 18,
+                  fontWeight: 700,
                   color: "#000F94"
                 }}
               >
