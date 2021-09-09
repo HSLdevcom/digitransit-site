@@ -106,7 +106,7 @@ const FooterLogos = styled.div`
 `
 
 const FooterLogo = styled.img`
-  margin: 2em 2em;
+  margin: 32px 0;
   filter: brightness(2);
   WebkitFilter: brightness(2);
   width: 240px;
