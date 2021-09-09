@@ -22,7 +22,7 @@ const MobileMenuButton = styled.svg`
   margin-top: -0.25em;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1180px) {
     display: none;
   }
 `
@@ -34,7 +34,7 @@ const LangLinkSpan = styled.span`
 const NavLogo = styled(Link)`
   margin-left: 24px;
   margin-top: 7px;
-  @media (min-width: 768px) {
+  @media (min-width: 1180px) {
     margin-left: 190px;
   }
 `
@@ -42,7 +42,7 @@ const NavLogo = styled(Link)`
 const NavLinks = styled.span`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1180px) {
     text-transform: uppercase;
     text-align: right;
     padding: ${rhythm(3 / 4)} ${rhythm(1 / 2)};
