@@ -8,28 +8,48 @@ import hslLogo from "../pages/hsl.svg"
 import traficomLogo from "../pages/traficom.svg"
 import lmjLogo from "../pages/lmj.svg"
 
-const HeaderImage = styled.div`
+const HeaderImage = styled.img`
     position: relative;
-    margin: 0 auto;
     z-index: 2;
-    background-image: url(${digitransitImage});
-    background-position: center;
-    background-size: 2048px;
-    height: 720px;
+    width: 100%;
+    display: block;
+    margin: 55px 0 0 0;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(${digitransitImage2x});
-        background-size: 2048px;
+        display: none;
     }
-
-    @media (max-width: 1024px) {
-        background-position: 60%;
-    }
-
     @media (max-width: 600px) {
-        background-image: url(${digitransitImageMobile});
-        background-size: 600px 750px;
-        height: 750px;
+        display: none;
+    }
+`
+
+const HeaderImage2x = styled.img`
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: none;
+    margin: 55px 0 0 0;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        display: block;
+    }
+    @media (max-width: 600px) {
+        display: none;
+    }
+`
+
+const HeaderImageMobile = styled.img`
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: none;
+    margin: 55px 0 0 0;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        display: none;
+    }
+    @media (max-width: 600px) {
+        display: block;
     }
 `
 
@@ -48,7 +68,9 @@ const Logos = styled.div`
 
 export default () => (
     <div>
-    <HeaderImage />
+    <HeaderImage src={digitransitImage} />
+    <HeaderImage2x src={digitransitImage2x}  />
+    <HeaderImageMobile src={digitransitImageMobile}  />
     <Logos>
         <img src={hslLogo} />
         <img src={traficomLogo} />
