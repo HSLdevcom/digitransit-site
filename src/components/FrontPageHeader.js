@@ -1,81 +1,55 @@
 import React from "react"
 import styled from "styled-components"
 
-import logo from "../pages/logo.png"
-import hslLogo from "../pages/hsl-logo.png"
+import digitransitImage from "../pages/digitransit-image.png"
+import digitransitImage2x from "../pages/digitransit-image-2x.png"
+import digitransitImageMobile from "../pages/digitransit-image-mobile.png"
+import hslLogo from "../pages/hsl.svg"
+import traficomLogo from "../pages/traficom.svg"
+import lmjLogo from "../pages/lmj.svg"
 
-import header from "../pages/header.jpg";
-import header2x from "../pages/header.2x.jpg";
-import headerMobile from "../pages/header.mobile.jpg";
-
-const HeaderImage = styled.div`
+const HeaderImage = styled.img`
     position: relative;
-    max-width: 2048px;
-    margin: 0 auto;
     z-index: 2;
-    background-image: url(${header});
-    background-position: center;
-    background-size: 2048px;
-    height: 720px;
+    width: 100%;
+    display: block;
+    margin: 55px 0 0 0;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(${header2x});
-        background-size: 2048px;
+        display: none;
     }
-
-    @media (max-width: 1024px) {
-        background-position: 60%;
-    }
-
     @media (max-width: 600px) {
-        background-image: url(${headerMobile});
-        background-size: 600px 750px;
-        height: 750px;
+        display: none;
     }
 `
 
-const HeaderLogo = styled.img`
-    position: absolute;
-    left: 13%;
-    top: 272px;
-    width: 338px;
-    height: 108px;
+const HeaderImage2x = styled.img`
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: none;
+    margin: 55px 0 0 0;
 
-    @media (max-width: 1024px) {
-        left: 8%;
-        top: 370px;
-        width: 250px;
-        height: 80px;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        display: block;
     }
-
     @media (max-width: 600px) {
-        left: 40px;
-        top: 440px;
+        display: none;
     }
 `
 
-const HeaderText = styled.h1`
-    position: absolute;
-    color: #fff;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-align: left;
-    left: 13%;
-    top: 415px;
-    max-width: 430px;
+const HeaderImageMobile = styled.img`
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: none;
+    margin: 55px 0 0 0;
 
-    @media (max-width: 1024px) {
-        left: 8%;
-        top: 470px;
-        max-width: 300px;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        display: none;
     }
-
     @media (max-width: 600px) {
-        left: 40px;
-        top: 540px;
-        max-width: 250px;
-        font-size: 1.6rem;
-        line-height: 1.25;
+        display: block;
     }
 `
 
@@ -92,14 +66,15 @@ const Logos = styled.div`
     }
 `
 
-export default ({ headerText }) => (
+export default () => (
     <div>
-    <HeaderImage>
-        <HeaderLogo src={logo} />
-        <HeaderText>{headerText}</HeaderText>
-    </HeaderImage>
+    <HeaderImage src={digitransitImage} />
+    <HeaderImage2x src={digitransitImage2x}  />
+    <HeaderImageMobile src={digitransitImageMobile}  />
     <Logos>
         <img src={hslLogo} />
+        <img src={traficomLogo} />
+        <img src={lmjLogo} />
     </Logos>
     </div>
 );

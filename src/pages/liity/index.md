@@ -4,7 +4,7 @@ panels:
   - title: Liity Digitransit-palveluun
     body: Digitransit on HSL:n omistama ja kehittämä palvelukokonaisuus joukkoliikenteen reititystä varten. Digitransit-tuoteperhe on rakennettu HSl:n, Traficomin ja LMJ Oy:n rahoituksella. Kuntien on mahdollista liittyä palveluun LMJ Oy:n kautta.
     links: []
-    image: "../municipalities.svg"
+    image: "../municipality.svg"
     id: municipalities
     textColor: "#000"
     swapped: true

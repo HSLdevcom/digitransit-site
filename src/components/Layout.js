@@ -3,20 +3,15 @@ import styled from "styled-components";
 import { StaticQuery, Link, graphql } from "gatsby";
 
 import logo from "../pages/logo.png";
-import hslLogo from "../pages/hsl-logo.png";
 
 import typography from "../utils/typography";
 
 const { rhythm } = typography;
 
 const MobileMenu = styled.div`
-  position: fixed;
   background-color: ${props => props.headerColor};
-  width: 100vw;
-  top: 59px;
   line-height: ${rhythm(2)};
   font-size: ${rhythm(0.75)};
-  left: 0px;
   text-align: center;
 `
 
@@ -27,21 +22,34 @@ const MobileMenuButton = styled.svg`
   margin-top: -0.25em;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1180px) {
     display: none;
-  }
-`
-
-const DesktopMenu = styled.div`
-  display: none;
-
-  @media (min-width: 768px) {
-    display: block;
   }
 `
 
 const LangLinkSpan = styled.span`
   margin: ${rhythm(0.5)}
+`
+
+const NavLogo = styled(Link)`
+  margin-left: 24px;
+  margin-top: 7px;
+  @media (min-width: 1180px) {
+    margin-left: 190px;
+  }
+`
+
+const NavLinks = styled.span`
+  display: none;
+
+  @media (min-width: 1180px) {
+    text-transform: uppercase;
+    text-align: right;
+    padding: ${rhythm(3 / 4)} ${rhythm(1 / 2)};
+    margin: 0 auto;
+    display: block;
+    margin-right: 180px;
+  }
 `
 
 const NavLink = styled(Link)`
@@ -57,19 +65,24 @@ const LayoutContainer = styled.div`
 `
 
 const Navigation = styled.nav`
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 18.75px;
   text-transform: uppercase;
-  position: fixed;
-  max-width: 720px;
+  width: 100%;
   z-index: 3;
-  text-align: right;
-  padding: ${rhythm(3 / 4)} ${rhythm(1 / 2)};
   margin: 0 auto;
-  left: 152px;
-  right: 0px;
-  color: #fff;
-  font-weight: 500;
-  width: calc(100% - 152px);
+  font-weight: 400;
+  background-color: ${props => props.headerColor};
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+`
+
+const NavigationBar = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const Footer = styled.footer`
@@ -93,9 +106,10 @@ const FooterLogos = styled.div`
 `
 
 const FooterLogo = styled.img`
-  margin: 2em 2em;
+  margin: 32px 0;
   filter: brightness(2);
   WebkitFilter: brightness(2);
+  width: 240px;
 `
 
 export default props => (
@@ -199,107 +213,92 @@ class Layout extends React.Component {
 
     return (
       <LayoutContainer ref="mainflex">
-        <Navigation>
-          <DesktopMenu>
-            <NavLink
-              to={`${localePrefix}#users`}
+        <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
+          <NavigationBar>
+            <NavLogo
+              onClick={() => this.setState({ mobileMenuOpen: false })}
+              to={`/`}
             >
-              {i18n.users}
-            </NavLink>
-            <NavLink
-              to={`/en/developers/`}
-            >
-              {i18n.developers}
-            </NavLink>
-            <NavLink
-              to={`${localePrefix}#municipalities`}
-            >
-              {i18n.municipalities}
-            </NavLink>
-            <NavLink
-              to={`${localePrefix}#maintainers`}
-            >
-              {i18n.maintainers}
-            </NavLink>
-            <LangLinkSpan>|</LangLinkSpan>
-            <LangLinkSpan>
+              <img src={logo} style={{ height: "48px", margin: "0px" }} />
+            </NavLogo>
+            <NavLinks>
               <NavLink
-                to="/"
-                hrefLang="fi"
+                to={`${localePrefix}#users`}
               >
-                FI
+                {i18n.users}
               </NavLink>
-            </LangLinkSpan>
-            <LangLinkSpan>
               <NavLink
-                to="/en/"
-                hrefLang="en"
+                to={`/en/developers/`}
               >
-                EN
+                {i18n.developers}
               </NavLink>
-            </LangLinkSpan>
-          </DesktopMenu>
-          <MobileMenuButton
-              id="icon-icon_menu"
-              viewBox="0 0 1024 1024"
-              style={{
-                height: "2em",
-                fill: "#fff",
-                marginRight: rhythm(0.5),
-                marginTop: "-0.25em",
-                cursor: "pointer"
-              }}
-              onClick={() =>
-                this.setState(state => {
-                  return { mobileMenuOpen: !state.mobileMenuOpen }
-                })
-              }
-            >
-              <title>icon_menu</title>
-              <path
-                class="path1"
-                d="M51.193 204.793h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
-              />
-              <path
-                class="path2"
-                d="M51.193 460.796h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
-              />
-              <path
-                class="path3"
-                d="M51.193 716.804h921.614c28.279 0 51.2 22.925 51.2 51.2 0 28.279-22.921 51.204-51.2 51.204h-921.614c-28.279 0-51.2-22.925-51.2-51.204 0-28.275 22.921-51.2 51.2-51.2z"
-              />
-          </MobileMenuButton>
+              <NavLink
+                to={`${localePrefix}#municipalities`}
+              >
+                {i18n.municipalities}
+              </NavLink>
+              <NavLink
+                to={`${localePrefix}#maintainers`}
+              >
+                {i18n.maintainers}
+              </NavLink>
+              <LangLinkSpan>|</LangLinkSpan>
+              <LangLinkSpan>
+                <NavLink
+                  to="/"
+                  hrefLang="fi"
+                >
+                  FI
+                </NavLink>
+              </LangLinkSpan>
+              <LangLinkSpan>
+                <NavLink
+                  to="/en/"
+                  hrefLang="en"
+                >
+                  EN
+                </NavLink>
+              </LangLinkSpan>
+            </NavLinks>
+            <MobileMenuButton
+                id="icon-icon_menu"
+                viewBox="0 0 1024 1024"
+                style={{
+                  height: "2em",
+                  fill: "#fff",
+                  marginRight: rhythm(0.5),
+                  marginTop: "-0.25em",
+                  cursor: "pointer"
+                }}
+                onClick={() =>
+                  this.setState(state => {
+                    return { mobileMenuOpen: !state.mobileMenuOpen }
+                  })
+                }
+              >
+                <title>icon_menu</title>
+                <path
+                  class="path1"
+                  d="M51.193 204.793h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
+                />
+                <path
+                  class="path2"
+                  d="M51.193 460.796h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
+                />
+                <path
+                  class="path3"
+                  d="M51.193 716.804h921.614c28.279 0 51.2 22.925 51.2 51.2 0 28.279-22.921 51.204-51.2 51.204h-921.614c-28.279 0-51.2-22.925-51.2-51.204 0-28.275 22.921-51.2 51.2-51.2z"
+                />
+            </MobileMenuButton>
+          </NavigationBar>
           {this.state.mobileMenuOpen && mobileMenu}
         </Navigation>
-        <div
-          style={{
-            position: "fixed",
-            width: "100%",
-            zIndex: 1,
-            height: `calc(${rhythm(1.5)} + 23px)`,
-            backgroundColor: this.props.data.site.siteMetadata.headerColor
-          }}
-        >
-          <div style={{ maxWidth: 950, height: "100%", margin: "0 auto" }}>
-            <Link to={`/`}>
-              <img
-                src={logo}
-                style={{
-                  height: "100%",
-                  padding: 7,
-                  margin: 0,
-                  paddingLeft: rhythm(1)
-                }}
-              />
-            </Link>
-          </div>
-        </div>
 
         {this.props.children}
 
         <Footer>
           <FooterLogos>
-            <FooterLogo src={hslLogo} />
+            <FooterLogo src={logo} />
           </FooterLogos>
           <div style={{ padding: "1em", color: "white", fontSize: 14 }}>
             © Digitransit {1900 + new Date().getYear()}

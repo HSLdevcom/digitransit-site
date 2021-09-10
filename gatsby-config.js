@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteTitle: "Digitransit",
-    headerColor: "#39b6db",
+    headerColor: "#000F94",
     siteUrl: "https://digitransit.fi",
     i18n: {
       fi: {
