@@ -44,15 +44,7 @@ panels:
 ---
 <div style="text-align: center;">
 
-## Reittiopas.hsl.fi and opas.matka.fi are now online
-
-The Reittiopas.&zwnj;fi and Matka.&zwnj;fi by HSL and the Finnish Transport Agency are online since February 2017.<br />
-We still need your help! Become a test user or contribute patches.<br />
-The code is open-source.
+## Digitransit journey planner
 
 <span class="large-link">[Reittiopas »](https://reittiopas.hsl.fi)</span>
 <span class="large-link">[Opas.matka.fi »](https://opas.matka.fi)</span>
-
-### Development plan
-<span class="large-link">[Roadmap of upcoming features (in Finnish) »](../roadmap/)</span>
-</div>
