@@ -47,7 +47,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        headerText
         isFront
         panels {
           title

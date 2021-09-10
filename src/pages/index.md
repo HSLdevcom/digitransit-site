@@ -1,5 +1,4 @@
 ---
-headerText: Täällä tehdään uuden ajan matkaopasta. Jätä jälkesi.
 isFront: true
 panels:
   - title: Käyttäjille

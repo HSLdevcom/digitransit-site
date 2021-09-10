@@ -1,5 +1,4 @@
 ---
-headerText: "The next generation journey planner. Contribute and leave your mark!"
 isFront: true
 panels:
   - title: For users

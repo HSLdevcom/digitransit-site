@@ -264,7 +264,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        headerText
         redirect
         toc
         description {
