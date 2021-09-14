@@ -20,8 +20,8 @@ docker:
   dockerfile: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/Dockerfile
   imageName: hsldevcom/opentripplanner
   buildScript: https://github.com/HSLdevcom/OpenTripPlanner/blob/master/.github/workflows/scripts/build_and_push_dev.sh
-  runContainer: docker run -e OTP_DATA_CONTAINER_URL=http://otp-data-container:8080 -p 8080:8080 hsldevcom/opentripplanner
-  accessContainer: http://localhost:8080/routers/
+  runContainer: docker run --rm --name otp-hsl -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx5g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner:prod
+  accessContainer: http://localhost:9080/routers/
 ---
 
 Routing API is implemented using OpenTripPlanner.
@@ -39,7 +39,7 @@ available.
 If you need to make large amount of requests (e.g. requesting schedules from all stops) to the API, you might want to host the API locally.
 To run OpenTripPlanner with Docker, use command:
 ```
-docker run --rm --name otp-hsl -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx5g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner
+docker run --rm --name otp-hsl -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx5g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner:prod
 ```
 After OpenTripPlanner has built the routing graph, the API can be accessed from `http://localhost:9080/otp/routers/hsl/index/graphql`
 
