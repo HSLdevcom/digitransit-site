@@ -3,7 +3,7 @@ title: Changes
 order: -10
 ---
 
-## 21.9.2021
+## 12.10.2021
 
 - Minor updates to the main [architecture](../architecture) diagram
 - Updated instructions for running OpenTripPlanner
