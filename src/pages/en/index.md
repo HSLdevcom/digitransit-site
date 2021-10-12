@@ -1,4 +1,5 @@
 ---
+lang: en
 isFront: true
 panels:
   - title: For users

@@ -46,6 +46,7 @@ export const query = graphql`
         slug
       }
       frontmatter {
+        lang
         title
         isFront
         panels {

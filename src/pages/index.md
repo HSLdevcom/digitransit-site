@@ -1,4 +1,5 @@
 ---
+lang: fi
 isFront: true
 panels:
   - title: Käyttäjille
@@ -26,7 +27,7 @@ panels:
     id: developers
     background: "#FFFFFF"
   - title: Kunnille
-    body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n, Traficomin ja TVV LMJ Oy:n tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Samalla voit varmistaa, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
+    body: Ole kartalla ja helpota liikkumista kotikunnassasi. Tule kehittämään uuden ajan matkaopasta ja varmista kotipaikkakuntasi valtakunnallinen näkyvyys. Digitransit on HSL:n, Fintrafficin ja TVV LMJ Oy:n tarjoama palvelualusta, johon liittyminen on helppoa. Avoimen lähdekoodin ansiosta palvelun kehitystyössä voi olla mukana kuka tahansa asiasta kiinnostunut, mikä todennäköisesti vähentää palvelun virheitä, parantaa sen tietoturvaa ja tarjoaa aina ajantasaista tietoa. Samalla voit varmistaa, että kuntasi reitti- ja aikataulutedot ovat palvelualustan käytössä.
     links:
       - title: Liity palveluun
         url: /liity/

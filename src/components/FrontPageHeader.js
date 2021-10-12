@@ -3,9 +3,11 @@ import styled from "styled-components"
 
 import digitransitImage from "../pages/digitransit-image.png"
 import digitransitImage2x from "../pages/digitransit-image-2x.png"
+import digitransitImageEn from "../pages/digitransit-image-en.png"
+import digitransitImageEn2x from "../pages/digitransit-image-en-2x.png"
 import digitransitImageMobile from "../pages/digitransit-image-mobile.png"
 import hslLogo from "../pages/hsl.svg"
-import traficomLogo from "../pages/traficom.svg"
+import fintrafficLogo from "../pages/fintraffic.svg"
 import lmjLogo from "../pages/lmj.svg"
 
 const HeaderImage = styled.img`
@@ -66,15 +68,15 @@ const Logos = styled.div`
     }
 `
 
-export default () => (
+export default ({ lang }) => (
     <div>
-    <HeaderImage src={digitransitImage} />
-    <HeaderImage2x src={digitransitImage2x}  />
-    <HeaderImageMobile src={digitransitImageMobile}  />
-    <Logos>
-        <img src={hslLogo} />
-        <img src={traficomLogo} />
-        <img src={lmjLogo} />
-    </Logos>
+        <HeaderImage src={lang === 'fi' ? digitransitImage : digitransitImageEn} />
+        <HeaderImage2x src={lang === 'fi' ? digitransitImage2x: digitransitImageEn2x}  />
+        <HeaderImageMobile src={digitransitImageMobile}  />
+        <Logos>
+            <img src={hslLogo} />
+            <img src={fintrafficLogo} />
+            <img src={lmjLogo} />
+        </Logos>
     </div>
 );
