@@ -2,7 +2,7 @@
 title: Liity
 panels:
   - title: Liity Digitransit-palveluun
-    body: Digitransit on HSL:n omistama ja kehittämä palvelukokonaisuus joukkoliikenteen reititystä varten. Digitransit-tuoteperhe on rakennettu HSl:n, Traficomin ja LMJ Oy:n rahoituksella. Kuntien on mahdollista liittyä palveluun LMJ Oy:n kautta.
+    body: Digitransit on HSL:n omistama ja kehittämä palvelukokonaisuus joukkoliikenteen reititystä varten. Digitransit-tuoteperhe on rakennettu HSl:n, Fintrafficin ja LMJ Oy:n rahoituksella. Kuntien on mahdollista liittyä palveluun LMJ Oy:n kautta.
     links: []
     image: "../municipality.svg"
     id: municipalities
@@ -130,7 +130,7 @@ Tervetuloa Reittioppaaseen! Reittiopas kertoo, miten pääset nopeasti ja helpos
 Keravalla, Kirkkonummella ja Sipoossa. Reittiopas etsii nopeat reitit myös kävelyyn ja pyöräilyyn sekä rajatusti myös yksityisautoiluun.
 Reittiopas-palvelun tarjoaa HSL Helsingin seudun liikenne, ja se perustuu Digitransit-palvelualustaan.
 
-Digitransit-palvelualusta on HSL:n ja Traficom kehittämä avoimen lähdekoodin reititystuote.
+Digitransit-palvelualusta on HSL:n ja Fintrafficin kehittämä avoimen lähdekoodin reititystuote.
 
 Kartat, tiedot kaduista, rakennuksista, pysäkkien sijainnista ynnä muusta tarjoaa © OpenStreetMap contributors. Osoitetiedot tuodaan Väestörekisterikeskuksen
 rakennustietorekisteristä. Joukkoliikenteen reitit ja aikataulut perustuvat HSL:n JORE-aineistoon.
