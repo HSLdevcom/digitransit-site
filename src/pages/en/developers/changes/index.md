@@ -3,6 +3,9 @@ title: Changes
 order: -10
 ---
 
+## 25.10.2021
+- Rename VRK (Väestörekisterikeskus) to DVV (Digi- ja väestövirasto)
+
 ## 12.10.2021
 
 - Minor updates to the main [architecture](../architecture) diagram

@@ -20,7 +20,7 @@ assets:
     url: https://github.com/HSLdevcom/pelias-nlsfi-places-importer.git
   - title: "OSM import"
     url: https://github.com/HSLdevcom/openstreetmap.git
-  - title: "VRK import"
+  - title: "DVV import"
     url: https://github.com/HSLdevcom/pelias-vrk.git
   - title: "GTFS stop import"
     url: https://github.com/HSLdevcom/pelias-gtfs.git
@@ -53,7 +53,7 @@ Pelias tools. At high level this is what happens:
 
 2. Download Open Street Map Finland data
 
-3. Download VRK data (building locations with street addresses)
+3. Download DVV data (building locations with street addresses)
 
 4. Download NLS places (an extensive list of venues and place names from the National Lands Survey)
 
@@ -69,7 +69,7 @@ Pelias tools. At high level this is what happens:
 
 10. Run OpenStreetMap import
 
-11. Run VRK data import
+11. Run DVV data import
 
 12. Run bike station import from an OpenTripPlanner service endpoint
 
@@ -91,7 +91,7 @@ For Gis data exploration you can use e.g. QGis
 
 ## Datasources
 
-### VRK
+### DVV (formerly VRK)
 
 - Url: https://geocoding.blob.core.windows.net/vrk/fi_vrk_addresses.zip
 - Types: Address
