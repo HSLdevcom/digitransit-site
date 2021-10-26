@@ -5,7 +5,7 @@
 
 Digitransit-osoitehaku käyttää seuraavia lähdeaineistoja:
 - Avoin OpenStreetMap-aineisto, jota käyttäjät voivat ylläpitää ja täydentää itse
-- Väestörekisterikeskuksen tuottama rakennusten osoitetietokanta
+- Digi- ja väestötietoviraston tuottama rakennusten osoitetietokanta
 - Maanmittauslaitoksen paikkatietokanta
 - Kaupunkien tuottamat GTFS-pysäkkitietoainestot
 

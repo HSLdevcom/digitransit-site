@@ -132,8 +132,8 @@ Reittiopas-palvelun tarjoaa HSL Helsingin seudun liikenne, ja se perustuu Digitr
 
 Digitransit-palvelualusta on HSL:n ja Fintrafficin kehittämä avoimen lähdekoodin reititystuote.
 
-Kartat, tiedot kaduista, rakennuksista, pysäkkien sijainnista ynnä muusta tarjoaa © OpenStreetMap contributors. Osoitetiedot tuodaan Väestörekisterikeskuksen
-rakennustietorekisteristä. Joukkoliikenteen reitit ja aikataulut perustuvat HSL:n JORE-aineistoon.
+Kartat, tiedot kaduista, rakennuksista, pysäkkien sijainnista ynnä muusta tarjoaa © OpenStreetMap contributors. Osoitetiedot tuodaan 
+Digi- ja väestötietoviraston rakennustietorekisteristä. Joukkoliikenteen reitit ja aikataulut perustuvat HSL:n JORE-aineistoon.
 
 
 ### 12. Sosiaalinen media
@@ -193,7 +193,7 @@ Mikäli lisäät kohteita OpenStreetMapiin, muista lisätä myös ruotsinkieline
   }
 ```
 
-Osoitehaussa käytetään OpenStreetMapin lisäksi Väestörekisterikeskuksen rakennustietokantaa, joka sisältää rakennusten osoitteet koko suomessa,
+Osoitehaussa käytetään OpenStreetMapin lisäksi Digi- ja väestötietoviraston rakennustietokantaa, joka sisältää rakennusten osoitteet koko suomessa,
 sekä maanmittauslaitoksen paikkatietoja.
 
 **Huom! Digitransit-palvelu ei ylläpidä OpenStreetMapin tietoja, vastuu tästä on yhteisöllä.**
