@@ -73,7 +73,7 @@ Please, visit https://www.traficom.fi/en/services/how-submit-your-transport-serv
 
 For more information contact
 Mr. Martin Johansson
-Finnish Transport Agency, FTA
+Traficom
 Phone +358 295 34 3526
 e-mail: joukkoliikenne@traficom.fi
 
