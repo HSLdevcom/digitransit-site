@@ -38,10 +38,10 @@ HSL realtime data is handled by [Transitdata system](https://github.com/HSLdevco
 
 If you are interested in implementing realtime features, you might want to look at [Digitransit-ui](../../../services/5-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how realtime is used there.
 
-### Situation at the Finnish Transport Agency
-Currently, FTA provides real-time information for trains at https://rata.digitraffic.fi/api/v1/doc/index.html. We have a simple wrapper (raildigiraffic2gtfsrt) that transforms that data to GTFS-RT trip updates.
+### Situation at the Fintraffic
+Currently, Fintraffic provides real-time information for trains at https://rata.digitraffic.fi/api/v1/doc/index.html. We have a simple wrapper (raildigiraffic2gtfsrt) that transforms that data to GTFS-RT trip updates.
 
-The Finnish Transport Agency is investigating the possibility to build a national real-time service which would collect real-time data from all around Finland.
+Fintraffic is investigating the possibility to build a national real-time service which would collect real-time data from all around Finland.
 
 ### Situation in other cities
 We don't have much control over the other cities and the data they provide, but we have integrated data from Oulu for example, just to see how it behaves.
