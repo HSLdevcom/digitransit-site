@@ -1,4 +1,4 @@
-[![Build](https://github.com/hsldevcom/digitransit-site/workflows/Process%20master%20push%20or%20pr/badge.svg?branch=next)](https://github.com/HSLdevcom/digitransit-site/actions)
+[![Build](https://github.com/hsldevcom/digitransit-site/workflows/Process%20master%20push%20or%20pr/badge.svg?branch=master)](https://github.com/HSLdevcom/digitransit-site/actions)
 
 # digitransit-site
 
