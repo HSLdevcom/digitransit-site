@@ -188,7 +188,7 @@ Mikäli lisäät kohteita OpenStreetMapiin, muista lisätä myös ruotsinkieline
       "tags":{
           "name":"Koivuhovi",
           "name:sv":"Björkgård",
-          "railway:station"
+          "railway":"station"
       }
   }
 ```
