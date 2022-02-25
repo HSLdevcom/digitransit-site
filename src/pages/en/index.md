@@ -42,9 +42,19 @@ panels:
     id: maintainers
     background: "#FFFFFF"
 ---
-<div style="text-align: center;">
 
-## Digitransit journey planner
+<div align="center">
 
-<span class="large-link">[Reittiopas »](https://reittiopas.hsl.fi)</span>
-<span class="large-link">[Opas.matka.fi »](https://opas.matka.fi)</span>
+## Digitransit journey planners
+
+[HSL Reittiopas](https://hsl.fi) [opas.matka.fi](https://opas.matka.fi)
+[opas.waltti.fi](https://opas.waltti.fi) [Hämeenlinna](https://hameenlinna.digitransit.fi)
+[Joensuu](https://joensuu.digitransit.fi) [Jyväskylä](https://jyvaskyla.digitransit.fi)
+[Kotka](https://kotka.digitransit.fi) [Kouvola](https://kouvola.digitransit.fi)
+[Kuopio](https://kuopio.digitransit.fi) [Lahti](https://lahti.digitransit.fi)
+[Lappeenranta](https://lappeenranta.digitransit.fi) [Mikkeli](https://mikkeli.digitransit.fi)
+[Oulu](https://oulu.digitransit.fi) [Rovaniemi](https://rovaniemi.digitransit.fi)
+[Tampere](https://tampere.digitransit.fi) [Turku](https://turku.digitransit.fi)
+[Vaasa](https://vaasa.digitransit.fi)
+
+</div>
