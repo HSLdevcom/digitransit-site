@@ -1,4 +1,8 @@
-﻿# Kehityskohteiden roadmap
+﻿---
+title: Roadmap
+panels: []
+---
+# Kehityskohteiden roadmap
 
 Digitransit-kehittäjäyhteisö (HSL, TVV LMJ Oy ja Fintraffic) on valinnut seuraavat tavoitteet vuodelle 2022. Tämän lisäksi rinnalla tehdään jatkuvaa pienkehitystä sekä ylläpitoa.
 

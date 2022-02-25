@@ -4,11 +4,7 @@ isFront: true
 panels:
   - title: For users
     body: You are the focus, always. The next generation journey planner pinpoints your location and shows nearby routes, stops and timetables, in real time! Real time means that you will see the location of buses and trains, as well as the accurate times of arrival at the stops. No more time wasted waiting. The service filters unnecessary information and tells what is going on around you and how to get to your destination more conveniently. In the future, the real time service will cover the whole country.
-    links:
-      - title: Go to the HSL area reittiopas.hsl.fi service
-        url: http://reittiopas.hsl.fi/
-      - title: Go to the national opas.matka.fi service
-        url: http://opas.matka.fi/
+    links: []
     image: "../user.svg"
     id: users
     background: "#F4F4F5"
