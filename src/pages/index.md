@@ -48,14 +48,11 @@ panels:
 
 ## Digitransit reittioppaat
 
-[HSL Reittiopas](https://hsl.fi) [opas.matka.fi](https://opas.matka.fi)
-[opas.waltti.fi](https://opas.waltti.fi) [Hämeenlinna](https://hameenlinna.digitransit.fi)
-[Joensuu](https://joensuu.digitransit.fi) [Jyväskylä](https://jyvaskyla.digitransit.fi)
-[Kotka](https://kotka.digitransit.fi) [Kouvola](https://kouvola.digitransit.fi)
-[Kuopio](https://kuopio.digitransit.fi) [Lahti](https://lahti.digitransit.fi)
-[Lappeenranta](https://lappeenranta.digitransit.fi) [Mikkeli](https://mikkeli.digitransit.fi)
-[Oulu](https://oulu.digitransit.fi) [Rovaniemi](https://rovaniemi.digitransit.fi)
-[Tampere](https://tampere.digitransit.fi) [Turku](https://turku.digitransit.fi)
-[Vaasa](https://vaasa.digitransit.fi)
+[HSL Reittiopas](https://hsl.fi)  &nbsp; [opas.matka.fi](https://opas.matka.fi)  &nbsp; [opas.waltti.fi](https://opas.waltti.fi)  &nbsp;
+[Hämeenlinna](https://hameenlinna.digitransit.fi)  &nbsp; [Joensuu](https://joensuu.digitransit.fi)  &nbsp; [Jyväskylä](https://jyvaskyla.digitransit.fi)  &nbsp;
+[Kotka](https://kotka.digitransit.fi)  &nbsp; [Kouvola](https://kouvola.digitransit.fi) </br>
+[Kuopio](https://kuopio.digitransit.fi)  &nbsp; [Lahti](https://lahti.digitransit.fi)  &nbsp; [Lappeenranta](https://lappeenranta.digitransit.fi)  &nbsp;
+[Mikkeli](https://mikkeli.digitransit.fi)  &nbsp; [Oulu](https://oulu.digitransit.fi)  &nbsp; [Rovaniemi](https://rovaniemi.digitransit.fi)  &nbsp;
+[Tampere](https://tampere.digitransit.fi)  &nbsp; [Turku](https://turku.digitransit.fi)  &nbsp; [Vaasa](https://vaasa.digitransit.fi)  &nbsp;
 
 </div>
