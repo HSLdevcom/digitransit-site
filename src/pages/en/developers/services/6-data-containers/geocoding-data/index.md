@@ -138,7 +138,7 @@ Below is a simple example node with proper names:
     "tags":{
         "name":"Koivuhovi",
         "name:sv":"Björkgård",
-        "railway:station"
+        "railway":"station"
     }
 }
 ```

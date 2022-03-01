@@ -81,18 +81,10 @@ suositeltu monikulmion pistemäärä on alle 50 pistettä, ja koordinaattien tar
 
 ### 8. Oletuspaikat
 
-![](./images/lahtopaikka.png)
-
-Digitransit-käyttöliittymä yrittää aina paikantaa käyttäjän. Mikäli paikannus ei onnistu, valitaan lähtöpaikaksi määrittelemäsi piste. Kuvaa:
-- Oletuslähtöpisteen koordinaatit (WGS84) ja kyseisen paikan nimi. Esimerkki: "Kauppatori, Lahti, 60.983595, 25.656391".
-
-Lisäksi käyttöliittymä tarjoaa valmiita paikkoja reittihakuun. Määrittele:
-- Kolme merkittävää/suosittua paikkaa koordinaatteineen. Yksi näistä voi olla sama kuin yllä määritelty oletussijainti.
-
+Digitransit-käyttöliittymä yrittää aina paikantaa käyttäjän. Mikäli paikannus ei onnistu, valitaan joissain näkymissä viitepaikaksi määrittelemäsi piste. Kuvaa:
+- Oletuspaikan koordinaatit (WGS84) ja kyseisen paikan nimi. Esimerkki: "Kauppatori, Lahti, 60.983595, 25.656391".
 
 ### 9. Teemoitus
-
-![](./images/teema.png)
 
 Digitransit-käyttöliittymä on muokattavissa logon ja värimaailman osalta. Kuvaa/lähetä:
 - Haluamasi teemaväri, jota käytetään esimerkiksi etusivun otsikkopalkissa, ja muut väreihin liittyvät teemoitustoiveet. Voit myös lähettää linkin tyylioppaaseesi
@@ -132,7 +124,7 @@ Reittiopas-palvelun tarjoaa HSL Helsingin seudun liikenne, ja se perustuu Digitr
 
 Digitransit-palvelualusta on HSL:n ja Fintrafficin kehittämä avoimen lähdekoodin reititystuote.
 
-Kartat, tiedot kaduista, rakennuksista, pysäkkien sijainnista ynnä muusta tarjoaa © OpenStreetMap contributors. Osoitetiedot tuodaan 
+Kartat, tiedot kaduista, rakennuksista, pysäkkien sijainnista ynnä muusta tarjoaa © OpenStreetMap contributors. Osoitetiedot tuodaan
 Digi- ja väestötietoviraston rakennustietorekisteristä. Joukkoliikenteen reitit ja aikataulut perustuvat HSL:n JORE-aineistoon.
 
 
@@ -188,7 +180,7 @@ Mikäli lisäät kohteita OpenStreetMapiin, muista lisätä myös ruotsinkieline
       "tags":{
           "name":"Koivuhovi",
           "name:sv":"Björkgård",
-          "railway:station"
+          "railway":"station"
       }
   }
 ```

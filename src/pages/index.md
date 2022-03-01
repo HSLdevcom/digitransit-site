@@ -5,10 +5,8 @@ panels:
   - title: Käyttäjille
     body: Sinä olet keskipisteessä aina. Uuden ajan matkaopas paikantaa sijaintisi ja kertoo lähimmät linjat, pysäkit ja reitit täysin reaaliaikaisesti. Reaaliaikaisesti tarkoittaa, että näet bussin tai junan sijainnin ja pysäkkiaikataulut totuudenmukaisina. Turha odottelu on historiaa. Palvelu suodattaa tarpeettoman tiedon ja kertoo, mitä ympärilläsi tapahtuu ja miten pääset sujuvimmin perille. Tulevaisuudessa reaaliaikainen palvelu kattaa koko maan.
     links:
-      - title: Tutustu HSL:n reittiopas.hsl.fi-palveluun
-        url: https://reittiopas.hsl.fi/
-      - title: Tutustu Traficomin opas.matka.fi-palveluun
-        url: https://opas.matka.fi/
+      - title: Roadmap tulevista ominaisuuksista
+        url: /roadmap/
       - title: Osoitehaun perusteet
         url: /osoitehaku/
     image: "./user.svg"
@@ -45,11 +43,19 @@ panels:
     id: maintainers
     background: "#FFFFFF"
 ---
-<div style="text-align: center;">
 
-## Digitransit reittiopas
+<div align="center">
 
-<span class="large-link">[Reittiopas »](https://reittiopas.hsl.fi)</span>
-<span class="large-link">[Opas.matka.fi »](https://opas.matka.fi)</span>
+## Digitransit reittioppaat
+
+[HSL Reittiopas](https://hsl.fi) [opas.matka.fi](https://opas.matka.fi)
+[opas.waltti.fi](https://opas.waltti.fi) [Hämeenlinna](https://hameenlinna.digitransit.fi)
+[Joensuu](https://joensuu.digitransit.fi) [Jyväskylä](https://jyvaskyla.digitransit.fi)
+[Kotka](https://kotka.digitransit.fi) [Kouvola](https://kouvola.digitransit.fi)
+[Kuopio](https://kuopio.digitransit.fi) [Lahti](https://lahti.digitransit.fi)
+[Lappeenranta](https://lappeenranta.digitransit.fi) [Mikkeli](https://mikkeli.digitransit.fi)
+[Oulu](https://oulu.digitransit.fi) [Rovaniemi](https://rovaniemi.digitransit.fi)
+[Tampere](https://tampere.digitransit.fi) [Turku](https://turku.digitransit.fi)
+[Vaasa](https://vaasa.digitransit.fi)
 
 </div>

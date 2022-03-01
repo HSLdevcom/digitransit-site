@@ -1,12 +1,6 @@
 ---
 title: Services
-panels:
-  - title: Produce your own Digitransit services
-    body: You can start you own Digitransit service platform by configuring an modifying existing Digitransit Docker containers and open source code repositories.
-    links: []
-    id: maintainers
-    textColor: "#000"
-    swapped: true
+panels: []
 ---
 
 ## Digitransit services
