@@ -8,6 +8,9 @@ modern, highly available route planning service. Route planning algorithms and A
 components such as Mobile friendly user interface, Map tile serving, Geocoding, and various data conversion tools are
 needed. Digitransit platform provides these tools.
 
+## Registration
+The use of the APIs requires registration and use of API keys. [Here's more information](api-registration).
+
 ## Licensing
 The source code of the platform is dual-licensed under the EUPL v1.2 and AGPLv3 licenses.
 

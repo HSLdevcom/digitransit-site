@@ -13,3 +13,6 @@ Developers will have until TODO to register at [the developer portal](https://po
 We have deprecated some old API endpoints that are no longer needed. The list of these deprecations and how to migrate away from using those can be found [here](../deprecations).
 
 These old endpoints are not shown in the developer portal and they will not be usable with the new API keys. We will remove these endpoints at the end of the transition period, i.e. after TODO.
+
+## Quota and rate limiting
+In the future, we will enforce rate and quota limiting but the limits should only restrict misuse of the APIs, not normal use. We will inform the registered users about these limits before we will enforce them.
