@@ -9,5 +9,5 @@ const { rhythm } = typography
 export default styled(Container)`
     max-width: 1250px;
     width: 100%;
-    padding: ${rhythm(1)} ${rhythm(1 / 2)};
+    padding: ${rhythm(2)} ${rhythm(1 / 2)};
 `

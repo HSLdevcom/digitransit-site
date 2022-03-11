@@ -15,7 +15,7 @@ const HeaderImage = styled.img`
     z-index: 2;
     width: 100%;
     display: block;
-    margin: 55px 0 0 0;
+    margin: 84px 0 0 0;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         display: none;
@@ -30,7 +30,7 @@ const HeaderImage2x = styled.img`
     z-index: 2;
     width: 100%;
     display: none;
-    margin: 55px 0 0 0;
+    margin: 84px 0 0 0;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         display: block;
@@ -45,7 +45,7 @@ const HeaderImageMobile = styled.img`
     z-index: 2;
     width: 100%;
     display: none;
-    margin: 55px 0 0 0;
+    margin: 84px 0 0 0;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         display: none;
