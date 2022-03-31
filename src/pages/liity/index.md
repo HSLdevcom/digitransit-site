@@ -200,3 +200,19 @@ Kuvaa:
 - Reaaliaikarajapinnan osoite
 
 **Huom! Reaaliaikaominaisuudet ovat saatavilla vain erikseen sopimalla**.
+
+
+### 15. Kaupunkipyörät
+
+Reittioppaaseen saa mukaan kaupunkipyörät määrittelemällä:
+- Kaupunkipyöräkauden keston, esimerkiksi 1.4 - 31.10. Jos kauteen tulee myöhemmin muutoksia, niistä on tiedotettava vähintään 2 viikkoa etukäteen.
+- [GBFS](https://github.com/NABSA/gbfs)-standardin mukaisen rajapinnan osoitteen, josta pyöräasemien paikat ja muut tiedot saa luettua
+
+Lisäksi voi määritellä:
+- Internet-osoitteen, josta saa tietoa kaupunkipyöräpalvelusta (kaikki kieliversiot fi, en ja sv, mikäli niitä löytyy)
+- Erillisen osto-ohjesivuston osoitteen, mikäli sellainen löytyy
+- Erillisen palautusohjesivuston osoitteen, mikäli sellainen löytyy
+- Kaupunkipyörän perusvuokra-ajan pituuden ja lisäveloitusohjeen, mikäli sellainen löytyy
+
+Yllä lueteltujen ohjesivustojen avulla voi parantaa palvelun laatua. Käyttäjälle esitetään ohjesivujen linkkejä tilanteissa,
+joissa lisäohjeet saattavat olla tarpeellisia.
