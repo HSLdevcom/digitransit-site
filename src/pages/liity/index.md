@@ -92,6 +92,8 @@ tai web-osoitteeseen, josta värimaailma tulisi kopioida.
 - Organisaatiosi logo, joka sijoitetaan otsikkopalkin vasempaan reunaan. Logon taustavärin tulee siis sopia valittuun teemaväriin, tai sitten taustavärin tulee
 olla läpinäkyvä (esim. png-kuva läpinäkyvyyskanavalla). Koska tila on rajattu korkeussuunnassa noin 60 kuvapisteeseen, mahdollisten tekstielementtien kirjasinkokoa
 tulee harkita huolella, jotta teksti säilyy luettavana. Tarvittaessa lähetä kuvalogo ilman tekstiä. Logon sijasta voit myös määritellä pelkän otsikkotekstin.
+- Logosta kannattaa toimittaa myös toinen versio, joka soveltuu käytettäväksi upotettavassa hakuelementissä (esimerkki: https://reittiopas.hsl.fi/haku). Tämä logo
+tulostetaan valkoiselle taustalle ja tilaa on käytettävissä vielä vähemmän kuin yläpalkissa, joten pieniä yksityiskohtia kuten tekstiä kannattaa välttää.
 - Favicon-kuva, jota käytetään suosikkilinkeissä, selaimen välilehdissä jne. Tämä logoversio näytetään usein hyvin pienessä koossa, joten sen pitää olla selkeä.
 Huomaa, että favicon näkyy selaimen eikä reittioppaan kontekstissa, joten vaalea logo läpinäkyvällä taustavärillä ei käy. Tarvittaessa vaihda läpinäkyvä tausta
 riittävän kontrastin antavaan väriin. Mikäli näiden ohjeiden valossa otsikkologo sisältää sopivan favicon-osan, erillistä favicon-kuvaa ei tarvitse lähettää.
