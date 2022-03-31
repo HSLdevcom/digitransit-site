@@ -209,8 +209,8 @@ Reittioppaaseen saa mukaan kaupunkipyörät määrittelemällä:
 - [GBFS](https://github.com/NABSA/gbfs)-standardin mukaisen rajapinnan osoitteen, josta pyöräasemien paikat ja muut tiedot saa luettua
 
 Lisäksi voi määritellä:
-- Internet-osoitteen, josta saa tietoa kaupunkipyöräpalvelusta (kaikki kieliversiot fi, en ja sv, mikäli niitä löytyy)
-- Erillisen osto-ohjesivuston osoitteen, mikäli sellainen löytyy
+- Internet-osoitteen, josta saa yleistä tietoa kaupunkipyöräpalvelusta (kaikki kieliversiot fi, en ja sv, mikäli niitä löytyy)
+- Erillisen vuokraus- tai liittymisohjesivuston osoitteen, mikäli sellainen löytyy
 - Erillisen palautusohjesivuston osoitteen, mikäli sellainen löytyy
 - Kaupunkipyörän perusvuokra-ajan pituuden ja lisäveloitusohjeen, mikäli sellainen löytyy
 
@@ -224,7 +224,7 @@ Reittiopas tukee matkalipputietojen esittämistä käyttäjälle monella tavoin.
 mikäli GTFS-data sisältää tarvittavat hintasäännöt. Ehdotukset myös näyttävät lippuvyöhykkeen vaihtumisen pitkin matkaketjua. Taustakartalle voidaan piirtää
 vyöhykkeiden aluerajat. Kun käyttäjä napauttaa karttaa, osoitetun paikan lippuvyöhyke on myös mahdollista kertoa avatulla ponnahdusikkunalla.
 
-GTFS-datan fare_rules ja fare_attributes spesifikaatiot löytyvät osoitteesta [gtfs.org/reference/static](https://gtfs.org/reference/static).
+GTFS-datan fare rules ja fare attributes -spesifikaatiot löytyvät osoitteesta [gtfs.org/reference/static](https://gtfs.org/reference/static).
 Jos datasta löytyy tarvittavat fare tiedot, niitä voi konfiguroida reittioppaaseen vastaamalla seuraaviin kysymyksiin:
 - Näytetäänkö lippuvyöhykkeet reittiehdotuksissa (kohta 1. kuvassa alla)
 - Näytetäänkö tarvittavat liput reittiehdotuksissa (2)
@@ -241,7 +241,7 @@ Paras tulos saadaan, kun käytössä on kaksi hiukan erilaista dataversiota:
 1. Aluetarkistusdata. Siinä lippuyöhykkeet on kuvattu suljettuina polygon tai multipolygon kohteina, yksi feature per lippuvyöhyke.
 Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'
 
-Esimerkki lippuvyöhykkeiden aluedatasta: [hsl_zone_areas_20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/hsl_zone_areas_20190508.json)
+Esimerkki lippuvyöhykkeiden aluedatasta: [hsl-zone-areas-20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/hsl_zone_areas_20190508.json)
 
 2. Vyöhykkeiden visualisointi kartalle. Lippuvyöhykkeiden rajaviivat kuvataan linestring/multilinestring geometrioina ilman kaksinkertaista piirtoa alueiden välille.
 Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat kartalla. Esimerkki:
@@ -268,4 +268,4 @@ Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipo
 
 Yllä on C-vyöhykkeelle määritelty 4 tunnusta ympäri vyöhykealuetta.
 
-Esimerkki vyöhykedatasta karttapiirtoa varten: [hsl_zone_lines_20190508.geojson](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hsl_zone_lines_20190508.geojson)
+Esimerkki vyöhykedatasta karttapiirtoa varten: [hsl-zone-lines-20190508.geojson](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hsl_zone_lines_20190508.geojson)
