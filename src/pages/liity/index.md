@@ -268,7 +268,7 @@ Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipo
     }
 ```
 
-Yllä on F-vyöhykkeelle määritelty 2 tunnusta ympäri vyöhykealuetta. Vakio svg symbolit A, ... F voi kopioida alla olevasta esimerkkitiedostosta. Mikäli tarvitaan jokin muu symboli,
-sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla, tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg symbolit.
-
-Esimerkki vyöhykedatasta karttapiirtoa varten: [kuopio-zone-lines-20210222.geojson](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/kuopio_zone_lines_20210222.geojson)
+Yllä on F-vyöhykkeelle määritelty 2 tunnusta vyöhykkeen eri osiin. Vakio svg symbolit A, B ... I voi kopioida
+[vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hml_zone_lines_20210222.geojson)
+ja vaihtaa svg määrittelyhin oman reittioppaan teemavärin. Mikäli tarvitaan jokin muu symboli, sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla,
+tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg elementit.
