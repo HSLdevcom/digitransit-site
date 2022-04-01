@@ -284,7 +284,6 @@ export const query = graphql`
           buildScript
           runContainer
           accessContainer
-          travisBuild
         }
         replit {
           title
