@@ -239,33 +239,36 @@ On suositeltavaa käyttää mahdollisimman pientä pistemäärää (alle 1000 pi
 Paras tulos saadaan, kun käytössä on kaksi hiukan erilaista dataversiota:
 
 1. Aluetarkistusdata. Siinä lippuyöhykkeet on kuvattu suljettuina polygon tai multipolygon kohteina, yksi feature per lippuvyöhyke.
-Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'
+Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'. Lisäksi vyöhykkeille määritellään vakioidut piirtotyylit
+alla olevan mallin mukaisesti.
 
-Esimerkki lippuvyöhykkeiden aluedatasta: [hsl-zone-areas-20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/hsl_zone_areas_20190508.json)
+Esimerkki lippuvyöhykkeiden aluedatasta: [kuopio-zone-areas-20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/kuopio_zone_areas_20201120.json)
 
 2. Vyöhykkeiden visualisointi kartalle. Lippuvyöhykkeiden rajaviivat kuvataan linestring/multilinestring geometrioina ilman kaksinkertaista piirtoa alueiden välille.
-Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat kartalla. Esimerkki:
+Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat ja symbolien svg grafiikka kartalla. Esimerkki:
 
 ```json
 
    {
       "type": "Feature",
       "properties": {
-         "Zone": "C"
+         "id": "icon-zone-f",
+         "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'>
+                   <path d='M36 18A18 18 0 1118 0a18 18 0 0118 18' fill='#0ab1c8' fill-rule='evenodd'/>
+                   <path d='M23.21 19h-6.75v7H13V9h11.06v2.8h-7.6v4.4h6.75z' fill='#fff'/>
+                 </svg>"
         }
       },
       "geometry": {
         "type": "MultiPoint",
-        "coordinates": [
-          [24.63, 60.258],
-          [25.167, 60.275],
-          [25.041, 60.331],
-          [24.791, 60.321]
+        "coordinates":  [
+          [26.8068, 63.2194], [26.4574,62.97]
         ]
       }
     }
 ```
 
-Yllä on C-vyöhykkeelle määritelty 4 tunnusta ympäri vyöhykealuetta.
+Yllä on F-vyöhykkeelle määritelty 2 tunnusta ympäri vyöhykealuetta. Vakio svg symbolit A, ... F voi kopioida alla olevasta esimerkkitiedostosta. Mikäli tarvitaan jokin muu symboli,
+sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla, tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg symbolit.
 
-Esimerkki vyöhykedatasta karttapiirtoa varten: [hsl-zone-lines-20190508.geojson](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hsl_zone_lines_20190508.geojson)
+Esimerkki vyöhykedatasta karttapiirtoa varten: [kuopio-zone-lines-20210222.geojson](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/kuopio_zone_lines_20210222.geojson)
