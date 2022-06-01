@@ -39,13 +39,14 @@ Jos et ole tyytyväinen saamaasi vastaukseen tai et saa vastausta lainkaan kahde
 - Muut Digitransit Reittioppaat: palautetta voit antaa osoitteessa: info(at)lmj.fi <br>
 
 ### Valvontaviranomaisen yhteystiedot
+
 Etelä-Suomen aluehallintovirasto<br>
 Saavutettavuuden valvonnan yksikkö<br>
 www.saavutettavuusvaatimukset.fi<br>
 saavutettavuus(at)avi.fi<br>
 puhelinnumero vaihde 0295 016 000
-
 <br><br>
+
 
 # Tillgänglighetsredogörelse
 
@@ -73,24 +74,18 @@ Innehållet som beskrivs nedan är enligt WCAG-kriterier inte tillgängligt:
 
 - I tabellen på linjesidan finns några saker som presenteras visuellt och saknar markeringar och textbeskrivningar. Till exempel är det inte möjligt att följa avgångar i realtid med skärmläsaren (WCAG 1.3.1, 1.4.1)
 
-### Respons om tillgängligheten i reseplanerare:
-
-HRT:s Reseplanerare: Du kan lämna in respons med vår responsblankett.
-Reseplaneraren Matka.fi: Du kan skicka respons per e-post till: joukkoliikenne(at)traficom.fi
-Andra Digitransit-reseplanerare: Du kan skicka respons på adressen: info(at)lmj.fi
-
-
 ### Lämna in klagomål och begäran om utredning av tillgänglighet
 
 Om du inte är nöjd med det svar du får eller om du inte alls får något svar inom två veckor, kan du göra en anmälan till Regionförvaltningsverket i Södra Finland. Regionförvaltningsverket i Södra Finland utövar tillsyn över efterlevnaden av tillgänglighetskraven i Finland. [kontaktuppgifter för Regionförvaltningsverket i Södra Finland] (https://www.tillganglighetskrav.fi/dina-rattigheter/)
 
-### Tillgänglighetsrespons
+### Respons om tillgängligheten i reseplanerare
 
-- HSL Reseplaneraren: lämna in tillgänglighetsrespons med HSL responsblankett
-- Matka.fi Reseplaneraren: skicka respons med e-post till joukkoliikenne(at)traficom.fi
-- Andra Digitransit Reseplanenarna: e-post till info(at)lmj.fi
+- HRT:s Reseplanerare: Du kan lämna in respons med HRT:s responsblankett
+- Matka.fi Reseplaneraren: du kan skicka respons per e-post till joukkoliikenne(at)traficom.fi
+- Andra Digitransit-reseplanerare: du kan skicka respons på adressen info(at)lmj.fi
 
 ### Övervakningsmyndighetens kontaktuppgifter
+
 Regionförvaltningsverket i Södra Finland<br>
 Enheten för tillgänglighetstillsyn<br>
 www.tillgänglighetskrav.fi<br>
