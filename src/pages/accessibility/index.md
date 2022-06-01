@@ -32,7 +32,7 @@ Alla mainittu sisältö ei ole WCAG-kriteerien mukaan saavutettava:
 
 Jos et ole tyytyväinen saamaasi vastaukseen tai et saa vastausta lainkaan kahden viikon aikana, voit tehdä ilmoituksen Etelä-Suomen aluehallintovirastoon. Etelä-Suomen aluehallintovirasto valvoo saavutettavuusvaatimusten noudattamista Suomessa. [Etelä-Suomen aluehallintoviraston yhteystiedot](https://www.saavutettavuusvaatimukset.fi/kayttajan-oikeudet/).
 
-### Palaute reittiopaspalvelun saavutettavuudesta:
+### Palaute reittiopaspalvelun saavutettavuudesta
 
 - HSL Reittiopas: palautetta voit antaa palautelomakkeellamme <br>
 - Matka.fi Reittiopas: palautetta voit antaa sähköpostilla: joukkoliikenne(at)traficom.fi<br>
@@ -84,7 +84,7 @@ Andra Digitransit-reseplanerare: Du kan skicka respons på adressen: info(at)lmj
 
 Om du inte är nöjd med det svar du får eller om du inte alls får något svar inom två veckor, kan du göra en anmälan till Regionförvaltningsverket i Södra Finland. Regionförvaltningsverket i Södra Finland utövar tillsyn över efterlevnaden av tillgänglighetskraven i Finland. [kontaktuppgifter för Regionförvaltningsverket i Södra Finland] (https://www.tillganglighetskrav.fi/dina-rattigheter/)
 
-### Tillgänglighetsrespons:
+### Tillgänglighetsrespons
 
 - HSL Reseplaneraren: lämna in tillgänglighetsrespons med HSL responsblankett
 - Matka.fi Reseplaneraren: skicka respons med e-post till joukkoliikenne(at)traficom.fi
