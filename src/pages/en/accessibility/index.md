@@ -4,7 +4,7 @@ title: Accessibility statement
 
 # Accessibility statement
 
-This accessibility statement applies to digitransit journey planner. The statement has been created on 5.4.2022. The statement is based on reports from multiple external accessibility experts.
+This accessibility statement applies to digitransit journey planner. The statement has been created on 1.6.2022. The statement is based on reports from multiple external accessibility experts.
 
 ## State of accessibility
 
@@ -15,8 +15,6 @@ The content below is not accessible in accordance with WCAG criteria for the fol
 ### General
 
 - Map and its contents are not navigable or readable using a screen reader (WCAG 1.1.1, 2.1.1)
-
-- Map layers modal is not accessible via keyboard (WCAG 2.1.1)
 
 ### Itinerary suggestions -page
 
@@ -30,29 +28,15 @@ The content below is not accessible in accordance with WCAG criteria for the fol
 
 - The route page contains data that is only conveyed visually. Following a single trip in real-time does not provide real-time information to screen readers (WCAG 1.3.1, 1.4.1)
 
-- Keyboard focus can move back to the top of the page when moving to pattern selector in route page preventing the access to the rest of the page. (WCAG 2.1.1)
-
-### Favourites
-
-- The order of favourite locations cannot be changed using a keyboard (WCAG 2.1.1)
-
-### Stop -page
-
-- The table header row is not linked to the table data (WCAG 1.3.1)
-
-### Stops near you -page
-
-- The table header row is not linked to the table data (WCAG 1.3.1)
-
 ### Filing an accessibility complaint or a request for clarification
 
 If you are dissatisfied with the answer you receive, or we do not respond to you within two weeks, you can file a complaint to the Regional State Administrative Agency for Southern Finland. The Regional State Administrative Agency for Southern Finland is the supervisory authority for accessibility in Finland. Contact details for the [Regional State Administrative Agency for Southern Finland](https://www.saavutettavuusvaatimukset.fi/kayttajan-oikeudet/).
 
 ### Contact details of supervising authority
 
-Regional State Administrative Agency for Southern Finland  
-Accessibility Monitoring Unit  
-www.saavutettavuusvaatimukset.fi  
-saavutettavuus(at)avi.fi  
-Telephone (switchboard) +358 295 016 000  
+Regional State Administrative Agency for Southern Finland<br>
+Accessibility Monitoring Unit<br>
+www.saavutettavuusvaatimukset.fi<br>
+saavutettavuus(at)avi.fi<br>
+Telephone (switchboard) +358 295 016 000
 

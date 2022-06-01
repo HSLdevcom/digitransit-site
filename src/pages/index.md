@@ -9,6 +9,8 @@ panels:
         url: /roadmap/
       - title: Osoitehaun perusteet
         url: /osoitehaku/
+      - title: Saavutettavuusseloste
+        url: /accessibility/
     image: "./user.svg"
     id: users
     background: "#F4F4F5"
