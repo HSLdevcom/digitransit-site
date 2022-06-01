@@ -32,6 +32,12 @@ The content below is not accessible in accordance with WCAG criteria for the fol
 
 If you are dissatisfied with the answer you receive, or we do not respond to you within two weeks, you can file a complaint to the Regional State Administrative Agency for Southern Finland. The Regional State Administrative Agency for Southern Finland is the supervisory authority for accessibility in Finland. Contact details for the [Regional State Administrative Agency for Southern Finland](https://www.saavutettavuusvaatimukset.fi/kayttajan-oikeudet/).
 
+### Feedack about accessibility
+
+- HSL Journey Planner: submit your feedback using HSL feedback form<br>
+- Matka.fi Journey Planner: send email to joukkoliikenne(at)traficom.fi<br>
+- Other Digitransit Journey Planners: send email to info(at)lmj.fi <br>
+
 ### Contact details of supervising authority
 
 Regional State Administrative Agency for Southern Finland<br>
