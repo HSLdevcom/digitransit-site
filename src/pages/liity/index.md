@@ -92,6 +92,8 @@ tai web-osoitteeseen, josta värimaailma tulisi kopioida.
 - Organisaatiosi logo, joka sijoitetaan otsikkopalkin vasempaan reunaan. Logon taustavärin tulee siis sopia valittuun teemaväriin, tai sitten taustavärin tulee
 olla läpinäkyvä (esim. png-kuva läpinäkyvyyskanavalla). Koska tila on rajattu korkeussuunnassa noin 60 kuvapisteeseen, mahdollisten tekstielementtien kirjasinkokoa
 tulee harkita huolella, jotta teksti säilyy luettavana. Tarvittaessa lähetä kuvalogo ilman tekstiä. Logon sijasta voit myös määritellä pelkän otsikkotekstin.
+- Logosta kannattaa toimittaa myös toinen versio, joka soveltuu käytettäväksi upotettavassa hakuelementissä (esimerkki: https://reittiopas.hsl.fi/haku). Tämä logo
+tulostetaan valkoiselle taustalle ja tilaa on käytettävissä vielä vähemmän kuin yläpalkissa, joten pieniä yksityiskohtia kuten tekstiä kannattaa välttää.
 - Favicon-kuva, jota käytetään suosikkilinkeissä, selaimen välilehdissä jne. Tämä logoversio näytetään usein hyvin pienessä koossa, joten sen pitää olla selkeä.
 Huomaa, että favicon näkyy selaimen eikä reittioppaan kontekstissa, joten vaalea logo läpinäkyvällä taustavärillä ei käy. Tarvittaessa vaihda läpinäkyvä tausta
 riittävän kontrastin antavaan väriin. Mikäli näiden ohjeiden valossa otsikkologo sisältää sopivan favicon-osan, erillistä favicon-kuvaa ei tarvitse lähettää.
@@ -198,3 +200,75 @@ Kuvaa:
 - Reaaliaikarajapinnan osoite
 
 **Huom! Reaaliaikaominaisuudet ovat saatavilla vain erikseen sopimalla**.
+
+
+### 15. Kaupunkipyörät
+
+Reittioppaaseen saa mukaan kaupunkipyörät määrittelemällä:
+- Kaupunkipyöräkauden keston, esimerkiksi 1.4 - 31.10. Jos kauteen tulee myöhemmin muutoksia, niistä on tiedotettava vähintään 2 viikkoa etukäteen.
+- [GBFS](https://github.com/NABSA/gbfs)-standardin mukaisen rajapinnan osoitteen, josta pyöräasemien paikat ja muut tiedot saa luettua
+
+Lisäksi voi määritellä:
+- Internet-osoitteen, josta saa yleistä tietoa kaupunkipyöräpalvelusta (kaikki kieliversiot fi, en ja sv, mikäli niitä löytyy)
+- Erillisen vuokraus- tai liittymisohjesivuston osoitteen, mikäli sellainen löytyy
+- Erillisen palautusohjesivuston osoitteen, mikäli sellainen löytyy
+- Kaupunkipyörän perusvuokra-ajan pituuden ja lisäveloitusohjeen, mikäli sellainen löytyy
+
+Yllä lueteltujen ohjesivustojen avulla voi parantaa palvelun laatua. Käyttäjälle esitetään ohjesivujen linkkejä tilanteissa,
+joissa lisäohjeet saattavat olla tarpeellisia.
+
+
+### 16. Lippuvyöhykkeet
+
+Reittiopas tukee matkalipputietojen esittämistä käyttäjälle monella tavoin. Reittiehdotuksissa voidaan kertoa tarvittavan lipun tyyppi ja oletushinta,
+mikäli GTFS-data sisältää tarvittavat hintasäännöt. Ehdotukset myös näyttävät lippuvyöhykkeen vaihtumisen pitkin matkaketjua. Taustakartalle voidaan piirtää
+vyöhykkeiden aluerajat. Kun käyttäjä napauttaa karttaa, osoitetun paikan lippuvyöhyke on myös mahdollista kertoa avatulla ponnahdusikkunalla.
+
+GTFS-datan fare rules ja fare attributes -spesifikaatiot löytyvät osoitteesta [gtfs.org/reference/static](https://gtfs.org/reference/static).
+Jos datasta löytyy tarvittavat fare tiedot, niitä voi konfiguroida reittioppaaseen vastaamalla seuraaviin kysymyksiin:
+- Näytetäänkö lippuvyöhykkeet reittiehdotuksissa (kohta 1. kuvassa alla)
+- Näytetäänkö tarvittavat liput reittiehdotuksissa (2)
+- Näytetäänkö lipun oletushinta reittiehdotuksissa (3)
+- Onko olemassa Internet-osoite ohjesivuun, josta löytyy tietoa lippujen hinnoista ja ostamisesta (4)
+- Miten GTFS fare -tiedoissa määritellyt lipputyypit esitetään käyttäjälle? Tekninen tunnus voi olla tarpeen muuttaa ihmisten tuntemaan muotoon.
+
+![](./images/liput.png)
+
+Reittiehdotusten lisäksi lippuvyöhyketietoa voidaan esittää kartalla. Sitä varten tarvitaan geoJSON-muotoista dataa WGS84-koordinaatistossa.
+On suositeltavaa käyttää mahdollisimman pientä pistemäärää (alle 1000 pistettä) ja desimaalitarkkuutta (5 desimaalia), jotta palvelu pysyy kevyenä ja nopeana.
+Paras tulos saadaan, kun käytössä on kaksi hiukan erilaista dataversiota:
+
+1. Aluetarkistusdata. Siinä lippuyöhykkeet on kuvattu suljettuina polygon tai multipolygon kohteina, yksi feature per lippuvyöhyke.
+Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'. Lisäksi vyöhykkeille määritellään vakioidut piirtotyylit
+alla olevan mallin mukaisesti.
+
+Esimerkki lippuvyöhykkeiden aluedatasta: [kuopio-zone-areas-20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/kuopio_zone_areas_20201120.json)
+
+2. Vyöhykkeiden visualisointi kartalle. Lippuvyöhykkeiden rajaviivat kuvataan linestring/multilinestring geometrioina ilman kaksinkertaista piirtoa alueiden välille.
+Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat ja symbolien svg grafiikka kartalla. Esimerkki:
+
+```json
+
+   {
+      "type": "Feature",
+      "properties": {
+         "id": "icon-zone-f",
+         "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'>
+                   <path d='M36 18A18 18 0 1118 0a18 18 0 0118 18' fill='#0ab1c8' fill-rule='evenodd'/>
+                   <path d='M23.21 19h-6.75v7H13V9h11.06v2.8h-7.6v4.4h6.75z' fill='#fff'/>
+                 </svg>"
+        }
+      },
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates":  [
+          [26.8068, 63.2194], [26.4574,62.97]
+        ]
+      }
+    }
+```
+
+Yllä on F-vyöhykkeelle määritelty 2 tunnusta vyöhykkeen eri osiin. Vakio svg symbolit A, B ... I voi kopioida
+[vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hml_zone_lines_20210222.geojson)
+ja vaihtaa svg määrittelyhin oman reittioppaan teemavärin. Mikäli tarvitaan jokin muu symboli, sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla,
+tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg elementit.

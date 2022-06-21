@@ -9,21 +9,6 @@ require("prismjs/components/prism-bash");
 
 export default props => {
     if (props.docker) {
-      let travisInfo = "";
-      if (props.docker.travisBuild) {
-        travisInfo = (
-          <span>
-            {" "}
-            You might also want to take a look at the{" "}
-            <a
-              href={"https://travis-ci.org/HSLdevcom/" + props.docker.travisBuild}
-            >
-              Travis build and configuration
-            </a>
-            .
-          </span>
-        );
-      }
       return (
         <div>
           <h2>Docker image</h2>
@@ -35,7 +20,7 @@ export default props => {
               DockerHub
             </a>
             . The image can be built using this{" "}
-            <a href={props.docker.buildScript}>build script</a>.{travisInfo}
+            <a href={props.docker.buildScript}>build script</a>.
           </p>
           <p>
             To run Docker container, run:

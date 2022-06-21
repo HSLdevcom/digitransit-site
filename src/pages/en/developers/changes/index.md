@@ -2,6 +2,10 @@
 title: Changes
 order: -10
 ---
+## 1.4.2022
+
+- Map related documents updated further
+- Instructions about ticket zones and city bikes for municipalities added
 
 ## 25.10.2021
 - Rename VRK (Väestörekisterikeskus) to DVV (Digi- ja väestövirasto)
