@@ -6,6 +6,9 @@ order: -12
 ## Digitransit developer portal
 Starting from 3.4.2023, the use of the Digitransit APIs will require registration and use of API keys. Registration can be done at the [Digitransit developer portal](https://portal-api.digitransit.fi/). After the registration, it's possible to create subscriptions to a product and the API keys related to the subscriptions will also be available at the developer portal.
 
+## Use of API keys
+The API keys can be fetched from the developer portal's profile page. Each subscription contains two keys so it is possible to regenerate the second key while the other key is in use, if there is a need. The API key can be included either as a URL parameter or as a header. The parameter and the header name are both `digitransit-subscription-key` and the value should be the key.
+
 ## Transition period
 Developers will have until 3.4.2023 to register at [the developer portal](https://portal-api.digitransit.fi/) and to start using API keys in the requests. After that, we will prevent the anonymous use of our APIs.
 
