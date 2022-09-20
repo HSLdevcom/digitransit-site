@@ -2,6 +2,12 @@
 title: Changes
 order: -10
 ---
+## 20.9.2022
+
+- Updated [the terms of use](../apis/6-terms-of-use)
+- Introduced [Digitransit API portal and API keys](../api-registration)
+- Added a page about [deprecations](../deprecations)
+
 ## 1.4.2022
 
 - Map related documents updated further
