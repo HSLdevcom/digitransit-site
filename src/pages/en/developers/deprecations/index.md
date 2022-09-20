@@ -13,4 +13,4 @@ order: -11
   - https://api.digitransit.fi/realtime/vehicle-positions/v2/hsl
   - https://api.digitransit.fi/realtime/raildigitraffic2gtfsrt/v1/hsl*
 
-- https://api.digitransit.fi/map/v2 replaces all https://api.digitransit.fi/map/v1 endpoints, [more information about available endpoints](../apis/3-map-api)
+- https://api.digitransit.fi/map/v2 replaces all https://api.digitransit.fi/map/v1 endpoints. For more information, visit [map endpoints](../apis/3-map-api).

@@ -9,7 +9,7 @@ components such as Mobile friendly user interface, Map tile serving, Geocoding, 
 needed. Digitransit platform provides these tools.
 
 ## Registration
-The use of the APIs requires registration and use of API keys. [Here's more information](api-registration).
+Use of the APIs requires [registration and API keys](api-registration).
 
 ## Licensing
 The source code of the platform is dual-licensed under the EUPL v1.2 and AGPLv3 licenses.

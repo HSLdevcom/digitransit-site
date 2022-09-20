@@ -6,7 +6,7 @@ title: Terms of use
 
 ### 0. Intro on Digitransit  
 
-Digitransit Platform is an open-source journey planning solution that combines open-source components into a route planning service. It has Mobile friendly user interface, Map tile serving, Geocoding, and data conversion tools. Route planning algorithms and APIs are provided by Open Trip Planner (OTP). More on Digitransit, please visit: https://digitransit.fi/en/
+Digitransit Platform is an open-source journey planning solution that combines open-source components into a route planning service. It has Mobile friendly user interface, Map tile serving, Geocoding, and data conversion tools. Route planning algorithms and APIs are provided by Open Trip Planner (OTP). For more information about Digitransit, please visit: https://digitransit.fi/en/
 
 Digitransit is provided by Helsinki Region Transportation (HSL), Fintraffic, and TVV LMJ Oy.
 
@@ -20,13 +20,13 @@ To fulfill this objective Digitransit has opened API-interface for system develo
 
 API user can register at https://portal-api.digitransit.fi/. In the registration process the User is required to provide contact information for Digitransit for communications purpose. The communications may be on topics of version changes of API, new services, or good practices for example. After the registration process the User can obtain needed subscription key to authorize API queries. The user registration information is processed according to HSL and Digitransit joint privacy statement (see Other references).
 
-The User can terminate the account and its subscriptions in same address at https://portal-api.digitransit.fi/. (Technically in termination process the user account is deleted both in Digitransit API management and Digitransit ID management systems)
+The User can terminate the account and its subscriptions in same address at https://portal-api.digitransit.fi/. Technically, in termination process, the user account is deleted both in Digitransit API management and Digitransit ID management systems.
 
 ### 3. Digitransit data  
 
 Via API the User can access Digitransit data which is defined in https://digitransit.fi/en/developers/apis/.
 
-Usage of API may require a registration and account verification by e-mail. Also, users first and last name are required. Digitransit may change the identification technology, or the data required in registration any time based on Digitransit changing business needs, e.g., information security and the change applies also to Users that have registered earlier.
+Usage of API may require a registration and account verification by e-mail. Also, User's first and last name are required. Digitransit may change the identification technology, or the data required in registration at any time based on Digitransit business needs such as information security. Such changes apply also to Users that have registered earlier.
 
 Digitransit makes the data available based on JHS-189 [permission to use the open data] and [Creative Commons name 4.0 (CC BY)]((https://creativecommons.org/licenses/by/4.0/)) licensing.
 
