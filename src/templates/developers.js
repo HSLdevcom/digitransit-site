@@ -204,7 +204,7 @@ export default props => {
       <Assets {...props.data.markdownRemark.frontmatter} />
       <TechnologiesInfo {...props.data.markdownRemark.frontmatter} />
       <DockerInfo {...props.data.markdownRemark.frontmatter} />
-      <ReplitEmbed {...props.data.markdownRemark.frontmatter} />
+      {/* <ReplitEmbed {...props.data.markdownRemark.frontmatter} /> */}
     </>
   )
 
@@ -285,16 +285,16 @@ export const query = graphql`
           runContainer
           accessContainer
         }
-        replit {
-          title
-          note
-          embeds {
-            title
-            url
-            height
-            description
-          }
-        }
+        # replit {
+        #   title
+        #   note
+        #   embeds {
+        #     title
+        #     url
+        #     height
+        #     description
+        #   }
+        # }
       }
       html
       tableOfContents

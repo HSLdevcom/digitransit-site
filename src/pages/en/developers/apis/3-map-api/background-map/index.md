@@ -1,12 +1,12 @@
 ---
 title: Background map
-replit:
-  embeds:
-    -
-      title: "Display map using Leaflet"
-      description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map.<br/>Note that this example is using <code>hsl-map</code> tiles (<b>512px</b>), which are not the size that Leaflet expects. To display 512px tiles correctly with Leaflet, use options <code>tileSize: 512</code> and <code>zoomOffset: -1</code>"
-      url: https://repl.it/@digitransit/LeafletMap
-      height: 800px
+# replit:
+#   embeds:
+#     -
+#       title: "Display map using Leaflet"
+#       description: "Here is a quick example that uses <a href=\"http://leafletjs.com/\">Leaflet</a> to display scrollable map.<br/>Note that this example is using <code>hsl-map</code> tiles (<b>512px</b>), which are not the size that Leaflet expects. To display 512px tiles correctly with Leaflet, use options <code>tileSize: 512</code> and <code>zoomOffset: -1</code>"
+#       url: https://repl.it/@digitransit/LeafletMap
+#       height: 800px
 ---
 Background map provides **HSL style** map tiles for example for browser based applications.
 

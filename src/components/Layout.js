@@ -64,18 +64,31 @@ const LayoutContainer = styled.div`
   flex-direction: column;
 `
 
+const Header = styled.header`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 3;
+`
+
+const MessageBar = styled.div`
+  width: 100%;
+  text-align: center;
+  background-color: #DC0451;
+  color: #ffffff;
+`
+
 const Navigation = styled.nav`
   font-size: 16px;
   line-height: 18.75px;
   text-transform: uppercase;
   width: 100%;
-  z-index: 3;
   margin: 0 auto;
   font-weight: 400;
   background-color: ${props => props.headerColor};
   display: flex;
   flex-direction: column;
-  position: fixed;
 `
 
 const NavigationBar = styled.div`
@@ -213,86 +226,91 @@ class Layout extends React.Component {
 
     return (
       <LayoutContainer ref="mainflex">
-        <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
-          <NavigationBar>
-            <NavLogo
-              onClick={() => this.setState({ mobileMenuOpen: false })}
-              to={`/`}
-            >
-              <img src={logo} style={{ height: "48px", margin: "0px" }} />
-            </NavLogo>
-            <NavLinks>
-              <NavLink
-                to={`${localePrefix}#users`}
+        <Header>
+          <MessageBar>
+            Starting from 3.4.2023, use of Digitransit APIs will require registration. The registration is now open. <a href="/en/developers/api-registration">More information</a>
+          </MessageBar>
+          <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
+            <NavigationBar>
+              <NavLogo
+                onClick={() => this.setState({ mobileMenuOpen: false })}
+                to={`/`}
               >
-                {i18n.users}
-              </NavLink>
-              <NavLink
-                to={`/en/developers/`}
-              >
-                {i18n.developers}
-              </NavLink>
-              <NavLink
-                to={`${localePrefix}#municipalities`}
-              >
-                {i18n.municipalities}
-              </NavLink>
-              <NavLink
-                to={`${localePrefix}#maintainers`}
-              >
-                {i18n.maintainers}
-              </NavLink>
-              <LangLinkSpan>|</LangLinkSpan>
-              <LangLinkSpan>
+                <img src={logo} style={{ height: "48px", margin: "0px" }} />
+              </NavLogo>
+              <NavLinks>
                 <NavLink
-                  to="/"
-                  hrefLang="fi"
+                  to={`${localePrefix}#users`}
                 >
-                  FI
+                  {i18n.users}
                 </NavLink>
-              </LangLinkSpan>
-              <LangLinkSpan>
                 <NavLink
-                  to="/en/"
-                  hrefLang="en"
+                  to={`/en/developers/`}
                 >
-                  EN
+                  {i18n.developers}
                 </NavLink>
-              </LangLinkSpan>
-            </NavLinks>
-            <MobileMenuButton
-                id="icon-icon_menu"
-                viewBox="0 0 1024 1024"
-                style={{
-                  height: "2em",
-                  fill: "#fff",
-                  marginRight: rhythm(0.5),
-                  marginTop: "-0.25em",
-                  cursor: "pointer"
-                }}
-                onClick={() =>
-                  this.setState(state => {
-                    return { mobileMenuOpen: !state.mobileMenuOpen }
-                  })
-                }
-              >
-                <title>icon_menu</title>
-                <path
-                  class="path1"
-                  d="M51.193 204.793h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
-                />
-                <path
-                  class="path2"
-                  d="M51.193 460.796h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
-                />
-                <path
-                  class="path3"
-                  d="M51.193 716.804h921.614c28.279 0 51.2 22.925 51.2 51.2 0 28.279-22.921 51.204-51.2 51.204h-921.614c-28.279 0-51.2-22.925-51.2-51.204 0-28.275 22.921-51.2 51.2-51.2z"
-                />
-            </MobileMenuButton>
-          </NavigationBar>
-          {this.state.mobileMenuOpen && mobileMenu}
-        </Navigation>
+                <NavLink
+                  to={`${localePrefix}#municipalities`}
+                >
+                  {i18n.municipalities}
+                </NavLink>
+                <NavLink
+                  to={`${localePrefix}#maintainers`}
+                >
+                  {i18n.maintainers}
+                </NavLink>
+                <LangLinkSpan>|</LangLinkSpan>
+                <LangLinkSpan>
+                  <NavLink
+                    to="/"
+                    hrefLang="fi"
+                  >
+                    FI
+                  </NavLink>
+                </LangLinkSpan>
+                <LangLinkSpan>
+                  <NavLink
+                    to="/en/"
+                    hrefLang="en"
+                  >
+                    EN
+                  </NavLink>
+                </LangLinkSpan>
+              </NavLinks>
+              <MobileMenuButton
+                  id="icon-icon_menu"
+                  viewBox="0 0 1024 1024"
+                  style={{
+                    height: "2em",
+                    fill: "#fff",
+                    marginRight: rhythm(0.5),
+                    marginTop: "-0.25em",
+                    cursor: "pointer"
+                  }}
+                  onClick={() =>
+                    this.setState(state => {
+                      return { mobileMenuOpen: !state.mobileMenuOpen }
+                    })
+                  }
+                >
+                  <title>icon_menu</title>
+                  <path
+                    class="path1"
+                    d="M51.193 204.793h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
+                  />
+                  <path
+                    class="path2"
+                    d="M51.193 460.796h921.614c28.279 0 51.2 22.925 51.2 51.204 0 28.275-22.921 51.2-51.2 51.2h-921.614c-28.279 0-51.2-22.925-51.2-51.2 0-28.279 22.921-51.204 51.2-51.204z"
+                  />
+                  <path
+                    class="path3"
+                    d="M51.193 716.804h921.614c28.279 0 51.2 22.925 51.2 51.2 0 28.279-22.921 51.204-51.2 51.204h-921.614c-28.279 0-51.2-22.925-51.2-51.204 0-28.275 22.921-51.2 51.2-51.2z"
+                  />
+              </MobileMenuButton>
+            </NavigationBar>
+            {this.state.mobileMenuOpen && mobileMenu}
+          </Navigation>
+        </Header>
 
         {this.props.children}
 
