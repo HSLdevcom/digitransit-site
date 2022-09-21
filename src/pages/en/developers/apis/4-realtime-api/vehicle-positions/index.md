@@ -204,27 +204,73 @@ Also the following fields are available on traffic light priority request events
 
 The numerical values for the different transit operators are listed below:
 
-| `oper` | Operator name                 |
-| ------ | ----------------------------- |
-| `12`   | Helsingin Bussiliikenne Oy    |
-| `17`   | Tammelundin Liikenne Oy       |
-| `18`   | Oy Pohjolan Liikenne Ab       |
-| `20`   | Bus Travel Åbergin Linja Oy   |
-| `21`   | Bus Travel Oy Reissu Ruoti    | 
-| `22`   | Nobina Finland Oy             |
-| `30`   | Savonlinja Oy                 |
-| `36`   | Nurmijärven Linja Oy          |
-| `40`   | HKL-Raitioliikenne            |
-| `47`   | Taksikuljetus Oy              |
-| `50`   | HKL-Metroliikenne             |
-| `51`   | Korsisaari Oy                 |
-| `54`   | V-S Bussipalvelut Oy          |
-| `58`   | Koillisen Liikennepalvelut Oy |
-| `60`   | Suomenlinnan Liikenne Oy      |
-| `59`   | Tilausliikenne Nikkanen Oy    |
-| `89`   | Metropolia                    |
-| `90`   | VR Oy                         |
-| `195`  | Siuntio<sup>1</sup>           |
+| `oper` | Operator name                      |
+| ------ | ---------------------------------- |
+| `3`    | Porvoon Liikenne Oy                |
+| `4`    | A.E.Koskinen & Pojat Oy            |
+| `6`    | Oy Pohjolan Liikenne Ab            |
+| `7`    | Sipoon Linja Oy                    |
+| `10`   | Oy Liikenne Ab                     |
+| `12`   | Helsingin Bussiliikenne Oy         |
+| `17`   | Tammelundin Liikenne Oy            |
+| `18`   | Oy Pohjolan Liikenne Ab            |
+| `19`   | Etelä-Suomen Linjaliikenne Oy      |
+| `20`   | Bus Travel Åbergin Linja Oy        |
+| `21`   | Bus Travel Oy Reissu Ruoti         |
+| `22`   | Nobina Finland Oy                  |
+| `23`   | HKL-Bussiliikenne                  |
+| `24`   | Westendin Linja Oy                 |
+| `25`   | Laajasalon Liikenne Ky             |
+| `26`   | Pääkaupunkiseudun Linjaliikenne Oy |
+| `27`   | Bus Travel Åbergin Linja Oy        |
+| `28`   | Transdev Espoo Oy                  |
+| `29`   | Keskuslinja Oy                     |
+| `30`   | Savonlinja Oy                      |
+| `35`   | Oy Andersson Ab                    |
+| `36`   | Nurmijärven Linja Oy               |
+| `40`   | HKL-Raitioliikenne                 |
+| `43`   | Porvoon Liikenne Oy / Lähilinjat   |
+| `44`   | Connex Helsinki Oy                 |
+| `45`   | Transdev Vantaa Oy                 |
+| `46`   | Vantaan Taksi Oy                   |
+| `47`   | Taksikuljetus Oy                   |
+| `49`   | Juhan Taksi Oy                     |
+| `50`   | HKL-Metroliikenne                  |
+| `51`   | Korsisaari Oy                      |
+| `52`   | Sopari Oy                          |
+| `54`   | V-S Bussipalvelut Oy               |
+| `55`   | Transdev Helsinki Oy               |
+| `57`   | Rapiditaxi Oy                      |
+| `58`   | Koillisen Liikennepalvelut Oy      |
+| `59`   | Tilausliikenne Nikkanen Oy         |
+| `60`   | Suomenlinnan Liikenne Oy           |
+| `61`   | TTS Työtehoseura                   |
+| `89`   | Metropolia                         |
+| `90`   | VR Oy                              |
+| `93`   | VR-laiturilukijat                  |
+| `100`  | Oy Pohjolan Liikenne Ab (U)        |
+| `103`  | Etelä-Suomen Linjaliikenne Oy (U)  |
+| `105`  | Korsisaari Oy (U)                  |
+| `107`  | Linjaliikenne Kivistö Oy (U)       |
+| `108`  | Porvoon Liikenne Oy (U)            |
+| `110`  | Ventoniemi Oy (U)                  |
+| `111`  | Keravan Taksi ry (U)               |
+| `112`  | Yhdysliikenne Oy (U)               |
+| `113`  | Linja-autoliikenne M. Tervo Oy (U) |
+| `114`  | Vainion Liikenne (U)               |
+| `116`  | Amperin Linja-autoliikenne Oy (U)  |
+| `117`  | Wikströmin Linja-Autoliikenne (U)  |
+| `118`  | Pukkilan Liikenne Oy (U)           |
+| `119`  | ML-Charter Oy (U)                  |
+| `121`  | Pohjolan Matka (U)                 |
+| `122`  | Liikenne Seppälä Oy (U)            |
+| `123`  | Kasilinja Oy (U)                   |
+| `124`  | Koiviston Auto Oy (U)              |
+| `195`  | Siuntio<sup>1</sup>                |
+| `196`  | Testiliikennöitsijä U              |
+| `197`  | Testiliikennöitsijä U2             |
+| `198`  | Testiliikennöitsijä B              |
+| `199`  | Testiliikennöitsijä A              |
 
 <sup>1</sup>Multiple smaller operators operate under this operator ID 
 
