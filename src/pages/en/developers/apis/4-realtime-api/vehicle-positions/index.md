@@ -224,6 +224,7 @@ The numerical values for the different transit operators are listed below:
 | `59`   | Tilausliikenne Nikkanen Oy    |
 | `89`   | Metropolia                    |
 | `90`   | VR Oy                         |
+| `130`  | Matkahuolto<sup>1</sup>       |
 | `195`  | Siuntio<sup>1</sup>           |
 
 <sup>1</sup>Multiple smaller operators operate under this operator ID 
