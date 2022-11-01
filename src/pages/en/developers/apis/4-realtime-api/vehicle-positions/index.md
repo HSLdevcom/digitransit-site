@@ -172,7 +172,7 @@ The fields are described below:
 | `jrn`     | Integer               |  `da`, `dout`, `ba`, `bout`          | Internal journey descriptor, not meant to be useful for external use. 
 | `line`    | Integer               |  `da`, `dout`, `ba`, `bout`          | Internal line descriptor, not meant to be useful for external use. 
 | `start`   | String                |  `da`, `dout`, `ba`, `bout`          | Scheduled start time of the trip, i.e. the scheduled departure time from the first stop of the trip. The format follows `HH:mm` in 24-hour local time, not the 30-hour overlapping operating days present in GTFS. Matches `start_time` in the topic.
-| `loc`     | String                |                                      | Location source, either `GPS`, `ODO`, `MAN` or `N/A`. <ul><li>`GPS` - location is received from GPS</li><li>`ODO` - location is calculated based on odometer value</li><li>`MAN` - location is specified manually</li><li>`N/A` - location is unavailable</li></ul>
+| `loc`     | String                |                                      | Location source, either `GPS`, `ODO`, `MAN`, `DR` or `N/A`. <ul><li>`GPS` - location is received from GPS</li><li>`ODO` - location is calculated based on odometer value</li><li>`MAN` - location is specified manually</li><li>`DR` - location is calculated using dead reckoning (used in tunnels and other locations without GPS signal)</li><li>`N/A` - location is unavailable</li></ul>
 | `stop`    | String                | `da`, `dout`, `ba`, `bout`           | ID of the stop related to the event (e.g. ID of the stop where the vehicle departed from in case of `dep` event or the stop where the vehicle currently is in case of `vp` event).<br/>`null` if the event is not related to any stop.
 | `route`   | String                | `da`, `dout`, `ba`, `bout`           | ID of the route the vehicle is currently running on. Matches `route_id` in the topic.
 | `occu`    | Integer               | `da`, `dout`, `ba`, `bout`           | Integer describing passenger occupancy level of the vehicle. Valid values are on interval `[0, 100]`.<br /><br />Currently passenger occupancy level is only available for Suomenlinna ferries as a proof-of-concept. The value will be available shortly after departure when the ferry operator has registered passenger count for the journey.<br /><br />For other vehicles, currently only values used are `0` *(= vehicle has space and is accepting passengers)* and `100` *(= vehicle is full and might not accept passengers)*
@@ -266,6 +266,7 @@ The numerical values for the different transit operators are listed below:
 | `122`  | Liikenne Seppälä Oy (U)            |
 | `123`  | Kasilinja Oy (U)                   |
 | `124`  | Koiviston Auto Oy (U)              |
+| `130`  | Matkahuolto<sup>1</sup>            |
 | `195`  | Siuntio<sup>1</sup>                |
 | `196`  | Testiliikennöitsijä U              |
 | `197`  | Testiliikennöitsijä U2             |
