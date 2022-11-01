@@ -206,6 +206,7 @@ The numerical values for the different transit operators are listed below:
 
 | `oper` | Operator name                 |
 | ------ | ----------------------------- |
+| `6`    | Oy Pohjolan Liikenne Ab<sup>2</sup>|
 | `12`   | Helsingin Bussiliikenne Oy    |
 | `17`   | Tammelundin Liikenne Oy       |
 | `18`   | Oy Pohjolan Liikenne Ab       |
@@ -227,7 +228,8 @@ The numerical values for the different transit operators are listed below:
 | `130`  | Matkahuolto<sup>1</sup>       |
 | `195`  | Siuntio<sup>1</sup>           |
 
-<sup>1</sup>Multiple smaller operators operate under this operator ID 
+<sup>1</sup>Multiple smaller operators operate under this operator ID<br />
+<sup>2</sup>This value is present only in the `oper` field of the payload. Operator `6` is the same as `18`.
 
 ## Examples
 
