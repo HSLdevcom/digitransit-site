@@ -70,6 +70,10 @@ Remember to also include your subscription key in the url !
 
 > https://cdn.digitransit.fi/map/v2/hsl-map-sv/16/37313/18958.png
 
+### English language tiles
+
+> https://cdn.digitransit.fi/map/v2/hsl-map-en/16/37313/18958.png
+
 ### Bilingual Finnish / Swedish language tiles
 
 > https://cdn.digitransit.fi/map/v2/hsl-map-fi-sv/16/37313/18958.png
