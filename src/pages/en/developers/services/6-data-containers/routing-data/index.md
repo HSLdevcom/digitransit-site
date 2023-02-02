@@ -54,7 +54,7 @@ For example, the HSL routing data consists of the following files:
    A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
 
 8. `hsl.tif`
-   Elevation data file for the HSL regigon (used by OTP, not mandatory).
+   Elevation data file for the HSL region (used by OTP, not mandatory).
 
 9. `connected.csv`
    List of stops that could be linked based on OSM data (for debugging purposes).
