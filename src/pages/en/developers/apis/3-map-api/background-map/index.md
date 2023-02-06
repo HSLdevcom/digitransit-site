@@ -17,13 +17,15 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 **Note:** Background map is also available as vector tiles from source `hsl-vector-map` in [OpenMapTiles](https://openmaptiles.org/) schema. Styles used by HSL can be found on: https://github.com/HSLdevcom/hsl-map-style
 
-Remember to also include your subscription key in the url !
+Remember to include your ```digitransit-subscription-key``` parameter !
 
 ## Endpoint
 ```https://cdn.digitransit.fi/map/v2/:source/:z/:x/:y:size.png?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
 
 ## TileJSON endpoint 
 ```https://cdn.digitransit.fi/map/v2/:source/index.json?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
+
+You can also include ```digitransit-subscription-key``` header in your request instead of the url parameters.
 
 ### Supported URL parameters
 
