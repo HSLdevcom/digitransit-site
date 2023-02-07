@@ -10,14 +10,22 @@ title: Background map
 ---
 Background map provides **HSL style** map tiles for example for browser based applications.
 
+
 ## Data format
 
 **Raster maps** are available in [Tile Map Service format](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
 
 **Note:** Background map is also available as vector tiles from source `hsl-vector-map` in [OpenMapTiles](https://openmaptiles.org/) schema. Styles used by HSL can be found on: https://github.com/HSLdevcom/hsl-map-style
 
+Remember to include your ```digitransit-subscription-key``` parameter !
+
 ## Endpoint
-```https://cdn.digitransit.fi/map/v2/:source/:z/:x/:y:size.png```
+```https://cdn.digitransit.fi/map/v2/:source/:z/:x/:y:size.png?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
+
+## TileJSON endpoint 
+```https://cdn.digitransit.fi/map/v2/:source/index.json?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
+
+You can also include ```digitransit-subscription-key``` header in your request instead of the url parameters.
 
 ### Supported URL parameters
 
@@ -63,6 +71,10 @@ Background map provides **HSL style** map tiles for example for browser based ap
 ### Swedish language tiles
 
 > https://cdn.digitransit.fi/map/v2/hsl-map-sv/16/37313/18958.png
+
+### English language tiles
+
+> https://cdn.digitransit.fi/map/v2/hsl-map-en/16/37313/18958.png
 
 ### Bilingual Finnish / Swedish language tiles
 
