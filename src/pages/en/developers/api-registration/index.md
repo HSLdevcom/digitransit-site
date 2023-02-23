@@ -14,15 +14,15 @@ API keys are acquired from [the API portal](https://portal-api.digitransit.fi). 
 
 After logging in, APIs that are available for you to subscribe to are visible under the "Products" tab.
 
-![products tab](./images/instructions-products.png)
+![An image displaying the navigation to the products tab from the top right of the screen and the page contents](./images/instructions-products.png "Products page contents")
 
 After clicking an API product, you will be able to subscribe to it. When clicking the subscribe button, you will be prompted to answer a brief questionnaire.
 
-![subscribe](./images/instructions-subscribe.png)
+![An image displaying the page where you can click the subscription button](./images/instructions-subscribe.png "Subscribing to an API product")
 
 After subscription, you can find the key under the "Profile" tab. Click "Show" to reveal the key. A subscription also contains a secondary key so that it's possible to regenerate a key while the primary key is in use or vice versa. There is an option to regenerate a key next to the "Show" button.
 
-![profile](./images/instructions-profile.png)
+![An image displaying the page contents of the Profile page, and the area where you can find the API key](./images/instructions-profile.png "Profile page contents and API key location")
 
 ## Use of API keys
 An API key can be included either as a URL parameter or as a header. The parameter and the header name are both `digitransit-subscription-key` and the value should be the key. The API keys should not be attached to requests going to [the deprecated APIs](../deprecations).
