@@ -228,7 +228,7 @@ class Layout extends React.Component {
       <LayoutContainer ref="mainflex">
         <Header>
           <MessageBar>
-            Starting from 3.4.2023, use of Digitransit APIs will require registration. The registration is now open. <a href="/en/developers/api-registration">More information</a>
+            Digitransit APIs now require registration. <a href="/en/developers/api-registration">More information</a>
           </MessageBar>
           <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
             <NavigationBar>
