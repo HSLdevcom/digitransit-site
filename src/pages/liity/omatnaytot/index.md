@@ -19,7 +19,8 @@ Mikäli haluat käyttää omaa domainia, niin toimita meille seuraavat asiat:
 * Domain-nimi
 * TLS sertifikaatti, mikäli haluat käyttää omaa domain-nimeä.
   * DNS ohjaus meidän palveluun:  esim. pysakit.kaupunki.fi  osoittamaan CNAME http://digitransit-prod.trafficmanager.net
-  * Lisäksi tarvitsette TXT muotoisen recordin. Tarkemman ohjeet saatte pyytämällä meiltä lisätietoja.
+  * Lisäksi tarvitsette TXT muotoisen recordin. Tarkemmat ohjeet saatte pyytämällä meiltä lisätietoja.
+* Subdomainit eivät ole mahdollisia.
 
 
 ### Teemoitus
