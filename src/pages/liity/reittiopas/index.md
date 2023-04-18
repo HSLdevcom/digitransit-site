@@ -2,8 +2,8 @@
 title: Reittiopas
 panels:
   - title: Reittiopas
-    body: Reittiopas on digitaalinen palvelu, joka helpottaa matkustamista ja liikkumista. Se löytää sopivan reitin lähtö- ja määränpääpaikkojen välillä tiettyyn aikaan huomioiden eri kulkumuodot tarvittaessa.
-    Palvelun käyttäjät voivat valita haluamansa kulkumuodon, kävelymatkan pituuden, nopeuden ja vaihtojen määrän.
+    body: "Reittiopas on digitaalinen palvelu, joka helpottaa matkustamista ja liikkumista. Se löytää sopivan reitin lähtö- ja määränpääpaikkojen välillä tiettyyn aikaan huomioiden eri kulkumuodot tarvittaessa.
+    Palvelun käyttäjät voivat valita haluamansa kulkumuodon, kävelymatkan pituuden, nopeuden ja vaihtojen määrän."
     links: []
     image: "../../municipality.svg"
     id: kaupunki
