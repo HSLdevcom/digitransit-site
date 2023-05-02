@@ -20,27 +20,27 @@ The URL of the MQTT broker is [mqtt.digitransit.fi](mqtt.digitransit.fi). It has
 /<feed_format>/<type>/<feed_id>/<agency_id>/<agency_name>/<mode>/<route_id>/<direction_id>/<trip_headsign>/<trip_id>/<next_stop>/<start_time>/<vehicle_id>/<geohash_head>/<geohash_firstdeg>/<geohash_seconddeg>/<geohash_thirddeg>/<short_name>/<color>/
 ```
 
-| Topic level                             | Description | Possible values |
-|--------------------------------------|------|------|
-| feed_format             | Feed format | gtfsrt |
-| type             | Type of the feed | vp |
-| feed_id             | GTFS feed ID  | [Listed here](#available-cities-and-regions) |
-| agency_id             | GTFS agency ID | Not implemented yet but will be any string or empty |
-| agency_name           | GTFS agency name | Not implemented yet but will be any string or empty |
-| mode             | Transport mode | BUS, FERRY, FUNICULAR, RAIL, TRAM or empty (there might be more possible values in the future) |
-| route_id             | GTFS route ID | Any string or empty |
-| direction_id             | GTFS direction ID | 0, 1 or empty |
-| trip_headsign             | GTFS trip headsign | Any string or empty |
-| trip_id             | GTFS trip ID | Any string or empty |
-| next_stop             | Next (or current) stop ID | Any string or empty |
-| start_time             | The scheduled start time of the trip | can be 25:30 for example, or empty |
-| vehicle_id             | GTFS vehicle ID | Any string or empty |
-| geohash_head             | [The whole numbers of a simplified geohash](#geohash) | lat;lon, for example `60;24` |
-| geohash_firstdeg             | [The first decimal place from lat and lon](#geohash) | latlon, for example `17` |
-| geohash_seconddeg             | [The second decimal place from lat and lon](#geohash) | latlon, for example `28` |
-| geohash_thirddeg             | [The third decimal place from lat and lon](#geohash) | latlon, for example `39` |
-| short_name             | Short name of the route | Any string or empty |
-| color             | Color of the route | A color encoded as a six-digit hexadecimal number (the leading "#" is not included) such as `FFFFFF` or empty |
+| Topic level       | Description                                           | Possible values |
+|-------------------|-------------------------------------------------------|-----------------|
+| feed_format       | Feed format                                           | gtfsrt |
+| type              | Type of the feed                                      | vp |
+| feed_id           | GTFS feed ID                                          | [Listed here](#available-cities-and-regions) |
+| agency_id         | GTFS agency ID                                        | Not implemented yet but will be any string or empty |
+| agency_name       | GTFS agency name                                      | Not implemented yet but will be any string or empty |
+| mode              | Transport mode                                        | BUS, FERRY, FUNICULAR, RAIL, TRAM or empty (there might be more possible values in the future) |
+| route_id          | GTFS route ID                                         | Any string or empty |
+| direction_id      | GTFS direction ID                                     | 0, 1 or empty |
+| trip_headsign     | GTFS trip headsign                                    | Any string or empty |
+| trip_id           | GTFS trip ID                                          | Any string or empty |
+| next_stop         | Next (or current) stop ID                             | Any string or empty |
+| start_time        | The scheduled start time of the trip                  | can be 25:30 for example, or empty |
+| vehicle_id        | GTFS vehicle ID                                       | Any string or empty |
+| geohash_head      | [The whole numbers of a simplified geohash](#geohash) | lat;lon, for example `60;24` |
+| geohash_firstdeg  | [The first decimal place from lat and lon](#geohash)  | latlon, for example `17` |
+| geohash_seconddeg | [The second decimal place from lat and lon](#geohash) | latlon, for example `28` |
+| geohash_thirddeg  | [The third decimal place from lat and lon](#geohash)  | latlon, for example `39` |
+| short_name        | Short name of the route                               | Any string or empty |
+| color             | Color of the route                                    | A color encoded as a six-digit hexadecimal number (the leading "#" is not included) such as `FFFFFF` or empty |
 
 ## Message Structure
 
