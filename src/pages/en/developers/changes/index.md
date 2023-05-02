@@ -2,6 +2,10 @@
 title: Changes
 order: -10
 ---
+## 2.5.2023
+
+- Added documentation about [the Digitransit MQTT broker and Waltti vehicle positions.](../apis/4-realtime-api/vehicle-positions/)
+
 ## 4.4.2023
 
 - Updated [Digitransit API portal and API keys](../api-registration)
@@ -40,7 +44,7 @@ order: -10
 
 ## 14.05.2020
 
-- Updated [HFP](../apis/4-realtime-api/vehicle-positions) documentation
+- Updated [HFP](../apis/4-realtime-api/vehicle-positions/high-frequency-positioning/) documentation
   - Potentially breaking changes in the topic structure
     - `sid` will be added to the end of the topic
   - Changes to values of `tlp-signalgroupnbr` and `tlp-protocol` in the payload
@@ -63,7 +67,7 @@ order: -10
 
 ## 12.06.2019
 
-- [HFP 2.0](../apis/4-realtime-api/vehicle-positions) is now available
+- [HFP 2.0](../apis/4-realtime-api/vehicle-positions/high-frequency-positioning/) is now available
   - HFP 1.0 is deprecated and vehicles will stop sending HFP 1.0 data in the future
 
 ## 10.05.2019
