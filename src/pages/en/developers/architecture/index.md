@@ -5,17 +5,13 @@ title: System architecture
 Digitransit architecture is based on microservices architecture. Microservices are small, autonomous services that
 work together that allow us to build larger applications on top of APIs that the services provide.
 
-![Architecture](./architecture.png)
-
-[Full size image (SVG)](./architecture.svg) (or click the image for full size PNG)
-
 At the moment, we provide five kinds of services
 
-1. User interface (blue)
-2. Routing API, Geocoding API, and Map API (green)
-3. Real time API (red)
-4. Data containers (yellow)
-5. External components (gray)
+1. User interface
+2. Routing API, Geocoding API, and Map API
+3. Real time API
+4. Data containers
+5. External components
 
 ## User interface
 
