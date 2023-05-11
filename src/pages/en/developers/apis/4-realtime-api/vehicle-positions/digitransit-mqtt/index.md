@@ -12,7 +12,6 @@ The URL of the MQTT broker is [mqtt.digitransit.fi](mqtt.digitransit.fi). It has
 | MQTT with TLS (mqtts://)             | 8883 |
 | MQTT       (mqtt://)                 | 1883 |
 | MQTT over secure web socket (wss://) | 433  |
-| MQTT over web socket (ws://)         | 80   |
 
 ## Topic Structure
 
