@@ -13,10 +13,6 @@ At the moment, we provide five kinds of services
 4. Data containers
 5. External components
 
-## User interface
-
-We have built a mobile friendly user interface on top the APIs [See it here](../apis/5-digitransit-ui/)
-
 ## Routing API, Geocoding API, and Map API
 
 [Routing API](../apis/1-routing-api/), [Geocoding API](../apis/2-geocoding-api/), and [Map API](../apis/3-map-api/)
