@@ -17,7 +17,7 @@ Background map provides **HSL style** map tiles for example for browser based ap
 
 **Note:** Background map is also available as vector tiles from source `hsl-vector-map` in [OpenMapTiles](https://openmaptiles.org/) schema. Styles used by HSL can be found on: https://github.com/HSLdevcom/hsl-map-style
 
-Remember to include your ```digitransit-subscription-key``` parameter !
+Remember to include your ```digitransit-subscription-key``` parameter!
 
 ## Endpoint
 ```https://cdn.digitransit.fi/map/v2/:source/:z/:x/:y:size.png?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
@@ -44,6 +44,8 @@ You can also include ```digitransit-subscription-key``` header in your request i
 | `hsl-map-256`                   | 256px raster tiles with Finnish language                      |
 | `hsl-map-sv`                    | 512px raster tiles with Swedish language                      |
 | `hsl-map-sv-256`                | 256px raster tiles with Swedish language                      |
+| `hsl-map-en`                    | 512px raster tiles with English language                      |
+| `hsl-map-en-256`                | 256px raster tiles with English language                      |
 | `hsl-map-fi-sv`                 | 512px bilingual raster tiles with Finnish / Swedish language  |
 | `hsl-map-fi-sv-256`             | 256px bilingual raster tiles with Finnish / Swedish language  |
 | `hsl-map-no-text`               | 512px raster tiles with no texts                              |
