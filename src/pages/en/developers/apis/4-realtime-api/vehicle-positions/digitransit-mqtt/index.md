@@ -5,7 +5,7 @@ order: 10
 
 ## Available endpoints
 
-The URL of the MQTT broker is [mqtt.digitransit.fi](mqtt.digitransit.fi). It has support for the protocols (using standard port numbers) listed below:
+The URL of the MQTT broker is mqtt.digitransit.fi. It has support for the protocols (using standard port numbers) listed below:
 
 | Protocol                             | Port |
 |--------------------------------------|------|
