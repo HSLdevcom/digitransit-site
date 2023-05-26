@@ -29,11 +29,6 @@ export default props => {
     <div>
       <p>{props.description.info}</p>
       <Image url={props.description.img} />
-      <span style={{ float: "right", "font-size": "0.8em;" }}>
-        <a href={"https://www.draw.io/?url=" + props.description.architecture}>
-          edit architecture image
-        </a>
-      </span>
       <h2>Service Architecture</h2>
       <img src={image} />
     </div>
