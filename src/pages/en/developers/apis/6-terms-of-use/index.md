@@ -8,7 +8,7 @@ title: Terms of use
 
 Digitransit Platform is an open-source journey planning solution that combines open-source components into a route planning service. It has Mobile friendly user interface, Map tile serving, Geocoding, and data conversion tools. Route planning algorithms and APIs are provided by Open Trip Planner (OTP). For more information about Digitransit, please visit: https://digitransit.fi/en/
 
-Digitransit is provided by Helsinki Region Transportation (HSL), Fintraffic, and TVV LMJ Oy.
+Digitransit is provided by Helsinki Region Transportation (HSL), Fintraffic, and Waltti Solutions Oy.
 
 ### 1. General  
 

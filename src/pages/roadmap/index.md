@@ -4,7 +4,7 @@ panels: []
 ---
 # Kehityskohteiden roadmap
 
-Digitransit-kehittäjäyhteisö (HSL, TVV LMJ Oy ja Fintraffic) on valinnut seuraavat tavoitteet vuodelle 2022. Tämän lisäksi rinnalla tehdään jatkuvaa pienkehitystä sekä ylläpitoa.
+Digitransit-kehittäjäyhteisö (HSL, Waltti Solutions Oy ja Fintraffic) on valinnut seuraavat tavoitteet vuodelle 2022. Tämän lisäksi rinnalla tehdään jatkuvaa pienkehitystä sekä ylläpitoa.
 
 ## OTP-reititysmoottorin versiopäivitys (OTP2)
 - Mahdollistaa jatkokehitystä
