@@ -8,7 +8,7 @@ import digitransitImageEn2x from "../pages/digitransit-image-en-2x.png"
 import digitransitImageMobile from "../pages/digitransit-image-mobile.png"
 import hslLogo from "../pages/hsl.svg"
 import fintrafficLogo from "../pages/fintraffic.svg"
-import lmjLogo from "../pages/lmj.svg"
+import walttiLogo from "../pages/walttiLogo.png"
 
 const HeaderImage = styled.img`
     position: relative;
@@ -76,7 +76,7 @@ export default ({ lang }) => (
         <Logos>
             <img src={hslLogo} />
             <img src={fintrafficLogo} />
-            <img src={lmjLogo} />
+            <img src={walttiLogo} width={150} height={70} />
         </Logos>
     </div>
 );

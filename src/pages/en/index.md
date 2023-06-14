@@ -23,7 +23,7 @@ panels:
     id: developers
     background: "#FFFFFF"
   - title: For municipalities
-    body: Be on the map and make your home municipality easier to move around. Join us in developing the next generation journey planner and get national visibility for your home municipality. Digitransit is an easy-to-access service platform provided by HSL, Fintraffic and TVV LMJ Oy. Thanks to its open-source nature, all interested parties can participate in the development of the service. This is likely to result in better quality, improve security and provide data that is always up-to-date. Make sure that the route and timetable information for your municipality are available for the service platform.
+    body: Be on the map and make your home municipality easier to move around. Join us in developing the next generation journey planner and get national visibility for your home municipality. Digitransit is an easy-to-access service platform provided by HSL, Fintraffic and Waltti Solutions Oy. Thanks to its open-source nature, all interested parties can participate in the development of the service. This is likely to result in better quality, improve security and provide data that is always up-to-date. Make sure that the route and timetable information for your municipality are available for the service platform.
     links: []
       # - title: Digitransit palvelukuvaus
       # - title: Liity palveluun
