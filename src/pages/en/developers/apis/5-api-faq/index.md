@@ -10,7 +10,7 @@ title: FAQ
 
 ### Why are some route patterns rendered as straight lines from one stop to the next?
   
-> To display actual route geometries, [GTFS shapes](https://developers.google.com/transit/gtfs/reference/#shapestxt) are needed. These are not necessarily available for all cities and routes, but are generally added to the source material of Digitransit as they become available. Availability of route geometries depends on the local public transport authorities. In Finland, route geometries for towns part of the Waltti-system are managed by LMJ Oy. For more information and contacts regarding Waltti-areas, see http://www.lmj.fi/ and http://waltti.fi/.
+> To display actual route geometries, [GTFS shapes](https://developers.google.com/transit/gtfs/reference/#shapestxt) are needed. These are not necessarily available for all cities and routes, but are generally added to the source material of Digitransit as they become available. Availability of route geometries depends on the local public transport authorities. In Finland, route geometries for towns part of the Waltti-system are managed by Waltti Solutions Oy. For more information and contacts regarding Waltti-areas, see http://waltti.fi/.
 
 ### How do I query multiple items with a single request?
 

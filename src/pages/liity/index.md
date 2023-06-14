@@ -2,7 +2,7 @@
 title: Liity
 panels:
   - title: Liity Digitransit-palveluun
-    body: Digitransit on HSL:n omistama ja kehittämä palvelukokonaisuus joukkoliikenteen reititystä varten. Digitransit-tuoteperhe on rakennettu HSL:n, Fintrafficin ja LMJ Oy:n rahoituksella. Kuntien on mahdollista liittyä palveluun LMJ Oy:n kautta. Linkkien takaa löytyvät ohjeet kunkin palvelun käyttöönottoon.
+    body: Digitransit on HSL:n omistama ja kehittämä palvelukokonaisuus joukkoliikenteen reititystä varten. Digitransit-tuoteperhe on rakennettu HSL:n, Fintrafficin ja Waltti Solutions Oy:n rahoituksella. Kuntien on mahdollista liittyä palveluun Waltti Solutions Oy:n kautta. Linkkien takaa löytyvät ohjeet kunkin palvelun käyttöönottoon.
     links:
       - title: Reittiopas
         url: /liity/reittiopas
@@ -20,9 +20,9 @@ panels:
 
 Toimita alla kuvatut tiedot digitransit@hsl.fi osoitteeseen:
 
-### 1. Sovi yhteistyöstä LMJ Oy:n kanssa
+### 1. Sovi yhteistyöstä Waltti Solutions Oy:n kanssa
 
-Sovi käyttöönotosta LMJ Oy:n kanssa.
+Sovi käyttöönotosta Waltti Solutions Oy:n kanssa.
 
 
 ### 2. Nimeä organisaatiosi palveluvastaava
