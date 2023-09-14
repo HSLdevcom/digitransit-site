@@ -76,7 +76,7 @@ export default ({ lang }) => (
         <Logos>
             <img src={hslLogo} />
             <img src={fintrafficLogo} />
-            <img src={walttiLogo} width={150} height={70} />
+            <img src={walttiLogo} width={185} height={70} />
         </Logos>
     </div>
 );
