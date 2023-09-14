@@ -36,7 +36,7 @@ Jos et ole tyytyväinen saamaasi vastaukseen tai et saa vastausta lainkaan kahde
 
 - HSL Reittiopas: palautetta voit antaa palautelomakkeellamme <br>
 - Matka.fi Reittiopas: palautetta voit antaa sähköpostilla: joukkoliikenne(at)traficom.fi<br>
-- Muut Digitransit Reittioppaat: palautetta voit antaa osoitteessa: info(at)lmj.fi <br>
+- Muut Digitransit Reittioppaat: palautetta voit antaa osoitteessa: waltti(at)waltti.fi<br>
 
 ### Valvontaviranomaisen yhteystiedot
 
@@ -82,7 +82,7 @@ Om du inte är nöjd med det svar du får eller om du inte alls får något svar
 
 - HRT:s Reseplanerare: Du kan lämna in respons med HRT:s responsblankett
 - Matka.fi Reseplaneraren: du kan skicka respons per e-post till joukkoliikenne(at)traficom.fi
-- Andra Digitransit-reseplanerare: du kan skicka respons på adressen info(at)lmj.fi
+- Andra Digitransit-reseplanerare: du kan skicka respons på adressen waltti(at)waltti.fi
 
 ### Övervakningsmyndighetens kontaktuppgifter
 
