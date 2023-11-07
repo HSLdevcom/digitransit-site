@@ -234,3 +234,21 @@ Yllä on F-vyöhykkeelle määritelty 2 tunnusta vyöhykkeen eri osiin. Vakio sv
 [vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hml_zone_lines_20210222.geojson)
 ja vaihtaa svg määrittelyhin oman reittioppaan teemavärin. Mikäli tarvitaan jokin muu symboli, sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla,
 tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg elementit.
+
+### 13. Näin saat päästötietosi mukaan reititykseen
+
+Reittioppaaseen saa mukaan reittiehdotusten CO₂-päästölukemat pyytämällä päästöjen näyttämisen päällekytkennän ja toimittamalla reittien keskimääräiset CO₂-päästöarvot Emissions.txt-tiedostossa osana GTFS-pakettia. Emissions.txt ei ole GTFS-standardin mukainen vaan sen tulee seurata tässä annettuja ohjeita. Tiedoston tulee sisältää seuraavat sarakkeet:
+
+* **route\_id**: reitin id (sama kuin routes.txt-tiedostossa)
+
+* **avg\_co2\_per\_vehicle\_per\_km**: Reittiä liikennöivän ajoneuvon keskimääräiset hiilidioksidipäästöt per kilometri kokonais- tai desimaalilukuna.
+
+* **avg\_passenger\_count**: Reittiä liikennöivän ajoneuvon keskimääräinen matkustajamäärä kokonais- tai desimaalilukuna.
+
+Emissions.txt esimerkki:
+```
+    route_id,avg_co2_per_vehicle_per_km,avg_passenger_count
+    1001,123,20
+    1002,123.4,20.0
+    1003,0,0
+```
