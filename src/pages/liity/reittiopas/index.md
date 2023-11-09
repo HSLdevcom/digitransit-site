@@ -241,7 +241,7 @@ Reittioppaaseen saa mukaan reittiehdotusten CO₂-päästölukemat pyytämällä
 
 * **route\_id**: reitin id (sama kuin routes.txt-tiedostossa)
 
-* **avg\_co2\_per\_vehicle\_per\_km**: Reittiä liikennöivän ajoneuvon keskimääräiset hiilidioksidipäästöt per kilometri kokonais- tai desimaalilukuna.
+* **avg\_co2\_per\_vehicle\_per\_km**: Reittiä liikennöivän ajoneuvon keskimääräiset hiilidioksidipäästöt grammoina per kilometri kokonais- tai desimaalilukuna.
 
 * **avg\_passenger\_count**: Reittiä liikennöivän ajoneuvon keskimääräinen matkustajamäärä kokonais- tai desimaalilukuna.
 
