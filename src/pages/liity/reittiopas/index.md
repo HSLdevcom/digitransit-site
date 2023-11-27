@@ -237,7 +237,7 @@ tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut s
 
 ### 13. Näin saat päästötietosi mukaan reititykseen
 
-Reittioppaaseen saa mukaan reittiehdotusten CO₂-päästölukemat pyytämällä päästöjen näyttämisen päällekytkennän ja toimittamalla reittien keskimääräiset CO₂-päästöarvot emissions.txt-tiedostossa osana GTFS-pakettia. Emissions.txt ei ole GTFS-standardin mukainen vaan sen tulee seurata tässä annettuja ohjeita. Tiedoston tulee sisältää seuraavat sarakkeet:
+Reittioppaaseen saa mukaan reittiehdotusten CO₂-päästölukemat pyytämällä päästöjen näyttämisen päällekytkennän ja toimittamalla reittien keskimääräiset CO₂-päästöarvot emissions.txt-tiedostossa osana GTFS-pakettia. Tiedosto ei ole GTFS-standardin mukainen vaan sen tulee seurata tässä annettuja ohjeita. Seuraavien sarakkeiden tulisi sisältyä emissions.txt-tiedostoon:
 
 * **route\_id**: reitin id (sama kuin routes.txt-tiedostossa)
 
@@ -245,7 +245,7 @@ Reittioppaaseen saa mukaan reittiehdotusten CO₂-päästölukemat pyytämällä
 
 * **avg\_passenger\_count**: Reittiä liikennöivän ajoneuvon keskimääräinen matkustajamäärä kokonais- tai desimaalilukuna.
 
-Emissions.txt esimerkki:
+Esimerkki emissions.txt:
 ```
     route_id,avg_co2_per_vehicle_per_km,avg_passenger_count
     1001,123,20
