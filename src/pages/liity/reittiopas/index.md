@@ -173,8 +173,9 @@ sekä maanmittauslaitoksen paikkatietoja.
 
 ### 11. Reaaliaikarajapinta
 
-Digitransit alusta tukee GTFS-RT spesifikaation mukaisia reaaliaikaisia ajoneuvojen sijainteja, pysäkkiennusteita sekä poikkeustiedotteita.
-Mikäli rajapinta tarjoaa ajoneuvojen sijaintitiedot, ne voidaan esittää kartalla integroimalla GTFS-RT reaaliaikatiedot paikkatietoa tarjoavaan mqtt-palvelimeen.
+Digitransit-alusta tukee GTFS-RT spesifikaation mukaisia reaaliaikaisia tietoja, kuten pysäkkiennusteita (trip updates), paikkatietoja (vehicle positions), poikkeustiedotteita (alerts) ja matkustajakapasiteettitietoa (paikkatiedoista). Mikäli rajapinta tarjoaa ajoneuvojen sijaintitietoja, ne voidaan esittää kartalla integroimalla GTFS-RT reaaliaikatiedot paikkatietoa tarjoavaan mqtt-palvelimeen. 
+
+Matkustajakapasiteettitietoa hyödynnetään tällä hetkellä paikkatiedoista, mutta suosittelemme että matkustajakapasiteettitieto lisätään pysääkkiennusteisiin, johon voimme lisätä tuen.
 Kuvaa:
 - Reaaliaikarajapinnan osoite
 
