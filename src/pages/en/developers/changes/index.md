@@ -2,6 +2,10 @@
 title: Changes
 order: -10
 ---
+## 13.12.2023
+
+- Updated list of available feeds in [the Digitransit MQTT broker and Waltti vehicle positions.](../apis/4-realtime-api/vehicle-positions/)
+
 ## 2.5.2023
 
 - Added documentation about [the Digitransit MQTT broker and Waltti vehicle positions.](../apis/4-realtime-api/vehicle-positions/)
