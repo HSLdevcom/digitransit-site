@@ -1,4 +1,4 @@
-FROM node:16 as build
+FROM node:14 as build
 MAINTAINER Reittiopas version: 0.1
 
 ENV WORK=/opt/digitransit-site
@@ -14,7 +14,7 @@ ADD . ${WORK}
 RUN yarn && \
   gatsby build
 
-FROM node:16
+FROM node:14
 
 WORKDIR /opt/digitransit-site
 COPY --from=build /opt/digitransit-site/public ./
