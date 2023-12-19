@@ -28,4 +28,4 @@ An API key can be included either as a URL parameter or as a header. The paramet
 We have deprecated and removed some old API endpoints that are no longer needed. The list of these deprecations can be found [here](../deprecations). We will update that page and inform users via email in the future when there are any new deprecations or removals.
 
 ## Quota and rate limiting
-In the future, we will enforce rate and quota limiting. The limits should only restrict misuse of the APIs, not normal use. We will inform the registered users about these limits before we will enforce them.
+Starting 31.1.2024, we will enforce rate and quota limiting. The limits should only restrict misuse of the APIs, not normal use.
