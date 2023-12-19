@@ -2,9 +2,17 @@
 title: Changes
 order: -10
 ---
+## 31.1.2024
+
+- Quota restrictions take place. [More information](../api-registration/#quota-and-rate-limiting) 
+
 ## 13.12.2023
 
 - Updated list of available feeds in [the Digitransit MQTT broker and Waltti vehicle positions.](../apis/4-realtime-api/vehicle-positions/)
+
+## 12.12.2023
+
+- We informed users about upcoming quota restrictions via email.
 
 ## 2.5.2023
 

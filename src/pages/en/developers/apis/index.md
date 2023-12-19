@@ -6,7 +6,7 @@ title: APIs
 
 The APIs hosted at api.digitransit.fi are publicly available but registration and use of API keys is required. More information is available [here](../api-registration). See [terms of use](./6-terms-of-use) for license information.
 
-The APIs currently have no rate limiting, but you should avoid doing more than 10 requests per second. In the future, we will enforce rate and quota limits but the limits should only restrict misuse of the APIs, not normal use. We will inform the registered users about these limits before we will enforce them. If you need to make large amount of requests, you might want to [host the API locally](../architecture/x-apis/1-routing-api/#hosting-the-api-locally).
+The APIs currently have no rate limiting, but you should avoid doing more than 10 requests per second. Starting 31.1.2024, we will enforce rate and quota limits but the limits should only restrict misuse of the APIs, not normal use. If you need to make a large amount of requests, you might want to [host the API locally](../architecture/x-apis/1-routing-api/#hosting-the-api-locally).
 
 If you want to improve or modify the APIs in some way, you can either contribute to the projects through https://github.com/HSLdevcom or host your own APIs based on those sources.
 

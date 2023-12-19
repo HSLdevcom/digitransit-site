@@ -36,7 +36,7 @@ available.
 
 ## Hosting the API locally
 
-If you need to make large amount of requests (e.g. requesting schedules from all stops) to the API, you might want to host the API locally.
+If you need to make a large amount of requests (e.g. requesting schedules from all stops) to the API, you might want to host the API locally.
 To run OpenTripPlanner with Docker, use command:
 ```
 docker run --rm --name otp-hsl -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx5g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner:prod
