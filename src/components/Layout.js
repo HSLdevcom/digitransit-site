@@ -228,7 +228,7 @@ class Layout extends React.Component {
       <LayoutContainer ref="mainflex">
         <Header>
           <MessageBar>
-            Production GraphiQL is temporarily unavaible. <a href="https://dev-api.digitransit.fi/graphiql/hsl" target="_blank">Dev GraphiQL</a> can be used instead.
+            Production GraphiQL is temporarily unavailable. <a href="https://dev-api.digitransit.fi/graphiql/hsl" target="_blank">Dev GraphiQL</a> can be used instead.
           </MessageBar>
           <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
             <NavigationBar>
