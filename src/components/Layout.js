@@ -228,7 +228,7 @@ class Layout extends React.Component {
       <LayoutContainer ref="mainflex">
         <Header>
           <MessageBar>
-            Digitransit APIs now require registration. <a href="/en/developers/api-registration">More information</a>
+            Production GraphiQL is temporarily unavaible. <a href="https://dev-api.digitransit.fi/graphiql/hsl" target="_blank">Dev GraphiQL</a> can be used instead.
           </MessageBar>
           <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
             <NavigationBar>
