@@ -75,8 +75,8 @@ const Header = styled.header`
 const MessageBar = styled.div`
   width: 100%;
   text-align: center;
-  background-color: #DC0451;
-  color: #ffffff;
+  background-color: #ddd;
+  color: #000;
 `
 
 const Navigation = styled.nav`
@@ -228,7 +228,7 @@ class Layout extends React.Component {
       <LayoutContainer ref="mainflex">
         <Header>
           <MessageBar>
-            Production GraphiQL is temporarily unavailable. <a href="https://dev-api.digitransit.fi/graphiql/hsl" target="_blank">Dev GraphiQL</a> can be used instead.
+          Digitransit APIs require registration. <a href="/en/developers/api-registration">More information</a>
           </MessageBar>
           <Navigation headerColor={this.props.data.site.siteMetadata.headerColor}>
             <NavigationBar>
