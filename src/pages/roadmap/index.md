@@ -2,26 +2,25 @@
 title: Roadmap
 panels: []
 ---
+
 # Kehityskohteiden roadmap
 
-Digitransit-kehittäjäyhteisö (HSL, Waltti Solutions ja Fintraffic) on valinnut seuraavat tavoitteet vuodelle 2023.
+Digitransit-kehittäjäyhteisö (HSL, Waltti Solutions ja Fintraffic) on valinnut seuraavat tavoitteet vuodelle 2024.
 Tämän lisäksi rinnalla tehdään jatkuvaa pienkehitystä sekä ylläpitoa.
 
-## OTP-reititysmoottorin versiopäivitys  ja jatkokehitys (OTP2)
+## Uusi OTP2 rajapinta avataan julkisesti tarjolle
+Mukana myös mm. päästötedot sekä kulkuneuvon kuormitustieto
 
-- Nopeuttaa palvelua
-- Avaa uusia mahdollisuuksia reittioppaan jatkokehitykseen
-- Uuteen versioon palautetaan välipistereititysmahdollisuus, sekä lippurajoitustoiminto
+## Mahdollisuus lisätä kauttakulkupiste reittihakuun
 
-## Reittien pästötietiedot reittioppaaseen sekä reititys-API:iin
+## Mahdollisten läpikulkupaikkojen aukioloaikojen huomioiminen reittiehdotuksissa
 
-## Kuormitustieto reittioppaaseen sekä reitiys-API:iin
+## Matkaan kiinnittyminen
+Reittioppaan toimintaa laajennetaan siten, että reittiehdotusten tarjoamisen lisäksi valitulle reitille pystyy
+halutessaan kiinnittymään ja tätä kautta saamaan tarkempaa tietoa valitusta reitistä reaaliajassa koko matkan ajan.
+
+Vuodelta 2023 vuodelle 2024 siirtyi:
 
 ## Katkeamattomat matkaketjut
-- Vaihtoehdot tilanteissa, joissa reititys aikataulunmukaisella joukkoliikenteellä perille kohteeseen ei ole mahdollista.
-- GTFS Flex sekä GBFS-muotoisten datojen tuen rakentaminen.
-
-## Viron joukkoliikenne- ja lauttatietojen tuominen valtakunnalliseen reittioppaaseen
-
-##Reittiopas ja digitransit -palveluiden saatavuuden varmistaminen ja stabilointi
-- Varmistetaan sekä prosessimuutosten että teknisten muutosten avulla palveluiden jatkuva saatavuus
+Vaihtoehdot tilanteissa, joisa reititys aikataulunmukaisella joukkoliikenteellä perille kohteeseen ei ole mahdollista.
+GTFS Flex sekä GBFS-muotoisten datojen tuen rakentaminen.
