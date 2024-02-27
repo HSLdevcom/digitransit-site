@@ -253,3 +253,73 @@ Esimerkki emissions.txt:
     1002,123.4,20.0
     1003,0,0
 ```
+### 14. Kohteiden näyttäminen reittioppaan kartalla
+
+![](../images/karttataso.png)
+
+Reittioppaan kartalla voidaan näyttää tarvittaessa kiinnostavia kohteita – esimerkiksi palvelupisteet tai lippuautomaatit. Reittioppaalle toimitetaan tällaisessa tilanteessa linkki olemassaolevaan geoJSON-muotoiseen dataan. Esimerkki datasta:
+
+```json
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "1",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.26673,
+                    61.44984
+                ]
+            },
+            "properties": {
+                "category": "SERVICE_POINT",
+                "name": "Nimi",
+                "name_fi": "Nimi",
+                "name_sv": "Namn",
+                "name_en": "Name",
+                "popup": "<div class=\"card-header-wrapper\">\n <span class=\"h4\"> Nimi<\/span>\n <div class=\"card-sub-header\">Katu 1<\/div>\n<\/div>\n",
+                "text": " Nimi\nKatu 1, 00100",
+                "city": "Kaupunki",
+                "city_fi": "Kaupunki",
+                "city_sv": "Stad",
+                "address": "Katu 1",
+                "address_fi": "Katu 1",
+                "address_sv": "Gata 1",
+                "icon": {
+                    "id": "icon_service_point",
+                    "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n     xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\"\n     width=\"256\" height=\"256\" ... svg>\n"
+                }
+            }
+        },
+    ]
+}
+```
+
+#### Datan osalta tulisi huomioida seuraavat asiat:
+-	Ikonina käytettävä svg-grafiikka (svg-tiedoston sisältö) on sisällytettävä dataan kerran. Muissa kohdissa ikoniin viitataan samalla icon.id arvolla kuin se, jossa ikonin data on annettu.
+- Jotta reittiopas voi hyödyntää linkissä sijaitsevaa dataa, tulisi dataa tarjoilevan palvelun antaa vastauksessa reittioppaan salliva Access-Control-Allow-Origin -header ja Content-Type tulisi olla application/json.
+-	Kenttien nimet tulee kirjoittaa kokonaan pienellä
+-	Rivinvaihtomerkkinä toimii “\n”
+
+Ensimmäinen palvelupiste:
+```
+”icon”: {
+  “id“: “service-point“,
+  “svg“: “<svg … data kokonaisuudessaan … >“
+}
+```
+Muilla palvelupisteillä vain viitataan jo kerran annettuun dataan:
+```
+”icon”: {
+  “id“: “service-point“
+}
+```
+<br/>
+
+Response-header esimerkki:
+```
+Access-Control-Allow-Origin:	*
+Content-Type:	application/json
+```
