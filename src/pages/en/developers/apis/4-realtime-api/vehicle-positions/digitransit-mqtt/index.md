@@ -53,25 +53,25 @@ This list contains cities or regions for which there is vehicle position data av
 
 | City/region  | Feed ID and link to GTFS URL | Routing endpoint |
 |---|---|----|
-| Tampere        | [tampere](https://api.digitransit.fi/routing-data/v3/waltti/tampere-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Jyväskylä      | [LINKKI](https://api.digitransit.fi/routing-data/v3/waltti/LINKKI-gtfs.zip)             | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Lappeenranta   | [Lappeenranta](https://api.digitransit.fi/routing-data/v3/waltti/Lappeenranta-gtfs.zip) | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Joensuu        | [Joensuu](https://api.digitransit.fi/routing-data/v3/waltti/Joensuu-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Kuopio         | [Kuopio](https://api.digitransit.fi/routing-data/v3/waltti/Kuopio-gtfs.zip)             | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Turku          | [FOLI](https://api.digitransit.fi/routing-data/v3/waltti/FOLI-gtfs.zip)                 | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Oulu           | [OULU](https://api.digitransit.fi/routing-data/v3/waltti/OULU-gtfs.zip)                 | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Hämeenlinna    | [Hameenlinna](https://api.digitransit.fi/routing-data/v3/waltti/Hameenlinna-gtfs.zip)   | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Lahti          | [Lahti](https://api.digitransit.fi/routing-data/v3/waltti/Lahti-gtfs.zip)               | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Vaasa          | [Vaasa](https://api.digitransit.fi/routing-data/v3/waltti/Vaasa-gtfs.zip)               | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Mikkeli        | [Mikkeli](https://api.digitransit.fi/routing-data/v3/waltti/Mikkeli-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
+| Tampere        | [tampere](https://api.digitransit.fi/routing-data/v3/waltti/tampere-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Jyväskylä      | [LINKKI](https://api.digitransit.fi/routing-data/v3/waltti/LINKKI-gtfs.zip)             | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Lappeenranta   | [Lappeenranta](https://api.digitransit.fi/routing-data/v3/waltti/Lappeenranta-gtfs.zip) | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Joensuu        | [Joensuu](https://api.digitransit.fi/routing-data/v3/waltti/Joensuu-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Kuopio         | [Kuopio](https://api.digitransit.fi/routing-data/v3/waltti/Kuopio-gtfs.zip)             | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Turku          | [FOLI](https://api.digitransit.fi/routing-data/v3/waltti/FOLI-gtfs.zip)                 | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Oulu           | [OULU](https://api.digitransit.fi/routing-data/v3/waltti/OULU-gtfs.zip)                 | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Hämeenlinna    | [Hameenlinna](https://api.digitransit.fi/routing-data/v3/waltti/Hameenlinna-gtfs.zip)   | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Lahti          | [Lahti](https://api.digitransit.fi/routing-data/v3/waltti/Lahti-gtfs.zip)               | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Vaasa          | [Vaasa](https://api.digitransit.fi/routing-data/v3/waltti/Vaasa-gtfs.zip)               | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Mikkeli        | [Mikkeli](https://api.digitransit.fi/routing-data/v3/waltti/Mikkeli-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
 | Salo           | [Salo](https://api.digitransit.fi/routing-data/v3/waltti-alt/Salo-gtfs.zip)             | To be included
-| Kouvola        | [Kouvola](https://api.digitransit.fi/routing-data/v3/waltti/Kouvola-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Kotka          | [Kotka](https://api.digitransit.fi/routing-data/v3/waltti/Kotka-gtfs.zip)               | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
-| Rovaniemi      | [Rovaniemi](https://api.digitransit.fi/routing-data/v3/waltti/Rovaniemi-gtfs.zip)       | [waltti](https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql)
+| Kouvola        | [Kouvola](https://api.digitransit.fi/routing-data/v3/waltti/Kouvola-gtfs.zip)           | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Kotka          | [Kotka](https://api.digitransit.fi/routing-data/v3/waltti/Kotka-gtfs.zip)               | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
+| Rovaniemi      | [Rovaniemi](https://api.digitransit.fi/routing-data/v3/waltti/Rovaniemi-gtfs.zip)       | [waltti](https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql)
 | Kajaani        | [Kajaani](https://api.digitransit.fi/routing-data/v3/waltti-alt/Kajaani-gtfs.zip)       | To be included
-| Rauma          | [Rauma](https://api.digitransit.fi/routing-data/v3/finland/Rauma-gtfs.zip)              | [finland](https://api.digitransit.fi/routing/v1/routers/finland/index/graphql)
+| Rauma          | [Rauma](https://api.digitransit.fi/routing-data/v3/finland/Rauma-gtfs.zip)              | [finland](https://api.digitransit.fi/routing/v2/routers/finland/index/graphql)
 | VARELY         | [VARELY](https://api.digitransit.fi/routing-data/v3/varely/VARELY-gtfs.zip)             | To be included
-| Finland trains | [digitraffic](https://api.digitransit.fi/routing-data/v3/finland/digitraffic-gtfs.zip)  | [finland](https://api.digitransit.fi/routing/v1/routers/finland/index/graphql)
+| Finland trains | [digitraffic](https://api.digitransit.fi/routing-data/v3/finland/digitraffic-gtfs.zip)  | [finland](https://api.digitransit.fi/routing/v2/routers/finland/index/graphql)
 | Härmän liikenne | [Harma](https://api.digitransit.fi/routing-data/v3/finland/Harma-gtfs.zip)             | To be included
 
 ## Geohash

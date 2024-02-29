@@ -30,9 +30,9 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 
 | Region          | Endpoint                                                             |
 |-----------------|----------------------------------------------------------------------|
-| Helsinki region | `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`     |
-| Waltti regions  | `https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql`  |
-| Entire Finland  | `https://api.digitransit.fi/routing/v1/routers/finland/index/graphql` |
+| Helsinki region | `https://api.digitransit.fi/routing/v2/routers/hsl/index/graphql`     |
+| Waltti regions  | `https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql`  |
+| Entire Finland  | `https://api.digitransit.fi/routing/v2/routers/finland/index/graphql` |
 
 2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
