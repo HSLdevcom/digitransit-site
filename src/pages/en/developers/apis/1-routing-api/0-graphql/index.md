@@ -158,11 +158,11 @@ If the request includes multiple queries with same type, they must be renamed us
 
 ```graphql
 {
-  route1: route(id: "HSL:2550") {
+  route1: route(id: "HSL:1020") {
     shortName
     longName
   }
-  route2: route(id: "HSL:2551") {
+  route2: route(id: "HSL:1009") {
     shortName
     longName
   }
