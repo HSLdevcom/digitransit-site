@@ -33,9 +33,14 @@ The Routing API provides a few bicycle related query types:
 
 ```graphql
 {
-  bikeRentalStations {
-    name
+  vehicleRentalStations {
     stationId
+    name
+    availableVehicles {
+      byType{
+        count
+     		vehicleType{formFactor}}
+    }
   }
 }
 ```
@@ -48,11 +53,25 @@ The Routing API provides a few bicycle related query types:
 
 ```graphql
 {
-  bikeRentalStation(id:"070") {
+  vehicleRentalStation(id: "smoove:901") {
     stationId
     name
-    bikesAvailable
-    spacesAvailable
+    availableVehicles {
+      byType {
+        count
+        vehicleType {
+          formFactor
+        }
+      }
+    }
+    availableSpaces {
+      byType {
+        count
+        vehicleType {
+          formFactor
+        }
+      }
+    }
     lat
     lon
     allowDropoff
@@ -68,8 +87,8 @@ The Routing API provides a few bicycle related query types:
 
 ```graphql
 {
-  bikeParks {
-    bikeParkId
+  vehicleRentalStations {
+    stationId
     name
   }
 }
@@ -83,12 +102,15 @@ The Routing API provides a few bicycle related query types:
 
 ```graphql
 {
-  bikePark(id: "906") {
-    bikeParkId
+  vehicleRentalStation(id: "smoove:038") {
+    stationId
     name
-    spacesAvailable
+    availableSpaces {
+      total
+    }
     lat
     lon
+    allowDropoff
   }
 }
 ```
