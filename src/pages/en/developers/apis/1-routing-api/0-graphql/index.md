@@ -2,7 +2,7 @@
 title: GraphQL
 # replit:
 #   title: "Examples"
-#   note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
+#   note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v2/routers/hsl/index/graphql</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
 #   embeds:
 #     -
 #       title: "Content-Type: application/graphql"
@@ -158,11 +158,11 @@ If the request includes multiple queries with same type, they must be renamed us
 
 ```graphql
 {
-  route1: route(id: "HSL:2550") {
+  route1: route(id: "HSL:1020") {
     shortName
     longName
   }
-  route2: route(id: "HSL:2551") {
+  route2: route(id: "HSL:1009") {
     shortName
     longName
   }
