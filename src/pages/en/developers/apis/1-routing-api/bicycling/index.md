@@ -29,7 +29,7 @@ The Routing API provides a few bicycle related query types:
 
 ### All available city bike stations
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeRentalStations%20%7B%0A%20%20%20%20name%0A%20%20%20%20stationId%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available city bike stations.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStations%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520availableVehicles%2520%257B%250A%2520%2520%2520%2520%2520%2520byType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520count%250A%2520%2520%2520%2520%2520%2520%2520%2520vehicleType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520formFactor%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch all available city bike stations.
 
 ```graphql
 {
@@ -37,9 +37,12 @@ The Routing API provides a few bicycle related query types:
     stationId
     name
     availableVehicles {
-      byType{
+      byType {
         count
-     		vehicleType{formFactor}}
+        vehicleType {
+          formFactor
+        }
+      }
     }
   }
 }
@@ -49,7 +52,7 @@ The Routing API provides a few bicycle related query types:
 
 ### Single city bike station and its current bike availability details
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeRentalStation(id%3A%22070%22)%20%7B%0A%20%20%20%20stationId%0A%20%20%20%20name%0A%20%20%20%20bikesAvailable%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20allowDropoff%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the city bike station and its current bike availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStation%28id%253A%2520%2522smoove%253A901%2522%29%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520availableVehicles%2520%257B%250A%2520%2520%2520%2520%2520%2520byType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520count%250A%2520%2520%2520%2520%2520%2520%2520%2520vehicleType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520formFactor%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520availableSpaces%2520%257B%250A%2520%2520%2520%2520%2520%2520byType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520count%250A%2520%2520%2520%2520%2520%2520%2520%2520vehicleType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520formFactor%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%2520%2520allowDropoff%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch the city bike station and its current bike availability details.
 
 ```graphql
 {
@@ -83,7 +86,7 @@ The Routing API provides a few bicycle related query types:
 
 ### All available bike parks
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20bikeParks%20%7B%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available bike parks.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStations%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch all available bike parks.
 
 ```graphql
 {
@@ -98,7 +101,7 @@ The Routing API provides a few bicycle related query types:
 
 ### Single bike park
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20bikePark(id%3A%20%22906%22)%20%7B%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStation%28id%253A%2520%2522smoove%253A038%2522%29%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520availableSpaces%2520%257B%250A%2520%2520%2520%2520%2520%2520total%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%2520%2520allowDropoff%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
 
 ```graphql
 {
