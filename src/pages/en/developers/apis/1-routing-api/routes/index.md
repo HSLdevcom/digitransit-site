@@ -163,6 +163,36 @@ Example response:
 
 2. Press play in GraphiQL to execute the query.
 
+### Query trip with id
+
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520trip%28id%253A%2520%2522HSL%253A1020_20240314_Pe_1_0933%2522%29%2520%257B%250A%2520%2520%2520%2520tripHeadsign%250A%2520%2520%2520%2520occupancy%2520%257B%250A%2520%2520%2520%2520%2520%2520occupancyStatus%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%257D%250A%257D>) to run the query below in GraphiQL.
+
+```graphql
+{
+  trip(id: "HSL:1020_20240314_Pe_1_0933") {
+    tripHeadsign
+    occupancy {
+      occupancyStatus
+    }
+  }
+}
+```
+2. Press play in GraphiQL to execute the query.
+
+Example response:
+
+```json
+{
+  "data": {
+    "trip": {
+      "tripHeadsign": "Munkkivuori",
+      "occupancy": {
+        "occupancyStatus": "FEW_SEATS_AVAILABLE"
+      }
+    }
+  }
+}
+```
 ### <a name="fuzzytrip"></a>Query a trip without its id
 
 - Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available
