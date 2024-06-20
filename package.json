@@ -32,7 +32,7 @@
     "react-helmet": "^6.1.0",
     "react-prism": "^4.3.2",
     "react-typography": "^0.16.23",
-    "styled-components": "^4.3.1",
+    "styled-components": "^6.1.11",
     "typography": "^0.16.17"
   },
   "devDependencies": {
