@@ -18,11 +18,11 @@ After this, you are ready to run queries for [routes](./routes/), [stops](./stop
 
 ### Endpoints
 
-1. The routing API for **Helsinki region** is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`
+1. The routing API for **Helsinki region** is available at:<br/>`https://api.digitransit.fi/routing/v2/routers/hsl/index/graphql`
 
-2. The routing API for the **Waltti regions** is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql`
+2. The routing API for the **Waltti regions** is available at:<br/>`https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql`
 
-3. The routing API for **Finland** as a whole is available at:<br/>`https://api.digitransit.fi/routing/v1/routers/finland/index/graphql`
+3. The routing API for **Finland** as a whole is available at:<br/>`https://api.digitransit.fi/routing/v2/routers/finland/index/graphql`
 
 ### API requirements
 
