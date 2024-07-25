@@ -13,9 +13,11 @@ order: 20
 
 ### There are a few options for using GraphiQL:
 
-1. Using our hosted browser versions for the three available regions. The browser versions have the correct endpoints configured already.
+1. Using our hosted browser versions for the five available regions. The browser versions have the correct endpoints configured already.
    * [Helsinki region](https://api.digitransit.fi/graphiql/hsl)
    * [Waltti regions](https://api.digitransit.fi/graphiql/waltti)
+   * [Waltti-Opas regions](https://api.digitransit.fi/graphiql/waltti-alt)
+   * [Seutu+ regions](https://api.digitransit.fi/graphiql/varely)
    * [Entire Finland](https://api.digitransit.fi/graphiql/finland)
 2. A browser extension like [ChromeiQL](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij) (see regional endpoints below)
 3. For Mac OSX you can use [the desktop GraphiQL app](https://github.com/skevy/graphiql-app) (see regional endpoints below)
@@ -28,11 +30,13 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 
 1. If you are using the GraphiQL app or a browser extension, set the GraphQL Endpoint to one of the following:
 
-| Region          | Endpoint                                                             |
-|-----------------|----------------------------------------------------------------------|
-| Helsinki region | `https://api.digitransit.fi/routing/v2/routers/hsl/index/graphql`     |
-| Waltti regions  | `https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql`  |
-| Entire Finland  | `https://api.digitransit.fi/routing/v2/routers/finland/index/graphql` |
+| Region              | Endpoint                                                                 |
+|---------------------|--------------------------------------------------------------------------|
+| Helsinki region     | `https://api.digitransit.fi/routing/v2/routers/hsl/index/graphql`        |
+| Waltti regions      | `https://api.digitransit.fi/routing/v2/routers/waltti/index/graphql`     |
+| Waltti-Opas region  | `https://api.digitransit.fi/routing/v2/routers/waltti-alt/index/graphql` |
+| Seutu+ region       | `https://api.digitransit.fi/routing/v2/routers/varely/index/graphql`     |
+| Entire Finland      | `https://api.digitransit.fi/routing/v2/routers/finland/index/graphql`    |
 
 2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
