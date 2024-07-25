@@ -76,11 +76,11 @@ Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/
 
 ### Interfaces
 
-GraphQL supports interfaces, which objects can implement by including fields required by the interface. Two interfaces used in the Routing API are **Node** (which has the field `id` used for global IDs) and **PlaceInterface**.
+GraphQL supports interfaces, which objects can implement by including fields required by the interface.
 
 If a query type returns an interface, [inline fragments](https://graphql.org/learn/queries/#inline-fragments) have to be used to access fields defined by the object implementing the interface.
 
-For example, query type **nearest** returns a list of **PlaceInterfaces** and types **BikePark** and **Stop** implement **PlaceInterface**.<br/>
+For example, query type **nearest** returns a list of **PlaceInterfaces** and types **VehicleParking** and **Stop** implement **PlaceInterface**.<br/>
 The following query returns field `spacesAvailable` for bike parks and field `code` for stops.
 ```graphql
 {
@@ -95,10 +95,10 @@ The following query returns field `spacesAvailable` for bike parks and field `co
               gtfsId
               code
             }
-            ...on BikePark {
+            ...on VehicleParking {
+              vehicleParkingId
               name
-              bikeParkId
-              spacesAvailable
+              bicyclePlaces
             }
           }
           distance
