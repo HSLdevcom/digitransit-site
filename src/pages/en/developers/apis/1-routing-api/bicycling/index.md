@@ -122,48 +122,47 @@ The Routing API provides a few bicycle related query types:
 
 ### Plan an itinerary from Kamppi to Kasarmitori using city bike rental
 
-* Bike rental can be used by adding qualifier **RENT** to `transportModes` argument
-  * Note that field `mode` in the results does not include information about qualifiers
+* Bike rental can be used by adding mode **BICYCLE_RENTAL** to `modes`.
+  * Note that field `mode` does not diffrentiate between a rental bicycle and a personal bicycle.
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.932366%22%2C%0A%20%20%20%20toPlace%3A%20%22Kasarmitori%2C%20Helsinki%3A%3A60.165246%2C24.949128%22%2C%0A%20%20%20%20numItineraries%3A%201%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%2C%20qualifier%3A%20RENT%7D%2C%20%7Bmode%3A%20WALK%7D%5D%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20bikeRentalStation%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stationId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20bikeRentalStation%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stationId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should plan an itinerary from Kamppi to Kasarmitori using city bike rental and show which rental stations are used.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.165246%252C%2520longitude%253A%252024.949128%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25201%250A%2520%2520%2520%2520modes%253A%2520%257Bdirect%253A%2520%255BBICYCLE_RENTAL%252C%2520WALK%255D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleRentalStation%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520id%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleRentalStation%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should plan an itinerary from Kamppi to Kasarmitori using city bike rental and show which rental stations are used.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Kamppi, Helsinki::60.168992,24.932366",
-    toPlace: "Kasarmitori, Helsinki::60.165246,24.949128",
-    numItineraries: 1,
-    transportModes: [{mode: BICYCLE, qualifier: RENT}, {mode: WALK}],
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.165246, longitude: 24.949128}}}
+    first: 1
+    modes: {direct: [BICYCLE_RENTAL, WALK]}
   ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-          bikeRentalStation {
-            stationId
-            name
+    edges {
+      node {
+        start
+        end
+        legs {
+          duration
+          mode
+          distance
+          from {
+            lat
+            lon
+            vehicleRentalStation {
+              id
+            }
           }
-        }
-        to {
-          lat
-          lon
-          name
-          bikeRentalStation {
-            stationId
-            name
+          to {
+            lat
+            lon
+            vehicleRentalStation {
+              stationId
+            }
           }
-        }
-        distance
-        legGeometry {
-          length
-          points
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
         }
       }
     }
