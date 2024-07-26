@@ -172,40 +172,40 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### Plan an itinerary from Kamppi to Pisa riding your personal bike
+### Plan an itinerary riding your personal bike
 
-* Note that transport mode **WALK** must not be used when planning an itinerary with personal bike, as otherwise the whole journey is done by walking
+* Note that **directOnly** must used to avoid itineraries using public transport
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.93236%22%2C%0A%20%20%20%20toPlace%3A%20%22Pisa%2C%20Espoo%3A%3A60.175294%2C24.68485%22%2C%0A%20%20%20%20transportModes%3A%20%7Bmode%3A%20BICYCLE%7D%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL. It should fetch bicycle route from Kamppi to Pisa.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.165246%252C%2520longitude%253A%252024.949128%257D%257D%257D%250A%2520%2520%2520%2520modes%253A%2520%257Bdirect%253A%2520%255BBICYCLE%255D%252C%2520directOnly%253A%2520true%257D%250A%2520%2520%2520%2520first%253A%25201%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520legGeometry%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520points%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520length%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch bicycle route from Kamppi to Pisa.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Kamppi, Helsinki::60.168992,24.93236",
-    toPlace: "Pisa, Espoo::60.175294,24.68485",
-    transportModes: {mode: BICYCLE}
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.165246, longitude: 24.949128}}}
+    modes: {direct: [BICYCLE], directOnly: true}
+    first: 1
   ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-        }
-        to {
-          lat
-          lon
-          name
-        }
-        distance
-        legGeometry {
-          length
-          points
+    edges {
+      node {
+        legs {
+          duration
+          mode
+          distance
+          from {
+            lat
+            lon
+            name
+          }
+          to {
+            lat
+            lon
+            name
+          }
+          legGeometry {
+            points
+            length
+          }
         }
       }
     }
