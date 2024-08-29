@@ -9,9 +9,9 @@ order: 50
 
 The Routing API provides a few bicycle related query types:
 
-- Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
-- Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available
-- Query types **bikePark** and **bikeParks** can be used to query bike parks that are available
+- Query type **planConnection** can be used to query bicycling routes using either a city bike or your personal bike
+- Query types **vehicleRentalStation** and **vehicleRentalStations** can be used to query city bike rental stations and bikes that are available
+- Query types **vehicleParking** and **vehicleParkings** can be used to query bike parks that are available
 
 **Note:** For more details about these query types you can use the **Documentation Explorer** provided in GraphiQL.
 
@@ -217,87 +217,43 @@ The Routing API provides a few bicycle related query types:
 
 ### Plan an itinerary from Herttoniemenranta to Itäkeskus and use your personal bike for the first part of the journey
 
-* Using qualifier **PARK** for **BICYCLE** mode plans an itinerary, which begins by bicycling to a bike park from which the journey is continued by public transportation
+* Using argument `modes: {transit: {access: [BICYCLE_PARKING]}}` returns itinerary, which begins by bicycling to a bike park from which the journey is continued by public transportation
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Herttoniemenranta%3A%3A60.18778%2C25.02987%22%2C%0A%20%20%20%20toPlace%3A%20%22It%C3%A4keskus%3A%3A60.21109%2C25.08094%22%2C%0A%20%20%20%20numItineraries%3A%201%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%2C%20qualifier%3A%20PARK%7D%2C%20%7Bmode%3A%20WALK%7D%2C%20%7Bmode%3A%20TRANSIT%7D%5D%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20bikePark%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20bikeParkId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)  to run the query below in GraphiQL.
-
-```graphql
-{
-  plan(
-    fromPlace: "Herttoniemenranta::60.18778,25.02987",
-    toPlace: "Itäkeskus::60.21109,25.08094",
-    numItineraries: 1,
-    transportModes: [{mode: BICYCLE, qualifier: PARK}, {mode: WALK}, {mode: TRANSIT}],
-  ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-          stop {
-            gtfsId
-            code
-            name
-          }
-        }
-        to {
-          lat
-          lon
-          name
-          bikePark {
-            bikeParkId
-            name
-          }
-          stop {
-            gtfsId
-            code
-            name
-          }
-        }
-        trip {
-          routeShortName
-          tripHeadsign
-        }
-        distance
-        legGeometry {
-          length
-          points
-        }
-      }
-    }
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-### Plan an itinerary from Jätkäsaari to Ooppera using personal bike and optimizing for safety
-
-* Argument `optimize: SAFE` can be used to set preference for safer routes, i.e. avoid crossing streets and use bike paths when possible
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%2260.15978%2C24.91842%22%0A%20%20%20%20toPlace%3A%20%2260.18204%2C24.92756%22%0A%20%20%09transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%7D%5D%0A%20%20%20%20optimize%3A%20SAFE%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. The returned itinerary should use [Baana bike path](https://en.wikipedia.org/wiki/Helsinki_harbour_rail#Baana).
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.18778%252C%2520longitude%253A%252025.02987%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.21109%252C%2520longitude%253A%252025.08094%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25203%250A%2520%2520%2520%2520modes%253A%2520%257Btransit%253A%2520%257Baccess%253A%2520%255BBICYCLE_PARKING%255D%257D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParking%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParkingId%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D)  to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    fromPlace: "60.15978,24.91842"
-    toPlace: "60.18204,24.92756"
-    transportModes: [{mode: BICYCLE}]
-    optimize: SAFE
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.18778, longitude: 25.02987}}}
+    destination: {location: {coordinate: {latitude: 60.21109, longitude: 25.08094}}}
+    first: 3
+    modes: {transit: {access: [BICYCLE_PARKING]}}
   ) {
-    itineraries {
-      legs {
-        mode
-        duration
-        distance
-        legGeometry {
-          points
+    edges {
+      node {
+        start
+        end
+        legs {
+          duration
+          mode
+          distance
+          from {
+            lat
+            lon
+          }
+          to {
+            lat
+            lon
+            vehicleParking {
+              vehicleParkingId
+            }
+          }
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
         }
       }
     }
