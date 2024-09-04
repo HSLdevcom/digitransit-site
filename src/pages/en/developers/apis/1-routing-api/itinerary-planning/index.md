@@ -32,9 +32,9 @@ See the following examples on how to decode and use polylines:
 
 ## Query examples
 
-**Note:** For more details about the query type **plan** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
+**Note:** For more details about the query type **planConnection** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
 
-Itinerary planning can be tuned by multiple arguments of the **plan** query.
+Itinerary planning can be tuned by multiple arguments of the **planConnection** query.
 * Time arguments are taken into account literally when planning the itinerary
   * For example, if `preferences: {street: { transit: {transfer: {slack: "2m"}}}` is set to 2 minutes, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
   * Values of time arguments are included in the returned duration of an itinerary
@@ -389,76 +389,6 @@ access, egress and transfers.
           }
          
         }
-      }
-    }
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-### Plan an itinerary with ticket type restrictions
-
-#### Query list of available ticket types
-
-* Field `fareId` contains ticket type ID that can be used with **plan** query
-* Field `zones` contains a list of zones where the ticket is valid
-
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20ticketTypes%20%7B%0A%20%20%20%20fareId%0A%20%20%20%20price%0A%20%20%20%20currency%0A%20%20%20%20zones%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-```graphql
-{
-  ticketTypes {
-    fareId
-    price
-    currency
-    zones
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-#### Plan an itinerary with AB ticket
-
-* The following query plans an itinerary from Helsinki (zone A) to Tikkurila (zone C) using only AB ticket
-
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.1713572%2C%20lon%3A%2024.9416544%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.29280%2C%20lon%3A%2025.04396%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20%20%20allowedTicketTypes%3A%20%22HSL%3AAB%22%0A%20%20)%20%7B%0A%20%20%20%20date%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20zoneId%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20zoneId%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-```graphql
-{
-  plan(
-    from: {lat: 60.1713572, lon: 24.9416544}
-    to: {lat: 60.29280, lon: 25.04396}
-    numItineraries: 3
-    allowedTicketTypes: "HSL:AB"
-  ) {
-    date
-    itineraries {
-      legs {
-        startTime
-        endTime
-        mode
-        route {
-          gtfsId
-        }
-        from {
-          name
-          stop {
-            zoneId
-          }
-        }
-        to {
-          name
-          stop {
-            zoneId
-          }
-        }
-        duration
-        distance
-        transitLeg
       }
     }
   }
