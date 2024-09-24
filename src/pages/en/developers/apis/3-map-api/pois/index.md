@@ -10,36 +10,40 @@ This API provides vector map tiles for points of interests like ticket sales pos
 
 ## Endpoint
 
-`https://cdn.digitransit.fi/map/v3/:source/:z/:x/:y.pbf`
+`https://cdn.digitransit.fi/map/v3/:router-id/:lang/:source/:z/:x/:y.pbf?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}`
 
 ### Supported URL parameters
 
 | Parameter     | Type           | Description                                              |
 |---------------|----------------|----------------------------------------------------------|
-| source        | string         | Source layer. See choices below. E.g, `hsl-stop-map`
+| router-id     | string         | Router id eg. `hsl' or `waltti`
+| lang          | string         | Language eg. `en` or `fi`
+| source        | string         | Comma separated list of source layers. See choices below. E.g, `stops` or `stops,stations`
 | z             | int            | Zoom level
 | x             | int            | x-coordinate
 | y             | int            | y-coordinate
 
 ### Source values
 
-| Value                  | Description                                              |
-|------------------------|----------------------------------------------------------|
-| `hsl-stop-map`         | A bus stop map of Helsinki
-| `hsl-parkandride-map`  | A map showing the Park and Ride sites in the Helsinki region
-| `waltti-stop-map`      | A bus stop map of Waltti regions. You can check the currently active regions at: http://waltti.fi/?lang=en
-| `finland-stop-map`     | A bus stop map of Finland
-| `hsl-citybike-map`     | A map showing the city bikes available in the Helsinki region
-| `waltti-citybike-map`  | A map showing the city bikes available in the Waltti regions.
-| `finland-citybike-map` | A map showing the city bikes available in Finland.
-| `hsl-ticket-sales-map` | A map showing the ticket sales points in the Helsinki region. Includes for example many kiosks and stores.
+| Value                     | Description                                              |
+|---------------------------|----------------------------------------------------------|
+| `stops`                   | A stop map for the requested router id
+| `realtimeStops`           | A stop map including if stop is in use at the moment
+| `stations`                | A station map for the requested router id
+| `realtimeStations`        | A stop map including if station is in use at the moment
+| `rentalStations`          | Available rental vehicle stations
+| `realtimeRentalStations`  | Rental vehicle stations including available rental vehicles and available spaces
+| `realtimeRentalVehicles`  | A map of rental vehicles 
+| `vehicleParking`          | A map showing vehicle parking places
+| `vehicleParkingGroups`    | A map of groups of vehicleParking
+| `hsl-ticket-sales-map`    | A map showing the ticket sales points in the Helsinki region. Includes for example many kiosks and stores.
 
 ## Examples
 
 ### Map tiles address
 
-> https://cdn.digitransit.fi/map/v3/hsl-stop-map/16/37308/18959.pbf
+> https://cdn.digitransit.fi/map/v3/hsl/stops,stations/16/37308/18959.pbf?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}
 
-### Source address for Mapbox GL JS library
-
-> https://cdn.digitransit.fi/map/v3/hsl-stop-map/index.json
+### Ticket sales points in the Helsinki region
+**Note:** Different url path compared to other sources
+> https://cdn.digitransit.fi/map/v2/hsl-ticket-sales-map/16/37308/18959.pbf?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}
