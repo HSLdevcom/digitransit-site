@@ -41,7 +41,7 @@ To run OpenTripPlanner with Docker, use command:
 ```
 docker run --rm --name otp-hsl -p 9080:8080 -e ROUTER_NAME=hsl -e JAVA_OPTS=-Xmx5g -e ROUTER_DATA_CONTAINER_URL=https://api.digitransit.fi/routing-data/v2/hsl hsldevcom/opentripplanner:prod
 ```
-After OpenTripPlanner has built the routing graph, the API can be accessed from `http://localhost:9080/otp/routers/hsl/index/graphql`
+After OpenTripPlanner has built the routing graph, the API can be accessed from `http://localhost:9080/otp/routers/hsl/gtfs/v1`
 
 ## API Documentation
 
@@ -55,9 +55,9 @@ OpenTripPlanner requires developers to make API requests through routers. Digitr
 
 | Region          | Router URL                                            |
 | --------------- | ----------------------------------------------------- |
-| Helsinki region | http://api.digitransit.fi/routing/v2/routers/hsl/     |
-| Waltti regions  | http://api.digitransit.fi/routing/v2/routers/waltti/  |
-| Entire Finland  | http://api.digitransit.fi/routing/v2/routers/finland/ |
+| Helsinki region | http://api.digitransit.fi/routing/v2/hsl/     |
+| Waltti regions  | http://api.digitransit.fi/routing/v2/waltti/  |
+| Entire Finland  | http://api.digitransit.fi/routing/v2/finland/ |
 
 ### GraphQL
 
