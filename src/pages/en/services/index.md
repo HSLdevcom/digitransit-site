@@ -85,7 +85,7 @@ Address search is now served at `localhost:3100`. To test, open a browser and br
 5. Run the user interface service:
 
 ```bash
-docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/routers/hsl/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
+docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
 ```
 
 You can now browse to the address `localhost:8080` and use your private trip planning service, which uses background maps from Digitransit API.
