@@ -9,9 +9,9 @@ order: 50
 
 The Routing API provides a few bicycle related query types:
 
-- Query type **plan** can be used to query bicycling routes using either a city bike or your personal bike
-- Query types **bikeRentalStation** and **bikeRentalStations** can be used to query city bike rental stations and bikes that are available
-- Query types **bikePark** and **bikeParks** can be used to query bike parks that are available
+- Query type **planConnection** can be used to query bicycling routes using either a city bike or your personal bike
+- Query types **vehicleRentalStation** and **vehicleRentalStations** can be used to query city bike rental stations and bikes that are available
+- Query types **vehicleParking** and **vehicleParkings** can be used to query bike parks that are available
 
 **Note:** For more details about these query types you can use the **Documentation Explorer** provided in GraphiQL.
 
@@ -29,13 +29,21 @@ The Routing API provides a few bicycle related query types:
 
 ### All available city bike stations
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeRentalStations%20%7B%0A%20%20%20%20name%0A%20%20%20%20stationId%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available city bike stations.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStations%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520availableVehicles%2520%257B%250A%2520%2520%2520%2520%2520%2520byType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520count%250A%2520%2520%2520%2520%2520%2520%2520%2520vehicleType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520formFactor%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch all available city bike stations.
 
 ```graphql
 {
-  bikeRentalStations {
-    name
+  vehicleRentalStations {
     stationId
+    name
+    availableVehicles {
+      byType {
+        count
+        vehicleType {
+          formFactor
+        }
+      }
+    }
   }
 }
 ```
@@ -44,15 +52,29 @@ The Routing API provides a few bicycle related query types:
 
 ### Single city bike station and its current bike availability details
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20bikeRentalStation(id%3A%22070%22)%20%7B%0A%20%20%20%20stationId%0A%20%20%20%20name%0A%20%20%20%20bikesAvailable%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20allowDropoff%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the city bike station and its current bike availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStation%28id%253A%2520%2522smoove%253A901%2522%29%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520availableVehicles%2520%257B%250A%2520%2520%2520%2520%2520%2520byType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520count%250A%2520%2520%2520%2520%2520%2520%2520%2520vehicleType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520formFactor%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520availableSpaces%2520%257B%250A%2520%2520%2520%2520%2520%2520byType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520count%250A%2520%2520%2520%2520%2520%2520%2520%2520vehicleType%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520formFactor%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%2520%2520allowDropoff%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch the city bike station and its current bike availability details.
 
 ```graphql
 {
-  bikeRentalStation(id:"070") {
+  vehicleRentalStation(id: "smoove:901") {
     stationId
     name
-    bikesAvailable
-    spacesAvailable
+    availableVehicles {
+      byType {
+        count
+        vehicleType {
+          formFactor
+        }
+      }
+    }
+    availableSpaces {
+      byType {
+        count
+        vehicleType {
+          formFactor
+        }
+      }
+    }
     lat
     lon
     allowDropoff
@@ -64,12 +86,12 @@ The Routing API provides a few bicycle related query types:
 
 ### All available bike parks
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20bikeParks%20%7B%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch all available bike parks.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStations%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch all available bike parks.
 
 ```graphql
 {
-  bikeParks {
-    bikeParkId
+  vehicleRentalStations {
+    stationId
     name
   }
 }
@@ -79,16 +101,19 @@ The Routing API provides a few bicycle related query types:
 
 ### Single bike park
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20bikePark(id%3A%20%22906%22)%20%7B%0A%20%20%20%20bikeParkId%0A%20%20%20%20name%0A%20%20%20%20spacesAvailable%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleRentalStation%28id%253A%2520%2522smoove%253A038%2522%29%2520%257B%250A%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520availableSpaces%2520%257B%250A%2520%2520%2520%2520%2520%2520total%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%2520%2520allowDropoff%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch the bike park and its current space availability details.
 
 ```graphql
 {
-  bikePark(id: "906") {
-    bikeParkId
+  vehicleRentalStation(id: "smoove:038") {
+    stationId
     name
-    spacesAvailable
+    availableSpaces {
+      total
+    }
     lat
     lon
+    allowDropoff
   }
 }
 ```
@@ -97,48 +122,47 @@ The Routing API provides a few bicycle related query types:
 
 ### Plan an itinerary from Kamppi to Kasarmitori using city bike rental
 
-* Bike rental can be used by adding qualifier **RENT** to `transportModes` argument
-  * Note that field `mode` in the results does not include information about qualifiers
+* Bike rental can be used by adding mode **BICYCLE_RENTAL** to `modes`.
+  * Note that field `mode` does not diffrentiate between a rental bicycle and a personal bicycle.
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.932366%22%2C%0A%20%20%20%20toPlace%3A%20%22Kasarmitori%2C%20Helsinki%3A%3A60.165246%2C24.949128%22%2C%0A%20%20%20%20numItineraries%3A%201%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%2C%20qualifier%3A%20RENT%7D%2C%20%7Bmode%3A%20WALK%7D%5D%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20bikeRentalStation%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stationId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20bikeRentalStation%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20stationId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. It should plan an itinerary from Kamppi to Kasarmitori using city bike rental and show which rental stations are used.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.165246%252C%2520longitude%253A%252024.949128%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25201%250A%2520%2520%2520%2520modes%253A%2520%257Bdirect%253A%2520%255BBICYCLE_RENTAL%252C%2520WALK%255D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleRentalStation%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520id%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleRentalStation%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520stationId%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should plan an itinerary from Kamppi to Kasarmitori using city bike rental and show which rental stations are used.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Kamppi, Helsinki::60.168992,24.932366",
-    toPlace: "Kasarmitori, Helsinki::60.165246,24.949128",
-    numItineraries: 1,
-    transportModes: [{mode: BICYCLE, qualifier: RENT}, {mode: WALK}],
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.165246, longitude: 24.949128}}}
+    first: 1
+    modes: {direct: [BICYCLE_RENTAL, WALK]}
   ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-          bikeRentalStation {
-            stationId
-            name
+    edges {
+      node {
+        start
+        end
+        legs {
+          duration
+          mode
+          distance
+          from {
+            lat
+            lon
+            vehicleRentalStation {
+              id
+            }
           }
-        }
-        to {
-          lat
-          lon
-          name
-          bikeRentalStation {
-            stationId
-            name
+          to {
+            lat
+            lon
+            vehicleRentalStation {
+              stationId
+            }
           }
-        }
-        distance
-        legGeometry {
-          length
-          points
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
         }
       }
     }
@@ -148,40 +172,40 @@ The Routing API provides a few bicycle related query types:
 
 2. Press play in GraphiQL to execute the query.
 
-### Plan an itinerary from Kamppi to Pisa riding your personal bike
+### Plan an itinerary riding your personal bike
 
-* Note that transport mode **WALK** must not be used when planning an itinerary with personal bike, as otherwise the whole journey is done by walking
+* Note that **directOnly** must used to avoid itineraries using public transport
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.93236%22%2C%0A%20%20%20%20toPlace%3A%20%22Pisa%2C%20Espoo%3A%3A60.175294%2C24.68485%22%2C%0A%20%20%20%20transportModes%3A%20%7Bmode%3A%20BICYCLE%7D%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A) to run the query below in GraphiQL. It should fetch bicycle route from Kamppi to Pisa.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.165246%252C%2520longitude%253A%252024.949128%257D%257D%257D%250A%2520%2520%2520%2520modes%253A%2520%257Bdirect%253A%2520%255BBICYCLE%255D%252C%2520directOnly%253A%2520true%257D%250A%2520%2520%2520%2520first%253A%25201%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520legGeometry%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520points%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520length%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL. It should fetch bicycle route from Kamppi to Pisa.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Kamppi, Helsinki::60.168992,24.93236",
-    toPlace: "Pisa, Espoo::60.175294,24.68485",
-    transportModes: {mode: BICYCLE}
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.165246, longitude: 24.949128}}}
+    modes: {direct: [BICYCLE], directOnly: true}
+    first: 1
   ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-        }
-        to {
-          lat
-          lon
-          name
-        }
-        distance
-        legGeometry {
-          length
-          points
+    edges {
+      node {
+        legs {
+          duration
+          mode
+          distance
+          from {
+            lat
+            lon
+            name
+          }
+          to {
+            lat
+            lon
+            name
+          }
+          legGeometry {
+            points
+            length
+          }
         }
       }
     }
@@ -193,87 +217,43 @@ The Routing API provides a few bicycle related query types:
 
 ### Plan an itinerary from Herttoniemenranta to Itäkeskus and use your personal bike for the first part of the journey
 
-* Using qualifier **PARK** for **BICYCLE** mode plans an itinerary, which begins by bicycling to a bike park from which the journey is continued by public transportation
+* Using argument `modes: {transit: {access: [BICYCLE_PARKING]}}` returns itinerary, which begins by bicycling to a bike park from which the journey is continued by public transportation
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Herttoniemenranta%3A%3A60.18778%2C25.02987%22%2C%0A%20%20%20%20toPlace%3A%20%22It%C3%A4keskus%3A%3A60.21109%2C25.08094%22%2C%0A%20%20%20%20numItineraries%3A%201%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%2C%20qualifier%3A%20PARK%7D%2C%20%7Bmode%3A%20WALK%7D%2C%20%7Bmode%3A%20TRANSIT%7D%5D%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20bikePark%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20bikeParkId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)  to run the query below in GraphiQL.
-
-```graphql
-{
-  plan(
-    fromPlace: "Herttoniemenranta::60.18778,25.02987",
-    toPlace: "Itäkeskus::60.21109,25.08094",
-    numItineraries: 1,
-    transportModes: [{mode: BICYCLE, qualifier: PARK}, {mode: WALK}, {mode: TRANSIT}],
-  ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-          stop {
-            gtfsId
-            code
-            name
-          }
-        }
-        to {
-          lat
-          lon
-          name
-          bikePark {
-            bikeParkId
-            name
-          }
-          stop {
-            gtfsId
-            code
-            name
-          }
-        }
-        trip {
-          routeShortName
-          tripHeadsign
-        }
-        distance
-        legGeometry {
-          length
-          points
-        }
-      }
-    }
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-### Plan an itinerary from Jätkäsaari to Ooppera using personal bike and optimizing for safety
-
-* Argument `optimize: SAFE` can be used to set preference for safer routes, i.e. avoid crossing streets and use bike paths when possible
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%2260.15978%2C24.91842%22%0A%20%20%20%20toPlace%3A%20%2260.18204%2C24.92756%22%0A%20%20%09transportModes%3A%20%5B%7Bmode%3A%20BICYCLE%7D%5D%0A%20%20%20%20optimize%3A%20SAFE%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL. The returned itinerary should use [Baana bike path](https://en.wikipedia.org/wiki/Helsinki_harbour_rail#Baana).
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.18778%252C%2520longitude%253A%252025.02987%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.21109%252C%2520longitude%253A%252025.08094%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25203%250A%2520%2520%2520%2520modes%253A%2520%257Btransit%253A%2520%257Baccess%253A%2520%255BBICYCLE_PARKING%255D%257D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParking%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParkingId%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D)  to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    fromPlace: "60.15978,24.91842"
-    toPlace: "60.18204,24.92756"
-    transportModes: [{mode: BICYCLE}]
-    optimize: SAFE
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.18778, longitude: 25.02987}}}
+    destination: {location: {coordinate: {latitude: 60.21109, longitude: 25.08094}}}
+    first: 3
+    modes: {transit: {access: [BICYCLE_PARKING]}}
   ) {
-    itineraries {
-      legs {
-        mode
-        duration
-        distance
-        legGeometry {
-          points
+    edges {
+      node {
+        start
+        end
+        legs {
+          duration
+          mode
+          distance
+          from {
+            lat
+            lon
+          }
+          to {
+            lat
+            lon
+            vehicleParking {
+              vehicleParkingId
+            }
+          }
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
         }
       }
     }

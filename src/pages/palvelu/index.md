@@ -86,7 +86,7 @@ Osoitehakua palvellaan osoitteessa localhost:3100. Avaa selain ja testaa haku: h
 5. Käynnistä käyttöliittymäpalvelu:
 
 ```bash
-docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/routers/hsl/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
+docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
 ```
 
 Nyt voit selata osoitteeseen localhost:8080 ja alkaa käyttämään omaa yksityistä reittopaspalvelua, jonka taustakartat tulevat Digitransitista.

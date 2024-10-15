@@ -2,7 +2,7 @@
 title: GraphQL
 # replit:
 #   title: "Examples"
-#   note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
+#   note: "The examples below send a GraphQL query using HTTP POST to <code>https://api.digitransit.fi/routing/v2/hsl/gtfs/v1</code>. This example query asks the server to find a stop with the ID <i>HSL:1040129</i> and return its name, latitude and longitude coordinates, and whether is is accessible by wheelchair.<br/><b>Note:</b> If the examples provided do not return expected results, the stop id  may not be in use any more and you should try again with an existing id."
 #   embeds:
 #     -
 #       title: "Content-Type: application/graphql"
@@ -76,11 +76,11 @@ Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/
 
 ### Interfaces
 
-GraphQL supports interfaces, which objects can implement by including fields required by the interface. Two interfaces used in the Routing API are **Node** (which has the field `id` used for global IDs) and **PlaceInterface**.
+GraphQL supports interfaces, which objects can implement by including fields required by the interface.
 
 If a query type returns an interface, [inline fragments](https://graphql.org/learn/queries/#inline-fragments) have to be used to access fields defined by the object implementing the interface.
 
-For example, query type **nearest** returns a list of **PlaceInterfaces** and types **BikePark** and **Stop** implement **PlaceInterface**.<br/>
+For example, query type **nearest** returns a list of **PlaceInterfaces** and types **VehicleParking** and **Stop** implement **PlaceInterface**.<br/>
 The following query returns field `spacesAvailable` for bike parks and field `code` for stops.
 ```graphql
 {
@@ -95,10 +95,10 @@ The following query returns field `spacesAvailable` for bike parks and field `co
               gtfsId
               code
             }
-            ...on BikePark {
+            ...on VehicleParking {
+              vehicleParkingId
               name
-              bikeParkId
-              spacesAvailable
+              bicyclePlaces
             }
           }
           distance
@@ -158,11 +158,11 @@ If the request includes multiple queries with same type, they must be renamed us
 
 ```graphql
 {
-  route1: route(id: "HSL:2550") {
+  route1: route(id: "HSL:1020") {
     shortName
     longName
   }
-  route2: route(id: "HSL:2551") {
+  route2: route(id: "HSL:1009") {
     shortName
     longName
   }

@@ -20,10 +20,10 @@ Background map provides **HSL style** map tiles for example for browser based ap
 Remember to include your ```digitransit-subscription-key``` parameter!
 
 ## Endpoint
-```https://cdn.digitransit.fi/map/v2/:source/:z/:x/:y:size.png?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
+```https://cdn.digitransit.fi/map/v3/:source/:z/:x/:y:size.png?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
 
 ## TileJSON endpoint 
-```https://cdn.digitransit.fi/map/v2/:source/index.json?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
+```https://cdn.digitransit.fi/map/v3/:source/index.json?digitransit-subscription-key={YOUR_SUBSCRIPTION_KEY}```
 
 You can also include ```digitransit-subscription-key``` header in your request instead of the url parameters.
 
@@ -60,24 +60,24 @@ You can also include ```digitransit-subscription-key``` header in your request i
 
 ### An example of what the HSL map tiles look like
 
-![hsl-map-style](http://cdn.digitransit.fi/map/v2/hsl-map/16/37311/18963@2x.png)
+![hsl-map-style](http://cdn.digitransit.fi/map/v3/hsl-map/16/37311/18963@2x.png)
 
 ### HSL style map tiles
 
-> https://cdn.digitransit.fi/map/v2/hsl-map/16/37313/18958.png
+> https://cdn.digitransit.fi/map/v3/hsl-map/16/37313/18958.png
 
 ### Retina tiles
 
-> https://cdn.digitransit.fi/map/v2/hsl-map/16/37313/18958@2x.png
+> https://cdn.digitransit.fi/map/v3/hsl-map/16/37313/18958@2x.png
 
 ### Swedish language tiles
 
-> https://cdn.digitransit.fi/map/v2/hsl-map-sv/16/37313/18958.png
+> https://cdn.digitransit.fi/map/v3/hsl-map-sv/16/37313/18958.png
 
 ### English language tiles
 
-> https://cdn.digitransit.fi/map/v2/hsl-map-en/16/37313/18958.png
+> https://cdn.digitransit.fi/map/v3/hsl-map-en/16/37313/18958.png
 
 ### Bilingual Finnish / Swedish language tiles
 
-> https://cdn.digitransit.fi/map/v2/hsl-map-fi-sv/16/37313/18958.png
+> https://cdn.digitransit.fi/map/v3/hsl-map-fi-sv/16/37313/18958.png
