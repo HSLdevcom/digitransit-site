@@ -178,7 +178,31 @@ Digitransit-alusta tukee GTFS-RT spesifikaation mukaisia reaaliaikaisia tietoja,
 Matkustajakapasiteettitietoa hyödynnetään tällä hetkellä paikkatiedoista, mutta suosittelemme, että matkustajakapasiteettitieto lisätään pysäkkiennusteisiin, johon voimme lisätä tuen.
 
 Määrittele:
-- Reaaliaikarajapinnan osoite
+- **GTFS-RT reaaliaikarajapinnan osoite** (tai osoitteet) ja minkä tyyppistä dataa halutaan esittää (esim. pelkkä paikkatieto).
+  
+  Paikkatietodatan ei tule sisältää /-merkkejä teknisistä syistä. Mqtt-sovelluksessa /-merkki erottelee datan aihepiirejä, joten kyseisen merkin käyttö voi kokonaan estää datan käsittelyn. Erikoismerkkeihin kuuluvat myös + ja # merkit, jotka poistetaan datasta. [Ks. mqtt-spesifikaatio](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901243)
+  
+  Paikkatietodatassa vaaditaan vähintään seuraavat tiedot: 
+  
+  - trip.route\_id (Reittioppaan vaatimus tietojen yhdistämistä ja esittämistä varten.)
+  - trip.start\_time (Reittioppaan vaatimus ajoneuvojen oikea-aikaisen näyttämisen varmistamiseksi.) 
+  - trip.trip\_id tai kaikki seuraavat: trip.route\_id, trip.direction\_id, trip.start\_time, trip.start\_date [Ks. Trip-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor)
+  - position.latitude, position.longitude [Ks. Position-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-position)
+
+  Suositeltavat lisätiedot:
+
+  - vehicle.label kenttään voi asettaa vastaavan arvo kuin GTFS-datan trip\_headsign kentässä. Tällä voidaan tarvittaessa erotella ajoneuvoja, joilla on eri määränpää.
+
+- **Vastaavan staattisen GTFS-datan osoite** (mikäli ei sisälly jo aiemmin toimitettuun GTFS-dataan). 
+  
+  Paikkatietodatassa käytettyjen route\_id-arvojen tulee vastata staattisen GTFS-datan route\_id-arvoja.
+  
+  Ajoneuvojen käyttäjäystävällistä esittämistä varten tarvitaan routes.txt-tiedostoon route\_short\_name. [Ks. routes.txt-spesifikaatio.](https://gtfs.org/documentation/schedule/reference/#routestxt)
+
+Huomioitavaa: 
+- Data otetaan mieluiten vastaan ilman salasanasuojauksia.
+- GTFS-RT paikkatietodata vaatii aina myös vastaavan staattisen GTFS-datan. Tämä johtuu siitä, että reittiopas esittää reittejä staattisen datan perusteella ja sen yhteydessä vastaavien reittien ajoneuvojen sijainteja. GTFS-RT-datan tietoja myös rikastetaan staattisesta GTFS-datasta löytyvillä tiedoilla käyttöliittymällä esittämistä varten. (Esim. reitin nimi/route\_short\_name, väri/route\_color, reitin tyyppi/route\_type)
+- Ajoneuvot esitetään kartalla yleensä ajoneuvon nimellä (route\_short\_name), joka on useimmiten lyhyt numero/kirjainkoodi, joka on tuttu myös kyseisen liikennevälineen käyttäjille. Mikäli tietoa ei saada staattisesta GTFS-datasta, tai se on liian pitkä (yli 5 merkkiä), käytetään esityksessä route\_id-kentän arvoa. Mikäli tieto on edelleen liian pitkä, näytetään ajoneuvo kysymysmerkillä varustettuna. 
 
 
 ### 12. Lippuvyöhykkeet
