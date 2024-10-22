@@ -180,13 +180,18 @@ Matkustajakapasiteettitietoa hyödynnetään tällä hetkellä paikkatiedoista, 
 Määrittele:
 - **GTFS-RT reaaliaikarajapinnan osoite** (tai osoitteet) ja minkä tyyppistä dataa halutaan esittää (esim. pelkkä paikkatieto).
   
-  Paikkatietodatan ei tule sisältää /-merkkejä teknisistä syistä. Mqtt-sovelluksessa /-merkki erottelee datan aihepiirejä, joten kyseisen merkin käyttö voi kokonaan estää datan käsittelyn.
+  Paikkatietodatan ei tule sisältää /-merkkejä teknisistä syistä. Mqtt-sovelluksessa /-merkki erottelee datan aihepiirejä, joten kyseisen merkin käyttö voi kokonaan estää datan käsittelyn. Erikoismerkkeihin kuuluvat myös + ja # merkit, jotka poistetaan datasta. [Ks. mqtt-spesifikaatio](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901243)
   
   Paikkatietodatassa vaaditaan vähintään seuraavat tiedot: 
   
-  - trip.route\_id (Reittioppaan vaatimus tietojen yhdistämistä ja esittämistä varten)
-  - trip.trip\_id tai kaikki seuraavat: trip.direction\_id, trip.start\_time, trip.start\_date [Ks. Trip-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor)
+  - trip.route\_id (Reittioppaan vaatimus tietojen yhdistämistä ja esittämistä varten.)
+  - trip.start\_time (Reittioppaan vaatimus ajoneuvojen oikea-aikaisen näyttämisen varmistamiseksi.) 
+  - trip.trip\_id tai kaikki seuraavat: trip.route\_id, trip.direction\_id, trip.start\_time, trip.start\_date [Ks. Trip-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor)
   - position.latitude, position.longitude [Ks. Position-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-position)
+
+  Suositeltavat lisätiedot:
+
+  - vehicle.label kenttään voi asettaa vastaavan arvo kuin GTFS-datan trip\_headsign kentässä. Tällä voidaan tarvittaessa erotella ajoneuvoja, joilla on eri määränpää.
 
 - **Vastaavan staattisen GTFS-datan osoite** (mikäli ei sisälly jo aiemmin toimitettuun GTFS-dataan). 
   
