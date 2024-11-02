@@ -70,7 +70,7 @@ The following queries would request a stop with id `HSL:1173434` and return its 
 
 ### IDs
 
-All objects in the GraphQL API have a global ID (field `id`), which can be used as a cache key or to refetch the object using query type **node**.
+Some objects in the GraphQL API have a global ID (field `id`), which can be used as a cache key or to refetch the object using query type **node**.
 
 Global IDs in the Routing API are defined by [Relay](https://facebook.github.io/relay/graphql/objectidentification.htm) and should not be confused with other IDs (such as `gtfsId`) that objects may have.
 
@@ -131,49 +131,11 @@ For example, the following query would request a route with name `550` (using *R
 }
 ```
 
-### <a name="batching"></a>Batching
-
-Multiple queries can be combined and sent in one POST request. Batched queries require less server roundtrips and can be processed more efficiently on the server.
-
-For example, the following query would request a stop with id `HSL:1173434` and a route with id `HSL:1009`:
-```graphql
-{
-  stop(id: "HSL:1173434") {
-    name
-    lat
-    lon
-    routes {
-      shortName
-      longName
-    }
-  }
-  route(id: "HSL:1009") {
-    shortName
-    longName
-  }
-}
-```
-
-If the request includes multiple queries with same type, they must be renamed using aliases. For example, the following query would request two routes and return them as `route1` and `route2`:
-
-```graphql
-{
-  route1: route(id: "HSL:1020") {
-    shortName
-    longName
-  }
-  route2: route(id: "HSL:1009") {
-    shortName
-    longName
-  }
-}
-```
-
 ### Pagination
 * Query types which support pagination can be used without pagination by omitting arguments `first` and `after`, in which case all data is returned on one page
 
 Some query types support pagination, which can be used to limit the amount of data returned per query.
-<br/>Query types which support pagination return a [Relay cursor connection](https://facebook.github.io/relay/graphql/connections.htm) to the data.
+<br/>Query types which support pagination return a [Relay cursor connection](https://relay.dev/graphql/connections.htm) to the data.
 
 For example, **stopsByRadius** supports pagination. The following query requests stops within 300m of 60.19924, 24.94112 and returns 2 stops per page (argument `first`).
 ```graphql
@@ -299,11 +261,11 @@ An example response:
 In most cases, a GraphQL client should be used instead of plain HTTP requests, as GraphQL clients have many useful features (such as caching, batching and validating queries), which would otherwise have to be implemented manually.
 
 Two commonly used GraphQL clients are
-* [Relay](http://facebook.github.io/relay/en/) by Facebook, supports React
-* [Apollo](https://www.apollographql.com/client), supports multiple development platforms, including Android and iOS
+* [Relay](https://relay.dev/) by Facebook, supports React
+* [Apollo](https://www.apollographql.com/), supports multiple development platforms, including Android and iOS
 
 ## Further reading
 
 * The [GraphQL site](https://graphql.org/learn/) provides more information on how to use GraphQL
-* [How Facebook sees GraphQL](https://facebook.github.io/relay/docs/thinking-in-graphql.html)
+* [Thinking in GraphQL](https://relay.dev/docs/principles-and-architecture/thinking-in-graphql/)
 
