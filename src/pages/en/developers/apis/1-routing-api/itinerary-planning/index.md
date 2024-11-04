@@ -34,13 +34,14 @@ See the following examples on how to decode and use polylines:
 
 **Note:** For more details about the query type **planConnection** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
 
+**Note:** Some additional examples can be found on the [Bicycles, cars and e-scooters page](../bicycles-scooters-cars/).
+
 Itinerary planning can be tuned by multiple arguments of the **planConnection** query.
 * Time arguments are taken into account literally when planning the itinerary
-  * For example, if `preferences: {street: { transit: {transfer: {slack: "2m"}}}` is set to 2 minutes, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
+  * For example, if `preferences: {street: { transit: {transfer: {slack: "2m"}}}`, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
   * Values of time arguments are included in the returned duration of an itinerary
-    * For example, if there is a 15 minute  leg and `slack` is set to 1 minute, the returned duration of the leg will be 17 minutes
 * Cost arguments on the other hand are not hard limits, but preferences
-  * For example, if `preferences: {street: {walk: {boardCost: 120}}}` is set to 2 minutes, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
+  * For example, if `preferences: {street: {walk: {boardCost: 120}}}`, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
   * Cost is not included in the returned duration of an itinerary
     * For example, if there is a 15 minute walking leg and `boardCost` is set to 1 minute, the returned duration of the walking leg will be 15 minutes
 * Multiplier arguments (e.g. `preferences: {street: {walk: {reluctance: 3}}}`) are used to multiply costs of an leg
@@ -89,8 +90,24 @@ Itinerary planning can be tuned by multiple arguments of the **planConnection** 
 
 2. Press play in GraphiQL to execute the query.
 
-### Pagnation
-The `first` argument in the GraphQL query specifies the number of itinerary plans (`nodes`) to be returned. To retrieve more results, you can use the after argument with the value of `endCursor` from the previous query's response. 
+### Search window
+
+It is possible to define a `searchWindow` in the requests to ensure that itineraries are searched from a specified search window time.
+However, usually specifying a search window in the request doesn't make sense as it can be inefficient. If one isn't specified, a search
+window is computed during the request which in many cases yields results. If one wants to specify a search window, it should preferable be
+between 30 minutes and 8 hours (depends on how dense the transit network is in the area), and it should be used together with [pagination](#pagination).
+
+### Pagination
+
+The `planConnection` query follows the [Relay Graphql Cursor Connection specification](https://relay.dev/graphql/connections.htm). Only
+difference is that there are no cursors available for the itineraries in the middle of a response (a hard-coded place holder string
+is returned instead).
+
+Pagination is highly recommended as usually it's possible to get enough itineraries without specifying a relatively high `searchWindow` in the
+request. Higher `searchWindow` will mean that fetching the itineraries will take more time and in most cases, more itineraries will be found
+than what is necessary.
+
+The `first` argument in the GraphQL query specifies the number of itinerary plans to be returned. To retrieve more results, you can use the `after` argument with the value of `endCursor` from the previous query's response's `pageInfo`.
 
 ```graphql
 {
@@ -100,7 +117,25 @@ The `first` argument in the GraphQL query specifies the number of itinerary plan
     first: 2
     after: <endCursor from previous query>
   )....
-``` 
+```
+
+Alternatively, if you want to fetch previous itineraries, `before` and `last` arguments can be used.
+
+```graphql
+{
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.175294, longitude: 24.684855}}}
+    last: 2
+    before: <startCursor from previous query>
+  )....
+```
+
+**Note:** Pagination back-and-forth is not recommended. The previously returned itineraries should be stored in the client.
+
+**Note:** If it's likely that you need to fetch for more itineraries, it's more efficient to just fetch more itineraries in the first
+request instead of limiting it with the `first` or `last` as it's likely that the backend will have a lot more itineraries available to be returned.
+
 ### Basic route from Kamppi (Helsinki) to Pisa (Espoo)
 
 * Origin and destination locations can be named by using the argument `label`. The label is then returned with the location
@@ -273,81 +308,6 @@ access, egress and transfers.
 
 2. Change  `earliestDeparture` arguments.
 3. Press play in GraphiQL to execute the query.
-
-### Plan an itinerary using Park & Ride
-
-* By using arguments `modes: {transit: {access: [CAR_PARKING]}}` we can plan an itinerary using Park & Ride, i.e. the first leg of the journey is done by driving to a car park and continuing by public transportation from there
-
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.34770%252C%2520longitude%253A%252024.86569%257D%257D%252C%2520label%253A%2520%2522Seutula%2522%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.16870%252C%2520longitude%253A%252024.93129%257D%257D%252C%2520label%253A%2520%2522Kamppi%2522%257D%250A%2520%2520%2520%2520first%253A%25202%250A%2520%2520%2520%2520modes%253A%2520%257Btransit%253A%2520%257Baccess%253A%2520%255BCAR_PARKING%255D%257D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520walkDistance%250A%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520stop%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520code%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParking%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParkingId%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520stop%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520code%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParking%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vehicleParkingId%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520trip%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520tripHeadsign%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520routeShortName%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520legGeometry%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520length%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520points%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
-
-```graphql
-{
-  planConnection(
-    origin: {location: {coordinate: {latitude: 60.34770, longitude: 24.86569}}, label: "Seutula"}
-    destination: {location: {coordinate: {latitude: 60.16870, longitude: 24.93129}}, label: "Kamppi"}
-    first: 2
-    modes: {transit: {access: [CAR_PARKING]}}
-  ) {
-    pageInfo {
-      endCursor
-    }
-    edges {
-      node {
-        walkDistance
-        duration
-        legs {
-          mode
-          start {
-            scheduledTime
-          }
-          end {
-            scheduledTime
-          }
-          duration
-          from {
-            lat
-            lon
-            name
-            stop {
-              code
-              name
-            }
-            vehicleParking {
-              vehicleParkingId
-              name
-            }
-          }
-          to {
-            lat
-            lon
-            name
-            stop {
-              code
-              name
-            }
-            vehicleParking {
-              vehicleParkingId
-              name
-            }
-          }
-          trip {
-            tripHeadsign
-            routeShortName
-          }
-          distance
-          legGeometry {
-            length
-            points
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
 
 ### Plan an itinerary with alternative departures for each leg
 
