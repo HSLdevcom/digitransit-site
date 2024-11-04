@@ -239,7 +239,7 @@ access, egress and transfers.
 ### Plan an itinerary from Hakaniemi to Keilaniemi and modify the following parameters:
 
 * Return five results: (`fist: 5`)
-* Use transportation modes other than subway (`modes: {transit: {transit: [{mode: BUS}, {mode: RAIL}, {mode: TRAM}, {mode: FERRY}]}}`)
+* Use BUS, RAIL, TRAM and FERRY modes (`modes: {transit: {transit: [{mode: BUS}, {mode: RAIL}, {mode: TRAM}, {mode: FERRY}]}}`)
 * Walking speed of 1,7m/s (`preferences: {street: {walk: {speed: 1.7}}}`)
 * Use a 10 minute safety margin for transfers (`preferences: {street: { transit: {transfer: {slack: "10m"}}}`)
   *  In a lenient ISO-8601 duration format. Example P2DT2H12M40S, 2d2h12m40s or 1h
