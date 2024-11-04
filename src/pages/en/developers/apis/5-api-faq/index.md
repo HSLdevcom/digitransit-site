@@ -6,25 +6,11 @@ title: FAQ
 
 ### Where do I find information on the routing API query types and parameters?
 
-> If you have any questions related to query types, their fields and parameters, please use the Docs functionality of [GraphiQL](../1-routing-api/1-graphiql/). <br><br> For example, open [GraphiQL for the Helsinki region](https://api.digitransit.fi/graphiql/hsl) and click **< Docs** in the upper right corner. This will open the documentation explorer on the right side of the screen.
+> If you have any questions related to query types, their fields and parameters, please use the Docs functionality of [GraphiQL](../1-routing-api/1-graphiql/). <br><br> For example, open [GraphiQL for the Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2) and click **< Docs** in the upper right corner. This will open the documentation explorer on the right side of the screen.
 
 ### Why are some route patterns rendered as straight lines from one stop to the next?
   
 > To display actual route geometries, [GTFS shapes](https://developers.google.com/transit/gtfs/reference/#shapestxt) are needed. These are not necessarily available for all cities and routes, but are generally added to the source material of Digitransit as they become available. Availability of route geometries depends on the local public transport authorities. In Finland, route geometries for towns part of the Waltti-system are managed by Waltti Solutions Oy. For more information and contacts regarding Waltti-areas, see http://waltti.fi/.
-
-### How do I query multiple items with a single request?
-
->If the query type takes only one argument, [GraphQL batching](../1-routing-api/0-graphql/#batching) can be used to fetch multiple items. <br/><br/> If the query type takes a list as a argument, create a list of ids to request data for and use it as the argument. For example, the query below can be used to query data for two stops.
-```graphql
-{
-  stops(ids: ["HSL:1173429","HSL:1291501"]) {
-    name
-    code
-    lat
-    lon
-  }
-}
-```
 
 ### How do I query the timetables for a specific stop in my city?
 
@@ -57,15 +43,11 @@ title: FAQ
 }
 ```
 
-### What corresponds most closely to the estimated time of departure from a stop that was available in the now closed www.omatlahdot.fi-API?
-
-> The estimated time of departure, in other words the time of departure according to the schedule, can be queried using `stoptime`. Stoptimes contain the field `scheduledDeparture` which gives you the scheduled time of departure from that particular stop.
-
 ## Real-time API
 
 ### Is it possible to register multiple lines in one topic, e.g. like this: `/hfp/journey/bus//4611,4611B//////+/#A`
 
-> No, you need to make multiple subscriptions, e.g. `mqtt sub -v -h 213.138.147.225 -p 1883 -t '/hfp/journey/bus//2550/#' -t '/hfp/journey/bus//4615/#'`
+> No, you need to make multiple subscriptions, e.g. `mqtt subscribe -h mqtt.hsl.fi -l mqtts -p 8883 -v -t '/hfp/journey/bus//2550/#' -t '/hfp/journey/bus//4615/#'`
 
 ### How do I know which bus "7ef0d44e" is? I know that it's the number of a bus (for example Helsingin Bussiliikenne 1212).
 
