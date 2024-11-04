@@ -14,7 +14,7 @@ It is also recommended to try building queries and exploring the schema in [Grap
 
 [Glossary](./2-glossary/) page has explanations for terms commonly used in the API.
 
-After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [city bikes and bicycling routes](./bicycling/), [disruption info](./disruption-info/), [canceled trips](./canceled-trips/) and do [itinerary planning](./itinerary-planning/).
+After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [bicycles, e-scooters and cars](./bicycles-scooters-cars/), [disruption info](./disruption-info/), [canceled trips](./canceled-trips/) and do [itinerary planning](./itinerary-planning/).
 
 ### Endpoints
 
