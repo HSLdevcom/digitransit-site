@@ -20,8 +20,7 @@ are stable and currently available since the launch of production.
 
 ## Real time API
 
-[Real time API](../apis/4-realtime-api/) is more or less "work in progress". HSL is working on new Ticketing system and at the moment realtime
-API (arrival prediction, location on map, service alerts) is in "proof of concept" stage.
+[Real time API](../apis/4-realtime-api/) contains information about availabe real-time data types and sources.
 
 ## Data containers
 
