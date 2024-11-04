@@ -196,7 +196,7 @@ The vehicle parking areas that can be found from the APIs are meant for park and
 #### Plan an itinerary from Kaartinkaupunki to Otaniemi using city bike rental
 
 * Bike rental can be used by adding mode **BICYCLE_RENTAL** to `modes`.
-  * Note that the response field `mode` does not diffrentiate between a rental bicycle and a personal bicycle.
+  * Note that the response field `mode` does not differentiate between a rental bicycle and a personal bicycle.
   * Note that availability information of a station is only used if the search arrival or departure time is within the next 15 hours
   * If it doesn't make sense to use rental, no rental will be used in the suggestions.
 
