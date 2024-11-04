@@ -1,6 +1,6 @@
 ---
 title: Translation
-order: 40
+order: 50
 ---
 
 ## Translations in the routing API

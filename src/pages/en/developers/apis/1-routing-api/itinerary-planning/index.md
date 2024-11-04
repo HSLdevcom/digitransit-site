@@ -1,6 +1,6 @@
 ---
 title: Itinerary planning
-order: 80
+order: 90
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
