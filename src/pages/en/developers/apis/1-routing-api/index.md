@@ -6,13 +6,15 @@ information about stops and timetables using GraphQL.
 
 ## Getting started
 
-If you are not familiar with GraphQL, start by reading the [GraphQL](./0-graphql/) page. 
+If you are not familiar with GraphQL, start by reading the [GraphQL page](./0-graphql/).
 
 It is also recommended to try building queries and exploring the schema in [GraphiQL](./1-graphiql/). 
 
-[Real-time information](./3-realtime-information/) page has information about the real-time data available in the API.
+[Real-time information page](./3-realtime-information/) has information about the real-time data available in the API.
 
-[Glossary](./2-glossary/) page has explanations for terms commonly used in the API.
+[Glossary page](./2-glossary/) has explanations for terms commonly used in the API.
+
+[Translations page](./4-translations/) explains how to fetch translated texts from the API.
 
 After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [bicycles, e-scooters and cars](./bicycles-scooters-cars/), [disruption info](./disruption-info/), [canceled trips](./canceled-trips/) and do [itinerary planning](./itinerary-planning/).
 
