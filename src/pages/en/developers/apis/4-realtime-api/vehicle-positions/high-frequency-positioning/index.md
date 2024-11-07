@@ -4,7 +4,7 @@ order: 20
 toc: true
 description:
   info: The open HFP API can be used to subscribe to vehicle movements in soft real time.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/4-realtime-api/vehicle-positions/high-frequency-positioning/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/apis/4-realtime-api/vehicle-positions/high-frequency-positioning/architecture.xml
 ---
 
 Most of the vehicles in the HSL area should publish their status, including their position, once per second.

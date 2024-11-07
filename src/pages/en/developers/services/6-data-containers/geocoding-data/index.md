@@ -2,7 +2,7 @@
 title: Geocoding Data
 description:
   info: Data container for Pelias
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/services/6-data-containers/geocoding-data/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/services/6-data-containers/geocoding-data/architecture.xml
 assets:
   - title: "source"
     url: https://github.com/HSLdevcom/pelias-data-container

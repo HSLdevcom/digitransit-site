@@ -205,7 +205,7 @@ Paras tulos saadaan, kun käytössä on kaksi hiukan erilaista dataversiota:
 Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'. Lisäksi vyöhykkeille määritellään vakioidut piirtotyylit
 alla olevan mallin mukaisesti.
 
-Esimerkki lippuvyöhykkeiden aluedatasta: [kuopio-zone-areas-20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/kuopio_zone_areas_20201120.json)
+Esimerkki lippuvyöhykkeiden aluedatasta: [kuopio-zone-areas-20190508.json](https://raw.githubusercontent.com/HSLdevcom/pelias-api/master/middleware/config/kuopio_zone_areas_20240508.json)
 
 2. Vyöhykkeiden visualisointi kartalle. Lippuvyöhykkeiden rajaviivat kuvataan linestring/multilinestring geometrioina ilman kaksinkertaista piirtoa alueiden välille.
 Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat ja symbolien svg grafiikka kartalla. Esimerkki:
@@ -232,7 +232,7 @@ Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipo
 ```
 
 Yllä on F-vyöhykkeelle määritelty 2 tunnusta vyöhykkeen eri osiin. Vakio svg symbolit A, B ... I voi kopioida
-[vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hml_zone_lines_20210222.geojson)
+[vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v3/static/assets/geojson/hml_zone_lines_20230214.geojson)
 ja vaihtaa svg määrittelyhin oman reittioppaan teemavärin. Mikäli tarvitaan jokin muu symboli, sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla,
 tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg elementit.
 

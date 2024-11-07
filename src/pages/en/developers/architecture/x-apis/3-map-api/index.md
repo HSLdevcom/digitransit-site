@@ -2,7 +2,7 @@
 title: Map API
 description:
   info: Map API provides raster and vector tiles in various formats.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/3-map-api/x-service-architecture/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/architecture/x-apis/3-map-api/architecture.xml
 assets:
   - title: "Source"
     url: https://github.com/HSLdevcom/hsl-map-server

@@ -2,7 +2,7 @@
 title: Geocoding API
 description:
   info: Geocoder with geocoding and reverse geocoding support.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/pages/en/developers/apis/2-geocoding-api/x-service-architecture/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/architecture/x-apis/2-geocoding-api/architecture.xml
 assets:
   - title: "source"
     url: https://github.com/HSLdevcom/pelias-api
