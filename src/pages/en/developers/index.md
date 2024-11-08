@@ -24,4 +24,4 @@ Our issue tracking is handled in [https://digitransit.atlassian.net](https://dig
 * Configurable for any region
 
 ## Deployments
-Deployments are listed on [the front page](../#digitransit-journey-planners)
+Deployments are listed on [the front page](../#digitransit-journey-planners).
