@@ -26,6 +26,8 @@ Routing API is implemented using OpenTripPlanner.
 
 > https://www.opentripplanner.org/
 
+Details on how static data is included in our OpenTripPlanner instances can be found [here](../../../services/6-data-containers/routing-data/).
+
 ## Static and realtime information
 
 OpenTripPlanner APIs provide access to static and realtime routing and transit information.
