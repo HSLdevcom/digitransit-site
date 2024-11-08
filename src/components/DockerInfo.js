@@ -13,14 +13,18 @@ export default props => {
         <div>
           <h2>Docker image</h2>
           <p>
-            The resulting Docker image is called{" "}
+            The Docker image is called{" "}
             <strong>{props.docker.imageName}</strong> and it is available at{" "}
             <a href={"https://hub.docker.com/r/" + props.docker.imageName}>
               {" "}
               DockerHub
             </a>
-            . The image can be built using this{" "}
-            <a href={props.docker.buildScript}>build script</a>.
+            .
+            {props.docker.buildScript && (
+              <span>&nbsp;The image can be built using this{" "}
+                <a href={props.docker.buildScript}>build script</a>.
+              </span>
+            )}
           </p>
           <p>
             To run Docker container, run:
