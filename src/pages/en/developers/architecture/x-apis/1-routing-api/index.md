@@ -17,7 +17,7 @@ technologies:
     url: "https://gbfs.org/"
   - title: "Java"
 docker:
-  imageName: hsldevcom/opentripplanner
+  imageName: hsldevcom/opentripplanner:v2-prod
   runContainer: docker run --rm -p 9080:8080 -e JAVA_OPTS=-Xmx10g -v ./hsl/:/var/opentripplanner hsldevcom/opentripplanner:v2-prod --load --serve
   accessContainer: http://localhost:9080/
 ---

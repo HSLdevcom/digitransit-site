@@ -24,7 +24,7 @@ assets:
     url: https://github.com/HSLdevcom/hsl-map-generator-ui
 docker:
   dockerfile: https://github.com/HSLdevcom/hsl-map-server/blob/master/Dockerfile
-  imageName: hsldevcom/hsl-map-server
+  imageName: hsldevcom/hsl-map-server:prod
   buildScript: https://github.com/HSLdevcom/hsl-map-server/blob/master/.github/workflows/scripts/build_and_push_image.sh
   runContainer: docker run -d -p 8080:8080 --name hsl-map-server hsldevcom/hsl-map-server
   accessContainer: http://localhost:8080/map/v3/hsl-map/16/37313/18958.png
