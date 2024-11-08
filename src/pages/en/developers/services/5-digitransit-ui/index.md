@@ -9,19 +9,18 @@ assets:
   - title: "DockerHub"
     url: https://hub.docker.com/r/hsldevcom/digitransit-ui/
   - title: "Dockerfile"
-    url: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
+    url: https://github.com/HSLdevcom/digitransit-ui/blob/v3/Dockerfile
 technologies:
   - title: "React"
-    url: "https://facebook.github.io/react/"
+    url: "https://react.dev/"
   - title: "Leaflet"
     url: "http://leafletjs.com/"
   - title: "Relay"
-    url: "https://facebook.github.io/relay/"
+    url: "https://relay.dev/"
 docker:
-  dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/master/Dockerfile
-  imageName: hsldevcom/digitransit-ui
-  buildScript: https://github.com/HSLdevcom/digitransit-ui/blob/master/test/deploy.sh
-  runContainer: docker run -p 8080:8080 -e CONFIG=hsl -e API_URL=http://api.digitransit.fi --name ui hsldevcom/digitransit-ui
+  dockerfile: https://github.com/HSLdevcom/digitransit-ui/blob/v3/Dockerfile
+  imageName: hsldevcom/digitransit-ui:v3-prod
+  runContainer: docker run -p 8080:8080 -it -e CONFIG=hsl -e API_URL=https://api.digitransit.fi -e MAP_URL=https://cdn.digitransit.fi -e NODE_OPTS=--max_old_space_size=1500 -e API_SUBSCRIPTION_QUERY_PARAMETER_NAME=digitransit-subscription-key -e API_SUBSCRIPTION_HEADER_NAME=digitransit-subscription-key -e API_SUBSCRIPTION_TOKEN=<your subscription key> hsldevcom/digitransit-ui:v3-prod
   accessContainer: http://localhost:8080/
 ---
 
@@ -38,13 +37,11 @@ Basically, division between alternatives is:
 
 ## Installation
 
-Installation instructions are [available at GitHub](https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Installation.md)
+Installation instructions are [available at GitHub](https://github.com/HSLdevcom/digitransit-ui/blob/v3/docs/Installation.md)
 
 ## Tests
 
-Tests run automatically in Browserstack:
-
-> https://www.browserstack.com/automate
+Unit testing is used.
 
 ## Service dependencies
 
@@ -54,8 +51,6 @@ Tests run automatically in Browserstack:
 | Realtime HSL - API | https://digitransit.fi/en/developers/apis/4-realtime-api/  |
 | Map - API          | https://digitransit.fi/en/developers/apis/3-map-api/       |
 | Geocoding - API    | https://digitransit.fi/en/developers/apis/2-geocoding-api/ |
-| Sentry             |
-| Piwik              |
 
 ## Key service delivery activities
 
@@ -71,19 +66,14 @@ Tests run automatically in Browserstack:
 | Relay              | https://github.com/facebook/relay                   |
 | Babel relay plugin | https://github.com/facebook/relay                   |
 | Fluxible           | https://github.com/yahoo/fluxible                   |
-| Material-ui        | https://github.com/callemall/material-ui            |
-| node-cjsx          | https://github.com/SimonDegraeve/node-cjsx          |
 | Leaflet            | https://github.com/Leaflet/Leaflet                  |
-| Raven-js           | https://github.com/getsentry/raven-js               |
 | MQTT.js            | https://github.com/mqttjs/MQTT.js                   |
 | Polyfill-service   | https://github.com/Financial-Times/polyfill-service |
 | PBF                | https://github.com/mapbox/pbf                       |
-| Sentry             | https://github.com/getsentry/sentry                 |
 | Webpack            | https://github.com/webpack/webpack                  |
-| Nightwatch         | https://github.com/nightwatchjs/nightwatch          |
 
 2. Follow GraphQL specification<br/>
-   https://facebook.github.io/graphql
+   https://graphql.org/https://graphql.org/
 
 3. From time to time check HSL style guide<br/>
    https://www.hsl.fi/tyyliopas
