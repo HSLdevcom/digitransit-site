@@ -51,7 +51,7 @@ The GraphQL API can be accessed from `http://localhost:9080/otp/gtfs/v1` and a l
 ## API Documentation
 
 OpenTripPlanner has multiple APIs but currently we only expose the GTFS GraphQL API version 1. Even though the version is called 1, it's a newer version
-from the GraphQL API we had available in our `/routing/v1` API. 
+of the GraphQL API we had available in our `/routing/v1` API.
 
 ### GTFS GraphQL API v1
 
