@@ -51,6 +51,7 @@ APIs are documented [here](../../../apis/3-map-api/). There are instructions for
 | https://github.com/mapbox/tilejson-spec                      | JSON format for describing map tilesets                                                                   |
 | https://github.com/mapbox/vector-tile-spec                   | Mapbox Vector Tile specification                                                                          |
 | https://github.com/mapbox/mbtiles-spec                       | MBTiles specification for storing tiled map data in SQLite databases for immediate usage and for transfer |
+| https://github.com/CI-CMG/mapbox-vector-tile                 | Java library for generating MapBox vector tiles |
 | https://wiki.osgeo.org/wiki/Tile\_Map\_Service_Specification | Tile Map Service Specification                                                                            |
 | https://geojson.org/                                         | GeoJSON format for encoding a variety of geographic data structures                                       |
 | https://github.com/mojodna/tessera                           | Tessera development on GitHub                                                                             |

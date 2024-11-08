@@ -1,1 +1,159 @@
-<mxfile host="app.diagrams.net" modified="2022-03-21T18:42:03.334Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" version="17.1.3" etag="dlwjEqKwNQPEtpvA7bUd" type="device"><diagram id="6a0bf4d3-be72-3cb4-abe9-55df80c1b1c3" name="Page-1">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</diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" version="24.8.4">
+  <diagram id="6a0bf4d3-be72-3cb4-abe9-55df80c1b1c3" name="Page-1">
+    <mxGraphModel dx="1434" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;div style=&quot;text-align: center&quot;&gt;&lt;span&gt;HSL map style&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" parent="1" vertex="1">
+          <mxGeometry x="245" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="&lt;div style=&quot;text-align: center&quot;&gt;Docker image&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" parent="1" vertex="1">
+          <mxGeometry x="245" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="&lt;div style=&quot;text-align: center&quot;&gt;OpenMapTiles&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" parent="1" vertex="1">
+          <mxGeometry x="85" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" parent="1" source="6" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="75" y="90" as="sourcePoint" />
+            <mxPoint x="245" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="145" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="2" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-35" y="60" as="sourcePoint" />
+            <mxPoint x="245" y="150" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="4" target="21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-35" y="60" as="sourcePoint" />
+            <mxPoint x="305" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="OpenStreetMap vector export" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;rounded=0;shadow=0;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="30" y="100" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;div style=&quot;text-align: center&quot;&gt;&lt;span&gt;HSL Fonts&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" parent="1" vertex="1">
+          <mxGeometry x="145" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="endArrow=classic;html=1;" parent="1" source="14" target="30" edge="1">
+          <mxGeometry x="287" y="100" width="50" height="50" as="geometry">
+            <mxPoint x="242" y="100" as="sourcePoint" />
+            <mxPoint x="375" y="150" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="Custom HSL map style" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;rounded=0;shadow=0;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="215" y="100" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="12" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Container start" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="260" y="260" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="&lt;div style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;line-height: 1.2&quot;&gt;tilelive-gl&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" parent="1" vertex="1">
+          <mxGeometry x="395" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="24" target="4" edge="1">
+          <mxGeometry x="297" y="110" width="50" height="50" as="geometry">
+            <mxPoint x="485" y="100" as="sourcePoint" />
+            <mxPoint x="375" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="455" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="Module for vector and raster tiles" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;rounded=0;shadow=0;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="465" y="110" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="30" target="42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="HSL-map-server container" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" parent="1" vertex="1">
+          <mxGeometry x="245" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="21" target="30" edge="1">
+          <mxGeometry x="360" y="240" width="50" height="50" as="geometry">
+            <mxPoint x="315" y="240" as="sourcePoint" />
+            <mxPoint x="315" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="435" y="390" as="sourcePoint" />
+            <mxPoint x="435" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="35" value="Container loads data by using tilelive-gl" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;rounded=0;shadow=0;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="315" y="300" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="Vector and raster background maps" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry x="265" y="510" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-45" value="OpenTripPlanner container" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="610" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-47" target="ZikmLIDym67y1REUy39_-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-47" value="Container start" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="625" y="260" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-48" value="Container loads pre-built data and configuration" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;rounded=0;shadow=0;glass=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="290" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-50" target="ZikmLIDym67y1REUy39_-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-50" value="Transit and street data" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="610" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-52" target="ZikmLIDym67y1REUy39_-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-52" value="Liipi parking data" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="810" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-53" target="ZikmLIDym67y1REUy39_-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-53" value="GTFS-RT transit data" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="810" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-54" target="ZikmLIDym67y1REUy39_-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-54" value="GBFS rental data" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="450" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-58" target="ZikmLIDym67y1REUy39_-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-58" value="GTFS transit data" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="610" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-60" target="ZikmLIDym67y1REUy39_-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-60" value="OpenStreetMap" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;strokeColor=#000000;fillColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="800" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZikmLIDym67y1REUy39_-45">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="639.5" y="510" as="sourcePoint" />
+            <mxPoint x="670" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZikmLIDym67y1REUy39_-64" value="Points of interest vector maps" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="630" y="510" width="80" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
