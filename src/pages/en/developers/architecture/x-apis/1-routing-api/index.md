@@ -57,7 +57,7 @@ of the GraphQL API we had available in our `/routing/v1` API.
 
 We expose 5 different version of this API to users with different data sets and configurations in use. There is documentation about this API in our [routing API documentation page](../../../apis/1-routing-api/0-graphql/).
 
-## Related open source projects
+## Related links
 
 | URL                                                           | Project description                                                                              |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |

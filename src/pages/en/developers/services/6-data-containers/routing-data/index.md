@@ -74,7 +74,7 @@ Please visit https://finap.fi and https://github.com/tmfg/mmtis-national-access-
 
 For more information contact Fintraffic with support channel email: nap@fintraffic.fi
 
-## Related open source projects
+## Related links
 
 | URL                                                 | Project description                                                       |
 | --------------------------------------------------- | ------------------------------------------------------------------------- |

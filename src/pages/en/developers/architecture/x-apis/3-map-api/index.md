@@ -44,7 +44,7 @@ HSL map style example:
 
 APIs are documented [here](../../../apis/3-map-api/). There are instructions for how to run OpenTripPlanner locally in [routing-api architecture page](../1-routing-api/).
 
-## Related open source projects
+## Related links
 
 | URL                                                          | Project description                                                                                       |
 | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |

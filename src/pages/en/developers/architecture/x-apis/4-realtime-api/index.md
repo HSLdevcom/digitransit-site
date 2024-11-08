@@ -8,7 +8,7 @@ Heavy lifting of real-time data is done in other systems. Digitransit integrates
 
 [Full size image (SVG)](./architecture.svg) (or click the image for full size PNG)
 
-## Related open source projects
+## Related links
 
 | URL                                                   | Project description                                          |
 | ----------------------------------------------------- | ------------------------------------------------------------ |
@@ -16,5 +16,5 @@ Heavy lifting of real-time data is done in other systems. Digitransit integrates
 | https://github.com/HSLdevcom/siri2gtfsrt              | Convert SIRI JSON to GTFS-RT trip updates                    |
 | https://github.com/HSLdevcom/raildigitraffic2gtfsrt   | Converts digitraffic train updates into GTFS-RT Trip Updates |
 | https://github.com/HSLdevcom/gtfsrthttp2mqtt          | Reads GTFS-RT over HTTP and publishes it as MQTT data        |
-| https://developers.google.com/transit/                | Google transit community                                     |
-| https://groups.google.com/forum/#!forum/gtfs-realtime | Google transit forum                                         |
+| https://gtfs.org/                                     | GTFS transit community                                       |
+| https://groups.google.com/forum/#!forum/gtfs-realtime | GTFS-realtime forum                                          |
