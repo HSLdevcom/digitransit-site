@@ -23,6 +23,5 @@ Our issue tracking is handled in [https://digitransit.atlassian.net](https://dig
 * Mobile friendly user interface that supports themes
 * Configurable for any region
 
-## In production
-* [Finland - Helsinki region](http://reittiopas.hsl.fi/)
-* [Finland - National Route Planner](http://opas.matka.fi/)
+## Deployments
+Deployments are listed on [the front page](../#digitransit-journey-planners)
