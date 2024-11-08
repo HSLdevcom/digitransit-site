@@ -50,12 +50,12 @@ panels:
 
 ## Digitransit reittioppaat
 
-[HSL Reittiopas](https://hsl.fi)  &nbsp; [opas.matka.fi](https://opas.matka.fi)  &nbsp; [opas.waltti.fi](https://opas.waltti.fi)  &nbsp;
-[Hämeenlinna](https://hameenlinna.digitransit.fi)  &nbsp; [Joensuu](https://joensuu.digitransit.fi)  &nbsp; [Jyväskylä](https://jyvaskyla.digitransit.fi)  &nbsp;
-[Kotka](https://kotka.digitransit.fi)  &nbsp; [Kouvola](https://kouvola.digitransit.fi) </br>
-[Kuopio](https://kuopio.digitransit.fi)  &nbsp; [Lahti](https://lahti.digitransit.fi)  &nbsp; [Lappeenranta](https://lappeenranta.digitransit.fi)  &nbsp;
-[Mikkeli](https://mikkeli.digitransit.fi)  &nbsp; [Oulu](https://reittiopas.osl.fi)  &nbsp; [Pori](https://pori.digitransit.fi)  &nbsp; [Rovaniemi](https://rovaniemi.digitransit.fi)  &nbsp;
-[Tampere](https://reittiopas.tampere.fi)  &nbsp; [Turku](https://reittiopas.foli.fi)  &nbsp; [Vaasa](https://vaasa.digitransit.fi)  &nbsp; [Raasepori](https://bosse.digitransit.fi) &nbsp;
-[Varsinais-Suomen ELY](https://reittiopas.seutuplus.fi) &nbsp; [Kela](https://kelareitit.digitransit.fi) &nbsp;
+[HSL Reittiopas](https://hsl.fi)  &nbsp; [opas.matka.fi](https://opas.matka.fi)  &nbsp; [opas.waltti.fi](https://opas.waltti.fi)  &nbsp; [Seutu+](https://varely.digitransit.fi)  &nbsp; [Hämeenlinna](https://hameenlinna.digitransit.fi) </br>
+[Joensuu](https://joensuu.digitransit.fi)  &nbsp; [Jyväskylä](https://jyvaskyla.digitransit.fi)  &nbsp;
+[Kela](https://kelareitit.digitransit.fi) &nbsp; [Kotka](https://kotka.digitransit.fi)  &nbsp; [Kouvola](https://kouvola.digitransit.fi)  &nbsp;
+[Kuopio](https://kuopio.digitransit.fi) &nbsp;  [Lahti](https://lahti.digitransit.fi)  &nbsp; [Lappeenranta](https://lappeenranta.digitransit.fi) </br>
+[Mikkeli](https://mikkeli.digitransit.fi)  &nbsp; [Oulu](https://oulu.digitransit.fi)  &nbsp; [Pori](https://pori.digitransit.fi)  &nbsp;
+[Raasepori](https://bosse.digitransit.fi)  &nbsp; [Rovaniemi](https://rovaniemi.digitransit.fi)  &nbsp;
+[Tampere](https://tampere.digitransit.fi)  &nbsp; [Turku](https://turku.digitransit.fi)  &nbsp; [Vaasa](https://vaasa.digitransit.fi)  &nbsp;
 
 </div>
