@@ -23,7 +23,7 @@ export default ({ pageTitle, pageDescription, pagePath }) => (
 
       const description =
         pageDescription ||
-        "HSL:n reittiopas.hsl.fi ja Traficomin opas.matka.fi uudistuivat. Apuasi kaivataan kehitystyössä.";
+        "Uuden ajan reittioppaan käyttöliittymät ja rajapinnat.";
 
       const shareImageUrl = "http://digitransit.fi/share-image.png";
 
