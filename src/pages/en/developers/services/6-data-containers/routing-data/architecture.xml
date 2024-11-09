@@ -1,1 +1,329 @@
-<mxfile userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36" version="9.3.0" editor="www.draw.io" type="device"><diagram id="b93323f4-2f3e-760e-5fa3-264017b21b54" name="Page-1">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</diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" version="24.8.4">
+  <diagram id="b93323f4-2f3e-760e-5fa3-264017b21b54" name="Page-1">
+    <mxGraphModel dx="2260" dy="1771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-157" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=none;strokeColor=#000000;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="237.25" y="-272.25" width="334.75" height="314.5" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-159" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=none;strokeColor=#000000;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="20.249999999999986" y="-246" width="363.75" height="342" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-135" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=12;align=center;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="357" y="590" width="426" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="723" y="736.5" as="sourcePoint" />
+            <mxPoint x="723" y="736.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="40" value="Routing and access to transit data" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry x="580" y="766.5" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="" style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="568" y="831.5" as="targetPoint" />
+            <mxPoint x="568" y="711.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="58" value="HTTP/GraphQL" style="text;html=1;resizable=0;points=[];;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="57" vertex="1" connectable="0">
+          <mxGeometry x="-0.16" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=none;strokeColor=#000000;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="-70" y="-612.5" width="530" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="68" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=none;strokeColor=#000000;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="613" y="-233.5" width="290" height="278.5" as="geometry" />
+        </mxCell>
+        <mxCell id="69" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=none;strokeColor=#000000;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="-57" y="-525" width="781" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="70" value="HSL OpenStreetMap pbf&lt;br&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" parent="1" vertex="1">
+          <mxGeometry x="783" y="-195" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="72" value="Oulu&lt;div&gt;GTFS&lt;/div&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" parent="1" vertex="1">
+          <mxGeometry x="3" y="-366" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="75" value="Tampere GTFS&lt;br&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" parent="1" vertex="1">
+          <mxGeometry x="90.5" y="-318" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="76" value="Jyväskylä LINKKI&lt;br&gt;GTFS&lt;br&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" parent="1" vertex="1">
+          <mxGeometry x="-4.5" y="-275" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="77" value="Finland dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry x="564" y="-25" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="78" value="HSL dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry x="694" y="-222" width="70" height="57" as="geometry" />
+        </mxCell>
+        <mxCell id="79" value="Finland OSM" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" parent="1" vertex="1">
+          <mxGeometry x="265" y="-203.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="93" value="Lahti&lt;br&gt;GTFS&lt;br&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" parent="1" vertex="1">
+          <mxGeometry x="138.25" y="-392.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="94" value="Waltti dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry x="125.75" y="-620" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="97" value="Koontikanta GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" parent="1" vertex="1">
+          <mxGeometry x="754" y="-560.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="98" value="Data source legend" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="783.5" y="-605" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="99" value="GTFS from producer" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" parent="1" vertex="1">
+          <mxGeometry x="829" y="-560.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="103" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=12;align=center;strokeColor=#b85450;gradientColor=#ea6b66;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="120.5" y="230" width="426" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="104" value="otp-data-builders (Routing data builder)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="132.25" y="240" width="237" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="107" value="opentripplanners (Routing)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="371.5" y="605" width="237" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="110" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="69" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="395.6680000000001" y="154.8499999999999" as="sourcePoint" />
+            <mxPoint x="334" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="112" value="" style="endArrow=classic;html=1;exitX=0.492;exitY=1.005;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="332.5" y="345" as="sourcePoint" />
+            <mxPoint x="332.5" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-116" value="NFS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="112">
+          <mxGeometry x="-0.2615" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-114" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontSize=12;opacity=50;align=center;strokeColor=#d6b656;gradientColor=none;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="121.5" y="410" width="426" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-115" value="Storage" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="41.5" y="420" width="237" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-117" value="&lt;div style=&quot;text-align: center&quot;&gt;HSL&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow;gradientColor=none;fillColor=#00CC66;" vertex="1" parent="1">
+          <mxGeometry x="139.25" y="440" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-118" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow;gradientColor=none;fillColor=#00CC66;" vertex="1" parent="1">
+          <mxGeometry x="216.25" y="440" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-120" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;-alt" style="whiteSpace=wrap;html=1;align=center;plain-yellow;gradientColor=none;fillColor=#00CC66;" vertex="1" parent="1">
+          <mxGeometry x="298.25" y="440" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-121" value="Finland" style="whiteSpace=wrap;html=1;align=center;plain-yellow;gradientColor=none;fillColor=#00CC66;" vertex="1" parent="1">
+          <mxGeometry x="379.75" y="440" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-122" value="Varely" style="whiteSpace=wrap;html=1;align=center;plain-yellow;gradientColor=none;fillColor=#00CC66;" vertex="1" parent="1">
+          <mxGeometry x="458.75" y="440" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-123" value="&lt;div style=&quot;text-align: center&quot;&gt;HSL&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="376.25" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-124" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="453.25" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-125" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;-alt" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="535.25" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-126" value="Finland" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="616.75" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-127" value="Varely" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="695.75" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-128" value="" style="endArrow=classic;html=1;exitX=0.492;exitY=1.005;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="332.25" y="520" as="sourcePoint" />
+            <mxPoint x="566.5" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-129" value="NFS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0ZP29_UdQC_S8QaL4jt1-128">
+          <mxGeometry x="-0.2615" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-130" value="&lt;div style=&quot;text-align: center&quot;&gt;HSL&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="137.5" y="270" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-131" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="214.5" y="270" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-132" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;-alt" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="296.5" y="270" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-133" value="Finland" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="378" y="270" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-134" value="Varely" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="457" y="270" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-136" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="326.5" y="520" as="sourcePoint" />
+            <mxPoint x="86.5" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-137" value="NFS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0ZP29_UdQC_S8QaL4jt1-136">
+          <mxGeometry x="-0.2615" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-138" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=12;align=center;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-119" y="590" width="426" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="247" y="736.5" as="sourcePoint" />
+            <mxPoint x="247" y="736.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-140" value="Downloadable OpenTripPlanner router zip files and individual files" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="104" y="766.5" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-141" value="" style="edgeStyle=none;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="92" y="831.5" as="targetPoint" />
+            <mxPoint x="92" y="711.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-142" value="HTTP" style="text;html=1;resizable=0;points=[];;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="0ZP29_UdQC_S8QaL4jt1-141">
+          <mxGeometry x="-0.16" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-143" value="opentripplanner-data-servers (Routing data)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="-104.5" y="605" width="237" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-144" value="&lt;div style=&quot;text-align: center&quot;&gt;HSL&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="-99.75" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-145" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="-22.75" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-146" value="&lt;div style=&quot;text-align: center&quot;&gt;Waltti&lt;/div&gt;-alt" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="59.25" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-147" value="Finland" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="140.75" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-148" value="Varely" style="whiteSpace=wrap;html=1;align=center;plain-yellow" vertex="1" parent="1">
+          <mxGeometry x="219.75" y="630" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-152" value="HSL area ferry GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="694" y="-55" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-153" value="OpenStreetMap pbf" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" vertex="1" parent="1">
+          <mxGeometry x="829" y="-469.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-154" value="NLS DEM geotiff" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#66FF66;strokeColor=#d6b656;gradientColor=#00CC00;" vertex="1" parent="1">
+          <mxGeometry x="903" y="-469.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-155" value="HSL area elevation" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#66FF66;strokeColor=#d6b656;gradientColor=#00CC00;" vertex="1" parent="1">
+          <mxGeometry x="783" y="-86" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-156" value="HSL Jore GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="634" y="-165" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-158" value="Waltti-alt dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="440.25" y="-261" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-160" value="Varely dataset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="63" y="-86" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-161" value="Kajaani GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="423" y="-155" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-162" value="Salo GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="298.25" y="-90" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-163" value="Pori&lt;br&gt;&lt;div&gt;GTFS&lt;/div&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="144.5" y="-235" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-164" value="FÖLI&lt;br&gt;GTFS&lt;br&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="73" y="-195" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-165" value="Rauma&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="115.5" y="-25" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-166" value="Varely&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="205" y="-25" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-167" value="FÖLI funicular GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="-25.25" y="-495" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-168" value="Tampere DRT GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="-565" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-169" value="Estonia OSM" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" vertex="1" parent="1">
+          <mxGeometry x="400" y="55" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-170" value="Waltti area elevation" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#66FF66;strokeColor=#d6b656;gradientColor=#00CC00;" vertex="1" parent="1">
+          <mxGeometry x="212" y="-605" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-171" value="Finland ferry GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="461.75" y="-485" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-172" value="Koontikanta GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="469" y="-398" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-173" value="Hameenlinna&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="68" y="-435" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-174" value="Kotka&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="145" y="-479.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-175" value="Kouvola&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="217.25" y="-505" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-176" value="Lappeenranta&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="290.25" y="-515" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-177" value="Mikkeli&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="207.25" y="-421" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-178" value="Vaasa&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="277.25" y="-425" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-179" value="Joensuu&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="351.88" y="-439" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-180" value="Rovaniemi&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="205" y="-335" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-181" value="Raasepori&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="277.25" y="-341" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-183" value="Digitraffic GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#FF66FF;strokeColor=#6c8ebf;gradientColor=#CC00CC;" vertex="1" parent="1">
+          <mxGeometry x="754" y="-469.5" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-184" value="Railway GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#FF66FF;strokeColor=#6c8ebf;gradientColor=#CC00CC;" vertex="1" parent="1">
+          <mxGeometry x="362.75" y="-355" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-185" value="Estonia&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="323" y="55" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-186" value="Viking Line&lt;br&gt;GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
+          <mxGeometry x="493" y="16" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-187" value="Matkahuolto GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#FF9999;strokeColor=#6c8ebf;gradientColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="903" y="-555" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-188" value="Härmän liikenne GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#FF9999;strokeColor=#6c8ebf;gradientColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="563" y="-405" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0ZP29_UdQC_S8QaL4jt1-189" value="Pohjolan matka GTFS" style="shape=cylinder;whiteSpace=wrap;html=1;align=center;fillColor=#FF9999;strokeColor=#6c8ebf;gradientColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="527.25" y="-315" width="60" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
