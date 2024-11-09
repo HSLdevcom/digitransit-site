@@ -1,72 +1,101 @@
 ---
 title: Routing Data
 description:
-  info: "Routing Data provides three OpenTripPlanner router zip files: Helsinki region, the Waltti regions, and whole Finland."
+  info: "Routing Data provides five OpenTripPlanner router datasets: whole Finland and Estonia, HSL region, Southwest Finland region and two alternative  Waltti datasets."
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/services/6-data-containers/routing-data/architecture.xml
 assets:
   - title: "source"
     url: https://github.com/HSLdevcom/OpenTripPlanner-data-container
   - title: "DockerHub"
-    url: https://hub.docker.com/r/hsldevcom/opentripplanner-data-container-hsl/
-docker:
-  dockerfile: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/master/otp-data-container/Dockerfile.data-container
-  imageName: hsldevcom/opentripplanner-data-container-hsl
-  runContainer: docker run -d -p 8080:8080 --name hsl-data-container hsldevcom/opentripplanner-data-container-hsl
-  accessContainer: http://localhost:8080/
+    url: https://hub.docker.com/r/hsldevcom/otp-data-builder/
 ---
 
 ## Data flow
 
-The data flow is described in detail here: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/master/README.md
+The data flow is described in detail here: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/v3/README.md
 
-## OpenTripPlanner router zip files
+## OpenTripPlanner data and configuration files
 
-We provide a data container for each router (Finland, Waltti, HSL). The currently active routing data can be viewed from the corresponding production HTTP endpoints:
+We provide a data container for each router (Finland, HSL, VARELY, Waltti and alternative Waltti). The currently active routing data can be viewed from the corresponding production HTTP endpoints (use of either `digitransit-subscription-key` URL parameter or a header is needed, browsing with a browser can be clumsy due to this limitation):
 
-1. https://api.digitransit.fi/routing-data/v2/finland/
+1. https://api.digitransit.fi/routing-data/v3/finland/
 
-2. https://api.digitransit.fi/routing-data/v2/waltti/
+2. https://api.digitransit.fi/routing-data/v3/hsl/
 
-3. https://api.digitransit.fi/routing-data/v2/hsl/
+3. https://api.digitransit.fi/routing-data/v3/varely/
 
-For example, the HSL routing data consists of the following files:
+4. https://api.digitransit.fi/routing-data/v3/waltti/
 
-1. `build-config.json`
-   This is the OTP configuration file that is used to build the OTP Graph file
+5. https://api.digitransit.fi/routing-data/v3/waltti-alt/
 
-2. `graph-hsl-753c4cfe9f63400f0ad093bc515d1bba6b8e14a1.zip`
-   This is the prebuilt OTP graph file. The naming convention is `graph-<router_id>-<commit_hash>.zip`
-   Digitransit OTP will first try to load this file and if it fails (version mismatch) it then downloads `router-hsl.zip` that contains all the data so that it can build the graph itself.
 
-3. `hsl.pbf`
-   OpenStreetMap data file for the HSL region (used by OTP)
+### Contents of the endpoints
 
-4. `HSL.zip`
-   GTFS file (other routers have many different GTFS files)
+There both individual files and some of the files are zipped into collections that can be used
+to either build the graph for OpenTripPlanner or to run it as a server.
+[See how Routing API utilizes these zip files](../../../apis/1-routing-api/). Contents differ for different
+endpoints, but these examples are for HSL endpoint:
 
-5. `router-config.json`
+#### Files for running OTP
+
+1. `graph-hsl-753c4cfe9f63400f0ad093bc515d1bba6b8e14a1.zip`
+   This zip contains the required files to run OpenTripPlanner server. The naming convention is `graph-<router_id>-<commit_hash>.zip`
+
+2. `graph.obj`
+   A graph that can be loaded into latest version of OpenTripPlanner.
+
+3. `otp-config.json`
+   The configuration for enabling or disabling features in OTP.
+
+4. `router-config.json`
    The per-router customized runtime configuration for OTP.
 
-6. `router-hsl.zip`
-   Convenient package for OTP to load when it needs to build a graph (contains all the files)
+#### Files for building OTP graph
 
-7. `version.txt`
-   A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
+1. `build-config.json`
+   This is the OTP configuration file that is used to build the OTP Graph file.
+
+2. `hsl.pbf`
+   OpenStreetMap data file for the HSL region (used by OTP).
+
+3. `HSL.zip`
+   GTFS file (other routers have many different GTFS files).
+
+4. `HSL-lautta.zip`
+   GTFS file (other routers have many different GTFS files).
+
+5. `otp-config.json`
+   The configuration for enabling or disabling features in OTP.
+
+6. `router-config.json`
+   The per-router customized runtime configuration for OTP.
+
+7. `router-hsl.zip`
+   This zip contains the required files to build new OpenTripPlanner graph.
 
 8. `hsl.tif`
    Elevation data file for the HSL region (used by OTP, not mandatory).
 
-9. `connected.csv`
+#### Build log files
+
+1. `report`
+   Directory containing issues and information from the previous graph build.
+
+2. `build.log`
+   Log of the previous graph build.
+
+3. `version.txt`
+   A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
+
+4. `connected.csv`
    List of stops that could be linked based on OSM data (for debugging purposes).
 
-10. `unconnected.csv`
+5. `unconnected.csv`
     List of stops that could not be linked based on OSM data but they still do exist in the graph (for debugging purposes).
-
-[See how Routing API utilizes these zip files](../../../apis/1-routing-api/)
 
 ## Note to users of Finland routing data
 
-The Finland dump files and container https://api.digitransit.fi/routing-data/v2/finland/ contains information concerning public transport services by the cities and ELY-centers. It also contain data relevant to long distance market based coach connections in Finland.
+[The Finland data endpoint](https://api.digitransit.fi/routing-data/v3/finland/) contains information concerning public transport services by the cities and ELY-centers. It also contain data relevant to long distance market based coach connections in Finland.
 
 Source for coach connection data is https://finap.fi which is Finnish National Access point for multimodal data (EU/MMTIS). Data is provided by respective transport operators. Finap.fi data is licensed with CC 4.0 BY. Finap.fi service is operated by Fintraffic.
 
@@ -78,7 +107,7 @@ For more information contact Fintraffic with support channel email: nap@fintraff
 
 | URL                                                 | Project description                                                       |
 | --------------------------------------------------- | ------------------------------------------------------------------------- |
+| https://github.com/hsldevcom/OpenTripPlanner/       | Digitransit fork of OpenTripPlanner                                       |
 | https://github.com/opentripplanner/OpenTripPlanner/ | OpenTripPlanner upstream                                                  |
 | https://blog.openstreetmap.org/                     | OpenStreetMap blog                                                        |
-| https://github.com/tru-hy/gtfs_shape_mapfit         | gtfs_shape_mapfit upstream, fits GTFS shape files to a given OSM map file |
 | https://onebusaway.org/                             | OneBusAway project, the open source platform for real-time transit info   |
