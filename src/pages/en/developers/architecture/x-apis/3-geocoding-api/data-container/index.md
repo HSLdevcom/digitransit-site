@@ -1,8 +1,5 @@
 ---
 title: Geocoding Data
-description:
-  info: Data container for Pelias
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/services/6-data-containers/geocoding-data/architecture.xml
 assets:
   - title: "source"
     url: https://github.com/HSLdevcom/pelias-data-container
@@ -38,13 +35,13 @@ docker:
 
 This service is essentially an ElasticSearch instance containing Geocoding data that can be used with Pelias Geocoder.
 
-### General Pelias information
+## General Pelias information
 
 Start by reading (Note that it might not be up-to-date):
 
 > https://mapzen.com/blog/pelias-setup-tutorial
 
-### How data is built?
+## How data is built?
 
 On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
 Pelias tools. At high level this is what happens:
@@ -73,7 +70,7 @@ Pelias tools. At high level this is what happens:
 
 12. Run bike station import from an OpenTripPlanner service endpoint
 
-### Exploring data
+## Exploring data
 
 For exploring ElasticSearch data, you can install the extension "elasticsearch-head" to Chrome browser and use it as follows:
 

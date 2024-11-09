@@ -21,10 +21,11 @@ At the moment, we provide five kinds of services
 
 [Real time API](../apis/5-realtime-api/) contains information about availabe real-time data types and sources.
 
-## Data containers
+## Data
 
-Data containers are images that are used to gather and compile data needed for APIs by the platform.
-[Read more here](../services/6-data-containers/)
+Data builders are images that are used to gather and compile data needed for APIs by the platform.
+You can find more information on the [geocoding architecture pages](./x-apis/3-geocoding-api/) and
+on the [routing data architecture page](./x-apis/2-routing-data-api/).
 
 ## External components
 
