@@ -2,7 +2,7 @@
 title: Map API
 description:
   info: Map API provides raster and vector tiles in various formats.
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/architecture/x-apis/3-map-api/architecture.xml
+  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/architecture/x-apis/4-map-api/architecture.xml
 assets:
   - title: "Source for background maps"
     url: https://github.com/HSLdevcom/hsl-map-server
@@ -42,7 +42,7 @@ HSL map style example:
 
 ## APIs
 
-APIs are documented [here](../../../apis/3-map-api/). There are instructions for how to run OpenTripPlanner locally in [routing-api architecture page](../1-routing-api/).
+APIs are documented [here](../../../apis/4-map-api/). There are instructions for how to run OpenTripPlanner locally in [routing-api architecture page](../1-routing-api/).
 
 ## Related links
 

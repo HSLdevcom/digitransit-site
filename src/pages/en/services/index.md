@@ -50,7 +50,7 @@ are mapped to address items using built-in area information fetched from WhosOnF
 or the data content changed.
 
 The dataloading process of background maps is heavily tied with services provided by HSL. A replacement can be developed by following
-the [map api specifications](../developers/apis/3-map-api).
+the [map api specifications](../developers/apis/4-map-api).
 
 
 It should be noted that hosting only a subset of services and using APIs of Digitransit for the rest is also possible. For example, a new local

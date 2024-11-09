@@ -1,22 +1,15 @@
 ---
-title: Routing Data
-description:
-  info: "Routing Data provides five OpenTripPlanner router datasets: whole Finland and Estonia, HSL region, Southwest Finland region and two alternative  Waltti datasets."
-  architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/services/6-data-containers/routing-data/architecture.xml
-assets:
-  - title: "source"
-    url: https://github.com/HSLdevcom/OpenTripPlanner-data-container
-  - title: "DockerHub"
-    url: https://hub.docker.com/r/hsldevcom/otp-data-builder/
+title: Routing data API
 ---
-
-## Data flow
-
-The data flow is described in detail here: https://github.com/HSLdevcom/OpenTripPlanner-data-container/blob/v3/README.md
+Routing data API provides five OpenTripPlanner router datasets: whole Finland and Estonia, HSL region,
+Southwest Finland region and two alternative Waltti datasets. The available data sets are documented in
+[the architecture page for this API](../../architecture/x-apis/2-routing-data-api/).
 
 ## OpenTripPlanner data and configuration files
 
-We provide a data container for each router (Finland, HSL, VARELY, Waltti and alternative Waltti). The currently active routing data can be viewed from the corresponding production HTTP endpoints (use of either `digitransit-subscription-key` URL parameter or a header is needed, browsing with a browser can be clumsy due to this limitation):
+We provide a data container for each router (finland, hsl, varely, waltti and waltti-alt). The currently
+active routing data can be viewed from the corresponding production HTTP endpoints (use of either `digitransit-subscription-key`
+URL parameter or a header is needed, browsing with a browser can be clumsy due to this limitation):
 
 1. https://api.digitransit.fi/routing-data/v3/finland/
 
@@ -33,8 +26,8 @@ We provide a data container for each router (Finland, HSL, VARELY, Waltti and al
 
 There both individual files and some of the files are zipped into collections that can be used
 to either build the graph for OpenTripPlanner or to run it as a server.
-[See how Routing API utilizes these zip files](../../../apis/1-routing-api/). Contents differ for different
-endpoints, but these examples are for HSL endpoint:
+[See how Routing API utilizes these zip files](../1-routing-api/). Contents differ for different
+endpoints, but these examples are for the HSL endpoint:
 
 #### Files for running OTP
 
@@ -105,9 +98,9 @@ For more information contact Fintraffic with support channel email: nap@fintraff
 
 ## Related links
 
-| URL                                                 | Project description                                                       |
-| --------------------------------------------------- | ------------------------------------------------------------------------- |
-| https://github.com/hsldevcom/OpenTripPlanner/       | Digitransit fork of OpenTripPlanner                                       |
-| https://github.com/opentripplanner/OpenTripPlanner/ | OpenTripPlanner upstream                                                  |
-| https://blog.openstreetmap.org/                     | OpenStreetMap blog                                                        |
-| https://onebusaway.org/                             | OneBusAway project, the open source platform for real-time transit info   |
+| URL                                                          | Project description                                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| https://github.com/hsldevcom/OpenTripPlanner/                | Digitransit fork of OpenTripPlanner                                       |
+| https://github.com/opentripplanner/OpenTripPlanner/          | OpenTripPlanner upstream                                                  |
+| https://github.com/hsldevcom/opentripplanner-data-container/ | Digitransit fork of OpenTripPlanner                                       |
+| https://blog.openstreetmap.org/                              | OpenStreetMap blog                                                        |

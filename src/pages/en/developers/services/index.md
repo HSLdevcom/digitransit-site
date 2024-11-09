@@ -10,5 +10,4 @@ title: Services
 ## Data containers
 | Service                                                | Description                     |
 |--------------------------------------------------------|---------------------------------|
-| [Routing Data](./6-data-containers/routing-data/)      | Routing and timetable Data
 | [Geocoding Data](./6-data-containers/geocoding-data/)  | Geocoding data               

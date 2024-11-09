@@ -51,7 +51,7 @@ hallinnollisen hierarkian lisääminen kohteisiin käyttämällä WhosOnFirst-pa
 korvata tai datasisältö vaihtaa Suomen rajojen ulkopuolella.
 
 Taustakarttojen datalataus on vahvasti sidoksissa HSL:n tarjoamiin karttapalveluihin. Korvaava karttapalvelu on mahdollista luoda
-[kehittäjädokumenttien ohjeiden](../en/developers/apis/3-map-api) mukaisesti.
+[kehittäjädokumenttien ohjeiden](../en/developers/apis/4-map-api) mukaisesti.
 
 On myös mahdollista ylläpitää vain osaa palveluista ja käyttää muilta osin Digitransitin rajapintoja; uusi Suomessa toimiva paikallinen reittiopas
 voi helposti hyödyntää koko maan kattavaa osoitehakua.

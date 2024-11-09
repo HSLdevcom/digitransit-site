@@ -13,14 +13,13 @@ At the moment, we provide five kinds of services
 4. Data containers
 5. External components
 
-## Routing API, Geocoding API, and Map API
+## Routing API, Routing data API, Geocoding API, and Map API
 
-[Routing API](../apis/1-routing-api/), [Geocoding API](../apis/2-geocoding-api/), and [Map API](../apis/3-map-api/)
-are stable and currently available since the launch of production.
+[Routing API](../apis/1-routing-api/), [Routing data API](../apis/2-routing-data-api/), [Geocoding API](../apis/3-geocoding-api/), and [Map API](../apis/4-map-api/) are available for anyone to use.
 
 ## Real time API
 
-[Real time API](../apis/4-realtime-api/) contains information about availabe real-time data types and sources.
+[Real time API](../apis/5-realtime-api/) contains information about availabe real-time data types and sources.
 
 ## Data containers
 

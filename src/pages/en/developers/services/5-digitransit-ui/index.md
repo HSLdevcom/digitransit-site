@@ -48,9 +48,9 @@ Unit testing is used.
 | Asset              | Url                                                        |
 | ------------------ | ---------------------------------------------------------- |
 | Routing - API      | https://digitransit.fi/en/developers/apis/1-routing-api/   |
-| Realtime HSL - API | https://digitransit.fi/en/developers/apis/4-realtime-api/  |
-| Map - API          | https://digitransit.fi/en/developers/apis/3-map-api/       |
-| Geocoding - API    | https://digitransit.fi/en/developers/apis/2-geocoding-api/ |
+| Realtime HSL - API | https://digitransit.fi/en/developers/apis/5-realtime-api/  |
+| Map - API          | https://digitransit.fi/en/developers/apis/4-map-api/       |
+| Geocoding - API    | https://digitransit.fi/en/developers/apis/3-geocoding-api/ |
 
 ## Key service delivery activities
 
