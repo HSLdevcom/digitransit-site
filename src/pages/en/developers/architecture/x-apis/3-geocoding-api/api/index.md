@@ -1,5 +1,5 @@
 ---
-title: Geocoding API
+title: API
 assets:
   - title: "source"
     url: https://github.com/HSLdevcom/pelias-api
