@@ -1,6 +1,6 @@
 ---
 title: Stops
-order: 100
+order: 110
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**

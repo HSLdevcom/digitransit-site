@@ -1,6 +1,6 @@
 ---
 title: Itinerary planning
-order: 80
+order: 90
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
@@ -32,40 +32,56 @@ See the following examples on how to decode and use polylines:
 
 ## Query examples
 
-**Note:** For more details about the query type **plan** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
+**Note:** For more details about the query type **planConnection** and its parameters you can use the **Documentation Explorer** provided in GraphiQL.
 
-Itinerary planning can be tuned by multiple arguments of the **plan** query.
-* Time arguments (e.g. `minTransferTime`, `bikeSwitchTime`) are taken into account literally when planning the itinerary
-  * For example, if `minTransferTime` is set to 2 minutes, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
+**Note:** Some additional examples can be found on the [Bicycles, cars and e-scooters page](../bicycles-scooters-cars/).
+
+Itinerary planning can be tuned by multiple arguments of the **planConnection** query.
+* Time arguments are taken into account literally when planning the itinerary
+  * For example, if `preferences: {street: { transit: {transfer: {slack: "2m"}}}`, it is not possible to continue the journey by another vehicle within two minutes after disembarking one vehicle
   * Values of time arguments are included in the returned duration of an itinerary
-    * For example, if there is a 15 minute bicycling leg and `bikeSwitchTime` is set to 1 minute, the returned duration of the bicycling leg will be 17 minutes
-* Cost arguments (e.g. `walkBoardCost`) on the other hand are not hard limits, but preferences
-  * For example, if `walkBoardCost` is set to 2 minutes, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
+* Cost arguments on the other hand are not hard limits, but preferences
+  * For example, if `preferences: {street: {walk: {boardCost: 120}}}`, it is possible to continue the journey immediately after disembarking from one vehicle, but up to 2 minutes longer itineraries are preferred if they have one transfer less and up to 4 minutes longer itineraries are preferred if they have two transfers less, etc.
   * Cost is not included in the returned duration of an itinerary
-    * For example, if there is a 15 minute bicycling leg and `bikeSwitchCost` is set to 1 minute, the returned duration of the bicycling leg will be 15 minutes
-* Multiplier arguments (e.g. `walkReluctance`, `modeWeight`) are used to multiply costs of an leg
-  * For example, if `walkReluctance` is set to 3.0, the cost of each walking section will be multiplied by 3 and thus itineraries with less walking are preferred
+    * For example, if there is a 15 minute walking leg and `boardCost` is set to 1 minute, the returned duration of the walking leg will be 15 minutes
+* Multiplier arguments (e.g. `preferences: {street: {walk: {reluctance: 3}}}`) are used to multiply costs of an leg
+  * For example, if `reluctance` is set to 3.0, the cost of each walking section will be multiplied by 3 and thus itineraries with less walking are preferred
 
 ### Plan an itinerary from location (60.168992,24.932366) to (60.175294,24.684855)
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.168992%2C%20lon%3A%2024.932366%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.175294%2C%20lon%3A%2024.684855%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.175294%252C%2520longitude%253A%252024.684855%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25202%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520realtimeState%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520emissionsPerPerson%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520co2%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    from: {lat: 60.168992, lon: 24.932366}
-    to: {lat: 60.175294, lon: 24.684855}
-    numItineraries: 3
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.175294, longitude: 24.684855}}}
+    first: 2
   ) {
-    itineraries {
-      legs {
-        startTime
-        endTime
-        mode
-        duration
-        realTime
-        distance
-        transitLeg
+    pageInfo {
+      endCursor
+    }
+    edges {
+      node {
+        start
+        end
+        legs {
+          duration
+          mode
+          distance
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
+          mode
+          duration
+          realtimeState
+        }
+        emissionsPerPerson {
+          co2
+        }
       }
     }
   }
@@ -74,49 +90,92 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 
 2. Press play in GraphiQL to execute the query.
 
-### Basic route from Kamppi (Helsinki) to Pisa (Espoo)
+### Search window
 
-* Origin and destination locations can be named by using arguments `fromPlace` and `toPlace` instead of `to` and `from`
-  * Values for arguments `fromPlace` and `toPlace` are in format `<name>::<lat>,<lng>`
+It is possible to define a `searchWindow` in the requests to ensure that itineraries are searched from a specified search window time.
+However, usually specifying a search window in the request doesn't make sense as it can be inefficient. If one isn't specified, a search
+window is computed during the request which in many cases yields results. If one wants to specify a search window, it should preferable be
+between 30 minutes and 8 hours (depends on how dense the transit network is in the area), and it should be used together with [pagination](#pagination).
 
+### Pagination
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Kamppi%2C%20Helsinki%3A%3A60.168992%2C24.932366%22%2C%0A%20%20%20%20toPlace%3A%20%22Pisa%2C%20Espoo%3A%3A60.175294%2C24.684855%22%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%2C%0A%20%20%20%20%20%20duration%2C%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20%20%20%20%20gtfsId%0A%09%20%20%09%09%09name%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+The `planConnection` query follows the [Relay Graphql Cursor Connection specification](https://relay.dev/graphql/connections.htm). Only
+difference is that there are no cursors available for the itineraries in the middle of a response (a hard-coded place holder string
+is returned instead).
+
+Pagination is highly recommended as usually it's possible to get enough itineraries without specifying a relatively high `searchWindow` in the
+request. Higher `searchWindow` will mean that fetching the itineraries will take more time and in most cases, more itineraries will be found
+than what is necessary.
+
+The `first` argument in the GraphQL query specifies the number of itinerary plans to be returned. To retrieve more results, you can use the `after` argument with the value of `endCursor` from the previous query's response's `pageInfo`.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Kamppi, Helsinki::60.168992,24.932366",
-    toPlace: "Pisa, Espoo::60.175294,24.684855",
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.175294, longitude: 24.684855}}}
+    first: 2
+    after: <endCursor from previous query>
+  )....
+```
+
+Alternatively, if you want to fetch previous itineraries, `before` and `last` arguments can be used.
+
+```graphql
+{
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}}
+    destination: {location: {coordinate: {latitude: 60.175294, longitude: 24.684855}}}
+    last: 2
+    before: <startCursor from previous query>
+  )....
+```
+
+**Note:** Pagination back-and-forth is not recommended. The previously returned itineraries should be stored in the client.
+
+**Note:** If it's likely that you need to fetch for more itineraries, it's more efficient to just fetch more itineraries in the first
+request instead of limiting it with the `first` or `last` as it's likely that the backend will have a lot more itineraries available to be returned.
+
+### Basic route from Kamppi (Helsinki) to Pisa (Espoo)
+
+* Origin and destination locations can be named by using the argument `label`. The label is then returned with the location
+in the itineraries.
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%252C%2520label%253A%2520%2522Kamppi%252C%2520Helsinki%2522%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.175294%252C%2520longitude%253A%252024.684855%257D%257D%252C%2520label%253A%2520%2522Pisa%252C%2520Espoo%2522%257D%250A%2520%2520%2520%2520first%253A%25202%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520realtimeState%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520emissionsPerPerson%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520co2%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
+
+```graphql
+{
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}, label: "Kamppi, Helsinki"}
+    destination: {location: {coordinate: {latitude: 60.175294, longitude: 24.684855}}, label: "Pisa, Espoo"}
+    first: 2
   ) {
-    itineraries{
-      walkDistance,
-      duration,
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-          stop {
-            code
+    pageInfo {
+      endCursor
+    }
+    edges {
+      node {
+        start
+        end
+        legs {
+          from {
             name
           }
-        },
-        to {
-          lat
-          lon
-          name
-        },
-        agency {
-          gtfsId
-	  name
-        },
-        distance
-        legGeometry {
-          length
-          points
+          to {
+            name
+          }
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
+          mode
+          duration
+          realtimeState
+        }
+        emissionsPerPerson {
+          co2
         }
       }
     }
@@ -128,25 +187,47 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 
 ### Plan an itinerary using only WALK and RAIL modes
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%0A%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.199196699999995%2C%20lon%3A%2024.9397302%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.168438%2C%20lon%3A%2024.929283%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20%09transportModes%3A%20%5B%7Bmode%3A%20WALK%7D%2C%20%7Bmode%3A%20RAIL%7D%5D%0A%20%20)%20%7B%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+
+* By default, all transit modes are usable and `WALK` is used for direct street suggestions,
+access, egress and transfers.
+
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.199196699999995%252C%2520longitude%253A%252024.9397302%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168438%252C%2520longitude%253A%252024.929283%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25202%250A%2520%2520%2520%2520modes%253A%2520%257Btransit%253A%2520%257Btransit%253A%2520%255B%257Bmode%253A%2520RAIL%257D%255D%257D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520realtimeState%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520emissionsPerPerson%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520co2%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    from: {lat: 60.199196699999995, lon: 24.9397302}
-    to: {lat: 60.168438, lon: 24.929283}
-    numItineraries: 3
-    transportModes: [{mode: WALK}, {mode: RAIL}]
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.199196699999995, longitude: 24.9397302}}}
+    destination: {location: {coordinate: {latitude: 60.168438, longitude: 24.929283}}}
+    first: 2
+    modes: {transit: {transit: [{mode: RAIL}]}}
   ) {
-    itineraries {
-      legs {
-        startTime
-        endTime
-        mode
-        duration
-        realTime
-        distance
-        transitLeg
+    pageInfo {
+      endCursor
+    }
+    edges {
+      node {
+        start
+        end
+        legs {
+          from {
+            name
+          }
+          to {
+            name
+          }
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
+          mode
+          duration
+          realtimeState
+        }
+        emissionsPerPerson {
+          co2
+        }
       }
     }
   }
@@ -157,69 +238,67 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 
 ### Plan an itinerary from Hakaniemi to Keilaniemi and modify the following parameters:
 
-* Return five results: (`numItineraries: 5`)
-* Use transportation modes other than subway (`transportModes`)
-* Walking speed of 1,7m/s (`walkSpeed: 1.7`)
-* Use a 10 minute safety margin for transfers (`minTransferTime: 600`)
-* Use a 5 minute boarding cost (`walkBoardCost: 300`)
+* Return five results: (`fist: 5`)
+* Use BUS, RAIL, TRAM and FERRY modes (`modes: {transit: {transit: [{mode: BUS}, {mode: RAIL}, {mode: TRAM}, {mode: FERRY}]}}`)
+* Walking speed of 1,7m/s (`preferences: {street: {walk: {speed: 1.7}}}`)
+* Use a 10 minute safety margin for transfers (`preferences: {street: { transit: {transfer: {slack: "10m"}}}`)
+  *  In a lenient ISO-8601 duration format. Example P2DT2H12M40S, 2d2h12m40s or 1h
+* Use a 5 minute boarding cost (`preferences: {street: {walk: {boardCost: 300}}}`)
   * Boarding cost is used to prefer itineraries with less vehicle boardings
-    * For example, if `walkBoardCost: 300` is used and there is a 48min itinerary with one boarding and a 45min itinerary with two boardings, the 48 minute itinerary is returned, because its total cost is smaller (48min + 5min vs. 45min + 5min + 5min)
-* Use multiplier of 2.1 for walk reluctance to prefer routes with less walking (`walkReluctance: 2.1`)
+    * For example, if `boardCost: 300` is used and there is a 48min itinerary with one boarding and a 45min itinerary with two boardings, the 48 minute itinerary is returned, because its total cost is smaller (48min + 5min vs. 45min + 5min + 5min)
+* Use multiplier of 2.1 for walk reluctance to prefer routes with less walking (`preferences: {street: {walk: {reluctance: 2.1}}}`)
   * Walking times are multiplied with this multiplier
 * Specific departure date and time
-  * `date` in format YYYY-MM-DD
-  * `time` in format hh:mm:ss
+  * `dateTime: {earliestDeparture: "2024-06-13T14:30+03:00"}` In ISO-8601-formatted datetime with offset, e.g. 2024-06-13T14:30+03:00 for 2:30pm on June 13th 2024 at Helsinki's offset from UTC.
 
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Hakaniemi%2C%20Helsinki%3A%3A60.179267%2C24.951501%22%2C%0A%20%20%20%20toPlace%3A%20%22Keilaniemi%2C%20Espoo%3A%3A60.1762%2C24.836584%22%2C%0A%20%20%20%20date%3A%20%222018-08-21%22%2C%0A%20%20%20%20time%3A%20%2223%3A28%3A00%22%2C%0A%20%20%20%20numItineraries%3A%205%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20BUS%7D%2C%20%7Bmode%3A%20RAIL%7D%2C%20%7Bmode%3ATRAM%7D%2C%20%7Bmode%3A%20FERRY%7D%2C%20%7Bmode%3AWALK%7D%5D%0A%20%20%20%20walkReluctance%3A%202.1%2C%0A%20%20%20%20walkBoardCost%3A%20300%2C%0A%20%20%20%20minTransferTime%3A%20600%2C%0A%20%20%20%20walkSpeed%3A%201.7%2C%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%09tripHeadsign%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.179267%252C%2520longitude%253A%252024.951501%257D%257D%252C%2520label%253A%2520%2522Hakaniemi%252C%2520Helsinki%2522%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.1762%252C%2520longitude%253A%252024.836584%257D%257D%252C%2520label%253A%2520%2522Keilaniemi%252C%2520Espoo%2522%257D%250A%2520%2520%2520%2520first%253A%25205%250A%2520%2520%2520%2520dateTime%253A%2520%257BearliestDeparture%253A%2520%25222024-06-13T14%253A30%252B03%253A00%2522%257D%250A%2520%2520%2520%2520modes%253A%2520%257Btransit%253A%2520%257Btransit%253A%2520%255B%257Bmode%253A%2520BUS%257D%252C%2520%257Bmode%253A%2520RAIL%257D%252C%2520%257Bmode%253A%2520TRAM%257D%252C%2520%257Bmode%253A%2520FERRY%257D%255D%257D%257D%250A%2520%2520%2520%2520preferences%253A%2520%257Bstreet%253A%2520%257Bwalk%253A%2520%257Bspeed%253A%25201.7%252C%2520reluctance%253A%25202.1%252C%2520boardCost%253A%2520300%257D%257D%252C%2520transit%253A%2520%257Btransfer%253A%2520%257Bslack%253A%2520%252210M%2522%257D%257D%257D%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520walkDistance%250A%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520stop%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520code%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lat%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lon%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520stop%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520code%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520trip%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520tripHeadsign%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520routeShortName%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520distance%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520legGeometry%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520length%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520points%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Hakaniemi, Helsinki::60.179267,24.951501",
-    toPlace: "Keilaniemi, Espoo::60.1762,24.836584",
-    date: "2018-08-21",
-    time: "23:28:00",
-    numItineraries: 5,
-    transportModes: [{mode: BUS}, {mode: RAIL}, {mode:TRAM}, {mode: FERRY}, {mode:WALK}]
-    walkReluctance: 2.1,
-    walkBoardCost: 300,
-    minTransferTime: 600,
-    walkSpeed: 1.7,
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.179267, longitude: 24.951501}}, label: "Hakaniemi, Helsinki"}
+    destination: {location: {coordinate: {latitude: 60.1762, longitude: 24.836584}}, label: "Keilaniemi, Espoo"}
+    first: 5
+    dateTime: {earliestDeparture: "2024-06-13T14:30+03:00"}
+    modes: {transit: {transit: [{mode: BUS}, {mode: RAIL}, {mode: TRAM}, {mode: FERRY}]}}
+    preferences: {street: {walk: {speed: 1.7, reluctance: 2.1, boardCost: 300}}, transit: {transfer: {slack: "10M"}}}
   ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        from {
-          lat
-          lon
-          name
-          stop {
-            code
+    pageInfo {
+      endCursor
+    }
+    edges {
+      node {
+        walkDistance
+        duration
+        legs {
+          from {
+            lat
+            lon
             name
+            stop {
+              code
+              name
+            }
           }
-        }
-        to {
-          lat
-          lon
-          name
-          stop {
-            code
+          to {
+            lat
+            lon
             name
+            stop {
+              code
+              name
+            }
           }
-        }
-        trip {
-          tripHeadsign
-          routeShortName
-        }
-        distance
-        legGeometry {
-          length
-          points
+          trip {
+            tripHeadsign
+            routeShortName
+          }
+          distance
+          legGeometry {
+            length
+            points
+          }
         }
       }
     }
@@ -227,62 +306,49 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 }
 ```
 
-2. Change arguments `date` and `time`.
+2. Change  `earliestDeparture` arguments.
 3. Press play in GraphiQL to execute the query.
 
-### Plan an itinerary using Park & Ride
+### Plan an itinerary with alternative departures for each leg
 
-* Using qualifier **PARK** for **CAR** mode plans an itinerary using Park & Ride, i.e. the first leg of the journey is done by driving to a car park and continuing by public transportation from there
-
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20fromPlace%3A%20%22Seutula%3A%3A60.34770%2C24.86569%22%2C%0A%20%20%20%20toPlace%3A%20%22Kamppi%3A%3A60.16870%2C24.93129%22%2C%0A%20%20%20%20transportModes%3A%20%5B%7Bmode%3A%20CAR%2C%20qualifier%3A%20PARK%7D%2C%20%7Bmode%3A%20TRANSIT%7D%2C%20%7Bmode%3AWALK%7D%5D%0A%20%20)%20%7B%0A%20%20%20%20itineraries%7B%0A%20%20%20%20%20%20walkDistance%0A%20%20%20%20%20%20duration%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20lon%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20code%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20carPark%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20carParkId%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20%20%20%09tripHeadsign%0A%20%20%20%20%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20legGeometry%20%7B%0A%20%20%20%20%20%20%20%20%20%20length%0A%20%20%20%20%20%20%20%20%20%20points%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168992%252C%2520longitude%253A%252024.932366%257D%257D%252C%2520label%253A%2520%2522Kamppi%252C%2520Helsinki%2522%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.175294%252C%2520longitude%253A%252024.684855%257D%257D%252C%2520label%253A%2520%2522Pisa%252C%2520Espoo%2522%257D%250A%2520%2520%2520%2520first%253A%25201%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520nextLegs%28numberOfLegs%253A%25203%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mode%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520duration%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    fromPlace: "Seutula::60.34770,24.86569",
-    toPlace: "Kamppi::60.16870,24.93129",
-    transportModes: [{mode: CAR, qualifier: PARK}, {mode: TRANSIT}, {mode:WALK}]
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.168992, longitude: 24.932366}}, label: "Kamppi, Helsinki"}
+    destination: {location: {coordinate: {latitude: 60.175294, longitude: 24.684855}}, label: "Pisa, Espoo"}
+    first: 1
   ) {
-    itineraries{
-      walkDistance
-      duration
-      legs {
-        mode
-        startTime
-        endTime
-        duration
-        from {
-          lat
-          lon
-          name
-          stop {
-            code
+    pageInfo {
+      endCursor
+    }
+    edges {
+      node {
+        start
+        end
+        legs {
+          nextLegs(numberOfLegs: 3) {
+            start {
+              scheduledTime
+            }
+          }
+          from {
             name
           }
-        }
-        to {
-          lat
-          lon
-          name
-          stop {
-            code
+          to {
             name
           }
-          carPark {
-            carParkId
-            name
+          start {
+            scheduledTime
           }
+          end {
+            scheduledTime
+          }
+          mode
+          duration
         }
-        trip {
-          tripHeadsign
-          routeShortName
-        }
-        distance
-        legGeometry {
-          length
-          points
-        }
+        
       }
     }
   }
@@ -290,106 +356,54 @@ Itinerary planning can be tuned by multiple arguments of the **plan** query.
 ```
 
 2. Press play in GraphiQL to execute the query.
+
+
 
 ### Plan an itinerary and query fare information
 
-* **Note:** Currently only regular adult fare information is available
 
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.1713572%2C%20lon%3A%2024.9416544%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.40431%2C%20lon%3A%2025.1066186%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20)%20%7B%0A%20%20%20%20date%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20realTime%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20fares%20%7B%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20cents%0A%20%20%20%20%20%20%20%20currency%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520planConnection%28%250A%2520%2520%2520%2520origin%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.199196699999995%252C%2520longitude%253A%252024.9397302%257D%257D%257D%250A%2520%2520%2520%2520destination%253A%2520%257Blocation%253A%2520%257Bcoordinate%253A%2520%257Blatitude%253A%252060.168438%252C%2520longitude%253A%252024.929283%257D%257D%257D%250A%2520%2520%2520%2520first%253A%25202%250A%2520%2520%29%2520%257B%250A%2520%2520%2520%2520pageInfo%2520%257B%250A%2520%2520%2520%2520%2520%2520endCursor%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520edges%2520%257B%250A%2520%2520%2520%2520%2520%2520node%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520start%250A%2520%2520%2520%2520%2520%2520%2520%2520end%250A%2520%2520%2520%2520%2520%2520%2520%2520legs%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520fareProducts%2520%257B%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520product%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520id%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520...%2520on%2520DefaultFareProduct%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520price%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520amount%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520from%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520to%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520start%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520end%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520scheduledTime%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D%250A%250A) to run the query below in GraphiQL.
 
 ```graphql
 {
-  plan(
-    from: {lat: 60.1713572, lon: 24.9416544}
-    to: {lat: 60.40431, lon: 25.1066186}
-    numItineraries: 3
+  planConnection(
+    origin: {location: {coordinate: {latitude: 60.199196699999995, longitude: 24.9397302}}}
+    destination: {location: {coordinate: {latitude: 60.168438, longitude: 24.929283}}}
+    first: 2
   ) {
-    date
-    itineraries {
-      legs {
-        startTime
-        endTime
-        mode
-        duration
-        realTime
-        distance
-        transitLeg
-      }
-      fares {
-        type
-        cents
-        currency
-      }
+    pageInfo {
+      endCursor
     }
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-### Plan an itinerary with ticket type restrictions
-
-#### Query list of available ticket types
-
-* Field `fareId` contains ticket type ID that can be used with **plan** query
-* Field `zones` contains a list of zones where the ticket is valid
-
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20ticketTypes%20%7B%0A%20%20%20%20fareId%0A%20%20%20%20price%0A%20%20%20%20currency%0A%20%20%20%20zones%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-```graphql
-{
-  ticketTypes {
-    fareId
-    price
-    currency
-    zones
-  }
-}
-```
-
-2. Press play in GraphiQL to execute the query.
-
-#### Plan an itinerary with AB ticket
-
-* The following query plans an itinerary from Helsinki (zone A) to Tikkurila (zone C) using only AB ticket
-
-
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20plan(%0A%20%20%20%20from%3A%20%7Blat%3A%2060.1713572%2C%20lon%3A%2024.9416544%7D%0A%20%20%20%20to%3A%20%7Blat%3A%2060.29280%2C%20lon%3A%2025.04396%7D%0A%20%20%20%20numItineraries%3A%203%0A%20%20%20%20allowedTicketTypes%3A%20%22HSL%3AAB%22%0A%20%20)%20%7B%0A%20%20%20%20date%0A%20%20%20%20itineraries%20%7B%0A%20%20%20%20%20%20legs%20%7B%0A%20%20%20%20%20%20%20%20startTime%0A%20%20%20%20%20%20%20%20endTime%0A%20%20%20%20%20%20%20%20mode%0A%20%20%20%20%20%20%20%20route%20%7B%0A%20%20%20%20%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20from%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20zoneId%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20to%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20zoneId%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20duration%0A%20%20%20%20%20%20%20%20distance%0A%20%20%20%20%20%20%20%20transitLeg%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
-
-```graphql
-{
-  plan(
-    from: {lat: 60.1713572, lon: 24.9416544}
-    to: {lat: 60.29280, lon: 25.04396}
-    numItineraries: 3
-    allowedTicketTypes: "HSL:AB"
-  ) {
-    date
-    itineraries {
-      legs {
-        startTime
-        endTime
-        mode
-        route {
-          gtfsId
-        }
-        from {
-          name
-          stop {
-            zoneId
+    edges {
+      node {
+        start
+        end
+        legs {
+          fareProducts {
+            product {
+              id
+              name
+              ... on DefaultFareProduct {
+                price {
+                  amount
+                }
+              }
+            }
           }
-        }
-        to {
-          name
-          stop {
-            zoneId
+          from {
+            name
           }
+          to {
+            name
+          }
+          start {
+            scheduledTime
+          }
+          end {
+            scheduledTime
+          }
+         
         }
-        duration
-        distance
-        transitLeg
       }
     }
   }

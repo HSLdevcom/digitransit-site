@@ -1,6 +1,6 @@
 ---
 title: Routes
-order: 90
+order: 100
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
@@ -190,78 +190,6 @@ Example response:
         "occupancyStatus": "FEW_SEATS_AVAILABLE"
       }
     }
-  }
-}
-```
-### <a name="fuzzytrip"></a>Query a trip without its id
-
-- Query type **fuzzyTrip** can be used to query a trip without its id, if other details uniquely identifying the trip are available
-  - This query is mostly useful for getting additional details for vehicle positions received from [the vehicle position API](../../4-realtime-api/vehicle-positions/high-frequency-positioning/)
-
-For example, from the following vehicle position message
-
-```json 
-{
-  "VP": {
-    "desi":"550",
-    "dir":"1",
-    "oper":12,
-    "veh":1306,
-    "tst":"2019-06-28T09:49:01.457Z",
-    "tsi":1561715341,
-    "spd":12.29,
-    "hdg":47,
-    "lat":60.182376,
-    "long":24.825781,
-    "acc":0.44,
-    "dl":-2,
-    "odo":24627,
-    "drst":0,
-    "oday":"2019-06-28",
-    "jrn":99,
-    "line":261,
-    "start":"11:57",
-    "loc":"GPS",
-    "stop":null,
-    "route":"2550",
-    "occu":0
-  }
-}
-```
-
-it is possible to parse:
-
-- Route id from the message: _2550_
-- Direction id from the topic: _1_
-- Departure time from the message: _11:57_
-- Departure date from the message: _2019-06-28_
-
-**Note:**
-
-1. Vehicle position messages use different direction id than the Routing API
-   - Direction id _1_ in a vehicle position is same as direction id _0_ in the Routing API
-   - Direction id _2_ in a vehicle position is same as direction id _1_ in the Routing API
-2. Departure time must be in seconds
-   - e.g. _11:57_ = `11 * 60 * 60 + 57 * 60` = _43020_
-   - If the date in fields `oday` and `tst` is not the same and the departure time (`start`) is earlier than the time in `tst`, add 86400 seconds to departure time
-        - This is due to differences in time formats, when vehicles which have departed after midnight have the previous date as operating day
-        - e.g.
-          - `tst = 2018-08-16T00:15:00.836Z` *(note that this is in UTC time)*
-          - `oday = 2018-08-15`
-          - `start = 03:10`
-          - → _03:10_ = `3 * 60 * 60 + 10 * 60 + 86400` = _97800_
-3. Due to a bug in the vehicle position API, some route ids don't match the route id in the routing API
-   - In this case, **fuzzyTrip** query returns `null`
-
-For example, the following query checks if the vehicle, which sent the vehicle position message above, is wheelchair accessible:
-
-```graphql
-{
-  fuzzyTrip(route: "HSL:2550", direction: 0, date: "2019-06-28", time: 43020) {
-    route {
-      shortName
-    }
-    wheelchairAccessible
   }
 }
 ```

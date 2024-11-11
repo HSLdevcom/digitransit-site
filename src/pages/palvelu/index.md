@@ -51,7 +51,7 @@ hallinnollisen hierarkian lisääminen kohteisiin käyttämällä WhosOnFirst-pa
 korvata tai datasisältö vaihtaa Suomen rajojen ulkopuolella.
 
 Taustakarttojen datalataus on vahvasti sidoksissa HSL:n tarjoamiin karttapalveluihin. Korvaava karttapalvelu on mahdollista luoda
-[kehittäjädokumenttien ohjeiden](../en/developers/apis/3-map-api) mukaisesti.
+[kehittäjädokumenttien ohjeiden](../en/developers/apis/4-map-api) mukaisesti.
 
 On myös mahdollista ylläpitää vain osaa palveluista ja käyttää muilta osin Digitransitin rajapintoja; uusi Suomessa toimiva paikallinen reittiopas
 voi helposti hyödyntää koko maan kattavaa osoitehakua.
@@ -86,7 +86,7 @@ Osoitehakua palvellaan osoitteessa localhost:3100. Avaa selain ja testaa haku: h
 5. Käynnistä käyttöliittymäpalvelu:
 
 ```bash
-docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/routers/hsl/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
+docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
 ```
 
 Nyt voit selata osoitteeseen localhost:8080 ja alkaa käyttämään omaa yksityistä reittopaspalvelua, jonka taustakartat tulevat Digitransitista.

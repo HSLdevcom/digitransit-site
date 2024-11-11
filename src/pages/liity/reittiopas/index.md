@@ -256,7 +256,7 @@ Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipo
 ```
 
 Yllä on F-vyöhykkeelle määritelty 2 tunnusta vyöhykkeen eri osiin. Vakio svg symbolit A, B ... I voi kopioida
-[vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v2/static/assets/geojson/hml_zone_lines_20210222.geojson)
+[vyöhykedatan esimerkkitiedostosta](https://raw.githubusercontent.com/HSLdevcom/digitransit-ui/v3/static/assets/geojson/hml_zone_lines_20230214.geojson)
 ja vaihtaa svg määrittelyhin oman reittioppaan teemavärin. Mikäli tarvitaan jokin muu symboli, sen voi tuottaa itse annetun mallin mukaisesti Roboto-fontilla,
 tai vaihtoehtoisesti pyytää digitransit-kehitystiimiä lisäämään halutut svg elementit.
 

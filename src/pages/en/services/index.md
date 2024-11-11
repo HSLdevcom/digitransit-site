@@ -50,7 +50,7 @@ are mapped to address items using built-in area information fetched from WhosOnF
 or the data content changed.
 
 The dataloading process of background maps is heavily tied with services provided by HSL. A replacement can be developed by following
-the [map api specifications](../developers/apis/3-map-api).
+the [map api specifications](../developers/apis/4-map-api).
 
 
 It should be noted that hosting only a subset of services and using APIs of Digitransit for the rest is also possible. For example, a new local
@@ -85,7 +85,7 @@ Address search is now served at `localhost:3100`. To test, open a browser and br
 5. Run the user interface service:
 
 ```bash
-docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/routers/hsl/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
+docker run -d --rm  -p 8080:8080 -e OTP_URL=http://localhost:9080/otp/ -e CONFIG=hsl -e GEOCODING_BASE_URL=localhost:3100/v1 hsldevcom/digitransit-ui
 ```
 
 You can now browse to the address `localhost:8080` and use your private trip planning service, which uses background maps from Digitransit API.

@@ -1,6 +1,6 @@
 ---
 title: Disruption info
-order: 60
+order: 70
 ---
 
 **If you are not yet familiar with [GraphQL](../0-graphql) and [GraphiQL](../1-graphiql) it is highly recommended to review those pages at first.**
@@ -13,9 +13,13 @@ Disruption info is information about the current and upcoming disruptions in pub
 
 **Note:** For more details about the query type **alerts** you can use the **Documentation Explorer** provided in GraphiQL.
 
+## Response language
+
+Response language can be changed by using the request header `Accept-Language`. [Here](../4-translations) is more information.
+
 ### Query all currently available disruption info
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520alerts%2520%257B%250A%2520%2520%2520%2520alertDescriptionText%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -29,38 +33,21 @@ Disruption info is information about the current and upcoming disruptions in pub
 
 ### Query all currently available disruption info and routes that it might affect
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertHeaderText%0A%20%20%20%20alertHeaderTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertDescriptionTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20alertUrl%0A%20%20%20%20effectiveStartDate%0A%20%20%20%20effectiveEndDate%0A%20%20%20%20agency%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20route%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%7D%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520alerts%2520%257B%250A%2520%2520%2520%2520alertHeaderText%250A%2520%2520%2520%2520alertDescriptionText%250A%2520%2520%2520%2520alertUrl%250A%2520%2520%2520%2520effectiveStartDate%250A%2520%2520%2520%2520effectiveEndDate%250A%2520%2520%2520%2520entities%2520%257B%250A%2520%2520%2520%2520%2520%2520__typename%250A%2520%2520%2520%2520%2520%2520...%2520on%2520Route%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520gtfsId%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
   alerts {
     alertHeaderText
-    alertHeaderTextTranslations {
-      text
-      language
-    }
     alertDescriptionText
-    alertDescriptionTextTranslations {
-      text
-      language
-    }
     alertUrl
     effectiveStartDate
     effectiveEndDate
-    agency {
-      gtfsId
-    }
-    route {
-      gtfsId
-    }
-    patterns {
-      code
-    }
-    trip {
-      gtfsId
-    }
-    stop {
-      gtfsId
+    entities {
+      __typename
+      ... on Route {
+        gtfsId
+      }
     }
   }
 }
@@ -73,37 +60,24 @@ Example response:
 {
   "data": {
     "alerts": [
-       {
-        "alertHeaderText": null,
-        "alertHeaderTextTranslations": [],
-        "alertDescriptionText": "Seutuliikenteen linja 561 Aviapoliksesta, klo 14:37 peruttu. Syy: tekninen vika.",
-        "alertDescriptionTextTranslations": [
+
+      {
+        "alertHeaderText": "Line 6, Diversion route, 17:00 - 18:00",
+        "alertDescriptionText": "Line 6, Diversion route: Turns around in Kolmikulma., Reason: Technical failure, Estimated duration: 17:00 - 18:00",
+        "alertUrl": "https://www.hsl.fi/en",
+        "effectiveStartDate": 1725458400,
+        "effectiveEndDate": 1725462000,
+        "entities": [
           {
-            "text": "Seutuliikenteen linja 561 Aviapoliksesta, klo 14:37 peruttu. Syy: tekninen vika.",
-            "language": "fi"
+            "__typename": "Route",
+            "gtfsId": "HSL:1006"
           },
           {
-            "text": "Regiontrafik, linje 561 från Aviapolis, kl. 14:37 inställd. Orsak: tekniska problem.",
-            "language": "sv"
-          },
-          {
-            "text": "Regional traffic, line 561 from Aviapolis, 14:37 cancelled. Cause: technical problems.",
-            "language": "en"
+            "__typename": "Route",
+            "gtfsId": "HSL:1006H"
           }
-        ],
-        "alertUrl": null,
-        "effectiveStartDate": 1470309600,
-        "effectiveEndDate": 1470314220,
-        "agency": null,
-        "route": {
-          "gtfsId": "HSL:4561"
-        },
-        "patterns": [],
-        "trip": {
-          "gtfsId": "HSL:4561_20160801_To_2_1437"
-        },
-        "stop": null
-      }
+        ]
+      },
     ]
   }
 }
@@ -118,7 +92,7 @@ Example response:
   * **SEVERE** is used when the disruption affects a significant part of public transport services (e.g. all train services being cancelled due to a technical problem)  
   
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query={%0A%09alerts%20{%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertSeverityLevel%0A%20%20%20%20alertUrl%0A%20%20%20%20alertUrlTranslations%20{%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20}%0A%20%20}%0A}) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520alerts%2520%257B%250A%2520%2520%2520%2520alertDescriptionText%250A%2520%2520%2520%2520alertSeverityLevel%250A%2520%2520%2520%2520alertUrl%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -126,10 +100,6 @@ Example response:
     alertDescriptionText
     alertSeverityLevel
     alertUrl
-    alertUrlTranslations {
-      text
-      language
-    }
   }
 }
 ```
@@ -142,7 +112,7 @@ Example response:
   * Note that the query might return an empty list depending on the current situation
 
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09alerts(effect%3A%20%5BMODIFIED_SERVICE%5D%2C%20severityLevel%3A%20%5BWARNING%5D)%20%7B%0A%20%20%20%20feed%0A%20%20%20%20alertSeverityLevel%0A%20%20%20%20alertEffect%0A%20%20%20%20alertCause%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertHeaderText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2509alerts%28effect%253A%2520%255BMODIFIED_SERVICE%255D%252C%2520severityLevel%253A%2520%255BWARNING%255D%29%2520%257B%250A%2520%2520%2520%2520feed%250A%2520%2520%2520%2520alertSeverityLevel%250A%2520%2520%2520%2520alertEffect%250A%2520%2520%2520%2520alertCause%250A%2520%2520%2520%2520alertDescriptionText%250A%2520%2520%2520%2520alertHeaderText%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -167,25 +137,20 @@ Example response:
   * For example, *HSL* feed contains data from HSL area  
 
 
-1. Click [this link](https://api.digitransit.fi/graphiql/finland?query=%7B%0A%09alerts(feeds%3A%20%5B%22HSL%22%5D)%20%7B%0A%20%20%20%20feed%0A%20%20%20%20alertDescriptionText%0A%20%20%20%20alertDescriptionTextTranslations%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20language%0A%20%20%20%20%7D%0A%20%20%20%20route%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20trip%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20stop%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%7D%0A%20%20%20%20effectiveStartDate%0A%20%20%20%20effectiveEndDate%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520alerts%28feeds%253A%2520%255B%2522HSL%2522%255D%29%2520%257B%250A%2520%2520%2520%2520feed%250A%2520%2520%2520%2520alertDescriptionText%250A%2520%2520%2520%2520entities%2520%257B%250A%2520%2520%2520%2520%2520%2520...%2520on%2520Route%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520gtfsId%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520...%2520on%2520Trip%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520gtfsId%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520...%2520on%2520Stop%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520gtfsId%250A%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520effectiveStartDate%250A%2520%2520%2520%2520effectiveEndDate%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
   alerts(feeds: ["HSL"]) {
     feed
     alertDescriptionText
-    alertDescriptionTextTranslations {
-      text
-      language
-    }
-    route {
-      gtfsId
-    }
-    trip {
-      gtfsId
-    }
-    stop {
-      gtfsId
+    entities {
+      ... on Route {
+        gtfsId
+      }
+      ... on Stop {
+        gtfsId
+      }
     }
     effectiveStartDate
     effectiveEndDate
