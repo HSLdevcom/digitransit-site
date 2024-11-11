@@ -20,6 +20,6 @@ Departures that have been cancelled through a real-time feed can be included usi
 For stop timetables and route timetables, real-time estimates are available from stop times through `realtimeArrival` and `realtimeDeparture` fields or from leg's `start` and `end` `estimated` field. Note that in stop times, these fields will have the static arrival / departure time by default and field `realtime` indicates whether the values of those fields have been updated from a real-time source.
 
 ## Occupancy information
-Some vehicles might have real-time occupancy information available. This information can be accessed through `Trip` types `occupancy` field.
+Some vehicles might have real-time occupancy information available. This information can be accessed through `Trip` type's `occupancy` field.
 
 **Note:** Currently, this information is always the current state (or the last known state). There is no occupancy prediction data available.
