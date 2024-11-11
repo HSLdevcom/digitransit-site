@@ -48,7 +48,7 @@ panels:
 
 <div align="center">
 
-## Digitransit reittioppaat
+## Digitransit-reittioppaat
 
 [HSL Reittiopas](https://hsl.fi)  &nbsp; [opas.matka.fi](https://opas.matka.fi)  &nbsp; [opas.waltti.fi](https://opas.waltti.fi)  &nbsp; [Seutu+](https://varely.digitransit.fi)  &nbsp; [Hämeenlinna](https://hameenlinna.digitransit.fi) </br>
 [Joensuu](https://joensuu.digitransit.fi)  &nbsp; [Jyväskylä](https://jyvaskyla.digitransit.fi)  &nbsp;
@@ -58,7 +58,7 @@ panels:
 [Raasepori](https://bosse.digitransit.fi)  &nbsp; [Rovaniemi](https://rovaniemi.digitransit.fi)  &nbsp;
 [Tampere](https://tampere.digitransit.fi)  &nbsp; [Turku](https://turku.digitransit.fi)  &nbsp; [Vaasa](https://vaasa.digitransit.fi)  &nbsp;
 
-## Kolmansien osapuolten Digitransit reittioppaat
+## Kolmansien osapuolten Digitransit-reittioppaat
 
 [Matkahuolto](https://reittiopas.matkahuolto.fi)  &nbsp; [Oulun liikenne](https://oulunliikenne.fi/)  &nbsp; [Herrenberg](https://herrenberg.stadtnavi.de/)  &nbsp; [Ludwigsburg](https://stadtnavi.swlb.de/)  &nbsp; [Aachen](https://stadtnavi.aachen.de/)  &nbsp; </br>
 [Verkehrsverbund Pforzheim-Enzkreis Transport Agency](https://mobi.vpe.de/)  &nbsp; [Oklahoma City Transport Agency](https://go.embarkok.com/)  &nbsp;
