@@ -41,7 +41,7 @@ Start by reading (Note that it might not be up-to-date):
 
 > https://mapzen.com/blog/pelias-setup-tutorial
 
-## How data is built?
+## How is data built?
 
 On build time the data is fetched from multiple sources and processed and loaded into ElasticSearch using
 Pelias tools. At high level this is what happens:

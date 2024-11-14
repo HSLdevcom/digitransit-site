@@ -32,7 +32,7 @@ Address search can be used to search addresses and points of interest (POIs).  A
 
 > https://api.digitransit.fi/graphiql/finland/v2/gtfs/v1?query=%257B%250A%2520%2520feeds%2520%257B%250A%2520%2520%2520%2520feedId%250A%2520%2520%257D%250A%257D
 
-Running this query returns the list of feed identifiers used in Finland routing services.
+Running this query returns the list of feed identifiers used in Finland and Estonia routing services.
 
 Vehicle rental network identifiers can be examined by querying all vehicle rental stations:
 

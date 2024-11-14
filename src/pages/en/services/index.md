@@ -93,7 +93,7 @@ You can now browse to the address `localhost:8080` and use your private trip pla
 
 ## Theming the user interface
 
-The default theme of Digitransit user interface does not include any city specific features. It is configured to work with the data of whole Finland.
+The default theme of the Digitransit user interface does not include any city specific features. It is configured to work with the data of the entirety of Finland.
 
 The UI can be themed and configured to suit a new target area by adding a new configuration file into to repository
 https://github.com/HSLdevcom/digitransit-ui, to the folder `app/configurations`. For more information, check out
@@ -107,14 +107,14 @@ the language selector component respectively.
 
 Examples:
 
-- Routing engine OpenTripPlanner with the data of whole Finland requires 12 GB of RAM and a powerful multi core CPU.
-- Address search which covers whole Finland requires 3 GB of RAM for API server (pelias-api) and 4 GB of RAM for address database (pelias-data-container).
+- The routing engine OpenTripPlanner with the data of the entirety of Finland requires 12 GB of RAM and a powerful multi core CPU.
+- An address search which covers the entirety of Finland requires 3 GB of RAM for the API server (pelias-api) and 4 GB of RAM for the address database (pelias-data-container).
 A powerful CPU will speed up the service.
-- background map server (hsl-map-server) needs 4 GB of RAM and a basic CPU.
-- UI-server reuires 1 GB of RAM and a basic CPU.
+- The background map server (hsl-map-server) needs 4 GB of RAM and a basic CPU.
+- The UI-server requires 1 GB of RAM and a basic CPU.
 
-These resurces can serve multiple simultaneous uses without delays. If the service load is high, it may be necessary to deploy a load balancing
-solution to distribute service request to multiple servers. For example, Digitransit uses over 20 OpenTripPlanner instances to serve
+These resources can serve multiple simultaneous uses without delays. If the service load is high, it may be necessary to deploy a load balancing
+solution to distribute service requests to multiple servers. For example, Digitransit uses over 20 OpenTripPlanner instances to serve
 the capital area of Finland.
 
 
@@ -124,8 +124,8 @@ Especially the background map service benefits from those.
 
 ## Country specific features of Digitransit
 
-The OpenTripPlanner fork developed for Digitransit is fairly generic, and does not include significant features specific only to Finland.
-Some features such as ticket price computation for Helsinki area can be activated using suitable configuration.
+The OpenTripPlanner fork developed for Digitransit is fairly generic, and does not include significant Finland-specific features.
+Some features, such as ticket price computation for the Helsinki area, can be activated using a suitable configuration.
 
 Pelias address search has been modified to support searches in many languages and local character set. All country specific features are defined
 in the configuration file.
