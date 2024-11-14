@@ -165,7 +165,7 @@ Example response:
 
 ### Query trip with id
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520trip%28id%253A%2520%2522HSL%253A1020_20240314_Pe_1_0933%2522%29%2520%257B%250A%2520%2520%2520%2520tripHeadsign%250A%2520%2520%2520%2520occupancy%2520%257B%250A%2520%2520%2520%2520%2520%2520occupancyStatus%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%257D%250A%257D>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%257B%250A%2520%2520trip%28id%253A%2520%2522HSL%253A1020_20240314_Pe_1_0933%2522%29%2520%257B%250A%2520%2520%2520%2520tripHeadsign%250A%2520%2520%2520%2520occupancy%2520%257B%250A%2520%2520%2520%2520%2520%2520occupancyStatus%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%257D%250A%257D>) to run the query below in GraphiQL.
 
 ```graphql
 {

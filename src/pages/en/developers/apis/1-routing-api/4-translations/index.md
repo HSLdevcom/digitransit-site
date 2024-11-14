@@ -21,7 +21,7 @@ at once, for example. In that case, it's possible to fetch the same field multip
 specify the requested language (this overrides the language from the `Accept-Language` header). Here's an example on how to use this on
 vehicle parking:
 
-1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2?query=%257B%250A%2520%2520vehicleParkings%2520%257B%250A%2520%2520%2520%2520%2520nameFi%253A%2520name%28language%253A%2520%2522fi%2522%29%250A%2520%2520%2520%2520%2520nameSv%253A%2520name%28language%253A%2520%2522sv%2522%29%250A%2520%2520%2520%2520%2520nameEn%253A%2520name%28language%253A%2520%2522en%2522%29%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%257B%250A%2520%2520vehicleParkings%2520%257B%250A%2520%2520%2520%2520%2520nameFi%253A%2520name%28language%253A%2520%2522fi%2522%29%250A%2520%2520%2520%2520%2520nameSv%253A%2520name%28language%253A%2520%2522sv%2522%29%250A%2520%2520%2520%2520%2520nameEn%253A%2520name%28language%253A%2520%2522en%2522%29%250A%2520%2520%257D%250A%257D) to run the query below in GraphiQL.
 
 ```graphql
 {
