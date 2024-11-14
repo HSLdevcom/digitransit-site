@@ -14,15 +14,15 @@ order: 20
 ### There are a few options for using GraphiQL:
 
 1. Using our hosted browser versions for the five available regions. The browser versions have the correct endpoints configured already.
-   * [Helsinki region](https://api.digitransit.fi/graphiql/hsl)
-   * [Waltti regions](https://api.digitransit.fi/graphiql/waltti)
-   * [Waltti-Opas regions](https://api.digitransit.fi/graphiql/waltti-alt)
-   * [Seutu+ regions](https://api.digitransit.fi/graphiql/varely)
-   * [Entire Finland](https://api.digitransit.fi/graphiql/finland)
+   * [Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1)
+   * [Waltti regions](https://api.digitransit.fi/graphiql/waltti/v2/gtfs/v1)
+   * [Waltti-Opas regions](https://api.digitransit.fi/graphiql/waltti-alt/v2/gtfs/v1)
+   * [Seutu+ regions](https://api.digitransit.fi/graphiql/varely/v2/gtfs/v1)
+   * [Entire Finland](https://api.digitransit.fi/graphiql/finland/v2/gtfs/v1)
 2. A browser extension like [ChromeiQL](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij) (see regional endpoints below)
 3. For Mac OSX you can use [the desktop GraphiQL app](https://github.com/skevy/graphiql-app) (see regional endpoints below)
 
-All options work similarly and their UI looks more or less like this (our browser version with the [Helsinki region](https://api.digitransit.fi/graphiql/hsl) endpoint was used in the example below):
+All options work similarly and their UI looks more or less like this (our browser version with the [Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1) endpoint was used in the example below):
 
 ![GraphiQL](./GraphiQL.png)
 
@@ -38,7 +38,7 @@ All options work similarly and their UI looks more or less like this (our browse
 | Seutu+ region       | `https://api.digitransit.fi/routing/v2/varely/gtfs/v1`     |
 | Entire Finland      | `https://api.digitransit.fi/routing/v2/finland/gtfs/v1`    |
 
-2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+2. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -107,7 +107,7 @@ Let's try to query alerts:
 
 1. Close the docs
 
-2. Click [this link](https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+2. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20alerts%20%7B%0A%20%20%20%20alertDescriptionText%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
 {

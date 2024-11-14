@@ -21,7 +21,7 @@ order: 100
 
 ### Query all routes where name starts with "10"
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2210%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20routes(name%3A%20%2210%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -38,7 +38,7 @@ order: 100
 
 ### Query all bus routes where name starts with "58"
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2258%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D%0A>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20routes(name%3A%20%2258%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D%0A>) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -55,7 +55,7 @@ order: 100
 
 ### Query all tram routes where name starts with "1"
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%221%22%2C%20transportModes%3A%20TRAM)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20routes(name%3A%20%221%22%2C%20transportModes%3A%20TRAM)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20mode%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -72,7 +72,7 @@ order: 100
 
 ### Query patterns of a route
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20routes(name%3A%20%2259%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20routes(name%3A%20%2259%22%2C%20transportModes%3A%20BUS)%20%7B%0A%20%20%20%20shortName%0A%20%20%20%20longName%0A%20%20%20%20patterns%20%7B%0A%20%20%20%20%20%20code%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20headsign%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -125,7 +125,7 @@ Example response:
 - See previous example on how to find pattern IDs for a route
   - Pattern ID is value of `code` in a pattern object
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%20%20pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%0A>) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -142,7 +142,7 @@ Example response:
 
 ### Query trips of a specific pattern
 
-1. Click [this link](<https://api.digitransit.fi/graphiql/hsl?query=%7B%0A%09pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20code%0A%20%20%20%20directionId%0A%20%20%20%20name%0A%20%20%20%20headsign%0A%20%20%20%20trips%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
+1. Click [this link](<https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%09pattern(id%3A%20%22HSL%3A1059%3A0%3A01%22)%20%7B%0A%20%20%20%20code%0A%20%20%20%20directionId%0A%20%20%20%20name%0A%20%20%20%20headsign%0A%20%20%20%20trips%20%7B%0A%20%20%20%20%20%20gtfsId%0A%20%20%20%20%20%20tripHeadsign%0A%20%20%20%20%20%20routeShortName%0A%20%20%20%20%20%20directionId%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D>) to run the query below in GraphiQL.
 
 ```graphql
 {
