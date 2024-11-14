@@ -6,10 +6,9 @@ Digitransit marketing site built using [Gatsby][Gatsby] static site generator.
 
 ## Development workflow
 
-1. Install gatsby as a dependency using: `yarn global add gatsby-cli@2.4.5`
-2. Install dependencies by running: `yarn`
-3. Start development server using: `gatsby develop`
-4. Build production version using: `gatsby build`
+1. Install dependencies by running: `yarn install`
+2. Start development server using: `yarn gatsby develop`
+3. Build production version using: `yarn gatsby build`
 
 ## Licensing
 
