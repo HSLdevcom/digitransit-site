@@ -22,7 +22,7 @@ order: 20
 2. A browser extension like [ChromeiQL](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij) (see regional endpoints below)
 3. For Mac OSX you can use [the desktop GraphiQL app](https://github.com/skevy/graphiql-app) (see regional endpoints below)
 
-All options work similarly and their UI looks more or less like this (ChromeiQL extension has been used in the example below):
+All options work similarly and their UI looks more or less like this (our browser version with the [Helsinki region](https://api.digitransit.fi/graphiql/hsl) endpoint was used in the example below):
 
 ![GraphiQL](./GraphiQL.png)
 
@@ -69,7 +69,25 @@ All options work similarly and their UI looks more or less like this (ChromeiQL 
 ```
 **Note:** If the example provided does not return what is expected then the stop id used in step 2 may not be in use any more and you should try again with an existing id.
 
-## Exploring schema with GraphiQL
+## Changing the endpoint or API type
+
+When using the browser version, the endpoint currently in use can be viewed by hovering over the **EP** icon.
+
+![GraphiQL](./GraphiQL-endpoint-hovering.png)
+
+The endpoint can be changed by clicking the **EP** icon. A menu with endpoint options opens up.
+
+![GraphiQL](./GraphiQL-endpoint.png)
+
+The API type currently in use can be viewed by hovering over the **API** icon.
+
+![GraphiQL](./GraphiQL-api-hovering.png)
+
+The API type can be changed by clicking the **API** icon. A menu with API type options opens up.
+
+![GraphiQL](./GraphiQL-api.png)
+
+## Exploring the schema with GraphiQL
 
 GraphiQL is schema aware. This means that you can invoke autocomplete by Ctrl-space. The tool then shows available options for your query.
 
@@ -77,11 +95,11 @@ GraphiQL is schema aware. This means that you can invoke autocomplete by Ctrl-sp
 
 ## Reading schema docs
 
-By clicking **< Docs** in the upper right corner of GraphiQL, you can open the **Documentation Explorer**. Then, clicking **query: QueryType** will open up a list of all available top level queries.
+By clicking the documentation icon in the upper left corner of GraphiQL you can open the **Documentation Explorer**. Then, clicking **query: QueryType** will open up a list of all available top level queries.
 
 ![GraphiQL](./GraphiQL-docs.png)
 
-From here you can check e.g. **alerts**, which describes what can be queried using that top level. It says "Get all alerts active in the graph".
+From here you can check e.g. **alerts**, which describes what can be queried using that top level. It says "Get all active alerts".
 
 ![GraphiQL](./GraphiQL-alerts.png)
 
