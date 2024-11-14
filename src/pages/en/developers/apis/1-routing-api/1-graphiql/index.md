@@ -11,34 +11,18 @@ order: 20
 
 **Note:** Queries, parameters, and fields should have at least some description available and you can use the documentation explorer to familiarize yourself with the schema. You can find more details about that under [Reading schema docs](#reading-schema-docs).
 
-### There are a few options for using GraphiQL:
+### Using the Digitransit GraphiQL browser versions
 
-1. Using our hosted browser versions for the five available regions. The browser versions have the correct endpoints configured already.
+You can use our hosted GraphiQL browser versions for the five available regions. The browser versions have the correct endpoints configured.
    * [Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1)
    * [Waltti regions](https://api.digitransit.fi/graphiql/waltti/v2/gtfs/v1)
    * [Waltti-Opas regions](https://api.digitransit.fi/graphiql/waltti-alt/v2/gtfs/v1)
    * [Seutu+ regions](https://api.digitransit.fi/graphiql/varely/v2/gtfs/v1)
    * [Entire Finland](https://api.digitransit.fi/graphiql/finland/v2/gtfs/v1)
-2. A browser extension like [ChromeiQL](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij) (see regional endpoints below)
-3. For Mac OSX you can use [the desktop GraphiQL app](https://github.com/skevy/graphiql-app) (see regional endpoints below)
-
-All options work similarly and their UI looks more or less like this (our browser version with the [Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1) endpoint was used in the example below):
-
-![GraphiQL](./GraphiQL.png)
 
 ## Execute your first query
 
-1. If you are using the GraphiQL app or a browser extension, set the GraphQL Endpoint to one of the following:
-
-| Region              | Endpoint                                                                 |
-|---------------------|--------------------------------------------------------------------------|
-| Helsinki region     | `https://api.digitransit.fi/routing/v2/hsl/gtfs/v1`        |
-| Waltti regions      | `https://api.digitransit.fi/routing/v2/waltti/gtfs/v1`     |
-| Waltti-Opas region  | `https://api.digitransit.fi/routing/v2/waltti-alt/gtfs/v1` |
-| Seutu+ region       | `https://api.digitransit.fi/routing/v2/varely/gtfs/v1`     |
-| Entire Finland      | `https://api.digitransit.fi/routing/v2/finland/gtfs/v1`    |
-
-2. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
+1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20stop(id%3A%20%22HSL%3A1040129%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%20%20wheelchairBoarding%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
 
 ```graphql
 {
@@ -51,9 +35,11 @@ All options work similarly and their UI looks more or less like this (our browse
 }
 ```
 
-3. Press play in GraphiQL to execute the query.
+2. Press play in GraphiQL to execute the query.
 
-4. You should get results like below:
+![GraphiQL](./GraphiQL.png)
+
+3. You should get results like below:
 
 ```json
 {
@@ -83,7 +69,7 @@ The API type currently in use can be viewed by hovering over the **API** icon.
 
 ![GraphiQL](./GraphiQL-api-hovering.png)
 
-The API type can be changed by clicking the **API** icon. A menu with API type options opens up.
+The API type can be changed by clicking the **API** icon. A menu with API type options opens up. Only the production API type is intended for public use. The development API type has a schema which is not stable and can be subject to change.
 
 ![GraphiQL](./GraphiQL-api.png)
 
