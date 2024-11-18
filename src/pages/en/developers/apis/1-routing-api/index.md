@@ -26,7 +26,7 @@ After this, you are ready to run queries for [routes](./routes/), [stops](./stop
 
 3. The routing API for some **Other Waltti regions** is available at:<br/>`https://api.digitransit.fi/routing/v2/waltti-alt/gtfs/v1`
 
-4. The routing API for **Finland** as a whole is available at:<br/>`https://api.digitransit.fi/routing/v2/finland/gtfs/v1`
+4. The routing API for **Finland** and **Estonia** is available at:<br/>`https://api.digitransit.fi/routing/v2/finland/gtfs/v1`
 
 5. The routing API for **Varsinais-Suomen (Southwest Finland) ELY** is available at:<br/>`https://api.digitransit.fi/routing/v2/varely/gtfs/v1`
 

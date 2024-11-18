@@ -38,7 +38,7 @@ HSL realtime data is handled by [Transitdata system](https://github.com/HSLdevco
 
 If you are interested in implementing realtime features, you might want to look at [Digitransit-ui](../../../user-interfaces/1-digitransit-ui/) and its [source code](https://github.com/HSLdevcom/digitransit-ui). That way you can get an idea how realtime is used there.
 
-### Situation at the Fintraffic
+### Situation at Fintraffic
 Currently, Fintraffic provides real-time information for trains at https://rata.digitraffic.fi/api/v1/doc/index.html. We have a simple wrapper (raildigiraffic2gtfsrt) that transforms that data to GTFS-RT trip updates.
 
 Fintraffic is investigating the possibility to build a national real-time service which would collect real-time data from all around Finland.

@@ -6,7 +6,7 @@ title: FAQ
 
 ### Where do I find information on the routing API query types and parameters?
 
-> If you have any questions related to query types, their fields and parameters, please use the Docs functionality of [GraphiQL](../1-routing-api/1-graphiql/). <br><br> For example, open [GraphiQL for the Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2) and click **< Docs** in the upper right corner. This will open the documentation explorer on the right side of the screen.
+> If you have any questions related to query types, their fields and parameters, please use the Docs functionality of [GraphiQL](../1-routing-api/1-graphiql/). <br><br> For example, open [GraphiQL for the Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1) and click the documentation icon in the upper left corner. This will open the documentation explorer on the left side of the screen.
 
 ### Why are some route patterns rendered as straight lines from one stop to the next?
   

@@ -1,7 +1,7 @@
 ---
 title: Routing data API
 ---
-Routing data API provides five OpenTripPlanner (OTP) router datasets: whole Finland and Estonia, HSL region,
+The routing data API provides five OpenTripPlanner (OTP) router datasets: Finland and Estonia, HSL region,
 Southwest Finland region and two alternative Waltti datasets. The available data sets are documented in
 [the architecture page for this API](../../architecture/x-apis/2-routing-data-api/).
 
@@ -91,9 +91,9 @@ endpoints, but these examples are for the HSL endpoint:
 5. `unconnected.csv`
     List of stops that could not be linked based on OSM data but they still do exist in the graph (for debugging purposes).
 
-## Note to users of Finland routing data
+## Note to users of Finland and Estonia routing data
 
-[The Finland data endpoint](https://api.digitransit.fi/routing-data/v3/finland/) contains information concerning public transport services by the cities and ELY-centers. It also contain data relevant to long distance market based coach connections in Finland.
+[The Finland and Estonia data endpoint](https://api.digitransit.fi/routing-data/v3/finland/) contains information concerning public transport services by the cities and ELY-centers as well as data relevant to long distance market based coach connections in Finland. It also contains data for Estonia.
 
 Source for coach connection data is https://finap.fi which is Finnish National Access point for multimodal data (EU/MMTIS). Data is provided by respective transport operators. Finap.fi data is licensed with CC 4.0 BY. Finap.fi service is operated by Fintraffic.
 

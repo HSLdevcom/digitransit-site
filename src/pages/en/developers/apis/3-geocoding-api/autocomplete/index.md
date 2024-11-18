@@ -22,13 +22,13 @@ the full search endpoint, which also works well with incomplete search strings.
 
 **Note:** You can find out the list of GTFS feed identifiers by querying OpenTripPlanner routing api, for example:
 
-> https://api.digitransit.fi/graphiql/finland/v2?query=%257B%250A%2520%2520feeds%2520%257B%250A%2520%2520%2520%2520feedId%250A%2520%2520%257D%250A%257D
+> https://api.digitransit.fi/graphiql/finland/v2/gtfs/v1?query=%257B%250A%2520%2520feeds%2520%257B%250A%2520%2520%2520%2520feedId%250A%2520%2520%257D%250A%257D
 
-Running this query returns the list of feed identifiers used in Finland routing services.
+Running this query returns the list of feed identifiers used in Finland and Estonia routing services.
 
 Vehicle rental network identifiers can be examined by querying all vehicle rental stations:
 
-> https://api.digitransit.fi/graphiql/finland/v2?query=%257B%250A%2520%2520vehicleRentalStations%2520%257B%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520rentalNetwork%2520%257B%250A%2520%2520%2520%2520%2520%2520networkId%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%257D%250A%257D%250A%250A
+> https://api.digitransit.fi/graphiql/finland/v2/gtfs/v1?query=%257B%250A%2520%2520vehicleRentalStations%2520%257B%250A%2520%2520%2520%2520name%250A%2520%2520%2520%2520rentalNetwork%2520%257B%250A%2520%2520%2520%2520%2520%2520networkId%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520lat%250A%2520%2520%2520%2520lon%250A%2520%2520%257D%250A%257D%250A%250A
 
 
 ### Response fields
