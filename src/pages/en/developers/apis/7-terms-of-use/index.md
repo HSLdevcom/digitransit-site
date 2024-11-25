@@ -28,7 +28,7 @@ Via API the User can access Digitransit data which is defined in https://digitra
 
 Usage of API may require a registration and account verification by e-mail. Also, User's first and last name are required. Digitransit may change the identification technology, or the data required in registration at any time based on Digitransit business needs such as information security. Such changes apply also to Users that have registered earlier.
 
-Digitransit makes the data available based on JHS-189 [permission to use the open data] and [Creative Commons name 4.0 (CC BY)]((https://creativecommons.org/licenses/by/4.0/)) licensing.
+Digitransit makes the data available based on JHS-189 [permission to use the open data] and [Creative Commons name 4.0 (CC BY)](https://creativecommons.org/licenses/by/4.0/) licensing.
 
 CC BY is global, gratuitous, non-exclusive, and non-revocable right to use the data to any purpose, including right to copy, rework and distribute.
 
