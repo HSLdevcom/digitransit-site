@@ -16,7 +16,7 @@ It is also recommended to try building queries and exploring the schema in [Grap
 
 [Translations page](./4-translations/) explains how to fetch translated texts from the API.
 
-After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [bicycles, e-scooters and cars](./bicycles-scooters-cars/), [disruption info](./disruption-info/), [canceled trips](./canceled-trips/) and do [itinerary planning](./itinerary-planning/).
+After this, you are ready to run queries for [routes](./routes/), [stops](./stops), [bicycles, e-scooters and cars](./bicycles-scooters-cars/), [disruption info](./disruption-info/) and do [itinerary planning](./itinerary-planning/).
 
 ### Endpoints
 
