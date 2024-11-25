@@ -2,6 +2,12 @@
 title: Changes
 order: -10
 ---
+## 26.11.2024
+
+- [Routing](../apis/1-routing-api/), [routing data](../apis/2-routing-data-api/) and [map](../apis/4-map-api/) API pages have been updated to contain documentation about newly released versions.
+- [API architecture pages](../architecture/x-apis/) have been updated.
+- [Digitransit MQTT broker documentation](../apis/5-realtime-api/vehicle-positions/digitransit-mqtt/) has been updated.
+
 ## 31.1.2024
 
 - Quota restrictions take place. [More information](../api-registration/#quota-and-rate-limiting) 
