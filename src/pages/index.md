@@ -58,9 +58,9 @@ panels:
 [Raasepori](https://bosse.digitransit.fi)  &nbsp; [Rovaniemi](https://rovaniemi.digitransit.fi)  &nbsp;
 [Tampere](https://tampere.digitransit.fi)  &nbsp; [Turku](https://turku.digitransit.fi)  &nbsp; [Vaasa](https://vaasa.digitransit.fi)  &nbsp;
 
-## Kolmansien osapuolten Digitransit-reittioppaat
+## Kolmansien osapuolten Digitransit-reittioppaita
 
-[Matkahuolto](https://reittiopas.matkahuolto.fi)  &nbsp; [Oulun liikenne](https://oulunliikenne.fi/)  &nbsp; [Herrenberg](https://herrenberg.stadtnavi.de/)  &nbsp; [Ludwigsburg](https://stadtnavi.swlb.de/)  &nbsp; [Aachen](https://stadtnavi.aachen.de/)  &nbsp; </br>
+[Matkahuolto](https://reittiopas.matkahuolto.fi)  &nbsp; [Oulun liikenne](https://oulunliikenne.fi/)  &nbsp; [Viro](https://web.peatus.ee)  &nbsp; [Herrenberg](https://herrenberg.stadtnavi.de/)  &nbsp; [Ludwigsburg](https://stadtnavi.swlb.de/)  &nbsp; [Aachen](https://stadtnavi.aachen.de/)  &nbsp; </br>
 [Verkehrsverbund Pforzheim-Enzkreis Transport Agency](https://mobi.vpe.de/)  &nbsp; [Oklahoma City Transport Agency](https://go.embarkok.com/)  &nbsp;
 
 </div>
