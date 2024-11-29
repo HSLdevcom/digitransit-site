@@ -2,6 +2,10 @@
 title: Changes
 order: -10
 ---
+## 29.11.2024
+
+- Removed references to waltti-alt as it will be merged into waltti.
+
 ## 26.11.2024
 
 - [Routing](../apis/1-routing-api/), [routing data](../apis/2-routing-data-api/) and [map](../apis/4-map-api/) API pages have been updated to contain documentation about newly released versions.
