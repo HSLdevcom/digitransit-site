@@ -31,9 +31,9 @@ There is also a TileJSON index file available at `https://cdn.digitransit.fi/map
 
 | Value                     | Description                                              | Available router-ids                                                       |
 |---------------------------|----------------------------------------------------------|----------------------------------------------------------------------------|
-| `stops`                   | A stop map for the requested router id                                           | `finland`, `hsl`, `waltti`, `waltti-alt`, `varely` |
-| `realtimeStops`           | A stop map including if stop is in use at the moment                             | `finland`, `hsl`, `waltti`, `waltti-alt`, `varely` |
-| `stations`                | A station map for the requested router id                                        | `finland`, `hsl`, `waltti`, `waltti-alt`, `varely` |
+| `stops`                   | A stop map for the requested router id                                           | `finland`, `hsl`, `waltti`, `varely` |
+| `realtimeStops`           | A stop map including if stop is in use at the moment                             | `finland`, `hsl`, `waltti`, `varely` |
+| `stations`                | A station map for the requested router id                                        | `finland`, `hsl`, `waltti`, `varely` |
 | `rentalStations`          | Available rental vehicle stations                                                | `finland`, `hsl`, `waltti`                         |
 | `realtimeRentalStations`  | Rental vehicle stations including available rental vehicles and available spaces | `finland`, `hsl`, `waltti`                         |
 | `realtimeRentalVehicles`  | A map of rental vehicles                                                         | `finland`, `hsl`                                   |

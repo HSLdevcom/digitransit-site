@@ -1,13 +1,13 @@
 ---
 title: Routing data API
 ---
-The routing data API provides five OpenTripPlanner (OTP) router datasets: Finland and Estonia, HSL region,
-Southwest Finland region and two alternative Waltti datasets. The available data sets are documented in
+The routing data API provides four OpenTripPlanner (OTP) router datasets: Finland and Estonia, HSL region,
+Southwest Finland region and Waltti cities. The available data sets are documented in
 [the architecture page for this API](../../architecture/x-apis/2-routing-data-api/).
 
 ## OpenTripPlanner data and configuration files
 
-The available files are split into different endpoints for each of our routers (finland, hsl, varely, waltti and waltti-alt). The currently
+The available files are split into different endpoints for each of our routers (finland, hsl, varely and waltti). The currently
 active routing data can be viewed from the corresponding production HTTP endpoints (use of either `digitransit-subscription-key`
 URL parameter or a header is needed, browsing with a browser can be clumsy due to this limitation):
 
@@ -18,8 +18,6 @@ URL parameter or a header is needed, browsing with a browser can be clumsy due t
 3. https://api.digitransit.fi/routing-data/v3/varely/
 
 4. https://api.digitransit.fi/routing-data/v3/waltti/
-
-5. https://api.digitransit.fi/routing-data/v3/waltti-alt/
 
 
 ### Contents of the endpoints
