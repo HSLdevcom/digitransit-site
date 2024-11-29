@@ -1,7 +1,7 @@
 ---
 title: Routing Data
 description:
-  info: "The routing data API provides five OpenTripPlanner router datasets: Finland and Estonia, HSL region, Southwest Finland region and two alternative  Waltti datasets."
+  info: "The routing data API provides four OpenTripPlanner router datasets: Finland and Estonia, HSL region, Southwest Finland region and Waltti cities."
   architecture: https://raw.githubusercontent.com/HSLdevcom/digitransit-site/master/src/pages/en/developers/architecture/x-apis/2-routing-data-api/architecture.xml
 assets:
   - title: "source"

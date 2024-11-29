@@ -13,10 +13,9 @@ order: 20
 
 ### Using the Digitransit GraphiQL browser versions
 
-You can use our hosted GraphiQL browser versions for the five available regions. The browser versions have the correct endpoints configured.
+You can use our hosted GraphiQL browser versions for the four available regions. The browser versions have the correct endpoints configured.
    * [Helsinki region](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1)
    * [Waltti regions](https://api.digitransit.fi/graphiql/waltti/v2/gtfs/v1)
-   * [Waltti-Opas regions](https://api.digitransit.fi/graphiql/waltti-alt/v2/gtfs/v1)
    * [Seutu+ regions](https://api.digitransit.fi/graphiql/varely/v2/gtfs/v1)
    * [Finland and Estonia](https://api.digitransit.fi/graphiql/finland/v2/gtfs/v1)
 
