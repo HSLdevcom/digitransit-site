@@ -9,7 +9,7 @@ order: 80
 
 | Term                                    | Explanation                             |
 |-----------------------------------------|-----------------------------------------|
-| Trip on service date                    | A specific departure with specific direction for a specific route.<br/>For example: bus 102 leaving from Otaniemi on 2017-11-21 at 10:00. |
+| Trip on service date                    | A specific departure with specific direction for a specific route.<br/>For example: tram 15 leaving from Keilaniemi on 2024-12-18 at 13:13. |
 | Graphql Cursor Connection               | [Special GraphQL query structure](https://relay.dev/graphql/connections.htm) that introduces parameters and fields that can be used in pagination |
 
 

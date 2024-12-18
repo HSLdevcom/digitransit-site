@@ -19,7 +19,7 @@ order: 30
 |------------------------|---------------------------------|
 | Route                  | A public transport service shown to customers under a single name, usually from point A to B and back. For example: trams 1 and 1A, buses 18 and 102T, or train A.<br/>Commonly used synonym: line |
 | Pattern		 | A sequence of stops as used by a specific direction (i.e. inbound or outbound journey) and variant of a route.<br/>For example, a variant of a route could be a tram entering service from the depot and joining at the middle of the route or a route might have a short term diversion without changing the route name (longer diversions are usually marked as different routes). |
-| Trip                   | A specific occurance of a pattern, usually identified by the route and exact departure time from the first stop.<br/>For example: bus 102 leaving from Otaniemi on 2017-11-21 at 10:00, or more generally leaving from Otaniemi at 10:00 on specified days. |
+| Trip                   | A specific occurance of a pattern, usually identified by the route and exact departure time from the first stop.<br/>For example: tram 15 leaving from Keilaniemi on 2024-12-18 at 13:13, or more generally leaving from Keilaniemi at 13:13 on specified days. |
 | Headsign               | A description of a route usually written on the front of the vehicle.<br/>For example: Helsinki (for just the destination) or Helsinki - Tampere (for both the origin and destination). |
 
 ## <a name="stops"/>Stops
