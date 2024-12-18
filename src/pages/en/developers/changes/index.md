@@ -2,6 +2,14 @@
 title: Changes
 order: -10
 ---
+## 18.11.2024
+
+- Documented the new [canceled trips query](../apis/1-routing-api/canceled-trips/)).
+
+## 16.11.2024
+
+- Waltt-alt data has been merged into waltti
+
 ## 29.11.2024
 
 - Removed references to waltti-alt as it will be merged into waltti.
