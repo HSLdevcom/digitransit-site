@@ -2,6 +2,10 @@
 title: Changes
 order: -10
 ---
+## 4.2.2024
+
+- Updated [HFP](../apis/5-realtime-api/vehicle-positions/high-frequency-positioning/) list of operators.
+
 ## 18.11.2024
 
 - Documented the new [canceled trips query](../apis/1-routing-api/canceled-trips/)).

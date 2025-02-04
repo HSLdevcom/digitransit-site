@@ -207,7 +207,7 @@ The numerical values for the different transit operators are listed below:
 | `oper` | Operator name                 |
 | ------ | ----------------------------- |
 | `6`    | Oy Pohjolan Liikenne Ab<sup>2</sup>|
-| `12`   | Helsingin Bussiliikenne Oy    |
+| `12`   | Koiviston Auto Oy             |
 | `17`   | Tammelundin Liikenne Oy       |
 | `18`   | Oy Pohjolan Liikenne Ab       |
 | `20`   | Bus Travel Åbergin Linja Oy   |
@@ -221,8 +221,9 @@ The numerical values for the different transit operators are listed below:
 | `51`   | Korsisaari Oy                 |
 | `54`   | V-S Bussipalvelut Oy          |
 | `58`   | Koillisen Liikennepalvelut Oy |
-| `60`   | Suomenlinnan Liikenne Oy      |
 | `59`   | Tilausliikenne Nikkanen Oy    |
+| `60`   | Suomenlinnan Liikenne Oy      |
+| `64`   | Taksikuljetus Harri Vuolle Oy |
 | `89`   | Metropolia                    |
 | `90`   | VR Oy                         |
 | `130`  | Matkahuolto<sup>1</sup>       |
