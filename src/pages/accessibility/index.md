@@ -40,11 +40,11 @@ Jos et ole tyytyväinen saamaasi vastaukseen tai et saa vastausta lainkaan kahde
 
 ### Valvontaviranomaisen yhteystiedot
 
-Etelä-Suomen aluehallintovirasto<br>
-Saavutettavuuden valvonnan yksikkö<br>
+Liikenne- ja viestintävirasto Traficom<br>
+Digitaalisen esteettömyyden ja saavutettavuuden valvontayksikkö<br>
 www.saavutettavuusvaatimukset.fi<br>
-saavutettavuus(at)avi.fi<br>
-puhelinnumero vaihde 0295 016 000
+saavutettavuus(at)traficom.fi<br>
+puhelinnumero vaihde 029 534 5000
 <br><br>
 
 
@@ -86,8 +86,8 @@ Om du inte är nöjd med det svar du får eller om du inte alls får något svar
 
 ### Övervakningsmyndighetens kontaktuppgifter
 
-Regionförvaltningsverket i Södra Finland<br>
-Enheten för tillgänglighetstillsyn<br>
-www.tillgänglighetskrav.fi<br>
-webbtillganglighet(at)rfv.fi<br>
-Telefonväxel 0295 016 000
+Transport- och kommunikationsverket Traficom<br>
+Enheten för tillsyn över digital tillgänglighet<br>
+www.tillganglighetskrav.fi<br>
+tillganglighet(at)traficom.fi<br>
+telefonnummer växeln 029 534 5000<br>
