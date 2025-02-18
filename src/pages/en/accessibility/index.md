@@ -35,14 +35,14 @@ If you are dissatisfied with the answer you receive, or we do not respond to you
 ### Feedack about accessibility
 
 - HSL Journey Planner: submit your feedback using HSL feedback form<br>
-- Matka.fi Journey Planner: send email to joukkoliikenne(at)traficom.fi<br>
+- Matka.fi Journey Planner: send email to digipalvelut(at)fintraffic.fi<br>
 - Other Digitransit Journey Planners: send email to waltti(at)waltti.fi<br>
 
 ### Contact details of supervising authority
 
-Regional State Administrative Agency for Southern Finland<br>
-Accessibility Monitoring Unit<br>
-www.saavutettavuusvaatimukset.fi<br>
-saavutettavuus(at)avi.fi<br>
-Telephone (switchboard) +358 295 016 000
+Finnish Transport and Communications Agency Traficom <br>
+Digital Accessibility Supervision Unit <br>
+www.webaccessibility.fi <br>
+saavutettavuus(at)traficom.fi <br>
+telephone switchboard 029 534 5000
 
