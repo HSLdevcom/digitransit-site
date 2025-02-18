@@ -35,7 +35,7 @@ Jos et ole tyytyväinen saamaasi vastaukseen tai et saa vastausta lainkaan kahde
 ### Palaute reittiopaspalvelun saavutettavuudesta
 
 - HSL Reittiopas: palautetta voit antaa palautelomakkeellamme <br>
-- Matka.fi Reittiopas: palautetta voit antaa sähköpostilla: joukkoliikenne(at)traficom.fi<br>
+- Matka.fi Reittiopas: palautetta voit antaa sähköpostilla: digipalvelut(at)fintraffic.fi<br>
 - Muut Digitransit Reittioppaat: palautetta voit antaa osoitteessa: waltti(at)waltti.fi<br>
 
 ### Valvontaviranomaisen yhteystiedot
