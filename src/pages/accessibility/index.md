@@ -81,7 +81,7 @@ Om du inte är nöjd med det svar du får eller om du inte alls får något svar
 ### Respons om tillgängligheten i reseplanerare
 
 - HRT:s Reseplanerare: Du kan lämna in respons med HRT:s responsblankett
-- Matka.fi Reseplaneraren: du kan skicka respons per e-post till joukkoliikenne(at)traficom.fi
+- Matka.fi Reseplaneraren: du kan skicka respons per e-post till digipalvelut(at)fintraffic.fi
 - Andra Digitransit-reseplanerare: du kan skicka respons på adressen waltti(at)waltti.fi
 
 ### Övervakningsmyndighetens kontaktuppgifter
