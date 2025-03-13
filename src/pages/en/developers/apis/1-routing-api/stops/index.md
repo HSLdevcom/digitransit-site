@@ -81,9 +81,9 @@ order: 110
 
 2. Press play in GraphiQL to execute the query.
 
-### Query stops by name or number
+### Query stops by name
 
-* Argument `name` can either be a part of the stop name (e.g. `"hertton"` or `"rautatientori"`) or a stop number (e.g. `"4040"`)
+* Argument `name` can be a part of the stop name (e.g. `"hertton"` or `"rautatientori"`).
 
 
 1. Click [this link](https://api.digitransit.fi/graphiql/hsl/v2/gtfs/v1?query=%7B%0A%20%20stops(name%3A%20%22hertton%22)%20%7B%0A%20%20%20%20gtfsId%0A%20%20%20%20name%0A%20%20%20%20code%0A%20%20%20%20lat%0A%20%20%20%20lon%0A%20%20%7D%0A%7D) to run the query below in GraphiQL.
