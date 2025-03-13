@@ -30,6 +30,6 @@ We have deprecated and removed some old API endpoints that are no longer needed.
 ## Quota and rate limiting
 Starting 31.1.2024, we have enforced rate and quota limiting. The limits should only restrict misuse of the APIs, not normal use. If you encounter any issues (for example, if you receive responses with code 403), please contact us at digitransit-api@hsl.fi
 
-Please note that when running large computation tasks containing thousands of consecutive requests, we recommend applying a small delay (0.5 - 1 s) between the request. This helps to avoid sudden traffic peaks in Digitransit services and hitting the rate limits.
+Please note that when running large computation tasks containing thousands of consecutive requests, we recommend applying a small delay (0.5 - 1 s) between the requests. This helps to avoid sudden traffic peaks in Digitransit services and hitting the rate limits.
 
 
