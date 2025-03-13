@@ -28,4 +28,8 @@ An API key can be included either as a URL parameter or as a header. The paramet
 We have deprecated and removed some old API endpoints that are no longer needed. The list of these deprecations can be found [here](../deprecations). We will update that page and inform users via email in the future when there are any new deprecations or removals.
 
 ## Quota and rate limiting
-Starting 31.1.2024, we will enforce rate and quota limiting. The limits should only restrict misuse of the APIs, not normal use.
+Starting 31.1.2024, we have enforced rate and quota limiting. The limits should only restrict misuse of the APIs, not normal use. If you encounter any issues (for example, if you receive responses with code 403), please contact us at digitransit-api@hsl.fi
+
+Please note that when running large computation tasks containing thousands of consecutive requests, we recommend applying a small delay (0.5 - 1 s) between the requests. This helps to avoid sudden traffic peaks in Digitransit services and hitting the rate limits.
+
+
