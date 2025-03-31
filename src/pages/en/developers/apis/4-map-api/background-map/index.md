@@ -48,12 +48,8 @@ You can also include ```digitransit-subscription-key``` header in your request i
 | `hsl-map-en-256`                | 256px raster tiles with English language                      |
 | `hsl-map-fi-sv`                 | 512px bilingual raster tiles with Finnish / Swedish language  |
 | `hsl-map-fi-sv-256`             | 256px bilingual raster tiles with Finnish / Swedish language  |
-| `hsl-map-no-text`               | 512px raster tiles with no texts                              |
-| `hsl-map-no-text-256`           | 256px raster tiles with no texts                              |
 | `hsl-map-greyscale`             | 512px grayscale raster tiles with Finnish language            |
 | `hsl-map-greyscale-256`         | 256px grayscale raster tiles with Finnish language            |
-| `hsl-map-greyscale-no-text`     | 512px grayscale raster tiles with no texts                    |
-| `hsl-map-greyscale-256-no-text` | 256px grayscale raster tiles with no texts                    |
 | `hsl-vector-map`                | Vector tiles                                                  |
 
 ## Examples
