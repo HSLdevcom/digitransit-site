@@ -2,6 +2,15 @@
 title: Changes
 order: -10
 ---
+## 31.3.2024
+
+- Removed no-text map layers from [map documentation](../apis/4-map-api/background-map/) as no one was using them and we don't want to support them anymore.
+
+## 17.3.2024
+
+- [Rate limit documentation](../api-registration/) clarified.
+- Removed [example of stops query](../apis/1-routing-api/stops/) by stop code example as it is no longer supported.
+
 ## 4.2.2024
 
 - Updated [HFP](../apis/5-realtime-api/vehicle-positions/high-frequency-positioning/) list of operators.
