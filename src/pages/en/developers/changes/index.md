@@ -2,6 +2,11 @@
 title: Changes
 order: -10
 ---
+
+## 1.4.2024
+
+- Updated [deprecations](../deprecations/).
+
 ## 31.3.2024
 
 - Removed no-text map layers from [map documentation](../apis/4-map-api/background-map/) as no one was using them and we don't want to support them anymore.
