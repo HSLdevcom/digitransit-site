@@ -40,10 +40,14 @@ endpoints, but these examples are for the HSL endpoint:
 2. `graph.obj`
    A graph that can be loaded into latest version of OpenTripPlanner.
 
-3. `otp-config.json`
+3. `streetGraph.obj`
+   (only exists if prebuilt street only graph was used to generate the complete graph)
+   A street only graph that is used to generate the complete graph.
+
+4. `otp-config.json`
    The configuration for enabling or disabling features in OTP.
 
-4. `router-config.json`
+5. `router-config.json`
    The per-router customized runtime configuration for OTP.
 
 #### Files for building OTP graph
@@ -77,7 +81,8 @@ endpoints, but these examples are for the HSL endpoint:
 1. `report`
    Directory containing issues and information from the previous graph build.
 
-2. `street-report` (only exists if prebuilt street only graph was used to generate the complete graph)
+2. `street-report` 
+   (only exists if prebuilt street only graph was used to generate the complete graph)
    Directory containing issues and information from the previous street only graph build.
 
 3. `build.log`
