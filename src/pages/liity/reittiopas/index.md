@@ -226,12 +226,35 @@ On suositeltavaa käyttää mahdollisimman pientä pistemäärää (alle 1000 pi
 Paras tulos saadaan, kun käytössä on kaksi hiukan erilaista dataversiota:
 
 1. Aluetarkistusdata. Siinä lippuyöhykkeet on kuvattu suljettuina polygon tai multipolygon kohteina, yksi feature per lippuvyöhyke.
-Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'. Lisäksi vyöhykkeille määritellään vakioidut piirtotyylit
-alla olevan mallin mukaisesti.
+Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'.
 
 Esimerkkejä lippuvyöhykkeiden aluedatasta: https://github.com/HSLdevcom/pelias-api/tree/master/middleware/config
 
 2. Vyöhykkeiden visualisointi kartalle. Lippuvyöhykkeiden rajaviivat kuvataan linestring/multilinestring geometrioina ilman kaksinkertaista piirtoa alueiden välille.
+Vyöhykkeille määritellään vakioitu piirtotyyli: Esimerkki:
+
+```json
+    {
+      "type" : "FeatureCollection",
+       "name" : "Vyöhykkeet",
+       "features" : [{
+            "type" : "Feature",
+            "styles": [
+              { "color": "#666", "weight": 2, "opacity": 1 },
+              { "color": "#333", "weight": 12, "opacity": 0.2 }
+            ],
+           "geometry" : {
+             "type" : "MultiLineString",
+             "coordinates" : [
+                [ [ 21.80091, 63.09565 ],[ 21.80074, 63.1031 ], [ 21.8004, 63.10618 ] ],
+                [ [ 21.81437, 63.11153 ],[ 21.66672, 63.13274 ], [ 21.66158, 63.1356 ], [ 21.66272, 63.13675 ] ],
+                [ [ 21.66158, 63.1356 ], [ 21.66272, 63.13675 ] ]
+             ]
+	   }
+        }]
+    }
+```
+
 Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat ja symbolien svg grafiikka kartalla. Esimerkki:
 
 ```json
