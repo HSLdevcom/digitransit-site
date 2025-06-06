@@ -58,4 +58,4 @@ APIs are documented [here](../../../apis/4-map-api/). There are instructions for
 | https://github.com/mapbox/tilelive                           | TileLive development on GitHub                                                                            |
 | https://openmaptiles.org/                                    | OpenMapTiles Project                                                                                      |
 | https://github.com/openmaptiles/openmaptiles                 | OpenMapTiles development on GitHub                                                                        |
-| https://github.com/HSLdevcom/OpenTripPlanner/blob/dev-2.x/doc/user/sandbox/MapboxVectorTilesApi.md | OpenTripPlanner vector tile layer documentation                                                                        |
+| https://github.com/HSLdevcom/OpenTripPlanner/blob/v2/doc/user/sandbox/MapboxVectorTilesApi.md | OpenTripPlanner vector tile layer documentation                                                                        |
