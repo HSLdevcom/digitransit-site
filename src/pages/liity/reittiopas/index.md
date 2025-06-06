@@ -179,13 +179,13 @@ Matkustajakapasiteettitietoa hyödynnetään tällä hetkellä paikkatiedoista, 
 
 Määrittele:
 - **GTFS-RT reaaliaikarajapinnan osoite** (tai osoitteet) ja minkä tyyppistä dataa halutaan esittää (esim. pelkkä paikkatieto).
-  
+
   Paikkatietodatan ei tule sisältää /-merkkejä teknisistä syistä. Mqtt-sovelluksessa /-merkki erottelee datan aihepiirejä, joten kyseisen merkin käyttö voi kokonaan estää datan käsittelyn. Erikoismerkkeihin kuuluvat myös + ja # merkit, jotka poistetaan datasta. [Ks. mqtt-spesifikaatio](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901243)
-  
-  Paikkatietodatassa vaaditaan vähintään seuraavat tiedot: 
-  
+
+  Paikkatietodatassa vaaditaan vähintään seuraavat tiedot:
+
   - trip.route\_id (Reittioppaan vaatimus tietojen yhdistämistä ja esittämistä varten.)
-  - trip.start\_time (Reittioppaan vaatimus ajoneuvojen oikea-aikaisen näyttämisen varmistamiseksi.) 
+  - trip.start\_time (Reittioppaan vaatimus ajoneuvojen oikea-aikaisen näyttämisen varmistamiseksi.)
   - trip.trip\_id tai kaikki seuraavat: trip.route\_id, trip.direction\_id, trip.start\_time, trip.start\_date [Ks. Trip-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor)
   - position.latitude, position.longitude [Ks. Position-spesifikaatio.](https://gtfs.org/documentation/realtime/reference/#message-position)
 
@@ -193,16 +193,16 @@ Määrittele:
 
   - vehicle.label kenttään voi asettaa vastaavan arvo kuin GTFS-datan trip\_headsign kentässä. Tällä voidaan tarvittaessa erotella ajoneuvoja, joilla on eri määränpää.
 
-- **Vastaavan staattisen GTFS-datan osoite** (mikäli ei sisälly jo aiemmin toimitettuun GTFS-dataan). 
-  
+- **Vastaavan staattisen GTFS-datan osoite** (mikäli ei sisälly jo aiemmin toimitettuun GTFS-dataan).
+
   Paikkatietodatassa käytettyjen route\_id-arvojen tulee vastata staattisen GTFS-datan route\_id-arvoja.
-  
+
   Ajoneuvojen käyttäjäystävällistä esittämistä varten tarvitaan routes.txt-tiedostoon route\_short\_name. [Ks. routes.txt-spesifikaatio.](https://gtfs.org/documentation/schedule/reference/#routestxt)
 
-Huomioitavaa: 
+Huomioitavaa:
 - Data otetaan mieluiten vastaan ilman salasanasuojauksia.
 - GTFS-RT paikkatietodata vaatii aina myös vastaavan staattisen GTFS-datan. Tämä johtuu siitä, että reittiopas esittää reittejä staattisen datan perusteella ja sen yhteydessä vastaavien reittien ajoneuvojen sijainteja. GTFS-RT-datan tietoja myös rikastetaan staattisesta GTFS-datasta löytyvillä tiedoilla käyttöliittymällä esittämistä varten. (Esim. reitin nimi/route\_short\_name, väri/route\_color, reitin tyyppi/route\_type)
-- Ajoneuvot esitetään kartalla yleensä ajoneuvon nimellä (route\_short\_name), joka on useimmiten lyhyt numero/kirjainkoodi, joka on tuttu myös kyseisen liikennevälineen käyttäjille. Mikäli tietoa ei saada staattisesta GTFS-datasta, tai se on liian pitkä (yli 5 merkkiä), käytetään esityksessä route\_id-kentän arvoa. Mikäli tieto on edelleen liian pitkä, näytetään ajoneuvo kysymysmerkillä varustettuna. 
+- Ajoneuvot esitetään kartalla yleensä ajoneuvon nimellä (route\_short\_name), joka on useimmiten lyhyt numero/kirjainkoodi, joka on tuttu myös kyseisen liikennevälineen käyttäjille. Mikäli tietoa ei saada staattisesta GTFS-datasta, tai se on liian pitkä (yli 5 merkkiä), käytetään esityksessä route\_id-kentän arvoa. Mikäli tieto on edelleen liian pitkä, näytetään ajoneuvo kysymysmerkillä varustettuna.
 
 
 ### 12. Lippuvyöhykkeet
@@ -226,12 +226,35 @@ On suositeltavaa käyttää mahdollisimman pientä pistemäärää (alle 1000 pi
 Paras tulos saadaan, kun käytössä on kaksi hiukan erilaista dataversiota:
 
 1. Aluetarkistusdata. Siinä lippuyöhykkeet on kuvattu suljettuina polygon tai multipolygon kohteina, yksi feature per lippuvyöhyke.
-Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'. Lisäksi vyöhykkeille määritellään vakioidut piirtotyylit
-alla olevan mallin mukaisesti.
+Kukin feature sisältää properties tiedoissa ominaisuuden 'Zone', jonka arvo on vyöhykkeen tunnus, esimerkiksi 'A'.
 
 Esimerkkejä lippuvyöhykkeiden aluedatasta: https://github.com/HSLdevcom/pelias-api/tree/master/middleware/config
 
 2. Vyöhykkeiden visualisointi kartalle. Lippuvyöhykkeiden rajaviivat kuvataan linestring/multilinestring geometrioina ilman kaksinkertaista piirtoa alueiden välille.
+Vyöhykkeille määritellään vakioitu piirtotyyli: Esimerkki:
+
+```json
+    {
+      "type" : "FeatureCollection",
+       "name" : "Vyöhykkeet",
+       "features" : [{
+            "type" : "Feature",
+            "styles": [
+              { "color": "#666", "weight": 2, "opacity": 1 },
+              { "color": "#333", "weight": 12, "opacity": 0.2 }
+            ],
+           "geometry" : {
+             "type" : "MultiLineString",
+             "coordinates" : [
+                [ [ 21.80091, 63.09565 ],[ 21.80074, 63.1031 ], [ 21.8004, 63.10618 ] ],
+                [ [ 21.81437, 63.11153 ],[ 21.66672, 63.13274 ], [ 21.66158, 63.1356 ], [ 21.66272, 63.13675 ] ],
+                [ [ 21.66158, 63.1356 ], [ 21.66272, 63.13675 ] ]
+             ]
+	   }
+        }]
+    }
+```
+
 Lisäksi tiedoston pitäisi sisältää kullekin vyöhykkeelle point tai multipoint feature, joissa määritellään vyöhyketunnusten paikat ja symbolien svg grafiikka kartalla. Esimerkki:
 
 ```json
