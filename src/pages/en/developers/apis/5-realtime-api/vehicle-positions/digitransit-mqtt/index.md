@@ -74,6 +74,8 @@ This list contains cities or regions for which there is vehicle position data av
 | Rauma          | [Rauma](https://api.digitransit.fi/routing-data/v3/finland/Rauma-gtfs.zip)              | [finland](https://api.digitransit.fi/routing/v2/finland/gtfs/v1)
 | Finland trains | [digitraffic](https://api.digitransit.fi/routing-data/v3/finland/digitraffic-gtfs.zip)  | [finland](https://api.digitransit.fi/routing/v2/finland/gtfs/v1)
 | Härmän liikenne | [Harma](https://api.digitransit.fi/routing-data/v3/finland/Harma-gtfs.zip)             | [finland](https://api.digitransit.fi/routing/v2/finland/gtfs/v1)
+| Uusimaa ELY Korsisaari | [Korsisaari](https://api.digitransit.fi/routing-data/v3/finland/Korsisaari-gtfs.zip) | [finland](https://api.digitransit.fi/routing/v2/finland/gtfs/v1)
+| Etelä-Pohjanmaa ELY Ingves & Svanbäck | [IngvesSvanback](https://api.digitransit.fi/routing-data/v3/finland/IngvesSvanback-gtfs.zip) | [finland](https://api.digitransit.fi/routing/v2/finland/gtfs/v1)
 
 ## Geohash
 
