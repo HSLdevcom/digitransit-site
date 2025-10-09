@@ -45,7 +45,7 @@ panels:
 
 ## Digitransit journey planners
 
-[HSL Reittiopas](https://hsl.fi)  &nbsp; [opas.matka.fi](https://opas.matka.fi)  &nbsp; [opas.waltti.fi](https://opas.waltti.fi)  &nbsp; [Seutu+](https://varely.digitransit.fi)  &nbsp; [Hämeenlinna](https://hameenlinna.digitransit.fi)  &nbsp; </br>
+[HSL Reittiopas](https://hsl.fi)  &nbsp; [matka.fintraffic.fi](https://matka.fintraffic.fi)  &nbsp; [opas.waltti.fi](https://opas.waltti.fi)  &nbsp; [Seutu+](https://varely.digitransit.fi)  &nbsp; [Hämeenlinna](https://hameenlinna.digitransit.fi)  &nbsp; </br>
 [Joensuu](https://joensuu.digitransit.fi)  &nbsp; [Jyväskylä](https://jyvaskyla.digitransit.fi)  &nbsp;
 [Kela](https://kelareitit.digitransit.fi) &nbsp; [Kotka](https://kotka.digitransit.fi)  &nbsp; [Kouvola](https://kouvola.digitransit.fi)  &nbsp;
 [Kuopio](https://kuopio.digitransit.fi) &nbsp;  [Lahti](https://lahti.digitransit.fi)  &nbsp; [Lappeenranta](https://lappeenranta.digitransit.fi) </br>

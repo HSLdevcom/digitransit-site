@@ -35,7 +35,7 @@ Jos et ole tyytyväinen saamaasi vastaukseen tai et saa vastausta lainkaan kahde
 ### Palaute reittiopaspalvelun saavutettavuudesta
 
 - HSL Reittiopas: palautetta voit antaa palautelomakkeellamme <br>
-- Matka.fi Reittiopas: palautetta voit antaa sähköpostilla: digipalvelut(at)fintraffic.fi<br>
+- Matka.fintraffic.fi Reittiopas: palautetta voit antaa sähköpostilla: digipalvelut(at)fintraffic.fi<br>
 - Muut Digitransit Reittioppaat: palautetta voit antaa osoitteessa: waltti(at)waltti.fi<br>
 
 ### Valvontaviranomaisen yhteystiedot
@@ -81,7 +81,7 @@ Om du inte är nöjd med det svar du får eller om du inte alls får något svar
 ### Respons om tillgängligheten i reseplanerare
 
 - HRT:s Reseplanerare: Du kan lämna in respons med HRT:s responsblankett
-- Matka.fi Reseplaneraren: du kan skicka respons per e-post till digipalvelut(at)fintraffic.fi
+- Matka.fintraffic.fi Reseplaneraren: du kan skicka respons per e-post till digipalvelut(at)fintraffic.fi
 - Andra Digitransit-reseplanerare: du kan skicka respons på adressen waltti(at)waltti.fi
 
 ### Övervakningsmyndighetens kontaktuppgifter
