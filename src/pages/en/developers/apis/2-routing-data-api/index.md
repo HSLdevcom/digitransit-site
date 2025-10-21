@@ -88,13 +88,17 @@ endpoints, but these examples are for the HSL endpoint:
 3. `build.log`
    Log of the previous graph build.
 
-4. `version.txt`
+4. `street-build.log`
+   (only exists if prebuilt street only graph was used to generate the complete graph)
+   Log of the street only graph build used for the previous complete graph build.
+
+5. `version.txt`
    A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
 
-5. `connected.csv`
+6. `connected.csv`
    List of stops that could be linked based on OSM data (for debugging purposes).
 
-6. `unconnected.csv`
+7. `unconnected.csv`
     List of stops that could not be linked based on OSM data but they still do exist in the graph (for debugging purposes).
 
 ## Note to users of Finland and Estonia routing data
