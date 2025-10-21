@@ -40,10 +40,14 @@ endpoints, but these examples are for the HSL endpoint:
 2. `graph.obj`
    A graph that can be loaded into latest version of OpenTripPlanner.
 
-3. `otp-config.json`
+3. `streetGraph.obj`
+   (only exists if prebuilt street only graph was used to generate the complete graph)
+   A street only graph that is used to generate the complete graph.
+
+4. `otp-config.json`
    The configuration for enabling or disabling features in OTP.
 
-4. `router-config.json`
+5. `router-config.json`
    The per-router customized runtime configuration for OTP.
 
 #### Files for building OTP graph
@@ -77,16 +81,24 @@ endpoints, but these examples are for the HSL endpoint:
 1. `report`
    Directory containing issues and information from the previous graph build.
 
-2. `build.log`
+2. `street-report` 
+   (only exists if prebuilt street only graph was used to generate the complete graph)
+   Directory containing issues and information from the previous street only graph build.
+
+3. `build.log`
    Log of the previous graph build.
 
-3. `version.txt`
+4. `street-build.log`
+   (only exists if prebuilt street only graph was used to generate the complete graph)
+   Log of the street only graph build used for the previous complete graph build.
+
+5. `version.txt`
    A version file that contains a timestamp (for example '2017-08-18T02:32:45.635Z') of the time when the data was processed.
 
-4. `connected.csv`
+6. `connected.csv`
    List of stops that could be linked based on OSM data (for debugging purposes).
 
-5. `unconnected.csv`
+7. `unconnected.csv`
     List of stops that could not be linked based on OSM data but they still do exist in the graph (for debugging purposes).
 
 ## Note to users of Finland and Estonia routing data
