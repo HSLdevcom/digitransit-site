@@ -35,7 +35,7 @@ If you are dissatisfied with the answer you receive, or we do not respond to you
 ### Feedack about accessibility
 
 - HSL Journey Planner: submit your feedback using HSL feedback form<br>
-- Matka.fi Journey Planner: send email to digipalvelut(at)fintraffic.fi<br>
+- Matka.fintraffic.fi Journey Planner: send email to digipalvelut(at)fintraffic.fi<br>
 - Other Digitransit Journey Planners: send email to waltti(at)waltti.fi<br>
 
 ### Contact details of supervising authority
