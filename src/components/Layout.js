@@ -318,7 +318,9 @@ class Layout extends React.Component {
           <FooterLogos>
             <FooterLogo src={logo} />
           </FooterLogos>
-          <div style={{ padding: "1em", color: "white", fontSize: 14 }}>
+          <div style={{ padding: "1em", color: "white", fontSize: 14, textAlign: "center" }}>
+            digitransit@hsl.fi
+            <br />
             © Digitransit {1900 + new Date().getYear()}
           </div>
         </Footer>
