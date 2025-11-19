@@ -16,17 +16,9 @@ Alla mainittu sisältö ei ole WCAG-kriteerien mukaan saavutettava:
 
 - Kartta ja sen sisältö ei ole navigoitavissa tai luettavissa ruudunlukijaa käyttäen. (WCAG 1.1.1, 2.1.1)
 
-### Reittiehdotukset
-
-- reittiehdotusnäkymässä ruudunlukijan kohdistus voi siirtyä väärään reittiehdotukseen koko sivun sisältöä lukiessa (WCAG 2.4.3)
-
-- Ruudunlukijalle tarkoitetut ilmoitukset jotka kertovat sisällön päivittyneen eivät toimi kaikilla ruudunlukijoilla (WCAG 4.1.3)
-
-- Reittiehdotuksista yksittäiseen reittiehdotukseen siirtyessä kohdistus säilyy sivun keskellä vaikka sivun sisältö muttuu (WCAG 1.3.1, 1.3.2, 2.4.3)
-
 ### Linjasivu
 
-- Linjasivulla olevassa taulukossa on ilmoitettu visuaalisesti joitain asioita, jotka eivät käy ilmi merkkauksesta tai tekstistä. Esimerkisi lähdön seuraaminen reaaliajassa ei päivity ruudunlukijalle (WCAG 1.3.1, 1.4.1)
+- Korjauksia on tehty saavutettavuusasiantuntijoiden ohjeiden mukaisesti. Kaikkia reaaliaikamuutoksia ei kuitenkaan voida ilmoittaa ruudunlukijalle liian suuren lukumäärän vuoksi.
 
 ### Saavutettavuuskantelun ja -selvityspyynnön tekeminen
 
@@ -62,17 +54,9 @@ Innehållet som beskrivs nedan är enligt WCAG-kriterier inte tillgängligt:
 
 - Kartan och dess innehåll kan inte navigeras eller läsas med skärmläsaren. (WCAG 1.1.1, 2.1.1)
 
-### Ruttförslag
-
-- Ibland kan skärmläsarens fokus flyttas till fel ruttförslag i vyn för ruttförslag när man läser hela sidan (WCAG 2.4.3)
-
-- Notifikationer som berättar för skärmläsaren att sidans innehåll har ändrats fungerar inte med alla skärmläsare (WCAG 4.1.3)
-
-- När man går över från flera ruttförslag till ett enstaka ruttförslag flyttas fokus inte från mitten av sidan även om sidans innehåll ändras (WCAG 1.3.1, 1.3.2, 2.4.3)
-
 ### Linjesidan
 
-- I tabellen på linjesidan finns några saker som presenteras visuellt och saknar markeringar och textbeskrivningar. Till exempel är det inte möjligt att följa avgångar i realtid med skärmläsaren (WCAG 1.3.1, 1.4.1)
+- Vissa korrigeringar har gjorts i samråd med tillgänglighetsexperter. Alla uppdateringar är inte tillgängliga för skärmläsare eftersom det skulle generera för mycket information i realtid.
 
 ### Lämna in klagomål och begäran om utredning av tillgänglighet
 
