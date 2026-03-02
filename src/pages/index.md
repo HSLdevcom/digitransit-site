@@ -60,7 +60,7 @@ panels:
 
 ## Kolmansien osapuolten Digitransit-reittioppaita
 
-[Matkahuolto](https://reittiopas.matkahuolto.fi)  &nbsp; [Oulun liikenne](https://oulunliikenne.fi/)  &nbsp; [Viro](https://web.peatus.ee)  &nbsp; [Herrenberg](https://herrenberg.stadtnavi.de/)  &nbsp; [Ludwigsburg](https://stadtnavi.swlb.de/)  &nbsp; [Aachen](https://stadtnavi.aachen.de/)  &nbsp; </br>
+[Matkahuolto](https://reittiopas.matkahuolto.fi)  &nbsp; [Oulun liikenne](https://oulunliikenne.fi/)  &nbsp; [Viro](https://web.peatus.ee)  &nbsp; [Herrenberg](https://herrenberg.stadtnavi.de/)  &nbsp; [Ludwigsburg](https://stadtnavi.swlb.de/)  &nbsp; [Aachen](https://stadtnavi.aachen.de/)  &nbsp; [Schleswig-Holstein](https://sh-navi.de/)  &nbsp; </br>
 [Verkehrsverbund Pforzheim-Enzkreis Transport Agency](https://mobi.vpe.de/)  &nbsp; [Oklahoma City Transport Agency](https://go.embarkok.com/)  &nbsp;
 
 </div>
