@@ -3,6 +3,10 @@ title: Changes
 order: -10
 ---
 
+## 16.4.2026
+
+- Documented [itinerary planning with via locations](../apis/1-routing-api/itinerary-planning/#plan-an-itinerary-with-via-locations).
+
 ## 29.11.2024
 
 - Removed references to waltti-alt as it will be merged into waltti.
