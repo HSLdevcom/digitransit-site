@@ -3,6 +3,28 @@ title: Changes
 order: -10
 ---
 
+## 16.4.2026
+
+- Documented [itinerary planning with via locations](../apis/1-routing-api/itinerary-planning/#plan-an-itinerary-with-via-locations).
+
+## 29.11.2024
+
+- Removed references to waltti-alt as it will be merged into waltti.
+
+## 26.11.2024
+
+- [Routing](../apis/1-routing-api/), [routing data](../apis/2-routing-data-api/) and [map](../apis/4-map-api/) API pages have been updated to contain documentation about newly released versions.
+- [API architecture pages](../architecture/x-apis/) have been updated.
+- [Digitransit MQTT broker documentation](../apis/5-realtime-api/vehicle-positions/digitransit-mqtt/) has been updated.
+
+## 18.11.2024
+
+- Documented the new [canceled trips query](../apis/1-routing-api/canceled-trips/)).
+
+## 16.11.2024
+
+- Waltt-alt data has been merged into waltti
+
 ## 1.4.2024
 
 - Updated [deprecations](../deprecations/).
@@ -19,24 +41,6 @@ order: -10
 ## 4.2.2024
 
 - Updated [HFP](../apis/5-realtime-api/vehicle-positions/high-frequency-positioning/) list of operators.
-
-## 18.11.2024
-
-- Documented the new [canceled trips query](../apis/1-routing-api/canceled-trips/)).
-
-## 16.11.2024
-
-- Waltt-alt data has been merged into waltti
-
-## 29.11.2024
-
-- Removed references to waltti-alt as it will be merged into waltti.
-
-## 26.11.2024
-
-- [Routing](../apis/1-routing-api/), [routing data](../apis/2-routing-data-api/) and [map](../apis/4-map-api/) API pages have been updated to contain documentation about newly released versions.
-- [API architecture pages](../architecture/x-apis/) have been updated.
-- [Digitransit MQTT broker documentation](../apis/5-realtime-api/vehicle-positions/digitransit-mqtt/) has been updated.
 
 ## 31.1.2024
 
