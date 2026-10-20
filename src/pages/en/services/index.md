@@ -96,10 +96,10 @@ You can now browse to the address `localhost:8080` and use your private trip pla
 The default theme of the Digitransit user interface does not include any city specific features. It is configured to work with the data of the entirety of Finland.
 
 The UI can be themed and configured to suit a new target area by adding a new configuration file into to repository
-https://github.com/HSLdevcom/digitransit-ui, to the folder `app/configurations`. For more information, check out
-https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Themes.md .
+https://github.com/HSLdevcom/digitransit-ui, to the folder `server/configs` (as `config.<theme>.js`). For more information, check out
+https://github.com/HSLdevcom/digitransit-ui/blob/v3/docs/Themes.md .
 
-The language collection available in the user interface can be extended by adding required strings into `app/translations.js` file and by updating
+The language collection available in the user interface can be extended by adding required strings into the language files in the `app/translations` folder and by updating
 the language selector component respectively.
 
 
