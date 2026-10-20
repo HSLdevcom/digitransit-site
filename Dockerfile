@@ -1,23 +1,22 @@
-FROM node:24 as build
-MAINTAINER Reittiopas version: 0.1
+FROM node:24 AS build
+LABEL maintainer="Reittiopas" version="0.1"
 
 ENV WORK=/opt/digitransit-site
-
 WORKDIR ${WORK}
 
-RUN mkdir -p ${WORK}
+# Install dependencies first so that the layer is cached until they change
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
 # Add application
-ADD . ${WORK}
+COPY . ${WORK}
+RUN yarn build
 
-RUN yarn && \
-  yarn build
-
-FROM node:24
+FROM node:24-slim
 
 WORKDIR /opt/digitransit-site
 COPY --from=build /opt/digitransit-site/public ./
 COPY --from=build /opt/digitransit-site/serve.json ./
-RUN yarn global add serve@10.1.1
+RUN yarn global add serve@14.2.4
 EXPOSE 8080
-CMD serve -l 8080
+CMD ["serve", "-l", "8080"]
