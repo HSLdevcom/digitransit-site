@@ -1,6 +1,6 @@
 import React from "react";
 
-export default props => {
+const ReplitEmbed = props => {
     if (!props.replit) {
       return <span />;
     }
@@ -20,6 +20,7 @@ export default props => {
           <h3>{example.title}</h3>
           <p dangerouslySetInnerHTML={{ __html: example.description }} />
           <iframe
+            title="Code example"
             height={example.height}
             width="100%"
             src={example.url + "?lite=true"}
@@ -52,3 +53,5 @@ export default props => {
       </div>
     );
   };
+
+export default ReplitEmbed;

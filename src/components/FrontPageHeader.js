@@ -68,15 +68,17 @@ const Logos = styled.div`
     }
 `
 
-export default ({ lang }) => (
+const FrontPageHeader = ({ lang }) => (
     <div>
         <HeaderImage src={lang === 'fi' ? digitransitImage : digitransitImageEn} />
         <HeaderImage2x src={lang === 'fi' ? digitransitImage2x: digitransitImageEn2x}  />
         <HeaderImageMobile src={digitransitImageMobile}  />
         <Logos>
-            <img src={hslLogo} />
-            <img src={fintrafficLogo} />
-            <img src={walttiLogo} width={185} height={70} />
+            <img src={hslLogo} alt="HSL" />
+            <img src={fintrafficLogo} alt="Fintraffic" />
+            <img src={walttiLogo} alt="Waltti" width={185} height={70} />
         </Logos>
     </div>
 );
+
+export default FrontPageHeader;

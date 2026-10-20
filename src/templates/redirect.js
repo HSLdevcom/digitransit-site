@@ -1,11 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { Link, navigate, graphql } from "gatsby";
 
 import typography from "../utils/typography";
 
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/SEO";
 import PageContainer from "../components/PageContainer";
 
 const { rhythm } = typography;
@@ -19,7 +18,7 @@ export default class Redirect extends React.Component {
     const { props } = this
 
     return (<>
-      <SEO
+      <Seo
         pageTitle={props.data.markdownRemark.frontmatter.title}
         //Set canonical URL to redirect destination for better SEO
         pagePath={props.data.markdownRemark.frontmatter.redirect}

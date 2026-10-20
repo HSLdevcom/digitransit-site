@@ -5,15 +5,15 @@ import typography from "../utils/typography";
 
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
-import SEO from "../components/SEO";
+import Seo from "../components/SEO";
 import PageContainer from "../components/PageContainer";
 
 const { rhythm } = typography;
 
-export default props => {
+const Page = props => {
   return (
     <>
-      <SEO
+      <Seo
         pageTitle={props.data.markdownRemark.frontmatter.title}
         pageDescription={props.data.markdownRemark.excerpt}
         pagePath={props.data.markdownRemark.fields.slug}
@@ -57,3 +57,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default Page;

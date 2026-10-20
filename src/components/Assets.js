@@ -1,6 +1,6 @@
 import React from "react"
 
-export default props => {
+const Assets = props => {
     if (props.assets) {
       const assets = props.assets.map(asset => {
         return (
@@ -30,3 +30,5 @@ export default props => {
 
     return null;
 };
+
+export default Assets;

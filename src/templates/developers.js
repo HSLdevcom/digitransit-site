@@ -7,11 +7,10 @@ import DockerInfo from "../components/DockerInfo"
 import TechnologiesInfo from "../components/TechnologiesInfo"
 import Assets from "../components/Assets"
 import ArchitectureHeader from "../components/ArchitectureHeader";
-import ReplitEmbed from "../components/ReplitEmbed";
 import TableOfContents from "../components/TableOfContents";
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
-import SEO from "../components/SEO";
+import Seo from "../components/SEO";
 import PageContainer from "../components/PageContainer";
 
 var typography = new Typography();
@@ -188,7 +187,7 @@ const PageContent = styled.div`
   }
 `
 
-export default props => {
+const DeveloperPage = props => {
   const currentPage = props.data.markdownRemark.fields.slug;
 
   const pageGraph = buildPageGraph(props.data.childPages.edges, currentPage);
@@ -210,7 +209,7 @@ export default props => {
 
   return (
     <>
-      <SEO
+      <Seo
         pageTitle={props.data.markdownRemark.frontmatter.title}
         pageDescription={props.data.markdownRemark.excerpt}
         pagePath={props.data.markdownRemark.fields.slug}
@@ -302,3 +301,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default DeveloperPage;

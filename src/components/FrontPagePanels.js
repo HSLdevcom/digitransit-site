@@ -6,7 +6,7 @@ import typography from "../utils/typography";
 
 const { rhythm } = typography
 
-export default ({ panels }) => (
+const FrontPagePanels = ({ panels }) => (
     <div>
         {panels.map(panel => <FrontPagePanel {...panel} />)}
     </div>
@@ -114,3 +114,5 @@ const FrontPagePanel = ({ id, textColor, title, body, background, links, image, 
           </FrontPagePanelContainer>
     );
 }
+
+export default FrontPagePanels;

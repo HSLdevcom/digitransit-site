@@ -19,7 +19,7 @@ const TOCHeader = styled.span`
     margin-bottom: 0;
 `
 
-const TOC = styled.div`
+const TocList = styled.div`
     display: ${props => props.collaped ? 'block' : 'none'};
     
     & ul {
@@ -67,12 +67,12 @@ export default class TableOfContents extends React.Component {
           <TOCHeader>
             <b>Table of contents</b>
             {" ["}
-            <a href="javascript:;" onClick={this.update}>
+            <a href="#table-of-contents" onClick={this.update}>
               {this.state.collapsed ? "hide" : "show"}
             </a>
             {"]"}
           </TOCHeader>
-          <TOC
+          <TocList
             collaped={this.state.collapsed}
             dangerouslySetInnerHTML={{
               __html: this.props.data.markdownRemark.tableOfContents
