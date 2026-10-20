@@ -25,7 +25,7 @@ const Seo = ({ pageTitle, pageDescription, pagePath }) => {
   const description =
     pageDescription || "Uuden ajan reittioppaan käyttöliittymät ja rajapinnat.";
 
-  const shareImageUrl = "http://digitransit.fi/share-image.png";
+  const shareImageUrl = `${metadata.siteUrl}/share-image.png`;
 
   const language = pagePath.startsWith("/en/") ? "en_US" : "fi_FI";
 
