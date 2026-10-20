@@ -49,25 +49,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-copy-linked-files`
           },
-          {
-            resolve: "gatsby-remark-custom-blocks",
-            options: {
-              blocks: {
-                "alert-success": {
-                  classes: "alert alert-success",
-                },
-                "alert-info": {
-                  classes: "alert alert-info",
-                },
-                "alert-warning": {
-                  classes: "alert alert-warning",
-                },
-                "alert-danger": {
-                  classes: "alert alert-danger",
-                },
-              },
-            },
-          },
         ]
       }
     },

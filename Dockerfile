@@ -1,20 +1,19 @@
-FROM node:20 as build
+FROM node:24 as build
 MAINTAINER Reittiopas version: 0.1
 
 ENV WORK=/opt/digitransit-site
 
 WORKDIR ${WORK}
 
-RUN yarn global add gatsby-cli@2.4.5 && \
-  mkdir -p ${WORK}
+RUN mkdir -p ${WORK}
 
 # Add application
 ADD . ${WORK}
 
 RUN yarn && \
-  gatsby build
+  yarn build
 
-FROM node:20
+FROM node:24
 
 WORKDIR /opt/digitransit-site
 COPY --from=build /opt/digitransit-site/public ./

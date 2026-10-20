@@ -11,8 +11,9 @@ Most of the vehicles in the HSL area should publish their status, including thei
 The devices of the end users, e.g. smartphones, may subscribe to receive the relevant messages based on their context, e.g. filtered on the mode of transport, the route ID, the geographical region etc.
 The subscription scope is specified by the MQTT topic structure of the API.
 
-[[alert-info]]
-| Vehicle positions are also available in GTFS-RT format, see [HSL GTFS-RT API documentation](https://hsldevcom.github.io/gtfs_rt/)
+<div class="alert alert-info">
+Vehicle positions are also available in GTFS-RT format, see <a href="https://hsldevcom.github.io/gtfs_rt/">HSL GTFS-RT API documentation</a>
+</div>
 
 ## Quickstart
 

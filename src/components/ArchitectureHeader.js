@@ -1,13 +1,20 @@
 import React from "react";
 
+// Only architecture images are bundled, not everything under pages
+const architectureImages = require.context(
+  "../pages",
+  true,
+  /architecture\.(svg|png)$/
+);
+
 const Image = ({ url }) => {
   if (typeof url === "undefined") {
     return null;
   }
-  return <img src={url} />;
+  return <img src={url} alt="Architecture diagram" />;
 };
 
-export default props => {
+const ArchitectureHeader = props => {
   if (!props.description) {
     return null;
   }
@@ -23,14 +30,17 @@ export default props => {
 
   // We'll have to use full path as image location. By just using "./architecture.svg", browser won't update image
   // when moving from page to page if image name is the same
-  const image = require("../pages" + props.slug + imageFile);
+  const imageModule = architectureImages(`.${props.slug}${imageFile}`);
+  const image = imageModule.default || imageModule;
 
   return (
     <div>
       <p>{props.description.info}</p>
       <Image url={props.description.img} />
       <h2>Service Architecture</h2>
-      <img src={image} />
+      <img src={image} alt="Architecture diagram" />
     </div>
   );
 };
+
+export default ArchitectureHeader;
