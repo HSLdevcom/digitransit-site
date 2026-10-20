@@ -209,11 +209,6 @@ const DeveloperPage = props => {
 
   return (
     <>
-      <Seo
-        pageTitle={props.data.markdownRemark.frontmatter.title}
-        pageDescription={props.data.markdownRemark.excerpt}
-        pagePath={props.data.markdownRemark.fields.slug}
-      />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
         <PageContainer>
@@ -238,6 +233,14 @@ const DeveloperPage = props => {
     </>
   );
 };
+
+export const Head = ({ data }) => (
+  <Seo
+    pageTitle={data.markdownRemark.frontmatter.title}
+    pageDescription={data.markdownRemark.excerpt}
+    pagePath={data.markdownRemark.fields.slug}
+  />
+);
 
 export const query = graphql`
   query($slug: String!) {

@@ -18,11 +18,6 @@ export default class Redirect extends React.Component {
     const { props } = this
 
     return (<>
-      <Seo
-        pageTitle={props.data.markdownRemark.frontmatter.title}
-        //Set canonical URL to redirect destination for better SEO
-        pagePath={props.data.markdownRemark.frontmatter.redirect}
-      />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
         <PageContainer>
@@ -39,6 +34,14 @@ export default class Redirect extends React.Component {
     </>);
   }
 };
+
+// Canonical URL points to the redirect destination for better SEO
+export const Head = ({ data }) => (
+  <Seo
+    pageTitle={data.markdownRemark.frontmatter.title}
+    pagePath={data.markdownRemark.frontmatter.redirect}
+  />
+);
 
 export const query = graphql`
   query($slug: String!) {

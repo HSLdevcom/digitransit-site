@@ -16,10 +16,6 @@ const FrontPage = props => {
   var urlPrefix = "";
   return (
     <>
-      <Seo
-        pageTitle={props.data.markdownRemark.frontmatter.title}
-        pagePath={props.data.markdownRemark.fields.slug}
-      />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         {props.data.markdownRemark.frontmatter.isFront ||
         props.page.path === `${urlPrefix}/` ? (
@@ -38,6 +34,13 @@ const FrontPage = props => {
     </>
   );
 };
+
+export const Head = ({ data }) => (
+  <Seo
+    pageTitle={data.markdownRemark.frontmatter.title}
+    pagePath={data.markdownRemark.fields.slug}
+  />
+);
 
 export const query = graphql`
   query($slug: String!) {
