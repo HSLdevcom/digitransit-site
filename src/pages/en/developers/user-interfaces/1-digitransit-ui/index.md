@@ -27,13 +27,13 @@ docker:
 Application is built with React. React components can access data in two different ways:
 
 - Routing-API queries with Relay
-- Other API with Flux model
+- Other data and application state with React hooks and context
 
 Basically, division between alternatives is:
 
 - GraphQL is used to fetch data from server
-- If server endpoint does not support GraphQL, flux can be used to retrieve that data
-- Flux stores are mainly used to store application state
+- If server endpoint does not support GraphQL, a focused data helper or a React context can be used to retrieve that data
+- Application state is kept in React hooks and context
 
 ## Installation
 
@@ -136,12 +136,10 @@ The other place of an itinerary search can be set at the same time, so a link su
 | ------------------ | --------------------------------------------------- |
 | React              | https://github.com/facebook/react                   |
 | React-leaflet      | https://github.com/PaulLeCam/react-leaflet          |
-| React-router       | https://github.com/rackt/react-router               |
-| React-autosuggest  | https://github.com/moroshko/react-autosuggest       |
-| react-router-relay | https://github.com/relay-tools/react-router-relay   |
+| Found              | https://github.com/4Catalyzer/found                 |
+| Farce              | https://github.com/4Catalyzer/farce                 |
 | Relay              | https://github.com/facebook/relay                   |
 | Babel relay plugin | https://github.com/facebook/relay                   |
-| Fluxible           | https://github.com/yahoo/fluxible                   |
 | Leaflet            | https://github.com/Leaflet/Leaflet                  |
 | MQTT.js            | https://github.com/mqttjs/MQTT.js                   |
 | Polyfill-service   | https://github.com/Financial-Times/polyfill-service |
