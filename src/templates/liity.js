@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import FrontPagePanels from "../components/FrontPagePanels";
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
-import SEO from "../components/SEO";
+import Seo from "../components/SEO";
 import PageContainer from "../components/PageContainer";
 
 import typography from "../utils/typography";
@@ -29,14 +29,9 @@ const JoinDigitransit = styled.div`
   }
 `
 
-export default props => {
+const JoinPage = props => {
   return (
     <>
-      <SEO
-        pageTitle={props.data.markdownRemark.frontmatter.title}
-        pageDescription={props.data.markdownRemark.excerpt}
-        pagePath={props.data.markdownRemark.fields.slug}
-      />
       <Layout slug={props.data.markdownRemark.fields.slug}>
         <div>
           <div style={{ height: `calc(${rhythm(1.5)} + 23px)` }} />
@@ -51,6 +46,14 @@ export default props => {
     </>
   );
 };
+
+export const Head = ({ data }) => (
+  <Seo
+    pageTitle={data.markdownRemark.frontmatter.title}
+    pageDescription={data.markdownRemark.excerpt}
+    pagePath={data.markdownRemark.fields.slug}
+  />
+);
 
 export const query = graphql`
   query($slug: String!) {
@@ -80,3 +83,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default JoinPage;

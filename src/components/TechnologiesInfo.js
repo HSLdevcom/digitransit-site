@@ -1,6 +1,6 @@
 import React from "react";
 
-export default props => {
+const TechnologiesInfo = props => {
     if (props.technologies) {
       const getUrl = tech => {
         if (tech.url != null) {
@@ -30,3 +30,5 @@ export default props => {
     return null;
   };
   
+
+export default TechnologiesInfo;

@@ -97,8 +97,8 @@ Nyt voit selata osoitteeseen localhost:8080 ja alkaa käyttämään omaa yksityi
 Reittioppaan oletusteema ei sisällä kaupunkikohtaisia piirteitä. Se on konfiguroitu koko Suomen datalle soveltuvilla asetuksilla.
 
 Käyttöliittymä voidaan teemoittaa ja konfiguroida sopivaksi halutulle kohdealueelle luomalla uusi konfiguraatiotiedosto lähdekoodikirjaston
-https://github.com/HSLdevcom/digitransit-ui `app/configurations` kansioon. Tarkemmat ohjeet löytyvät osoitteesta
-https://github.com/HSLdevcom/digitransit-ui/blob/master/docs/Themes.md .
+https://github.com/HSLdevcom/digitransit-ui `server/configs` kansioon (nimellä `config.<teema>.js`). Tarkemmat ohjeet löytyvät osoitteesta
+https://github.com/HSLdevcom/digitransit-ui/blob/v3/docs/Themes.md .
 
 
 ## Resurssitarpeet

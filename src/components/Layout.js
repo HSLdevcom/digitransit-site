@@ -125,7 +125,7 @@ const FooterLogo = styled.img`
   width: 240px;
 `
 
-export default props => (
+const LayoutWithData = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -236,7 +236,7 @@ class Layout extends React.Component {
                 onClick={() => this.setState({ mobileMenuOpen: false })}
                 to={`/`}
               >
-                <img src={logo} style={{ height: "48px", margin: "0px" }} />
+                <img src={logo} alt="Digitransit" style={{ height: "48px", margin: "0px" }} />
               </NavLogo>
               <NavLinks>
                 <NavLink
@@ -328,3 +328,5 @@ class Layout extends React.Component {
     );
   }
 }
+
+export default LayoutWithData;

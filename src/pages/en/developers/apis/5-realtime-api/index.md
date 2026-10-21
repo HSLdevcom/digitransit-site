@@ -2,8 +2,9 @@
 title: Realtime APIs
 ---
 
-[[alert-warning]]
-| GTFS-RT APIs (service alerts and trip updates) hosted at api.digitransit.fi have been deprecated. For HSL region, realtime data in GTFS-RT format is available from [HSL GTFS-RT API](https://hsldevcom.github.io/gtfs_rt/). [Waltti open data](https://opendata.waltti.fi/) provides GTFS-RT for many cities around Finland. Realtime data is also available from the routing API.
+<div class="alert alert-warning">
+GTFS-RT APIs (service alerts and trip updates) hosted at api.digitransit.fi have been deprecated. For HSL region, realtime data in GTFS-RT format is available from <a href="https://hsldevcom.github.io/gtfs_rt/">HSL GTFS-RT API</a>. <a href="https://opendata.waltti.fi/">Waltti open data</a> provides GTFS-RT for many cities around Finland. Realtime data is also available from the routing API.
+</div>
 
 Realtime APIs provide disruption information and predictions for stop arrival and departure times in GTFS RT format and vehicle positions in a custom JSON format. When using realtime APIs, keep in mind that the availability and quality of the data varies in each city.  
 

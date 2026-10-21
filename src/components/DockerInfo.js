@@ -7,7 +7,7 @@ import { PrismCode } from "react-prism";
 require("prismjs");
 require("prismjs/components/prism-bash");
 
-export default props => {
+const DockerInfo = props => {
     if (props.docker) {
       return (
         <div>
@@ -53,3 +53,5 @@ export default props => {
     }
     return null;
   };
+
+export default DockerInfo;
